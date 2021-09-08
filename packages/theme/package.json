@@ -1,0 +1,34 @@
+{
+  "name": "@mdsol/arcus-theme",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "JT <jathompson@mdsol.com>",
+  "homepage": "",
+  "license": "ISC",
+  "private": true,
+  "main": "dist/index.css",
+  "sass": "scss/index.scss",
+  "style": "dist/index.css",
+  "files": [
+    "dist/*.{css,map}",
+    "scss/*.scss"
+  ],
+  "directories": {
+    "scss": "scss",
+    "dist": "dist"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.3.1",
+    "bootstrap": "^5.0.2",
+    "postcss": "^8.3.5",
+    "rollup": "^2.53.1",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass": "^1.35.2"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  }
+}

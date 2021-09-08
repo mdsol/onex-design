@@ -1,0 +1,500 @@
+// Forms
+$svgCheckboxEmpty: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon-close" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></svg>')
+);
+$svgCheckboxChecked: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon-close" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>')
+);
+$svgRadioEmpty: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon-close" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path></svg>')
+);
+$svgRadioChecked: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon-close" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path></svg>')
+);
+$svgDropdownArrow: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path></svg>')
+);
+$svgClose: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>')
+);
+$svgCloseCircle: escape-svg(
+  url('data:image/svg+xml;utf-8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path></svg>')
+);
+
+::placeholder,
+.form-control::placeholder {
+  color: $input-placeholder-color;
+}
+input.form-control,
+textarea.form-control {
+  box-shadow: $box-shadow-inset;
+}
+
+.form-group {
+  width: 100%;
+}
+
+span.ast {
+  color: $danger;
+}
+
+.btn-group,
+.btn-group-vertical {
+  .btn {
+    padding: $input-padding-y;
+    box-shadow: $box-shadow;
+    background-color: #ffffff;
+    border: $input-border-width solid $input-border-color;
+    color: $body-color;
+    border-radius: 0;
+    clip-path: polygon(0 -10%, 100% -10%, 100% 110%, 0% 110%);
+    font-weight: normal;
+    &.selected {
+      box-shadow: inset $box-shadow;
+      background-color: $primary;
+      color: #ffffff;
+      border-color: $primary;
+    }
+    &:focus,
+    &.focus {
+      &:after {
+        border-color: $primary;
+        border-width: 2px;
+        top: -1px;
+        left: -1px;
+        right: 1px;
+        bottom: -1px;
+        border-radius: 0;
+      }
+    }
+    &.disabled,
+    &:disabled {
+      color: map.get($cool-grays, 'cool-gray-1') !important;
+      border: $input-border-width solid $input-border-color !important;
+    }
+    &:hover {
+      z-index: initial;
+    }
+  }
+
+  .btn:first-of-type {
+    border-radius: $border-radius 0 0 $border-radius;
+    clip-path: polygon(-10% -10%, 100% -10%, 100% 110%, -10% 110%);
+    &:focus,
+    &.focus {
+      &:after {
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+    }
+  }
+  .btn:last-of-type {
+    border-radius: 0 $border-radius $border-radius 0;
+    clip-path: polygon(0 -10%, 110% -10%, 110% 110%, 0% 110%);
+    &:focus,
+    &.focus {
+      &:after {
+        border-radius: 0 $border-radius $border-radius 0;
+        right: 0;
+      }
+    }
+  }
+
+  &.btn-group-vertical {
+    .btn {
+      clip-path: polygon(-10% 0, 110% 0%, 110% 100%, -10% 100%);
+      &:focus,
+      &.focus {
+        &:after {
+          right: -1px;
+          bottom: 1px;
+        }
+      }
+    }
+    .btn:first-of-type {
+      border-radius: $border-radius $border-radius 0 0;
+      clip-path: polygon(-10% -10%, 110% -10%, 110% 100%, -10% 100%);
+      &:focus,
+      &.focus {
+        &:after {
+          border-radius: $border-radius $border-radius 0 0;
+        }
+      }
+    }
+    .btn:last-of-type {
+      border-radius: 0 0 $border-radius $border-radius;
+      clip-path: polygon(-10% 0, 110% 0%, 110% 110%, -10% 110%);
+      &:focus,
+      &.focus {
+        &:after {
+          border-radius: 0 0 $border-radius $border-radius;
+          bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+.btn-group > .btn:focus,
+.btn-group > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn:focus,
+.btn-group-vertical > .btn:active,
+.btn-group-vertical > .btn.active {
+  z-index: 0;
+}
+
+select.form-control {
+  box-shadow: $box-shadow;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: #ffffff $svgDropdownArrow no-repeat right 8px center;
+  background-size: 1.777rem;
+  &:focus,
+  .focus {
+    box-shadow: $box-shadow-inset, 0 0 0 1px $primary, $box-shadow;
+  }
+}
+
+.form-label {
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  &.required:after {
+    content: '*';
+    color: $danger;
+  }
+}
+.form-text {
+  margin-bottom: 0.5rem;
+}
+
+.form-control:focus {
+  box-shadow: $box-shadow-inset, 0 0 0 1px $primary;
+}
+.form-control.border-danger {
+  box-shadow: $box-shadow-inset, 0 0 0 1px $danger;
+}
+// Checkbox and Radio
+.form-check {
+  display: flex;
+  &.form-check-inline {
+    display: inline-flex;
+    margin-right: 1rem;
+  }
+  & + .form-check {
+    margin-top: 1.8rem;
+    z-index: 1;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -1rem;
+      right: 0;
+      left: 2rem;
+      bottom: 0;
+      border-top: solid 1px $border-color;
+      z-index: -1;
+    }
+  }
+  &.form-check-inline + .form-check-inline {
+    padding-top: 0;
+    margin-top: 0;
+    &:after {
+      display: none;
+    }
+  }
+
+  align-items: center;
+  padding-left: 0;
+
+  .form-check-input {
+    cursor: pointer;
+    border: none;
+    &[disabled] {
+      cursor: not-allowed;
+    }
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: static;
+    margin: 0;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &[type='checkbox'] {
+      &:before {
+        background-color: map.get($cool-grays, 'cool-gray-3');
+        -webkit-mask: $svgCheckboxEmpty no-repeat left center;
+        mask: $svgCheckboxEmpty no-repeat left center;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 1rem;
+        min-width: 1.77rem;
+      }
+      &.checked:before,
+      &:checked:before {
+        background-color: map.get($cool-grays, 'cool-gray-1');
+        mask-image: $svgCheckboxChecked;
+        -webkit-mask-image: $svgCheckboxChecked;
+      }
+    }
+    &[type='radio'] {
+      &:before {
+        background-color: map.get($cool-grays, 'cool-gray-3');
+        mask: $svgRadioEmpty no-repeat left center;
+        -webkit-mask: $svgRadioEmpty no-repeat left center;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 1rem;
+        min-width: 1.77rem;
+      }
+      &.checked:before,
+      &:checked:before {
+        background-color: map.get($cool-grays, 'cool-gray-1');
+        mask-image: $svgRadioChecked;
+        -webkit-mask-image: $svgRadioChecked;
+      }
+    }
+    &:focus,
+    &.focus {
+      outline: none;
+      &:after {
+        content: '';
+        border: inherit;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: $border-radius;
+        border: solid 2px $primary;
+        z-index: 1;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    .form-check-label {
+      color: map.get($cool-grays, 'cool-gray-3');
+    }
+  }
+
+  &.icon-success .form-check-input {
+    &[type='checkbox'],
+    &[type='radio'] {
+      &.checked:before,
+      &:checked:before {
+        background-color: $success;
+      }
+    }
+  }
+  &.icon-warning .form-check-input {
+    &[type='checkbox'],
+    &[type='radio'] {
+      &.checked:before,
+      &:checked:before {
+        background-color: $warning;
+      }
+    }
+  }
+  &.icon-danger .form-check-input {
+    &[type='checkbox'],
+    &[type='radio'] {
+      &.checked:before,
+      &:checked:before {
+        background-color: $danger;
+      }
+    }
+  }
+  &.fake-not-disabled .form-check-label {
+    color: map.get($cool-grays, 'cool-gray-1') !important;
+  }
+  &.fake-checked {
+    .form-check-input {
+      &[type='checkbox']:before,
+      &[type='radio']:before {
+        background-color: map.get($cool-grays, 'cool-gray-1');
+      }
+      &[type='checkbox']:before {
+        mask-image: $svgCheckboxChecked;
+        -webkit-mask-image: $svgCheckboxChecked;
+      }
+      &[type='radio']:before {
+        mask-image: $svgRadioChecked;
+        -webkit-mask-image: $svgRadioChecked;
+      }
+    }
+    &.icon-success .form-check-input {
+      &[type='checkbox']:before,
+      &[type='radio']:before {
+        background-color: $success;
+      }
+    }
+    &.icon-warning .form-check-input {
+      &[type='checkbox']:before,
+      &[type='radio']:before {
+        background-color: $warning;
+      }
+    }
+    &.icon-danger .form-check-input {
+      &[type='checkbox']:before,
+      &[type='radio']:before {
+        background-color: $danger;
+      }
+    }
+  }
+
+  .form-check-label {
+    margin-left: 0.25rem;
+  }
+}
+
+.form-row .col {
+  display: flex;
+  flex-direction: column;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    input:last-child,
+    select:last-child {
+      margin-top: auto;
+    }
+  }
+}
+
+.input-group.overlay {
+  align-items: center;
+  input {
+    border-radius: $border-radius !important;
+  }
+  .input-group-append {
+    position: absolute;
+    right: 0.5rem;
+    z-index: 3;
+  }
+  .blank-button {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.react-select {
+  font-family: $input-font-family;
+  &.react-select--is-disabled .react-select__control--is-disabled {
+    background-color: $input-disabled-bg;
+  }
+  .react-select__control--is-focused {
+    border-color: $primary !important;
+    box-shadow: $box-shadow-inset, 0 0 0 1px $primary !important;
+  }
+  .react-select__control {
+    box-shadow: $box-shadow-inset;
+    background: #ffffff $svgDropdownArrow no-repeat right 8px center;
+    background-size: 1.777rem;
+    height: auto;
+    padding: 0;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: $body-color;
+    border: $input-border-width solid $input-border-color;
+    border-radius: 0.22rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .react-select__dropdown-indicator svg {
+    visibility: hidden;
+  }
+  .react-select__value-container {
+    padding: $input-padding-y $input-padding-x;
+  }
+  .react-select__value-container--is-multi {
+    padding: 0.444rem $input-padding-x;
+  }
+  .react-select__placeholder {
+    color: $input-placeholder-color;
+    margin: 0;
+  }
+  .react-select__single-value {
+    margin: 0;
+    position: relative;
+    transform: none;
+    top: 0;
+  }
+  .react-select__indicators {
+    line-height: 1;
+  }
+  .react-select__indicator-separator {
+    display: none;
+  }
+  [class$='-Input'] {
+    input {
+      box-shadow: none;
+      font-size: $input-font-size !important;
+    }
+    padding: 0;
+    margin: 0;
+  }
+  .react-select__value-container--is-multi {
+    [class$='-Input'] input {
+      padding: 8px 0 !important;
+    }
+  }
+  .react-select__multi-value {
+    margin: 3px 6px 3px 0;
+    padding: 2px;
+    background-color: $teal;
+    color: #fff;
+    border-radius: 1rem;
+    .react-select__multi-value__label {
+      padding: 0.15rem 0.4rem;
+      font-size: 1.125rem;
+      color: #ffffff;
+    }
+    .react-select__multi-value__remove {
+      svg {
+        display: none;
+      }
+      background-color: white;
+      -webkit-mask: $svgClose no-repeat center;
+      mask: $svgClose no-repeat center;
+      width: 1rem;
+      margin: 0 0.25rem 0 0;
+      cursor: pointer;
+      &:hover {
+        -webkit-mask-image: $svgCloseCircle;
+        mask-image: $svgCloseCircle;
+        -webkit-mask-size: 21px;
+        mask-size: 21px;
+        mask-position-y: 6px;
+      }
+    }
+  }
+  .react-select__clear-indicator {
+    svg {
+      display: none;
+    }
+    background-color: map.get($cool-grays, 'cool-gray-1');
+    -webkit-mask: $svgCloseCircle no-repeat center;
+    mask: $svgCloseCircle no-repeat center;
+    padding: 12px;
+    -webkit-mask-size: 24px;
+    mask-size: 24px;
+    cursor: pointer;
+  }
+}

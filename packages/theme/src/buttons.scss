@@ -1,0 +1,215 @@
+// Buttons
+.btn {
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  &.btn-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    background-color: map.get($cool-grays, 'cool-gray-4') !important;
+    border-color: map.get($cool-grays, 'cool-gray-4') !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    &[class*='btn-outline-'] {
+      border-color: map.get($cool-grays, 'cool-gray-4') !important;
+      color: map.get($cool-grays, 'cool-gray-4') !important;
+      background-color: transparent !important;
+    }
+  }
+  &.dropdown-toggle {
+    padding-right: 1rem;
+  }
+  &.btn-lg {
+    padding: 0.5rem 2rem;
+  }
+  &.focus,
+  &:focus {
+    outline: none;
+    box-shadow: none !important;
+    &:before {
+      content: '';
+      border: inherit;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: $border-radius;
+    }
+  }
+  svg {
+    font-size: 1.5rem;
+  }
+  &.rounded-pill {
+    border-width: 1px;
+    &:focus:before {
+      border-radius: 50rem;
+    }
+  }
+}
+
+// TODO: check me
+.dropdown-toggle::after {
+  border-left-width: 0.35rem;
+  border-top-width: 0.4rem;
+  border-right-width: 0.35rem;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: $value;
+      border-color: $value;
+      color: #ffffff;
+    }
+  }
+  .btn-outline-#{$color} {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: transparent !important;
+    }
+  }
+}
+.btn-warning {
+  color: #ffffff;
+}
+.btn-light {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  &:hover,
+  &.hover,
+  &:focus,
+  &.focus {
+    color: inherit;
+  }
+}
+// .show > .btn-outline-dark.dropdown-toggle
+// .btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active, .show > .btn-outline-dark.dropdown-toggle
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: transparent;
+      border-color: $value;
+      color: $value;
+    }
+  }
+}
+
+.show > .btn-outline-dark.dropdown-toggle {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+@each $color, $value in $theme-colors {
+  .show > .btn-#{$color} {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: $value !important;
+      border-color: $value !important;
+      color: #ffffff !important;
+    }
+  }
+  .show > .btn-outline-#{$color},
+  .show > .btn-outline-#{$color}.dropdown-toggle {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+  .show > .btn-outline-#{$color}.dropdown-toggle {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: transparent !important;
+      color: inherit !important;
+    }
+  }
+}
+
+.btn-opaque {
+  color: map.get($cool-grays, 'cool-gray-1');
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+}
+
+button.close {
+  > span[aria-hidden] {
+    display: none;
+  }
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  vertical-align: middle;
+  align-self: center;
+
+  @include closeButton(currentColor);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Dropdowns
+.dropdown-toggle {
+  &.no-toggle {
+    &:after {
+      display: none;
+    }
+  }
+  &:after {
+    margin-left: 1rem;
+  }
+}
+
+.dropdown-menu {
+  padding: $dropdown-padding-y $dropdown-padding-x;
+  .dropdown-item {
+    &:active,
+    &.active {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
+}
+
+.btn-grp-individual-vertical {
+  display: block;
+  width: 100%;
+  > .btn {
+    display: block;
+    width: 100%;
+    margin: 0 !important;
+    + .btn {
+      margin-top: 1rem !important;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .btn-grp-individual-vertical {
+    display: inline-block;
+    max-width: 256px;
+  }
+}
