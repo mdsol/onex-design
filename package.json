@@ -1,8 +1,15 @@
 {
-  "name": "onex-design",
+  "name": "@mdsol/onex-design",
   "version": "0.1.0",
   "private": true,
   "author": "JT <jathompson@mdsol.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdsol/onex-design.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "engines": {
     "npm": "please-use-yarn",
     "yarn": ">= 3.1.0"
