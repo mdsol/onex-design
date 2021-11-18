@@ -1,0 +1,68 @@
+import { forwardRef } from 'react';
+import { NavDropdown } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+const NavItemDropdown = forwardRef((props, ref) => {
+    const { title, disabled, items, isActive, className } = props;
+
+    const navDropdownClassNames = classNames('c-nav__item-dropdown', {
+        [className]: className,
+        active: isActive,
+    });
+
+    return (
+        <NavDropdown ref={ref} className={navDropdownClassNames} title={title} disabled={disabled}>
+            {!!items?.length &&
+                items.map((item) => {
+                    const {
+                        title: itemTitle,
+                        href,
+                        eventKey: iEventKey,
+                        active: iActive,
+                        disabled: iDisabled,
+                    } = item;
+
+                    const itemEventKey = `${iEventKey}`;
+
+                    return (
+                        <NavDropdown.Item
+                            key={itemEventKey}
+                            href={href}
+                            active={iActive}
+                            eventKey={itemEventKey}
+                            disabled={iDisabled}
+                        >
+                            {itemTitle}
+                        </NavDropdown.Item>
+                    );
+                })}
+        </NavDropdown>
+    );
+});
+
+NavItemDropdown.propTypes = {
+    className: PropTypes.string,
+    title: PropTypes.string,
+    disabled: PropTypes.bool,
+    isActive: PropTypes.bool,
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            active: PropTypes.bool,
+            disabled: PropTypes.bool,
+            href: PropTypes.string,
+            eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        }),
+    ),
+};
+
+NavItemDropdown.defaultProps = {
+    className: undefined,
+    title: undefined,
+    items: null,
+    disabled: false,
+    isActive: false,
+};
+
+export default NavItemDropdown;

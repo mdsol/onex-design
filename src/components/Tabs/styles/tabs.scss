@@ -1,0 +1,44 @@
+@import 'mixins';
+
+.c-tab {
+  .c-nav__item {
+    padding-left: $c-tab-item-padding-left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $c-tab-main-text-color;
+  }
+
+  &--size-sm {
+    @include tab-size($c-tab-height-sm, $c-tab-font-size-sm, $c-tab-line-height-sm, $c-tab-padding-y-sm, $c-tab-line-hover-height-sm);
+
+    .dropdown-menu {
+      @include dropdown-menu($c-tab-menu-border-radius-sm, $c-tab-menu-font-size-sm, $c-tab-menu-line-height-sm, $c-tab-menu-padding-x-sm, $c-tab-menu-padding-y-sm, $c-tab-menu-min-width-sm);
+
+      .dropdown-item {
+        padding: $c-tab-menu-item-padding-y-sm $menu-item-padding-x-sm;
+        border-radius: $c-tab-menu-border-radius-sm;
+      }
+    }
+  }
+
+  &--size-lg {
+    @include tab-size($c-tab-height-lg, $c-tab-font-size-lg, $c-tab-line-height-lg, $c-tab-padding-y-lg, $c-tab-line-hover-height-lg);
+
+    .dropdown-menu {
+      @include dropdown-menu($c-tab-menu-border-radius-lg, $c-tab-menu-font-size-lg, $c-tab-menu-line-height-lg, $c-tab-menu-padding-x-lg, $c-tab-menu-padding-y-lg, $c-tab-menu-min-width-lg);
+
+      .dropdown-item {
+        padding: $c-tab-menu-item-padding-y-lg $c-tab-menu-item-padding-x-lg;
+        border-radius: $c-tab-menu-border-radius-lg;
+      }
+    }
+  }
+}

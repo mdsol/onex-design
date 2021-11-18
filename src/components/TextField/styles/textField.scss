@@ -1,0 +1,155 @@
+@import "mixins";
+
+.c-text-field {
+  max-width: $tf-max-width;
+
+  .form-label {
+    line-height: $fl-line-height;
+  }
+
+  &__input {
+    position: relative;
+  }
+
+  /* input icon  */
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $tf-icon-color;
+  }
+
+  &--lg &__icon {
+    @include icon-size($tf-icon-size-lg);
+
+    left: $tf-padding-x-lg;
+  }
+
+  &--sm &__icon {
+    @include icon-size($tf-icon-size-sm);
+
+    left: $tf-padding-x-sm;
+  }
+
+  &--disabled &__icon {
+    color: $tf-icon-disabled-color;
+  }
+
+  &--has-icon {
+    .form-control-sm {
+      padding-left: $tf-padding-icon-x-sm;
+    }
+
+    .form-control-lg {
+      padding-left: $tf-padding-icon-x-lg;
+    }
+  }
+
+  /* clear btn */
+  &__clear-btn {
+    @include icon-size($tf-icon-size-sm);
+
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $tf-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $tf-icon-disabled-color;
+    }
+  }
+
+  &--lg &__clear-btn {
+    right: $tf-padding-x-lg;
+  }
+
+  &--sm &__clear-btn {
+    right: $tf-padding-x-sm;
+  }
+
+  &--has-clear-btn {
+    .form-control-sm {
+      padding-right: $tf-padding-icon-x-sm;
+    }
+
+    .form-control-lg {
+      padding-right: $tf-padding-icon-x-lg;
+    }
+  }
+
+  /* error text */
+  &__error {
+    min-width: 1rem;
+    min-height: $fl-line-height;
+    display: inline-block;
+    line-height: $fl-line-height;
+    padding-left: 1.25rem;
+    background-image: escape-svg($em-background-image);
+    background-repeat: no-repeat;
+    background-position: left 0.25rem center;
+  }
+
+  /* form control */
+ .form-control {
+   &.form-control-sm {
+     height: $tf-height-sm;
+     line-height: $tf-line-height-sm;
+
+     &:invalid,
+     &.is-invalid {
+       padding-right: $tf-padding-x-sm;
+     }
+   }
+
+   &.form-control-lg {
+     height: $tf-height-lg;
+     line-height: $tf-line-height-lg;
+
+     &:invalid,
+     &.is-invalid {
+       padding-right: $tf-padding-x-lg;
+     }
+   }
+
+   &:invalid,
+   &.is-invalid {
+     border-color: $tf-invalid-border-color;
+     background-image: none;
+
+     &:focus {
+       box-shadow: none;
+     }
+   }
+
+   &:disabled,
+   &.disabled,
+   &:disabled.is-invalid,
+   &.disabled.is-invalid,
+   &:disabled:invalid,
+   &.disabled:invalid, {
+     border-color: $tf-disabled-border-color;
+     background-color: transparent;
+
+     &::placeholder {
+       color: $tf-disabled-placeholder-text-color;
+     }
+   }
+
+   &:focus ~ .c-text-field__icon,
+   &:focus ~ .c-text-field__clear-btn {
+     color: $tf-focus-text-color;
+   }
+ }
+}

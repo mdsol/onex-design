@@ -1,0 +1,23 @@
+@mixin bg-color-tooltip($bg-color) {
+  .tooltip-inner {
+    background-color: $bg-color;
+  }
+
+  .tooltip-arrow::before {
+    border-right-color: $bg-color;
+  }
+}
+
+@mixin tooltip-type-color() {
+  $types: ('success': $success, 'warning': $warning, 'error': $error, 'info': $primary);
+
+  @each $type, $color in $types {
+    &.c-tooltip--#{$type} {
+      @include bg-color-tooltip(#{$color});
+
+      &.show.tooltip {
+        opacity: 1;
+      }
+    }
+  }
+}

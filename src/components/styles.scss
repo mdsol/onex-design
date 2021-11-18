@@ -1,0 +1,41 @@
+/* theme colors */
+@import 'theme/colors';
+@import 'theme/sizes';
+
+/* components variables */
+@import 'Button/styles/variables';
+@import 'Check/styles/variables';
+@import 'Dropdown/styles/variables';
+@import 'Switch/styles/variables';
+@import 'Toggle/components/ToggleButton/styles/variables';
+@import 'TextField/styles/variables';
+@import 'TextArea/styles/variables';
+@import 'InlineEditText/styles/variables';
+@import 'Tooltip/styles/variables';
+@import 'Bagde/styles/variables';
+@import 'Lozenge/styles/variables';
+@import 'Navigation/styles/variables';
+@import 'Tabs/styles/variables';
+@import 'Banner/styles/variables';
+@import 'Tag/styles/variables';
+@import 'MenuItem/styles/variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+/* components styles */
+@import 'Button/styles/button';
+@import 'Check/styles/check';
+@import 'Dropdown/styles/dropdown';
+@import 'Switch/styles/switch';
+@import 'Toggle/components/ToggleButton/styles/toggleButton';
+@import 'TextField/styles/textField';
+@import 'TextArea/styles/textArea';
+@import 'InlineEditText/styles/inlineEditText.scss';
+@import 'Tag/styles/tag.scss';
+@import 'Tooltip/styles/tooltip';
+@import 'Bagde/styles/badge';
+@import 'MenuItem/styles/menuItem.scss';
+@import 'Lozenge/styles/lozenge';
+@import 'Navigation/styles/navigation';
+@import 'Tabs/styles/tabs';
+@import 'Banner/styles/banner';

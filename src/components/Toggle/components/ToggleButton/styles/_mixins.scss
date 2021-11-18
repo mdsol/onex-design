@@ -1,0 +1,29 @@
+@mixin button-size($padding-top, $padding-left, $height, $border-radius, $font-size, $line-height) {
+  padding: $padding-top $padding-left;
+  height: $height;
+  min-width: $height;
+  border-radius: $border-radius !important;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin bg-color($bg-color) {
+  background-color: $bg-color;
+  border-color: $bg-color;
+}
+
+@mixin border-radius($border-radius) {
+  &:first-child {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  &:last-child {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+}
+
+@mixin icon-size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+

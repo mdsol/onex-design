@@ -1,0 +1,117 @@
+// size variables
+$btn-height-lg: $component-height-lg;
+$btn-line-height-lg: $line-height-lg;
+$btn-icon-type-padding-lg: 0.75rem;
+$btn-icon-type-icon-size-lg: $icon-size-lg;
+
+$btn-height-sm: $component-height-sm;
+$btn-line-height-sm: $line-height-sm;
+$btn-icon-type-padding-sm: 0.5rem;
+$btn-icon-type-icon-size-sm: $icon-size-sm;
+
+$menu-border-radius-lg: $component-border-radius-lg;
+$menu-font-size-lg: $font-size-lg;
+$menu-line-height-lg: $line-height-lg;
+$menu-padding-x-lg: $dropdown-menu-padding-x-lg;
+$menu-padding-y-lg: $dropdown-menu-padding-y-lg;
+$menu-min-width-lg: $dropdown-menu-min-width-lg;
+$menu-item-padding-x-lg: $dropdown-menu-item-padding-x-lg;
+$menu-item-padding-y-lg: $dropdown-menu-item-padding-y-lg;
+
+$menu-font-size-sm: $font-size-sm;
+$menu-border-radius-sm: $component-border-radius-sm;
+$menu-line-height-sm: $line-height-sm;
+$menu-padding-x-sm: $dropdown-menu-padding-x-sm;
+$menu-padding-y-sm: $dropdown-menu-padding-y-sm;
+$menu-min-width-sm: $dropdown-menu-min-width-sm;
+$menu-item-padding-x-sm: $dropdown-menu-item-padding-x-sm;
+$menu-item-padding-y-sm: $dropdown-menu-item-padding-y-sm;
+
+$menu-item-text-color: $black;
+$menu-dropdown-border-color: $secondary;
+$menu-dropdown-disabled-text-color: $secondary-500;
+$menu-dropdown-hover-bg-color: $secondary-200;
+
+$btn-primary-bg-color: $primary;
+$btn-primary-disabled-bg-color: $secondary-500;
+$btn-primary-hover-bg-color: $primary-700;
+
+$btn-secondary-bg-color: $secondary;
+$btn-secondary-hover-bg-color: $primary-700;
+$btn-secondary-hover-text-color: $white;
+$btn-secondary-disabled-bg-color: $secondary-200;
+$btn-secondary-disabled-text-color: $secondary-500;
+
+$btn-link-text-color: $primary;
+$btn-link-hover-text-color: $primary-700;
+$btn-link-disabled-text-color: $secondary-500;
+
+$btn-icon-link-text-color: $primary;
+$btn-icon-link-hover-bg-color: $secondary-200;
+$btn-icon-link-hover-text-color: $primary-700;
+$btn-icon-link-disabled-text-color: $secondary-500;
+
+$btn-dropdown-border-color: $secondary;
+$btn-dropdown-text-color: $primary-700;
+$btn-dropdown-hover-color: $secondary-200;
+
+$c-dropdown-link-active-color: $primary;
+$c-dropdown-link-active-bg-color: $transparent;
+
+// sm
+$btn-padding-y-sm: 0.375rem;
+$btn-padding-x-sm: 0.625rem;
+$btn-font-size-sm: $font-size-sm;
+$btn-border-radius-sm: $component-border-radius-sm;
+
+//lg
+$btn-padding-y-lg: 0.625rem;
+$btn-padding-x-lg: 0.75rem;
+$btn-font-size-lg: $font-size-lg;
+$btn-border-radius-lg: $component-border-radius-lg;
+
+// bootstrap variables
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+);
+
+$btn-padding-y: $c-btn-padding-y;
+$btn-padding-x: $c-btn-padding-x;
+$btn-font-family: $font-family;
+$btn-font-size: $font-size-lg;
+$btn-line-height: $line-height-lg;
+$btn-font-weight: $font-weight-600;
+$btn-box-shadow: none;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
+$btn-disabled-opacity: 1;
+$btn-active-box-shadow: none;
+$btn-border-radius: $component-border-radius-lg;
+$btn-border-width: 0;
+
+$btn-link-color: $btn-link-text-color;
+$btn-link-hover-color: $btn-link-hover-text-color;
+$btn-link-disabled-color: $btn-link-disabled-text-color;
+$link-decoration: none;
+$link-hover-decoration: none;
+
+$dropdown-min-width: $menu-min-width-sm;
+$dropdown-padding-x: $menu-padding-x-sm;
+$dropdown-padding-y: $menu-padding-y-sm;
+$dropdown-font-size: $menu-font-size-sm;
+$dropdown-color: $menu-item-text-color;
+$dropdown-border-color: $menu-dropdown-border-color;
+$dropdown-border-radius: $menu-border-radius-sm;
+
+$dropdown-link-color: $menu-item-text-color;
+$dropdown-link-hover-color: $menu-item-text-color;
+$dropdown-link-hover-bg: $menu-dropdown-hover-bg-color;
+
+$dropdown-link-active-color: $c-dropdown-link-active-color;
+$dropdown-link-active-bg: $c-dropdown-link-active-bg-color;
+
+$dropdown-link-disabled-color: $menu-dropdown-disabled-text-color;
+
+$dropdown-item-padding-y: $menu-item-padding-x-sm;
+$dropdown-item-padding-x: $menu-item-padding-x-sm;

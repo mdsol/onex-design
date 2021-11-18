@@ -1,0 +1,70 @@
+@mixin size($font-size, $line-height, $height, $icon-size, $border-radius) {
+  height: $height;
+  min-width: $height;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+
+  .c-lozenge__icon svg path {
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+@mixin background-color($body-color, $text-color: null, $border-color: null) {
+  background-color: $body-color;
+
+  @if $text-color {
+    color: $text-color;
+  }
+
+  @if $border-color {
+    border: 1px solid $border-color;
+  }
+}
+
+@mixin lozenge-subtle-color() {
+  $types: 'default' $c-lozenge-default-subtle-bg-color $c-lozenge-default-subtle-border-color,
+          'success' $c-lozenge-success-subtle-bg-color $c-lozenge-success-subtle-border-color,
+          'warning' $c-lozenge-warning-subtle-bg-color $c-lozenge-warning-subtle-border-color,
+          'error' $c-lozenge-error-subtle-bg-color $c-lozenge-error-subtle-border-color,
+          'info' $c-lozenge-info-subtle-bg-color $c-lozenge-info-subtle-border-color;
+
+  @each $type, $bg-color, $border-color in $types {
+    &.c-lozenge--type-#{$type} {
+      @include background-color(#{$bg-color}, #{$c-lozenge-subtle-text-color}, #{$border-color});
+
+      .c-lozenge__icon svg path {
+        fill: $border-color;
+      }
+    }
+  }
+}
+
+@mixin lozenge-bold-color() {
+  $types: 'default' $c-lozenge-default-bold-bg-color $c-lozenge-default-bold-text-color,
+          'success' $c-lozenge-success-bold-bg-color $c-lozenge-success-bold-text-color,
+          'warning' $c-lozenge-warning-bold-bg-color $c-lozenge-warning-bold-text-color,
+          'error' $c-lozenge-error-bold-bg-color $c-lozenge-error-bold-text-color,
+          'info' $c-lozenge-info-bold-bg-color $c-lozenge-info-bold-text-color;
+
+  @each $type, $bg-color, $text-color in $types {
+    &.c-lozenge--type-#{$type} {
+      @include background-color(#{$bg-color}, #{$text-color});
+    }
+  }
+}
+
+@mixin lozenge-icon-color() {
+  $types: 'default' $c-lozenge-default-bold-bg-color,
+          'success' $c-lozenge-success-bold-bg-color,
+          'warning' $c-lozenge-warning-bold-bg-color,
+          'error' $c-lozenge-error-bold-bg-color,
+          'info' $c-lozenge-info-bold-bg-color;
+
+  @each $type, $bg-color, $text-color in $types {
+    &.c-lozenge--type-#{$type} {
+      @include background-color(#{$bg-color});
+    }
+  }
+}

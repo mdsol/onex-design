@@ -1,0 +1,47 @@
+.c-edit-text {
+    position: relative;
+    &__icon {
+        display: none;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.83%;
+    }
+    &__input {
+        border: none;
+        &:hover {
+            background-color: $c-inline-edit-hover-bg-color;
+        }
+        &:hover + .c-edit-text__icon {
+            display: inline-flex;
+        }
+        &__active {
+            border-color: $c-inline-edit-active-border-color;
+        }
+        &__disabled {
+            &:hover + .c-edit-text__icon {
+                display: none;
+            }
+            color: $c-inline-edit-disabled-text-color;
+        }
+    }
+}
+
+.status-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+    &__complete {
+        margin-right: 5px;
+        padding: 0.375rem;
+        justify-content: center;
+    }
+    &__cancel {
+        padding: 0.375rem;
+        justify-content: center;
+        &:hover svg {
+            fill: $c-inline-edit-hover-svg-color;
+        }
+    }
+}

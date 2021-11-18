@@ -1,0 +1,26 @@
+@mixin bg-color($bg-color) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+}
+
+@mixin icon-size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin btn-size($width, $height: $width) {
+    min-width: $width;
+    height: $height;
+};
+
+@mixin btn-link-decorator-size($padding-left, $padding-bottom, $icon-size, $gap-size) {
+    .c-btn__decorator {
+        width: calc(100% - #{$padding-left} * 2);
+        bottom: $padding-bottom;
+        right: $padding-left;
+    }
+
+    & > svg ~ .c-btn__decorator {
+        width: calc(100% - #{$padding-left} * 2 - #{$icon-size} - #{$gap-size});
+    }
+}

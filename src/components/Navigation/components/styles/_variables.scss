@@ -1,0 +1,35 @@
+$c-nav-item-font-size: $font-size-lg;
+$c-nav-item-line-height: $line-height-lg;
+$c-nav-item-font-weight: $font-weight-600;
+
+$c-nav-item-padding-x: 0.625rem;
+$c-nav-item-padding-y: 0.875rem;
+
+$c-nav-item-text-color: $primary-700;
+$c-nav-item-hover-text-color: $primary-700;
+$c-nav-item-disabled-text-color: $secondary-500;
+$c-nav-item-active-text-color: $primary;
+$c-nav-item-active-bg-color: $transparent;
+$c-nav-item-underline-height: 0.25rem;
+$c-nav-item-underline-height-border-radius: 0.125rem;
+
+$c-nav-item-tabs-border-color: $transparent;
+$c-nav-item-tabs-border-width: 0;
+$c-nav-item-tabs-border-radius: 0;
+
+/* bootstrap variables */
+$nav-link-padding-y: $c-nav-item-padding-y;
+$nav-link-padding-x: $c-nav-item-padding-x;
+$nav-link-font-size: $c-nav-item-font-size;
+$nav-link-font-weight: $c-nav-item-font-weight;
+$nav-link-color: $c-nav-item-text-color;
+$nav-link-hover-color: $c-nav-item-hover-text-color;
+$nav-link-disabled-color: $c-nav-item-disabled-text-color;
+
+$nav-tabs-border-color: $c-nav-item-tabs-border-color;
+$nav-tabs-border-width: $c-nav-item-tabs-border-width;
+$nav-tabs-border-radius: $c-nav-item-tabs-border-radius;
+$nav-tabs-link-hover-border-color: $c-nav-item-tabs-border-color;
+$nav-tabs-link-active-color: $c-nav-item-active-text-color;
+$nav-tabs-link-active-bg: $c-nav-item-active-bg-color;
+$nav-tabs-link-active-border-color: $c-nav-item-tabs-border-color;
