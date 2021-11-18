@@ -28,6 +28,7 @@
     "lint:fix": "eslint ./src --fix",
     "bs-css": "node src/tools/bs-css.js",
     "storybook": "start-storybook -p 6006",
+    "deploy:storybook": "storybook-to-ghpages",
     "update:bl": "browserslist@latest --update-db"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "@storybook/builder-webpack5": "^6.3.12",
     "@storybook/manager-webpack5": "^6.3.12",
     "@storybook/react": "^6.3.12",
+    "@storybook/storybook-deployer": "^2.8.10",
     "@storybook/ui": "^6.3.12",
     "bootstrap": "^5.1.3",
     "browserslist": "^4.18.1",
