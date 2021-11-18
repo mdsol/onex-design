@@ -1,0 +1,97 @@
+.c-tag {
+  box-sizing: border-box;
+  padding: 0.25rem 0.375rem 0.25rem 0.25rem;
+  display: flex;
+  align-items: center;
+  background-color: $secondary-200;
+  border: none;
+
+  &:hover {
+    background-color: $primary-700;
+    color: $white;
+  }
+
+  &--lg {
+    height: $c-tag-height-lg;
+
+    .c-tag__close {
+      width: $c-tag-btn-size-lg;
+      height: $c-tag-btn-size-lg;
+    }
+  }
+
+  &--sm {
+    height: $c-tag-height-md;
+
+    .c-tag__close {
+      width: $c-tag-btn-size-sm;
+      height: $c-tag-btn-size-sm;
+    }
+  }
+
+  &--default {
+    border-radius: $component-border-radius-sm;
+  }
+
+  &--rounded {
+    border-radius: $c-tag-height-lg;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.25rem;
+    border: 0;
+    padding: 0;
+    background-color: inherit;
+
+    &__icon {
+      height: $c-tag-close-icon-size;
+      width: $c-tag-close-icon-size;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $c-tag-img-size;
+    height: $c-tag-img-size;
+    margin-right: 0.25rem;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  &:hover .c-tag__close__icon {
+    fill: $btn-secondary-hover-text-color;
+  }
+}
+
+.c-tag--selected {
+  border: 1px solid $primary;
+
+  &:hover {
+    background-color: $secondary-200;
+    color: black;
+  }
+
+  &:hover .c-tag__close__icon {
+    fill: black;
+  }
+}
+
+.c-tag--link {
+  &:hover {
+    background-color: $secondary-200;
+    color: $primary;
+  }
+
+  &:hover .c-tag__close {
+    fill: black;
+  }
+
+  &:hover a {
+    text-decoration: underline;
+  }
+}

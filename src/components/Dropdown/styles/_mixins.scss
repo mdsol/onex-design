@@ -1,0 +1,31 @@
+@mixin bg-color($bg-color) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+}
+
+@mixin icon-size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin btn-size($line-height, $width, $height: $width) {
+    min-width: $width;
+    height: $height;
+    line-height: $line-height;
+};
+
+@mixin btn-link-before-size($padding-left, $padding-bottom) {
+    &::before {
+        width: calc(92% - #{$padding-left} * 2);
+        bottom: $padding-bottom;
+        left: $padding-left;
+    }
+}
+
+@mixin dropdown-menu($border-radius, $font-size, $line-height, $padding-x, $padding-y, $min-width) {
+    border-radius: $border-radius;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $padding-y $padding-x;
+    min-width: $min-width;
+}

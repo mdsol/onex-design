@@ -1,0 +1,11 @@
+@mixin size($checkbox-size, $font-size, $line-height) {
+  .form-check-input {
+    width: $checkbox-size;
+    height: $checkbox-size;
+  }
+
+  .form-check-label {
+    font-size: $font-size;
+    line-height: $line-height;
+  }
+}

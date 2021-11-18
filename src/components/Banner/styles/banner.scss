@@ -1,0 +1,46 @@
+@import 'mixins';
+
+.c-banner {
+  @include banner-color-variant();
+
+  &__block {
+    overflow: hidden;
+    height: $c-banner-height;
+  }
+
+  &__header {
+    height: 100%;
+    padding-right: $c-banner-padding-right-x;
+
+    .c-banner__btn-close {
+      min-width: $c-btn-close-size;
+      height: $c-btn-close-size;
+      border-radius: 100%;
+
+      svg {
+        fill: $c-btn-close-icon-color;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: $c-icon-wrapper-padding-x;
+
+    svg {
+      width: $c-banner-icon-size;
+      height: $c-banner-icon-size;
+    }
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 2;
+    padding: 0 $c-message-padding-x;
+  }
+}

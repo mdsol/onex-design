@@ -1,0 +1,21 @@
+@mixin tab-size($height, $font-size, $line-height, $padding-y, $line-hover-height) {
+  .nav-link {
+    height: $height;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $padding-y 0;
+
+    &::before {
+      height: $line-hover-height;
+      border-radius: $line-hover-height;
+    }
+  }
+}
+
+@mixin dropdown-menu($border-radius, $font-size, $line-height, $padding-x, $padding-y, $min-width) {
+  border-radius: $border-radius;
+  font-size: $font-size;
+  line-height: $line-height;
+  padding: $padding-y $padding-x;
+  min-width: $min-width;
+}

@@ -1,0 +1,64 @@
+// size variables
+$btn-icon-size-lg: $icon-size-lg;
+$btn-icon-size-sm: $icon-size-sm;
+$btn-icon-size-only-icon-lg: 1rem;
+$btn-height-lg: $component-height-lg;
+$btn-height-sm: $component-height-sm;
+$btn-size-gap: 0.25rem;
+
+// primary variables
+$btn-primary-disabled-bg-color: $secondary-500;
+$btn-primary-hover-bg-color: $primary-700;
+
+// secondary variables
+$btn-secondary-hover-bg-color: $primary-700;
+$btn-secondary-hover-text-color: $white;
+$btn-secondary-disabled-bg-color: $secondary-200;
+$btn-secondary-disabled-text-color: $secondary-500;
+
+// link variables
+$btn-link-hover-text-color: $primary-700;
+
+// icon-link variables
+$btn-icon-link-text-color: $primary;
+$btn-icon-link-hover-bg-color: $secondary-200;
+$btn-icon-link-hover-text-color: $primary-700;
+$btn-icon-link-disabled-text-color: $secondary-500;
+
+// sm
+$btn-padding-y-sm: 0.375rem;
+$btn-padding-x-sm: 0.5rem;
+$btn-font-size-sm: $font-size-sm;
+$btn-border-radius-sm: $component-border-radius-sm;
+
+//lg
+$btn-padding-y-lg: 0.625rem;
+$btn-padding-x-lg: 0.75rem;
+$btn-font-size-lg: $font-size-lg;
+$btn-border-radius-lg: $component-border-radius-lg;
+
+// bootstrap variables
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+);
+
+$btn-padding-y: $c-btn-padding-y;
+$btn-padding-x: $c-btn-padding-x;
+$btn-font-family: $font-family;
+$btn-font-size: $font-size-lg;
+$btn-line-height: $line-height-lg;
+$btn-font-weight: $font-weight-600;
+$btn-box-shadow: none;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
+$btn-disabled-opacity: 1;
+$btn-active-box-shadow: none;
+$btn-border-radius: $component-border-radius-lg;
+$btn-border-width: 0;
+
+$btn-link-color: $primary;
+$btn-link-hover-color: $primary-700;
+$btn-link-disabled-color: $secondary-500;
+$link-decoration: none;
+$link-hover-decoration: none;

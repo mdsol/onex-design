@@ -1,0 +1,16 @@
+$c-tooltip-border-radius: 5px;
+$c-tooltip-font-size: $font-size-lg;
+$c-tooltip-line-height: $line-height-lg;
+$c-tooltip-max-width: 20rem;
+
+/* bootstrap variables */
+$tooltip-font-size: $c-tooltip-font-size;
+$tooltip-bg: $black;
+$tooltip-border-radius: $c-tooltip-border-radius;
+$tooltip-opacity: 0.7;
+$tooltip-padding-y: 0.5rem;
+$tooltip-padding-x: 0.75rem;
+$tooltip-max-width: $c-tooltip-max-width;
+
+$tooltip-arrow-width: 0.75rem;
+$tooltip-arrow-height: 0.375rem;

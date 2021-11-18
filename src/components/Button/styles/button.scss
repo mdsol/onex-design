@@ -1,0 +1,103 @@
+@import '_mixins';
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  gap: $btn-size-gap;
+  .c-btn__decorator {
+    display: none;
+  }
+
+  /* primary */
+  &.btn-primary:disabled,
+  &.btn-primary.disabled {
+    @include bg-color($btn-primary-disabled-bg-color);
+  }
+
+  &.btn-primary.focus:hover,
+  &.btn-primary:hover {
+    @include bg-color($btn-primary-hover-bg-color);
+  }
+
+  /* secondary */
+  &.btn-secondary:hover {
+    @include bg-color($btn-secondary-hover-bg-color);
+    color: $btn-secondary-hover-text-color;
+  }
+
+  &.btn-secondary:disabled,
+  &.btn-secondary.disabled {
+    @include bg-color($btn-secondary-disabled-bg-color);
+    color: $btn-secondary-disabled-text-color;
+  }
+
+  /* link */
+  &.btn-link {
+    font-weight: $btn-font-weight;
+  }
+
+  &.btn-link:hover,
+  &.btn-link.hover {
+    color: $btn-link-hover-text-color;
+
+    & > .c-btn__decorator {
+      display: block;
+      position: absolute;
+      border-bottom: 1px solid $btn-link-hover-text-color;
+    }
+  }
+
+  &.btn-lg.btn-link {
+    @include btn-link-decorator-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-icon-size-lg, $btn-size-gap);
+  }
+
+  &.btn-sm.btn-link {
+    @include btn-link-decorator-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-icon-size-sm, $btn-size-gap);
+  }
+
+  /* icon-link */
+  &.btn-icon-link {
+    svg {
+      fill: $btn-icon-link-hover-text-color;
+    }
+  }
+
+  &.btn-icon-link:hover,
+  &.btn-icon-link.hover {
+    @include bg-color($btn-icon-link-hover-bg-color);
+
+    svg {
+      fill: $btn-icon-link-hover-text-color;
+    }
+  }
+
+  &.btn-icon-link:disabled,
+  &.btn-icon-link.disabled {
+    svg {
+      fill: $btn-icon-link-disabled-text-color;
+    }
+  }
+
+  &.btn-lg {
+    @include btn-size($btn-height-lg);
+  }
+
+  &.btn-sm {
+    @include btn-size($btn-height-sm);
+  }
+
+  & svg,
+  &.btn-lg svg {
+    @include icon-size($btn-icon-size-lg);
+  }
+
+  &.btn-sm svg {
+    @include icon-size($btn-icon-size-sm);
+  }
+
+  /* only icon child */
+  & svg:only-child {
+    margin: 0.125rem 0;
+  }
+}
