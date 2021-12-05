@@ -4,96 +4,123 @@
   display: inline-flex;
   align-items: center;
   position: relative;
-  gap: $btn-size-gap;
+  gap: $c-btn-size-gap;
+
   .c-btn__decorator {
     display: none;
   }
 
   /* primary */
+  &.btn-primary {
+    svg path {
+      fill: $c-btn-primary-text-color;
+    }
+  }
+
   &.btn-primary:disabled,
   &.btn-primary.disabled {
-    @include bg-color($btn-primary-disabled-bg-color);
+    @include bg-color($c-btn-primary-disabled-bg-color);
   }
 
   &.btn-primary.focus:hover,
   &.btn-primary:hover {
-    @include bg-color($btn-primary-hover-bg-color);
+    @include bg-color($c-btn-primary-hover-bg-color);
   }
 
   /* secondary */
+  &.btn-secondary {
+    svg path {
+      fill: $c-btn-secondary-hover-bg-color;
+    }
+  }
+
   &.btn-secondary:hover {
-    @include bg-color($btn-secondary-hover-bg-color);
-    color: $btn-secondary-hover-text-color;
+    @include bg-color($c-btn-secondary-hover-bg-color);
+    color: $c-btn-secondary-hover-text-color;
+
+    svg path {
+      fill: $c-btn-secondary-hover-text-color;
+    }
   }
 
   &.btn-secondary:disabled,
   &.btn-secondary.disabled {
-    @include bg-color($btn-secondary-disabled-bg-color);
-    color: $btn-secondary-disabled-text-color;
+    @include bg-color($c-btn-secondary-disabled-bg-color);
+    color: $c-btn-secondary-disabled-text-color;
   }
 
   /* link */
   &.btn-link {
     font-weight: $btn-font-weight;
+
+    svg path {
+      fill: $c-btn-icon-link-text-color;
+    }
   }
 
   &.btn-link:hover,
   &.btn-link.hover {
-    color: $btn-link-hover-text-color;
+    color: $c-btn-link-hover-text-color;
+
+    svg path {
+      fill: $c-btn-link-hover-text-color;
+    }
 
     & > .c-btn__decorator {
       display: block;
       position: absolute;
-      border-bottom: 1px solid $btn-link-hover-text-color;
+      border-bottom: 1px solid $c-btn-link-hover-text-color;
     }
   }
 
   &.btn-lg.btn-link {
-    @include btn-link-decorator-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-icon-size-lg, $btn-size-gap);
+    @include btn-link-decorator-size($c-btn-padding-x-lg, $c-btn-padding-y-lg, $c-btn-icon-size-lg, $c-btn-size-gap);
   }
 
   &.btn-sm.btn-link {
-    @include btn-link-decorator-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-icon-size-sm, $btn-size-gap);
+    @include btn-link-decorator-size($c-btn-padding-x-sm, $c-btn-padding-y-sm, $c-btn-icon-size-sm, $c-btn-size-gap);
   }
 
   /* icon-link */
   &.btn-icon-link {
-    svg {
-      fill: $btn-icon-link-hover-text-color;
+    svg path {
+      fill: $c-btn-icon-link-hover-text-color;
     }
   }
 
   &.btn-icon-link:hover,
   &.btn-icon-link.hover {
-    @include bg-color($btn-icon-link-hover-bg-color);
+    @include bg-color($c-btn-icon-link-hover-bg-color);
 
-    svg {
-      fill: $btn-icon-link-hover-text-color;
+    svg path {
+      fill: $c-btn-icon-link-hover-text-color;
     }
   }
 
   &.btn-icon-link:disabled,
   &.btn-icon-link.disabled {
-    svg {
-      fill: $btn-icon-link-disabled-text-color;
+    svg path {
+      fill: $c-btn-icon-link-disabled-text-color;
     }
   }
 
   &.btn-lg {
-    @include btn-size($btn-height-lg);
+    @include btn-size($c-btn-height-lg);
   }
 
   &.btn-sm {
-    @include btn-size($btn-height-sm);
+    @include btn-size($c-btn-height-sm);
+
+    padding: $c-btn-padding-y-sm $c-btn-padding-x-sm;
   }
 
   & svg,
   &.btn-lg svg {
-    @include icon-size($btn-icon-size-lg);
+    @include icon-size($c-btn-icon-size-lg);
   }
 
   &.btn-sm svg {
-    @include icon-size($btn-icon-size-sm);
+    @include icon-size($c-btn-icon-size-sm);
   }
 
   /* only icon child */

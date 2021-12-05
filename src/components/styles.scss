@@ -16,9 +16,17 @@
 @import 'Lozenge/styles/variables';
 @import 'Navigation/styles/variables';
 @import 'Tabs/styles/variables';
-@import 'Banner/styles/variables';
+@import 'Select/styles/variables';
+@import 'Toast/styles/variables';
 @import 'Tag/styles/variables';
 @import 'MenuItem/styles/variables';
+@import 'Avatar/styles/variables';
+@import 'InlineEditSelect/styles/variables';
+@import 'Pagination/styles/variables';
+@import 'Table/styles/variables';
+@import 'ExpansionPanel/styles/variables';
+@import 'Typography/styles/variables';
+
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -30,12 +38,20 @@
 @import 'Toggle/components/ToggleButton/styles/toggleButton';
 @import 'TextField/styles/textField';
 @import 'TextArea/styles/textArea';
-@import 'InlineEditText/styles/inlineEditText.scss';
+@import 'InlineEditText/styles/inlineEditText';
 @import 'Tag/styles/tag.scss';
 @import 'Tooltip/styles/tooltip';
 @import 'Bagde/styles/badge';
-@import 'MenuItem/styles/menuItem.scss';
+@import 'MenuItem/styles/menuItem';
 @import 'Lozenge/styles/lozenge';
 @import 'Navigation/styles/navigation';
+@import 'Select/styles/select.scss';
 @import 'Tabs/styles/tabs';
-@import 'Banner/styles/banner';
+@import 'Toast/styles/toast';
+@import 'Avatar/styles/avatar';
+@import 'Pagination/styles/pagination';
+@import 'InlineEditSelect/styles/inlineEditSelect';
+@import 'InlineEditSelect/styles/inlineEditSelect';
+@import 'Table/styles/index';
+@import 'ExpansionPanel/styles/expansionPanel';
+@import 'Typography/styles/typography';

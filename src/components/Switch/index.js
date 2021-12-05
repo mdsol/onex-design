@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CustomSwitch = React.forwardRef((props, ref) => {
-    const { className, disabled, checked, label, id, onChange } = props;
+    const { className, disabled, checked, label, id, onChange, dataTestId } = props;
     const switchClassNames = classNames('c-switch', {
         [className]: className,
     });
@@ -18,6 +18,7 @@ const CustomSwitch = React.forwardRef((props, ref) => {
             label={label}
             id={id}
             onChange={onChange}
+            data-test-id={dataTestId}
         />
     );
 });
@@ -29,6 +30,7 @@ CustomSwitch.propTypes = {
     label: PropTypes.string,
     id: PropTypes.string.isRequired,
     onChange: PropTypes.func,
+    dataTestId: PropTypes.string,
 };
 
 CustomSwitch.defaultProps = {
@@ -37,6 +39,7 @@ CustomSwitch.defaultProps = {
     checked: false,
     label: undefined,
     onChange: undefined,
+    dataTestId: undefined,
 };
 
 export default CustomSwitch;

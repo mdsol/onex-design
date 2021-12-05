@@ -22,6 +22,7 @@ const TextArea = React.forwardRef((props, ref) => {
         required,
         setError,
         rows,
+        dataTestId,
     } = props;
 
     const inputClassNames = classNames('c-text-area', {
@@ -65,7 +66,7 @@ const TextArea = React.forwardRef((props, ref) => {
     }, [isError]);
 
     return (
-        <Form.Group className={inputClassNames} controlId={controlId}>
+        <Form.Group className={inputClassNames} controlId={controlId} data-test-id={dataTestId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <Form.Control
                 ref={ref}
@@ -120,6 +121,7 @@ TextArea.propTypes = {
     rows: PropTypes.number,
     onChange: PropTypes.func,
     setError: PropTypes.func,
+    dataTestId: PropTypes.string,
 };
 
 TextArea.defaultProps = {
@@ -140,6 +142,7 @@ TextArea.defaultProps = {
     onChange: undefined,
     setError: undefined,
     rows: undefined,
+    dataTestId: undefined,
 };
 
 export default TextArea;

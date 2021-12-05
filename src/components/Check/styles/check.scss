@@ -31,7 +31,7 @@
         background-color: $check-input-checked-bg-color;
       }
 
-      &:indeterminate {
+      &[type=checkbox]:indeterminate {
         background-image: escape-svg($form-check-input-indeterminate-bg-image-hover);
       }
     }

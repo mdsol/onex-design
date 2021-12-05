@@ -5,18 +5,6 @@
 @import './colors.scss';
 @import './sizes.scss';
 
-$primary: map.get($main-colors, 'primary');
-$secondary: map.get($main-colors, 'secondary');
-
-$font-family-sans-serif: 'Noto Sans', Helvetica, sans-serif;
-$font-size-root: '16px';
-$font-size-base: 1.125rem !default;
-
-$body-bg: #fff;
-$border-radius: 0.5rem;
-$box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-$box-shadow-inset: inset $box-shadow;
-
 $grid-gutter-width: 2rem;
 $grid-breakpoints: (
     xs: 0,
@@ -45,35 +33,29 @@ $spacers: (
     10: $spacer * 10.5,
 );
 
-// Typography
-$line-height-base: 1.5 !default;
-$line-height-sm: 1.25 !default;
-$line-height-lg: 2 !default;
-$h1-font-size: 2.5rem;
-$h2-font-size: 1.75rem;
-$h3-font-size: 1.5rem;
-$h4-font-size: 1.25rem;
-$h5-font-size: 1.125rem;
-$h6-font-size: 0.88rem;
-$headings-margin-bottom: 1rem;
-$headings-line-height: 1.5 !default;
-
+@import '../components/Avatar/styles/variables';
 @import '../components/Badge/styles/variables';
-@import '../components/Banner/styles/variables';
 @import '../components/Button/styles/variables';
 @import '../components/Check/styles/variables';
 @import '../components/Dropdown/styles/variables';
+@import '../components/ExpansionPanel/styles/variables';
+@import '../components/InlineEditSelect/styles/variables';
 @import '../components/InlineEditText/styles/variables';
 @import '../components/Lozenge/styles/variables';
 @import '../components/MenuItem/styles/variables';
 @import '../components/Navigation/styles/variables';
+@import '../components/Pagination/styles/variables';
+@import '../components/Select/styles/variables';
 @import '../components/Switch/styles/variables';
+@import '../components/Table/styles/variables';
 @import '../components/Tabs/styles/variables';
 @import '../components/Tag/styles/variables';
 @import '../components/TextArea/styles/variables';
 @import '../components/TextField/styles/variables';
+@import '../components/Toast/styles/variables';
 @import '../components/Toggle/components/ToggleButton/styles/variables';
 @import '../components/Tooltip/styles/variables';
+@import '../components/Typography/styles/variables';
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 

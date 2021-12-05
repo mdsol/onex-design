@@ -1,0 +1,10 @@
+@mixin expansionPanelToggle-layout($justify-content,$align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin bg-color($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}

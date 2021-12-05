@@ -1,0 +1,19 @@
+@mixin toast-color-variant() {
+  $types: 'success' $c-toast-success-bg-color $c-toast-success-main-color,
+          'info' $c-toast-info-bg-color $c-toast-info-main-color,
+          'warning' $c-toast-warning-bg-color $c-toast-warning-main-color,
+          'error' $c-toast-error-bg-color $c-toast-error-main-color;
+
+  @each $type, $bg-color, $main-color in $types {
+    &.c-toast--variant-#{$type} {
+      .bg-#{$type} {
+        background-color: $bg-color;
+        border-color: $main-color;
+      }
+
+      .c-toast__icon {
+        background-color: $main-color;
+      }
+    }
+  }
+}

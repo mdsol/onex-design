@@ -18,7 +18,7 @@ const IconVariants = {
     error: <ErrorFillIcon />,
 };
 
-const Banner = React.forwardRef((props, ref) => {
+const CustomToast = React.forwardRef((props, ref) => {
     const {
         className,
         animation,
@@ -30,32 +30,38 @@ const Banner = React.forwardRef((props, ref) => {
         position,
         showDefaultIcon,
         icon,
-        message,
+        children,
         onClose,
+        dataTestId,
     } = props;
 
-    const bannerClassNames = classNames('c-banner', `c-banner--variant-${variant}`, {
+    const toastClassNames = classNames('c-toast', `c-toast--variant-${variant}`, {
         [className]: className,
     });
 
     return (
-        <ToastContainer ref={ref} className={bannerClassNames} position={position}>
+        <ToastContainer
+            ref={ref}
+            className={toastClassNames}
+            position={position}
+            data-test-id={dataTestId}
+        >
             <Toast
-                className="c-banner__block"
+                className="c-toast__block"
                 show={show}
                 delay={delay}
                 animation={animation}
                 autohide={autohide}
                 bg={variant}
             >
-                <Toast.Header className="c-banner__header" closeButton={false}>
+                <Toast.Header className="c-toast__header" closeButton={false}>
                     {(showDefaultIcon || icon) && (
-                        <div className="c-banner__icon">{icon || IconVariants[variant]}</div>
+                        <div className="c-toast__icon">{icon || IconVariants[variant]}</div>
                     )}
-                    <div className="c-banner__message">{message}</div>
+                    <div className="c-toast__message">{children}</div>
                     {closeButton && (
                         <Button
-                            className="c-banner__btn-close"
+                            className="c-toast__btn-close"
                             variant="icon-link"
                             onClick={onClose}
                         >
@@ -68,7 +74,7 @@ const Banner = React.forwardRef((props, ref) => {
     );
 });
 
-Banner.propTypes = {
+CustomToast.propTypes = {
     className: PropTypes.string,
     animation: PropTypes.bool,
     autohide: PropTypes.bool,
@@ -89,11 +95,12 @@ Banner.propTypes = {
     ]),
     icon: PropTypes.node,
     showDefaultIcon: PropTypes.bool,
-    message: PropTypes.string,
     onClose: PropTypes.func,
+    dataTestId: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
-Banner.defaultProps = {
+CustomToast.defaultProps = {
     className: undefined,
     animation: true,
     autohide: true,
@@ -104,8 +111,9 @@ Banner.defaultProps = {
     position: 'top-end',
     icon: undefined,
     showDefaultIcon: true,
-    message: undefined,
     onClose: undefined,
+    dataTestId: undefined,
+    children: undefined,
 };
 
-export default Banner;
+export default CustomToast;

@@ -1,0 +1,12 @@
+.c-table-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem 1rem 0;
+}
+
+.c-table-wrap--filled {
+  .c-table-control {
+    padding: 1rem;
+  }
+}

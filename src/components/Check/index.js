@@ -4,7 +4,19 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Check = React.forwardRef((props, ref) => {
-    const { id, className, checked, disabled, indeterminate, size, label, type, onChange } = props;
+    const {
+        id,
+        className,
+        checked,
+        defaultChecked,
+        disabled,
+        indeterminate,
+        size,
+        type,
+        dataTestId,
+        children,
+        onChange,
+    } = props;
     const checkboxRef = useRef();
     const formGroupClassNames = classNames('с-check', `c-check--size-${size}`, {
         [className]: className,
@@ -16,41 +28,51 @@ const Check = React.forwardRef((props, ref) => {
     }, [indeterminate]);
 
     return (
-        <Form.Group controlId={id} className={formGroupClassNames} ref={ref}>
+        <Form.Group
+            controlId={id}
+            className={formGroupClassNames}
+            ref={ref}
+            data-test-id={dataTestId}
+        >
             <Form.Check.Input
                 ref={checkboxRef}
                 type={type}
                 id={id}
                 disabled={disabled}
                 checked={checked}
+                defaultChecked={defaultChecked}
                 onChange={onChange}
             />
-            {label && <Form.Check.Label>{label}</Form.Check.Label>}
+            {children && <Form.Check.Label>{children}</Form.Check.Label>}
         </Form.Group>
     );
 });
 
 Check.propTypes = {
     className: PropTypes.string,
+    defaultChecked: PropTypes.bool,
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
     size: PropTypes.oneOf(['lg', 'sm']),
     type: PropTypes.oneOf(['checkbox', 'radio']),
-    label: PropTypes.string,
+    dataTestId: PropTypes.string,
     id: PropTypes.string.isRequired,
     onChange: PropTypes.func,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 Check.defaultProps = {
     className: undefined,
+    defaultChecked: false,
     checked: false,
     disabled: false,
     indeterminate: false,
     size: 'sm',
     type: 'checkbox',
-    label: undefined,
+    dataTestId: undefined,
     onChange: undefined,
+    children: undefined,
 };
 
 export default Check;

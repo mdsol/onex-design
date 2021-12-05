@@ -14,6 +14,7 @@ const CustomToggleButtonGroup = (props) => {
         defaultValue,
         name,
         variant,
+        dataTestId,
     } = props;
 
     const buttonClassNames = classNames('c-toggle-btn-group', `c-toggle-btn-group--${variant}`, {
@@ -30,6 +31,7 @@ const CustomToggleButtonGroup = (props) => {
             value={value}
             name={name}
             defaultValue={defaultValue}
+            data-test-id={dataTestId}
         >
             {children}
         </ToggleButtonGroup>
@@ -55,6 +57,7 @@ CustomToggleButtonGroup.propTypes = {
         PropTypes.string,
     ]),
     name: PropTypes.string.isRequired,
+    dataTestId: PropTypes.string,
 };
 
 CustomToggleButtonGroup.defaultProps = {
@@ -67,6 +70,7 @@ CustomToggleButtonGroup.defaultProps = {
     value: undefined,
     variant: 'tab',
     defaultValue: undefined,
+    dataTestId: undefined,
 };
 
 export default CustomToggleButtonGroup;

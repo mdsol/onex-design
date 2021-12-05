@@ -10,6 +10,9 @@ import PenEditIcon from './PenEdit';
 import SearchIcon from './SearchIcon';
 import WarningTriangleFillIcon from './WarningTriangleFillIcon';
 import XIcon from './XIcon';
+import PersonIcon from './PersonIcon';
+import CameraFillIcon from './CameraFillIcon';
+import ChevronDownIcon from './ChevronDownIcon';
 
 export {
     CheckIcon,
@@ -24,4 +27,7 @@ export {
     SearchIcon,
     WarningTriangleFillIcon,
     XIcon,
+    PersonIcon,
+    CameraFillIcon,
+    ChevronDownIcon,
 };

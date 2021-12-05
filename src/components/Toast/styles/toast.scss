@@ -1,18 +1,21 @@
 @import 'mixins';
 
-.c-banner {
-  @include banner-color-variant();
+.c-toast {
+  @include toast-color-variant();
 
   &__block {
     overflow: hidden;
-    height: $c-banner-height;
+    height: $c-toast-height;
   }
 
   &__header {
     height: 100%;
-    padding-right: $c-banner-padding-right-x;
+    padding-right: $c-toast-padding-right-x;
 
-    .c-banner__btn-close {
+    .c-toast__btn-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-width: $c-btn-close-size;
       height: $c-btn-close-size;
       border-radius: 100%;
@@ -31,8 +34,8 @@
     padding: $c-icon-wrapper-padding-x;
 
     svg {
-      width: $c-banner-icon-size;
-      height: $c-banner-icon-size;
+      width: $c-toast-icon-size;
+      height: $c-toast-icon-size;
     }
   }
 

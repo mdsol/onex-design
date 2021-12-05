@@ -1,0 +1,41 @@
+$btn-layout-justify-content: space-between;
+$btn-layout-align-items: center;
+
+$btn-toggle-border-radius: $component-border-radius-lg;
+$btn-toggle-border-color: $secondary;
+$btn-toggle-bg-color: $white;
+$btn-toggle-hover-bg-color: $secondary-100;
+$btn-toggle-color: $black;
+$btn-toggle-disabled-color: $secondary-500;
+
+$btn-toggle-icon-color: $primary-700;
+$btn-toggle-icon-disabled-color: $secondary-500;
+
+$btn-toggle-font-family: $font-family;
+$btn-toggle-font-size: $font-size-lg;
+$btn-toggle-font-weight: $font-weight-600;
+$btn-toggle-line-height: $line-height-lg;
+
+$btn-toggle-min-width: 14.25rem;
+$btn-toggle-padding: 0.5rem;
+$btn-toggle-padding-right: 1.075rem;
+
+$menu-min-width: 14.25rem;
+$menu-border-radius: $component-border-radius-lg;
+$menu-font-size: $font-size-lg;
+$menu-line-height: $line-height-lg;
+
+$menu-item-padding-x: 0.75rem;
+$menu-item-padding-y: 0.875rem;
+
+$menu-item-icon-size: 1rem;
+$menu-item-icon-margin-x: 0.5rem;
+$menu-item-hover-bg-color: $secondary-100;
+$menu-item-unavailable-bg-color: $white;
+$menu-item-active-color: $primary-700;
+$menu-item-with-icon-active-color: $primary;
+$menu-item-disabled-color: $secondary-500;
+$menu-item-font-weight: $font-weight-600;
+$menu-item-unavailable-font-weight: 400;
+
+

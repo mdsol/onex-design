@@ -13,10 +13,26 @@ import Badge from './Bagde';
 import MenuItem from './MenuItem';
 import Lozenge from './Lozenge';
 import Navigation from './Navigation';
+import Select from './Select';
 import Tabs from './Tabs';
-import Banner from './Banner';
+import Toast from './Toast';
+import Avatar from './Avatar';
+import InlineEditSelect from './InlineEditSelect';
+import Pagination from './Pagination';
+import {
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
+    TableControl,
+    TableName,
+} from './Table';
+import ExpansionPanel from './ExpansionPanel';
+import Typography from './Typography';
 
-// import './styles.scss';
+import './styles.scss';
 
 export {
     Button,
@@ -34,6 +50,20 @@ export {
     MenuItem,
     Lozenge,
     Navigation,
+    Select,
     Tabs,
-    Banner,
+    Toast,
+    Avatar,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
+    TableControl,
+    TableName,
+    InlineEditSelect,
+    Pagination,
+    ExpansionPanel,
+    Typography,
 };

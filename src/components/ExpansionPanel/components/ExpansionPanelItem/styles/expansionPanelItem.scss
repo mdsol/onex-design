@@ -1,0 +1,92 @@
+.c-expansionPanel-item {
+  svg path {
+    fill: $black;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: $menu-item-icon-size;
+    height: $menu-item-icon-size;
+
+    &__leading {
+      margin-right: $menu-item-icon-margin-x;
+    }
+
+    &__trailing {
+      position: absolute;
+      right: 0.875rem;
+    }
+  }
+
+  &:active {
+    color: $menu-item-active-color;
+    font-weight: $menu-item-font-weight;
+    svg path {
+      fill: $menu-item-active-color;
+    }
+  }
+
+  &--leading-icon:active {
+    color: $menu-item-with-icon-active-color;
+    & svg path {
+      fill: $menu-item-with-icon-active-color;
+    }
+  }
+
+  &--icons:active svg path {
+    fill: $menu-item-with-icon-active-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $menu-item-hover-bg-color;
+  }
+
+  &.disabled {
+    color: $menu-item-disabled-color;
+    svg path {
+      fill: $menu-item-disabled-color;
+    }
+  }
+
+  &--unavailable {
+    color: $menu-item-disabled-color;
+    svg path {
+      fill: $menu-item-disabled-color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $menu-item-unavailable-bg-color;
+      color: $menu-item-disabled-color;
+      cursor: initial;
+      svg path {
+        fill: $menu-item-disabled-color;
+      }
+    }
+
+    &:active {
+      pointer-events: none;
+      color: $menu-item-disabled-color;
+      font-weight: $menu-item-unavailable-font-weight;
+      svg path {
+        fill: $menu-item-disabled-color;
+      }
+    }
+
+    .c-expansionPanel-item__icon svg path {
+      fill: $menu-item-with-icon-active-color;
+    }
+  }
+
+  &--unavailable.c-expansionPanel-item--icons {
+    .c-expansionPanel-item__icon__leading svg path {
+      fill: $menu-item-disabled-color;
+    }
+
+    .c-expansionPanel-item__icon__trailing svg path {
+      fill: $menu-item-with-icon-active-color;
+    }
+  }
+}
