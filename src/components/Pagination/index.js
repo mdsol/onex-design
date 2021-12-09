@@ -59,6 +59,7 @@ CustomPagination.propTypes = {
     size: PropTypes.oneOf(['lg', 'sm']),
     onSetPage: PropTypes.func,
     dataTestId: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
 CustomPagination.defaultProps = {
@@ -66,6 +67,7 @@ CustomPagination.defaultProps = {
     size: 'sm',
     onSetPage: undefined,
     dataTestId: undefined,
+    items: [],
 };
 
 export default CustomPagination;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Badge from '../../../Bagde';
+import Badge from '../../../Badge';
 import Avatar from '../../../Avatar';
 import { ChevronDownIcon } from '../../../../icons';
 

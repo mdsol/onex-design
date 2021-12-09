@@ -4,19 +4,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CustomBadge = React.forwardRef((props, ref) => {
-    const { className, pill, size, type, icon, children, dataTestId } = props;
+    const { className, size, type, icon, children, dataTestId } = props;
     const badgeClassNames = classNames('c-badge', `c-badge--size-${size}`, {
         [className]: className,
     });
 
     return (
-        <Badge
-            ref={ref}
-            className={badgeClassNames}
-            bg={type}
-            pill={pill}
-            data-test-id={dataTestId}
-        >
+        <Badge ref={ref} className={badgeClassNames} bg={type} pill data-test-id={dataTestId}>
             {children}
             {icon && <span className="c-badge__icon">{icon}</span>}
         </Badge>
@@ -25,7 +19,6 @@ const CustomBadge = React.forwardRef((props, ref) => {
 
 CustomBadge.propTypes = {
     className: PropTypes.string,
-    pill: PropTypes.bool,
     size: PropTypes.oneOf(['lg', 'sm']),
     type: PropTypes.oneOf([
         'primary',
@@ -42,7 +35,6 @@ CustomBadge.propTypes = {
 
 CustomBadge.defaultProps = {
     className: undefined,
-    pill: true,
     size: 'sm',
     type: 'default-invert',
     icon: undefined,

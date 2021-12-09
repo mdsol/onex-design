@@ -11,13 +11,17 @@ const TableRow = (props) => {
         'c-table__row--selected': selected,
     });
 
-    const rowChildren = React.Children.map(children, (child) => {
-        return React.cloneElement(child, {
+    const rowChildren = React.Children.map(children, (child) =>
+        React.cloneElement(child, {
             variant,
-        });
-    });
+        }),
+    );
 
-    return <tr className={tableClasses} data-test-id={dataTestId}>{rowChildren}</tr>;
+    return (
+        <tr className={tableClasses} data-test-id={dataTestId}>
+            {rowChildren}
+        </tr>
+    );
 };
 
 TableRow.propTypes = {

@@ -1,0 +1,95 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { Badge } from '../../components';
+
+<Meta
+    title="Components/Badge"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        children: {
+            description: 'The content of the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        type: {
+            description: 'The type to use.'
+        },
+        size: {
+            description: 'The size of the component. small is equivalent to the dense button styling.',
+        },
+        icon: {
+            description: 'Element placed before the children.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        dataTestId: {
+            description: 'The it of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={Badge}
+/>
+
+export const Template = (args) => <Badge {...args} />;
+
+## Badge
+
+A badge is a visual indicator for numeric values such as tallies and scores.
+
+### Badge details
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            type: 'primary',
+            size: 'sm',
+            children: '100',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Badge types
+
+<Canvas>
+    <Story id='components-badge--primary' />
+    <Story id='components-badge--important' />
+    <Story id='components-badge--default' />
+    <Story id='components-badge--default-invert' />
+    <Story id='components-badge--removed' />
+    <Story id='components-badge--added' />
+</Canvas>
+
+### Badge sizes
+
+<Canvas>
+    <Story id='components-badge--small' />
+    <Story id='components-badge--large' />
+</Canvas>
+
+### Badge with icon
+
+<Canvas>
+    <Story id='components-badge--icon' />
+</Canvas>

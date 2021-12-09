@@ -9,7 +9,7 @@ import TextArea from './TextArea';
 import InlineEditText from './InlineEditText';
 import Tooltip from './Tooltip';
 import Tag from './Tag';
-import Badge from './Bagde';
+import Badge from './Badge';
 import MenuItem from './MenuItem';
 import Lozenge from './Lozenge';
 import Navigation from './Navigation';

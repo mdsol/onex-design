@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Badge from '../../../Bagde';
+import Badge from '../../../Badge';
 
 const TableName = (props) => {
     const { children, className, badgeNumber, dataTestId } = props;

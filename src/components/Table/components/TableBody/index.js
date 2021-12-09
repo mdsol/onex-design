@@ -9,11 +9,11 @@ const TableBody = (props) => {
         [className]: className,
     });
 
-    const bodyChildren = React.Children.map(children, (child) => {
-        return React.cloneElement(child, {
+    const bodyChildren = React.Children.map(children, (child) =>
+        React.cloneElement(child, {
             variant: 'body',
-        });
-    });
+        }),
+    );
 
     return (
         <tbody className={tableClasses} data-test-id={dataTestId}>
