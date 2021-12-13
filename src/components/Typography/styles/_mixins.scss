@@ -1,0 +1,22 @@
+@mixin font-style($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin text-align() {
+  $aligns: 'center', 'inherit', 'justify', 'left', 'right';
+
+  @each $align in $aligns {
+    &.c-typography--align-#{$align} {
+      text-align: #{$align};
+    }
+  }
+}
+
+@mixin text-link() {
+  &.c-typography--body,
+  &.c-typography--caption {
+    text-decoration-line: underline;
+    color: $primary;
+  }
+}

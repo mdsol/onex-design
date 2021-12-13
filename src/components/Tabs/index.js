@@ -13,6 +13,8 @@ const Tabs = (props) => {
         dropdownTitle,
         isAdaptiveWidth,
         size,
+        dataTestIdDropdown,
+        dataTestId,
     } = props;
 
     const tabsGroupClassNames = classNames('c-tab', `c-tab--size-${size}`, {
@@ -29,6 +31,8 @@ const Tabs = (props) => {
             hiddenItems={hiddenItems}
             dropdownTitle={dropdownTitle}
             isAdaptiveWidth={isAdaptiveWidth}
+            dataTestItDropdown={dataTestIdDropdown}
+            dataTestId={dataTestId}
         />
     );
 };
@@ -39,6 +43,7 @@ const propItemType = PropTypes.arrayOf(
         disabled: PropTypes.bool,
         href: PropTypes.string,
         eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        dataTestId: PropTypes.string,
     }),
 );
 
@@ -52,6 +57,8 @@ Tabs.propTypes = {
     hiddenItems: propItemType,
     dropdownTitle: PropTypes.string,
     isAdaptiveWidth: PropTypes.bool,
+    dataTestIdDropdown: PropTypes.string,
+    dataTestId: PropTypes.string,
 };
 
 Tabs.defaultProps = {
@@ -64,6 +71,8 @@ Tabs.defaultProps = {
     hiddenItems: [],
     dropdownTitle: 'More',
     isAdaptiveWidth: false,
+    dataTestId: undefined,
+    dataTestIdDropdown: undefined,
 };
 
 export default Tabs;

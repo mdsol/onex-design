@@ -1,0 +1,73 @@
+@import 'mixins';
+
+.c-data-table__img {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $c-table-cell-body-image-size;
+  width: $c-table-cell-body-image-size;
+  min-width: $c-table-cell-body-image-size;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+.c-data-table {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.c-data-table__text {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.c-data-table__subTitle {
+  font-size: $c-table-body-subtitle-font-size;
+  line-height: $c-table-body-subtitle-line-height;
+  color: $c-table-body-subtitle-text-color;
+}
+
+.c-table__cell--variant-header {
+  .c-data-table__icon--start {
+    @include icon-style($c-table-header-icon-size-lg, $c-table-header-icon-color);
+    margin-right: 0.5rem;
+  }
+
+  .c-data-table__icon--end {
+    @include icon-style($c-table-header-icon-size-lg, $c-table-header-icon-color);
+  }
+
+  .c-data-table:only-child .c-data-table__icon:only-child {
+    @include icon-style($c-table-header-icon-size-sm, $c-table-header-only-icon-color);
+  }
+}
+
+.c-table__cell--variant-body {
+  .c-data-table__icon {
+    @include icon-style($c-table-body-icon-size-sm, $c-table-body-icon-color);
+
+    &--start {
+      margin-right: 0.5rem;
+    }
+
+    &--end {
+      margin-left: 2px;
+
+      svg path {
+        fill: $c-table-body-icon-end-color;
+      }
+    }
+  }
+
+  .c-data-table:only-child .c-data-table__icon:only-child {
+    @include icon-style($c-table-body-icon-size-lg, $c-table-body-icon-color);
+  }
+}

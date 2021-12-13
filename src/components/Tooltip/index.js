@@ -15,6 +15,8 @@ const CustomTooltip = (props) => {
         trigger,
         variant,
         hasArrow,
+        tooltipChildren,
+        dataTestId,
     } = props;
 
     const toggleClassNames = classNames('c-tooltip', `c-tooltip--${variant}`, {
@@ -30,9 +32,10 @@ const CustomTooltip = (props) => {
             defaultShow={defaultShow}
             onToggle={onToggle}
             trigger={trigger}
+            data-test-id={dataTestId}
             overlay={
                 <Tooltip id={id} className={toggleClassNames}>
-                    Simple tooltip
+                    {tooltipChildren}
                 </Tooltip>
             }
         >
@@ -52,6 +55,7 @@ CustomTooltip.propTypes = {
     show: PropTypes.bool,
     defaultShow: PropTypes.bool,
     onToggle: PropTypes.func,
+    tooltipChildren: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     placement: PropTypes.oneOf([
         'auto-start',
         'auto',
@@ -75,6 +79,7 @@ CustomTooltip.propTypes = {
     ]),
     variant: PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
     hasArrow: PropTypes.bool,
+    dataTestId: PropTypes.string,
 };
 
 CustomTooltip.defaultProps = {
@@ -88,6 +93,8 @@ CustomTooltip.defaultProps = {
     trigger: ['hover', 'focus'],
     variant: 'default',
     hasArrow: true,
+    dataTestId: undefined,
+    tooltipChildren: undefined,
 };
 
 export default CustomTooltip;

@@ -1,0 +1,40 @@
+$c-toast-max-width: 50rem;
+$c-toast-padding-x: 0;
+$c-toast-padding-y: 0;
+$c-toast-font-size: $font-size-lg;
+$c-toast-border-width: 1px;
+$c-toast-border-radius: $component-border-radius-lg;
+$c-toast-height: 2.75rem;
+$c-toast-icon-size: $icon-size-lg;
+$c-icon-wrapper-padding-x: 0.75rem;
+$c-message-padding-x: 0.875rem;
+$c-toast-padding-right-x: 0.25rem;
+$c-btn-close-size: 2rem;
+$c-btn-close-icon-color: $secondary-600;
+
+$c-toast-text-color: $secondary-800;
+
+$c-toast-info-bg-color: $white;
+$c-toast-info-main-color: $primary;
+$c-toast-warning-bg-color: $warning-100;
+$c-toast-warning-main-color: $warning;
+$c-toast-error-bg-color: $error-100;
+$c-toast-error-main-color: $error;
+$c-toast-success-bg-color: $success-100;
+$c-toast-success-main-color: $success;
+
+/* bootstrap variables */
+$toast-max-width: $c-toast-max-width;
+$toast-padding-x: $c-toast-padding-x;
+$toast-padding-y: $c-toast-padding-y;
+$toast-font-size: $c-toast-font-size;
+$toast-color: $c-toast-text-color;
+$toast-background-color: $c-toast-info-bg-color;
+$toast-border-width: $c-toast-border-width;
+$toast-border-color: $c-toast-info-main-color;
+$toast-border-radius: $c-toast-border-radius;
+$toast-box-shadow: none;
+
+$toast-header-color: $c-toast-text-color;
+$toast-header-background-color: none;
+$toast-header-border-color: none;

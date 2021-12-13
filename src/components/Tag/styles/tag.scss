@@ -61,10 +61,20 @@
     margin-right: 0.25rem;
     border-radius: 100%;
     overflow: hidden;
+
+    svg path {
+      fill: $primary-700;
+    }
   }
 
-  &:hover .c-tag__close__icon {
-    fill: $btn-secondary-hover-text-color;
+  &:hover {
+    & .c-tag__close__icon {
+      fill: $btn-secondary-hover-text-color;
+    }
+
+    & .c-tag__img svg path {
+      fill: $white;
+    }
   }
 }
 
@@ -73,7 +83,11 @@
 
   &:hover {
     background-color: $secondary-200;
-    color: black;
+    color: $black;
+
+    & .c-tag__img svg path {
+      fill: $black;
+    }
   }
 
   &:hover .c-tag__close__icon {
@@ -82,13 +96,25 @@
 }
 
 .c-tag--link {
+  .c-tag__close__icon {
+    fill: $primary;
+  }
+
+  .c-tag__img svg path {
+    fill: $primary;
+  }
+
   &:hover {
     background-color: $secondary-200;
     color: $primary;
-  }
 
-  &:hover .c-tag__close {
-    fill: black;
+    & .c-tag__img svg path {
+      fill: $primary;
+    }
+
+    .c-tag__close__icon {
+      fill: $primary;
+    }
   }
 
   &:hover a {

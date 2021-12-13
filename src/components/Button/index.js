@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CustomButton = React.forwardRef((props, ref) => {
-    const { children, className, ...accProps } = props;
+    const { children, className, dataTestId, ...accProps } = props;
     const buttonClassNames = classNames('c-btn', {
         [className]: className,
     });
 
     return (
-        <Button ref={ref} className={buttonClassNames} {...accProps}>
+        <Button ref={ref} className={buttonClassNames} data-test-id={dataTestId} {...accProps}>
             {children}
             {accProps.variant === 'link' && <span className="c-btn__decorator" />}
         </Button>
@@ -24,6 +24,7 @@ CustomButton.propTypes = {
     size: PropTypes.oneOf(['lg', 'sm']),
     onClick: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    dataTestId: PropTypes.string,
 };
 
 CustomButton.defaultProps = {
@@ -33,6 +34,7 @@ CustomButton.defaultProps = {
     size: 'sm',
     children: undefined,
     onClick: undefined,
+    dataTestId: undefined,
 };
 
 export default CustomButton;

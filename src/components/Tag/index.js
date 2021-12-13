@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import XIcon from '../../icons/XIcon';
 
 const Tag = ({
-    text,
     icon,
     variant,
     isRemovable,
@@ -14,6 +13,8 @@ const Tag = ({
     onSelect,
     onRemove,
     controlId,
+    dataTestId,
+    children,
 }) => {
     const [selected, setSelected] = useState(false);
     const tagClassNames = classNames('c-tag', {
@@ -37,10 +38,15 @@ const Tag = ({
     };
 
     return (
-        <button type="button" className={tagClassNames} onClick={handleSelect}>
+        <button
+            type="button"
+            className={tagClassNames}
+            onClick={handleSelect}
+            data-test-id={dataTestId}
+        >
             {icon && <div className="c-tag__img">{icon}</div>}
-            {text && !path && <span className="c-tag__text">{text}</span>}
-            {text && path && <a href={path}>{text}</a>}
+            {children && !path && <span className="c-tag__text">{children}</span>}
+            {children && path && <a href={path}>{children}</a>}
             {isRemovable && (
                 <button type="button" className="c-tag__close" onClick={handleRemove}>
                     <XIcon className="c-tag__close__icon" />
@@ -51,7 +57,6 @@ const Tag = ({
 };
 
 Tag.propTypes = {
-    text: PropTypes.string,
     icon: PropTypes.arrayOf(PropTypes.node),
     variant: PropTypes.oneOf(['default', 'rounded']),
     isRemovable: PropTypes.bool,
@@ -61,10 +66,11 @@ Tag.propTypes = {
     onSelect: PropTypes.func,
     onRemove: PropTypes.func,
     controlId: PropTypes.string,
+    dataTestId: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 Tag.defaultProps = {
-    text: '',
     icon: undefined,
     variant: 'default',
     isRemovable: false,
@@ -74,6 +80,8 @@ Tag.defaultProps = {
     path: undefined,
     onSelect: undefined,
     onRemove: undefined,
+    dataTestId: undefined,
+    children: undefined,
 };
 
 export default Tag;

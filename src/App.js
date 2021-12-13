@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ToggleButtonGroup, ToggleButton, Check, Switch, TextField, TextArea } from './components';
-import Button from './jt-components/Button';
 
 const IconComponent = () => (
     <svg
@@ -23,7 +22,6 @@ const App = () => {
 
     return (
         <div style={{ padding: '50px' }}>
-            <Button>Clickable</Button>
             <br />
             <ToggleButtonGroup
                 value={value}

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CustomToggleButton = React.forwardRef((props, ref) => {
-    const { children, className, disabled, value, id, name, ...accProps } = props;
+    const { children, className, disabled, value, id, name, dataTestId, ...accProps } = props;
     const buttonClassNames = classNames('c-toggle-btn', {
         [className]: className,
     });
@@ -19,6 +19,7 @@ const CustomToggleButton = React.forwardRef((props, ref) => {
                 disabled={disabled}
                 name={name}
                 variant="toggle"
+                data-test-id={dataTestId}
                 {...accProps}
             >
                 {children}
@@ -34,6 +35,7 @@ CustomToggleButton.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string.isRequired,
+    dataTestId: PropTypes.string,
 };
 
 CustomToggleButton.defaultProps = {
@@ -41,6 +43,7 @@ CustomToggleButton.defaultProps = {
     disabled: false,
     children: undefined,
     value: undefined,
+    dataTestId: undefined,
 };
 
 export default CustomToggleButton;

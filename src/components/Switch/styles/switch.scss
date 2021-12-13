@@ -9,6 +9,11 @@
       border-color: $form-switch-focus-border;
       box-shadow: $form-switch-focus-box-shadow;
     }
+
+    &:checked {
+      background-color: $form-switch-checked-input-bg;
+      border: $form-switch-checked-input-bg;
+    }
   }
 
   .form-check-input:hover {

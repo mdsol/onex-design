@@ -4,8 +4,19 @@ import classNames from 'classnames';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 const CustomDropdown = React.forwardRef((props, ref) => {
-    const { className, disabled, id, title, items, variant, size, buttonStyle, align, onSelect } =
-        props;
+    const {
+        className,
+        disabled,
+        id,
+        title,
+        items,
+        variant,
+        size,
+        buttonStyle,
+        align,
+        onSelect,
+        dataTestId,
+    } = props;
     const buttonClassNames = classNames('c-dropdown', `c-dropdown--${buttonStyle}`, {
         [className]: className,
     });
@@ -21,6 +32,7 @@ const CustomDropdown = React.forwardRef((props, ref) => {
             size={size}
             align={align}
             onSelect={onSelect}
+            data-test-id={dataTestId}
         >
             {!!items?.length &&
                 items.map((item) => {
@@ -76,6 +88,7 @@ CustomDropdown.propTypes = {
         }),
     ),
     onSelect: PropTypes.func,
+    dataTestId: PropTypes.string,
 };
 
 CustomDropdown.defaultProps = {
@@ -88,6 +101,7 @@ CustomDropdown.defaultProps = {
     onSelect: undefined,
     align: 'start',
     buttonStyle: 'text',
+    dataTestId: undefined,
 };
 
 export default CustomDropdown;

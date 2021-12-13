@@ -1,0 +1,49 @@
+@import 'mixins';
+
+.c-toast {
+  @include toast-color-variant();
+
+  &__block {
+    overflow: hidden;
+    height: $c-toast-height;
+  }
+
+  &__header {
+    height: 100%;
+    padding-right: $c-toast-padding-right-x;
+
+    .c-toast__btn-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: $c-btn-close-size;
+      height: $c-btn-close-size;
+      border-radius: 100%;
+
+      svg {
+        fill: $c-btn-close-icon-color;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: $c-icon-wrapper-padding-x;
+
+    svg {
+      width: $c-toast-icon-size;
+      height: $c-toast-icon-size;
+    }
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 2;
+    padding: 0 $c-message-padding-x;
+  }
+}

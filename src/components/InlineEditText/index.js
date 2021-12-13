@@ -21,6 +21,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
         onChange,
         isInvalid,
         required,
+        dataTestId,
     } = props;
 
     const inputClassNames = classNames('c-text-field', {
@@ -73,6 +74,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
             controlId={controlId}
             onFocus={onFocus}
             onBlur={onBlur}
+            data-test-id={dataTestId}
         >
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <div className="c-edit-text">
@@ -136,6 +138,7 @@ InlineEditText.propTypes = {
     isInvalid: PropTypes.bool,
     required: PropTypes.bool,
     onChange: PropTypes.func,
+    dataTestId: PropTypes.string,
 };
 
 InlineEditText.defaultProps = {
@@ -151,6 +154,7 @@ InlineEditText.defaultProps = {
     isInvalid: false,
     required: false,
     onChange: undefined,
+    dataTestId: undefined,
 };
 
 export default InlineEditText;

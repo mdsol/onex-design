@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const NavItemDropdown = forwardRef((props, ref) => {
-    const { title, disabled, items, isActive, className } = props;
+    const { title, disabled, items, isActive, className, dataTestId } = props;
 
     const navDropdownClassNames = classNames('c-nav__item-dropdown', {
         [className]: className,
@@ -12,7 +12,13 @@ const NavItemDropdown = forwardRef((props, ref) => {
     });
 
     return (
-        <NavDropdown ref={ref} className={navDropdownClassNames} title={title} disabled={disabled}>
+        <NavDropdown
+            ref={ref}
+            className={navDropdownClassNames}
+            title={title}
+            disabled={disabled}
+            data-test-id={dataTestId}
+        >
             {!!items?.length &&
                 items.map((item) => {
                     const {
@@ -55,6 +61,7 @@ NavItemDropdown.propTypes = {
             eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         }),
     ),
+    dataTestId: PropTypes.string,
 };
 
 NavItemDropdown.defaultProps = {
@@ -63,6 +70,7 @@ NavItemDropdown.defaultProps = {
     items: null,
     disabled: false,
     isActive: false,
+    dataTestId: undefined,
 };
 
 export default NavItemDropdown;

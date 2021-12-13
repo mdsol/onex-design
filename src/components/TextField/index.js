@@ -19,9 +19,10 @@ const TextField = React.forwardRef((props, ref) => {
         onChange,
         isInvalid,
         required,
-        Icon,
+        icon,
         showClearBtn,
         showDefaultIcon,
+        dataTestId,
     } = props;
 
     const inputClassNames = classNames('c-text-field', {
@@ -29,7 +30,7 @@ const TextField = React.forwardRef((props, ref) => {
         'c-text-field--lg': size === 'lg',
         'c-text-field--sm': size === 'sm',
         'c-text-field--disabled': disabled,
-        'c-text-field--has-icon': Icon || showDefaultIcon,
+        'c-text-field--has-icon': icon || showDefaultIcon,
         'c-text-field--has-clear-btn': showClearBtn,
     });
 
@@ -53,7 +54,7 @@ const TextField = React.forwardRef((props, ref) => {
     }, [value]);
 
     return (
-        <Form.Group className={inputClassNames} controlId={controlId}>
+        <Form.Group className={inputClassNames} controlId={controlId} data-test-id={dataTestId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <div className="c-text-field__input">
                 <Form.Control
@@ -68,10 +69,10 @@ const TextField = React.forwardRef((props, ref) => {
                     value={_value}
                     onChange={onHandleChange}
                 />
-                {(Icon || showDefaultIcon) && (
+                {(icon || showDefaultIcon) && (
                     <div className="c-text-field__icon">
-                        {Icon && <Icon />}
-                        {showDefaultIcon && !Icon && <SearchIcon />}
+                        {icon && icon}
+                        {showDefaultIcon && !icon && <SearchIcon />}
                     </div>
                 )}
                 {showClearBtn && (
@@ -104,10 +105,11 @@ TextField.propTypes = {
     disabled: PropTypes.bool,
     isInvalid: PropTypes.bool,
     required: PropTypes.bool,
-    Icon: PropTypes.elementType,
+    icon: PropTypes.node,
     onChange: PropTypes.func,
     showClearBtn: PropTypes.bool,
     showDefaultIcon: PropTypes.bool,
+    dataTestId: PropTypes.string,
 };
 
 TextField.defaultProps = {
@@ -124,8 +126,9 @@ TextField.defaultProps = {
     required: false,
     showClearBtn: false,
     showDefaultIcon: false,
-    Icon: undefined,
+    icon: undefined,
     onChange: undefined,
+    dataTestId: undefined,
 };
 
 export default TextField;

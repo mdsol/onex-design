@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Lozenge = (props) => {
-    const { className, size, type, text, variant, icon } = props;
+    const { className, size, type, children, variant, icon, dataTestId } = props;
 
     const lozengeClassNames = classNames(
         'c-lozenge',
@@ -15,9 +15,9 @@ const Lozenge = (props) => {
     );
 
     return (
-        <div className={lozengeClassNames}>
+        <div className={lozengeClassNames} data-test-id={dataTestId}>
             {icon && <span className="c-lozenge__icon">{icon}</span>}
-            {variant !== 'icon' && <span className="c-lozenge__text">{text}</span>}
+            {variant !== 'icon' && <span className="c-lozenge__text">{children}</span>}
         </div>
     );
 };
@@ -27,8 +27,9 @@ Lozenge.propTypes = {
     size: PropTypes.oneOf(['lg', 'sm']),
     type: PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
     variant: PropTypes.oneOf(['subtle', 'bold', 'icon']),
-    text: PropTypes.string,
     icon: PropTypes.node,
+    dataTestId: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 Lozenge.defaultProps = {
@@ -36,8 +37,9 @@ Lozenge.defaultProps = {
     size: 'sm',
     type: 'default',
     variant: 'subtle',
-    text: undefined,
     icon: undefined,
+    dataTestId: undefined,
+    children: undefined,
 };
 
 export default Lozenge;
