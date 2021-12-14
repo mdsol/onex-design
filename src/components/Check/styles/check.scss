@@ -31,7 +31,8 @@
         background-color: $check-input-checked-bg-color;
       }
 
-      &[type=checkbox]:indeterminate {
+      &[type=checkbox]:indeterminate,
+      &.indeterminate{
         background-image: escape-svg($form-check-input-indeterminate-bg-image-hover);
       }
     }
@@ -69,10 +70,16 @@
     background-color: transparent;
   }
 
+  .form-check-input[type=checkbox]:indeterminate:disabled,
+  .form-check-input.indeterminate:disabled {
+    background-image: escape-svg($form-check-input-indeterminate-bg-image-disabled);
+  }
+
   &.c-check--size-lg {
     @include size($checkbox-size-lg, $font-size-label-lg,  $line-height-label-lg);
 
-    .form-check-input[type=checkbox]:indeterminate {
+    .form-check-input[type=checkbox]:indeterminate,
+    .form-check-input.indeterminate {
       background-size: 0.625rem;
     }
   }
@@ -80,7 +87,8 @@
   &.c-check--size-sm {
     @include size($checkbox-size-sm, $font-size-label-sm,  $line-height-label-sm);
 
-    .form-check-input[type=checkbox]:indeterminate {
+    .form-check-input[type=checkbox]:indeterminate,
+    .form-check-input.indeterminate {
       background-size: 0.5rem;
     }
   }

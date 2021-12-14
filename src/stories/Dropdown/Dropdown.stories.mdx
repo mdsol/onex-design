@@ -1,0 +1,92 @@
+<!-- Dropdown.mdx -->
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Dropdown } from '../../components';
+
+<Meta
+  title="Components/Dropdown"
+  component={Dropdown}
+/>
+
+export const DropdownTemplate = (args) => <Dropdown {...args} />;
+
+# Dropdown
+A dropdown menu displays a list of actions to take.
+
+## Style
+
+### Sizes
+
+Supports two dropdown sizes: ```small``` and  ```large```.
+
+<Canvas>
+  <Story height="13rem" id='components-dropdown--small' />
+  <Story height="13rem" id='components-dropdown--large' />
+</Canvas>
+
+### Variations
+
+#### Primary
+<Canvas>
+  <Story height="10rem" id='components-dropdown--primary' />
+  <Story height="10rem" id='components-dropdown--primary-disabled' />
+  <Story height="10rem" id='components-dropdown--primary-icon' />
+</Canvas>
+
+#### Secondary
+<Canvas>
+  <Story height="10rem" id='components-dropdown--secondary' />
+  <Story height="10rem" id='components-dropdown--secondary-disabled' />
+  <Story height="10rem" id='components-dropdown--secondary-icon' />
+</Canvas>
+
+#### Tertiary
+<Canvas>
+  <Story height="10rem" id='components-dropdown--tertiary' />
+  <Story height="10rem" id='components-dropdown--tertiary-disabled' />
+  <Story height="10rem" id='components-dropdown--tertiary-icon' />
+</Canvas>
+
+#### With dividers
+<Canvas>
+  <Story height="10rem" id='components-dropdown--tertiary' />
+  <Story height="10rem" id='components-dropdown--tertiary-disabled' />
+  <Story height="10rem" id='components-dropdown--tertiary-icon' />
+</Canvas>
+
+### Menu alignment
+By default, a dropdown menu is aligned to the left, but supported also ```align="end"```.
+<Canvas>
+  <Story height="14rem" id='components-dropdown--align-start' />
+  <Story height="14rem" id='components-dropdown--align-end' />
+</Canvas>
+
+
+### Demo
+<Canvas>
+  <Story
+    height="12rem"
+    name="Demo"
+    args={{
+      align: 'start',
+      buttonStyle: 'text',
+      className: 'custom-dropdown',
+      dataTestId: 'test-dropdown-id',
+      disabled: false,
+      id: 'dropdown-demo',
+      items: [
+        { eventKey: 'one', title: 'item one', hasDividerAfter: true },
+        { eventKey: 'two', title: 'item two', disabled: true },
+        { eventKey: 'three', title: 'item three', href: '#' },
+        { eventKey: 'four', title: 'item four' },
+      ],
+      size: 'sm',
+      title: 'Dropdown demo',
+      variant: 'primary',
+      onSelect: () => {},
+    }}>
+    >
+    {DropdownTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

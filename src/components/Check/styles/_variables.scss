@@ -7,6 +7,7 @@ $font-size-label-sm: $font-size-sm;
 $line-height-label-sm: $line-height-sm;
 
 $form-check-input-indeterminate-bg-image-hover: url("data:image/svg+xml,<svg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C0 0.83424 0.065848 0.675269 0.183058 0.558058C0.300269 0.440848 0.45924 0.375 0.625 0.375H9.375C9.54076 0.375 9.69973 0.440848 9.81694 0.558058C9.93415 0.675269 10 0.83424 10 1C10 1.16576 9.93415 1.32473 9.81694 1.44194C9.69973 1.55915 9.54076 1.625 9.375 1.625H0.625C0.45924 1.625 0.300269 1.55915 0.183058 1.44194C0.065848 1.32473 0 1.16576 0 1Z' fill='#{$primary-700}'/></svg>");
+$form-check-input-indeterminate-bg-image-disabled: url("data:image/svg+xml,<svg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C0 0.83424 0.065848 0.675269 0.183058 0.558058C0.300269 0.440848 0.45924 0.375 0.625 0.375H9.375C9.54076 0.375 9.69973 0.440848 9.81694 0.558058C9.93415 0.675269 10 0.83424 10 1C10 1.16576 9.93415 1.32473 9.81694 1.44194C9.69973 1.55915 9.54076 1.625 9.375 1.625H0.625C0.45924 1.625 0.300269 1.55915 0.183058 1.44194C0.065848 1.32473 0 1.16576 0 1Z' fill='#{$secondary}'/></svg>");
 
 $check-input-bg-color: $white;
 $check-hover-bg-color: $secondary-300;

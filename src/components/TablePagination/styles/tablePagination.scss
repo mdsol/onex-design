@@ -1,0 +1,64 @@
+.tablePagination--lg {
+  font-size: $table-pagination-lg-font-size;
+}
+
+.tablePagination--sm {
+  font-size: $table-pagination-sm-font-size;
+}
+
+.tablePagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: $table-pagination-width;
+  .rowsPerPage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .dropdown {
+    padding-left: $table-pagination-dropdown-padding;
+    #dropdown-basic {
+      padding: 0;
+      color: $table-pagination-dropdown-color;
+      font-size: inherit;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: $table-pagination-divider-left;
+      top: $table-pagination-divider-top;
+      height: $table-pagination-divider-height;
+      width: $table-pagination-divider-width;
+      background-color: $table-pagination-divider-bg;
+    }
+  }
+  .rows-text {
+    color: $table-pagination-text-color;
+  }
+  .pageArrows {
+    display: flex;
+    flex-direction: row;
+    button {
+      background-color: $white;
+      border: none;
+      display: flex;
+      align-items: center;
+      &:hover {
+        svg path {
+          fill: $table-pagination-next-color-hover;
+        }
+      }
+    }
+    .disabled:hover {
+      svg path {
+        fill: $table-pagination-next-color-disabled;
+      }
+    }
+    &_button_next {
+      transform: rotate(180deg);
+      margin-left: $table-pagination-next-margin-left;
+    }
+  }
+}

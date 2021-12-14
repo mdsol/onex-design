@@ -13,6 +13,7 @@ import XIcon from './XIcon';
 import PersonIcon from './PersonIcon';
 import CameraFillIcon from './CameraFillIcon';
 import ChevronDownIcon from './ChevronDownIcon';
+import NextArrowIcon from './NextArrowIcon';
 
 export {
     CheckIcon,
@@ -30,4 +31,5 @@ export {
     PersonIcon,
     CameraFillIcon,
     ChevronDownIcon,
+    NextArrowIcon,
 };

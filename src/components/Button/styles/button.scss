@@ -29,6 +29,7 @@
 
   /* secondary */
   &.btn-secondary {
+    color: $c-btn-secondary-text-color;
     svg path {
       fill: $c-btn-secondary-hover-bg-color;
     }

@@ -26,6 +26,7 @@
 @import 'Table/styles/variables';
 @import 'ExpansionPanel/styles/variables';
 @import 'Typography/styles/variables';
+@import 'TablePagination/styles/variables';
 
 
 @import '~bootstrap/scss/bootstrap';
@@ -55,3 +56,5 @@
 @import 'Table/styles/index';
 @import 'ExpansionPanel/styles/expansionPanel';
 @import 'Typography/styles/typography';
+@import 'TablePagination/styles/tablePagination';
+

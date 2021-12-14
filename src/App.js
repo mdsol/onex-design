@@ -1,5 +1,13 @@
 import { useState } from 'react';
-import { ToggleButtonGroup, ToggleButton, Check, Switch, TextField, TextArea } from './components';
+import {
+    ToggleButtonGroup,
+    ToggleButton,
+    Check,
+    Switch,
+    TextField,
+    TextArea,
+    TablePagination,
+} from './components';
 
 const IconComponent = () => (
     <svg
@@ -19,6 +27,8 @@ const App = () => {
     const [checked, setChecked] = useState(false);
     const [switched, setSwitched] = useState(false);
     const [inputValue, setInputValue] = useState();
+    const [tableRowsPerPage, setTableRowsPerPage] = useState(10);
+    const [lastActiveTableRow, setLastActiveTableRow] = useState(10);
 
     return (
         <div style={{ padding: '50px' }}>
@@ -77,6 +87,15 @@ const App = () => {
                 helpText="Help text"
                 maxNumLength="30"
                 rows={5}
+            />
+            <br />
+            <TablePagination
+                rows={100}
+                rowsDividers={[5, 10, 20, 25, 50]}
+                onSetTableRowsPerPage={(row) => setTableRowsPerPage(row)}
+                onSetLastActiveTableRow={(row) => setLastActiveTableRow(row)}
+                defaultRowsPerPage={10}
+                size="lg"
             />
         </div>
     );
