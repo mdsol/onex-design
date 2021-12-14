@@ -16,6 +16,10 @@
       @include bg-color($btn-primary-hover-bg-color);
     }
 
+    &.btn-secondary {
+      color: $btn-secondary-text-color;
+    }
+
     /* secondary */
     &.btn-secondary:hover {
       @include bg-color($btn-secondary-hover-bg-color);

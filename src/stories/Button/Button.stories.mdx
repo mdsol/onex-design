@@ -1,0 +1,74 @@
+<!-- Button.mdx -->
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Button } from '../../components';
+
+<Meta
+  title="Components/Button"
+  component={Button}
+/>
+
+export const ButtonTemplate = (args) => <Button {...args} />;
+
+# Button
+
+Buttons are clickable items used for actions. They can have different styles depending on the needs.
+
+## Style
+
+### Sizes
+Supports two button sizes: ```small``` and  ```large```.
+
+<Canvas>
+  <Story id='components-button--small' />
+  <Story id='components-button--large' />
+</Canvas>
+
+### Variations
+
+#### Primary
+<Canvas>
+  <Story id='components-button--primary' />
+  <Story id='components-button--primary-with-icon' />
+  <Story id='components-button--primary-icon' />
+  <Story id='components-button--primary-disabled' />
+  <Story id='components-button--primary-anchor' />
+</Canvas>
+
+#### Secondary
+
+<Canvas>
+  <Story id='components-button--secondary' />
+  <Story id='components-button--secondary-with-icon' />
+  <Story id='components-button--secondary-icon' />
+  <Story id='components-button--secondary-disabled' />
+  <Story id='components-button--secondary-anchor' />
+</Canvas>
+
+#### Tertiary
+
+<Canvas>
+  <Story id='components-button--tertiary' />
+  <Story id='components-button--tertiary-with-icon' />
+  <Story id='components-button--tertiary-icon' />
+  <Story id='components-button--tertiary-disabled' />
+  <Story id='components-button--tertiary-anchor' />
+</Canvas>
+
+### Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      variant: 'primary',
+      size: 'lg',
+      children: 'Basic button',
+      className: 'custom-button',
+      dataTestId: 'test-button-id',
+      onClick: () => {},
+    }}>
+    >
+    {ButtonTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

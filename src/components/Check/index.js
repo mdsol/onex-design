@@ -8,7 +8,6 @@ const Check = React.forwardRef((props, ref) => {
         id,
         className,
         checked,
-        defaultChecked,
         disabled,
         indeterminate,
         size,
@@ -40,8 +39,9 @@ const Check = React.forwardRef((props, ref) => {
                 id={id}
                 disabled={disabled}
                 checked={checked}
-                defaultChecked={defaultChecked}
                 onChange={onChange}
+                data-indeterminate={indeterminate}
+                className={classNames({ indeterminate })}
             />
             {children && <Form.Check.Label>{children}</Form.Check.Label>}
         </Form.Group>
@@ -50,7 +50,6 @@ const Check = React.forwardRef((props, ref) => {
 
 Check.propTypes = {
     className: PropTypes.string,
-    defaultChecked: PropTypes.bool,
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
@@ -64,7 +63,6 @@ Check.propTypes = {
 
 Check.defaultProps = {
     className: undefined,
-    defaultChecked: false,
     checked: false,
     disabled: false,
     indeterminate: false,

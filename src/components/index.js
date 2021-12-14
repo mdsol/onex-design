@@ -19,6 +19,7 @@ import Toast from './Toast';
 import Avatar from './Avatar';
 import InlineEditSelect from './InlineEditSelect';
 import Pagination from './Pagination';
+import TablePagination from './TablePagination';
 import {
     Table,
     TableHead,
@@ -66,4 +67,5 @@ export {
     Pagination,
     ExpansionPanel,
     Typography,
+    TablePagination,
 };

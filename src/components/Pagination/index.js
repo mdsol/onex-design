@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => {
     const [active, setActive] = useState(1);
 
-    const paginationClassNames = classNames('c-select', {
+    const paginationClassNames = classNames('pagination', {
         [className]: className,
         'pagination--lg': size === 'lg',
         'pagination--sm': size === 'sm',

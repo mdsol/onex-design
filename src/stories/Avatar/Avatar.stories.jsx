@@ -29,6 +29,9 @@ export default {
         hoverDisabled: {
             description: 'Disables the avatar hover',
         },
+        dataTestId: {
+            description: 'Id of the component for testing',
+        },
     },
     parameters: {
         docs: {
