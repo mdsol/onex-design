@@ -114,3 +114,6 @@ dist
 .tern-port
 
 .idea/
+
+#storybook
+storybook-static
