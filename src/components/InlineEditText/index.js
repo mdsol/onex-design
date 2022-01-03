@@ -24,13 +24,6 @@ const InlineEditText = React.forwardRef((props, ref) => {
         dataTestId,
     } = props;
 
-    const inputClassNames = classNames('c-text-field', {
-        [className]: className,
-        'c-text-field--lg': size === 'lg',
-        'c-text-field--sm': size === 'sm',
-        'c-text-field--disabled': disabled,
-    });
-
     const [_value, setValue] = useState(value);
     const [isActive, setIsActive] = useState(false);
     const [_status, setStatus] = useState('done');
@@ -38,6 +31,13 @@ const InlineEditText = React.forwardRef((props, ref) => {
     useEffect(() => {
         setValue(value);
     }, [value]);
+
+    const inputClassNames = classNames('c-text-field', {
+        [className]: className,
+        'c-text-field--lg': size === 'lg',
+        'c-text-field--sm': size === 'sm',
+        'c-text-field--complete': _status === 'done',
+    });
 
     const onFocus = () => {
         setIsActive(true);

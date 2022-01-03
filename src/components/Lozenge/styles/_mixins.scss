@@ -60,7 +60,7 @@
 }
 
 @mixin lozenge-icon-color() {
-  $types: 'default' $c-lozenge-default-bold-bg-color,
+  $types: 'default' $c-lozenge-default-icon-bg-color,
           'success' $c-lozenge-success-bold-bg-color,
           'warning' $c-lozenge-warning-bold-bg-color,
           'error' $c-lozenge-error-bold-bg-color,

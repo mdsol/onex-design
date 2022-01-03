@@ -1,0 +1,84 @@
+<!-- ToggleButtonGroup.mdx -->
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { ToggleButton, ToggleButtonGroup } from '../../components';
+import { toggleButtonItems } from './data';
+
+<Meta
+  title="Components/Toggle/ToggleButtonGroup"
+  component={ToggleButtonGroup}
+/>
+
+export const ToggleButtonGroupTemplate = (args) => <ToggleButtonGroup {...args}/>;
+
+# Toggle Button Group
+To emphasize groups of related Toggle buttons, a group should share a common container.
+The ```ToggleButtonGroup``` controls the selected state of its child buttons when given its own ```value``` prop.
+
+## Style
+
+### Sizes
+Supports two sizes: ```small``` and  ```large```.
+
+<Canvas>
+  <Story id='components-toggle-togglebuttongroup--small' />
+  <Story id='components-toggle-togglebuttongroup--large' />
+</Canvas>
+
+### Types
+Buttons can also be used to style ```checkbox``` and ```radio``` form elements.
+This is helpful when you want a toggle button that works neatly inside an HTML form.
+
+<Canvas>
+  <Story id='components-toggle-togglebuttongroup--checkbox' />
+  <Story id='components-toggle-togglebuttongroup--radio' />
+</Canvas>
+
+### Variants
+
+<Canvas>
+  <Story id='components-toggle-togglebuttongroup--tab' />
+  <Story id='components-toggle-togglebuttongroup--button' />
+</Canvas>
+
+
+### Vertical
+The buttons can be stacked vertically.
+
+<Canvas>
+  <Story id='components-toggle-togglebuttongroup--vertical' />
+</Canvas>
+
+
+
+### Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      dataTestId: 'test-toggle-button-group-id',
+      defaultValue: 1,
+      children: (
+        toggleButtonItems.map(({ id, name, children, value }) => (
+            <ToggleButton
+              key={`togglebuttongroup-demo-${id}`}
+              id={`toggle-btn-group-demo-${id}`}
+              name={name}
+              value={value}
+            >
+              {children}
+            </ToggleButton>
+          ))
+      ),
+      className: 'custom-toggle-button-group',
+      name: 'toggle-button-group-demo',
+      size: 'sm',
+      type: 'checkbox',
+      variant: 'tab',
+      vertical: false,
+    }}
+  >
+    {ToggleButtonGroupTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

@@ -1,0 +1,110 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { Select } from '../../components';
+
+<Meta
+    title="Components/Select"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        size: {
+            description: 'The size of the component',
+        },
+        dataTestId: {
+            description: 'The id of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        options: {
+          description: 'The array of page numbers',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isMulti: {
+          description: 'The option to select several values',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isDisabled: {
+          description: 'The component is disabled if the value is true',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isInvalid: {
+          description: 'The component is red if the value is true',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        errorMessage: {
+          description: 'The text for error case',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        selectedValues: {
+          description: 'The array of selected values',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+    }}
+    component={Select}
+/>
+
+export const Template = (args) => <Select {...args} />;
+
+## Select
+
+### Select
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            size: 'lg',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+                { value: 'chocolate', label: 'Chocolate' },
+                { value: 'strawberry', label: 'Strawberry' },
+                { value: 'vanilla', label: 'Vanilla' },
+            ],
+            isMulti: true,
+            selectedValues: [],
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Select sizes
+
+<Canvas>
+    <Story id='components-select--small' />
+    <Story id='components-select--large' />
+</Canvas>

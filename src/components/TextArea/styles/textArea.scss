@@ -55,9 +55,11 @@
   &__help {
     padding-left: 0.25rem;
     line-height: $text-area-label-line-height;
+    flex-basis: 100%;
   }
 
   &__error {
+    flex-basis: 100%;
     min-width: 1rem;
     display: inline-block;
     line-height: $text-area-label-line-height;
@@ -70,16 +72,19 @@
   &__footer {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-end;
     max-width: $text-area-max-width;
     margin-top: 0.25rem;
   }
 
   &__nums {
+    display: flex;
+    justify-content: flex-end;
     padding-right: 0.25rem;
     font-size: $form-text-font-size;
     line-height: $text-area-label-line-height;
     color: $text-area-num-text-color;
+    flex-basis: 10%;
 
     &--err {
       color: $text-area-err-text-color;

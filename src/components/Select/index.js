@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { Form } from 'react-bootstrap';
@@ -16,6 +16,7 @@ const CustomSelect = ({
     options,
     dataTestId,
 }) => {
+    const [selectedOptions, seSelectedOptions] = useState(selectedValues);
     useEffect(() => {
         onSelect?.(selectedValues);
     }, [selectedValues, onSelect]);
@@ -29,9 +30,11 @@ const CustomSelect = ({
 
     const handleChange = (option) => {
         if (!isMulti) {
-            onSelect([option]);
+            seSelectedOptions([option]);
+            return onSelect?.([option]);
         }
-        onSelect?.([...option]);
+        seSelectedOptions([...option]);
+        return onSelect?.([...option]);
     };
 
     return (
@@ -44,7 +47,7 @@ const CustomSelect = ({
                 isDisabled={isDisabled}
                 onChange={handleChange}
                 aria-invalid
-                value={selectedValues}
+                value={selectedOptions}
                 data-test-id={dataTestId}
             />
             {isInvalid && !isDisabled && (

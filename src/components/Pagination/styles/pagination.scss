@@ -1,4 +1,26 @@
 .pagination {
+    button {
+      background-color: $white;
+      border: none;
+      display: flex;
+      align-items: center;
+      margin-right: $pagination-button-margin;
+      &:hover {
+        svg path {
+          fill: $table-pagination-next-color-hover;
+        }
+      }
+    }
+    .disabled:hover {
+      svg path {
+        fill: $table-pagination-next-color-disabled;
+      }
+    }
+    button:last-child {
+      margin-right: 0rem;
+      margin-left: $pagination-button-margin-last-child;
+      transform: rotate(180deg);
+    }
   .page-item {
     margin-right: $pagination-item-margin-right;
     &:focus {

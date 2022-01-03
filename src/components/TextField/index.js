@@ -11,7 +11,6 @@ const TextField = React.forwardRef((props, ref) => {
         label,
         errorMessage,
         placeholder,
-        controlId,
         size,
         readOnly,
         disabled,
@@ -54,7 +53,7 @@ const TextField = React.forwardRef((props, ref) => {
     }, [value]);
 
     return (
-        <Form.Group className={inputClassNames} controlId={controlId} data-test-id={dataTestId}>
+        <Form.Group className={inputClassNames} data-test-id={dataTestId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <div className="c-text-field__input">
                 <Form.Control
@@ -100,7 +99,6 @@ TextField.propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     placeholder: PropTypes.string,
     size: PropTypes.oneOf(['lg', 'sm']),
-    controlId: PropTypes.string,
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     isInvalid: PropTypes.bool,
@@ -119,7 +117,6 @@ TextField.defaultProps = {
     value: '',
     placeholder: undefined,
     size: 'sm',
-    controlId: undefined,
     readOnly: false,
     disabled: false,
     isInvalid: false,

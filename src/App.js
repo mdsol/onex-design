@@ -7,7 +7,13 @@ import {
     TextField,
     TextArea,
     TablePagination,
+    Pagination,
+    Select,
+    InlineEditText,
+    InlineEditSelect,
+    Tag,
 } from './components';
+import ExclamationFillIcon from './icons/ExclamationFillIcon';
 
 const IconComponent = () => (
     <svg
@@ -22,6 +28,12 @@ const IconComponent = () => (
     </svg>
 );
 
+const selectOptions = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
+
 const App = () => {
     const [value, setValue] = useState(null);
     const [checked, setChecked] = useState(false);
@@ -29,6 +41,8 @@ const App = () => {
     const [inputValue, setInputValue] = useState();
     const [tableRowsPerPage, setTableRowsPerPage] = useState(10);
     const [lastActiveTableRow, setLastActiveTableRow] = useState(10);
+    const [paginationPage, setPaginationPage] = useState(1);
+    const [selectedOptions, setSelectedOptions] = useState([]);
 
     return (
         <div style={{ padding: '50px' }}>
@@ -97,6 +111,35 @@ const App = () => {
                 defaultRowsPerPage={10}
                 size="lg"
             />
+            <br />
+            <Pagination
+                size="lg"
+                items={[1, 2, 3, 4, 5, 6]}
+                onSetPage={(page) => setPaginationPage(page)}
+            />
+            <br />
+            <Select
+                size="sm"
+                isMulti
+                selectedValues={selectedOptions}
+                onSelect={(options) => setSelectedOptions(options)}
+                options={selectOptions}
+            />
+            <br />
+            <InlineEditText placeholder="Edit" size="lg" />
+            <InlineEditSelect
+                selectOptions={[
+                    { value: 'chocolate', label: 'Chocolate' },
+                    { value: 'strawberry', label: 'Strawberry' },
+                    { value: 'vanilla', label: 'Vanilla' },
+                ]}
+                selectedOptions={[]}
+                size="lg"
+                isMulti
+            />
+            <Tag variant="rounded" size="lg" icon={<ExclamationFillIcon />} isRemovable>
+                Tag text
+            </Tag>
         </div>
     );
 };

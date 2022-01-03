@@ -8,12 +8,6 @@ import CheckIcon from '../../icons/CheckIcon';
 import CustomButton from '../Button';
 import XIcon from '../../icons/XIcon';
 
-const selectOptions = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-];
-
 const InlineEditSelect = ({
     onEditSelect,
     selectedOptions,
@@ -24,6 +18,8 @@ const InlineEditSelect = ({
     className,
     size,
     dataTestId,
+    selectOptions,
+    isMulti,
 }) => {
     const [_selectedOptions, setSelectedOptions] = useState([]);
     const [isActive, setIsActive] = useState(false);
@@ -77,6 +73,7 @@ const InlineEditSelect = ({
                 className={inlineEditSelectClassNames}
                 selectedValues={_selectedOptions}
                 size={size}
+                isMulti={isMulti}
             />
             {isActive && !isInvalid && (
                 <div className="status-buttons">
@@ -106,25 +103,37 @@ const InlineEditSelect = ({
 InlineEditSelect.propTypes = {
     className: PropTypes.string,
     errorMessage: PropTypes.string,
-    selectedOptions: PropTypes.arrayOf(PropTypes.oneOfType(PropTypes.string)),
+    selectedOptions: PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
     disabled: PropTypes.bool,
     isInvalid: PropTypes.bool,
     onEditSelect: PropTypes.func,
     controlId: PropTypes.string,
     size: PropTypes.string,
     dataTestId: PropTypes.string,
+    selectOptions: PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
+    isMulti: PropTypes.bool,
 };
 
 InlineEditSelect.defaultProps = {
     className: undefined,
     errorMessage: undefined,
-    selectedOptions: [],
     disabled: false,
     isInvalid: false,
     onEditSelect: undefined,
     controlId: '',
     size: 'lg',
     dataTestId: '',
+    isMulti: false,
 };
 
 export default InlineEditSelect;
