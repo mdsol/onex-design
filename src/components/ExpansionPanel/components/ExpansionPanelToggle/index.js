@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Badge from '../../../Badge';
-import Avatar from '../../../Avatar';
 import { ChevronDownIcon } from '../../../../icons';
 
 const ExpansionPanelToggle = React.forwardRef((props, ref) => {
@@ -19,11 +18,7 @@ const ExpansionPanelToggle = React.forwardRef((props, ref) => {
             }}
         >
             <div className="c-expansionPanel-toggle__children">
-                {avatar && (
-                    <Avatar hoverDisabled size="md">
-                        {avatar}
-                    </Avatar>
-                )}
+                {avatar}
                 <div className="c-expansionPanel-toggle__title">{children}</div>
                 {badge && (
                     <Badge size="sm" type="default">

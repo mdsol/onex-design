@@ -1,0 +1,62 @@
+import { ExclamationDiamondFill } from 'react-bootstrap-icons';
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+import { Table, TableBody, TableRow, TableCell, Badge, Avatar } from '../../../../components';
+
+<Meta
+  title="Components/Table/TableBody"
+  component={TableBody}
+/>
+
+export const TableBodyTemplate = (args) => (
+  <Table>
+    <TableBody {...args}/>
+  </Table>
+);
+
+# TableBody
+
+The component renders a ```<tbody>``` element.
+
+### Default
+<Canvas>
+  <Story id='components-table-tablebody--default' />
+</Canvas>
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      children: (
+        <>
+          <TableRow>
+            <TableCell>Sinus pressure study</TableCell>
+            <TableCell>
+              <Badge size="sm" type="default">
+                19
+              </Badge>
+            </TableCell>
+            <TableCell align="center">
+              <ExclamationDiamondFill />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Sinus pressure study</TableCell>
+            <TableCell>
+              <Badge size="sm" type="default">
+                19
+              </Badge>
+            </TableCell>
+            <TableCell align="center">
+              <ExclamationDiamondFill />
+            </TableCell>
+          </TableRow>
+        </>),
+      className: 'custom-tablebody',
+      dataTestId: 'test-tablebody-id'
+    }}>
+    {TableBodyTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

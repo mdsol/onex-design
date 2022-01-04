@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Pagination } from 'react-bootstrap';
 import classNames from 'classnames';
 
+import { NextArrowIcon } from '../../icons';
+
 const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => {
     const [active, setActive] = useState(1);
 
@@ -28,11 +30,14 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
     return (
         <div>
             <Pagination data-test-id={dataTestId} className={paginationClassNames}>
-                <Pagination.Prev
-                    className={`pagination_arrow ${active === 1 && `pagination_arrow--diasabled`}`}
-                    onClick={handlePrev}
+                <button
+                    type="button"
+                    className={`${active === 1 ? `disabled` : ''}`}
                     disabled={active === 1}
-                />
+                    onClick={handlePrev}
+                >
+                    <NextArrowIcon />
+                </button>
                 {items.map((item) => (
                     <Pagination.Item
                         onClick={() => handleClick(item)}
@@ -42,13 +47,14 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
                         {item}
                     </Pagination.Item>
                 ))}
-                <Pagination.Next
-                    className={`pagination_arrow ${
-                        items.indexOf(active) === items.length - 1 && `pagination_arrow--diasabled`
-                    }`}
-                    onClick={handleNext}
+                <button
+                    type="button"
+                    className={`${items.indexOf(active) === items.length - 1 ? `disabled` : ''}`}
                     disabled={items.indexOf(active) === items.length - 1}
-                />
+                    onClick={handleNext}
+                >
+                    <NextArrowIcon />
+                </button>
             </Pagination>
         </div>
     );

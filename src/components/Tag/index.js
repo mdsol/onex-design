@@ -57,7 +57,7 @@ const Tag = ({
 };
 
 Tag.propTypes = {
-    icon: PropTypes.arrayOf(PropTypes.node),
+    icon: PropTypes.node,
     variant: PropTypes.oneOf(['default', 'rounded']),
     isRemovable: PropTypes.bool,
     size: PropTypes.oneOf(['sm', 'lg']),

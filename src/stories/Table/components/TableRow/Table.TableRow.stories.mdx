@@ -1,0 +1,49 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+
+import { Table, TableHead, TableBody, TableCell, TableRow } from '../../../../components';
+
+<Meta
+  title="Components/Table/TableRow"
+  component={TableRow}
+/>
+
+export const TableRowTemplate = (args) =>
+  (<Table hover>
+  <TableHead>
+    <TableRow {...args}/>
+  </TableHead>
+</Table>);
+
+# TableRow
+The component renders a ```<tr>``` element.
+
+## Style
+### Variations
+Will automatically set variant based on the table element parent (head, body, etc).
+
+#### Body
+<Canvas>
+  <Story id='components-table-tablerow--body' />
+</Canvas>
+
+#### Header
+<Canvas>
+  <Story id='components-table-tablerow--header' />
+</Canvas>
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      children: ( <TableCell width="50%">Demo row</TableCell> ),
+      className: 'custom-tablerow',
+      dataTestId: 'test-tablerow-id',
+      variant: 'header'
+    }}
+  >
+    {TableRowTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

@@ -10,6 +10,7 @@
     }
     &__input {
         border: none;
+        font-weight: 600;
         &:hover {
             background-color: $c-inline-edit-hover-bg-color;
         }
@@ -26,6 +27,11 @@
             color: $c-inline-edit-disabled-text-color;
         }
     }
+}
+
+.c-text-field--complete {
+    font-weight: 600;
+    line-height: 14px;
 }
 
 .status-buttons {

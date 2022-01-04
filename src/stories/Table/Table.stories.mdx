@@ -1,0 +1,125 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+import { ExclamationDiamondFill, BinocularsFill } from 'react-bootstrap-icons';
+import {
+  Table,
+  TableControl,
+  TableName,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  DataTableCell,
+  TextField,
+  Avatar,
+  Badge,
+  Check,
+} from '../../components';
+
+<Meta
+  title="Components/Table/Table"
+  component={Table}
+/>
+
+export const Template = (args) => <Table {...args}/>;
+
+# Table
+Tables display information in a way that's easy to scan, so that users can look for patterns and insights.
+
+### Default
+<Canvas>
+  <Story id='components-table-table--default' />
+</Canvas>
+
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      bordered: false,
+      children: (
+        <>
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" width="60px">
+                <Check id="header-check" size="sm" onChange={() => {}}/>
+              </TableCell>
+              <TableCell width="50%">Study name</TableCell>
+              <TableCell>Study short name</TableCell>
+              <TableCell>Phase</TableCell>
+              <TableCell align="center" width="60px">
+                <ExclamationDiamondFill />
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell align="center">
+                <Check id="check-1" size="sm" onChange={() => {}}/>
+              </TableCell>
+              <TableCell>
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="md"
+                />
+                Clinical and Radiological Evaluation of Patients With Vertebrobasilar Insufficiency
+              </TableCell>
+              <TableCell>Sinus pressure study</TableCell>
+              <TableCell>
+                <Badge size="sm" type="default">
+                  19
+                </Badge>
+              </TableCell>
+              <TableCell align="center">
+                <ExclamationDiamondFill />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="center">
+                <Check id="check-2" size="sm" onChange={() => {}}/>
+              </TableCell>
+              <TableCell>
+                <DataTableCell
+                  img={
+                    <Avatar
+                      src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                      size="md"
+                    />
+                  }
+                  subTitle="Vertebrobasilar Insufficiency"
+                  icon={<BinocularsFill />}
+                  iconPosition="end"
+                >
+                  Clinical and Radiological Evaluation of Patients With
+                </DataTableCell>
+              </TableCell>
+              <TableCell>Sinus pressure study</TableCell>
+              <TableCell>
+                <Badge size="sm" type="default">
+                  8
+                </Badge>
+              </TableCell>
+              <TableCell align="center">
+                <ExclamationDiamondFill />
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </>
+      ),
+      className: 'custom-table',
+      dataTestId: 'test-table-id',
+      hover: true,
+      striped: false,
+      tableControlComponent:  (
+        <TableControl>
+          <TableName badgeNumber="100">Test table</TableName>
+          <TextField controlId="search" placeholder="search" showDefaultIcon />
+        </TableControl>
+      ),
+      tableStyle: 'filled'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

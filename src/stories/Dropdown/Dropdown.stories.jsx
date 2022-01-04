@@ -25,7 +25,7 @@ export default {
             control: 'boolean',
         },
         id: {
-            description: 'An html id attribute for the Toogle button,',
+            description: 'An html id attribute for the Toggle button,',
             control: 'text',
         },
         items: {

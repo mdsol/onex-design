@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -10,7 +10,6 @@ const TextArea = React.forwardRef((props, ref) => {
         errorMessage,
         helpText,
         placeholder,
-        controlId,
         size,
         readOnly,
         disabled,
@@ -18,7 +17,6 @@ const TextArea = React.forwardRef((props, ref) => {
         onChange,
         isError,
         maxNumLength,
-        htmlSize,
         required,
         setError,
         rows,
@@ -33,9 +31,8 @@ const TextArea = React.forwardRef((props, ref) => {
     });
 
     const [_value, _setValue] = useState(value);
-    const [isInvalid, setInvalid] = useState(false);
-
-    const symbolNum = useRef(maxNumLength);
+    const [isInvalid, setInvalid] = useState(isError);
+    const [symbolNum, setSymbolNum] = useState(maxNumLength);
 
     const onHandleSetError = (isErr) => {
         setError?.(isErr);
@@ -43,12 +40,12 @@ const TextArea = React.forwardRef((props, ref) => {
     };
 
     const changeValue = (val) => {
-        symbolNum.current = maxNumLength - val.length;
+        const num = maxNumLength - val.length;
 
+        setSymbolNum(num);
         _setValue(val);
         onChange?.(val);
-
-        onHandleSetError(symbolNum.current < 0);
+        onHandleSetError(num < 0);
     };
 
     const onHandleChange = (event) => {
@@ -56,17 +53,19 @@ const TextArea = React.forwardRef((props, ref) => {
     };
 
     useEffect(() => {
-        symbolNum.current = maxNumLength - Number(value?.length);
-
-        _setValue(value);
-    }, [maxNumLength, value]);
-
-    useEffect(() => {
         setInvalid(isError);
     }, [isError]);
 
+    useEffect(() => {
+        const num = maxNumLength - value.length;
+
+        setSymbolNum(num);
+        _setValue(value);
+        setInvalid(isError || num < 0);
+    }, [maxNumLength, value]);
+
     return (
-        <Form.Group className={inputClassNames} controlId={controlId} data-test-id={dataTestId}>
+        <Form.Group className={inputClassNames} data-test-id={dataTestId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <Form.Control
                 ref={ref}
@@ -78,7 +77,6 @@ const TextArea = React.forwardRef((props, ref) => {
                 readOnly={readOnly}
                 required={required}
                 value={_value}
-                htmlSize={htmlSize}
                 rows={rows}
                 onChange={onHandleChange}
             />
@@ -92,10 +90,10 @@ const TextArea = React.forwardRef((props, ref) => {
                 {maxNumLength && (
                     <div
                         className={classNames('c-text-area__nums', {
-                            'c-text-area__nums--err': symbolNum.current < 0,
+                            'c-text-area__nums--err': symbolNum < 0,
                         })}
                     >
-                        {symbolNum.current}
+                        {symbolNum}
                     </div>
                 )}
             </div>
@@ -111,12 +109,10 @@ TextArea.propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     placeholder: PropTypes.string,
     size: PropTypes.oneOf(['lg', 'sm']),
-    controlId: PropTypes.string,
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     isError: PropTypes.bool,
     required: PropTypes.bool,
-    htmlSize: PropTypes.number,
     maxNumLength: PropTypes.number,
     rows: PropTypes.number,
     onChange: PropTypes.func,
@@ -132,13 +128,11 @@ TextArea.defaultProps = {
     value: '',
     placeholder: undefined,
     size: 'sm',
-    controlId: undefined,
     readOnly: false,
     disabled: false,
     isError: false,
     required: false,
     maxNumLength: undefined,
-    htmlSize: undefined,
     onChange: undefined,
     setError: undefined,
     rows: undefined,

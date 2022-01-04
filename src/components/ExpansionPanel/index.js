@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Dropdown } from 'react-bootstrap';
@@ -6,43 +6,32 @@ import ExpansionPanelToggle from './components/ExpansionPanelToggle';
 import ExpansionPanelItem from './components/ExpansionPanelItem';
 
 const ExpansionPanel = (props) => {
-    const { className, id, children, onSelect, dataTestId, toggle, items } = props;
+    const { className, id, children, onSelect, dataTestId, disabled, toggle, items } = props;
 
     const expansionPanelClassNames = classNames('c-expansionPanel', {
         [className]: className,
     });
 
-    const [isActive, setIsActive] = useState(null);
-
-    const handleSelect = (value) => {
-        const isActiveItem = items.some(
-            (item) => item.eventKey === value && !item.disabled && !item.unavailable,
-        );
-
-        setIsActive(isActiveItem);
-        onSelect?.(value);
-    };
-
     return (
-        <Dropdown className={expansionPanelClassNames} data-test-id={dataTestId}>
+        <Dropdown
+            onSelect={onSelect}
+            className={expansionPanelClassNames}
+            data-test-id={dataTestId}
+        >
             <Dropdown.Toggle
                 id={id}
                 as={ExpansionPanelToggle}
                 badge={toggle?.badge}
                 avatar={toggle?.avatar}
-                disabled={toggle?.disabled}
+                disabled={disabled}
             >
                 {children}
             </Dropdown.Toggle>
-            <Dropdown.Menu
-                renderOnMount
-                flip={false}
-                onSelect={handleSelect}
-                className="c-expansionPanel-menu"
-            >
+            <Dropdown.Menu renderOnMount flip={false} className="c-expansionPanel-menu">
                 {!!items?.length &&
                     items.map((item) => {
                         const {
+                            active,
                             title,
                             hasDividerAfter,
                             disabled: itemDisabled,
@@ -57,7 +46,7 @@ const ExpansionPanel = (props) => {
                             <Fragment key={eventKey}>
                                 <ExpansionPanelItem
                                     href={href}
-                                    active={isActive}
+                                    active={active}
                                     eventKey={eventKey}
                                     disabled={itemDisabled}
                                     unavailable={unavailable}
@@ -77,31 +66,30 @@ const ExpansionPanel = (props) => {
 
 export default ExpansionPanel;
 
-const propToggleType = PropTypes.shape({
-    badge: PropTypes.string,
-    avatar: PropTypes.node,
-    disabled: PropTypes.bool,
-});
-
-const propItemType = PropTypes.shape({
-    title: PropTypes.node,
-    hasDividerAfter: PropTypes.bool,
-    disabled: PropTypes.bool,
-    unavailable: PropTypes.bool,
-    eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    href: PropTypes.string,
-    leadingIcon: PropTypes.node,
-    trailingIcon: PropTypes.node,
-});
-
 ExpansionPanel.propTypes = {
     id: PropTypes.string.isRequired,
     className: PropTypes.string,
     children: PropTypes.node,
     onSelect: Function,
     dataTestId: PropTypes.string,
-    toggle: propToggleType,
-    items: PropTypes.arrayOf(propItemType),
+    disabled: PropTypes.bool,
+    toggle: PropTypes.shape({
+        badge: PropTypes.string,
+        avatar: PropTypes.node,
+    }),
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            active: PropTypes.bool,
+            title: PropTypes.node,
+            hasDividerAfter: PropTypes.bool,
+            disabled: PropTypes.bool,
+            unavailable: PropTypes.bool,
+            eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            href: PropTypes.string,
+            leadingIcon: PropTypes.node,
+            trailingIcon: PropTypes.node,
+        }),
+    ),
 };
 
 ExpansionPanel.defaultProps = {
@@ -109,10 +97,10 @@ ExpansionPanel.defaultProps = {
     children: undefined,
     onSelect: undefined,
     dataTestId: '',
+    disabled: false,
     toggle: {
         badge: undefined,
         avatar: undefined,
-        disabled: false,
     },
     items: [],
 };
