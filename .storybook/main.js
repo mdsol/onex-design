@@ -18,7 +18,8 @@ module.exports = {
     '../src/**/*.stories.[tj]s',
     '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../src/**/**/*.stories.[tj]s',
-    '../src/**/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+    '../src/**/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/**/**/**/*.stories.@(js|jsx|ts|tsx|mdx)'
   ],
 
   webpackFinal: async (config, { configType }) => {
