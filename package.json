@@ -89,7 +89,7 @@
     "scss-parser": "^1.0.5",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.3",
-    "webpack": "^5.65.0",
+    "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
   }
