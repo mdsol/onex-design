@@ -17,7 +17,7 @@ const CustomDropdown = React.forwardRef((props, ref) => {
         onSelect,
         dataTestId,
     } = props;
-    const buttonClassNames = classNames('c-dropdown', `c-dropdown--${buttonStyle}`, {
+    const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
         [className]: className,
     });
 

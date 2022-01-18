@@ -17,11 +17,11 @@ const MenuItem = ({
     isSelected,
 }) => {
     const [selected, setSelected] = useState(isSelected);
-    const menuItemClassNames = classNames('c-menuItem', {
+    const menuItemClassNames = classNames('onex-menuItem', {
         [className]: className,
-        'c-menuItem--disabled': disabled,
-        'c-menuItem--selected': selected,
-        'c-menuItem--unavailable': unavailable,
+        'onex-menuItem--disabled': disabled,
+        'onex-menuItem--selected': selected,
+        'onex-menuItem--unavailable': unavailable,
     });
 
     const handleSelect = (e) => {
@@ -33,12 +33,14 @@ const MenuItem = ({
     };
     return (
         <div className={menuItemClassNames} data-test-id={dataTestId}>
-            {selected && <span className="c-menuItem--selected__indicator" />}
+            {selected && <span className="onex-menuItem--selected__indicator" />}
             <a href={path} onClick={handleSelect}>
-                {leadingIcon && <div className="c-menuItem__icon__leading">{leadingIcon}</div>}
+                {leadingIcon && <div className="onex-menuItem__icon__leading">{leadingIcon}</div>}
                 <span>{children}</span>
-                {trailingIcon && <div className="c-menuItem__icon__trailing">{trailingIcon}</div>}
-                {badge && <div className="c-menuItem__badge">{badge}</div>}
+                {trailingIcon && (
+                    <div className="onex-menuItem__icon__trailing">{trailingIcon}</div>
+                )}
+                {badge && <div className="onex-menuItem__badge">{badge}</div>}
             </a>
         </div>
     );

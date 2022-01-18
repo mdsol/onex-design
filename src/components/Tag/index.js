@@ -17,14 +17,14 @@ const Tag = ({
     children,
 }) => {
     const [selected, setSelected] = useState(false);
-    const tagClassNames = classNames('c-tag', {
+    const tagClassNames = classNames('onex-tag', {
         [className]: className,
-        'c-tag--lg': size === 'lg',
-        'c-tag--sm': size === 'sm',
-        'c-tag--rounded': variant === 'rounded',
-        'c-tag--default': !variant || variant === 'default',
-        'c-tag--link': path,
-        'c-tag--selected': selected,
+        'onex-tag--lg': size === 'lg',
+        'onex-tag--sm': size === 'sm',
+        'onex-tag--rounded': variant === 'rounded',
+        'onex-tag--default': !variant || variant === 'default',
+        'onex-tag--link': path,
+        'onex-tag--selected': selected,
     });
 
     const handleSelect = () => {
@@ -44,12 +44,12 @@ const Tag = ({
             onClick={handleSelect}
             data-test-id={dataTestId}
         >
-            {icon && <div className="c-tag__img">{icon}</div>}
-            {children && !path && <span className="c-tag__text">{children}</span>}
+            {icon && <div className="onex-tag__img">{icon}</div>}
+            {children && !path && <span className="onex-tag__text">{children}</span>}
             {children && path && <a href={path}>{children}</a>}
             {isRemovable && (
-                <button type="button" className="c-tag__close" onClick={handleRemove}>
-                    <XIcon className="c-tag__close__icon" />
+                <button type="button" className="onex-tag__close" onClick={handleRemove}>
+                    <XIcon className="onex-tag__close__icon" />
                 </button>
             )}
         </button>

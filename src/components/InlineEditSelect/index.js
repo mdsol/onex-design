@@ -94,7 +94,7 @@ const InlineEditSelect = ({
                 </div>
             )}
             {isInvalid && !disabled && (
-                <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
+                <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
             )}
         </Form.Group>
     );

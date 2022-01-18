@@ -17,9 +17,13 @@ const CustomToggleButtonGroup = (props) => {
         dataTestId,
     } = props;
 
-    const buttonClassNames = classNames('c-toggle-btn-group', `c-toggle-btn-group--${variant}`, {
-        [className]: className,
-    });
+    const buttonClassNames = classNames(
+        'onex-toggle-btn-group',
+        `onex-toggle-btn-group--${variant}`,
+        {
+            [className]: className,
+        },
+    );
 
     return (
         <ToggleButtonGroup

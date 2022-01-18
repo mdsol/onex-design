@@ -13,11 +13,11 @@ const ExpansionPanelItem = ({
     trailingIcon,
     className,
 }) => {
-    const expansionPanelItemClassNames = classNames('c-expansionPanel-item', {
+    const expansionPanelItemClassNames = classNames('onex-expansionPanel-item', {
         [className]: className,
-        'c-expansionPanel-item--unavailable': unavailable,
-        'c-expansionPanel-item--leading-icon': leadingIcon,
-        'c-expansionPanel-item--icons': leadingIcon && trailingIcon,
+        'onex-expansionPanel-item--unavailable': unavailable,
+        'onex-expansionPanel-item--leading-icon': leadingIcon,
+        'onex-expansionPanel-item--icons': leadingIcon && trailingIcon,
     });
 
     return (
@@ -29,13 +29,13 @@ const ExpansionPanelItem = ({
             href={href}
         >
             {leadingIcon && (
-                <div className="c-expansionPanel-item__icon c-expansionPanel-item__icon__leading">
+                <div className="onex-expansionPanel-item__icon onex-expansionPanel-item__icon__leading">
                     {leadingIcon}
                 </div>
             )}
             <div>{children}</div>
             {trailingIcon && (
-                <div className="c-expansionPanel-item__icon c-expansionPanel-item__icon__trailing">
+                <div className="onex-expansionPanel-item__icon onex-expansionPanel-item__icon__trailing">
                     {trailingIcon}
                 </div>
             )}

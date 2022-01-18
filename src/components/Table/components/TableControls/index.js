@@ -4,7 +4,7 @@ import classNames from 'classnames';
 const TableControl = (props) => {
     const { children, className, dataTestId } = props;
 
-    const tableControlsClasses = classNames('c-table-control', {
+    const tableControlsClasses = classNames('onex-table-control', {
         [className]: className,
     });
 

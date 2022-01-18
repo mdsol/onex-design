@@ -4,22 +4,22 @@ import classNames from 'classnames';
 const DataTableCell = (props) => {
     const { img, icon, subTitle, iconPosition, children, className, dataTestId } = props;
 
-    const dataTableClasses = classNames('c-data-table', {
+    const dataTableClasses = classNames('onex-data-table', {
         [className]: className,
     });
 
     return (
         <div className={dataTableClasses} data-test-id={dataTestId}>
-            {img && <span className="c-data-table__img">{img}</span>}
+            {img && <span className="onex-data-table__img">{img}</span>}
             {icon && iconPosition === 'start' && (
-                <span className="c-data-table__icon c-data-table__icon--start">{icon}</span>
+                <span className="onex-data-table__icon onex-data-table__icon--start">{icon}</span>
             )}
-            <div className="c-data-table__text">
-                <span className="c-data-table__title">{children}</span>
-                {subTitle && <span className="c-data-table__subTitle">{subTitle}</span>}
+            <div className="onex-data-table__text">
+                <span className="onex-data-table__title">{children}</span>
+                {subTitle && <span className="onex-data-table__subTitle">{subTitle}</span>}
             </div>
             {icon && iconPosition === 'end' && (
-                <span className="c-data-table__icon c-data-table__icon--end">{icon}</span>
+                <span className="onex-data-table__icon onex-data-table__icon--end">{icon}</span>
             )}
         </div>
     );

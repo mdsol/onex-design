@@ -1,21 +1,21 @@
-.c-table-name {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  gap: 0.5rem;
-  padding-left: 0.75rem;
+.onex-table-name {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 0.5rem;
+    padding-left: 0.75rem;
 }
 
-.c-table-name__h2 {
-  margin-bottom: 0;
-  font-size: $font-size-h2;
-  line-height: $line-height-h2;
-  color: $black;
-  font-weight: $font-weight-600;
+.onex-table-name__h2 {
+    margin-bottom: 0;
+    font-size: $font-size-h2;
+    line-height: $line-height-h2;
+    color: $black;
+    font-weight: $font-weight-600;
 }
 
-.c-table-wrap--filled {
-  .c-table-name {
-    padding-left: 0;
-  }
+.onex-table-wrap--filled {
+    .onex-table-name {
+        padding-left: 0;
+    }
 }

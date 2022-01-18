@@ -5,12 +5,12 @@ import classNames from 'classnames';
 
 const CustomToggleButton = React.forwardRef((props, ref) => {
     const { children, className, disabled, value, id, name, dataTestId, ...accProps } = props;
-    const buttonClassNames = classNames('c-toggle-btn', {
+    const buttonClassNames = classNames('onex-toggle-btn', {
         [className]: className,
     });
 
     return (
-        <div className="c-toggle-btn-wrapper">
+        <div className="onex-toggle-btn-wrapper">
             <ToggleButton
                 id={id}
                 ref={ref}

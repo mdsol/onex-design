@@ -1,30 +1,30 @@
-$c-table-text-color: $black;
-$c-table-header-text-color: $secondary-600;
-$c-table-default-bg-color: $transparent;
-$c-table-fill-bg-color: $white;
-$c-table-cell-border-radius: 8px;
+$onex-table-text-color: $black;
+$onex-table-header-text-color: $secondary-600;
+$onex-table-default-bg-color: $transparent;
+$onex-table-fill-bg-color: $white;
+$onex-table-cell-border-radius: 8px;
 
 // Bootstrap variables
 $table-cell-padding-y: 1rem;
 $table-cell-padding-x: 0.75rem;
 $table-cell-vertical-align: middle;
 
-$table-color: $c-table-text-color;
-$table-bg: $c-table-default-bg-color;
-$table-accent-bg: $c-table-default-bg-color;
+$table-color: $onex-table-text-color;
+$table-bg: $onex-table-default-bg-color;
+$table-accent-bg: $onex-table-default-bg-color;
 
 $table-th-font-weight: 400;
 
-$table-striped-color: $c-table-text-color;
-$table-striped-bg: $c-table-default-bg-color;
+$table-striped-color: $onex-table-text-color;
+$table-striped-bg: $onex-table-default-bg-color;
 
-$table-active-color: $c-table-text-color;
+$table-active-color: $onex-table-text-color;
 $table-active-bg: $secondary-100;
 
-$table-hover-color: $c-table-text-color;
+$table-hover-color: $onex-table-text-color;
 $table-hover-bg: $secondary-100;
 
 $table-border-width: 0;
 $table-border-color: $secondary;
 
-$table-caption-color: $c-table-header-text-color;
+$table-caption-color: $onex-table-header-text-color;

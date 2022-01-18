@@ -21,11 +21,11 @@ const CustomSelect = ({
         onSelect?.(selectedValues);
     }, [selectedValues, onSelect]);
 
-    const selectClassNames = classNames('c-select', {
+    const selectClassNames = classNames('onex-select', {
         [className]: className,
-        'c-select--lg': size === 'lg',
-        'c-select--sm': size === 'sm',
-        'c-select--invalid': isInvalid,
+        'onex-select--lg': size === 'lg',
+        'onex-select--sm': size === 'sm',
+        'onex-select--invalid': isInvalid,
     });
 
     const handleChange = (option) => {
@@ -41,7 +41,7 @@ const CustomSelect = ({
         <div>
             <Select
                 className={selectClassNames}
-                classNamePrefix="c-select"
+                classNamePrefix="onex-select"
                 isMulti={isMulti}
                 options={options}
                 isDisabled={isDisabled}
@@ -51,7 +51,7 @@ const CustomSelect = ({
                 data-test-id={dataTestId}
             />
             {isInvalid && !isDisabled && (
-                <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
+                <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
             )}
         </div>
     );

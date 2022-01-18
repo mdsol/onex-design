@@ -20,7 +20,7 @@ const Navigation = (props) => {
         dataTestIdDropdown,
     } = props;
 
-    const navGroupClassNames = classNames('c-nav', {
+    const navGroupClassNames = classNames('onex-nav', {
         [className]: className,
     });
 

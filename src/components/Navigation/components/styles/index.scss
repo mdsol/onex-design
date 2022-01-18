@@ -1,30 +1,31 @@
-.c-nav__item, .c-nav__item-dropdown {
-  .nav-link {
-    position: relative;
-    line-height: $c-nav-item-line-height;
+.onex-nav__item,
+.onex-nav__item-dropdown {
+    .nav-link {
+        position: relative;
+        line-height: $onex-nav-item-line-height;
 
-    &::before {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: $c-nav-item-underline-height;
-      border-radius: $c-nav-item-underline-height-border-radius;
+        &::before {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: $onex-nav-item-underline-height;
+            border-radius: $onex-nav-item-underline-height-border-radius;
+        }
+
+        &.active::before {
+            content: '';
+            background-color: $onex-nav-item-active-text-color;
+        }
+
+        &:hover,
+        &.active:hover {
+            color: $onex-nav-item-hover-text-color;
+
+            &::before {
+                content: '';
+                background-color: $onex-nav-item-hover-text-color;
+            }
+        }
     }
-
-    &.active::before {
-      content: '';
-      background-color: $c-nav-item-active-text-color;
-    }
-
-    &:hover,
-    &.active:hover {
-      color: $c-nav-item-hover-text-color;
-
-      &::before, {
-        content: '';
-        background-color: $c-nav-item-hover-text-color;
-      }
-    }
-  }
 }

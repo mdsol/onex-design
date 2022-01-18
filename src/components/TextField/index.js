@@ -24,13 +24,13 @@ const TextField = React.forwardRef((props, ref) => {
         dataTestId,
     } = props;
 
-    const inputClassNames = classNames('c-text-field', {
+    const inputClassNames = classNames('onex-text-field', {
         [className]: className,
-        'c-text-field--lg': size === 'lg',
-        'c-text-field--sm': size === 'sm',
-        'c-text-field--disabled': disabled,
-        'c-text-field--has-icon': icon || showDefaultIcon,
-        'c-text-field--has-clear-btn': showClearBtn,
+        'onex-text-field--lg': size === 'lg',
+        'onex-text-field--sm': size === 'sm',
+        'onex-text-field--disabled': disabled,
+        'onex-text-field--has-icon': icon || showDefaultIcon,
+        'onex-text-field--has-clear-btn': showClearBtn,
     });
 
     const [_value, _setValue] = useState(value);
@@ -55,7 +55,7 @@ const TextField = React.forwardRef((props, ref) => {
     return (
         <Form.Group className={inputClassNames} data-test-id={dataTestId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
-            <div className="c-text-field__input">
+            <div className="onex-text-field__input">
                 <Form.Control
                     ref={ref}
                     type="text"
@@ -69,14 +69,14 @@ const TextField = React.forwardRef((props, ref) => {
                     onChange={onHandleChange}
                 />
                 {(icon || showDefaultIcon) && (
-                    <div className="c-text-field__icon">
+                    <div className="onex-text-field__icon">
                         {icon && icon}
                         {showDefaultIcon && !icon && <SearchIcon />}
                     </div>
                 )}
                 {showClearBtn && (
                     <button
-                        className="c-text-field__clear-btn"
+                        className="onex-text-field__clear-btn"
                         type="button"
                         onClick={handleClear}
                         disabled={disabled}
@@ -86,7 +86,7 @@ const TextField = React.forwardRef((props, ref) => {
                 )}
             </div>
             {isInvalid && !disabled && (
-                <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
+                <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
             )}
         </Form.Group>
     );

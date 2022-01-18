@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 const CustomSwitch = React.forwardRef((props, ref) => {
     const { className, disabled, checked, label, id, onChange, dataTestId } = props;
-    const switchClassNames = classNames('c-switch', {
+    const switchClassNames = classNames('onex-switch', {
         [className]: className,
     });
 

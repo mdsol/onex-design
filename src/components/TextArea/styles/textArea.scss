@@ -1,97 +1,98 @@
-.c-text-area {
-  font-family: $text-area-font-family;
-  max-width: $text-area-max-width;
-
-  .form-control {
-    color: $text-area-text-color;
-    background-color: $text-area-bg-color;
-    border-color: $text-area-border-color;
+.onex-text-area {
+    font-family: $text-area-font-family;
     max-width: $text-area-max-width;
-    min-height: $text-area-height;
-    resize: none;
 
-    &--sm {
-      font-size: $text-area-font-size-sm;
-      line-height: $text-area-line-height-sm;
-      border-radius: $text-area-border-radius-sm;
+    .form-control {
+        color: $text-area-text-color;
+        background-color: $text-area-bg-color;
+        border-color: $text-area-border-color;
+        max-width: $text-area-max-width;
+        min-height: $text-area-height;
+        resize: none;
+
+        &--sm {
+            font-size: $text-area-font-size-sm;
+            line-height: $text-area-line-height-sm;
+            border-radius: $text-area-border-radius-sm;
+        }
+
+        &--lg {
+            font-size: $text-area-font-size-lg;
+            line-height: $text-area-line-height-lg;
+            border-radius: $text-area-border-radius-lg;
+        }
+
+        &:hover:not(:focus):not(:disabled) {
+            border-color: $text-area-hover-border-color;
+        }
+
+        &:focus {
+            border-color: $text-area-focus-border-color;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &.is-invalid,
+        &:invalid {
+            background-image: none;
+            border-color: $text-area-invalid-border-color;
+        }
+
+        &:disabled,
+        &.disabled {
+            background-color: transparent;
+            border-color: $text-area-disabled-border-color;
+
+            &::placeholder {
+                color: $text-area-disabled-text-color;
+            }
+
+            & + .onex-text-area__footer > .onex-text-area__nums {
+                color: $text-area-disabled-text-color;
+            }
+        }
     }
 
-    &--lg {
-      font-size: $text-area-font-size-lg;
-      line-height: $text-area-line-height-lg;
-      border-radius: $text-area-border-radius-lg;
+    &__help {
+        padding-left: 0.25rem;
+        line-height: $text-area-label-line-height;
+        flex-basis: 100%;
     }
 
-    &:hover:not(:focus):not(:disabled) {
-      border-color: $text-area-hover-border-color;
+    &__error {
+        flex-basis: 100%;
+        min-width: 1rem;
+        display: inline-block;
+        line-height: $text-area-label-line-height;
+        padding-left: 1.25rem;
+        background-image: escape-svg($error-message-background-image);
+        background-repeat: no-repeat;
+        background-position: left 0.25rem center;
     }
 
-    &:focus {
-      border-color: $text-area-focus-border-color;
-      outline: 0;
-      box-shadow: none;
+    &__footer {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-end;
+        max-width: $text-area-max-width;
+        margin-top: 0.25rem;
     }
 
-    &.is-invalid, &:invalid {
-      background-image: none;
-      border-color: $text-area-invalid-border-color;
+    &__nums {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 0.25rem;
+        font-size: $form-text-font-size;
+        line-height: $text-area-label-line-height;
+        color: $text-area-num-text-color;
+        flex-basis: 10%;
+
+        &--err {
+            color: $text-area-err-text-color;
+        }
     }
 
-    &:disabled,
-    &.disabled {
-      background-color: transparent;
-      border-color: $text-area-disabled-border-color;
-
-      &::placeholder {
-        color: $text-area-disabled-text-color;
-      }
-
-      & + .c-text-area__footer > .c-text-area__nums {
-        color: $text-area-disabled-text-color;
-      }
+    .form-text {
+        margin-top: 0;
     }
-  }
-
-  &__help {
-    padding-left: 0.25rem;
-    line-height: $text-area-label-line-height;
-    flex-basis: 100%;
-  }
-
-  &__error {
-    flex-basis: 100%;
-    min-width: 1rem;
-    display: inline-block;
-    line-height: $text-area-label-line-height;
-    padding-left: 1.25rem;
-    background-image: escape-svg($error-message-background-image);
-    background-repeat: no-repeat;
-    background-position: left 0.25rem center;
-  }
-
-  &__footer {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-end;
-    max-width: $text-area-max-width;
-    margin-top: 0.25rem;
-  }
-
-  &__nums {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 0.25rem;
-    font-size: $form-text-font-size;
-    line-height: $text-area-label-line-height;
-    color: $text-area-num-text-color;
-    flex-basis: 10%;
-
-    &--err {
-      color: $text-area-err-text-color;
-    }
-  }
-
-  .form-text {
-    margin-top: 0;
-  }
 }

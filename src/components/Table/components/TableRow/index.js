@@ -5,10 +5,10 @@ import classNames from 'classnames';
 const TableRow = (props) => {
     const { children, className, hover, selected, variant, dataTestId } = props;
 
-    const tableClasses = classNames('c-table__row', `c-table__cell--variant-${variant}`, {
+    const tableClasses = classNames('onex-table__row', `onex-table__cell--variant-${variant}`, {
         [className]: className,
-        'c-table__row--hover': hover,
-        'c-table__row--selected': selected,
+        'onex-table__row--hover': hover,
+        'onex-table__row--selected': selected,
     });
 
     const rowChildren = React.Children.map(children, (child) =>

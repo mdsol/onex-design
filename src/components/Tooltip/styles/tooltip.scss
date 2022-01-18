@@ -1,21 +1,21 @@
 @import 'mixins';
 
-.c-tooltip {
-  line-height: $c-tooltip-line-height;
+.onex-tooltip {
+    line-height: $onex-tooltip-line-height;
 
-  &.show.tooltip:not(.c-tooltip--default) {
-    opacity: 1;
-  }
-
-  &__child-wrap {
-    display: inline-flex;
-  }
-
-  &--regular {
-    .tooltip-arrow {
-      display: none;
+    &.show.tooltip:not(.onex-tooltip--default) {
+        opacity: 1;
     }
-  }
 
-  @include tooltip-type-color();
+    &__child-wrap {
+        display: inline-flex;
+    }
+
+    &--regular {
+        .tooltip-arrow {
+            display: none;
+        }
+    }
+
+    @include tooltip-type-color();
 }
