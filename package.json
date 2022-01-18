@@ -28,7 +28,7 @@
     "lint:fix": "eslint ./src --fix",
     "bs-css": "node src/tools/bs-css.js",
     "storybook": "start-storybook -p 6006",
-    "deploy:storybook": "storybook-to-ghpages",
+    "deploy:sb": "storybook-to-ghpages",
     "update:bl": "browserslist@latest --update-db"
   },
   "dependencies": {
