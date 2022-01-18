@@ -109,10 +109,10 @@ export default {
 
 const types = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
-export const Examples = () =>
+export const Examples = (args) =>
     types.map((variant, idx) => (
         // eslint-disable-next-line react/no-array-index-key
-        <Alert key={idx} variant={variant}>
+        <Alert {...args} key={idx} variant={variant}>
             This is a {variant} alert—check it out!
         </Alert>
     ));
@@ -141,10 +141,10 @@ Examples.parameters = {
     },
 };
 
-export const Links = () =>
+export const Links = (args) =>
     types.map((variant, idx) => (
         // eslint-disable-next-line react/no-array-index-key
-        <Alert key={idx} variant={variant}>
+        <Alert {...args} key={idx} variant={variant}>
             This is a {variant} alert with <Alert.Link href="#">an example link</Alert.Link>. Give
             it a click if you like.
         </Alert>
@@ -177,8 +177,8 @@ Links.parameters = {
     },
 };
 
-export const AdditionalContent = () => (
-    <Alert variant="success">
+export const AdditionalContent = (args) => (
+    <Alert {...args} variant="success">
         <Alert.Heading>Hey, nice to see you</Alert.Heading>
         <p>
             Aww yeah, you successfully read this important alert message. This example text is going
@@ -192,12 +192,12 @@ export const AdditionalContent = () => (
     </Alert>
 );
 
-export const DismissingError = () => {
+export const DismissingError = (args) => {
     const [show, setShow] = React.useState(true);
 
     if (show) {
         return (
-            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+            <Alert {...args} variant="danger" onClose={() => setShow(false)} dismissible>
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
                 <p>
                     Change this and that and try again. Duis mollis, est non commodo luctus, nisi
@@ -211,11 +211,11 @@ export const DismissingError = () => {
     return <Button onClick={() => setShow(true)}>Show Alert</Button>;
 };
 
-export const DismissingSuccess = () => {
+export const DismissingSuccess = (args) => {
     const [show, setShow] = React.useState(true);
 
     return (
-        <Alert show={show} onClose={() => setShow(false)} variant="success" dismissible>
+        <Alert {...args} show={show} onClose={() => setShow(false)} variant="success" dismissible>
             <Alert.Heading>How&apos;s it going?!</Alert.Heading>
             <p>
                 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
