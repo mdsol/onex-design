@@ -41,14 +41,14 @@ export default {
         },
         children: { control: 'object' },
         border: {
-            options: Object.values(bgVariants),
+            options: Object.keys(bgVariants),
             control: {
                 type: 'select',
                 label: bgVariants,
             },
         },
         text: {
-            options: Object.values(textVariants),
+            options: Object.keys(textVariants),
             control: {
                 type: 'select',
                 label: textVariants,

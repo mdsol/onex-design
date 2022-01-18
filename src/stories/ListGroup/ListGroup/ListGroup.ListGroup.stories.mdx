@@ -1,0 +1,136 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { ListGroup } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+
+<Meta
+    title="Components/ListGroup/ListGroup"
+    argTypes={{
+        as: {
+            description: 'You can use a custom element type for this component.',
+            table: {
+                type: {
+                    summary: 'elementType',
+                },
+            },
+        },
+        horizontal: {
+            description: 'Changes the flow of the list group items from vertical to horizontal.' +
+                'A value of `null` (the default) sets it to vertical for all breakpoints; Just including the prop sets it for all breakpoints, while `{sm|md|lg|xl|xxl}` makes the list group horizontal starting at that breakpoint’s `min-width`.',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: "true | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'",
+                },
+            },
+        },
+        numbered: {
+            description: 'Generate numbered list items.',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'boolean',
+                },
+            },
+        },
+        variant: {
+            description: 'Adds a variant to the list-group',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: "'flush'",
+                },
+            },
+        },
+        children: {
+            description: 'The content of the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={ListGroup}
+/>
+
+export const Template = (args) => <ListGroup {...args} />;
+
+## ListGroup
+
+List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
+
+### Basic Example
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            variant: undefined,
+            as: 'ul',
+            horizontal: undefined,
+            numbered: undefined,
+            children: (
+                <>
+                    <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                    <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                    <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                </>
+            ),
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+#### Actionable items
+
+Toggle the `actio`n prop to create actionable list group items, with disabled, hover and active styles. List item actions will render a `<button>` or `<a>` (depending on the presence of an `href`) by default but can be overridden by setting the `as` prop as usual.
+
+List items `actions` are distinct from plain items to ensure that click or tap affordances aren't applied to non-interactive items.
+
+<Canvas>
+    <Story id="components-listgroup-listgroup--actionable" />
+</Canvas>
+
+#### Flush
+
+Add the `flush` variant to remove outer borders and rounded corners to render list group items edge-to-edge in a parent container.
+
+<Canvas>
+    <Story id="components-listgroup-listgroup--flush" />
+</Canvas>
+
+#### Numbered
+
+Add the `numbered` prop to opt into numbered list group items. Numbers are generated via CSS (as opposed to a `<ol>`s default browser styling) for better placement inside list group items and to allow for better customization.
+
+<Canvas>
+    <Story id="components-listgroup-listgroup--numbered" />
+</Canvas>
+
+#### Horizontal
+
+Use the `horizontal` prop to make the ListGroup render horizontally. Currently <b>horizontal list groups cannot be combined with flush list groups</b>.
+There are responsive variants to `horizontal`: setting it to `{sm|md|lg|xl|xxl}` makes the list group horizontal starting at that breakpoint’s `min-width`.
+
+<Canvas>
+    <Story id="components-listgroup-listgroup--horizontal" />
+</Canvas>
+
+#### Contextual classes
+
+Use contextual variants on `<ListGroup.Item>`s to style them with a stateful background and color.
+When paired with `action`s, additional hover and active styles apply.
+
+<Canvas>
+    <Story id="components-listgroup-listgroup--contextual-classes" />
+</Canvas>
