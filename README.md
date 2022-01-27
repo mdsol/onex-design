@@ -7,8 +7,7 @@
 https://mdsol.github.io/onex-design/
 
 * Source code: [Medidata/onex-design](https://github.com/GreenJimmy/onex-design)
-* UX and Visual Design components: [Figma UI/UX mockups components](https://www.figma.com/files/870024785163030272/project/38419065/Medidata-Assets?fuid=1024243918964754665)
-* UX and Visual Design concepts: [Figma UI/UX mockups](https://www.figma.com/files/870024785163030272/project/35533837/1x-Design-Concepts?fuid=1024243918964754665)
+* UX and Visual Design: [Figma UI/UX mockups components](https://design.medidata.com)
 
 ## Quick Start
 
