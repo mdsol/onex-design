@@ -1,0 +1,62 @@
+<!-- Stack.mdx -->
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import  { Stack } from '../../../../components';
+
+
+<Meta
+    title="Bootstrap/Layout/Stack"
+    component={Stack}
+/>
+
+
+# Stacks
+
+Shorthand helpers that build on top of our flexbox utilities to make component layout faster and easier than ever.
+
+## Vertical
+Stacks are vertical by default and stacked items are full-width by default. Use the gap prop to add space between items.
+
+<Canvas>
+    <Story id='bootstrap-layout-stack--vertical' />
+</Canvas>
+
+## Horizontal
+
+Use ```direction="horizontal"``` for horizontal layouts. Stacked items are vertically centered by default
+and only take up their necessary width. Use the ```gap``` prop to add space between items.
+
+<Canvas>
+    <Story id='bootstrap-layout-stack--horizontal' />
+</Canvas>
+
+## Examples
+Use a vertical ```Stack``` to stack buttons and other elements:
+
+<Canvas>
+    <Story id='bootstrap-layout-stack--vertical-example' />
+</Canvas>
+
+Create an inline form with a horizontal ```Stack```:
+
+<Canvas>
+    <Story id='bootstrap-layout-stack--horizontal-example' />
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            gap: 3,
+            direction: 'horizontal'
+        }}>
+        {(args) => (
+            <Stack {...args}>
+                <div className="bg-light border">First item</div>
+                <div className="bg-light border">Second item</div>
+                <div className="bg-light border">Third item</div>
+            </Stack>
+        )}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

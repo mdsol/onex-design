@@ -1,0 +1,109 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { InlineEditSelect } from '../../../../components';
+
+<Meta
+    title="Onex/Forms/InlineEditSelect"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        size: {
+            description: 'The size of the component',
+        },
+        dataTestId: {
+            description: 'The id of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        selectOptions: {
+          description: 'The array of options',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isMulti: {
+          description: 'The option to select several values',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        disabled: {
+          description: 'The component is disabled if the value is true',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isInvalid: {
+          description: 'The component is red if the value is true',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        errorMessage: {
+          description: 'The text for error case',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        selectedOptions: {
+          description: 'The array of selected options',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+    }}
+    component={InlineEditSelect}
+/>
+
+export const Template = (args) => <InlineEditSelect {...args} />;
+
+## InlineEditSelect
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            size: 'lg',
+            className: 'inlineEditSelect',
+            dataTestId: 'inlineEditSelect',
+            selectOptions: [
+                { value: 'chocolate', label: 'Chocolate' },
+                { value: 'strawberry', label: 'Strawberry' },
+                { value: 'vanilla', label: 'Vanilla' },
+            ],
+            isMulti: true,
+            selectedOptions: [],
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### InlineEditSelect sizes
+
+<Canvas>
+    <Story id='onex-forms-inlineeditselect--small' />
+    <Story id='onex-forms-inlineeditselect--large' />
+</Canvas>

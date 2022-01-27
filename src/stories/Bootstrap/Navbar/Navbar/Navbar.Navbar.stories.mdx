@@ -1,0 +1,105 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+
+import { Navbar, Container } from '../../../../components';
+
+<Meta
+    title="Bootstrap/Components/Navbar/Navbar"
+    component={Navbar}
+/>
+
+export const Template = (args) => <Navbar {...args} />;
+
+## Navbars
+
+A powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more
+
+### Overview
+
+Here’s what you need to know before getting started with the Navbar:
+
+1. Use the `expand` prop to allow for collapsing the `Navbar` at lower breakpoints.
+2. `Navbar`s and their contents are fluid by default. Use optional containers to limit their horizontal width.
+3. Use spacing and flex utilities to size and position content.
+
+A responsive navigation header, including support for branding, navigation, and more. Here’s an example of all the sub-components included in a responsive light-themed navbar that automatically collapses at the lg (large) breakpoint.
+
+### Basic Example
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            bg: 'primary',
+            as: 'div',
+            collapseOnSelect: false,
+            expand: true,
+            expanded: undefined,
+            fixed: undefined,
+            role: 'navigation',
+            sticky: undefined,
+            variant: 'dark',
+            children: (
+                <Container>
+                    <Navbar.Brand href="#home">Brand link</Navbar.Brand>
+                </Container>
+            )
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+#### Brand
+
+A simple flexible branding component. Images are supported but will likely require custom styling to work well.
+
+<Canvas>
+    <Story id="bootstrap-components-navbar-navbar--brand" />
+</Canvas>
+
+#### Responsive behaviors
+
+Use the <b>expand</b> prop as well as the <b>Navbar.Toggle</b> and <b>Navbar.Collapse</b> components to control when content collapses behind a button.
+
+Set the <b>defaultExpanded</b> prop to make the Navbar start expanded. Set <b>collapseOnSelect</b> to make the Navbar collapse automatically when the user selects an item. You can also finely control the collapsing behavior by using the <b>expanded</b> and <b>onToggle</b> props.
+
+<Canvas>
+    <Story id="bootstrap-components-navbar-navbar--responsive-behaviors" />
+</Canvas>
+
+#### Offcanvas
+
+Transform your expanding and collapsing navbar into an offcanvas drawer with the offcanvas component. We extend both the offcanvas default styles and use the <b>expand</b> prop to create a dynamic and flexible navigation sidebar.
+
+In the example below, to create an offcanvas navbar that is always collapsed across all breakpoints, set the <b>expand</b> prop to <b>false</b>.
+
+<Canvas>
+    <Story id="bootstrap-components-navbar-navbar--navbar-offcanvas" />
+</Canvas>
+
+#### Scrolling
+
+You can use the <b>navbarScroll</b> prop in a <b><Nav\></b> to enable vertical scrolling within the toggleable contents of a collapsed navbar.
+
+#### Placement
+
+You can use Bootstrap's position utilities to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top (scrolls with the page until it reaches the top, then stays there). Fixed navbars use <b>position: fixed</b>, meaning they’re pulled from the normal flow of the DOM and may require custom CSS (e.g., padding-top on the <body\>) to prevent overlap with other elements. Also note that <b>.sticky-top</b> uses <b>position: sticky</b>, which isn’t fully supported in every browser.
+
+Since these positioning needs are so common for Navbars, we've added convenience props for them.
+
+##### Fixed top <b><Navbar fixed="top" /\></b>
+
+##### Fixed bottom <b><Navbar fixed="bottom" /\></b>
+
+##### Sticky top <b><Navbar sticky="top" /\></b>
+
+#### Color schemes
+
+Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities. Choose from <b>variant="light"</b> for use with light background colors, or <b>variant="dark"</b> for dark background colors. Then, customize with the <b>bg</b> prop or any custom css!
+
+#### Containers
+
+While not required, you can wrap the Navbar in a <b><Container\></b> component to center it on a page, or add one within to only center the contents of a fixed or static top navbar.
+
+When the container is within your navbar, its horizontal padding is removed at breakpoints lower than your specified <b>expand={'sm' | 'md' | 'lg' | 'xl' | 'xxl'}</b> prop. This ensures we’re not doubling up on padding unnecessarily on lower viewports when your navbar is collapsed.
+

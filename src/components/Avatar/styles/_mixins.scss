@@ -1,37 +1,35 @@
 @mixin avatar-size($size, $fontSize, $lineHeight, $svgWidth, $svgHeight) {
-  width: $size;
-  height: $size;
-  min-width: $size;
-  min-height: $size;
-  svg {
-    width: svg-default($size);
-    height: svg-default($size);
-  }
-  & .c-avatar__children {
-    font-size: $fontSize;
-    line-height: $lineHeight;
-    max-width: calc(#{$size} * (1 - (2 * .15)));
-  }
-
-  & .c-avatar__img {
     width: $size;
     height: $size;
-  }
+    min-width: $size;
+    min-height: $size;
+    svg {
+        width: svg-default($size);
+        height: svg-default($size);
+    }
+    & .onex-avatar__children {
+        font-size: $fontSize;
+        line-height: $lineHeight;
+        max-width: calc(#{$size} * (1 - (2 * 0.15)));
+    }
 
-  & .c-avatar__hover svg {
-    width: $svgWidth;
-    height: $svgHeight;
-  }
+    & .onex-avatar__img {
+        width: $size;
+        height: $size;
+    }
+
+    & .onex-avatar__hover svg {
+        width: $svgWidth;
+        height: $svgHeight;
+    }
 }
 
 @mixin avatar-layout() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @function svg-default($size) {
-  $svg-size: calc(#{$size} / 2.66);
-  @return $svg-size;
+    $svg-size: calc(#{$size} / 2.66);
+    @return $svg-size;
 }
-
-

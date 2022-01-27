@@ -1,0 +1,89 @@
+<!-- Placeholder.mdx -->
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import  { Placeholder } from '../../../components';
+
+<Meta
+    title="Bootstrap/Components/Placeholder"
+    component={Placeholder}
+/>
+
+export const PlaceholderTemplate = (args) => <Placeholder {...args} />;
+
+# Placeholder
+Use loading placeholders (otherwise known as "skeletons") for your components
+or pages to indicate something may still be loading
+
+## About
+Placeholders can be used to enhance the experience of your application.
+They’re built only with HTML and CSS, meaning you don’t need any JavaScript to create them.
+You will, however, need some custom JavaScript to toggle their visibility.
+Their appearance, color, and sizing can be easily customized with our utility classes.
+
+## Example
+In the example below, we take a typical card component and recreate it with placeholders applied to create a “loading card”.
+Size and proportions are the same between the two.
+
+<Canvas>
+    <Story id='bootstrap-components-placeholder--example' />
+</Canvas>
+
+## Width
+You can change the ```width``` through grid column classes, width utilities, or inline styles.
+
+<Canvas isColumn>
+    <Story id='bootstrap-components-placeholder--width-grid' />
+    <Story id='bootstrap-components-placeholder--width-utilities' />
+    <Story id='bootstrap-components-placeholder--width-inline-styles' />
+</Canvas>
+
+## Color
+By default, the ```Placeholder``` uses ```currentColor```. This can be overriden with a custom color or utility class.
+
+<Canvas isColumn>
+    <Story id='bootstrap-components-placeholder--color-default' />
+    <Story id='bootstrap-components-placeholder--color-primary' />
+    <Story id='bootstrap-components-placeholder--color-secondary' />
+    <Story id='bootstrap-components-placeholder--color-success' />
+    <Story id='bootstrap-components-placeholder--color-danger' />
+    <Story id='bootstrap-components-placeholder--color-warning' />
+    <Story id='bootstrap-components-placeholder--color-info' />
+    <Story id='bootstrap-components-placeholder--color-light' />
+    <Story id='bootstrap-components-placeholder--color-dark' />
+</Canvas>
+
+## Sizing
+The size of ```Placeholders``` are based on the typographic style of the parent element.
+Customize them with sizing props: ```lg```, ```sm```, or ```xs```.
+
+<Canvas isColumn>
+    <Story id='bootstrap-components-placeholder--size-default' />
+    <Story id='bootstrap-components-placeholder--size-lg' />
+    <Story id='bootstrap-components-placeholder--size-sm' />
+    <Story id='bootstrap-components-placeholder--size-xs' />
+</Canvas>
+
+## Animation
+Animate placeholders by setting the prop ```animation``` to ```glow``` or ```wave``` to better convey
+the perception of something being actively loaded.
+
+<Canvas isColumn>
+    <Story id='bootstrap-components-placeholder--animation-wave' />
+    <Story id='bootstrap-components-placeholder--animation-glow' />
+</Canvas>
+
+
+## Demo
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            xs: 12,
+            size: 'lg',
+            bg: 'success',
+        }}>
+        {PlaceholderTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

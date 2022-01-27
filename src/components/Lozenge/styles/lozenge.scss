@@ -1,53 +1,67 @@
 @import 'mixins';
 
-.c-lozenge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: $c-lozenge-padding-y $c-lozenge-padding-x;
-
-  &__icon {
+.onex-lozenge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: $onex-lozenge-padding-y $onex-lozenge-padding-x;
 
-    & svg {
-      fill: $c-lozenge-icon-color;
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            fill: $onex-lozenge-icon-color;
+        }
     }
-  }
 
-  &__text {
-    padding: 0 $c-lozenge-text-padding-x;
-  }
-
-  &--size-lg {
-    @include size($c-lozenge-font-size-lg, $c-lozenge-line-height-lg, $c-lozenge-size-lg, $c-lozenge-icon-size-lg, $c-lozenge-border-radius-lg, $c-lozenge-icon-color);
-
-    .c-lozenge__icon + .c-lozenge__text {
-      margin-left: 0.25rem;
+    &__text {
+        padding: 0 $onex-lozenge-text-padding-x;
     }
-  }
 
-  &--size-sm {
-    @include size($c-lozenge-font-size-sm, $c-lozenge-line-height-sm, $c-lozenge-size-sm, $c-lozenge-icon-size-sm, $c-lozenge-border-radius-sm, $c-lozenge-icon-color);
+    &--size-lg {
+        @include size(
+            $onex-lozenge-font-size-lg,
+            $onex-lozenge-line-height-lg,
+            $onex-lozenge-size-lg,
+            $onex-lozenge-icon-size-lg,
+            $onex-lozenge-border-radius-lg,
+            $onex-lozenge-icon-color
+        );
 
-    .c-lozenge__icon + .c-lozenge__text {
-      margin-left: 0.125rem;
+        .onex-lozenge__icon + .onex-lozenge__text {
+            margin-left: 0.25rem;
+        }
     }
-  }
 
-  &--variant-bold {
-    @include lozenge-bold-color();
-  }
+    &--size-sm {
+        @include size(
+            $onex-lozenge-font-size-sm,
+            $onex-lozenge-line-height-sm,
+            $onex-lozenge-size-sm,
+            $onex-lozenge-icon-size-sm,
+            $onex-lozenge-border-radius-sm,
+            $onex-lozenge-icon-color
+        );
 
-  &--variant-subtle {
-    @include lozenge-subtle-color();
-  }
+        .onex-lozenge__icon + .onex-lozenge__text {
+            margin-left: 0.125rem;
+        }
+    }
 
-  &--variant-icon {
-    @include lozenge-icon-color();
+    &--variant-bold {
+        @include lozenge-bold-color();
+    }
 
-    border-radius: 100%;
-    padding: $c-lozenge-padding-y;
-  }
+    &--variant-subtle {
+        @include lozenge-subtle-color();
+    }
+
+    &--variant-icon {
+        @include lozenge-icon-color();
+
+        border-radius: 100%;
+        padding: $onex-lozenge-padding-y;
+    }
 }

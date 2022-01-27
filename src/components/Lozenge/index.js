@@ -5,10 +5,10 @@ const Lozenge = (props) => {
     const { className, size, type, children, variant, icon, dataTestId } = props;
 
     const lozengeClassNames = classNames(
-        'c-lozenge',
-        `c-lozenge--size-${size}`,
-        `c-lozenge--type-${type}`,
-        `c-lozenge--variant-${variant}`,
+        'onex-lozenge',
+        `onex-lozenge--size-${size}`,
+        `onex-lozenge--type-${type}`,
+        `onex-lozenge--variant-${variant}`,
         {
             [className]: className,
         },
@@ -16,8 +16,8 @@ const Lozenge = (props) => {
 
     return (
         <div className={lozengeClassNames} data-test-id={dataTestId}>
-            {icon && <span className="c-lozenge__icon">{icon}</span>}
-            {variant !== 'icon' && <span className="c-lozenge__text">{children}</span>}
+            {icon && <span className="onex-lozenge__icon">{icon}</span>}
+            {variant !== 'icon' && <span className="onex-lozenge__text">{children}</span>}
         </div>
     );
 };

@@ -1,21 +1,33 @@
 @import 'mixins';
 
-.c-badge {
-  @include badge-type-color();
+.onex-badge {
+    @include badge-type-color();
 
-  display: inline-flex;
-  align-items: center;
-
-  & .c-badge__icon {
     display: inline-flex;
-    margin-left: 2px;
-  }
+    align-items: center;
 
-  &--size-sm {
-    @include badge-size($c-badge-height-sm, $c-badge-line-height-sm, $c-badge-font-size-sm, $c-badge-icon-size-sm, $c-badge-border-radius-sm);
-  }
+    & .onex-badge__icon {
+        display: inline-flex;
+        margin-left: 2px;
+    }
 
-  &--size-lg {
-    @include badge-size($c-badge-height-lg, $c-badge-line-height-lg, $c-badge-font-size-lg, $c-badge-icon-size-lg, $c-badge-border-radius-lg);
-  }
+    &--size-sm {
+        @include badge-size(
+            $onex-badge-height-sm,
+            $onex-badge-line-height-sm,
+            $onex-badge-font-size-sm,
+            $onex-badge-icon-size-sm,
+            $onex-badge-border-radius-sm
+        );
+    }
+
+    &--size-lg {
+        @include badge-size(
+            $onex-badge-height-lg,
+            $onex-badge-line-height-lg,
+            $onex-badge-font-size-lg,
+            $onex-badge-icon-size-lg,
+            $onex-badge-border-radius-lg
+        );
+    }
 }

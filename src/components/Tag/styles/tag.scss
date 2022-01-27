@@ -1,123 +1,123 @@
-.c-tag {
-  box-sizing: border-box;
-  padding: 0.25rem 0.375rem 0.25rem 0.25rem;
-  display: flex;
-  align-items: center;
-  background-color: $secondary-200;
-  border: none;
-
-  &:hover {
-    background-color: $primary-700;
-    color: $white;
-  }
-
-  &--lg {
-    height: $c-tag-height-lg;
-
-    .c-tag__close {
-      width: $c-tag-btn-size-lg;
-      height: $c-tag-btn-size-lg;
-    }
-  }
-
-  &--sm {
-    height: $c-tag-height-md;
-
-    .c-tag__close {
-      width: $c-tag-btn-size-sm;
-      height: $c-tag-btn-size-sm;
-    }
-  }
-
-  &--default {
-    border-radius: $component-border-radius-sm;
-  }
-
-  &--rounded {
-    border-radius: $c-tag-height-lg;
-  }
-
-  &__close {
+.onex-tag {
+    box-sizing: border-box;
+    padding: 0.25rem 0.375rem 0.25rem 0.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-left: 0.25rem;
-    border: 0;
-    padding: 0;
-    background-color: inherit;
+    background-color: $secondary-200;
+    border: none;
 
-    &__icon {
-      height: $c-tag-close-icon-size;
-      width: $c-tag-close-icon-size;
-    }
-  }
-
-  &__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $c-tag-img-size;
-    height: $c-tag-img-size;
-    margin-right: 0.25rem;
-    border-radius: 100%;
-    overflow: hidden;
-
-    svg path {
-      fill: $primary-700;
-    }
-  }
-
-  &:hover {
-    & .c-tag__close__icon {
-      fill: $btn-secondary-hover-text-color;
+    &:hover {
+        background-color: $primary-700;
+        color: $white;
     }
 
-    & .c-tag__img svg path {
-      fill: $white;
+    &--lg {
+        height: $onex-tag-height-lg;
+
+        .onex-tag__close {
+            width: $onex-tag-btn-size-lg;
+            height: $onex-tag-btn-size-lg;
+        }
     }
-  }
+
+    &--sm {
+        height: $onex-tag-height-md;
+
+        .onex-tag__close {
+            width: $onex-tag-btn-size-sm;
+            height: $onex-tag-btn-size-sm;
+        }
+    }
+
+    &--default {
+        border-radius: $component-border-radius-sm;
+    }
+
+    &--rounded {
+        border-radius: $onex-tag-height-lg;
+    }
+
+    &__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.25rem;
+        border: 0;
+        padding: 0;
+        background-color: inherit;
+
+        &__icon {
+            height: $onex-tag-close-icon-size;
+            width: $onex-tag-close-icon-size;
+        }
+    }
+
+    &__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $onex-tag-img-size;
+        height: $onex-tag-img-size;
+        margin-right: 0.25rem;
+        border-radius: 100%;
+        overflow: hidden;
+
+        svg path {
+            fill: $primary-700;
+        }
+    }
+
+    &:hover {
+        & .onex-tag__close__icon {
+            fill: $btn-secondary-hover-text-color;
+        }
+
+        & .onex-tag__img svg path {
+            fill: $white;
+        }
+    }
 }
 
-.c-tag--selected {
-  border: 1px solid $primary;
+.onex-tag--selected {
+    border: 1px solid $primary;
 
-  &:hover {
-    background-color: $secondary-200;
-    color: $black;
+    &:hover {
+        background-color: $secondary-200;
+        color: $black;
 
-    & .c-tag__img svg path {
-      fill: $black;
+        & .onex-tag__img svg path {
+            fill: $black;
+        }
     }
-  }
 
-  &:hover .c-tag__close__icon {
-    fill: black;
-  }
+    &:hover .onex-tag__close__icon {
+        fill: black;
+    }
 }
 
-.c-tag--link {
-  .c-tag__close__icon {
-    fill: $primary;
-  }
-
-  .c-tag__img svg path {
-    fill: $primary;
-  }
-
-  &:hover {
-    background-color: $secondary-200;
-    color: $primary;
-
-    & .c-tag__img svg path {
-      fill: $primary;
+.onex-tag--link {
+    .onex-tag__close__icon {
+        fill: $primary;
     }
 
-    .c-tag__close__icon {
-      fill: $primary;
+    .onex-tag__img svg path {
+        fill: $primary;
     }
-  }
 
-  &:hover a {
-    text-decoration: underline;
-  }
+    &:hover {
+        background-color: $secondary-200;
+        color: $primary;
+
+        & .onex-tag__img svg path {
+            fill: $primary;
+        }
+
+        .onex-tag__close__icon {
+            fill: $primary;
+        }
+    }
+
+    &:hover a {
+        text-decoration: underline;
+    }
 }

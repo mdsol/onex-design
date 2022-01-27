@@ -35,7 +35,7 @@ const CustomToast = React.forwardRef((props, ref) => {
         dataTestId,
     } = props;
 
-    const toastClassNames = classNames('c-toast', `c-toast--variant-${variant}`, {
+    const toastClassNames = classNames('onex-toast', `onex-toast--variant-${variant}`, {
         [className]: className,
     });
 
@@ -47,21 +47,21 @@ const CustomToast = React.forwardRef((props, ref) => {
             data-test-id={dataTestId}
         >
             <Toast
-                className="c-toast__block"
+                className="onex-toast__block"
                 show={show}
                 delay={delay}
                 animation={animation}
                 autohide={autohide}
                 bg={variant}
             >
-                <Toast.Header className="c-toast__header" closeButton={false}>
+                <Toast.Header className="onex-toast__header" closeButton={false}>
                     {(showDefaultIcon || icon) && (
-                        <div className="c-toast__icon">{icon || IconVariants[variant]}</div>
+                        <div className="onex-toast__icon">{icon || IconVariants[variant]}</div>
                     )}
-                    <div className="c-toast__message">{children}</div>
+                    <div className="onex-toast__message">{children}</div>
                     {closeButton && (
                         <Button
-                            className="c-toast__btn-close"
+                            className="onex-toast__btn-close"
                             variant="icon-link"
                             onClick={onClose}
                         >

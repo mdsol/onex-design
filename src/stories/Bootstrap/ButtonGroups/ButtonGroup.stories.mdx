@@ -1,0 +1,76 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { ButtonGroup, Button } from '../../../components';
+
+<Meta
+    title="Bootstrap/Components/ButtonGroup"
+    component={ ButtonGroup }
+/>
+
+export const Template = (args) => <ButtonGroup {...args} />;
+
+## Button groups
+
+Group a series of buttons together on a single line with the button group.
+
+### Basic example
+
+Wrap a series of `<Button>`s in a `<ButtonGroup>`.
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            children: (
+                <>
+                    <Button variant="secondary">Left</Button>
+                    <Button variant="secondary">Middle</Button>
+                    <Button variant="secondary">Right</Button>
+                </>
+            )
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Button toolbar
+
+Combine sets of `<ButtonGroup>`s into a `<ButtonToolbar>` for more complex components.
+`ButtonToolbar` component has `role` `property` of `string` type and `default` value - `toolbar`.
+The ARIA role describing the button toolbar. Generally the default "toolbar" role is correct. An `aria-label` or `aria-labelledby` prop is also recommended.
+
+Feel free to mix input groups with button groups in your toolbars. Similar to the example above, you’ll likely need some utilities though to space things properly.
+
+<Canvas>
+    <Story id="bootstrap-components-buttongroup--toolbar-button" />
+</Canvas>
+
+### Sizing
+
+Instead of applying button sizing props to every button in a group, just add `size` prop to the `<ButtonGroup>`.
+
+<Canvas>
+    <Story id="bootstrap-components-buttongroup--size" />
+</Canvas>
+
+### Nesting
+
+You can place other button types within the `<ButtonGroup>` like `<DropdownButton>`s.
+
+<Canvas>
+    <Story id="bootstrap-components-buttongroup--nesting" />
+</Canvas>
+
+
+### Vertical variation
+
+Make a set of buttons appear vertically stacked rather than horizontally, by adding `vertical` to the `<ButtonGroup>`.
+<b>Split button dropdowns are not supported here.</b>
+
+<Canvas>
+    <Story id="bootstrap-components-buttongroup--vertical" />
+</Canvas>
+
+

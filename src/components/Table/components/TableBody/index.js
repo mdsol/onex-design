@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const TableBody = (props) => {
     const { children, className, dataTestId } = props;
 
-    const tableClasses = classNames('c-table__body', {
+    const tableClasses = classNames('onex-table__body', {
         [className]: className,
     });
 

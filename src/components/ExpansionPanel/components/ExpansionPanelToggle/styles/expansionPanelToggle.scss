@@ -1,26 +1,26 @@
-.c-expansionPanel {
-  &.show &-toggle__icon {
-    transform: rotateX(-180deg);
-    transition: transform ease-in-out 0.15s;
-  }
-
-  &-toggle {
-    &__children {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+.onex-expansionPanel {
+    &.show &-toggle__icon {
+        transform: rotateX(-180deg);
+        transition: transform ease-in-out 0.15s;
     }
 
-    &__title {
-      padding: 0.5rem;
-    }
+    &-toggle {
+        &__children {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    &__icon {
-      color: $btn-toggle-icon-color;
-    }
+        &__title {
+            padding: 0.5rem;
+        }
 
-    &:disabled &__icon {
-      color: $btn-toggle-icon-disabled-color;;
+        &__icon {
+            color: $btn-toggle-icon-color;
+        }
+
+        &:disabled &__icon {
+            color: $btn-toggle-icon-disabled-color;
+        }
     }
-  }
 }

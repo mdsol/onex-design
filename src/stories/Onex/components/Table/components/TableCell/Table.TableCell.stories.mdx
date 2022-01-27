@@ -1,0 +1,52 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+import { Table, TableHead, TableRow, TableCell, Badge, Avatar } from '../../../../../../components';
+
+<Meta
+  title="Onex/Components/Table/TableCell"
+  component={TableCell}
+/>
+
+export const TableCellTemplate = (args) => (
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell {...args}/>
+      </TableRow>
+    </TableHead>
+  </Table>
+);
+
+# TableCell
+The component renders a ```<th>``` element when the parent context is a header or otherwise a ```<td>``` element.
+
+## Style
+### Variations
+
+#### Header
+<Canvas>
+  <Story id='onex-components-table-tablecell--header' />
+</Canvas>
+
+#### Body
+<Canvas>
+  <Story id='onex-components-table-tablecell--body' />
+</Canvas>
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      align: 'center',
+      children: 'Demo cell',
+      className: 'custom-tablecell',
+      dataTestId: 'test-tablecell-id',
+      variant: 'header',
+      width: '120px'
+  }}>
+    {TableCellTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+

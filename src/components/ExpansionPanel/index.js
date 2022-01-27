@@ -8,7 +8,7 @@ import ExpansionPanelItem from './components/ExpansionPanelItem';
 const ExpansionPanel = (props) => {
     const { className, id, children, onSelect, dataTestId, disabled, toggle, items } = props;
 
-    const expansionPanelClassNames = classNames('c-expansionPanel', {
+    const expansionPanelClassNames = classNames('onex-expansionPanel', {
         [className]: className,
     });
 
@@ -27,7 +27,7 @@ const ExpansionPanel = (props) => {
             >
                 {children}
             </Dropdown.Toggle>
-            <Dropdown.Menu renderOnMount flip={false} className="c-expansionPanel-menu">
+            <Dropdown.Menu renderOnMount flip={false} className="onex-expansionPanel-menu">
                 {!!items?.length &&
                     items.map((item) => {
                         const {

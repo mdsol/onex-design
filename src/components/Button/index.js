@@ -5,14 +5,14 @@ import classNames from 'classnames';
 
 const CustomButton = React.forwardRef((props, ref) => {
     const { children, className, dataTestId, ...accProps } = props;
-    const buttonClassNames = classNames('c-btn', {
+    const buttonClassNames = classNames('onex-btn', {
         [className]: className,
     });
 
     return (
         <Button ref={ref} className={buttonClassNames} data-test-id={dataTestId} {...accProps}>
             {children}
-            {accProps.variant === 'link' && <span className="c-btn__decorator" />}
+            {accProps.variant === 'link' && <span className="onex-btn__decorator" />}
         </Button>
     );
 });

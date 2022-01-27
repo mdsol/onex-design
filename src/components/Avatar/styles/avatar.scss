@@ -1,74 +1,110 @@
 @import 'mixins';
 
-.c-avatar {
-  @include avatar-layout();
-  position: relative;
-  border-radius: $c-avatar-border-radius;
-  cursor: pointer;
-  color: $secondary-500;
-  overflow: hidden;
-  box-shadow:  inset 0 0 0 1px $secondary;
-
-  &__img {
-    object-fit: cover;
-    overflow: hidden;
-  }
-
-  &__icon-decorator {
-    display: none;
-  }
-
-  &:not(.hover-disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
-  }
-
-  &__hover {
+.onex-avatar {
     @include avatar-layout();
-    border-radius: $c-avatar-border-radius;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: $white;
-    background-color: $black-opacity-07;
-  }
-
-  &:hover &__hover {
-    opacity: 1;
-  }
-
-  &__children {
-    @include avatar-layout();
-    font-family: $font-family;
+    position: relative;
+    border-radius: $onex-avatar-border-radius;
+    cursor: pointer;
     color: $secondary-500;
     overflow: hidden;
-  }
+    box-shadow: inset 0 0 0 1px $secondary;
 
-  &--size-xs {
-    @include avatar-size($c-avatar-height-xs, $c-avatar-font-size-sm, $c-avatar-line-height-sm, $c-avatar-width-svg-xs, $c-avatar-height-svg-xs);
-  }
+    &__img {
+        object-fit: cover;
+        overflow: hidden;
+    }
 
-  &--size-sm {
-    @include avatar-size($c-avatar-height-sm, $c-avatar-font-size-sm, $c-avatar-line-height-sm, $c-avatar-width-svg-sm, $c-avatar-height-svg-sm);
-  }
+    &__icon-decorator {
+        display: none;
+    }
 
-  &--size-md {
-    @include avatar-size($c-avatar-height-md, $c-avatar-font-size-lg, $c-avatar-line-height-lg, $c-avatar-width-svg-md, $c-avatar-height-svg-md);
-  }
+    &:not(.hover-disabled):hover {
+        box-shadow: inset 0 0 0 1px transparent;
+    }
 
-  &--size-lg {
-    @include avatar-size($c-avatar-height-lg, $c-avatar-font-size-lg, $c-avatar-line-height-lg, $c-avatar-width-svg-lg, $c-avatar-height-svg-lg);
-  }
+    &__hover {
+        @include avatar-layout();
+        border-radius: $onex-avatar-border-radius;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $white;
+        background-color: $black-opacity-07;
+    }
 
-  &--size-xl {
-    @include avatar-size($c-avatar-height-xl, $c-avatar-font-size-xxl, $c-avatar-line-height-xxl, $c-avatar-width-svg-xl, $c-avatar-height-svg-xl);
-  }
+    &:hover &__hover {
+        opacity: 1;
+    }
 
-  &--size-xxl {
-    @include avatar-size($c-avatar-height-xxl, $c-avatar-font-size-xxl, $c-avatar-font-size-xxl, $c-avatar-width-svg-xxl, $c-avatar-height-svg-xxl);
-  }
+    &__children {
+        @include avatar-layout();
+        font-family: $font-family;
+        color: $secondary-500;
+        overflow: hidden;
+    }
+
+    &--size-xs {
+        @include avatar-size(
+            $onex-avatar-height-xs,
+            $onex-avatar-font-size-sm,
+            $onex-avatar-line-height-sm,
+            $onex-avatar-width-svg-xs,
+            $onex-avatar-height-svg-xs
+        );
+    }
+
+    &--size-sm {
+        @include avatar-size(
+            $onex-avatar-height-sm,
+            $onex-avatar-font-size-sm,
+            $onex-avatar-line-height-sm,
+            $onex-avatar-width-svg-sm,
+            $onex-avatar-height-svg-sm
+        );
+    }
+
+    &--size-md {
+        @include avatar-size(
+            $onex-avatar-height-md,
+            $onex-avatar-font-size-lg,
+            $onex-avatar-line-height-lg,
+            $onex-avatar-width-svg-md,
+            $onex-avatar-height-svg-md
+        );
+    }
+
+    &--size-lg {
+        @include avatar-size(
+            $onex-avatar-height-lg,
+            $onex-avatar-font-size-lg,
+            $onex-avatar-line-height-lg,
+            $onex-avatar-width-svg-lg,
+            $onex-avatar-height-svg-lg
+        );
+    }
+
+    &--size-xl {
+        @include avatar-size(
+            $onex-avatar-height-xl,
+            $onex-avatar-font-size-xxl,
+            $onex-avatar-line-height-xxl,
+            $onex-avatar-width-svg-xl,
+            $onex-avatar-height-svg-xl
+        );
+    }
+
+    &--size-xxl {
+        @include avatar-size(
+            $onex-avatar-height-xxl,
+            $onex-avatar-font-size-xxl,
+            $onex-avatar-font-size-xxl,
+            $onex-avatar-width-svg-xxl,
+            $onex-avatar-height-svg-xxl
+        );
+    }
 }

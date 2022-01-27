@@ -1,0 +1,48 @@
+<!-- Popover.mdx -->
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import  { Popover, OverlayTrigger, Button } from '../../../components';
+
+<Meta
+    title="Bootstrap/Components/Popover"
+    component={Popover}
+/>
+
+# Popovers
+A popover component, like those found in iOS.
+
+You can control the placement of the Popover.
+
+<Canvas isColumn>
+    <Story id="bootstrap-components-popover--top" />
+    <Story id="bootstrap-components-popover--right" />
+    <Story id="bootstrap-components-popover--left" />
+    <Story id="bootstrap-components-popover--bottom" />
+</Canvas>
+
+# Demo
+<Canvas>
+    <Story name="Demo"
+           args={{
+               placement: 'right',
+               id: 'popover-basic'
+           }}>
+        {(args) => {
+            const { placement } = args;
+            return (
+                <OverlayTrigger trigger="click" placement={placement} overlay={
+                    <Popover {...args}>
+                        <Popover.Header as="h3">Popover {placement}</Popover.Header>
+                        <Popover.Body>
+                            And here's some <strong>amazing</strong> content. It's very engaging.
+                            right?
+                        </Popover.Body>
+                    </Popover>
+                }>
+                    <Button variant="primary">Click me to see</Button>
+                </OverlayTrigger>
+            );
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

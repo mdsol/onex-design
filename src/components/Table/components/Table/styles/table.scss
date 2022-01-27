@@ -1,48 +1,48 @@
-.c-table-wrap {
-  &--filled {
-    padding: 0 0.25rem 0.25rem 0.25rem;
-    background-color: $c-table-fill-bg-color;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 10px $black-opacity-01;
-    border: 1px solid $table-border-color;
-  }
+.onex-table-wrap {
+    &--filled {
+        padding: 0 0.25rem 0.25rem 0.25rem;
+        background-color: $onex-table-fill-bg-color;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 10px $black-opacity-01;
+        border: 1px solid $table-border-color;
+    }
 }
 
-.c-table {
-  margin-bottom: 0;
-  font-family: $font-family;
+.onex-table {
+    margin-bottom: 0;
+    font-family: $font-family;
 
-  &__cell {
-    &:first-child {
-      border-radius: $c-table-cell-border-radius 0 0 $c-table-cell-border-radius;
-      border-left-style: solid;
+    &__cell {
+        &:first-child {
+            border-radius: $onex-table-cell-border-radius 0 0 $onex-table-cell-border-radius;
+            border-left-style: solid;
+        }
+
+        &:last-child {
+            border-radius: 0 $onex-table-cell-border-radius $onex-table-cell-border-radius 0;
+            border-right-style: solid;
+        }
     }
 
-    &:last-child {
-      border-radius: 0 $c-table-cell-border-radius $c-table-cell-border-radius 0;
-      border-right-style: solid;
-    }
-  }
+    &__row {
+        position: relative;
 
-  &__row {
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: $c-table-cell-border-radius;
-      bottom: 0;
-      width: calc(100% - 2 * #{$c-table-cell-border-radius});
-      height: 1px;
-      background-color: $table-border-color;
+        &::after {
+            content: '';
+            position: absolute;
+            left: $onex-table-cell-border-radius;
+            bottom: 0;
+            width: calc(100% - 2 * #{$onex-table-cell-border-radius});
+            height: 1px;
+            background-color: $table-border-color;
+        }
     }
-  }
 
-  &__body {
-    .c-table__row:last-child {
-      &::after {
-        display: none;
-      }
+    &__body {
+        .onex-table__row:last-child {
+            &::after {
+                display: none;
+            }
+        }
     }
-  }
 }

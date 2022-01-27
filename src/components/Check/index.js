@@ -17,7 +17,7 @@ const Check = React.forwardRef((props, ref) => {
         onChange,
     } = props;
     const checkboxRef = useRef();
-    const formGroupClassNames = classNames('с-check', `c-check--size-${size}`, {
+    const formGroupClassNames = classNames('с-check', `onex-check--size-${size}`, {
         [className]: className,
         disabled,
     });

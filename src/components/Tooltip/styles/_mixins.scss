@@ -1,43 +1,48 @@
 @mixin tooltip-arrow-color($bg-color) {
-  $positions: 'top', 'right', 'bottom', 'left';
+    $positions: 'top', 'right', 'bottom', 'left';
 
-  @each $position in $positions {
-    &.bs-tooltip-#{$position} .tooltip-arrow::before {
-      border-#{$position}-color: $bg-color;
+    @each $position in $positions {
+        &.bs-tooltip-#{$position} .tooltip-arrow::before {
+            border-#{$position}-color: $bg-color;
+        }
+
+        &.bs-tooltip-auto[data-popper-placement^='#{$position}'] .tooltip-arrow::before {
+            border-#{$position}-color: $bg-color;
+        }
     }
 
-    &.bs-tooltip-auto[data-popper-placement^=#{$position}] .tooltip-arrow::before {
-      border-#{$position}-color: $bg-color;
+    &.bs-tooltip-start .tooltip-arrow::before {
+        border-left-color: $bg-color;
     }
-  }
 
-  &.bs-tooltip-start .tooltip-arrow::before {
-    border-left-color: $bg-color;
-  }
-
-  &.bs-tooltip-end .tooltip-arrow::before {
-    border-right-color: $bg-color;
-  }
+    &.bs-tooltip-end .tooltip-arrow::before {
+        border-right-color: $bg-color;
+    }
 }
 
 @mixin bg-color-tooltip($bg-color) {
-  .tooltip-inner {
-    background-color: $bg-color;
-  }
+    .tooltip-inner {
+        background-color: $bg-color;
+    }
 
-  @include tooltip-arrow-color($bg-color);
+    @include tooltip-arrow-color($bg-color);
 }
 
 @mixin tooltip-type-color() {
-  $types: ('success': $success, 'warning': $warning, 'error': $error, 'info': $primary);
+    $types: (
+        'success': $success,
+        'warning': $warning,
+        'error': $error,
+        'info': $primary,
+    );
 
-  @each $type, $color in $types {
-    &.c-tooltip--#{$type} {
-      @include bg-color-tooltip(#{$color});
+    @each $type, $color in $types {
+        &.onex-tooltip--#{$type} {
+            @include bg-color-tooltip(#{$color});
 
-      &.show.tooltip {
-        opacity: 1;
-      }
+            &.show.tooltip {
+                opacity: 1;
+            }
+        }
     }
-  }
 }

@@ -1,20 +1,20 @@
 .inline-edit-select-wrapper {
-  max-width: $inline-edit-select-width;
-  min-width: $inline-edit-select-min-width;
-  .inline-edit-select {
-    .c-select__control {
-      background-color: white;
-      border: none;
-      .c-select__indicators {
-        display: none;
-      }
-      &:hover {
-        background-color: $inline-edit-select-background-hover;
-        cursor: pointer;
-        .c-select__indicators {
-          display: flex;
+    max-width: $inline-edit-select-width;
+    min-width: $inline-edit-select-min-width;
+    .inline-edit-select {
+        .onex-select__control {
+            background-color: white;
+            border: none;
+            .onex-select__indicators {
+                display: none;
+            }
+            &:hover {
+                background-color: $inline-edit-select-background-hover;
+                cursor: pointer;
+                .onex-select__indicators {
+                    display: flex;
+                }
+            }
         }
-      }
     }
-  }
 }

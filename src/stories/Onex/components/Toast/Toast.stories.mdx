@@ -1,0 +1,226 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { styled } from '@storybook/theming';
+
+import { Toast } from '../../../../components';
+
+<Meta
+    title="Onex/Components/Toast"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        id: {
+            description: 'An html id attribute, necessary for accessibility ',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        children: {
+            description: 'The react component or DOM element relative to which the tooltip will be shown. ',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        delay: {
+            description: 'Delay hiding the toast (ms)',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        animation: {
+            description: 'Apply a CSS fade transition to the toast.',
+            table: {
+                defaultValue: {
+                    summary: 'true',
+                },
+            }
+        },
+        autohide: {
+            description: 'Auto hide the toast',
+            table: {
+                defaultValue: {
+                    summary: 'true',
+                },
+            }
+        },
+        closeButton: {
+            description: 'Specify whether the Component should contain a close button',
+            table: {
+                defaultValue: {
+                    summary: 'true',
+                },
+            }
+        },
+        showDefaultIcon: {
+            description: 'If it true the default icon is showed',
+            table: {
+                defaultValue: {
+                    summary: 'true',
+                },
+            }
+        },
+        icon: {
+            description: 'The icon element instead of default icon. Should set <b>showDefaultIcon</b> - false. ',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        variant: {
+            description: 'The variant of the component.',
+            table: {
+                defaultValue: {
+                    summary: 'false',
+                },
+            }
+        },
+        show: {
+            description: 'show or hide the element',
+            table: {
+                defaultValue: {
+                    summary: 'false',
+                },
+            }
+        },
+        position: {
+            description: 'Where the toasts will be placed within the container.'
+        },
+        dataTestId: {
+            description: 'The it of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={Toast}
+/>
+
+export const Template = (args) => <Toast {...args} />;
+
+## Toast
+
+Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.
+
+### Toast details
+<Canvas>
+    <Story
+        name="Demo"
+        position="relative"
+        height="60px"
+        args={{
+            id: 'demo-toast',
+            variant: 'info',
+            className: 'c-demo-toast',
+            show: true,
+            dataTestId: 'demo-toast-id',
+            children: 'Example of an info banner message.',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Toast variants
+
+The component has 4 variants such as "info", "success", "warning", "error".
+
+##### <i>info</i>
+
+<Canvas>
+    <Story id='onex-components-toast--info' position="relative" height="60px" />
+</Canvas>
+
+##### <i>success</i>
+
+<Canvas>
+    <Story id='onex-components-toast--success' height="60px" position="relative" />
+</Canvas>
+
+##### <i>warning</i>
+
+<Canvas>
+    <Story id='onex-components-toast--warning' height="60px" position="relative" />
+</Canvas>
+
+##### <i>error</i>
+
+<Canvas>
+    <Story id='onex-components-toast--error' height="60px" position="relative" />
+</Canvas>
+
+### Toast with custom icon
+
+<Canvas>
+    <Story id='onex-components-toast--custom-icon' height="60px" position="relative" />
+</Canvas>
+
+### Toast placement
+
+##### <i>top-start</i>
+
+<Canvas>
+    <Story id='onex-components-toast--top-start' height="100px" position="relative" />
+</Canvas>
+
+##### <i>top-center</i>
+
+<Canvas>
+    <Story id='onex-components-toast--top-center' height="100px" position="relative" />
+</Canvas>
+
+##### <i>top-end</i>
+
+<Canvas>
+    <Story id='onex-components-toast--top-end' height="100px" position="relative" />
+</Canvas>
+
+##### <i>middle-start</i>
+
+<Canvas>
+    <Story id='onex-components-toast--middle-start' height="100px" position="relative" />
+</Canvas>
+
+##### <i>middle-center</i>
+
+<Canvas>
+    <Story id='onex-components-toast--middle-center' height="100px" position="relative" />
+</Canvas>
+
+##### <i>middle-end</i>
+
+<Canvas>
+    <Story id='onex-components-toast--middle-end' height="100px" position="relative" />
+</Canvas>
+
+##### <i>bottom-start</i>
+
+<Canvas>
+    <Story id='onex-components-toast--bottom-start' height="100px" position="relative" />
+</Canvas>
+
+##### <i>bottom-center</i>
+
+<Canvas>
+    <Story id='onex-components-toast--bottom-center' height="100px" position="relative" />
+</Canvas>
+
+##### <i>bottom-end</i>
+
+<Canvas>
+    <Story id='onex-components-toast--bottom-end' height="100px" position="relative" />
+</Canvas>

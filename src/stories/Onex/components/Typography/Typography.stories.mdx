@@ -1,0 +1,99 @@
+<!-- Typography.mdx -->
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Typography } from '../../../../components';
+
+<Meta
+  title="Typography"
+  component={Typography}
+/>
+
+export const TypographyTemplate = (args) => <Typography {...args} />;
+
+# Typography
+Use typography to present your design and content as clearly and efficiently as possible.
+
+## Style
+
+### Alignment
+<Canvas isColumn>
+  <Story id='typography--center-align' />
+  <Story id='typography--inherit-align' />
+  <Story id='typography--justify-align' />
+  <Story id='typography--left-align' />
+  <Story id='typography--right-align' />
+</Canvas>
+
+### Variants
+
+#### Title
+<Canvas isColumn>
+  <Story id='typography--title' />
+</Canvas>
+
+#### Headings
+Supports from ```h1``` till ```h5```
+<Canvas isColumn>
+  <Story id='typography--h-1' />
+  <Story id='typography--h-2' />
+  <Story id='typography--h-3' />
+  <Story id='typography--h-4' />
+  <Story id='typography--h-5' />
+</Canvas>
+
+#### Body
+The component renders a ```<p>``` element.
+With variant ```body``` also used arguments: ```size``` and ```href```.
+Supports two sizes: ```small``` and  ```large```.
+Providing a ```href``` will render an ```<a>``` element.
+
+<Canvas isColumn>
+  <Story id='typography--body-large' />
+  <Story id='typography--body-large-link' />
+  <Story id='typography--body-small' />
+  <Story id='typography--body-small-link' />
+</Canvas>
+
+#### Button
+The component renders a ```<span>``` element.
+Supports two sizes: ```small``` and  ```large```.
+
+<Canvas isColumn>
+  <Story id='typography--button-large' />
+  <Story id='typography--button-small' />
+</Canvas>
+
+#### Caption
+The component renders a ```<span>``` element.
+With variant ```caption``` also used arguments: ```size``` and ```href```.
+Supports two sizes: ```small``` and  ```large```.
+Providing a ```href``` will render an ```<a>``` element.
+
+<Canvas isColumn>
+  <Story id='typography--caption-large' />
+  <Story id='typography--caption-large-link' />
+  <Story id='typography--caption-small' />
+  <Story id='typography--caption-small-link' />
+</Canvas>
+
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      align: 'center',
+      children:'Body Regular',
+      className: 'custom-typography',
+      dataTestId: 'test-typography-id',
+      marginBottom: false,
+      noWrap: true,
+      paragraph: false,
+      size: 'lg',
+      variant: 'body'
+    }}>
+    >
+    {TypographyTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
