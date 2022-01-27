@@ -13,8 +13,8 @@ $nav-dropdown-menu-item-padding-y: $dropdown-menu-item-padding-y-lg;
 $nav-dropdown-active-border-width: 0.25rem;
 $nav-dropdown-active-border-radius: 0.125rem;
 
-$c-dropdown-link-active-color: $primary;
-$c-dropdown-link-active-bg-color: $transparent;
+$onex-dropdown-link-active-color: $primary;
+$onex-dropdown-link-active-bg-color: $transparent;
 
 $menu-item-text-color: $black;
 $menu-dropdown-border-color: $secondary;
@@ -22,8 +22,8 @@ $menu-dropdown-disabled-text-color: $secondary-500;
 $menu-dropdown-hover-bg-color: $secondary-200;
 
 /* bootstrap variables */
-$dropdown-link-active-color: $c-dropdown-link-active-color;
-$dropdown-link-active-bg: $c-dropdown-link-active-bg-color;
+$dropdown-link-active-color: $onex-dropdown-link-active-color;
+$dropdown-link-active-bg: $onex-dropdown-link-active-bg-color;
 
 $dropdown-color: $menu-item-text-color;
 $dropdown-border-color: $menu-dropdown-border-color;
@@ -32,7 +32,7 @@ $dropdown-link-color: $menu-item-text-color;
 $dropdown-link-hover-color: $menu-item-text-color;
 $dropdown-link-hover-bg: $menu-dropdown-hover-bg-color;
 
-$dropdown-link-active-color: $c-dropdown-link-active-color;
-$dropdown-link-active-bg: $c-dropdown-link-active-bg-color;
+$dropdown-link-active-color: $onex-dropdown-link-active-color;
+$dropdown-link-active-bg: $onex-dropdown-link-active-bg-color;
 
 $dropdown-link-disabled-color: $menu-dropdown-disabled-text-color;

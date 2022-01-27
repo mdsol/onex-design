@@ -1,0 +1,142 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { InlineEditText } from '../../../../components';
+
+<Meta
+    title="Onex/Forms/InlineEditText"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        size: {
+            description: 'The size of the component',
+        },
+        dataTestId: {
+            description: 'The id of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        options: {
+          description: 'The array of page numbers',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isMulti: {
+          description: 'The option to select several values',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        disabled: {
+          description: 'The component is disabled if the value is true',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        isInvalid: {
+          description: 'The component is red if the value is true',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        errorMessage: {
+          description: 'The text for error case',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        readOnly: {
+          description: 'If prop is true the component can not be edited',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        label: {
+          description: 'The label',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        value: {
+          description: 'The initial value',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        controlId: {
+          description: 'The id of component',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        required: {
+          description: 'If prop is true the component has to be filled',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        placeholder: {
+          description: 'The text of non-filled component',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        }
+    }}
+    component={InlineEditText}
+/>
+
+export const Template = (args) => <InlineEditText {...args} />;
+
+### InlineEditText
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            size: 'sm',
+            className: 'inlineEditText',
+            dataTestId: 'inlineEditText',
+            placeholder: 'Edit',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### InlineEditText sizes
+
+<Canvas>
+    <Story id='onex-forms-inlineedittext--small' />
+    <Story id='onex-forms-inlineedittext--large' />
+</Canvas>

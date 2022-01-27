@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const NavItemDropdown = forwardRef((props, ref) => {
     const { title, disabled, items, isActive, className, dataTestId } = props;
 
-    const navDropdownClassNames = classNames('c-nav__item-dropdown', {
+    const navDropdownClassNames = classNames('onex-nav__item-dropdown', {
         [className]: className,
         active: isActive,
     });

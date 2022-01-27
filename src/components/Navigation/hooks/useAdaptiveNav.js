@@ -19,7 +19,7 @@ const useAdaptiveNav = (defaultHiddenItems, defaultVisibleItems) => {
     const [dropdownItems, setDropdownItems] = useState([...defaultHiddenItems]);
 
     const toggleVisibleNavItems = (navElement, dropdownElement) => () => {
-        const visibleNavElements = [...navElement.getElementsByClassName('c-nav__item')];
+        const visibleNavElements = [...navElement.getElementsByClassName('onex-nav__item')];
 
         removeClass(visibleNavElements, 'item--hidden');
 

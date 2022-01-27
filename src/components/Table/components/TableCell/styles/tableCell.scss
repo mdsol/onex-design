@@ -1,41 +1,51 @@
 @import 'mixins';
 
 .cell__container {
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  gap: 2px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 2px;
 }
 
-.c-table__cell {
-  @include text-align();
-  vertical-align: middle;
+.onex-table__cell {
+    @include text-align();
+    vertical-align: middle;
 
-  &:last-child {
-    svg {
-      width: $c-table-cell-icon-action-size-sm;
-      height: $c-table-cell-icon-action-size-sm;
+    &:last-child {
+        svg {
+            width: $onex-table-cell-icon-action-size-sm;
+            height: $onex-table-cell-icon-action-size-sm;
 
-      & path {
-        fill: $c-table-cell-body-icon-color;
-      }
+            & path {
+                fill: $onex-table-cell-body-icon-color;
+            }
+        }
     }
-  }
 
-  &--variant-header {
-    @include cell-style($c-table-cell-header-height, $c-table-cell-header-font-size, $c-table-cell-header-line-height, $c-table-cell-header-text-color);
-  }
+    &--variant-header {
+        @include cell-style(
+            $onex-table-cell-header-height,
+            $onex-table-cell-header-font-size,
+            $onex-table-cell-header-line-height,
+            $onex-table-cell-header-text-color
+        );
+    }
 
-  &--variant-body {
-    @include cell-style($c-table-cell-body-height, $c-table-cell-body-font-size, $c-table-cell-body-line-height, $c-table-cell-body-text-color);
-  }
+    &--variant-body {
+        @include cell-style(
+            $onex-table-cell-body-height,
+            $onex-table-cell-body-font-size,
+            $onex-table-cell-body-line-height,
+            $onex-table-cell-body-text-color
+        );
+    }
 
-  img {
-    max-height: $c-table-cell-body-image-size;
-    max-width: $c-table-cell-body-image-size;
-    border-radius: 100%;
-    object-fit: contain;
-  }
+    img {
+        max-height: $onex-table-cell-body-image-size;
+        max-width: $onex-table-cell-body-image-size;
+        border-radius: 100%;
+        object-fit: contain;
+    }
 }

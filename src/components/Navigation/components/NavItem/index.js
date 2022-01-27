@@ -5,8 +5,13 @@ const NavItem = (props) => {
     const { eventKey, children, disabled, href, dataTestId } = props;
 
     return (
-        <Nav.Item className="c-nav__item" data-key={eventKey} dataTestId={dataTestId}>
-            <Nav.Link className="c-nav__link" eventKey={eventKey} href={href} disabled={disabled}>
+        <Nav.Item className="onex-nav__item" data-key={eventKey} dataTestId={dataTestId}>
+            <Nav.Link
+                className="onex-nav__link"
+                eventKey={eventKey}
+                href={href}
+                disabled={disabled}
+            >
                 {children}
             </Nav.Link>
         </Nav.Item>

@@ -1,27 +1,27 @@
-.c-switch {
-  .form-check-input {
-    height: $form-switch-height;
-    background-color: $form-switch-input-bg;
-    border: $form-switch-input-border;
-    margin-top: ($line-height-base - $form-switch-height) * .5;
+.onex-switch {
+    .form-check-input {
+        height: $form-switch-height;
+        background-color: $form-switch-input-bg;
+        border: $form-switch-input-border;
+        margin-top: ($line-height-base - $form-switch-height) * 0.5;
 
-    &:focus {
-      border-color: $form-switch-focus-border;
-      box-shadow: $form-switch-focus-box-shadow;
+        &:focus {
+            border-color: $form-switch-focus-border;
+            box-shadow: $form-switch-focus-box-shadow;
+        }
+
+        &:checked {
+            background-color: $form-switch-checked-input-bg;
+            border: $form-switch-checked-input-bg;
+        }
     }
 
-    &:checked {
-      background-color: $form-switch-checked-input-bg;
-      border: $form-switch-checked-input-bg;
+    .form-check-input:hover {
+        background-color: $switch-check-input-hover-bg-color;
+        cursor: pointer;
     }
-  }
 
-  .form-check-input:hover {
-    background-color: $switch-check-input-hover-bg-color;
-    cursor: pointer;
-  }
-
-  .form-check-input:disabled {
-    background-color: $switch-check-input-disabled-bg-color;
-  }
+    .form-check-input:disabled {
+        background-color: $switch-check-input-disabled-bg-color;
+    }
 }

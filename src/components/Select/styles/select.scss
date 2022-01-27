@@ -1,90 +1,89 @@
-.c-select--lg {
+.onex-select--lg {
     height: $select-height-lg;
-    .c-select__control {
+    .onex-select__control {
         min-height: $select-height-lg;
-        .c-select__value-container {
+        .onex-select__value-container {
             height: $select-height-lg;
-            
         }
-        .c-select__indicators {
+        .onex-select__indicators {
             height: $select-height-lg;
         }
     }
-    .c-select__multi-value {
+    .onex-select__multi-value {
         height: $select-lg-multi-value-height;
     }
 }
-.c-select--sm {
+.onex-select--sm {
     height: $select-height-sm;
-    .c-select__control {
+    .onex-select__control {
         min-height: $select-height-sm;
-        .c-select__value-container {
+        .onex-select__value-container {
             height: $select-height-sm;
-            .c-select__input-container {
+            .onex-select__input-container {
                 padding: $select-input-container-padding;
                 margin: $select-input-container-margin;
             }
         }
-        .c-select__indicators {
+        .onex-select__indicators {
             height: $select-height-sm;
         }
     }
-    .c-select__multi-value {
+    .onex-select__multi-value {
         height: $select-sm-multi-value-height;
     }
 }
 
-.c-select--invalid {
-    .c-select__control{
-        border-color: $error!important;
+.onex-select--invalid {
+    .onex-select__control {
+        border-color: $error !important;
     }
 }
 
-.c-select {
+.onex-select {
     max-width: $select-max-width;
-    .c-select__control {
+    .onex-select__control {
         border: $select-control-border solid $secondary;
         border-radius: $select-control-border-radius;
         &:hover {
             border-color: $primary-700;
-        } 
+        }
     }
-    .c-select__control--is-focused {
+    .onex-select__control--is-focused {
         border: $select-control-border solid $select-control-border-color-focused;
         box-shadow: none;
         &:hover {
             border-color: $select-control-border-color-focused;
         }
     }
-    .c-select__option:hover {
+    .onex-select__option:hover {
         background-color: $secondary-100;
         color: black;
         cursor: pointer;
     }
 
-    .c-select__option--is-selected {
+    .onex-select__option--is-selected {
         background-color: $secondary-100;
         color: black;
     }
 
-    .c-select__indicator-separator {
+    .onex-select__indicator-separator {
         display: none;
     }
 
-    .c-select__clear-indicator {
+    .onex-select__clear-indicator {
         display: none;
     }
 
-    .c-select__control--is-focused .c-select__indicator {
+    .onex-select__control--is-focused .onex-select__indicator {
         color: $select-control-border-color-focused;
         transform: rotate(180deg);
     }
 
-    .c-select__multi-value {
+    .onex-select__multi-value {
         background-color: $secondary-100;
         border-radius: $select-multi-value-border-radius;
         align-items: center;
-        .c-select__multi-value__remove{
+        .onex-select__multi-value__remove {
             &:hover {
                 background-color: $secondary-100;
                 color: black;

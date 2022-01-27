@@ -1,0 +1,175 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { TextArea } from '../../../../components';
+
+<Meta
+    title="Onex/Forms/Textarea"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        label: {
+            description: 'The label content.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        errorMessage: {
+            description: 'The text of error message.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        size: {
+            description: 'The size of the component. small is equivalent to the dense button styling.',
+        },
+        helpText: {
+            description: 'The text with helpful information.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        value: {
+            description: 'The value of the textarea element, required for a controlled component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        placeholder: {
+            description: 'The short hint displayed in the textarea before the user enters a value.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        readOnly: {
+            description: 'If true, the component is only for reading.'
+        },
+        disabled: {
+            description: 'If true, the component is disabled.'
+        },
+        isError: {
+            description: 'If true, the component has red border and show error message.'
+        },
+        required: {
+            description: 'If true, the component is required.'
+        },
+        maxNumLength: {
+            description: 'The maximum of symbols number.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        rows: {
+            description: 'The number of textarea rows.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        onChange: {
+            description: 'Callback fired when the value is changed.'
+        },
+        setError: {
+            description: 'Callback fired when the isError is changed.'
+        },
+        dataTestId: {
+            description: 'The it of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={TextArea}
+/>
+
+export const Template = (args) => <TextArea {...args} />;
+
+## Textarea
+
+The Textarea is a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+
+### Textarea details
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            size: 'lg',
+            placeholder: 'Message',
+            errorMessage: 'Error message',
+            helpText: 'Help text',
+            maxNumLength: 250,
+            label: 'Label',
+            className: 'custom-textarea',
+            dataTestId: 'text-textarea-id',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Textarea sizes
+
+<Canvas>
+    <Story id='onex-forms-textarea--small' />
+    <Story id='onex-forms-textarea--large' />
+</Canvas>
+
+### Textarea with label text
+
+<Canvas>
+    <Story id='onex-forms-textarea--label' />
+</Canvas>
+
+### Textarea with help text and max length
+
+<Canvas>
+    <Story id='onex-forms-textarea--help-text' />
+    <Story id='onex-forms-textarea--max-length' />
+</Canvas>
+
+### Textarea with error and max length
+
+<Canvas>
+    <Story id='onex-forms-textarea--error-message' />
+    <Story id='onex-forms-textarea--max-length-error' />
+</Canvas>
+
+### Disabled textarea
+
+<Canvas>
+    <Story id='onex-forms-textarea--disabled' />
+</Canvas>
+
+### Read only textarea
+
+<Canvas>
+    <Story id='onex-forms-textarea--read-only' />
+</Canvas>
+
+### Textarea has 10 rows
+
+<Canvas>
+    <Story id='onex-forms-textarea--rows' />
+</Canvas>
+

@@ -1,0 +1,65 @@
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Switch } from '../../../../components';
+
+<Meta
+  title="Onex/Components/Switch"
+  component={Switch}
+/>
+
+export const SwitchTemplate = (args) => <Switch {...args} />;
+
+
+# Switch
+Switches toggle the state of a single setting on or off.
+
+## Basic switches
+<Canvas>
+  <Story id='onex-components-switch--default' />
+  <Story id='onex-components-switch--checked' />
+  <Story id='onex-components-switch--disabled' />
+</Canvas>
+
+## With label
+<Canvas>
+  <Story id='onex-components-switch--with-label' />
+</Canvas>
+
+## Controlled
+You can control the switch with the ```checked``` and ```onChange``` props.
+<Canvas>
+  <Story name="Controlled">
+    {() => {
+      const [checked, setChecked] = React.useState(true);
+      return (
+        <>
+          <Switch
+                  checked={checked}
+                  onChange={() => setChecked(!checked)}
+                  id="custom-switch-checked"/>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      checked: true,
+      className: 'custom-switch',
+      dataTestId: 'test-switch-id',
+      disabled: false,
+      id: 'custom-demo-switch',
+      label: 'Demo',
+      onChange: () => {},
+    }}>>
+    >
+    {SwitchTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

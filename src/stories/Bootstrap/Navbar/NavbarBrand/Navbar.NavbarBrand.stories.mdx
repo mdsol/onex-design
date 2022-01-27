@@ -1,0 +1,37 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { Navbar } from '../../../../components';
+
+<Meta
+    title="Bootstrap/Components/Navbar/NavbarBrand"
+    component={ Navbar.Brand }
+/>
+
+export const Template = (args) => (
+    <Navbar.Brand {...args}>
+        <img
+            alt="logo"
+            src="https://robohash.org/342893?set=set1"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+        />
+        React Bootstrap
+    </Navbar.Brand>
+);
+
+## Brand
+
+A simple flexible branding component. Images are supported but will likely require custom styling to work well.
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            href: "#home"
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

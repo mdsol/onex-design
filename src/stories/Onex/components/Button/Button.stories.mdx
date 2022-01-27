@@ -1,0 +1,74 @@
+<!-- Button.mdx -->
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Button } from '../../../../components';
+
+<Meta
+  title="Onex/Components/Button"
+  component={ Button }
+/>
+
+export const ButtonTemplate = (args) => <Button {...args} />;
+
+# Button
+
+Buttons are clickable items used for actions. They can have different styles depending on the needs.
+
+## Style
+
+### Sizes
+Supports two button sizes: ```small``` and  ```large```.
+
+<Canvas>
+  <Story id='onex-components-button--small' />
+  <Story id='onex-components-button--large' />
+</Canvas>
+
+### Variations
+
+#### Primary
+<Canvas>
+  <Story id='onex-components-button--primary' />
+  <Story id='onex-components-button--primary-with-icon' />
+  <Story id='onex-components-button--primary-icon' />
+  <Story id='onex-components-button--primary-disabled' />
+  <Story id='onex-components-button--primary-anchor' />
+</Canvas>
+
+#### Secondary
+
+<Canvas>
+  <Story id='onex-components-button--secondary' />
+  <Story id='onex-components-button--secondary-with-icon' />
+  <Story id='onex-components-button--secondary-icon' />
+  <Story id='onex-components-button--secondary-disabled' />
+  <Story id='onex-components-button--secondary-anchor' />
+</Canvas>
+
+#### Tertiary
+
+<Canvas>
+  <Story id='onex-components-button--tertiary' />
+  <Story id='onex-components-button--tertiary-with-icon' />
+  <Story id='onex-components-button--tertiary-icon' />
+  <Story id='onex-components-button--tertiary-disabled' />
+  <Story id='onex-components-button--tertiary-anchor' />
+</Canvas>
+
+### Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      variant: 'primary',
+      size: 'lg',
+      children: 'Basic button',
+      className: 'custom-button',
+      dataTestId: 'test-button-id',
+      onClick: () => {},
+    }}>
+    >
+    {ButtonTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

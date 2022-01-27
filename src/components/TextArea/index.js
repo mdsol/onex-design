@@ -23,11 +23,11 @@ const TextArea = React.forwardRef((props, ref) => {
         dataTestId,
     } = props;
 
-    const inputClassNames = classNames('c-text-area', {
+    const inputClassNames = classNames('onex-text-area', {
         [className]: className,
-        'c-text-area--lg': size === 'lg',
-        'c-text-area--sm': size === 'sm',
-        'c-text-area--disabled': disabled,
+        'onex-text-area--lg': size === 'lg',
+        'onex-text-area--sm': size === 'sm',
+        'onex-text-area--disabled': disabled,
     });
 
     const [_value, _setValue] = useState(value);
@@ -80,17 +80,17 @@ const TextArea = React.forwardRef((props, ref) => {
                 rows={rows}
                 onChange={onHandleChange}
             />
-            <div className="c-text-area__footer">
+            <div className="onex-text-area__footer">
                 {!disabled && isInvalid && (
-                    <Form.Text className="c-text-area__error">{errorMessage}</Form.Text>
+                    <Form.Text className="onex-text-area__error">{errorMessage}</Form.Text>
                 )}
                 {!isInvalid && helpText && (
-                    <Form.Text className="c-text-area__help">{helpText}</Form.Text>
+                    <Form.Text className="onex-text-area__help">{helpText}</Form.Text>
                 )}
                 {maxNumLength && (
                     <div
-                        className={classNames('c-text-area__nums', {
-                            'c-text-area__nums--err': symbolNum < 0,
+                        className={classNames('onex-text-area__nums', {
+                            'onex-text-area__nums--err': symbolNum < 0,
                         })}
                     >
                         {symbolNum}

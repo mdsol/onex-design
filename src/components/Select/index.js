@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
+import AsyncSelect from 'react-select';
 import { Form } from 'react-bootstrap';
 import classNames from 'classnames';
 
@@ -15,17 +16,21 @@ const CustomSelect = ({
     onSelect,
     options,
     dataTestId,
+    isAsync,
+    onLoadOptions,
+    getOptionValue,
+    getOptionLabel,
 }) => {
     const [selectedOptions, seSelectedOptions] = useState(selectedValues);
     useEffect(() => {
         onSelect?.(selectedValues);
     }, [selectedValues, onSelect]);
 
-    const selectClassNames = classNames('c-select', {
+    const selectClassNames = classNames('onex-select', {
         [className]: className,
-        'c-select--lg': size === 'lg',
-        'c-select--sm': size === 'sm',
-        'c-select--invalid': isInvalid,
+        'onex-select--lg': size === 'lg',
+        'onex-select--sm': size === 'sm',
+        'onex-select--invalid': isInvalid,
     });
 
     const handleChange = (option) => {
@@ -39,19 +44,33 @@ const CustomSelect = ({
 
     return (
         <div>
-            <Select
-                className={selectClassNames}
-                classNamePrefix="c-select"
-                isMulti={isMulti}
-                options={options}
-                isDisabled={isDisabled}
-                onChange={handleChange}
-                aria-invalid
-                value={selectedOptions}
-                data-test-id={dataTestId}
-            />
+            {isAsync ? (
+                <AsyncSelect
+                    className={selectClassNames}
+                    cacheOptions
+                    defaultOptions
+                    classNamePrefix="onex-select"
+                    name="search"
+                    isMulti={isMulti}
+                    loadOptions={onLoadOptions}
+                    getOptionLabel={getOptionLabel}
+                    getOptionValue={getOptionValue}
+                />
+            ) : (
+                <Select
+                    className={selectClassNames}
+                    classNamePrefix="onex-select"
+                    isMulti={isMulti}
+                    options={options}
+                    isDisabled={isDisabled}
+                    onChange={handleChange}
+                    aria-invalid
+                    value={selectedOptions}
+                    data-test-id={dataTestId}
+                />
+            )}
             {isInvalid && !isDisabled && (
-                <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
+                <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
             )}
         </div>
     );
@@ -73,6 +92,10 @@ CustomSelect.propTypes = {
     isInvalid: PropTypes.bool,
     onSelect: PropTypes.func,
     dataTestId: PropTypes.string,
+    isAsync: PropTypes.bool,
+    onLoadOptions: PropTypes.func,
+    getOptionValue: PropTypes.func,
+    getOptionLabel: PropTypes.func,
 };
 
 CustomSelect.defaultProps = {
@@ -86,6 +109,10 @@ CustomSelect.defaultProps = {
     options: [],
     onSelect: undefined,
     dataTestId: '',
+    isAsync: false,
+    onLoadOptions: undefined,
+    getOptionValue: undefined,
+    getOptionLabel: undefined,
 };
 
 export default CustomSelect;

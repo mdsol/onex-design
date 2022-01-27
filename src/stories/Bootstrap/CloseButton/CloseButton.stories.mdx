@@ -1,0 +1,45 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { CloseButton } from '../../../components';
+
+<Meta
+    title="Bootstrap/Components/CloseButton"
+    component={CloseButton}
+/>
+
+export const Template = (args) => <CloseButton {...args} />;
+
+## CloseButton
+A generic close button for dismissing content such as modals and alerts.
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Disabled state
+Bootstrap adds relevant styling to a disabled close button to prevent user interactions.
+
+<Canvas>
+    <Story id="bootstrap-components-closebutton--disabled" />
+</Canvas>
+
+### Variants
+Change the default dark color to white using `variant="white"`.
+
+<Canvas>
+    <Story id="bootstrap-components-closebutton--variant" />
+</Canvas>
+
+### Accessibility
+
+To ensure the maximum accessibility for Close Button components, it is recommended that you provide relevant text for screen readers. The example below provides an example of accessible usage of this component by way of the `aria-label` property.
+
+<Canvas>
+    <Story id="bootstrap-components-closebutton--accessibility" />
+</Canvas>

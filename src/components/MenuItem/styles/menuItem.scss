@@ -1,88 +1,88 @@
-.c-menuItem {
-  display: flex;
-  position: relative;
-  width: $c-mi-width;
-  height: $c-mi-height;
-  padding: $c-mi-padding;
-  color: $c-mi-text-color;
-  font-size: $c-mi-font-size;
-  line-height: $c-mi-line-height;
-  font-weight: $font-weight-600;
-  background-color: $c-mi-bg-color;
-
-  & a {
-    display: inline-flex;
-    align-items: center;
-    padding: $c-mi-padding;
-    width: 100%;
-    height: 100%;
-    color: black;
-  }
-  &:hover a {
-    background-color: $secondary-200;
-    border-radius: $c-mi-link-border-radius;
-    color: $c-mi-link-hover-text-color;
-    cursor: pointer;
-  }
-  &__icon {
-    width: $c-mi-icon-size;
-    height: $c-mi-icon-size;
+.onex-menuItem {
     display: flex;
-    align-items: center;
-    margin-right: $c-mi-icon-margin-x;
-    &__leading {
-      margin-right: $c-mi-icon-margin-x;
+    position: relative;
+    width: $onex-mi-width;
+    height: $onex-mi-height;
+    padding: $onex-mi-padding;
+    color: $onex-mi-text-color;
+    font-size: $onex-mi-font-size;
+    line-height: $onex-mi-line-height;
+    font-weight: $font-weight-600;
+    background-color: $onex-mi-bg-color;
+
+    & a {
+        display: inline-flex;
+        align-items: center;
+        padding: $onex-mi-padding;
+        width: 100%;
+        height: 100%;
+        color: black;
     }
-    &__trailing {
-      position: absolute;
-      right: $c-mi-icon-margin-x;
-      margin-left: $c-mi-icon-margin-x;
+    &:hover a {
+        background-color: $secondary-200;
+        border-radius: $onex-mi-link-border-radius;
+        color: $onex-mi-link-hover-text-color;
+        cursor: pointer;
     }
-  }
-  &__badge {
-      position: absolute;
-      right: $c-mi-icon-margin-x;
-      margin-left: $c-mi-icon-margin-x;
-  }
+    &__icon {
+        width: $onex-mi-icon-size;
+        height: $onex-mi-icon-size;
+        display: flex;
+        align-items: center;
+        margin-right: $onex-mi-icon-margin-x;
+        &__leading {
+            margin-right: $onex-mi-icon-margin-x;
+        }
+        &__trailing {
+            position: absolute;
+            right: $onex-mi-icon-margin-x;
+            margin-left: $onex-mi-icon-margin-x;
+        }
+    }
+    &__badge {
+        position: absolute;
+        right: $onex-mi-icon-margin-x;
+        margin-left: $onex-mi-icon-margin-x;
+    }
 }
 
-.c-menuItem--selected {
-  & a {
-    color: $c-mi-link-selected-text-color;
-  }
-  &:hover a {
-    background-color: $c-mi-link-selected-hover-bg-color;
-    color: $c-mi-link-hover-text-color;
-  }
-  &__indicator{
-    width: 3px;
-    height: 100%;
-    background-color: $c-mi-indicator-selected-text-color;
-    border-radius: 2px;
-  }
+.onex-menuItem--selected {
+    & a {
+        color: $onex-mi-link-selected-text-color;
+    }
+    &:hover a {
+        background-color: $onex-mi-link-selected-hover-bg-color;
+        color: $onex-mi-link-hover-text-color;
+    }
+    &__indicator {
+        width: 3px;
+        height: 100%;
+        background-color: $onex-mi-indicator-selected-text-color;
+        border-radius: 2px;
+    }
 }
 
-.c-menuItem--disabled {
-  & a {
-    background-color: $c-mi-link-disabled-bg-color;
-    color: $c-mi-link-disabled-text-color;
-  }
-  &:hover a {
-    color: $c-mi-link-disabled-text-color;
-    background-color: $c-mi-link-disabled-bg-color;
-    cursor: initial;
-  }
+.onex-menuItem--disabled {
+    & a {
+        background-color: $onex-mi-link-disabled-bg-color;
+        color: $onex-mi-link-disabled-text-color;
+    }
+    &:hover a {
+        color: $onex-mi-link-disabled-text-color;
+        background-color: $onex-mi-link-disabled-bg-color;
+        cursor: initial;
+    }
 }
 
-.c-menuItem--unavailable {
-  & a {
-    background-color: $c-mi-link-unavailable-bg-color;
-  }
-  &:hover a {
-    background-color: $c-mi-link-unavailable-bg-color;
-    cursor: initial;
-  }
-  & span {
-    color: $c-mi-link-unavailable-text-color;
-  }
+.onex-menuItem--unavailable {
+    & a {
+        background-color: $onex-mi-link-unavailable-bg-color;
+    }
+    &:hover a {
+        background-color: $onex-mi-link-unavailable-bg-color;
+        cursor: initial;
+    }
+    & span {
+        color: $onex-mi-link-unavailable-text-color;
+    }
 }

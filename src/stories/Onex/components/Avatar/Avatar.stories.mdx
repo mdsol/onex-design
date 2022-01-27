@@ -1,0 +1,84 @@
+<!-- Avatar.mdx -->
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Avatar } from '../../../../components';
+
+<Meta
+  title="Onex/Components/Avatar"
+  component={Avatar}
+/>
+
+export const AvatarTemplate = (args) => <Avatar {...args} />;
+
+# Avatar
+
+An avatar is a graphical representation of a user and typically appears in list and card views,
+along side a user's information and/or content that they have created.
+
+## Usage
+
+### Default avatar
+<Canvas>
+  <Story id="onex-components-avatar--default" />
+</Canvas>
+
+### Letter avatar
+
+Avatar containing simple characters can be created by passing a string as ```children```
+or by passing ```name``` prop, which used to generate initials of the person.
+
+<Canvas>
+  <Story id="onex-components-avatar--initials" />
+  <Story id="onex-components-avatar--name" />
+</Canvas>
+
+### Image avatar
+
+Image avatar can be created by passing standard img props ```src``` to the component.
+<Canvas>
+  <Story id="onex-components-avatar--image" />
+</Canvas>
+
+### Icon avatar
+
+Icon avatar is created by passing an icon as ```children```.
+
+<Canvas>
+  <Story id="onex-components-avatar--icon" />
+</Canvas>
+
+### Sizes
+An avatar component can vary in size.
+
+<Canvas>
+  <Story id="onex-components-avatar--extra-small" />
+  <Story id="onex-components-avatar--small" />
+  <Story id="onex-components-avatar--medium" />
+  <Story id="onex-components-avatar--large" />
+  <Story id="onex-components-avatar--extra-large" />
+  <Story id="onex-components-avatar--extra-extra-large" />
+</Canvas>
+
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      className: 'custom-avatar',
+      size: 'xl',
+      children: 'KK',
+      name: 'Test User',
+      hoverDisabled: false,
+      dataTestId: 'test-avatar-id',
+    }}>
+    {AvatarTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+
+
+
+
+

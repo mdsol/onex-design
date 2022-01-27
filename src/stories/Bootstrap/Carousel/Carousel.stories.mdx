@@ -1,0 +1,91 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { Carousel } from 'react-bootstrap';
+
+export const carouselItems = [
+    {
+        imgSrc: 'https://robohash.org/set_set1/58931323?size=300x300',
+        imgAlt: 'First slide',
+        title: 'First slide label',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    },
+    {
+        imgSrc: 'https://robohash.org/set_set1/5647?size=300x300',
+        imgAlt: 'Second slide',
+        title: 'Second slide label',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    },
+    {
+        imgSrc: 'https://robohash.org/set_set1/56301?size=300x300',
+        imgAlt: 'Third slide',
+        title: 'Third slide label',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    },
+];
+
+<Meta
+    title="Bootstrap/Components/Carousel"
+    component={Carousel}
+/>
+
+export const Template = (args) => <Carousel {...args} />;
+
+## Carousel
+
+A slideshow component for cycling through elements—images or slides of text—like a carousel.
+
+#### Controlled
+You can also control the Carousel state, via the `activeIndex` prop and `onSelect` handler.
+
+
+#### Crossfade
+Add the `fade` prop to your carousel to animate slides with a fade transition instead of a slide.
+
+#### Individual Item Intervals
+You can specify individual intervals for each carousel item `<Carousel.Item>` via the `interval` prop.
+
+#### Dark variant
+Add `variant="dark"` to the `Carousel` for darker controls, indicators, and captions.
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            fade: true,
+            interval: 5000,
+            controls: true,
+            indicators: true,
+            keyboard: true,
+            indicatorLabels: [],
+            nextIcon: <span aria-hidden="true" className="carousel-control-next-icon" />,
+            nextLabel: 'Next',
+            pause: 'hover',
+            prevIcon: <span aria-hidden="true" className="carousel-control-prev-icon" />,
+            prevLabel: 'Previous',
+            slide: true,
+            touch: true,
+            variant: undefined,
+            wrap: true,
+            children: (carouselItems.map(item => (
+                    <Carousel.Item>
+                        <div className="w-100" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#36393f' }}>
+                            <img
+                                className="d-block"
+                                src={item.imgSrc}
+                                alt={item.imgAlt}
+                                style={{ height: '300px' }}
+                            />
+                        </div>
+                        <Carousel.Caption>
+                            <h3>{item.title}</h3>
+                            <p>{item.subtitle}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                ))
+            ),
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

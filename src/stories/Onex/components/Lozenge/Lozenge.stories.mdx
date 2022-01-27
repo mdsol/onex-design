@@ -1,0 +1,98 @@
+<!-- Lozenge.mdx -->
+import { Check } from 'react-bootstrap-icons';
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Lozenge } from '../../../../components';
+
+<Meta
+  title="Onex/Components/Lozenge"
+  component={Lozenge}
+/>
+
+export const LozengeTemplate = (args) => <Lozenge {...args} />;
+
+# Lozenge
+
+A lozenge is a visual indicator used to highlight an item's status for quick recognition.
+
+## Style
+
+### Sizes
+Supports two lozenge sizes: ```small``` and  ```large```.
+
+<Canvas>
+  <Story id='onex-components-lozenge--small' />
+  <Story id='onex-components-lozenge--large' />
+</Canvas>
+
+### Variations
+#### Subtle
+
+<Canvas>
+  <Story id='onex-components-lozenge--subtle' />
+</Canvas>
+
+#### Bold
+<Canvas>
+  <Story id='onex-components-lozenge--bold' />
+</Canvas>
+
+#### Icon
+<Canvas>
+  <Story id='onex-components-lozenge--icon' />
+</Canvas>
+
+### Types
+#### Default
+<Canvas>
+  <Story id='onex-components-lozenge--default-subtle' />
+  <Story id='onex-components-lozenge--default-bold' />
+  <Story id='onex-components-lozenge--default-icon' />
+</Canvas>
+
+#### Success
+<Canvas>
+  <Story id='onex-components-lozenge--success-subtle' />
+  <Story id='onex-components-lozenge--success-bold' />
+  <Story id='onex-components-lozenge--success-icon' />
+</Canvas>
+
+#### Warning
+<Canvas>
+  <Story id='onex-components-lozenge--warning-subtle' />
+  <Story id='onex-components-lozenge--warning-bold' />
+  <Story id='onex-components-lozenge--warning-icon' />
+</Canvas>
+
+#### Error
+<Canvas>
+  <Story id='onex-components-lozenge--error-subtle' />
+  <Story id='onex-components-lozenge--error-bold' />
+  <Story id='onex-components-lozenge--error-icon' />
+</Canvas>
+
+#### Info
+<Canvas>
+  <Story id='onex-components-lozenge--info-subtle' />
+  <Story id='onex-components-lozenge--info-bold' />
+  <Story id='onex-components-lozenge--info-icon' />
+</Canvas>
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      children:'Success',
+      className: 'custom-lozenge',
+      dataTestId: 'test-lozenge-id',
+      icon: <Check />,
+      size: 'lg',
+      type: 'success',
+      variant: 'icon'
+    }}>
+    >
+    {LozengeTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

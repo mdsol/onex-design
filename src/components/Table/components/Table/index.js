@@ -14,13 +14,13 @@ const CustomTable = (props) => {
         dataTestId,
     } = props;
 
-    const tableClasses = classNames('c-table', {
+    const tableClasses = classNames('onex-table', {
         [className]: className,
-        'c-table--filled': tableStyle === 'filled',
+        'onex-table--filled': tableStyle === 'filled',
     });
 
-    const tableWrapClasses = classNames('c-table-wrap', {
-        'c-table-wrap--filled': tableStyle === 'filled',
+    const tableWrapClasses = classNames('onex-table-wrap', {
+        'onex-table-wrap--filled': tableStyle === 'filled',
     });
 
     return (

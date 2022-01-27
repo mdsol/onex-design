@@ -1,0 +1,184 @@
+<!-- Grid.mdx -->
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import  { Container, Row, Col } from '../../../../components';
+
+import { containerArgTypes, rowArgTypes, columnArgTypes } from './data';
+
+<Meta
+    title="Bootstrap/Layout/Grid"
+    component={Container}
+/>
+
+# Grid system
+Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content.
+It’s built with ```flexbox``` and is fully responsive.
+
+## Container
+Containers provide a means to center and horizontally pad your site’s contents.
+Use ```Container``` for a responsive pixel width.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--grid-container' />
+</Canvas>
+
+## Fluid Container
+You can use ```<Container fluid />``` for width: 100% across all viewport and device sizes.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--fluid-container' />
+</Canvas>
+
+You can set breakpoints for the ```fluid``` prop.
+Setting it to a breakpoint (```sm```, ```md```, ```lg```, ```xl```, ```xxl```) will set the ```Container```
+as fluid until the specified breakpoint.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--fluid-container-with-prop' />
+</Canvas>
+
+## Auto-layout columns
+When no column widths are specified the ```Col``` component will render equal width columns
+<Canvas>
+    <Story id='bootstrap-layout-grid--auto-layout-column' />
+</Canvas>
+
+## Setting one column width
+Auto-layout for flexbox grid columns also means you can set the width of one column and have the
+sibling columns automatically resize around it. You may use predefined grid classes (as shown below),
+grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--one-column-width' />
+</Canvas>
+
+## Variable width content
+Set the column value (for any breakpoint size) to ```auto``` to size columns based on the natural width of their content.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--variable-width-content' />
+</Canvas>
+
+## Responsive grids
+
+The Col lets you specify column widths across 6 breakpoint sizes (xs, sm, md, lg, xl and xxl).
+For every breakpoint, you can specify the amount of columns to span,
+or set the prop to ```<Col lg={true} />``` for auto layout widths.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--responsive-grid' />
+</Canvas>
+
+You can also mix and match breakpoints to create different grids depending on the screen size.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--responsive-grid-with-breakpoints' />
+</Canvas>
+
+The Col breakpoint props also have a more complicated ```object```
+prop form: ```{span: number, order: number, offset: number}``` for specifying offsets and ordering effects.
+
+You can use the ```order``` property to control the visual order of your content.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--responsive-grid-with-order-first-variant' />
+</Canvas>
+
+The ```order``` property also supports ```first``` (```order: -1```) and ```last``` (```order: $columns+1```).
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--responsive-grid-with-order-second-variant' />
+</Canvas>
+
+For offsetting grid columns you can set an ```offset``` value or for a more general layout, use the margin class utilities.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--responsive-grid-with-offset' />
+</Canvas>
+
+## Setting column widths in Row
+The ```Row``` lets you specify column widths across 6 breakpoint sizes (xs, sm, md, lg, xl and xxl).
+For every breakpoint, you can specify the amount of columns that will fit next to each other.
+You can also specify ```auto``` to set the columns to their natural widths.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--column-width-in-row' />
+</Canvas>
+
+Note that ```Row``` column widths will override ```Col``` widths set on lower breakpoints when viewed on larger screens.
+The ```<Col xs={6} />``` size will be overriden by ```<Row md={4} />``` on medium and larger screens.
+
+<Canvas>
+    <Story id='bootstrap-layout-grid--column-width-in-row-override' />
+</Canvas>
+
+
+## Demo
+## Container
+
+<Canvas>
+    <Story
+        name="ContainerDemo"
+        args={{
+            fluid: true,
+        }}
+        argTypes={containerArgTypes}>
+        {(args) => (
+            <Container {...args}>
+                <Row className="bg-light border">
+                    <Col md={3}>1 of 1</Col>
+                </Row>
+            </Container>
+        )}
+    </Story>
+</Canvas>
+
+<ArgsTable story="ContainerDemo" />
+
+## Row
+
+<Canvas>
+    <Story
+        name="RowDemo"
+        args={{
+            xs: '2',
+            md: '5',
+            lg: '6',
+        }}
+        argTypes={rowArgTypes}>
+        {(args) => (
+            <Container>
+                <Row {...args}>
+                    <Col className="bg-light border">1 of 2</Col>
+                    <Col className="bg-light border">2 of 2</Col>
+                </Row>
+            </Container>
+        )}
+    </Story>
+</Canvas>
+
+<ArgsTable story="RowDemo" />
+
+## Col
+
+<Canvas>
+    <Story
+        name="ColumnDemo"
+        args={{
+            xs: '2',
+        }}
+        argTypes={columnArgTypes}>
+        {(args) => (
+            <Container>
+                <Row>
+                    <Col className="bg-light border">1 of 3</Col>
+                    <Col {...args} className="bg-light border">
+                        2 of 3 (wider)
+                    </Col>
+                    <Col className="bg-light border">3 of 3</Col>
+                </Row>
+            </Container>
+        )}
+    </Story>
+</Canvas>
+
+<ArgsTable story="ColumnDemo" />

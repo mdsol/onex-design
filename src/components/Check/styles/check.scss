@@ -1,95 +1,95 @@
 @import 'mixins';
 
 .с-check {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 
-  .form-check-label {
-    padding-right: 2px;
-  }
-
-  .form-check-input {
-    margin-top: 0;
-    cursor: pointer;
-
-    &:not(:checked) {
-      background-color: $check-input-bg-color;
-    }
-  }
-
-  &:not(.disabled):hover {
-    box-shadow: 0 0 0 0.25rem $check-hover-shadow-color;
-    background-color: $check-hover-bg-color;
-    border-radius: 0.125rem;
-
-    & > .form-check-input {
-      border-color: $check-input-hover-border-color;
-      background-color: $check-input-hover-bg-color;
-
-      &:checked {
-        background-color: $check-input-checked-bg-color;
-      }
-
-      &[type=checkbox]:indeterminate,
-      &.indeterminate{
-        background-image: escape-svg($form-check-input-indeterminate-bg-image-hover);
-      }
+    .form-check-label {
+        padding-right: 2px;
     }
 
-    & > .form-check-label {
-      color: $check-label-text-color;
+    .form-check-input {
+        margin-top: 0;
+        cursor: pointer;
+
+        &:not(:checked) {
+            background-color: $check-input-bg-color;
+        }
     }
-  }
 
-  &.disabled > .form-check-label {
-    pointer-events: none;
-  }
+    &:not(.disabled):hover {
+        box-shadow: 0 0 0 0.25rem $check-hover-shadow-color;
+        background-color: $check-hover-bg-color;
+        border-radius: 0.125rem;
 
-  &.c-check--size-lg:hover {
-    border-radius: 0.25rem;
-  }
+        & > .form-check-input {
+            border-color: $check-input-hover-border-color;
+            background-color: $check-input-hover-bg-color;
 
-  .form-check-input:disabled + .form-check-label {
-    color: $check-label-disabled-text-color;
-  }
+            &:checked {
+                background-color: $check-input-checked-bg-color;
+            }
 
-  .form-check-input:checked:disabled,
-  .form-check-input:disabled {
-    pointer-events: none;
-    filter: none;
-    opacity: 1;
-    border-color: $check-input-disabled-border-color;
-  }
+            &[type='checkbox']:indeterminate,
+            &.indeterminate {
+                background-image: escape-svg($form-check-input-indeterminate-bg-image-hover);
+            }
+        }
 
-  .form-check-input:checked:disabled {
-    background-color: $check-input-disabled-bg-color;
-  }
-
-  .form-check-input:disabled {
-    background-color: transparent;
-  }
-
-  .form-check-input[type=checkbox]:indeterminate:disabled,
-  .form-check-input.indeterminate:disabled {
-    background-image: escape-svg($form-check-input-indeterminate-bg-image-disabled);
-  }
-
-  &.c-check--size-lg {
-    @include size($checkbox-size-lg, $font-size-label-lg,  $line-height-label-lg);
-
-    .form-check-input[type=checkbox]:indeterminate,
-    .form-check-input.indeterminate {
-      background-size: 0.625rem;
+        & > .form-check-label {
+            color: $check-label-text-color;
+        }
     }
-  }
 
-  &.c-check--size-sm {
-    @include size($checkbox-size-sm, $font-size-label-sm,  $line-height-label-sm);
-
-    .form-check-input[type=checkbox]:indeterminate,
-    .form-check-input.indeterminate {
-      background-size: 0.5rem;
+    &.disabled > .form-check-label {
+        pointer-events: none;
     }
-  }
+
+    &.onex-check--size-lg:hover {
+        border-radius: 0.25rem;
+    }
+
+    .form-check-input:disabled + .form-check-label {
+        color: $check-label-disabled-text-color;
+    }
+
+    .form-check-input:checked:disabled,
+    .form-check-input:disabled {
+        pointer-events: none;
+        filter: none;
+        opacity: 1;
+        border-color: $check-input-disabled-border-color;
+    }
+
+    .form-check-input:checked:disabled {
+        background-color: $check-input-disabled-bg-color;
+    }
+
+    .form-check-input:disabled {
+        background-color: transparent;
+    }
+
+    .form-check-input[type='checkbox']:indeterminate:disabled,
+    .form-check-input.indeterminate:disabled {
+        background-image: escape-svg($form-check-input-indeterminate-bg-image-disabled);
+    }
+
+    &.onex-check--size-lg {
+        @include size($checkbox-size-lg, $font-size-label-lg, $line-height-label-lg);
+
+        .form-check-input[type='checkbox']:indeterminate,
+        .form-check-input.indeterminate {
+            background-size: 0.625rem;
+        }
+    }
+
+    &.onex-check--size-sm {
+        @include size($checkbox-size-sm, $font-size-label-sm, $line-height-label-sm);
+
+        .form-check-input[type='checkbox']:indeterminate,
+        .form-check-input.indeterminate {
+            background-size: 0.5rem;
+        }
+    }
 }

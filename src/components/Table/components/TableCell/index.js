@@ -5,9 +5,9 @@ const TableCell = (props) => {
     const { children, className, component, variant, align, width, dataTestId } = props;
 
     const tableClasses = classNames(
-        'c-table__cell',
-        `c-table__cell--align-${align}`,
-        `c-table__cell--variant-${variant}`,
+        'onex-table__cell',
+        `onex-table__cell--align-${align}`,
+        `onex-table__cell--variant-${variant}`,
         {
             [className]: className,
         },

@@ -13,7 +13,7 @@ const graphColors = [
     'navy-blue',
     'genoa',
     'dodger-blue',
-    'lavendar',
+    'lavender',
     'apricot',
     'casablanca',
     'ripe-lemon',

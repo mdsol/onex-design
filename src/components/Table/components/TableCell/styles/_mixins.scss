@@ -1,37 +1,37 @@
 @mixin cell-style($height, $fs, $lh, $color) {
-  height: $height;
-  font-size: $fs;
-  line-height: $lh;
-  color: $color;
+    height: $height;
+    font-size: $fs;
+    line-height: $lh;
+    color: $color;
 }
 
 @mixin icon-style($size, $color) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: $size;
-  width: $size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $size;
+    width: $size;
 
-  svg {
-    max-width: 100%;
-    max-height: 100%;
+    svg {
+        max-width: 100%;
+        max-height: 100%;
 
-    & path {
-      fill: $color;
+        & path {
+            fill: $color;
+        }
     }
-  }
 }
 
 @mixin text-align() {
-  $aligns: 'center', 'left', 'right';
+    $aligns: 'center', 'left', 'right';
 
-  @each $align in $aligns {
-    &.c-table__cell--align-#{$align} {
-      text-align: #{$align};
+    @each $align in $aligns {
+        &.onex-table__cell--align-#{$align} {
+            text-align: #{$align};
 
-      .cell__container {
-        justify-content: #{$align};
-      }
+            .cell__container {
+                justify-content: #{$align};
+            }
+        }
     }
-  }
 }

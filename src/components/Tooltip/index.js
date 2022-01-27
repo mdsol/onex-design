@@ -19,9 +19,9 @@ const CustomTooltip = (props) => {
         dataTestId,
     } = props;
 
-    const toggleClassNames = classNames('c-tooltip', `c-tooltip--${variant}`, {
+    const toggleClassNames = classNames('onex-tooltip', `onex-tooltip--${variant}`, {
         [className]: className,
-        'c-tooltip--regular': !hasArrow,
+        'onex-tooltip--regular': !hasArrow,
     });
 
     return (
@@ -39,7 +39,7 @@ const CustomTooltip = (props) => {
                 </Tooltip>
             }
         >
-            <div className="c-tooltip__child-wrap">{children}</div>
+            <div className="onex-tooltip__child-wrap">{children}</div>
         </OverlayTrigger>
     );
 };

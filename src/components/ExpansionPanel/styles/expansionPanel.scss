@@ -2,58 +2,61 @@
 @import '../components/ExpansionPanelToggle/styles/expansionPanelToggle';
 @import '../components/ExpansionPanelItem/styles/expansionPanelItem';
 
-.c-expansionPanel {
-  & > .btn {
-    position: relative;
+.onex-expansionPanel {
+    & > .btn {
+        position: relative;
 
-    &.btn-primary {
-      @include expansionPanelToggle-layout($btn-layout-justify-content, $btn-layout-align-items);
-      @include bg-color($btn-toggle-bg-color, $btn-toggle-color);
-      border: 1px solid $btn-toggle-border-color;
-      border-radius: $btn-toggle-border-radius;
-      padding: $btn-toggle-padding;
-      padding-right: $btn-toggle-padding-right;
-      font-family: $btn-toggle-font-family;
-      font-weight: $btn-toggle-font-weight;
-      font-size: $btn-toggle-font-size;
-      line-height: $btn-toggle-line-height;
-      min-width: $btn-toggle-min-width;
+        &.btn-primary {
+            @include expansionPanelToggle-layout(
+                $btn-layout-justify-content,
+                $btn-layout-align-items
+            );
+            @include bg-color($btn-toggle-bg-color, $btn-toggle-color);
+            border: 1px solid $btn-toggle-border-color;
+            border-radius: $btn-toggle-border-radius;
+            padding: $btn-toggle-padding;
+            padding-right: $btn-toggle-padding-right;
+            font-family: $btn-toggle-font-family;
+            font-weight: $btn-toggle-font-weight;
+            font-size: $btn-toggle-font-size;
+            line-height: $btn-toggle-line-height;
+            min-width: $btn-toggle-min-width;
 
-      &:hover {
-        @include bg-color($btn-toggle-hover-bg-color, $btn-toggle-color);
-      }
+            &:hover {
+                @include bg-color($btn-toggle-hover-bg-color, $btn-toggle-color);
+            }
 
-      &:active {
-        @include bg-color($btn-toggle-bg-color, $btn-toggle-color);
-      }
+            &:active {
+                @include bg-color($btn-toggle-bg-color, $btn-toggle-color);
+            }
 
-      &:disabled {
-        @include bg-color($btn-toggle-bg-color, $btn-toggle-disabled-color);
-      }
+            &:disabled {
+                @include bg-color($btn-toggle-bg-color, $btn-toggle-disabled-color);
+            }
+        }
     }
-  }
 
-  &.show {
-    .btn-primary {
-      border-radius: $btn-toggle-border-radius $btn-toggle-border-radius 0 0;
+    &.show {
+        .btn-primary {
+            border-radius: $btn-toggle-border-radius $btn-toggle-border-radius 0 0;
+        }
     }
-  }
 
-  &-menu {
-    padding: 0;
-    border-top: none;
-    border-radius: 0 0 $menu-border-radius $menu-border-radius;
-    inset: -.25rem auto auto 0 !important;
-    min-width: $menu-min-width;
-    font-size: $menu-font-size;
-    line-height: $menu-line-height;
-    overflow: hidden;
+    &-menu {
+        padding: 0;
+        border-top: none;
+        border-radius: 0 0 $menu-border-radius $menu-border-radius;
+        inset: -0.25rem auto auto 0 !important;
+        min-width: $menu-min-width;
+        font-size: $menu-font-size;
+        line-height: $menu-line-height;
+        overflow: hidden;
 
-    .dropdown-item {
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: $menu-item-padding-x $menu-item-padding-y;
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: $menu-item-padding-x $menu-item-padding-y;
+        }
     }
-  }
 }

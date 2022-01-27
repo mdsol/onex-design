@@ -1,0 +1,40 @@
+<!-- ToggleButton.mdx -->
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { ToggleButton } from '../../../../components';
+
+<Meta
+  title="Onex/Components/Toggle/ToggleButton"
+  component={ToggleButton}
+/>
+
+export const ToggleButtonTemplate = (args) => <ToggleButton {...args} />;
+
+# Toggle Button
+Toggle buttons can be used to group related options.
+
+<Canvas>
+  <Story id='onex-components-toggle-togglebutton--default' />
+  <Story id='onex-components-toggle-togglebutton--with-icon' />
+  <Story id='onex-components-toggle-togglebutton--icon' />
+  <Story id='onex-components-toggle-togglebutton--disabled' />
+</Canvas>
+
+
+### Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      children: 'Caption',
+      className: 'custom-toggle-button',
+      dataTestId: 'test-toggle-button-id',
+      disabled: false,
+      id: 'id-toogle-button-demo',
+      name: 'toogle-button-demo',
+      value: 1,
+    }}>
+    {ToggleButtonTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

@@ -24,15 +24,15 @@ const Typography = ({
     dataTestId,
 }) => {
     const typographyClassNames = classNames(
-        'c-typography',
-        `c-typography--align-${align}`,
-        `c-typography--${variant}`,
-        `c-typography--${size}`,
+        'onex-typography',
+        `onex-typography--align-${align}`,
+        `onex-typography--${variant}`,
+        `onex-typography--${size}`,
         {
             [className]: className,
-            'c-typography--margin-bottom': marginBottom,
-            'c-typography--no-wrap': noWrap,
-            'c-typography--link': link,
+            'onex-typography--margin-bottom': marginBottom,
+            'onex-typography--no-wrap': noWrap,
+            'onex-typography--link': link,
         },
     );
 

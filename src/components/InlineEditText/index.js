@@ -32,11 +32,11 @@ const InlineEditText = React.forwardRef((props, ref) => {
         setValue(value);
     }, [value]);
 
-    const inputClassNames = classNames('c-text-field', {
+    const inputClassNames = classNames('onex-text-field', {
         [className]: className,
-        'c-text-field--lg': size === 'lg',
-        'c-text-field--sm': size === 'sm',
-        'c-text-field--complete': _status === 'done',
+        'onex-text-field--lg': size === 'lg',
+        'onex-text-field--sm': size === 'sm',
+        'onex-text-field--complete': _status === 'done',
     });
 
     const onFocus = () => {
@@ -77,7 +77,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
             data-test-id={dataTestId}
         >
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
-            <div className="c-edit-text">
+            <div className="onex-edit-text">
                 <Form.Control
                     type="text"
                     placeholder={placeholder}
@@ -89,13 +89,13 @@ const InlineEditText = React.forwardRef((props, ref) => {
                     value={_value}
                     onChange={onHandleChange}
                     className={classNames({
-                        'c-edit-text__input': !isActive,
-                        'c-edit-text__input__active': isActive,
-                        'c-edit-text__input__disabled': disabled,
+                        'onex-edit-text__input': !isActive,
+                        'onex-edit-text__input__active': isActive,
+                        'onex-edit-text__input__disabled': disabled,
                     })}
                 />
                 {!isActive && (
-                    <div className="c-edit-text__icon">
+                    <div className="onex-edit-text__icon">
                         <PenEditIcon />
                     </div>
                 )}
@@ -119,7 +119,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
                 </div>
             )}
             {isInvalid && !disabled && (
-                <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
+                <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
             )}
         </Form.Group>
     );

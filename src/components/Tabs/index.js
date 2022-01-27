@@ -17,7 +17,7 @@ const Tabs = (props) => {
         dataTestId,
     } = props;
 
-    const tabsGroupClassNames = classNames('c-tab', `c-tab--size-${size}`, {
+    const tabsGroupClassNames = classNames('onex-tab', `onex-tab--size-${size}`, {
         [className]: className,
     });
 

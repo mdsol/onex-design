@@ -1,0 +1,88 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { Tag } from '../../../../components';
+
+<Meta
+    title="Onex/Components/Tag"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        size: {
+            description: 'The size of the component',
+        },
+        dataTestId: {
+            description: 'The id of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        isRemovable: {
+            description: 'If the props is true the Close icon will be shown',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        children: {
+            description: 'Tag text',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        icon: {
+            description: 'The icon before text',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        path: {
+            description: 'The path for the link',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={Tag}
+/>
+
+export const Template = (args) => <Tag {...args} />;
+
+## Tag
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            size: 'lg',
+            className: 'inlineEditSelect',
+            dataTestId: 'inlineEditSelect',
+            children: 'Tag text',
+            isRemovable: true,
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Tag sizes
+
+<Canvas>
+    <Story id='onex-components-tag--small' />
+    <Story id='onex-components-tag--large' />
+</Canvas>

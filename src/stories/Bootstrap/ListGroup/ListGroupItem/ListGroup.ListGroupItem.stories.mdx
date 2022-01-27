@@ -1,0 +1,166 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { ListGroup } from '../../../../components';
+
+<Meta
+    title="Bootstrap/Components/ListGroup/ListGroupItem"
+    argTypes={{
+        as: {
+            description:
+                'You can use a custom element type for this component. ' +
+                'For none `action` items, items render as `li`. ' +
+                'For actions the default is an achor or button element depending on whether a `href` is provided.',
+            table: {
+                defaultValue: {
+                    summary: '<{div | a | button}>',
+                },
+                type: {
+                    summary: 'elementType',
+                },
+            },
+        },
+        action: {
+            description:
+                'Marks a ListGroupItem as actionable, applying additional hover, active and disabled styles for links and buttons.',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'boolean',
+                },
+            },
+        },
+        active: {
+            description: 'Sets list item as active',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'boolean',
+                },
+            },
+        },
+        disabled: {
+            description: 'Sets list item state as disabled',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'boolean',
+                },
+            },
+        },
+        eventKey: {
+            description:
+                "A unique identifier for the Component, the `eventKey` makes it distinguishable from others in a set. " +
+                "Similar to React's `key` prop, in that it only needs to be unique amongst the Components siblings, not globally.",
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'string | number',
+                },
+            },
+        },
+        href: {
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'string',
+                },
+            },
+        },
+        onClick: {
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary: 'func',
+                },
+            },
+        },
+        variant: {
+            description: 'Sets contextual classes for list item',
+            table: {
+                defaultValue: {
+                    summary: undefined,
+                },
+                type: {
+                    summary:
+                        "'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light'",
+                },
+            },
+        },
+        children: {
+            description: 'The content of the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={ListGroup.Item}
+/>
+
+export const Template = (args) => <ListGroup.Item {...args} />;
+
+## ListGroup.Item
+
+### Basic Example
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            variant: 'primary',
+            as: 'div',
+            active: false,
+            action: false,
+            disabled: false,
+            eventKey: '',
+            href: '#primary',
+            children: 'Primary',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+#### Contextual classes
+
+Use contextual variants on `<ListGroup.Item>`s to style them with a stateful background and color.
+
+<Canvas>
+    <Story id="bootstrap-components-listgroup-listgroupitem--primary" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--secondary" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--success" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--warning" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--danger" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--info" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--light" />
+    <Story id="bootstrap-components-listgroup-listgroupitem--dark" />
+</Canvas>
+
+#### Active items
+
+Set the active prop to indicate the list groups current active selection.
+
+<Canvas>
+    <Story id="bootstrap-components-listgroup-listgroupitem--active" />
+</Canvas>
+
+#### Disabled items
+
+Set the `disabled` prop to prevent actions on a `<ListGroup.Item>`. For elements that aren't naturally disable-able (like anchors) `onClick` handlers are added that call `preventDefault` to mimick disabled behavior.
+
+<Canvas>
+    <Story id="bootstrap-components-listgroup-listgroupitem--disabled" />
+</Canvas>

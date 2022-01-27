@@ -1,34 +1,34 @@
 @mixin badge-size($height, $line-height, $font-size, $svg-size, $border-radius) {
-  height: $height;
-  line-height: $line-height;
-  font-size: $font-size;
-  border-radius: $border-radius;
+    height: $height;
+    line-height: $line-height;
+    font-size: $font-size;
+    border-radius: $border-radius;
 
-  & .c-badge__icon svg {
-    width: $svg-size;
-    height: $svg-size;
-  }
+    & .onex-badge__icon svg {
+        width: $svg-size;
+        height: $svg-size;
+    }
 }
 
 @mixin bg-text-color($bg-color, $text-color: false) {
-  background-color: $bg-color;
+    background-color: $bg-color;
 
-  @if $text-color {
-    color: $text-color;
-  }
+    @if $text-color {
+        color: $text-color;
+    }
 }
 
 @mixin badge-type-color() {
-  $types: 'default' $c-badge-default-bg-color,
-  'default-invert' $c-badge-default-inverted-bg-color,
-  'important' $c-badge-important-bg-color $c-badge-color-text,
-  'primary' $c-badge-primary-bg-color $c-badge-color-text,
-  'added' $c-badge-added-bg-color $c-badge-added-text-color,
-  'removed' $c-badge-removed-bg-color $c-badge-removed-text-color;
+    $types: 'default' $onex-badge-default-bg-color,
+        'default-invert' $onex-badge-default-inverted-bg-color,
+        'important' $onex-badge-important-bg-color $onex-badge-color-text,
+        'primary' $onex-badge-primary-bg-color $onex-badge-color-text,
+        'added' $onex-badge-added-bg-color $onex-badge-added-text-color,
+        'removed' $onex-badge-removed-bg-color $onex-badge-removed-text-color;
 
-  @each $type, $bg-color, $text-color in $types {
-    &.bg-#{$type} {
-      @include bg-text-color(#{$bg-color}, #{$text-color});
+    @each $type, $bg-color, $text-color in $types {
+        &.bg-#{$type} {
+            @include bg-text-color(#{$bg-color}, #{$text-color});
+        }
     }
-  }
 }

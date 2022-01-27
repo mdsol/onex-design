@@ -44,6 +44,14 @@ const App = () => {
     const [paginationPage, setPaginationPage] = useState(1);
     const [selectedOptions, setSelectedOptions] = useState([]);
 
+    const handleLoadAsyncOptions = (selectInputValue) =>
+        fetch(`http://jsonplaceholder.typicode.com/posts?userId=${selectInputValue}`).then((res) =>
+            res.json(),
+        );
+
+    const getAsyncOptionsLabel = e => e.title;
+    const getAsyncOptionsValue = e => e.id;
+
     return (
         <div style={{ padding: '50px' }}>
             <br />
@@ -124,6 +132,9 @@ const App = () => {
                 selectedValues={selectedOptions}
                 onSelect={(options) => setSelectedOptions(options)}
                 options={selectOptions}
+                onLoadOptions={handleLoadAsyncOptions}
+                getOptionLabel={getAsyncOptionsLabel}
+                getOptionValue={getAsyncOptionsValue}
             />
             <br />
             <InlineEditText placeholder="Edit" size="lg" />

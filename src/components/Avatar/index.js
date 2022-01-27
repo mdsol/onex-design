@@ -4,7 +4,7 @@ import { PersonIcon, CameraFillIcon } from '../../icons';
 import { getInitials } from './utils';
 
 const Avatar = ({ className, size, name, children, src, hoverDisabled, dataTestId }) => {
-    const avatarClassNames = classNames('c-avatar', `c-avatar--size-${size}`, {
+    const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {
         [className]: className,
         'hover-disabled': hoverDisabled,
     });
@@ -12,13 +12,15 @@ const Avatar = ({ className, size, name, children, src, hoverDisabled, dataTestI
 
     return (
         <div className={avatarClassNames} data-test-id={dataTestId}>
-            {src && <img className="c-avatar__img" src={src} alt={name || ''} />}
+            {src && <img className="onex-avatar__img" src={src} alt={name || ''} />}
             {!src && (name || childComponent) && (
-                <div className="c-avatar__children">{childComponent || getInitials(name)}</div>
+                <div className="onex-avatar__children">{childComponent || getInitials(name)}</div>
             )}
-            <PersonIcon className={(name || src || childComponent) && `c-avatar__icon-decorator`} />
+            <PersonIcon
+                className={(name || src || childComponent) && `onex-avatar__icon-decorator`}
+            />
             {!hoverDisabled && (
-                <div className="c-avatar__hover">
+                <div className="onex-avatar__hover">
                     <CameraFillIcon />
                 </div>
             )}

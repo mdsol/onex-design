@@ -16,13 +16,15 @@ const CustomDropdown = React.forwardRef((props, ref) => {
         align,
         onSelect,
         dataTestId,
+        as,
     } = props;
-    const buttonClassNames = classNames('c-dropdown', `c-dropdown--${buttonStyle}`, {
+    const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
         [className]: className,
     });
 
     return (
         <DropdownButton
+            as={as}
             ref={ref}
             className={buttonClassNames}
             id={id}
@@ -89,6 +91,7 @@ CustomDropdown.propTypes = {
     ),
     onSelect: PropTypes.func,
     dataTestId: PropTypes.string,
+    as: PropTypes.node,
 };
 
 CustomDropdown.defaultProps = {
@@ -102,6 +105,7 @@ CustomDropdown.defaultProps = {
     align: 'start',
     buttonStyle: 'text',
     dataTestId: undefined,
+    as: undefined,
 };
 
 export default CustomDropdown;

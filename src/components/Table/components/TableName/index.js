@@ -5,13 +5,13 @@ import Badge from '../../../Badge';
 const TableName = (props) => {
     const { children, className, badgeNumber, dataTestId } = props;
 
-    const tableNameClasses = classNames('c-table-name', {
+    const tableNameClasses = classNames('onex-table-name', {
         [className]: className,
     });
 
     return (
         <div className={tableNameClasses} data-test-id={dataTestId}>
-            {children && <h2 className="c-table-name__h2">{children}</h2>}
+            {children && <h2 className="onex-table-name__h2">{children}</h2>}
             {badgeNumber && (
                 <Badge size="sm" type="primary">
                     {badgeNumber}

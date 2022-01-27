@@ -1,0 +1,73 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { ProgressBar } from '../../../components';
+
+<Meta
+    title="Bootstrap/Components/ProgressBar"
+    component={ProgressBar}
+/>
+
+export const Template = (args) => <ProgressBar {...args} />;
+
+## ProgressBar
+
+Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.
+
+### Example
+
+Default progress bar.
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            max: 100,
+            now: 60,
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### With label
+
+Add a `label` prop to show a visible percentage. For low percentages, consider adding a min-width to ensure the label's text is fully visible.
+
+Add a `visuallyHidden` prop to hide the label visually.
+
+<Canvas>
+    <Story id="bootstrap-components-progressbar--label" />
+</Canvas>
+
+### Contextual alternatives
+
+Progress bars use some of the same button and alert classes for consistent styles.
+
+<Canvas>
+    <Story id="bootstrap-components-progressbar--contextual-alternatives" />
+</Canvas>
+
+### Striped
+
+Uses a gradient to create a striped effect.
+
+<Canvas>
+    <Story id="bootstrap-components-progressbar--striped" />
+</Canvas>
+
+### Animated
+
+Add `animated` prop to animate the stripes right to left.
+
+<Canvas>
+    <Story id="bootstrap-components-progressbar--animated" />
+</Canvas>
+
+### Stacked
+
+Nest `<ProgressBar />`s to stack them.
+
+<Canvas>
+    <Story id="bootstrap-components-progressbar--stacked" />
+</Canvas>

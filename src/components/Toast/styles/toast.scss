@@ -1,49 +1,49 @@
 @import 'mixins';
 
-.c-toast {
-  @include toast-color-variant();
+.onex-toast {
+    @include toast-color-variant();
 
-  &__block {
-    overflow: hidden;
-    height: $c-toast-height;
-  }
-
-  &__header {
-    height: 100%;
-    padding-right: $c-toast-padding-right-x;
-
-    .c-toast__btn-close {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: $c-btn-close-size;
-      height: $c-btn-close-size;
-      border-radius: 100%;
-
-      svg {
-        fill: $c-btn-close-icon-color;
-      }
+    &__block {
+        overflow: hidden;
+        height: $onex-toast-height;
     }
-  }
 
-  &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: $c-icon-wrapper-padding-x;
+    &__header {
+        height: 100%;
+        padding-right: $onex-toast-padding-right-x;
 
-    svg {
-      width: $c-toast-icon-size;
-      height: $c-toast-icon-size;
+        .onex-toast__btn-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: $onex-btn-close-size;
+            height: $onex-btn-close-size;
+            border-radius: 100%;
+
+            svg {
+                fill: $onex-btn-close-icon-color;
+            }
+        }
     }
-  }
 
-  &__message {
-    display: flex;
-    align-items: center;
-    justify-content: stretch;
-    flex-grow: 2;
-    padding: 0 $c-message-padding-x;
-  }
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: $onex-icon-wrapper-padding-x;
+
+        svg {
+            width: $onex-toast-icon-size;
+            height: $onex-toast-icon-size;
+        }
+    }
+
+    &__message {
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        flex-grow: 2;
+        padding: 0 $onex-message-padding-x;
+    }
 }
