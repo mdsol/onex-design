@@ -23,6 +23,8 @@ import {
     Stack,
     ButtonGroup,
     ButtonToolbar,
+    Popover,
+    OverlayTrigger,
 } from 'react-bootstrap';
 
 import Avatar from './Avatar';
@@ -121,4 +123,6 @@ export {
     ButtonGroup,
     ButtonToolbar,
     CloseButton,
+    Popover,
+    OverlayTrigger,
 };
