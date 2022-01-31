@@ -58,7 +58,7 @@ $spacers: (
 @import '../components/Tooltip/styles/variables';
 @import '../components/Typography/styles/variables';
 
-@import 'bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 :root {
   @each $color, $value in $main-colors {
