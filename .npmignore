@@ -18,5 +18,6 @@ src
 .vscode
 .yarn
 .yarnrc.yml
+.github
 index.html
 vite.config.js
