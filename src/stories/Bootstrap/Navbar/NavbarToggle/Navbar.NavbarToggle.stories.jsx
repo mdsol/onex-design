@@ -1,5 +1,5 @@
+/* eslint-disable storybook/story-exports */
 import { Navbar } from '../../../../components';
-
 import NavbarToggleMDX from './Navbar.NavbarToggle.stories.mdx';
 
 export default {

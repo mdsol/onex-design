@@ -1,5 +1,5 @@
+/* eslint-disable storybook/story-exports */
 import { Carousel } from '../../../components';
-
 import CarouselMDX from './Carousel.stories.mdx';
 
 const pauseVariants = {

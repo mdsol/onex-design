@@ -1,5 +1,4 @@
 import { ListGroup } from '../../../../components';
-
 import ListGroupMDX from './ListGroup.ListGroup.stories.mdx';
 
 const horizontalTypes = {
@@ -41,6 +40,7 @@ export default {
 const Template = (props) => <ListGroup {...props} />;
 
 function alertClicked() {
+  // eslint-disable-next-line no-alert
   alert('You clicked the third ListGroupItem');
 }
 

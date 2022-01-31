@@ -1,5 +1,5 @@
+/* eslint-disable storybook/story-exports */
 import { Figure } from '../../../components';
-
 import FigureMDX from './Figure.stories.mdx';
 
 export default {
