@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 export default {
   title: 'Colors',
@@ -22,6 +22,7 @@ const graphColors = [
   'light-border',
 ];
 
+// eslint-disable-next-line react/prop-types
 const Swatch = ({ group, name }) => (
   <Col xs="6" md="3" lg="2" className="text-center">
     <h5 className="mb-2">{name}</h5>

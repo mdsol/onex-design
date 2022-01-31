@@ -7,6 +7,7 @@ export default {
   title: 'Icons',
 };
 
+// eslint-disable-next-line react/prop-types
 const Icon = ({ iconName }) => {
   const Dynamic = BsIcons[iconName];
   return <Dynamic size="40" />;
