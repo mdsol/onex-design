@@ -1,6 +1,6 @@
 {
   "name": "@mdsol/onex-design",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "files": [
     "dist"
   ],
@@ -15,9 +15,9 @@
       "import": "./dist/onex.es.js",
       "require": "./dist/onex.umd.js"
     },
-    "./dist/index.css": {
-      "import": "./dist/index.css",
-      "require": "./dist/index.css"
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     },
     "./dist/theme.css": {
       "import": "./dist/theme.css",
