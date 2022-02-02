@@ -31,7 +31,9 @@ export const Browsers = () => (
     <Row>
       <Col>
         <h1>Browsers</h1>
-        <p>Official policy to support the latest browsers, no support for any version of IE.</p>
+        <p>
+          Official policy to support the latest browsers, with no support for any version of IE.
+        </p>
         <p>
           We care more about what features a browser supports vs. market share (international
           audience considered).
