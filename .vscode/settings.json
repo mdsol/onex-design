@@ -32,6 +32,7 @@
     "**/factbook.yaml": true,
     "**/rollup.config.js": true,
     "**/webpack.config.js": true,
+    "**/webpack.config.pkg.js": true,
     "**/.browserslistrc": true,
     "**/.babelrc": true
   },

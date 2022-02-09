@@ -9,7 +9,7 @@ import {
   WarningTriangleFillIcon,
   XIcon,
 } from '../../icons';
-import Button from '../Button';
+import Button from '../Buttons';
 
 const IconVariants = {
   info: <InfoRoundFillIcon />,

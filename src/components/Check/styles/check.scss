@@ -1,6 +1,8 @@
 @import 'mixins';
 
-.с-check {
+.onex-check {
+    @include default-check-styles();
+
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -14,31 +16,31 @@
         cursor: pointer;
 
         &:not(:checked) {
-            background-color: $check-input-bg-color;
+            background-color: $onex-check-input-bg-color;
         }
     }
 
     &:not(.disabled):hover {
-        box-shadow: 0 0 0 0.25rem $check-hover-shadow-color;
-        background-color: $check-hover-bg-color;
+        box-shadow: 0 0 0 0.25rem $onex-check-hover-shadow-color;
+        background-color: $onex-check-hover-bg-color;
         border-radius: 0.125rem;
 
         & > .form-check-input {
-            border-color: $check-input-hover-border-color;
-            background-color: $check-input-hover-bg-color;
+            border-color: $onex-check-input-hover-border-color;
+            background-color: $onex-check-input-hover-bg-color;
 
             &:checked {
-                background-color: $check-input-checked-bg-color;
+                background-color: $onex-check-input-checked-bg-color;
             }
 
             &[type='checkbox']:indeterminate,
             &.indeterminate {
-                background-image: escape-svg($form-check-input-indeterminate-bg-image-hover);
+                background-image: escape-svg($onex-form-check-input-indeterminate-bg-image-hover);
             }
         }
 
         & > .form-check-label {
-            color: $check-label-text-color;
+            color: $onex-check-label-text-color;
         }
     }
 
@@ -51,7 +53,7 @@
     }
 
     .form-check-input:disabled + .form-check-label {
-        color: $check-label-disabled-text-color;
+        color: $onex-check-label-disabled-text-color;
     }
 
     .form-check-input:checked:disabled,
@@ -59,11 +61,11 @@
         pointer-events: none;
         filter: none;
         opacity: 1;
-        border-color: $check-input-disabled-border-color;
+        border-color: $onex-check-input-disabled-border-color;
     }
 
     .form-check-input:checked:disabled {
-        background-color: $check-input-disabled-bg-color;
+        background-color: $onex-check-input-disabled-bg-color;
     }
 
     .form-check-input:disabled {
@@ -72,11 +74,12 @@
 
     .form-check-input[type='checkbox']:indeterminate:disabled,
     .form-check-input.indeterminate:disabled {
-        background-image: escape-svg($form-check-input-indeterminate-bg-image-disabled);
+        background-image: escape-svg($onex-form-check-input-indeterminate-bg-image-disabled);
+        border-color: $onex-check-input-disabled-border-color;
     }
 
     &.onex-check--size-lg {
-        @include size($checkbox-size-lg, $font-size-label-lg, $line-height-label-lg);
+        @include size($onex-checkbox-size-lg, $onex-font-size-label-lg, $onex-line-height-label-lg);
 
         .form-check-input[type='checkbox']:indeterminate,
         .form-check-input.indeterminate {
@@ -85,7 +88,7 @@
     }
 
     &.onex-check--size-sm {
-        @include size($checkbox-size-sm, $font-size-label-sm, $line-height-label-sm);
+        @include size($onex-checkbox-size-sm, $onex-font-size-label-sm, $onex-line-height-label-sm);
 
         .form-check-input[type='checkbox']:indeterminate,
         .form-check-input.indeterminate {

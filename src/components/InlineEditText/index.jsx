@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 import CheckIcon from '../../icons/CheckIcon';
 import PenEditIcon from '../../icons/PenEdit';
 import XIcon from '../../icons/XIcon';
-import CustomButton from '../Button';
+import CustomButton from '../Buttons';
 
 const InlineEditText = React.forwardRef((props, ref) => {
   const {

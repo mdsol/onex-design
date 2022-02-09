@@ -19,10 +19,12 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+        resourceQuery: { not: [/raw/] },
       },
       {
         test: /\.s[ac]ss$/i,
         exclude: [/node_modules/],
+        resourceQuery: { not: [/raw/] },
         use: [
           // Creates `style` nodes from JS strings
           'style-loader',
@@ -31,6 +33,10 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
         ],
+      },
+      {
+        resourceQuery: /raw/,
+        type: 'asset/source',
       },
     ],
   },

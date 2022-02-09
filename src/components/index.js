@@ -28,7 +28,7 @@ import {
 } from 'react-bootstrap';
 import Avatar from './Avatar';
 import Badge from './Badge';
-import Button from './Button';
+import Button from './Buttons';
 import Check from './Check';
 import Dropdown from './Dropdown';
 import ExpansionPanel from './ExpansionPanel';
@@ -37,9 +37,9 @@ import InlineEditText from './InlineEditText';
 import Lozenge from './Lozenge';
 import MenuItem from './MenuItem';
 import Navigation from './Navigation';
+import Overlay from './Overlay';
 import Pagination from './Pagination';
 import Select from './Select';
-import './styles.scss';
 import Switch from './Switch';
 import {
   DataTableCell,
@@ -50,13 +50,13 @@ import {
   TableHead,
   TableName,
   TableRow,
-} from './Table';
+} from './Tables';
 import TablePagination from './TablePagination';
 import Tabs from './Tabs';
 import Tag from './Tag';
 import TextArea from './TextArea';
 import TextField from './TextField';
-import Toast from './Toast';
+import Toast from './Toasts';
 import ToggleButton from './Toggle/components/ToggleButton';
 import ToggleButtonGroup from './Toggle/components/ToggleButtonGroup';
 import Tooltip from './Tooltip';
@@ -122,4 +122,5 @@ export {
   CloseButton,
   Popover,
   OverlayTrigger,
+  Overlay,
 };

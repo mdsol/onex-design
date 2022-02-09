@@ -1,6 +1,7 @@
 @import 'mixins';
 
 .onex-badge {
+    @include default-badge-styles();
     @include badge-type-color();
 
     display: inline-flex;

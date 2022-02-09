@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import CheckIcon from '../../icons/CheckIcon';
 import XIcon from '../../icons/XIcon';
-import CustomButton from '../Button';
+import CustomButton from '../Buttons';
 import Select from '../Select';
 
 const InlineEditSelect = ({

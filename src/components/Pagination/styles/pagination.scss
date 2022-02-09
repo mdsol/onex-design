@@ -7,13 +7,13 @@
       margin-right: $pagination-button-margin;
       &:hover {
         svg path {
-          fill: $table-pagination-next-color-hover;
+          fill: $pagination-next-color-hover;
         }
       }
     }
     .disabled:hover {
       svg path {
-        fill: $table-pagination-next-color-disabled;
+        fill: $pagination-next-color-disabled;
       }
     }
     button:last-child {
@@ -37,7 +37,7 @@
       &:hover {
         background-color: $pagination-item-hover-background;
         color: $white;
-        
+
       }
     }
   }
