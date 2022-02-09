@@ -1,0 +1,26 @@
+@mixin default-nav-item-dropdown() {
+  .dropdown-item {
+    color: $onex-menu-item-text-color;
+
+    &:hover,
+    &:focus {
+      color: $onex-menu-item-text-color;
+      @include gradient-bg($onex-menu-dropdown-hover-bg-color);
+    }
+
+    &.active,
+    &:active {
+      color: $onex-dropdown-link-active-color;
+      @include gradient-bg($onex-dropdown-link-active-bg-color);
+    }
+
+    &.disabled,
+    &:disabled {
+      color: $onex-menu-dropdown-disabled-text-color;
+    }
+  }
+  .dropdown-menu {
+    color: $onex-menu-item-text-color;
+    border: $onex-menu-dropdown-border-width solid $onex-menu-dropdown-border-color;
+  }
+}

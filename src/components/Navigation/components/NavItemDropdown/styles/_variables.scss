@@ -1,38 +1,24 @@
-$nav-dropdown-border-color: $secondary;
-$nav-dropdown-text-color: $primary-700;
-$nav-dropdown-hover-color: $secondary-200;
+$onex-nav-dropdown-border-color: $secondary;
+$onex-nav-dropdown-text-color: $primary-700;
+$onex-nav-dropdown-hover-color: $secondary-200;
 
-$nav-dropdown-menu-border-radius: $component-border-radius-lg;
-$nav-dropdown-menu-font-size: $font-size-lg;
-$nav-dropdown-menu-line-height: $line-height-lg;
-$nav-dropdown-menu-padding-x: $dropdown-menu-padding-x-lg;
-$nav-dropdown-menu-padding-y: $dropdown-menu-padding-y-lg;
-$nav-dropdown-menu-min-width: $dropdown-menu-min-width-lg;
-$nav-dropdown-menu-item-padding-x: $dropdown-menu-item-padding-x-lg;
-$nav-dropdown-menu-item-padding-y: $dropdown-menu-item-padding-y-lg;
-$nav-dropdown-active-border-width: 0.25rem;
-$nav-dropdown-active-border-radius: 0.125rem;
+$onex-nav-dropdown-menu-border-radius: $component-border-radius-lg;
+$onex-nav-dropdown-menu-font-size: $font-size-lg;
+$onex-nav-dropdown-menu-line-height: $line-height-lg;
+$onex-nav-dropdown-menu-padding-x: $dropdown-menu-padding-x-lg;
+$onex-nav-dropdown-menu-padding-y: $dropdown-menu-padding-y-lg;
+$onex-nav-dropdown-menu-min-width: $dropdown-menu-min-width-lg;
+$onex-nav-dropdown-menu-item-padding-x: $dropdown-menu-item-padding-x-lg;
+$onex-nav-dropdown-menu-item-padding-y: $dropdown-menu-item-padding-y-lg;
+$onex-nav-dropdown-active-border-width: 0.25rem;
+$onex-nav-dropdown-active-border-radius: 0.125rem;
 
 $onex-dropdown-link-active-color: $primary;
 $onex-dropdown-link-active-bg-color: $transparent;
 
-$menu-item-text-color: $black;
-$menu-dropdown-border-color: $secondary;
-$menu-dropdown-disabled-text-color: $secondary-500;
-$menu-dropdown-hover-bg-color: $secondary-200;
+$onex-menu-item-text-color: $black;
+$onex-menu-dropdown-border-color: $secondary;
+$onex-menu-dropdown-disabled-text-color: $secondary-500;
+$onex-menu-dropdown-hover-bg-color: $secondary-200;
 
-/* bootstrap variables */
-$dropdown-link-active-color: $onex-dropdown-link-active-color;
-$dropdown-link-active-bg: $onex-dropdown-link-active-bg-color;
-
-$dropdown-color: $menu-item-text-color;
-$dropdown-border-color: $menu-dropdown-border-color;
-
-$dropdown-link-color: $menu-item-text-color;
-$dropdown-link-hover-color: $menu-item-text-color;
-$dropdown-link-hover-bg: $menu-dropdown-hover-bg-color;
-
-$dropdown-link-active-color: $onex-dropdown-link-active-color;
-$dropdown-link-active-bg: $onex-dropdown-link-active-bg-color;
-
-$dropdown-link-disabled-color: $menu-dropdown-disabled-text-color;
+$onex-menu-dropdown-border-width: 1px;

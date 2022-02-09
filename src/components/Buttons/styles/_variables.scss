@@ -59,3 +59,15 @@ $btn-link-hover-color: $primary-700;
 $btn-link-disabled-color: $secondary-500;
 $link-decoration: none;
 $link-hover-decoration: none;
+
+// sm
+$btn-padding-y-sm: 0.375rem;
+$btn-padding-x-sm: 0.625rem;
+$btn-font-size-sm: $font-size-sm;
+$btn-border-radius-sm: $component-border-radius-sm;
+
+//lg
+$btn-padding-y-lg: 0.625rem;
+$btn-padding-x-lg: 0.75rem;
+$btn-font-size-lg: $font-size-lg;
+$btn-border-radius-lg: $component-border-radius-lg;

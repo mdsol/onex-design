@@ -9,3 +9,33 @@
     line-height: $line-height;
   }
 }
+
+@mixin default-check-styles() {
+    .form-check-input {
+        border: $onex-form-check-input-border;
+
+        &:focus {
+            border-color: $onex-form-check-input-focus-border;
+            box-shadow: $onex-form-check-input-focus-box-shadow;
+        }
+
+        &:disabled {
+            opacity: $onex-form-check-input-disabled-opacity;
+        }
+
+        &:checked {
+            border-color: $onex-check-input-border-color;
+        }
+
+        &[type="checkbox"]:indeterminate {
+            background-color: $onex-form-check-input-indeterminate-bg-color;
+            border-color: $onex-form-check-input-indeterminate-border-color;
+            background-image: escape-svg($onex-form-check-input-indeterminate-bg-image);
+        }
+    }
+
+    .form-check-label {
+        color: $onex-form-check-label-color;
+        cursor: $onex-form-check-label-cursor;
+    }
+}

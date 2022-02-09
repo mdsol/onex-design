@@ -5,3 +5,4 @@ dist
 .yarn/cache
 storybook-static
 .eslintcache
+.idea

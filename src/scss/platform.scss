@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@use 'sass:math';
+@use 'sass:map';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+$grid-gutter-width: 2rem;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: math.div($spacer, 4),
+  2: math.div($spacer, 2),
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2.5,
+  6: $spacer * 3,
+  7: $spacer * 4,
+  8: $spacer * 5,
+  9: $spacer * 6.5,
+  10: $spacer * 10.5,
+);
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../components/theme/colors';
+@import '../components/theme/sizes';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../../node_modules/bootstrap/scss/bootstrap-utilities';
+@import '../../node_modules/bootstrap/scss/bootstrap-grid';
+
+@import './brand-colors';
+:root {
+  @each $color, $value in $main-colors {
+    --main-#{$color}: #{$value};
+  }
+  @each $color, $value in $text-colors {
+    --text-#{$color}: #{$value};
+  }
+  @each $color, $value in $background-colors {
+    --background-#{$color}: #{$value};
+  }
+  @each $color, $value in $brand-bg-colors {
+    --brand-bg-#{$color}: #{$value};
+  }
+  @each $color, $value in $status-colors {
+    --status-#{$color}: #{$value};
+  }
+  @each $color, $value in $status-text-colors {
+    --status-text-#{$color}: #{$value};
+  }
+  @each $color, $value in $status-bg-colors {
+    --status-bg-#{$color}: #{$value};
+  }
+  @each $color, $value in $graph-colors {
+    --graph-#{$color}: #{$value};
+  }
+}
+
+@import './general';
+
+@import './components/avatar';
+@import './components/badge';
+@import './components/buttons';
+@import './components/check';
+@import './components/dropdown';
+@import './components/expansionPanel';
+@import './components/inlineEditSelect';
+@import './components/inlineEditText';
+@import './components/lozenge';
+@import './components/menuItem';
+@import './components/navigation';
+@import './components/pagination';
+@import './components/select';
+@import './components/switch';
+@import './components/tablePagination';
+@import './components/tables';
+@import './components/tabs';
+@import './components/tag';
+@import './components/textArea';
+@import './components/textField';
+@import './components/toasts';
+@import './components/toggleButton';
+@import './components/tooltip';
+@import './components/typography';
+
+/* Bootstrap */
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/accordion';
+@import '../../node_modules/bootstrap/scss/alert';
+@import '../../node_modules/bootstrap/scss/breadcrumb';
+@import '../../node_modules/bootstrap/scss/button-group';
+@import '../../node_modules/bootstrap/scss/card';
+@import '../../node_modules/bootstrap/scss/carousel';
+@import '../../node_modules/bootstrap/scss/containers';
+@import '../../node_modules/bootstrap/scss/forms';
+@import '../../node_modules/bootstrap/scss/grid';
+@import '../../node_modules/bootstrap/scss/helpers';
+@import '../../node_modules/bootstrap/scss/images';
+@import '../../node_modules/bootstrap/scss/list-group';
+@import '../../node_modules/bootstrap/scss/modal';
+@import '../../node_modules/bootstrap/scss/nav';
+@import '../../node_modules/bootstrap/scss/navbar';
+@import '../../node_modules/bootstrap/scss/offcanvas';
+@import '../../node_modules/bootstrap/scss/placeholders';
+@import '../../node_modules/bootstrap/scss/progress';
+@import '../../node_modules/bootstrap/scss/spinners';
+@import '../../node_modules/bootstrap/scss/transitions';
