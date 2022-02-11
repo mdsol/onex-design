@@ -12,7 +12,7 @@
   border-color: $bg-color;
 }
 
-@mixin border-radius($border-radius) {
+@mixin border-radius-toggle-btn($border-radius) {
   &:first-child {
     border-radius: $border-radius 0 0 $border-radius;
   }

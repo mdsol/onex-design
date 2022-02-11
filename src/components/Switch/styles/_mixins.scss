@@ -1,0 +1,12 @@
+@mixin default-switch-styles() {
+  &.form-switch {
+    .form-check-input {
+      background-image: escape-svg($form-switch-checked-bg-image);
+      width: $onex-form-switch-width;
+      padding-left: $onex-form-switch-padding-start;
+      &:focus {
+        background-image: escape-svg($form-switch-checked-bg-image);
+      }
+    }
+  }
+}

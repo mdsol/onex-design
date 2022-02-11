@@ -33,13 +33,13 @@
 }
 
 .btn-group.btn-group-sm .onex-toggle-btn-wrapper {
-    @include border-radius($toggle-border-radius-sm);
+    @include border-radius-toggle-btn($toggle-border-radius-sm);
 
     line-height: $toggle-line-height-sm;
 }
 
 .btn-group.btn-group-lg .onex-toggle-btn-wrapper {
-    @include border-radius($toggle-border-radius-lg);
+    @include border-radius-toggle-btn($toggle-border-radius-lg);
 
     line-height: $toggle-line-height-lg;
 }

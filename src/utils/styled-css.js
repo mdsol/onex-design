@@ -1,22 +1,24 @@
 const sass = require('sass');
 const fs = require('fs');
 
-const components = ['Buttons'];
+const firstLetterLoverCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
+
+const components = ['Avatar', 'Badge', 'Buttons', 'Check', 'Dropdown'];
 components.map((component) => {
   try {
     const result = sass.renderSync({
-      data: `@import 'node_modules/bootstrap/scss/functions';
-        @import 'src/components/theme/colors';
-        @import 'src/components/theme/sizes';
-        @import 'node_modules/bootstrap/scss/variables';
-        @import 'node_modules/bootstrap/scss/mixins';
-        @import 'src/components/${component}/styles/variables';
-        @import 'node_modules/bootstrap/scss/${component.toLowerCase()}';
-        @import 'src/components/${component}/styles/${component.toLowerCase()}';`,
+      data: `@import 'src/scss/general';
+        @import 'src/scss/components/${firstLetterLoverCase(component)}';`,
       // file: `src/scss/bs-components/${component}.scss`,
     });
     if (result.css) {
-      fs.writeFile(`src/Styled/${component}.css`, result.css, (err) => {
+      const folderName = `src/Styled/${component}`;
+
+      if (!fs.existsSync(folderName)) {
+        fs.mkdirSync(folderName);
+      }
+
+      fs.writeFile(`${folderName}/platform.css`, result.css, (err) => {
         if (err) {
           console.error(err);
         }

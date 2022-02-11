@@ -3,6 +3,7 @@
     .nav-link {
         position: relative;
         line-height: $onex-nav-item-line-height;
+        text-decoration: none;
 
         &::before {
             position: absolute;

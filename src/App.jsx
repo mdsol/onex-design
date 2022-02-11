@@ -1,7 +1,7 @@
 import { Badge, Button } from 'react-bootstrap';
 import { Badge as SoloBadge, Button as SoloButton } from './components';
 import './scss/platform.scss';
-import { StyledButton } from './styled';
+import { StyledButtons } from './Styled';
 
 const App = () => (
   <div className="p-5">
@@ -20,7 +20,7 @@ const App = () => (
     </p>
     <h2>Scoped CSS</h2>
     <p>
-      <StyledButton>Button</StyledButton>
+      <StyledButtons>Button</StyledButtons>
     </p>
   </div>
 );

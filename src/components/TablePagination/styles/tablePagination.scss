@@ -33,6 +33,12 @@
       width: $table-pagination-divider-width;
       background-color: $table-pagination-divider-bg;
     }
+
+    .dropdown-item {
+      padding: $dropdown-menu-item-padding-y-sm $dropdown-menu-item-padding-x-sm;
+      border-radius: $component-border-radius-sm;
+      text-decoration: none;
+    }
   }
   .rows-text {
     color: $table-pagination-text-color;

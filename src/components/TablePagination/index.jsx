@@ -47,7 +47,7 @@ const TablePagination = ({
         <span className="rows-text">Rows per page</span>
         <DropdownButton
           onSelect={handleRowsPerPageSelect}
-          variant="success"
+          variant="page"
           id="dropdown-basic"
           title={rowsPerPage}
         >

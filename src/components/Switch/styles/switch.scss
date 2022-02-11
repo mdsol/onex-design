@@ -1,9 +1,12 @@
+@import 'mixins';
 .onex-switch {
+     @include default-switch-styles();
     .form-check-input {
         height: $form-switch-height;
         background-color: $form-switch-input-bg;
         border: $form-switch-input-border;
         margin-top: ($line-height-base - $form-switch-height) * 0.5;
+        margin-right: $onex-form-switch-margin-end;
 
         &:focus {
             border-color: $form-switch-focus-border;

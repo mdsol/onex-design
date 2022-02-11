@@ -65,7 +65,7 @@
     "classnames": "^2.3.1",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.21.0",
-    "css-loader": "^6.6.0",
+    "css-loader": "^6.5.1",
     "eslint": "^8.8.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
