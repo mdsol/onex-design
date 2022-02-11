@@ -156,6 +156,7 @@
         .dropdown-item {
             padding: $menu-item-padding-y-lg $menu-item-padding-x-lg;
             border-radius: $menu-border-radius-lg;
+            text-decoration: none;
         }
     }
 
@@ -172,6 +173,7 @@
         .dropdown-item {
             padding: $menu-item-padding-y-sm $menu-item-padding-x-sm;
             border-radius: $menu-border-radius-sm;
+            text-decoration: none;
         }
     }
 }

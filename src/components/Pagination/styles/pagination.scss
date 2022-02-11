@@ -34,6 +34,7 @@
       color: $black;
       border-radius: $pagination-item-border-radius;
       transition: none;
+      text-decoration: none;
       &:hover {
         background-color: $pagination-item-hover-background;
         color: $white;
