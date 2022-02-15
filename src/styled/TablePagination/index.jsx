@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TablePagination from '../../components/TablePagination';
+import { TablePagination } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 

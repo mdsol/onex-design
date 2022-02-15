@@ -12,7 +12,7 @@ const getFileBody = (componentName, replaceClasses) => {
   }, 'cssString');
 
   return `import styled from 'styled-components';
-import ${componentName} from '../../components/${componentName}';
+import { ${componentName} } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -25,7 +25,7 @@ const StyledComponent = styled(${componentName})\`
 `;
 };
 
-componentsInfo.map(({ name, replaceUrl }) => {
+componentsInfo.map(({ name, importName, replaceUrl }) => {
   try {
     const folderName = `src/Styled/${name}`;
 
@@ -33,7 +33,7 @@ componentsInfo.map(({ name, replaceUrl }) => {
       fs.mkdirSync(folderName);
     }
 
-    fs.writeFile(`${folderName}/index.jsx`, getFileBody(name, replaceUrl), (err) => {
+    fs.writeFile(`${folderName}/index.jsx`, getFileBody(importName, replaceUrl), (err) => {
       if (err) {
         console.error(err);
       }

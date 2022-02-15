@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Pagination from '../../components/Pagination';
+import { Pagination } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 

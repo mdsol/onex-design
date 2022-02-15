@@ -1,15 +1,19 @@
-import styled from 'styled-components';
-import Tables from '../../components/Tables';
-// eslint-disable-next-line import/no-unresolved
-import cssString from './platform.css?raw';
+import StyledTable from './components/table';
+import StyledDataTableCell from './components/dataTableCell';
+import StyledTableBody from './components/tableBody';
+import StyledTableCell from './components/tableCell';
+import StyledTableControl from './components/tableControl';
+import StyledTableHead from './components/tableHead';
+import StyledTableName from './components/tableName';
+import StyledTableRow from './components/tableRow';
 
-// eslint-disable-next-line react/prop-types
-export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
-
-const StyledComponent = styled(Tables)`
-  ${() =>
-    cssString
-      .replaceAll('.onex-', '&.onex-')
-      .replaceAll('.table', '&.table')
-      .replaceAll('.table-', '&.table-')}
-`;
+export {
+  StyledTable,
+  StyledTableHead,
+  StyledTableBody,
+  StyledTableRow,
+  StyledTableCell,
+  StyledDataTableCell,
+  StyledTableControl,
+  StyledTableName,
+};

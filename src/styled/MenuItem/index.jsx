@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MenuItem from '../../components/MenuItem';
+import { MenuItem } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 

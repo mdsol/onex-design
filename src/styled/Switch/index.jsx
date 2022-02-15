@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Switch from '../../components/Switch';
+import { Switch } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 

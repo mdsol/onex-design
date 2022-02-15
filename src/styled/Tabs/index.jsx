@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Tabs from '../../components/Tabs';
+import { Tabs } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 

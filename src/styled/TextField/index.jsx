@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TextField from '../../components/TextField';
+import { TextField } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 

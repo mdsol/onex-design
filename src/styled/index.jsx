@@ -12,7 +12,16 @@ import StyledNavigation from './Navigation';
 import StyledPagination from './Pagination';
 import StyledSelect from './Select';
 import StyledSwitch from './Switch';
-import StyledTables from './Tables';
+import {
+  StyledTable,
+  StyledTableHead,
+  StyledTableBody,
+  StyledTableRow,
+  StyledTableCell,
+  StyledDataTableCell,
+  StyledTableControl,
+  StyledTableName,
+} from './Tables';
 import StyledTablePagination from './TablePagination';
 import StyledTabs from './Tabs';
 import StyledTag from './Tag';
@@ -20,11 +29,12 @@ import StyledTextArea from './TextArea';
 import StyledTextField from './TextField';
 import StyledToasts from './Toasts';
 import StyledToggleButton from './ToggleButton';
+import StyledToggleButtonGroup from './ToggleButtonGroup';
 import StyledTooltip from './Tooltip';
 import StyledTypography from './Typography';
 
 export {
-StyledAvatar,
+  StyledAvatar,
   StyledBadge,
   StyledButtons,
   StyledCheck,
@@ -38,7 +48,6 @@ StyledAvatar,
   StyledPagination,
   StyledSelect,
   StyledSwitch,
-  StyledTables,
   StyledTablePagination,
   StyledTabs,
   StyledTag,
@@ -46,6 +55,15 @@ StyledAvatar,
   StyledTextField,
   StyledToasts,
   StyledToggleButton,
+  StyledToggleButtonGroup,
   StyledTooltip,
   StyledTypography,
+  StyledTable,
+  StyledTableHead,
+  StyledTableBody,
+  StyledTableRow,
+  StyledTableCell,
+  StyledDataTableCell,
+  StyledTableControl,
+  StyledTableName,
 };

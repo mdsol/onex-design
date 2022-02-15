@@ -1,10 +1,9 @@
 const sass = require('sass');
 const fs = require('fs');
-const componentsInfo = require('./styleComponentGenerator/components');
 
 const firstLetterLoverCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
 
-const components = componentsInfo.map((elem) => elem.name);
+const components = ['ToggleButtonGroup'];
 components.map((component) => {
   try {
     const result = sass.renderSync({
