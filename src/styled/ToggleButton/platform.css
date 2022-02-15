@@ -1,0 +1,109 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+.btn-group.btn-group-sm .onex-toggle-btn.btn,
+.onex-toggle-btn.btn.btn-sm {
+  padding: 0.25rem 0.375rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  border-radius: 0.25rem !important;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.btn-group.btn-group-sm .onex-toggle-btn.btn svg,
+.onex-toggle-btn.btn.btn-sm svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.btn-group.btn-group-lg .onex-toggle-btn.btn,
+.onex-toggle-btn.btn.btn-lg {
+  padding: 0.5rem 0.75rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  border-radius: 0.375rem !important;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.btn-group.btn-group-lg .onex-toggle-btn.btn svg,
+.onex-toggle-btn.btn.btn-lg svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.btn-group.btn-group-sm .onex-toggle-btn-wrapper {
+  line-height: 1rem;
+}
+.btn-group.btn-group-sm .onex-toggle-btn-wrapper:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.btn-group.btn-group-sm .onex-toggle-btn-wrapper:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.btn-group.btn-group-lg .onex-toggle-btn-wrapper {
+  line-height: 1.25rem;
+}
+.btn-group.btn-group-lg .onex-toggle-btn-wrapper:first-child {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+.btn-group.btn-group-lg .onex-toggle-btn-wrapper:last-child {
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.btn-group .onex-toggle-btn-wrapper {
+  padding: 1px;
+  border-top: 1px solid #d1d8e0;
+  border-bottom: 1px solid #d1d8e0;
+}
+.btn-group .onex-toggle-btn-wrapper:first-child {
+  border-left: 1px solid #d1d8e0;
+  padding-left: 1px;
+}
+.btn-group .onex-toggle-btn-wrapper:last-child {
+  border-right: 1px solid #d1d8e0;
+  padding-right: 1px;
+}
+
+.btn-group.onex-toggle-btn-group--button .onex-toggle-btn-wrapper {
+  padding: 1px;
+}
+.btn-group.onex-toggle-btn-group--button .onex-toggle-btn-wrapper:not(:first-child) {
+  border-left: 1px solid #d1d8e0;
+}
+.btn-group.onex-toggle-btn-group--button.btn-group-lg .onex-toggle-btn {
+  padding: 0.625rem;
+}
+.btn-group.onex-toggle-btn-group--button.btn-group-sm .onex-toggle-btn {
+  padding: 0.375rem;
+}
+
+.onex-toggle-btn.btn {
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  gap: 0.25rem;
+  color: #002855;
+}
+.onex-toggle-btn.btn:hover {
+  background-color: #e6f1f6;
+  border-color: #e6f1f6;
+  color: #002855;
+}
+.onex-toggle-btn.btn:disabled, .onex-toggle-btn.btn.disabled {
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
+  color: #b0b8bf;
+}
+
+.btn-check:checked + .onex-toggle-btn.btn {
+  background-color: #b3d4e5;
+  border-color: #b3d4e5;
+  color: #002855;
+}
+.btn-check:checked + .onex-toggle-btn.btn:hover {
+  background-color: #cce2ee;
+  border-color: #cce2ee;
+}

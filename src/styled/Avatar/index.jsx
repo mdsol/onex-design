@@ -7,5 +7,5 @@ import cssString from './platform.css?raw';
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
 const StyledComponent = styled(Avatar)`
-  ${() => cssString.replaceAll('.onex-', `&.onex-`).replaceAll('.btn-', `&.btn-`)}
+  ${() => cssString.replaceAll('.onex-', '&.onex-')}
 `;

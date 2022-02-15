@@ -1,0 +1,444 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+.table {
+  --bs-table-bg: rgba(255, 255, 255, 0);
+  --bs-table-accent-bg: rgba(255, 255, 255, 0);
+  --bs-table-striped-color: black;
+  --bs-table-striped-bg: rgba(255, 255, 255, 0);
+  --bs-table-active-color: black;
+  --bs-table-active-bg: #f4f8fc;
+  --bs-table-hover-color: black;
+  --bs-table-hover-bg: #f4f8fc;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: black;
+  vertical-align: middle;
+  border-color: #d1d8e0;
+}
+.table > :not(caption) > * > * {
+  padding: 1rem 0.75rem;
+  background-color: var(--bs-table-bg);
+  border-bottom-width: 0;
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+.table > tbody {
+  vertical-align: inherit;
+}
+.table > thead {
+  vertical-align: bottom;
+}
+.table > :not(:first-child) {
+  border-top: 0 solid currentColor;
+}
+
+.caption-top {
+  caption-side: top;
+}
+
+.table-sm > :not(caption) > * > * {
+  padding: 0.25rem 0.25rem;
+}
+
+.table-bordered > :not(caption) > * {
+  border-width: 0 0;
+}
+.table-bordered > :not(caption) > * > * {
+  border-width: 0 0;
+}
+
+.table-borderless > :not(caption) > * > * {
+  border-bottom-width: 0;
+}
+.table-borderless > :not(:first-child) {
+  border-top-width: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: var(--bs-table-striped-color);
+}
+
+.table-active {
+  --bs-table-accent-bg: var(--bs-table-active-bg);
+  color: var(--bs-table-active-color);
+}
+
+.table-hover > tbody > tr:hover > * {
+  --bs-table-accent-bg: var(--bs-table-hover-bg);
+  color: var(--bs-table-hover-color);
+}
+
+.table-primary {
+  --bs-table-bg: #cce2ee;
+  --bs-table-striped-bg: #c2d7e2;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #b8cbd6;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #bdd1dc;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #b8cbd6;
+}
+
+.table-secondary {
+  --bs-table-bg: #f6f7f9;
+  --bs-table-striped-bg: #eaebed;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #dddee0;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #e4e4e6;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #dddee0;
+}
+
+.table-success {
+  --bs-table-bg: #dcf2de;
+  --bs-table-striped-bg: #d1e6d3;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #c6dac8;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #cce0cd;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #c6dac8;
+}
+
+.table-info {
+  --bs-table-bg: #cff4fc;
+  --bs-table-striped-bg: #c5e8ef;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #badce3;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #bfe2e9;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #badce3;
+}
+
+.table-warning {
+  --bs-table-bg: #fff1d4;
+  --bs-table-striped-bg: #f2e5c9;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #e6d9bf;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #ecdfc4;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #e6d9bf;
+}
+
+.table-danger {
+  --bs-table-bg: #f8d7da;
+  --bs-table-striped-bg: #eccccf;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #dfc2c4;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #e5c7ca;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #dfc2c4;
+}
+
+.table-light {
+  --bs-table-bg: #f8f9fa;
+  --bs-table-striped-bg: #ecedee;
+  --bs-table-striped-color: black;
+  --bs-table-active-bg: #dfe0e1;
+  --bs-table-active-color: black;
+  --bs-table-hover-bg: #e5e6e7;
+  --bs-table-hover-color: black;
+  color: black;
+  border-color: #dfe0e1;
+}
+
+.table-dark {
+  --bs-table-bg: #212529;
+  --bs-table-striped-bg: #2c3034;
+  --bs-table-striped-color: white;
+  --bs-table-active-bg: #373b3e;
+  --bs-table-active-color: white;
+  --bs-table-hover-bg: #323539;
+  --bs-table-hover-color: white;
+  color: white;
+  border-color: #373b3e;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 575.98px) {
+  .table-responsive-sm {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 767.98px) {
+  .table-responsive-md {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 991.98px) {
+  .table-responsive-lg {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1199.98px) {
+  .table-responsive-xl {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1399.98px) {
+  .table-responsive-xxl {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.cell__container {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  gap: 2px;
+}
+
+.onex-table__cell {
+  vertical-align: middle;
+}
+.onex-table__cell.onex-table__cell--align-center {
+  text-align: center;
+}
+.onex-table__cell.onex-table__cell--align-center .cell__container {
+  justify-content: center;
+}
+.onex-table__cell.onex-table__cell--align-left {
+  text-align: left;
+}
+.onex-table__cell.onex-table__cell--align-left .cell__container {
+  justify-content: left;
+}
+.onex-table__cell.onex-table__cell--align-right {
+  text-align: right;
+}
+.onex-table__cell.onex-table__cell--align-right .cell__container {
+  justify-content: right;
+}
+.onex-table__cell:last-child svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.onex-table__cell:last-child svg path {
+  fill: #b0b8bf;
+}
+.onex-table__cell--variant-header {
+  height: 3.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #626b78;
+}
+.onex-table__cell--variant-body {
+  height: 4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: black;
+}
+.onex-table__cell img {
+  max-height: 2rem;
+  max-width: 2rem;
+  border-radius: 100%;
+  object-fit: contain;
+}
+
+.onex-table > .onex-table__body {
+  border-top: none;
+}
+
+.onex-table-wrap--filled {
+  padding: 0 0.25rem 0.25rem 0.25rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1d8e0;
+}
+
+.onex-table {
+  margin-bottom: 0;
+  font-family: Noto Sans;
+}
+.onex-table__cell:first-child {
+  border-radius: 8px 0 0 8px;
+  border-left-style: solid;
+}
+.onex-table__cell:last-child {
+  border-radius: 0 8px 8px 0;
+  border-right-style: solid;
+}
+.onex-table__row {
+  position: relative;
+}
+.onex-table__row::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: 0;
+  width: calc(100% - 2 * 8px);
+  height: 1px;
+  background-color: #d1d8e0;
+}
+.onex-table__body .onex-table__row:last-child::after {
+  display: none;
+}
+
+.onex-data-table__img {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  min-width: 2rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+}
+.onex-data-table__img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.onex-data-table {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.onex-data-table__text {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.onex-data-table__subTitle {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #626b78;
+}
+
+.onex-table__cell--variant-header .onex-data-table__icon--start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+.onex-table__cell--variant-header .onex-data-table__icon--start svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.onex-table__cell--variant-header .onex-data-table__icon--start svg path {
+  fill: #b0b8bf;
+}
+.onex-table__cell--variant-header .onex-data-table__icon--end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 1rem;
+}
+.onex-table__cell--variant-header .onex-data-table__icon--end svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.onex-table__cell--variant-header .onex-data-table__icon--end svg path {
+  fill: #b0b8bf;
+}
+.onex-table__cell--variant-header .onex-data-table:only-child .onex-data-table__icon:only-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0.75rem;
+  width: 0.75rem;
+}
+.onex-table__cell--variant-header .onex-data-table:only-child .onex-data-table__icon:only-child svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.onex-table__cell--variant-header .onex-data-table:only-child .onex-data-table__icon:only-child svg path {
+  fill: black;
+}
+
+.onex-table__cell--variant-body .onex-data-table__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 1rem;
+}
+.onex-table__cell--variant-body .onex-data-table__icon svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.onex-table__cell--variant-body .onex-data-table__icon svg path {
+  fill: #b0b8bf;
+}
+.onex-table__cell--variant-body .onex-data-table__icon--start {
+  margin-right: 0.5rem;
+}
+.onex-table__cell--variant-body .onex-data-table__icon--end {
+  margin-left: 2px;
+}
+.onex-table__cell--variant-body .onex-data-table__icon--end svg path {
+  fill: black;
+}
+.onex-table__cell--variant-body .onex-data-table:only-child .onex-data-table__icon:only-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+.onex-table__cell--variant-body .onex-data-table:only-child .onex-data-table__icon:only-child svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.onex-table__cell--variant-body .onex-data-table:only-child .onex-data-table__icon:only-child svg path {
+  fill: #b0b8bf;
+}
+
+.onex-table-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem 1rem 0;
+}
+
+.onex-table-wrap--filled .onex-table-control {
+  padding: 1rem;
+}
+
+.onex-table-name {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 0.5rem;
+  padding-left: 0.75rem;
+}
+
+.onex-table-name__h2 {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: black;
+  font-weight: 600;
+}
+
+.onex-table-wrap--filled .onex-table-name {
+  padding-left: 0;
+}
