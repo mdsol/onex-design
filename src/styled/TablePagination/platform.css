@@ -1,0 +1,68 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+.tablePagination--lg {
+  font-size: 0.875rem;
+}
+
+.tablePagination--sm {
+  font-size: 0.75rem;
+}
+
+.tablePagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 31.25rem;
+}
+.tablePagination .rowsPerPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tablePagination .dropdown {
+  padding-left: 1rem;
+}
+.tablePagination .dropdown #dropdown-basic {
+  padding: 0;
+  color: #0070a8;
+  font-size: inherit;
+}
+.tablePagination .dropdown:before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.25rem;
+  height: 0.875rem;
+  width: 0.063rem;
+  background-color: #d1d8e0;
+}
+.tablePagination .dropdown .dropdown-item {
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+}
+.tablePagination .rows-text {
+  color: #002855;
+}
+.tablePagination .pageArrows {
+  display: flex;
+  flex-direction: row;
+}
+.tablePagination .pageArrows button {
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.tablePagination .pageArrows button:hover svg path {
+  fill: #0070a8;
+}
+.tablePagination .pageArrows .disabled:hover svg path {
+  fill: #b0b8bf;
+}
+.tablePagination .pageArrows_button_next {
+  transform: rotate(180deg);
+  margin-left: 2.188rem;
+}

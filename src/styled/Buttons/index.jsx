@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from '../../components/Buttons';
+import { Button } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -7,5 +7,9 @@ import cssString from './platform.css?raw';
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
 const StyledComponent = styled(Button)`
-  ${() => cssString.replaceAll('.onex-', `&.onex-`).replaceAll('.btn', `&.btn`)}
+  ${() =>
+    cssString
+      .replaceAll('.onex-', '&.onex-')
+      .replaceAll('.btn', '&.btn')
+      .replaceAll('.btn-', '&.btn-')}
 `;

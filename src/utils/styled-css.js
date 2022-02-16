@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const firstLetterLoverCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
 
-const components = ['Avatar', 'Badge', 'Buttons', 'Check', 'Dropdown'];
+const components = ['ToggleButtonGroup'];
 components.map((component) => {
   try {
     const result = sass.renderSync({

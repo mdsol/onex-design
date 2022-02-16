@@ -1,0 +1,88 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+.onex-select--lg {
+  height: 2.5rem;
+}
+.onex-select--lg .onex-select__control {
+  min-height: 2.5rem;
+}
+.onex-select--lg .onex-select__control .onex-select__value-container {
+  height: 2.5rem;
+}
+.onex-select--lg .onex-select__control .onex-select__indicators {
+  height: 2.5rem;
+}
+.onex-select--lg .onex-select__multi-value {
+  height: 1.5rem;
+}
+
+.onex-select--sm {
+  height: 1.75rem;
+}
+.onex-select--sm .onex-select__control {
+  min-height: 1.75rem;
+}
+.onex-select--sm .onex-select__control .onex-select__value-container {
+  height: 1.75rem;
+}
+.onex-select--sm .onex-select__control .onex-select__value-container .onex-select__input-container {
+  padding: 0rem;
+  margin: 0rem;
+}
+.onex-select--sm .onex-select__control .onex-select__indicators {
+  height: 1.75rem;
+}
+.onex-select--sm .onex-select__multi-value {
+  height: 1.25rem;
+}
+
+.onex-select--invalid .onex-select__control {
+  border-color: #f93c3c !important;
+}
+
+.onex-select {
+  max-width: 31.25rem;
+}
+.onex-select .onex-select__control {
+  border: 0.063rem solid #d1d8e0;
+  border-radius: 0.5rem;
+}
+.onex-select .onex-select__control:hover {
+  border-color: #002855;
+}
+.onex-select .onex-select__control--is-focused {
+  border: 0.063rem solid #0070A8;
+  box-shadow: none;
+}
+.onex-select .onex-select__control--is-focused:hover {
+  border-color: #0070A8;
+}
+.onex-select .onex-select__option:hover {
+  background-color: #f4f8fc;
+  color: black;
+  cursor: pointer;
+}
+.onex-select .onex-select__option--is-selected {
+  background-color: #f4f8fc;
+  color: black;
+}
+.onex-select .onex-select__indicator-separator {
+  display: none;
+}
+.onex-select .onex-select__clear-indicator {
+  display: none;
+}
+.onex-select .onex-select__control--is-focused .onex-select__indicator {
+  color: #0070A8;
+  transform: rotate(180deg);
+}
+.onex-select .onex-select__multi-value {
+  background-color: #f4f8fc;
+  border-radius: 0.375rem;
+  align-items: center;
+}
+.onex-select .onex-select__multi-value .onex-select__multi-value__remove:hover {
+  background-color: #f4f8fc;
+  color: black;
+}

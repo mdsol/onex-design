@@ -1,0 +1,84 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+.onex-menuItem {
+  display: flex;
+  position: relative;
+  width: 10rem;
+  height: 2.25rem;
+  padding: 0.25rem;
+  color: black;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  background-color: white;
+}
+.onex-menuItem a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+.onex-menuItem:hover a {
+  background-color: #e7eef5;
+  border-radius: 5px;
+  color: #002855;
+  cursor: pointer;
+}
+.onex-menuItem__icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.625rem;
+}
+.onex-menuItem__icon__leading {
+  margin-right: 0.625rem;
+}
+.onex-menuItem__icon__trailing {
+  position: absolute;
+  right: 0.625rem;
+  margin-left: 0.625rem;
+}
+.onex-menuItem__badge {
+  position: absolute;
+  right: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+.onex-menuItem--selected a {
+  color: #0070a8;
+}
+.onex-menuItem--selected:hover a {
+  background-color: white;
+  color: #002855;
+}
+.onex-menuItem--selected__indicator {
+  width: 3px;
+  height: 100%;
+  background-color: #0070a8;
+  border-radius: 2px;
+}
+
+.onex-menuItem--disabled a {
+  background-color: white;
+  color: #b0b8bf;
+}
+.onex-menuItem--disabled:hover a {
+  color: #b0b8bf;
+  background-color: white;
+  cursor: initial;
+}
+
+.onex-menuItem--unavailable a {
+  background-color: white;
+}
+.onex-menuItem--unavailable:hover a {
+  background-color: white;
+  cursor: initial;
+}
+.onex-menuItem--unavailable span {
+  color: #b0b8bf;
+}

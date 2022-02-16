@@ -1,0 +1,118 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+/* bootstrap variables */
+.toast {
+  width: 50rem;
+  max-width: 100%;
+  font-size: 0.875rem;
+  color: #23262b;
+  pointer-events: auto;
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #0070a8;
+  box-shadow: none;
+  border-radius: 0.5rem;
+}
+.toast.showing {
+  opacity: 0;
+}
+.toast:not(.show) {
+  display: none;
+}
+
+.toast-container {
+  width: max-content;
+  max-width: 100%;
+  pointer-events: none;
+}
+.toast-container > :not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: 0 0;
+  color: #23262b;
+  background-color: none;
+  background-clip: padding-box;
+  border-bottom: 1px solid none;
+  border-top-left-radius: calc(0.5rem - 1px);
+  border-top-right-radius: calc(0.5rem - 1px);
+}
+.toast-header .btn-close {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.toast-body {
+  padding: 0;
+  word-wrap: break-word;
+}
+
+.onex-toast.onex-toast--variant-success .bg-success {
+  background-color: #f5fcf9 !important;
+  border-color: #4ebf58;
+}
+.onex-toast.onex-toast--variant-success .onex-toast__icon {
+  background-color: #4ebf58;
+}
+.onex-toast.onex-toast--variant-info .bg-info {
+  background-color: white !important;
+  border-color: #0070a8;
+}
+.onex-toast.onex-toast--variant-info .onex-toast__icon {
+  background-color: #0070a8;
+}
+.onex-toast.onex-toast--variant-warning .bg-warning {
+  background-color: #fefaf2 !important;
+  border-color: #ffb826;
+}
+.onex-toast.onex-toast--variant-warning .onex-toast__icon {
+  background-color: #ffb826;
+}
+.onex-toast.onex-toast--variant-error .bg-error {
+  background-color: #fdf8f8 !important;
+  border-color: #f93c3c;
+}
+.onex-toast.onex-toast--variant-error .onex-toast__icon {
+  background-color: #f93c3c;
+}
+.onex-toast__block {
+  overflow: hidden;
+  height: 2.75rem;
+}
+.onex-toast__header {
+  height: 100%;
+  padding-right: 0.25rem;
+}
+.onex-toast__header .onex-toast__btn-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+.onex-toast__header .onex-toast__btn-close svg {
+  fill: #626b78;
+}
+.onex-toast__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.75rem;
+}
+.onex-toast__icon svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.onex-toast__message {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-grow: 2;
+  padding: 0 0.875rem;
+}

@@ -443,6 +443,7 @@
 .onex-dropdown .btn-lg ~ .dropdown-menu .dropdown-item {
   padding: 0.375rem 0.625rem;
   border-radius: 0.5rem;
+  text-decoration: none;
 }
 .onex-dropdown .btn-sm ~ .dropdown-menu {
   border-radius: 0.375rem;
@@ -454,4 +455,5 @@
 .onex-dropdown .btn-sm ~ .dropdown-menu .dropdown-item {
   padding: 0.25rem 0.375rem;
   border-radius: 0.375rem;
+  text-decoration: none;
 }
