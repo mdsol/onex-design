@@ -21,4 +21,4 @@ jobs:
       script:
         - yarn run build
         - yarn run build:css
-        - yarn npm publish
+        - npm publish
