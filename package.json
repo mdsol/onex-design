@@ -17,7 +17,7 @@
     "./dist/*": "./dist/*"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
   },
   "engines": {
     "npm": "please-use-yarn",
