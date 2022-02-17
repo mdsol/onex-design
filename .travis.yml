@@ -1,7 +1,7 @@
 language: node_js
 cache: yarn
 before_install:
-  - ./script/create_npmrc.sh
+  - bash ./script/create_npmrc.sh
 install:
   - yarn --frozen-lockfile
   - |-
