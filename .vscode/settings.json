@@ -107,25 +107,5 @@
     "popperjs",
     "ghpages",
     "mdsol"
-  ],
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#dd7986",
-    "activityBar.activeBorder": "#baecb3",
-    "activityBar.background": "#dd7986",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#baecb3",
-    "activityBarBadge.foreground": "#15202b",
-    "sash.hoverBorder": "#dd7986",
-    "statusBar.background": "#d35061",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#dd7986",
-    "statusBarItem.remoteBackground": "#d35061",
-    "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#d35061",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#d3506199",
-    "titleBar.inactiveForeground": "#e7e7e799"
-  },
-  "peacock.color": "#d35061"
+  ]
 }
