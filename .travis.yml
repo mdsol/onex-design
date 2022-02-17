@@ -3,7 +3,7 @@ cache: yarn
 before_install:
   - bash ./script/create_npmrc.sh
 install:
-  - yarn --frozen-lockfile
+  - yarn --immutable
   - |-
     curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/mdsol/fossa_ci_scripts/master/travis_ci/fossa_install.sh | bash -s -- -b /usr/local/bin/
 stages:
