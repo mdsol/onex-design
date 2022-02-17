@@ -1,0 +1,24 @@
+language: node_js
+cache: yarn
+before_install:
+  - bash ./script/create_npmrc.sh
+install:
+  - yarn --immutable
+  - |-
+    curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/mdsol/fossa_ci_scripts/master/travis_ci/fossa_install.sh | bash -s -- -b /usr/local/bin/
+stages:
+  - name: fossa
+    if: (branch = main) || (branch = develop && type = cron)
+  - name: publish
+    if: tag =~ /^v\d+\.\d+\.\d+$/ # release on tags that look like v1.2.3
+jobs:
+  include:
+    - stage: fossa
+      name: fossa
+      script: ./fossa analyze
+    - stage: publish
+      name: publish_artifactory
+      script:
+        - yarn run build
+        - yarn run build:css
+        - npm publish
