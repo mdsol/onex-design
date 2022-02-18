@@ -36,7 +36,8 @@
     "deploy:sb": "storybook-to-ghpages",
     "utils:bl": "browserslist@latest --update-db",
     "utils:sb-browsers": "node src/utils/sb-browsers.js",
-    "utils:sb-icons": "node src/utils/sb-icons.js"
+    "utils:sb-icons": "node src/utils/sb-icons.js",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/cli": "^7.17.0",
@@ -71,6 +72,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
@@ -80,9 +82,12 @@
     "fs-extra": "^10.0.0",
     "got": "^11.8.3",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "jest-image-snapshot": "^4.5.1",
     "jsdom": "^18.1.1",
     "prettier": "^2.5.1",
     "prop-types": "^15.8.1",
+    "puppeteer": "^13.3.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-bootstrap-icons": "^1.7.2",
@@ -90,6 +95,7 @@
     "react-hot-loader": "^4.13.0",
     "react-is": "^17.0.2",
     "react-select": "^5.2.2",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
@@ -101,5 +107,10 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ]
   }
 }
