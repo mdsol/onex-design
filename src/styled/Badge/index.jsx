@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Badge from '../../components/Badge';
+import { Badge } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -7,5 +7,5 @@ import cssString from './platform.css?raw';
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
 const StyledComponent = styled(Badge)`
-  ${() => cssString.replaceAll('.onex', `&.onex-`).replaceAll('.btn-', `&.btn-`)}
+  ${() => cssString.replaceAll('.onex-', '&.onex-').replaceAll('.badge', '&.badge')}
 `;

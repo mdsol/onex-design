@@ -1,0 +1,21 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+.inline-edit-select-wrapper {
+  max-width: 31.25rem;
+  min-width: 15.625rem;
+}
+.inline-edit-select-wrapper .inline-edit-select .onex-select__control {
+  background-color: white;
+  border: none;
+}
+.inline-edit-select-wrapper .inline-edit-select .onex-select__control .onex-select__indicators {
+  display: none;
+}
+.inline-edit-select-wrapper .inline-edit-select .onex-select__control:hover {
+  background-color: #f4f8fc;
+  cursor: pointer;
+}
+.inline-edit-select-wrapper .inline-edit-select .onex-select__control:hover .onex-select__indicators {
+  display: flex;
+}

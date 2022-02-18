@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Dropdown from '../../components/Dropdown';
+import { Dropdown } from '../../components';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -7,5 +7,9 @@ import cssString from './platform.css?raw';
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
 const StyledComponent = styled(Dropdown)`
-  ${() => cssString.replaceAll('.onex-', `&.onex-`).replaceAll('.dropdown-', `&.dropdown-`)}
+  ${() =>
+    cssString
+      .replaceAll('.onex-', '&.onex-')
+      .replaceAll('.dropdown', '&.dropdown')
+      .replaceAll('.dropdown-', '&.dropdown-')}
 `;

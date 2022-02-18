@@ -1,7 +1,15 @@
 import { Badge, Button } from 'react-bootstrap';
 import { Badge as SoloBadge, Button as SoloButton } from './components';
 import './scss/platform.scss';
-import { StyledButtons } from './Styled';
+import { StyledAvatar, StyledBadge, StyledButtons } from './styled';
+
+const props = {
+  type: 'important',
+  size: 'sm',
+  children: '100',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
 
 const App = () => (
   <div className="p-5">
@@ -21,6 +29,12 @@ const App = () => (
     <h2>Scoped CSS</h2>
     <p>
       <StyledButtons>Button</StyledButtons>
+    </p>
+    <p>
+      <StyledAvatar />
+    </p>
+    <p>
+      <StyledBadge {...props} />
     </p>
   </div>
 );

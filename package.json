@@ -1,7 +1,6 @@
 {
   "name": "@mdsol/onex-design",
   "version": "0.1.3",
-  "private": true,
   "author": "JT <jathompson@mdsol.com>",
   "files": [
     "dist"
@@ -17,7 +16,7 @@
     "./dist/*": "./dist/*"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
   },
   "engines": {
     "npm": "please-use-yarn",
@@ -33,6 +32,7 @@
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
     "lint:fix": "eslint ./src --fix",
     "sc-css": "node src/utils/styled-css.js",
+    "sc-jsx": "node src/utils/styled-jsx/index.js",
     "deploy:sb": "storybook-to-ghpages",
     "utils:bl": "browserslist@latest --update-db",
     "utils:sb-browsers": "node src/utils/sb-browsers.js",

@@ -1,0 +1,85 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+/* bootstrap variables */
+.onex-text-area {
+  font-family: Noto Sans;
+  max-width: 31.25rem;
+}
+.onex-text-area .form-control {
+  color: black;
+  background-color: white;
+  border-color: #d1d8e0;
+  max-width: 31.25rem;
+  min-height: 7.5rem;
+  resize: none;
+}
+.onex-text-area .form-control--sm {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border-radius: 0.375rem;
+}
+.onex-text-area .form-control--lg {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+}
+.onex-text-area .form-control:hover:not(:focus):not(:disabled) {
+  border-color: #002855;
+}
+.onex-text-area .form-control:focus {
+  border-color: #0070a8;
+  outline: 0;
+  box-shadow: none;
+}
+.onex-text-area .form-control.is-invalid, .onex-text-area .form-control:invalid {
+  background-image: none;
+  border-color: #f93c3c;
+}
+.onex-text-area .form-control:disabled, .onex-text-area .form-control.disabled {
+  background-color: transparent;
+  border-color: #d1d8e0;
+}
+.onex-text-area .form-control:disabled::placeholder, .onex-text-area .form-control.disabled::placeholder {
+  color: #b0b8bf;
+}
+.onex-text-area .form-control:disabled + .onex-text-area__footer > .onex-text-area__nums, .onex-text-area .form-control.disabled + .onex-text-area__footer > .onex-text-area__nums {
+  color: #b0b8bf;
+}
+.onex-text-area__help {
+  padding-left: 0.25rem;
+  line-height: 1rem;
+  flex-basis: 100%;
+}
+.onex-text-area__error {
+  flex-basis: 100%;
+  min-width: 1rem;
+  display: inline-block;
+  line-height: 1rem;
+  padding-left: 1.25rem;
+  background-image: url("data:image/svg+xml,%3csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 6C12 7.5913 11.3679 9.11742 10.2426 10.2426C9.11742 11.3679 7.5913 12 6 12C4.4087 12 2.88258 11.3679 1.75736 10.2426C0.632141 9.11742 0 7.5913 0 6C0 4.4087 0.632141 2.88258 1.75736 1.75736C2.88258 0.632141 4.4087 0 6 0C7.5913 0 9.11742 0.632141 10.2426 1.75736C11.3679 2.88258 12 4.4087 12 6ZM6 3C5.90521 3.00005 5.81147 3.01996 5.72484 3.05845C5.63821 3.09693 5.5606 3.15313 5.49701 3.22343C5.43342 3.29374 5.38526 3.37658 5.35563 3.46662C5.32601 3.55667 5.31557 3.65193 5.325 3.74625L5.5875 6.3765C5.59632 6.47983 5.6436 6.57608 5.71998 6.64623C5.79637 6.71637 5.8963 6.75529 6 6.75529C6.1037 6.75529 6.20363 6.71637 6.28002 6.64623C6.3564 6.57608 6.40368 6.47983 6.4125 6.3765L6.675 3.74625C6.68443 3.65193 6.67399 3.55667 6.64437 3.46662C6.61474 3.37658 6.56658 3.29374 6.50299 3.22343C6.4394 3.15313 6.36179 3.09693 6.27516 3.05845C6.18853 3.01996 6.09479 3.00005 6 3ZM6.0015 7.5C5.80259 7.5 5.61182 7.57902 5.47117 7.71967C5.33052 7.86032 5.2515 8.05109 5.2515 8.25C5.2515 8.44891 5.33052 8.63968 5.47117 8.78033C5.61182 8.92098 5.80259 9 6.0015 9C6.20041 9 6.39118 8.92098 6.53183 8.78033C6.67248 8.63968 6.7515 8.44891 6.7515 8.25C6.7515 8.05109 6.67248 7.86032 6.53183 7.71967C6.39118 7.57902 6.20041 7.5 6.0015 7.5Z' fill='%23f93c3c'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 0.25rem center;
+}
+.onex-text-area__footer {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  max-width: 31.25rem;
+  margin-top: 0.25rem;
+}
+.onex-text-area__nums {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #626b78;
+  flex-basis: 10%;
+}
+.onex-text-area__nums--err {
+  color: #f93c3c;
+}
+.onex-text-area .form-text {
+  margin-top: 0;
+}
