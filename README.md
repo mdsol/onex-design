@@ -1,18 +1,10 @@
 # Installing the package
 
-First, create a personal auth token on Github; give access to read:packages:
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+First, [Set up artifactory](https://learn.mdsol.com/display/CA/Artifactory+Strategy). Specifically, you need an artifactory account via okta, and your project needs an artifactory service account. You may already have those.
 
-Depending on if your project uses Yarn or Npm, follow the below and replace GITHUB_TOKEN with the token you generated:
+## Add the package
 
-## NPM
-
-You can edit the .npmrc file in your HOME directory (will work for all future projects) or create/edit the .npmrc file in your projects directory. Copy below and insert your replace ${TOKEN_FOR_GITHUB} with your token that you created above.
-
-```sh
-@mdsol:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=GITHUB_TOKEN
-```
+Go to artifactory, and select "Set me up" from the top right corner. Select package type "NPM" and repo "npm-virtual". Artifactory will give you instructions on how to set up your local access.
 
 You can now add the package to your repo:
 
@@ -20,46 +12,56 @@ You can now add the package to your repo:
 npm add @mdsol/onex-design
 ```
 
-## Yarn
-
-You will need to make sure you are using the latest Yarn:
-
-```sh
-yarn set version berry
-```
-
-Then add the following to the .yarnrc.yml in your projects root folder:
-
-```sh
-npmScopes:
-  "mdsol":
-    npmAlwaysAuth: true
-    npmRegistryServer: "https://npm.pkg.github.com"
-    npmAuthToken: "GITHUB_TOKEN"
-```
-
-You can now add the package to your repo:
+or
 
 ```sh
 yarn add @mdsol/onex-design
 ```
 
+## CI
+
+To access artifactory in CI, you will need a service account, which has a username like `project-preprod-robot`, and a token. Add the username and token as secrets to CI. I'm using the names `ARTIFACTORY_USERNAME` and `ARTIFACTORY_PASSWORD` for the variables, respectively. Now add a line in your CI that does the following before trying to install yarn/npm packages:
+
+```sh
+curl -u${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} "https://mdsol.jfrog.io/mdsol/api/npm/npm-virtual/auth/mdsol" > ./.npmrc
+```
+
+Now you can `yarn` or `npm ci` as usual.
+
+## On medistrano
+
+Medistrano has it's own artifactory credentials, that you can use as part of the install. Add
+
+```
+# syntax=docker/dockerfile:experimental
+```
+
+to the top of your Dockerfile, and before you try to install packages, you need a line like
+
+```dockerfile
+RUN --mount=type=secret,id=artifactory,uid=9999,gid=9999 \
+    source /run/secrets/artifactory \
+    curl -u${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} "https://mdsol.jfrog.io/mdsol/api/npm/npm-virtual/auth/mdsol" > ./.npmrc
+```
+
+which will allow you to install packages normally.
+
 # Product infrastructure
 
-https://mdsol.github.io/onex-design/
+<https://mdsol.github.io/onex-design/>
 
 - Source code: [Medidata/onex-design](https://github.com/GreenJimmy/onex-design)
 - UX and Visual Design: [Figma UI/UX mockups components](https://design.medidata.com)
 
 # Contributing Quick Start
 
-    $ git clone https://github.com/GreenJimmy/onex-design.git
-    $ cd onex-design
-    $ git config user.name "YOUR_NAME"
-    $ git config user.email YOUR_EMAIL
-    $ nvm use - if this command doesn't work -> nvm use --delete-prefix (v16.13.0 version from .nvmrc)
-    $ yarn set version latest
-    $ yarn install
+    git clone https://github.com/GreenJimmy/onex-design.git
+    cd onex-design
+    git config user.name "YOUR_NAME"
+    git config user.email YOUR_EMAIL
+    nvm use - if this command doesn't work -> nvm use --delete-prefix (v16.13.0 version from .nvmrc)
+    yarn set version latest
+    yarn install
 
 ## Available Commands
 
@@ -71,7 +73,7 @@ Start the app:
 
 Bundle production build:
 
-    $ yarn build
+    yarn build
 
 Story book
 
