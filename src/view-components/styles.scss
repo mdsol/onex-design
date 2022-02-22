@@ -1,0 +1,43 @@
+@import "../components/theme/colors";
+@import "../components/theme/sizes";
+
+.wrapper {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #f3f3f3;
+}
+
+.header {
+  color: $secondary-800;
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  padding: 10px 0;
+  border-bottom: 1px solid $secondary-500;
+  font-weight: bold;
+}
+
+.select-component-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.select-component {
+  margin-right: 15px;
+}
+
+.component-block {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.banner_wrap {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}

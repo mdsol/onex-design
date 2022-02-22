@@ -83,6 +83,18 @@ Story book
 
     http://localhost:6006/
 
+Update test snapshots
+
+    $yarn test -u
+
+Test
+
+    $yarn test
+
+Test Styled Component
+
+    $yarn test:styled
+
 ```
 
 ```
