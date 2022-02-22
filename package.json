@@ -37,7 +37,8 @@
     "utils:bl": "browserslist@latest --update-db",
     "utils:sb-browsers": "node src/utils/sb-browsers.js",
     "utils:sb-icons": "node src/utils/sb-icons.js",
-    "test": "jest"
+    "test": "jest",
+    "test:styled": "STYLED=true jest"
   },
   "dependencies": {
     "@babel/cli": "^7.17.0",
@@ -46,6 +47,7 @@
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-private-methods": "^7.16.11",
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@mdx-js/react": "^1.6.22",

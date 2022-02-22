@@ -1,7 +1,9 @@
+import { useState, useEffect } from 'react';
 import { Badge, Button } from 'react-bootstrap';
-import { Badge as SoloBadge, Button as SoloButton } from './components';
+import { Badge as SoloBadge, Button as SoloButton, Tabs } from './components';
 import './scss/platform.scss';
 import { StyledAvatar, StyledBadge, StyledButtons } from './styled';
+import ViewComponents from './view-components';
 
 const props = {
   type: 'important',
@@ -11,7 +13,7 @@ const props = {
   dataTestId: 'text-badge-id',
 };
 
-const App = () => (
+const DevExamples = () => (
   <div className="p-5">
     <h2>Global CSS</h2>
     <p>
@@ -38,5 +40,28 @@ const App = () => (
     </p>
   </div>
 );
+
+const TabItems = [
+  { title: 'Dev mode', eventKey: 'devMode' },
+  { title: 'Test mode', eventKey: 'testMode' },
+];
+
+const App = () => {
+  const [currentTab, setCurrentTab] = useState('testMode');
+
+  useEffect(() => {
+    if (currentTab === 'devMode') {
+      window.history.pushState('', '', window.location.origin);
+    }
+  }, [currentTab]);
+
+  return (
+    <div style={{ padding: '50px' }}>
+      <Tabs size="lg" visibleItems={TabItems} onSelect={setCurrentTab} activeKey={currentTab} />
+      {currentTab === 'devMode' && <DevExamples />}
+      {currentTab === 'testMode' && <ViewComponents />}
+    </div>
+  );
+};
 
 export default App;
