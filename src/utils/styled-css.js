@@ -2,14 +2,31 @@ const sass = require('sass');
 const fs = require('fs');
 
 const firstLetterLoverCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
+const firstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
+const getFiles = () => {
+  const folderThemeName = process.argv[2];
+
+  return fs.readdirSync(`src/themes/${folderThemeName}`).reduce(
+    (acc, file) => `${acc}
+    @import 'src/themes/${folderThemeName}/${file}';`,
+    '',
+  );
+};
+
+const getStylesOfComponents = () => fs.readdirSync(`src/scss/components`).map((file) => file);
+
+const themeImportFiles = getFiles();
 const components = ['ToggleButtonGroup'];
+
 components.map((component) => {
   try {
     const result = sass.renderSync({
-      data: `@import 'src/scss/general';
+      data: `@import 'node_modules/bootstrap/scss/functions';
+        ${themeImportFiles}
+        @import 'node_modules/bootstrap/scss/variables';
+        @import 'node_modules/bootstrap/scss/mixins';
         @import 'src/scss/components/${firstLetterLoverCase(component)}';`,
-      // file: `src/scss/bs-components/${component}.scss`,
     });
     if (result.css) {
       const folderName = `src/Styled/${component}`;
