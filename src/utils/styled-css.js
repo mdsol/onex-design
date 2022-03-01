@@ -1,7 +1,6 @@
 const sass = require('sass');
 const fs = require('fs');
 
-const firstLetterLoverCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
 const firstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 const getFiles = () => {
@@ -14,22 +13,23 @@ const getFiles = () => {
   );
 };
 
-const getStylesOfComponents = () => fs.readdirSync(`src/scss/components`).map((file) => file);
+const scssFileNames = fs.readdirSync(`src/scss/components`).map((file) => file.split('.')[0]);
 
 const themeImportFiles = getFiles();
-const components = ['ToggleButtonGroup'];
 
-components.map((component) => {
+scssFileNames.map((component) => {
+  const componentName = firstLetterUpperCase(component);
+
   try {
     const result = sass.renderSync({
       data: `@import 'node_modules/bootstrap/scss/functions';
         ${themeImportFiles}
         @import 'node_modules/bootstrap/scss/variables';
         @import 'node_modules/bootstrap/scss/mixins';
-        @import 'src/scss/components/${firstLetterLoverCase(component)}';`,
+        @import 'src/scss/components/${component}';`,
     });
     if (result.css) {
-      const folderName = `src/Styled/${component}`;
+      const folderName = `src/Styled/${componentName}`;
 
       if (!fs.existsSync(folderName)) {
         fs.mkdirSync(folderName);
@@ -41,12 +41,12 @@ components.map((component) => {
         }
         // file written successfully
       });
-      console.info(`CSS generated for ${component}`);
+      console.info(`CSS generated for ${componentName}`);
     } else {
-      console.error(`No CSS for ${component}`);
+      console.error(`No CSS for ${componentName}`);
     }
   } catch (err) {
-    console.error(`Something broke for ${component}`, err);
+    console.error(`Something broke for ${componentName}`, err);
   }
 
   return null;
