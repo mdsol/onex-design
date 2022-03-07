@@ -31,7 +31,7 @@
     "build:sb": "build-storybook",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
     "lint:fix": "eslint ./src --fix",
-    "sc-css": "node src/utils/styled-css.js",
+    "sc-css": "node src/utils/styled-css.js base",
     "sc-jsx": "node src/utils/styled-jsx/index.js",
     "deploy:sb": "storybook-to-ghpages",
     "utils:bl": "browserslist@latest --update-db",
