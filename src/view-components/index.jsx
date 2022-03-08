@@ -49,7 +49,12 @@ const ViewComponents = () => {
   useEffect(() => {
     if (componentName) {
       const currentComponent = config.data.components.find((item) => item.name === componentName);
+      const { additionalComponents } = currentComponent;
       if (currentComponent) setData(currentComponent.variants);
+      /* eslint-disable-next-line */
+      for (const additionalComponent of additionalComponents) {
+        React.lazy(() => import(`../styled/${additionalComponent}/index.jsx`));
+      }
       if (styled) {
         const Component = React.lazy(() =>
           import(`../styled/${currentComponent.componentName}/index.jsx`),

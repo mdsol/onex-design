@@ -22,10 +22,11 @@ const InlineEditText = React.forwardRef((props, ref) => {
     isInvalid,
     required,
     dataTestId,
+    onActive,
   } = props;
 
   const [_value, setValue] = useState(value);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(onActive);
   const [_status, setStatus] = useState('done');
 
   useEffect(() => {
@@ -139,6 +140,7 @@ InlineEditText.propTypes = {
   required: PropTypes.bool,
   onChange: PropTypes.func,
   dataTestId: PropTypes.string,
+  onActive: PropTypes.bool,
 };
 
 InlineEditText.defaultProps = {
@@ -155,6 +157,7 @@ InlineEditText.defaultProps = {
   required: false,
   onChange: undefined,
   dataTestId: undefined,
+  onActive: false,
 };
 
 export default InlineEditText;

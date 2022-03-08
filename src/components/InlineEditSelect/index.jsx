@@ -19,9 +19,10 @@ const InlineEditSelect = ({
   dataTestId,
   selectOptions,
   isMulti,
+  onActive,
 }) => {
   const [_selectedOptions, setSelectedOptions] = useState([]);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(onActive);
   const [_status, setStatus] = useState('done');
 
   useEffect(() => {
@@ -121,6 +122,7 @@ InlineEditSelect.propTypes = {
     }),
   ).isRequired,
   isMulti: PropTypes.bool,
+  onActive: PropTypes.bool,
 };
 
 InlineEditSelect.defaultProps = {
@@ -133,6 +135,7 @@ InlineEditSelect.defaultProps = {
   size: 'lg',
   dataTestId: '',
   isMulti: false,
+  onActive: false,
 };
 
 export default InlineEditSelect;

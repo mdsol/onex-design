@@ -1,4 +1,5 @@
-import { PlusCircleFill, ThreeDotsVertical } from 'react-bootstrap-icons';
+import { PlusCircleFill, ThreeDotsVertical, PenFill, ExclamationLg } from 'react-bootstrap-icons';
+import { Avatar, Badge } from '../components';
 
 const dropdownItems = [
   { eventKey: 'one', title: 'item one' },
@@ -23,6 +24,7 @@ export const config = {
       {
         name: 'Avatar',
         componentName: 'Avatar',
+        additionalComponents: [],
         variants: [
           {
             name: 'Test User',
@@ -59,6 +61,7 @@ export const config = {
       {
         name: 'Badge',
         componentName: 'Badge',
+        additionalComponents: [],
         variants: [
           {
             type: 'primary',
@@ -119,6 +122,7 @@ export const config = {
       {
         name: 'Button',
         componentName: 'Buttons',
+        additionalComponents: [],
         variants: [
           {
             variant: 'primary',
@@ -189,8 +193,70 @@ export const config = {
         ],
       },
       {
+        name: 'Check',
+        componentName: 'Check',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            checked: true,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'lg',
+            checked: true,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'lg',
+            checked: true,
+            disabled: true,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'lg',
+            indeterminate: true,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'lg',
+            indeterminate: true,
+            disabled: true,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'sm',
+            type: 'radio',
+            checked: true,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'lg',
+            checked: true,
+            type: 'radio',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            size: 'lg',
+            checked: true,
+            disabled: true,
+            type: 'radio',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+        ],
+      },
+      {
         name: 'Dropdown',
         componentName: 'Dropdown',
+        additionalComponents: [],
         variants: [
           {
             title: 'Small dropdown',
@@ -264,8 +330,83 @@ export const config = {
         ],
       },
       {
+        name: 'ExpansionPanel',
+        componentName: 'ExpansionPanel',
+        additionalComponents: ['Avatar'],
+        variants: [
+          {
+            id: 'exp-panel-avatar-id',
+            toggle: {
+              badge: '100',
+              avatar: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="md"
+                  hoverDisabled
+                />
+              ),
+            },
+            children: 'Title',
+            items: dropdownItems,
+          },
+        ],
+      },
+      {
+        name: 'InlineEditSelect',
+        componentName: 'InlineEditSelect',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            className: 'select',
+            dataTestId: 'select',
+            selectOptions: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            isMulti: true,
+            selectedOptions: [],
+            onActive: true,
+          },
+          {
+            size: 'lg',
+            className: 'select',
+            dataTestId: 'select',
+            selectOptions: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            isMulti: true,
+            selectedOptions: [],
+          },
+        ],
+      },
+      {
+        name: 'InlineEditText',
+        componentName: 'InlineEditText',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            className: 'inlineEditText',
+            dataTestId: 'inlineEditText',
+            placeholder: 'Edit',
+            onActive: true,
+          },
+          {
+            size: 'lg',
+            className: 'inlineEditText',
+            dataTestId: 'inlineEditText',
+            placeholder: 'Edit',
+          },
+        ],
+      },
+      {
         name: 'Lozenge',
         componentName: 'Lozenge',
+        additionalComponents: [],
         variants: [
           {
             variant: 'subtle',
@@ -346,14 +487,227 @@ export const config = {
         ],
       },
       {
+        name: 'MenuItem',
+        componentName: 'MenuItem',
+        additionalComponents: ['Badge'],
+        variants: [
+          {
+            children: 'Option',
+            path: '',
+            onSelect: undefined,
+            disabled: false,
+            leadingIcon: undefined,
+            trailingIcon: undefined,
+            badge: undefined,
+            unavailable: false,
+          },
+          {
+            children: 'Option',
+            path: '',
+            onSelect: undefined,
+            disabled: false,
+            leadingIcon: <PenFill />,
+            trailingIcon: undefined,
+            badge: undefined,
+            unavailable: false,
+          },
+          {
+            children: 'Option',
+            path: '',
+            onSelect: undefined,
+            disabled: false,
+            leadingIcon: <PenFill />,
+            trailingIcon: <ExclamationLg />,
+            badge: undefined,
+            unavailable: false,
+            isSelected: true,
+          },
+          {
+            children: 'Option',
+            path: '',
+            onSelect: undefined,
+            disabled: false,
+            leadingIcon: <PenFill />,
+            badge: <Badge type="important">100</Badge>,
+            unavailable: false,
+            isSelected: true,
+          },
+        ],
+      },
+      {
         name: 'Navigation',
         componentName: 'Navigation',
+        additionalComponents: [],
         variants: [
           {
             id: 'custom-navigation',
             visibleItems: tabsVisibleItems,
             hiddenItems: tabsHiddenItems,
             defaultActiveKey: 'three',
+          },
+        ],
+      },
+      {
+        name: 'Pagination',
+        componentName: 'Pagination',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            className: 'pagination',
+            dataTestId: 'pagination-id',
+            items: [1, 2, 3, 4, 5],
+          },
+          {
+            size: 'lg',
+            className: 'pagination',
+            dataTestId: 'pagination',
+            items: [1, 2, 3, 4, 5],
+          },
+        ],
+      },
+      {
+        name: 'Select',
+        componentName: 'Select',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            isMulti: true,
+          },
+          {
+            size: 'sm',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            selectedValues: [{ value: 'chocolate', label: 'Chocolate' }],
+            isMulti: true,
+          },
+          {
+            size: 'lg',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            selectedValues: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+            ],
+            isMulti: true,
+          },
+        ],
+      },
+      {
+        name: 'Switch',
+        componentName: 'Switch',
+        additionalComponents: [],
+        variants: [
+          {
+            id: 'custom-default-switch',
+          },
+          {
+            id: 'custom-checked-switch',
+            checked: true,
+          },
+          {
+            id: 'custom-disabled-switch',
+            disabled: true,
+          },
+        ],
+      },
+      {
+        name: 'Tabs',
+        componentName: 'Tabs',
+        additionalComponents: [],
+        variants: [
+          {
+            visibleItems: tabsVisibleItems,
+            hiddenItems: tabsHiddenItems,
+            size: 'sm',
+          },
+          {
+            visibleItems: tabsVisibleItems,
+            hiddenItems: tabsHiddenItems,
+            size: 'lg',
+          },
+        ],
+      },
+      {
+        name: 'Tag',
+        componentName: 'Tag',
+        additionalComponents: [],
+        variants: [
+          {
+            className: 'text',
+            dataTestId: 'text',
+            size: 'sm',
+            variant: 'default',
+            isRemovable: true,
+            children: 'Small',
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            size: 'lg',
+            variant: 'default',
+            isRemovable: true,
+            children: 'Large',
+          },
+        ],
+      },
+      {
+        name: 'TextArea',
+        componentName: 'TextArea',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            placeholder: 'Message',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Message',
+          },
+          {
+            label: 'Label',
+            size: 'lg',
+            placeholder: 'Message',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Message',
+            errorMessage: 'Error message',
+            isError: true,
+          },
+          {
+            size: 'sm',
+            placeholder: 'Message',
+            errorMessage: 'Error message',
+            value: 'Some message',
+            helpText: 'Help text',
+            maxNumLength: 50,
+          },
+          {
+            size: 'sm',
+            placeholder: 'Message',
+            errorMessage: 'Error message',
+            value: 'This attribute indicates whether the value of the control can be automatically',
+            helpText: 'Help text',
+            maxNumLength: 50,
           },
         ],
       },

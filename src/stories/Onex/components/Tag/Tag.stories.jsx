@@ -41,7 +41,7 @@ export const Small = Template.bind({});
 Small.args = {
   className: 'text',
   dataTestId: 'text',
-  size: 'lg',
+  size: 'sm',
   variant: 'default',
   isRemovable: true,
   children: 'Small',
