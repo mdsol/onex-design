@@ -265,6 +265,81 @@ describe('components render', () => {
     expect(image).toMatchImageSnapshot();
   });
 
+  it('textfield', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=TextField&styled=true'
+      : 'http://localhost:3000/?component=TextField&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
+  it('toasts', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=Toasts&styled=true'
+      : 'http://localhost:3000/?component=Toasts&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
+  it('toggleButton', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=ToggleButton&styled=true'
+      : 'http://localhost:3000/?component=ToggleButton&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
+  it('toggleButtonGroup', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=ToggleButtonGroup&styled=true'
+      : 'http://localhost:3000/?component=ToggleButtonGroup&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
+  it('typography', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=Typography&styled=true'
+      : 'http://localhost:3000/?component=Typography&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
   afterAll(async () => {
     await browser.close();
   });

@@ -33,6 +33,7 @@ const ViewComponents = () => {
   const [selectedOptions, setSelectedOptions] = useState(currentSelectOptions);
   const [componentName, setComponentName] = useState('');
   const [DynamicComponent, setDynamicComponent] = useState(null);
+  const [wrap, setWrap] = useState(null);
 
   useEffect(() => {
     if (selectedOptions.length) {
@@ -50,14 +51,16 @@ const ViewComponents = () => {
     if (componentName) {
       const currentComponent = config.data.components.find((item) => item.name === componentName);
       const { additionalComponents } = currentComponent;
+      const { wrapper } = currentComponent;
       if (currentComponent) setData(currentComponent.variants);
+      setWrap(wrapper);
       /* eslint-disable-next-line */
       for (const additionalComponent of additionalComponents) {
-        React.lazy(() => import(`../styled/${additionalComponent}/index.jsx`));
+        React.lazy(() => import(`../components/${additionalComponent}/index.jsx`));
       }
       if (styled) {
         const Component = React.lazy(() =>
-          import(`../styled/${currentComponent.componentName}/index.jsx`),
+          import(`../styled/${currentComponent.styledComponentName}/index.jsx`),
         );
         return setDynamicComponent(Component);
       }
@@ -99,10 +102,17 @@ const ViewComponents = () => {
           <div className="wrapper">
             <div className="header">{componentName}</div>
             <div className="component-block">
-              {data.map((props, ind) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <DynamicComponent key={ind} {...props} />
-              ))}
+              {data.map((props, ind) =>
+                wrap ? (
+                  <div className={wrap}>
+                    {/* eslint-disable-next-line react/no-array-index-key */}
+                    <DynamicComponent key={ind} {...props} />
+                  </div>
+                ) : (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <DynamicComponent key={ind} {...props} />
+                ),
+              )}
             </div>
           </div>
         )}

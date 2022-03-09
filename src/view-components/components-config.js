@@ -17,6 +17,26 @@ const tabsVisibleItems = [
 
 const tabsHiddenItems = [{ eventKey: 'five', title: 'item five' }];
 
+export const toggleButtonItems = [
+  {
+    id: 'one',
+    name: 'one',
+    children: 'One',
+    icon: <PenFill />,
+  },
+  {
+    id: 'two',
+    name: 'two',
+    children: 'Two',
+    icon: <PenFill />,
+  },
+  {
+    id: 'three',
+    name: 'three',
+    children: 'Three',
+    icon: <PenFill />,
+  },
+];
 // eslint-disable-next-line import/prefer-default-export
 export const config = {
   data: {
@@ -24,6 +44,7 @@ export const config = {
       {
         name: 'Avatar',
         componentName: 'Avatar',
+        styledComponentName: 'Avatar',
         additionalComponents: [],
         variants: [
           {
@@ -61,6 +82,7 @@ export const config = {
       {
         name: 'Badge',
         componentName: 'Badge',
+        styledComponentName: 'Badge',
         additionalComponents: [],
         variants: [
           {
@@ -122,6 +144,7 @@ export const config = {
       {
         name: 'Button',
         componentName: 'Buttons',
+        styledComponentName: 'Buttons',
         additionalComponents: [],
         variants: [
           {
@@ -195,6 +218,7 @@ export const config = {
       {
         name: 'Check',
         componentName: 'Check',
+        styledComponentName: 'Check',
         additionalComponents: [],
         variants: [
           {
@@ -256,6 +280,7 @@ export const config = {
       {
         name: 'Dropdown',
         componentName: 'Dropdown',
+        styledComponentName: 'Dropdown',
         additionalComponents: [],
         variants: [
           {
@@ -332,6 +357,7 @@ export const config = {
       {
         name: 'ExpansionPanel',
         componentName: 'ExpansionPanel',
+        styledComponentName: 'ExpansionPanel',
         additionalComponents: ['Avatar'],
         variants: [
           {
@@ -354,6 +380,7 @@ export const config = {
       {
         name: 'InlineEditSelect',
         componentName: 'InlineEditSelect',
+        styledComponentName: 'InlineEditSelect',
         additionalComponents: [],
         variants: [
           {
@@ -386,6 +413,7 @@ export const config = {
       {
         name: 'InlineEditText',
         componentName: 'InlineEditText',
+        styledComponentName: 'InlineEditText',
         additionalComponents: [],
         variants: [
           {
@@ -406,6 +434,7 @@ export const config = {
       {
         name: 'Lozenge',
         componentName: 'Lozenge',
+        styledComponentName: 'Lozenge',
         additionalComponents: [],
         variants: [
           {
@@ -489,6 +518,7 @@ export const config = {
       {
         name: 'MenuItem',
         componentName: 'MenuItem',
+        styledComponentName: 'MenuItem',
         additionalComponents: ['Badge'],
         variants: [
           {
@@ -537,6 +567,7 @@ export const config = {
       {
         name: 'Navigation',
         componentName: 'Navigation',
+        styledComponentName: 'Navigation',
         additionalComponents: [],
         variants: [
           {
@@ -550,6 +581,7 @@ export const config = {
       {
         name: 'Pagination',
         componentName: 'Pagination',
+        styledComponentName: 'Pagination',
         additionalComponents: [],
         variants: [
           {
@@ -569,6 +601,7 @@ export const config = {
       {
         name: 'Select',
         componentName: 'Select',
+        styledComponentName: 'Select',
         additionalComponents: [],
         variants: [
           {
@@ -614,6 +647,7 @@ export const config = {
       {
         name: 'Switch',
         componentName: 'Switch',
+        styledComponentName: 'Switch',
         additionalComponents: [],
         variants: [
           {
@@ -632,6 +666,7 @@ export const config = {
       {
         name: 'Tabs',
         componentName: 'Tabs',
+        styledComponentName: 'Tabs',
         additionalComponents: [],
         variants: [
           {
@@ -649,6 +684,7 @@ export const config = {
       {
         name: 'Tag',
         componentName: 'Tag',
+        styledComponentName: 'Tag',
         additionalComponents: [],
         variants: [
           {
@@ -672,6 +708,7 @@ export const config = {
       {
         name: 'TextArea',
         componentName: 'TextArea',
+        styledComponentName: 'TextArea',
         additionalComponents: [],
         variants: [
           {
@@ -708,6 +745,254 @@ export const config = {
             value: 'This attribute indicates whether the value of the control can be automatically',
             helpText: 'Help text',
             maxNumLength: 50,
+          },
+        ],
+      },
+      {
+        name: 'TextField',
+        componentName: 'TextField',
+        styledComponentName: 'TextField',
+        additionalComponents: [],
+        variants: [
+          {
+            label: 'Label',
+            size: 'sm',
+            placeholder: 'Small',
+          },
+          {
+            label: 'Label',
+            size: 'lg',
+            placeholder: 'Large',
+          },
+          {
+            size: 'lg',
+            label: 'Error',
+            placeholder: 'Placeholder',
+            errorMessage: 'Error message',
+            isInvalid: true,
+          },
+          {
+            size: 'lg',
+            placeholder: 'Disabled',
+            disabled: true,
+            label: 'Label',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Placeholder',
+            readOnly: true,
+            label: 'Label',
+            value: 'Read only',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Placeholder',
+            required: true,
+            label: 'Required',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Placeholder',
+            label: 'Label',
+            showClearBtn: true,
+            value: 'Placeholder',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Placeholder',
+            label: 'Label',
+            showClearBtn: true,
+            showDefaultIcon: true,
+          },
+          {
+            size: 'lg',
+            placeholder: 'Placeholder',
+            label: 'Label',
+            showClearBtn: true,
+            icon: <PenFill />,
+          },
+        ],
+      },
+      {
+        name: 'Toasts',
+        componentName: 'Toasts',
+        styledComponentName: 'Toasts',
+        additionalComponents: [],
+        wrapper: 'banner_wrap',
+        variants: [
+          {
+            id: 'info-toast',
+            variant: 'info',
+            children: 'Example of an informational banner message. ',
+            show: true,
+          },
+          {
+            id: 'success-toast',
+            variant: 'success',
+            children: 'Example of a success banner message.',
+            show: true,
+          },
+          {
+            id: 'warning-toast',
+            variant: 'warning',
+            children: 'Example of a warning banner message.',
+            show: true,
+          },
+        ],
+      },
+      {
+        name: 'ToggleButton',
+        componentName: 'Toggle/components/ToggleButton',
+        styledComponentName: 'ToggleButton',
+        additionalComponents: [],
+        variants: [
+          {
+            id: 'id-toogle-button-default',
+            name: 'toogle-button-default',
+            children: 'Caption',
+            value: 1,
+          },
+          {
+            id: 'id-toogle-button-with-icon',
+            name: 'toogle-button-with-icon',
+            children: (
+              <>
+                <ExclamationLg />
+                <span> Caption </span>
+              </>
+            ),
+            value: 1,
+          },
+          {
+            id: 'id-toogle-button-icon',
+            name: 'toogle-button-icon',
+            children: <PlusCircleFill />,
+            value: 1,
+          },
+          {
+            disabled: true,
+            id: 'id-toogle-button-disabled',
+            name: 'toogle-button-disabled',
+            children: 'Caption',
+            value: 1,
+          },
+        ],
+      },
+      {
+        name: 'ToggleButtonGroup',
+        componentName: 'Toggle/components/ToggleButtonGroup',
+        styledComponentName: 'ToggleButtonGroup',
+        additionalComponents: [],
+        variants: [
+          {
+            variant: 'tab',
+            size: 'sm',
+            name: 'tab-sm',
+            typeContent: 'title',
+            items: toggleButtonItems,
+          },
+          {
+            variant: 'tab',
+            size: 'lg',
+            name: 'tab-lg',
+            typeContent: 'title',
+            items: toggleButtonItems,
+          },
+          {
+            variant: 'button',
+            size: 'sm',
+            name: 'button-sm',
+            typeContent: 'icon',
+            items: toggleButtonItems,
+          },
+          {
+            variant: 'button',
+            size: 'lg',
+            name: 'button-lg',
+            typeContent: 'icon',
+            items: toggleButtonItems,
+          },
+        ],
+      },
+      {
+        name: 'Typography',
+        componentName: 'Typography',
+        styledComponentName: 'Typography',
+        additionalComponents: [],
+        variants: [
+          {
+            children: 'Heading 1',
+            variant: 'h1',
+          },
+          {
+            children: 'Heading 2',
+            variant: 'h2',
+          },
+          {
+            children: 'Heading 3',
+            variant: 'h3',
+          },
+          {
+            children: 'Heading 4',
+            variant: 'h4',
+          },
+          {
+            children: 'Heading 5',
+            variant: 'h5',
+          },
+          {
+            children: 'Body Regular',
+            variant: 'body',
+            size: 'lg',
+          },
+          {
+            children: 'Body Regular Link',
+            variant: 'body',
+            size: 'lg',
+            href: '#',
+          },
+          {
+            children: 'Body Small',
+            variant: 'body',
+            size: 'sm',
+          },
+          {
+            children: 'Body Small Link',
+            variant: 'body',
+            size: 'sm',
+            href: '#',
+          },
+          {
+            children: 'Button Regular',
+            variant: 'button',
+            size: 'lg',
+          },
+          {
+            children: 'Button Small',
+            variant: 'button',
+            size: 'sm',
+          },
+          {
+            children: 'Caption Regular',
+            variant: 'caption',
+            size: 'lg',
+          },
+          {
+            children: 'Caption Regular Link',
+            variant: 'caption',
+            size: 'lg',
+            href: '#',
+          },
+          {
+            children: 'Caption Small',
+            variant: 'caption',
+            size: 'sm',
+          },
+          {
+            children: 'Caption Small Link',
+            variant: 'caption',
+            size: 'sm',
+            href: '#',
           },
         ],
       },
