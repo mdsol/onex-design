@@ -1,5 +1,5 @@
 import { PlusCircleFill, ThreeDotsVertical, PenFill, ExclamationLg } from 'react-bootstrap-icons';
-import { Avatar, Badge } from '../components';
+import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
   { eventKey: 'one', title: 'item one' },
@@ -17,26 +17,6 @@ const tabsVisibleItems = [
 
 const tabsHiddenItems = [{ eventKey: 'five', title: 'item five' }];
 
-export const toggleButtonItems = [
-  {
-    id: 'one',
-    name: 'one',
-    children: 'One',
-    icon: <PenFill />,
-  },
-  {
-    id: 'two',
-    name: 'two',
-    children: 'Two',
-    icon: <PenFill />,
-  },
-  {
-    id: 'three',
-    name: 'three',
-    children: 'Three',
-    icon: <PenFill />,
-  },
-];
 // eslint-disable-next-line import/prefer-default-export
 export const config = {
   data: {
@@ -666,7 +646,7 @@ export const config = {
       {
         name: 'TablePagination',
         componentName: 'TablePagination',
-        styledComponentName: 'Switch',
+        styledComponentName: 'TablePagination',
         additionalComponents: [],
         variants: [
           {
@@ -872,7 +852,7 @@ export const config = {
       },
       {
         name: 'ToggleButton',
-        componentName: 'Toggle/components/ToggleButton',
+        componentName: 'ToggleButton',
         styledComponentName: 'ToggleButton',
         additionalComponents: [],
         variants: [
@@ -910,37 +890,85 @@ export const config = {
       },
       {
         name: 'ToggleButtonGroup',
-        componentName: 'Toggle/components/ToggleButtonGroup',
+        componentName: 'ToggleButtonGroup',
         styledComponentName: 'ToggleButtonGroup',
-        additionalComponents: [],
+        additionalComponents: ['ToggleButton'],
         variants: [
           {
             variant: 'tab',
             size: 'sm',
             name: 'tab-sm',
             typeContent: 'title',
-            items: toggleButtonItems,
+            children: (
+              <>
+                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                  One
+                </ToggleButton>
+                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                  Two
+                </ToggleButton>
+                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                  Three
+                </ToggleButton>
+              </>
+            ),
           },
           {
             variant: 'tab',
             size: 'lg',
             name: 'tab-lg',
             typeContent: 'title',
-            items: toggleButtonItems,
+            children: (
+              <>
+                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                  One
+                </ToggleButton>
+                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                  Two
+                </ToggleButton>
+                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                  Three
+                </ToggleButton>
+              </>
+            ),
           },
           {
             variant: 'button',
             size: 'sm',
             name: 'button-sm',
             typeContent: 'icon',
-            items: toggleButtonItems,
+            children: (
+              <>
+                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                  One
+                </ToggleButton>
+                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                  Two
+                </ToggleButton>
+                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                  Three
+                </ToggleButton>
+              </>
+            ),
           },
           {
             variant: 'button',
             size: 'lg',
             name: 'button-lg',
             typeContent: 'icon',
-            items: toggleButtonItems,
+            children: (
+              <>
+                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                  One
+                </ToggleButton>
+                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                  Two
+                </ToggleButton>
+                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                  Three
+                </ToggleButton>
+              </>
+            ),
           },
         ],
       },

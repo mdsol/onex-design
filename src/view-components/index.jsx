@@ -77,16 +77,16 @@ const ViewComponents = () => {
       setWrap(wrapper);
       /* eslint-disable-next-line */
             for (const additionalComponent of additionalComponents) {
-        React.lazy(() => import(`../components/${additionalComponent}/index.jsx`));
+        React.lazy(() => import(`../components/${additionalComponent}/scss/index.jsx`));
       }
       if (styled) {
         const Component = React.lazy(() =>
-          import(`../styled/${currentComponent.styledComponentName}/index.jsx`),
+          import(`../components/${currentComponent.styledComponentName}/styled/index.jsx`),
         );
         return setDynamicComponent(Component);
       }
       const Component = React.lazy(() =>
-        import(`../components/${currentComponent.componentName}/index.jsx`),
+        import(`../components/${currentComponent.componentName}/scss/index.jsx`),
       );
       return setDynamicComponent(Component);
     }

@@ -12,7 +12,7 @@ import {
   StyledTableBody,
   StyledDataTableCell,
   StyledTable,
-} from '../../styled';
+} from '../../components/styledComponents';
 
 const TableStyled = () => (
   <StyledTable

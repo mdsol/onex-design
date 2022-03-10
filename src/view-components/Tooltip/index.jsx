@@ -10,17 +10,19 @@ const Tooltip = ({ styled }) => {
   useEffect(() => {
     setTimeout(() => {
       setShowTooltip(true);
-    }, 1);
+    }, 400);
 
     if (styled) {
-      const ComponentTooltip = React.lazy(() => import(`../../styled/Tooltip/index.jsx`));
-      const ComponentButton = React.lazy(() => import(`../../styled/Buttons/index.jsx`));
+      const ComponentTooltip = React.lazy(() =>
+        import(`../../components/Tooltip/styled/index.jsx`),
+      );
+      const ComponentButton = React.lazy(() => import(`../../components/Buttons/styled/index.jsx`));
       setDynamicTooltip(ComponentTooltip);
       return setDynamicButton(ComponentButton);
     }
 
-    const ComponentTooltip = React.lazy(() => import(`../../components/Tooltip/index.jsx`));
-    const ComponentButton = React.lazy(() => import(`../../components/Buttons/index.jsx`));
+    const ComponentTooltip = React.lazy(() => import(`../../components/Tooltip/scss/index.jsx`));
+    const ComponentButton = React.lazy(() => import(`../../components/Buttons/scss/index.jsx`));
     setDynamicTooltip(ComponentTooltip);
     return setDynamicButton(ComponentButton);
   }, []);
