@@ -32,8 +32,8 @@ $spacers: (
 );
 
 @import '../../node_modules/bootstrap/scss/functions';
-@import '../components/theme/colors';
-@import '../components/theme/sizes';
+@import '../componentsTheme/colors';
+@import '../componentsTheme/sizes';
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/bootstrap-reboot';
@@ -68,30 +68,30 @@ $spacers: (
   }
 }
 
-@import './components/avatar';
-@import './components/badge';
-@import './components/buttons';
-@import './components/check';
-@import './components/dropdown';
-@import './components/expansionPanel';
-@import './components/inlineEditSelect';
-@import './components/inlineEditText';
-@import './components/lozenge';
-@import './components/menuItem';
-@import './components/navigation';
-@import './components/pagination';
-@import './components/select';
-@import './components/switch';
-@import './components/tablePagination';
-@import './components/tables';
-@import './components/tabs';
-@import './components/tag';
-@import './components/textArea';
-@import './components/textField';
-@import './components/toasts';
-@import './components/toggleButton';
-@import './components/tooltip';
-@import './components/typography';
+@import '../components/Avatar/scss/index';
+@import '../components/Badge/scss/index';
+@import '../components/Buttons/scss/index';
+@import '../components/Check/scss/index';
+@import '../components/Dropdown/scss/index';
+@import '../components/ExpansionPanel/scss/index';
+@import '../components/InlineEditSelect/scss/index';
+@import '../components/InlineEditText/scss/index';
+@import '../components/Lozenge/scss/index';
+@import '../components/MenuItem/scss/index';
+@import '../components/Navigation/scss/index';
+@import '../components/Pagination/scss/index';
+@import '../components/Select/scss/index';
+@import '../components/Switch/scss/index';
+@import '../components/TablePagination/scss/index';
+@import '../components/Tables/scss/index';
+@import '../components/Tabs/scss/index';
+@import '../components/Tag/scss/index';
+@import '../components/TextArea/scss/index';
+@import '../components/TextField/scss/index';
+@import '../components/Toasts/scss/index';
+@import '../components/ToggleButton/scss/index';
+@import '../components/Tooltip/scss/index';
+@import '../components/Typography/scss/index';
 
 /* Bootstrap */
 @import '../../node_modules/bootstrap/scss/mixins';
