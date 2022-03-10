@@ -26,21 +26,21 @@ import {
   Spinner,
   Stack,
 } from 'react-bootstrap';
-import Avatar from './Avatar';
-import Badge from './Badge';
-import Button from './Buttons';
-import Check from './Check';
-import Dropdown from './Dropdown';
-import ExpansionPanel from './ExpansionPanel';
-import InlineEditSelect from './InlineEditSelect';
-import InlineEditText from './InlineEditText';
-import Lozenge from './Lozenge';
-import MenuItem from './MenuItem';
-import Navigation from './Navigation';
+import Avatar from './Avatar/scss';
+import Badge from './Badge/scss';
+import Button from './Buttons/scss';
+import Check from './Check/scss';
+import Dropdown from './Dropdown/scss';
+import ExpansionPanel from './ExpansionPanel/scss';
+import InlineEditSelect from './InlineEditSelect/scss';
+import InlineEditText from './InlineEditText/scss';
+import Lozenge from './Lozenge/scss';
+import MenuItem from './MenuItem/scss';
+import Navigation from './Navigation/scss';
 import Overlay from './Overlay';
-import Pagination from './Pagination';
-import Select from './Select';
-import Switch from './Switch';
+import Pagination from './Pagination/scss';
+import Select from './Select/scss';
+import Switch from './Switch/scss';
 import {
   DataTableCell,
   Table,
@@ -50,17 +50,17 @@ import {
   TableHead,
   TableName,
   TableRow,
-} from './Tables';
-import TablePagination from './TablePagination';
-import Tabs from './Tabs';
-import Tag from './Tag';
-import TextArea from './TextArea';
-import TextField from './TextField';
-import Toast from './Toasts';
-import ToggleButton from './Toggle/components/ToggleButton';
-import ToggleButtonGroup from './Toggle/components/ToggleButtonGroup';
-import Tooltip from './Tooltip';
-import Typography from './Typography';
+} from './Tables/scss';
+import TablePagination from './TablePagination/scss';
+import Tabs from './Tabs/scss';
+import Tag from './Tag/scss';
+import TextArea from './TextArea/scss';
+import TextField from './TextField/scss';
+import Toast from './Toasts/scss';
+import ToggleButton from './ToggleButton/scss';
+import ToggleButtonGroup from './ToggleButtonGroup/scss';
+import Tooltip from './Tooltip/scss';
+import Typography from './Typography/scss';
 
 export {
   Avatar,
