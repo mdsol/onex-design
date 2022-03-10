@@ -1,7 +1,7 @@
 const sass = require('sass');
 const fs = require('fs');
 
-const firstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+const firstLetterLowerCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
 
 const getFiles = () => {
   const folderThemeName = process.argv[2];
@@ -13,23 +13,23 @@ const getFiles = () => {
   );
 };
 
-const scssFileNames = fs.readdirSync(`src/scss/components`).map((file) => file.split('.')[0]);
+const scssFileNames = fs
+  .readdirSync(`src/components`, { withFileTypes: true })
+  .reduce((acc, item) => (item.isDirectory() ? [...acc, item.name] : acc), []);
 
 const themeImportFiles = getFiles();
 
-scssFileNames.map((component) => {
-  const componentName = firstLetterUpperCase(component);
-
+scssFileNames.map((componentName) => {
   try {
     const result = sass.renderSync({
       data: `@import 'node_modules/bootstrap/scss/functions';
         ${themeImportFiles}
         @import 'node_modules/bootstrap/scss/variables';
         @import 'node_modules/bootstrap/scss/mixins';
-        @import 'src/scss/components/${component}';`,
+        @import 'src/components/${componentName}/scss/index.scss';`,
     });
     if (result.css) {
-      const folderName = `src/Styled/${componentName}`;
+      const folderName = `src/components/${componentName}/styled`;
 
       if (!fs.existsSync(folderName)) {
         fs.mkdirSync(folderName);
