@@ -220,6 +220,36 @@ describe('components render', () => {
     expect(image).toMatchImageSnapshot();
   });
 
+  it('tablePagination', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=TablePagination&styled=true'
+      : 'http://localhost:3000/?component=TablePagination&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
+  it('table', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=Table&styled=true'
+      : 'http://localhost:3000/?component=Table&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
   it('tabs', async () => {
     const url = process.env.STYLED
       ? 'http://localhost:3000/?component=Tabs&styled=true'
@@ -314,6 +344,21 @@ describe('components render', () => {
     const url = process.env.STYLED
       ? 'http://localhost:3000/?component=ToggleButtonGroup&styled=true'
       : 'http://localhost:3000/?component=ToggleButtonGroup&styled=false';
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
+  it('tooltip', async () => {
+    const url = process.env.STYLED
+      ? 'http://localhost:3000/?component=Tooltip&styled=true'
+      : 'http://localhost:3000/?component=Tooltip&styled=false';
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',

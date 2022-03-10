@@ -34,6 +34,8 @@ const ViewComponents = () => {
   const [componentName, setComponentName] = useState('');
   const [DynamicComponent, setDynamicComponent] = useState(null);
   const [wrap, setWrap] = useState(null);
+  const [isTable, setIsTable] = useState(null);
+  const [isTooltip, setIsTooltip] = useState(null);
 
   useEffect(() => {
     if (selectedOptions.length) {
@@ -50,12 +52,31 @@ const ViewComponents = () => {
   useEffect(() => {
     if (componentName) {
       const currentComponent = config.data.components.find((item) => item.name === componentName);
+      console.log('componentName', componentName);
+      if (componentName === 'Table') {
+        setIsTable(true);
+        if (styled) {
+          const Component = React.lazy(() =>
+            import(`./Table/${currentComponent.styledComponentName}.jsx`),
+          );
+          return setDynamicComponent(Component);
+        }
+        const Component = React.lazy(() => import(`./Table/${currentComponent.componentName}.jsx`));
+        return setDynamicComponent(Component);
+      }
+      if (componentName === 'Tooltip') {
+        setIsTooltip(true);
+        const Component = React.lazy(() => import(`./${currentComponent.componentName}/index.jsx`));
+        return setDynamicComponent(Component);
+      }
+      setIsTable(false);
+      setIsTooltip(false);
       const { additionalComponents } = currentComponent;
       const { wrapper } = currentComponent;
       if (currentComponent) setData(currentComponent.variants);
       setWrap(wrapper);
       /* eslint-disable-next-line */
-      for (const additionalComponent of additionalComponents) {
+            for (const additionalComponent of additionalComponents) {
         React.lazy(() => import(`../components/${additionalComponent}/index.jsx`));
       }
       if (styled) {
@@ -98,7 +119,7 @@ const ViewComponents = () => {
             Styled
           </Check>
         </div>
-        {DynamicComponent && (
+        {!isTable && !isTooltip && DynamicComponent && (
           <div className="wrapper">
             <div className="header">{componentName}</div>
             <div className="component-block">
@@ -113,6 +134,22 @@ const ViewComponents = () => {
                   <DynamicComponent key={ind} {...props} />
                 ),
               )}
+            </div>
+          </div>
+        )}
+        {isTable && DynamicComponent && (
+          <div className="wrapper">
+            <div className="header">{componentName}</div>
+            <div className="component-block">
+              <DynamicComponent />
+            </div>
+          </div>
+        )}
+        {isTooltip && DynamicComponent && (
+          <div className="wrapper">
+            <div className="header">{componentName}</div>
+            <div className="component-block">
+              <DynamicComponent styled={isStyled} />
             </div>
           </div>
         )}
