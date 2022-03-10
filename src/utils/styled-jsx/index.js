@@ -12,7 +12,7 @@ const getFileBody = (componentName, replaceClasses) => {
   }, 'cssString');
 
   return `import styled from 'styled-components';
-import { ${componentName} } from '../../components';
+import ${componentName} from '../scss';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -27,7 +27,7 @@ const StyledComponent = styled(${componentName})\`
 
 componentsInfo.map(({ name, importName, replaceUrl }) => {
   try {
-    const folderName = `src/Styled/${name}`;
+    const folderName = `src/components/${name}/styled`;
 
     if (!fs.existsSync(folderName)) {
       fs.mkdirSync(folderName);
@@ -53,8 +53,8 @@ const writeImportComponents = () => {
       const nameComponent = `Styled${curr.name}`;
       const importPart = acc.importBody
         ? `${acc.importBody}
-import ${nameComponent} from './${curr.name}';`
-        : `import ${nameComponent} from './${curr.name}';`;
+import ${nameComponent} from './${curr.name}/styled';`
+        : `import ${nameComponent} from './${curr.name}/styled';`;
 
       const exportPart = acc.exportBody
         ? `${acc.exportBody},
@@ -76,7 +76,7 @@ ${exportBody},
 };
 `;
 
-  fs.writeFile(`src/Styled/index.jsx`, fileBody, (err) => {
+  fs.writeFile(`src/components/styledComponents.js`, fileBody, (err) => {
     console.info(`-------------------------`);
     console.info(`Export file was generated`);
 

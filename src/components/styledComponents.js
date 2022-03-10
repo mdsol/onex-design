@@ -1,3 +1,4 @@
+import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
 import StyledButtons from './Buttons/styled';
 import StyledCheck from './Check/styled';
@@ -33,6 +34,7 @@ import StyledTooltip from './Tooltip/styled';
 import StyledTypography from './Typography/styled';
 
 export {
+  StyledAvatar,
   StyledBadge,
   StyledButtons,
   StyledCheck,
