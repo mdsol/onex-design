@@ -20,7 +20,17 @@ const CustomBadge = React.forwardRef((props, ref) => {
 
 CustomBadge.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf(['primary', 'important', 'default', 'default-invert', 'removed', 'added']),
+  type: PropTypes.oneOf([
+    'primary',
+    'important',
+    'default',
+    'default-invert',
+    'removed',
+    'added',
+    'success',
+    'warning',
+    'info',
+  ]),
   variant: PropTypes.oneOf(['counter', 'status', 'status-bold', 'status-icon']),
   iconEnd: PropTypes.node,
   iconStart: PropTypes.node,

@@ -29,4 +29,11 @@
     &.onex-badge--variant-counter {
       @include badge-counter-type-color();
     }
+
+    &.onex-badge--variant-status {
+      @include badge-status-type-color();
+
+      border-radius: 4px !important;
+      text-transform: uppercase;
+    }
 }

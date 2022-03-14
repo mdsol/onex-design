@@ -7,23 +7,20 @@ import { CameraFillIcon } from './icons';
 const DevExamples = () => (
   <div className="p-5">
     <div>
-      <Badge iconStart={<CameraFillIcon />} type="default" variant="counter">
-        100
+      <Badge type="default" variant="status">
+        Default
       </Badge>
-      <Badge iconStart={<CameraFillIcon />} type="primary" variant="counter">
-        100
+      <Badge type="info" variant="status">
+        Information
       </Badge>
-      <Badge iconStart={<CameraFillIcon />} type="important" variant="counter">
-        100
+      <Badge type="important" variant="status">
+        Error
       </Badge>
-      <Badge iconStart={<CameraFillIcon />} type="removed" variant="counter">
-        100
+      <Badge type="success" variant="status">
+        Success
       </Badge>
-      <Badge iconStart={<CameraFillIcon />} type="added" variant="counter">
-        100
-      </Badge>
-      <Badge type="default-invert" variant="counter" iconEnd={<CameraFillIcon />}>
-        100
+      <Badge type="warning" variant="status">
+        Worning
       </Badge>
     </div>
   </div>
