@@ -12,18 +12,10 @@
 
     display: inline-flex;
     align-items: center;
-    gap: 3px;
+    gap: 2px;
 
     & .onex-badge__icon {
       display: inline-flex;
-
-      &--end {
-        margin-left: 3px;
-      }
-
-      &--start {
-        margin-right: 3px;
-      }
     }
 
 

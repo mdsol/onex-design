@@ -1,4 +1,11 @@
 import { ArrowDown, ArrowUp } from 'react-bootstrap-icons';
+import FlagIcon from '@mui/icons-material/Flag';
+import LockIcon from '@mui/icons-material/Lock';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ErrorIcon from '@mui/icons-material/Error';
+import WarningIcon from '@mui/icons-material/Warning';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import InfoIcon from '@mui/icons-material/Info';
 import { Badge } from '../../../../components';
 
 import BudgeMDX from './Badge.stories.mdx';
@@ -33,111 +40,224 @@ export default {
 
 const Template = (props) => <Badge {...props} />;
 
-export const Primary = Template.bind({});
+export const CounterPrimary = Template.bind({});
 
-Primary.args = {
+CounterPrimary.args = {
   type: 'primary',
-  size: 'sm',
   children: '100',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Important = Template.bind({});
+export const CounterImportant = Template.bind({});
 
-Important.args = {
+CounterImportant.args = {
   type: 'important',
-  size: 'sm',
   children: '100',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Default = Template.bind({});
+export const CounterDefault = Template.bind({});
 
-Default.args = {
+CounterDefault.args = {
   type: 'default',
-  size: 'sm',
   children: '100',
 };
 
-export const DefaultInvert = Template.bind({});
+export const CounterDefaultInvert = Template.bind({});
 
-DefaultInvert.args = {
+CounterDefaultInvert.args = {
   type: 'default-invert',
-  size: 'sm',
   children: '100',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Removed = Template.bind({});
+export const CounterRemoved = Template.bind({});
 
-Removed.args = {
+CounterRemoved.args = {
   type: 'removed',
-  size: 'sm',
   children: '100-',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Added = Template.bind({});
+export const CounterAdded = Template.bind({});
 
-Added.args = {
+CounterAdded.args = {
   type: 'added',
-  size: 'sm',
   children: '+100',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Small = Template.bind({});
+export const CounterIconStart = Template.bind({});
 
-Small.args = {
+CounterIconStart.args = {
   type: 'primary',
-  size: 'sm',
   children: '100',
+  iconStart: <FlagIcon />,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Large = Template.bind({});
+export const CounterIconEnd = Template.bind({});
 
-Large.args = {
+CounterIconEnd.args = {
   type: 'primary',
-  size: 'lg',
   children: '100',
+  className: 'custom-badge',
+  iconEnd: <ArrowDownwardIcon />,
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusDefault = Template.bind({});
+
+StatusDefault.args = {
+  type: 'default',
+  children: 'default',
+  variant: 'status',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const Icon = Template.bind({});
+export const StatusInfo = Template.bind({});
 
-const iconCodeBody = `
-<CustomBadge
-    className="custom-badge"
-    dataTestId="text-badge-id"
-    icon={<ArrowUp />} // you can set your own icon component
-    size="lg"
-    type="primary"
->
-    100
-</CustomBadge>
-`;
-
-Icon.parameters = {
-  docs: {
-    source: {
-      code: iconCodeBody,
-    },
-  },
-};
-
-Icon.args = {
-  type: 'primary',
-  size: 'lg',
-  children: '100',
+StatusInfo.args = {
+  type: 'info',
+  children: 'information',
+  variant: 'status',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
-  icon: icons.ArrowUp,
+};
+
+export const StatusWarning = Template.bind({});
+
+StatusWarning.args = {
+  type: 'warning',
+  children: 'warning',
+  variant: 'status',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusImportant = Template.bind({});
+
+StatusImportant.args = {
+  type: 'important',
+  children: 'alert',
+  variant: 'status',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusSuccess = Template.bind({});
+
+StatusSuccess.args = {
+  type: 'success',
+  children: 'success',
+  variant: 'status',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusBoldDefault = Template.bind({});
+
+StatusBoldDefault.args = {
+  type: 'default',
+  children: 'default',
+  variant: 'status-bold',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusBoldInfo = Template.bind({});
+
+StatusBoldInfo.args = {
+  type: 'info',
+  children: 'information',
+  variant: 'status-bold',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusBoldWarning = Template.bind({});
+
+StatusBoldWarning.args = {
+  type: 'warning',
+  children: 'warning',
+  variant: 'status-bold',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusBoldImportant = Template.bind({});
+
+StatusBoldImportant.args = {
+  type: 'important',
+  children: 'alert',
+  variant: 'status-bold',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusBoldSuccess = Template.bind({});
+
+StatusBoldSuccess.args = {
+  type: 'success',
+  children: 'success',
+  variant: 'status-bold',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusIconDefault = Template.bind({});
+
+StatusIconDefault.args = {
+  type: 'default',
+  children: <LockIcon />,
+  variant: 'status-icon',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusIconInfo = Template.bind({});
+
+StatusIconInfo.args = {
+  type: 'info',
+  children: <InfoIcon />,
+  variant: 'status-icon',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusIconWarning = Template.bind({});
+
+StatusIconWarning.args = {
+  type: 'warning',
+  children: <WarningIcon />,
+  variant: 'status-icon',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusIconImportant = Template.bind({});
+
+StatusIconImportant.args = {
+  type: 'important',
+  children: <ErrorIcon />,
+  variant: 'status-icon',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
+};
+
+export const StatusIconSuccess = Template.bind({});
+
+StatusIconSuccess.args = {
+  type: 'success',
+  children: <CheckCircleIcon />,
+  variant: 'status-icon',
+  className: 'custom-badge',
+  dataTestId: 'text-badge-id',
 };

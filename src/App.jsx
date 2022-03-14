@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
+import LockIcon from '@mui/icons-material/Lock';
 import { Tabs, Badge } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
-import { InfoRoundFillIcon } from './icons';
-import LockIcon from '@mui/icons-material/Lock';
 
 const DevExamples = () => (
   <div className="p-5">
