@@ -3,18 +3,19 @@
 .onex-badge {
     @include default-badge-styles();
     @include badge-size(
-        $onex-badge-height-lg,
-        $onex-badge-line-height-lg,
-        $onex-badge-font-size-lg,
-        $onex-badge-icon-size-lg,
-        $onex-badge-border-radius-lg
+        $onex-badge-height,
+        $onex-badge-line-height,
+        $onex-badge-font-size,
+        $onex-badge-icon-size,
+        $onex-badge-border-radius
     );
 
     display: inline-flex;
     align-items: center;
+    gap: 3px;
 
     & .onex-badge__icon {
-        display: inline-flex;
+      display: inline-flex;
 
       &--end {
         margin-left: 3px;
@@ -33,7 +34,32 @@
     &.onex-badge--variant-status {
       @include badge-status-type-color();
 
-      border-radius: 4px !important;
+      border-radius: $onex-badge-status-border-radius !important;
       text-transform: uppercase;
+    }
+
+    &.onex-badge--variant-status-bold {
+      @include badge-status-bold-type-color();
+
+      border-radius: $onex-badge-status-border-radius !important;
+      text-transform: uppercase;
+    }
+
+    &.onex-badge--variant-status-icon {
+      @include badge-status-bold-type-color();
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: $onex-badge-status-border-radius !important;
+      padding: $onex-badge-padding-y $onex-badge-padding-y;
+      width: $onex-badge-height;
+
+      & .onex-badge__icon svg,
+      svg {
+        width: $component-height-small-sm;
+        height: $component-height-small-sm;
+      }
     }
 }

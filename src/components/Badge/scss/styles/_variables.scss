@@ -1,19 +1,15 @@
-$onex-badge-height-sm: $component-height-middle-sm;
-$onex-badge-font-size-sm: $font-size-sm;
-$onex-badge-icon-size-sm: $icon-size-small-sm;
-$onex-badge-line-height-sm: $line-height-sm;
-$onex-badge-border-radius-sm: $component-border-radius-sm;
-
-$onex-badge-height-lg: $component-height-middle-lg;
-$onex-badge-font-size-lg: $font-size-lg;
-$onex-badge-icon-size-lg: $icon-size-small-lg;
-$onex-badge-line-height-lg: $line-height-lg;
-$onex-badge-border-radius-lg: 1.25rem;
+$onex-badge-height: $component-height-middle-sm;
+$onex-badge-font-size: $font-size-sm;
+$onex-badge-icon-size: $icon-size-small-sm;
+$onex-badge-line-height: $line-height-sm;
+$onex-badge-border-radius: 1.25rem;
 
 $onex-badge-font-weight: 600;
 $onex-badge-text-color: $black;
 $onex-badge-padding-y: 0.125rem;
 $onex-badge-padding-x: 0.5rem;
+
+$onex-badge-status-border-radius: 0.25rem;
 
 $onex-badge-default-bg-color: $secondary-200;
 $onex-badge-default-inverted-bg-color: $secondary-700;

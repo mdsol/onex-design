@@ -4,7 +4,8 @@
     font-size: $font-size;
     border-radius: $border-radius;
 
-    & .onex-badge__icon svg {
+    & .onex-badge__icon svg,
+    svg {
         width: $svg-size;
         height: $svg-size;
     }
@@ -15,6 +16,9 @@
 
     @if $text-color {
         color: $text-color;
+        svg path {
+          fill: $text-color;
+        }
     }
 
     @if $border-color {
@@ -52,12 +56,27 @@
   }
 }
 
+@mixin badge-status-bold-type-color() {
+  $types: 'default' $secondary-700 $white,
+  'info' $primary $white,
+  'success' $success $white,
+  'warning' $warning $black,
+  'important' $error $white;
+
+
+  @each $type, $bg-color, $text-color in $types {
+    &.bg-#{$type} {
+      @include bg-text-color(#{$bg-color}, #{$text-color});
+    }
+  }
+}
+
 @mixin default-badge-styles() {
     &.badge {
         padding: $onex-badge-padding-y $onex-badge-padding-x;
-        font-size: $onex-badge-font-size-sm;
+        font-size: $onex-badge-font-size;
         font-weight: $onex-badge-font-weight;
         color: $onex-badge-text-color;
-        border-radius: $onex-badge-border-radius-sm;
+        border-radius: $onex-badge-border-radius;
     }
 }
