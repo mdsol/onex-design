@@ -2,33 +2,31 @@
 
 .onex-badge {
     @include default-badge-styles();
-    @include badge-type-color();
+    @include badge-size(
+        $onex-badge-height-lg,
+        $onex-badge-line-height-lg,
+        $onex-badge-font-size-lg,
+        $onex-badge-icon-size-lg,
+        $onex-badge-border-radius-lg
+    );
 
     display: inline-flex;
     align-items: center;
 
     & .onex-badge__icon {
         display: inline-flex;
-        margin-left: 2px;
+
+      &--end {
+        margin-left: 3px;
+      }
+
+      &--start {
+        margin-right: 3px;
+      }
     }
 
-    &--size-sm {
-        @include badge-size(
-            $onex-badge-height-sm,
-            $onex-badge-line-height-sm,
-            $onex-badge-font-size-sm,
-            $onex-badge-icon-size-sm,
-            $onex-badge-border-radius-sm
-        );
-    }
 
-    &--size-lg {
-        @include badge-size(
-            $onex-badge-height-lg,
-            $onex-badge-line-height-lg,
-            $onex-badge-font-size-lg,
-            $onex-badge-icon-size-lg,
-            $onex-badge-border-radius-lg
-        );
+    &.onex-badge--variant-counter {
+      @include badge-counter-type-color();
     }
 }

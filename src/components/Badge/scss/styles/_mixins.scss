@@ -18,9 +18,9 @@
     }
 }
 
-@mixin badge-type-color() {
+@mixin badge-counter-type-color() {
     $types: 'default' $onex-badge-default-bg-color,
-        'default-invert' $onex-badge-default-inverted-bg-color,
+        'default-invert' $onex-badge-default-inverted-bg-color $onex-badge-color-text,
         'important' $onex-badge-important-bg-color $onex-badge-color-text,
         'primary' $onex-badge-primary-bg-color $onex-badge-color-text,
         'added' $onex-badge-added-bg-color $onex-badge-added-text-color,
