@@ -36,7 +36,6 @@
     "deploy:sb": "storybook-to-ghpages",
     "utils:bl": "browserslist@latest --update-db",
     "utils:sb-browsers": "node src/utils/sb-browsers.js",
-    "utils:sb-icons": "node src/utils/sb-icons.js",
     "test": "jest",
     "test:styled": "STYLED=true jest"
   },
@@ -51,6 +50,8 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@mdx-js/react": "^1.6.22",
+    "@mui/icons-material": "^5.5.0",
+    "@mui/material": "^5.5.0",
     "@popperjs/core": "^2.11.2",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-docs": "6.3.12",
