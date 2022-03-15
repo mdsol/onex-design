@@ -171,11 +171,11 @@ sup {
 }
 
 a {
-  color: #0070a8;
+  color: #0070c0;
   text-decoration: underline;
 }
 a:hover {
-  color: #005a86;
+  color: #005a9a;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -552,7 +552,7 @@ progress {
 }
 .onex-typography--link.onex-typography--body, .onex-typography--link.onex-typography--caption {
   text-decoration-line: underline;
-  color: #0070a8;
+  color: #0070c0;
 }
 .onex-typography--margin-bottom {
   margin-bottom: 0.5rem;

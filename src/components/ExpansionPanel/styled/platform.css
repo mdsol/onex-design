@@ -44,13 +44,13 @@
   fill: #002855;
 }
 .onex-expansionPanel-item--leading-icon:active {
-  color: #0070a8;
+  color: #0070c0;
 }
 .onex-expansionPanel-item--leading-icon:active svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-expansionPanel-item--icons:active svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-expansionPanel-item:hover, .onex-expansionPanel-item:focus {
   background-color: #f4f8fc;
@@ -84,13 +84,13 @@
   fill: #b0b8bf;
 }
 .onex-expansionPanel-item--unavailable .onex-expansionPanel-item__icon svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-expansionPanel-item--unavailable.onex-expansionPanel-item--icons .onex-expansionPanel-item__icon__leading svg path {
   fill: #b0b8bf;
 }
 .onex-expansionPanel-item--unavailable.onex-expansionPanel-item--icons .onex-expansionPanel-item__icon__trailing svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 
 .onex-expansionPanel > .btn {

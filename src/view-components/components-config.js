@@ -1,4 +1,11 @@
 import { PlusCircleFill, ThreeDotsVertical, PenFill, ExclamationLg } from 'react-bootstrap-icons';
+import LockIcon from '@mui/icons-material/Lock';
+import InfoIcon from '@mui/icons-material/Info';
+import WarningIcon from '@mui/icons-material/Warning';
+import ErrorIcon from '@mui/icons-material/Error';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import FlagIcon from '@mui/icons-material/Flag';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
@@ -67,55 +74,166 @@ export const config = {
         variants: [
           {
             type: 'primary',
-            size: 'sm',
             children: '100',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'important',
-            size: 'sm',
             children: '100',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'default',
-            size: 'sm',
             children: '100',
           },
           {
             type: 'default-invert',
-            size: 'sm',
             children: '100',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'removed',
-            size: 'sm',
             children: '100-',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'added',
-            size: 'sm',
             children: '+100',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'primary',
-            size: 'sm',
             children: '100',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'primary',
-            size: 'lg',
             children: '100',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'primary',
+            children: '100',
+            iconStart: <FlagIcon />,
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'primary',
+            children: '100',
+            className: 'custom-badge',
+            iconEnd: <ArrowDownwardIcon />,
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'default',
+            children: 'default',
+            variant: 'status',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'info',
+            children: 'information',
+            variant: 'status',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'warning',
+            children: 'warning',
+            variant: 'status',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'important',
+            children: 'alert',
+            variant: 'status',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'success',
+            children: 'success',
+            variant: 'status',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'default',
+            children: 'default',
+            variant: 'status-bold',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'info',
+            children: 'information',
+            variant: 'status-bold',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'warning',
+            children: 'warning',
+            variant: 'status-bold',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'important',
+            children: 'alert',
+            variant: 'status-bold',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'success',
+            children: 'success',
+            variant: 'status-bold',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'default',
+            children: <LockIcon />,
+            variant: 'status-icon',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'info',
+            children: <InfoIcon />,
+            variant: 'status-icon',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'warning',
+            children: <WarningIcon />,
+            variant: 'status-icon',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'important',
+            children: <ErrorIcon />,
+            variant: 'status-icon',
+            className: 'custom-badge',
+            dataTestId: 'text-badge-id',
+          },
+          {
+            type: 'success',
+            children: <CheckCircleIcon />,
+            variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },

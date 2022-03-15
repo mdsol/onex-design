@@ -1,8 +1,6 @@
 const sass = require('sass');
 const fs = require('fs');
 
-const firstLetterLowerCase = (string) => string.charAt(0).toLowerCase() + string.slice(1);
-
 const getFiles = () => {
   const folderThemeName = process.argv[2];
 

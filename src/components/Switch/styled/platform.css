@@ -21,8 +21,8 @@
   box-shadow: none;
 }
 .onex-switch .form-check-input:checked {
-  background-color: #0070a8;
-  border: #0070a8;
+  background-color: #0070c0;
+  border: #0070c0;
 }
 .onex-switch .form-check-input:hover {
   background-color: #002855;

@@ -26,7 +26,7 @@
 }
 .tablePagination .dropdown #dropdown-basic {
   padding: 0;
-  color: #0070a8;
+  color: #0070c0;
   font-size: inherit;
 }
 .tablePagination .dropdown:before {
@@ -57,7 +57,7 @@
   align-items: center;
 }
 .tablePagination .pageArrows button:hover svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .tablePagination .pageArrows .disabled:hover svg path {
   fill: #b0b8bf;
