@@ -245,145 +245,145 @@
   display: none;
 }
 .onex-tooltip.onex-tooltip--success .tooltip-inner {
-  background-color: #4ebf58;
+  background-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-top .tooltip-arrow::before, .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #4ebf58;
+  border-top-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #4ebf58;
+  border-top-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-right .tooltip-arrow::before {
-  border-right-color: #4ebf58;
+  border-right-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #4ebf58;
+  border-right-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-bottom .tooltip-arrow::before, .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #4ebf58;
+  border-bottom-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #4ebf58;
+  border-bottom-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-left .tooltip-arrow::before {
-  border-left-color: #4ebf58;
+  border-left-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #4ebf58;
+  border-left-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-start .tooltip-arrow::before, .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #4ebf58;
+  border-left-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.bs-tooltip-end .tooltip-arrow::before, .onex-tooltip.onex-tooltip--success.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #4ebf58;
+  border-right-color: #007e4c;
 }
 .onex-tooltip.onex-tooltip--success.show.tooltip {
   opacity: 1;
 }
 .onex-tooltip.onex-tooltip--warning .tooltip-inner {
-  background-color: #ffb826;
+  background-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-top .tooltip-arrow::before, .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #ffb826;
+  border-top-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #ffb826;
+  border-top-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-right .tooltip-arrow::before {
-  border-right-color: #ffb826;
+  border-right-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #ffb826;
+  border-right-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-bottom .tooltip-arrow::before, .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #ffb826;
+  border-bottom-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #ffb826;
+  border-bottom-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-left .tooltip-arrow::before {
-  border-left-color: #ffb826;
+  border-left-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #ffb826;
+  border-left-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-start .tooltip-arrow::before, .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #ffb826;
+  border-left-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.bs-tooltip-end .tooltip-arrow::before, .onex-tooltip.onex-tooltip--warning.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #ffb826;
+  border-right-color: #fcb916;
 }
 .onex-tooltip.onex-tooltip--warning.show.tooltip {
   opacity: 1;
 }
 .onex-tooltip.onex-tooltip--error .tooltip-inner {
-  background-color: #f93c3c;
+  background-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-top .tooltip-arrow::before, .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #f93c3c;
+  border-top-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #f93c3c;
+  border-top-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-right .tooltip-arrow::before {
-  border-right-color: #f93c3c;
+  border-right-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #f93c3c;
+  border-right-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-bottom .tooltip-arrow::before, .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #f93c3c;
+  border-bottom-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #f93c3c;
+  border-bottom-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-left .tooltip-arrow::before {
-  border-left-color: #f93c3c;
+  border-left-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #f93c3c;
+  border-left-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-start .tooltip-arrow::before, .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #f93c3c;
+  border-left-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.bs-tooltip-end .tooltip-arrow::before, .onex-tooltip.onex-tooltip--error.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #f93c3c;
+  border-right-color: #d91522;
 }
 .onex-tooltip.onex-tooltip--error.show.tooltip {
   opacity: 1;
 }
 .onex-tooltip.onex-tooltip--info .tooltip-inner {
-  background-color: #0070a8;
+  background-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-top .tooltip-arrow::before, .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #0070a8;
+  border-top-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-  border-top-color: #0070a8;
+  border-top-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-right .tooltip-arrow::before {
-  border-right-color: #0070a8;
+  border-right-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #0070a8;
+  border-right-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-bottom .tooltip-arrow::before, .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #0070a8;
+  border-bottom-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
-  border-bottom-color: #0070a8;
+  border-bottom-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-left .tooltip-arrow::before {
-  border-left-color: #0070a8;
+  border-left-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #0070a8;
+  border-left-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-start .tooltip-arrow::before, .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
-  border-left-color: #0070a8;
+  border-left-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.bs-tooltip-end .tooltip-arrow::before, .onex-tooltip.onex-tooltip--info.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
-  border-right-color: #0070a8;
+  border-right-color: #0070c0;
 }
 .onex-tooltip.onex-tooltip--info.show.tooltip {
   opacity: 1;
