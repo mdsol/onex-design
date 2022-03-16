@@ -57,19 +57,19 @@
   color: white;
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-success {
-  background-color: #4ebf58;
+  background-color: #007e4c;
   color: white;
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-warning {
-  background-color: #ffb826;
+  background-color: #fcb916;
   color: black;
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-error {
-  background-color: #f93c3c;
+  background-color: #d91522;
   color: white;
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-info {
-  background-color: #0070a8;
+  background-color: #0070c0;
   color: white;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-default {
@@ -81,36 +81,36 @@
   fill: #d1d8e0;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-success {
-  background-color: #f5fcf9;
+  background-color: #e0f6ea;
   color: black;
-  border: 1px solid #4ebf58;
+  border: 1px solid #007e4c;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-success .onex-lozenge__icon svg path {
-  fill: #4ebf58;
+  fill: #007e4c;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-warning {
-  background-color: #fefaf2;
+  background-color: #fff1b8;
   color: black;
-  border: 1px solid #ffb826;
+  border: 1px solid #fcb916;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-warning .onex-lozenge__icon svg path {
-  fill: #ffb826;
+  fill: #fcb916;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-error {
-  background-color: #fdf8f8;
+  background-color: #ffecee;
   color: black;
-  border: 1px solid #f93c3c;
+  border: 1px solid #d91522;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-error .onex-lozenge__icon svg path {
-  fill: #f93c3c;
+  fill: #d91522;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-info {
   background-color: white;
   color: black;
-  border: 1px solid #0070a8;
+  border: 1px solid #0070c0;
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-info .onex-lozenge__icon svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-lozenge--variant-icon {
   border-radius: 100%;
@@ -120,14 +120,14 @@
   background-color: #b0b8bf;
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-success {
-  background-color: #4ebf58;
+  background-color: #007e4c;
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-warning {
-  background-color: #ffb826;
+  background-color: #fcb916;
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-error {
-  background-color: #f93c3c;
+  background-color: #d91522;
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-info {
-  background-color: #0070a8;
+  background-color: #0070c0;
 }

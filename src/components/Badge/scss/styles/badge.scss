@@ -2,33 +2,56 @@
 
 .onex-badge {
     @include default-badge-styles();
-    @include badge-type-color();
+    @include badge-size(
+        $onex-badge-height,
+        $onex-badge-line-height,
+        $onex-badge-font-size,
+        $onex-badge-icon-size,
+        $onex-badge-border-radius
+    );
 
     display: inline-flex;
     align-items: center;
+    gap: 2px;
 
     & .onex-badge__icon {
-        display: inline-flex;
-        margin-left: 2px;
+      display: inline-flex;
     }
 
-    &--size-sm {
-        @include badge-size(
-            $onex-badge-height-sm,
-            $onex-badge-line-height-sm,
-            $onex-badge-font-size-sm,
-            $onex-badge-icon-size-sm,
-            $onex-badge-border-radius-sm
-        );
+
+    &.onex-badge--variant-counter {
+      @include badge-counter-type-color();
     }
 
-    &--size-lg {
-        @include badge-size(
-            $onex-badge-height-lg,
-            $onex-badge-line-height-lg,
-            $onex-badge-font-size-lg,
-            $onex-badge-icon-size-lg,
-            $onex-badge-border-radius-lg
-        );
+    &.onex-badge--variant-status {
+      @include badge-status-type-color();
+
+      border-radius: $onex-badge-status-border-radius !important;
+      text-transform: uppercase;
+    }
+
+    &.onex-badge--variant-status-bold {
+      @include badge-status-bold-type-color();
+
+      border-radius: $onex-badge-status-border-radius !important;
+      text-transform: uppercase;
+    }
+
+    &.onex-badge--variant-status-icon {
+      @include badge-status-bold-type-color();
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: $onex-badge-status-border-radius !important;
+      padding: $onex-badge-padding-y $onex-badge-padding-y;
+      width: $onex-badge-height;
+
+      & .onex-badge__icon svg,
+      svg {
+        width: $component-height-small-sm;
+        height: $component-height-small-sm;
+      }
     }
 }

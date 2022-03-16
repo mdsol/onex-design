@@ -70,15 +70,15 @@
 }
 
 .table-primary {
-  --bs-table-bg: #cce2ee;
-  --bs-table-striped-bg: #c2d7e2;
+  --bs-table-bg: #cce2f2;
+  --bs-table-striped-bg: #c2d7e6;
   --bs-table-striped-color: black;
-  --bs-table-active-bg: #b8cbd6;
+  --bs-table-active-bg: #b8cbda;
   --bs-table-active-color: black;
-  --bs-table-hover-bg: #bdd1dc;
+  --bs-table-hover-bg: #bdd1e0;
   --bs-table-hover-color: black;
   color: black;
-  border-color: #b8cbd6;
+  border-color: #b8cbda;
 }
 
 .table-secondary {
@@ -94,15 +94,15 @@
 }
 
 .table-success {
-  --bs-table-bg: #dcf2de;
-  --bs-table-striped-bg: #d1e6d3;
+  --bs-table-bg: #cce5db;
+  --bs-table-striped-bg: #c2dad0;
   --bs-table-striped-color: black;
-  --bs-table-active-bg: #c6dac8;
+  --bs-table-active-bg: #b8cec5;
   --bs-table-active-color: black;
-  --bs-table-hover-bg: #cce0cd;
+  --bs-table-hover-bg: #bdd4cb;
   --bs-table-hover-color: black;
   color: black;
-  border-color: #c6dac8;
+  border-color: #b8cec5;
 }
 
 .table-info {
@@ -118,15 +118,15 @@
 }
 
 .table-warning {
-  --bs-table-bg: #fff1d4;
-  --bs-table-striped-bg: #f2e5c9;
+  --bs-table-bg: #fef1d0;
+  --bs-table-striped-bg: #f1e5c6;
   --bs-table-striped-color: black;
-  --bs-table-active-bg: #e6d9bf;
+  --bs-table-active-bg: #e5d9bb;
   --bs-table-active-color: black;
-  --bs-table-hover-bg: #ecdfc4;
+  --bs-table-hover-bg: #ebdfc0;
   --bs-table-hover-color: black;
   color: black;
-  border-color: #e6d9bf;
+  border-color: #e5d9bb;
 }
 
 .table-danger {
@@ -420,7 +420,7 @@
 }
 
 .onex-table-wrap--filled .onex-table-control {
-  padding: 1rem;
+  padding: 1rem !important;
 }
 
 .onex-table-name {
@@ -440,5 +440,5 @@
 }
 
 .onex-table-wrap--filled .onex-table-name {
-  padding-left: 0;
+  padding-left: 0 !important;
 }

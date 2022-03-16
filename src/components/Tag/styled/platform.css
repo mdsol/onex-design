@@ -67,7 +67,7 @@
 }
 
 .onex-tag--selected {
-  border: 1px solid #0070a8;
+  border: 1px solid #0070c0;
 }
 .onex-tag--selected:hover {
   background-color: #e7eef5;
@@ -81,20 +81,20 @@
 }
 
 .onex-tag--link .onex-tag__close__icon {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-tag--link .onex-tag__img svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-tag--link:hover {
   background-color: #e7eef5;
-  color: #0070a8;
+  color: #0070c0;
 }
 .onex-tag--link:hover .onex-tag__img svg path {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-tag--link:hover .onex-tag__close__icon {
-  fill: #0070a8;
+  fill: #0070c0;
 }
 .onex-tag--link:hover a {
   text-decoration: underline;

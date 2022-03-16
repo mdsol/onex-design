@@ -10,7 +10,7 @@
   pointer-events: auto;
   background-color: white;
   background-clip: padding-box;
-  border: 1px solid #0070a8;
+  border: 1px solid #0070c0;
   box-shadow: none;
   border-radius: 0.5rem;
 }
@@ -52,32 +52,32 @@
 }
 
 .onex-toast.onex-toast--variant-success .bg-success {
-  background-color: #f5fcf9 !important;
-  border-color: #4ebf58;
+  background-color: #e0f6ea !important;
+  border-color: #007e4c;
 }
 .onex-toast.onex-toast--variant-success .onex-toast__icon {
-  background-color: #4ebf58;
+  background-color: #007e4c;
 }
 .onex-toast.onex-toast--variant-info .bg-info {
   background-color: white !important;
-  border-color: #0070a8;
+  border-color: #0070c0;
 }
 .onex-toast.onex-toast--variant-info .onex-toast__icon {
-  background-color: #0070a8;
+  background-color: #0070c0;
 }
 .onex-toast.onex-toast--variant-warning .bg-warning {
-  background-color: #fefaf2 !important;
-  border-color: #ffb826;
+  background-color: #fff1b8 !important;
+  border-color: #fcb916;
 }
 .onex-toast.onex-toast--variant-warning .onex-toast__icon {
-  background-color: #ffb826;
+  background-color: #fcb916;
 }
 .onex-toast.onex-toast--variant-error .bg-error {
-  background-color: #fdf8f8 !important;
-  border-color: #f93c3c;
+  background-color: #ffecee !important;
+  border-color: #d91522;
 }
 .onex-toast.onex-toast--variant-error .onex-toast__icon {
-  background-color: #f93c3c;
+  background-color: #d91522;
 }
 .onex-toast__block {
   overflow: hidden;
