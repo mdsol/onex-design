@@ -13,3 +13,5 @@ $onex-form-switch-margin-end: 0.75rem;
 $onex-form-switch-width: 2.25rem;
 $onex-form-switch-padding-start: $onex-form-switch-width + .5rem;
 $onex-form-switch-focus-color: $white;
+$form-switch-color: #676E7A;
+$form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='-2 -2 20 20'><path fill='#{$form-switch-color}' d='M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z'/></svg>");

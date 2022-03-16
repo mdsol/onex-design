@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Badge, Button } from 'react-bootstrap';
 import { Badge as SoloBadge, Button as SoloButton, Tabs } from './components';
 import './scss/platform.scss';
-import { StyledAvatar, StyledBadge, StyledButtons } from './styled';
+import { StyledAvatar, StyledBadge, StyledButtons } from './components/styledComponents';
 import ViewComponents from './view-components';
 
 const props = {
