@@ -1,11 +1,18 @@
 @mixin default-switch-styles() {
   &.form-switch {
     .form-check-input {
-      background-image: escape-svg($form-switch-checked-bg-image);
+      @include switch-background-image($onex-form-switch-color);
       width: $onex-form-switch-width;
       &:focus {
-        background-image: escape-svg($form-switch-checked-bg-image);
+        @include switch-background-image($onex-form-switch-focus-color);
+      }
+      &:checked {
+        @include switch-background-image($onex-form-switch-checked-color);
       }
     }
   }
+}
+
+@mixin switch-background-image($background-image-color) {
+  background-image: escape-svg(url("data:image/svg+xml,<svg width='16' height='16' viewBox='-2 -2 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'> <circle cx='8' cy='8' r='8' fill='#{$background-image-color}'/> </svg>"));
 }
