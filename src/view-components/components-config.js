@@ -759,6 +759,16 @@ export const config = {
             id: 'custom-disabled-switch',
             disabled: true,
           },
+          {
+            id: 'custom-checked-disabled-switch',
+            checked: true,
+            disabled: true,
+          },
+          {
+            id: 'custom-checked-switch',
+            checked: true,
+            label: 'Test',
+          },
         ],
       },
       {

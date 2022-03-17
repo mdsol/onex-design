@@ -10,12 +10,14 @@ $secondary-800: rgba(35, 38, 43, 1);
 
 $primary: rgba(0, 112, 192, 1);
 $primary-300: rgba(0, 88, 133, 1);
+$primary-400: rgba(0, 95, 171, 1);
 $primary-700: rgba(0, 40, 85, 1);
 
 $tertiary: rgba(179, 212, 229, 1);
 $tertiary-100: rgba(204, 226, 238, 1);
 $tertiary-200: rgba(231, 242, 254, 1);
 $tertiary-500: rgba(198, 227, 252, 1);
+$tertiary-600: rgba(26, 28, 30, 1);
 
 $success: rgba(0, 126, 76, 1);
 $success-100: rgba(224, 246, 234, 1);
@@ -39,3 +41,6 @@ $black-opacity-07: rgba(0, 0, 0, 0.7);
 $black-opacity-01: rgba(0, 0, 0, 0.1);
 
 $transparent: rgba(255, 255, 255, 0);
+
+$interactive-border-default: rgba(26, 28, 30, 0.2);
+$interactive-border-hover: rgba(26, 28, 30, 0.5);
