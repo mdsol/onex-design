@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import LockIcon from '@mui/icons-material/Lock';
-import { Tabs, Badge } from './components';
+import { Tabs, Badge, Check } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
 const DevExamples = () => (
   <div className="p-5">
     <div>
-      <Badge type="default" variant="status-icon">
-        <LockIcon />
-      </Badge>
+      <Check type="radio" />
     </div>
     <div>
       <Badge type="primary" variant="counter">

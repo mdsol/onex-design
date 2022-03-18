@@ -23,7 +23,6 @@ const Template = (props) => <Check {...props} />;
 export const CheckboxSmall = Template.bind({});
 
 CheckboxSmall.args = {
-  size: 'sm',
   checked: true,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -32,7 +31,6 @@ CheckboxSmall.args = {
 export const CheckboxLarge = Template.bind({});
 
 CheckboxLarge.args = {
-  size: 'lg',
   checked: true,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -41,7 +39,6 @@ CheckboxLarge.args = {
 export const CheckboxIndeterminate = Template.bind({});
 
 CheckboxIndeterminate.args = {
-  size: 'lg',
   indeterminate: true,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -50,7 +47,6 @@ CheckboxIndeterminate.args = {
 export const CheckboxCheckedDisabled = Template.bind({});
 
 CheckboxCheckedDisabled.args = {
-  size: 'lg',
   checked: true,
   disabled: true,
   className: 'custom-badge',
@@ -60,7 +56,6 @@ CheckboxCheckedDisabled.args = {
 export const CheckboxIndeterminateDisabled = Template.bind({});
 
 CheckboxIndeterminateDisabled.args = {
-  size: 'lg',
   indeterminate: true,
   disabled: true,
   className: 'custom-badge',
@@ -70,7 +65,6 @@ CheckboxIndeterminateDisabled.args = {
 export const CheckboxLargeWithLabel = Template.bind({});
 
 CheckboxLargeWithLabel.args = {
-  size: 'lg',
   children: 'Label text',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -79,7 +73,6 @@ CheckboxLargeWithLabel.args = {
 export const CheckboxSmallWithLabel = Template.bind({});
 
 CheckboxSmallWithLabel.args = {
-  size: 'sm',
   children: 'Label text',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -88,7 +81,6 @@ CheckboxSmallWithLabel.args = {
 export const CheckboxDisabledLargeWithLabel = Template.bind({});
 
 CheckboxDisabledLargeWithLabel.args = {
-  size: 'lg',
   children: 'Label text',
   disabled: true,
   className: 'custom-badge',
@@ -98,7 +90,6 @@ CheckboxDisabledLargeWithLabel.args = {
 export const RadioSmall = Template.bind({});
 
 RadioSmall.args = {
-  size: 'sm',
   type: 'radio',
   checked: true,
   className: 'custom-badge',
@@ -108,7 +99,6 @@ RadioSmall.args = {
 export const RadioLarge = Template.bind({});
 
 RadioLarge.args = {
-  size: 'lg',
   checked: true,
   type: 'radio',
   className: 'custom-badge',
@@ -118,7 +108,6 @@ RadioLarge.args = {
 export const RadioCheckedDisabled = Template.bind({});
 
 RadioCheckedDisabled.args = {
-  size: 'lg',
   checked: true,
   disabled: true,
   type: 'radio',
@@ -129,7 +118,6 @@ RadioCheckedDisabled.args = {
 export const RadioLargeWithLabel = Template.bind({});
 
 RadioLargeWithLabel.args = {
-  size: 'lg',
   children: 'Label text',
   type: 'radio',
   className: 'custom-badge',
@@ -139,7 +127,6 @@ RadioLargeWithLabel.args = {
 export const RadioSmallWithLabel = Template.bind({});
 
 RadioSmallWithLabel.args = {
-  size: 'sm',
   children: 'Label text',
   type: 'radio',
   className: 'custom-badge',
@@ -149,7 +136,6 @@ RadioSmallWithLabel.args = {
 export const RadioDisabledLargeWithLabel = Template.bind({});
 
 RadioDisabledLargeWithLabel.args = {
-  size: 'lg',
   children: 'Label text',
   disabled: true,
   type: 'radio',

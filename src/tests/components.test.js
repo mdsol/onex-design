@@ -1,4 +1,8 @@
+// eslint-disable-next-line import/no-unresolved
+const configs = require('webpack.config');
 const puppeteer = require('puppeteer');
+
+const href = `http://localhost:${configs.devServer.port}`;
 
 describe('components render', () => {
   let browser;
@@ -9,8 +13,8 @@ describe('components render', () => {
 
   it('avatar', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Avatar&styled=true'
-      : 'http://localhost:3000/?component=Avatar&styled=false';
+      ? `${href}/?component=Avatar&styled=true`
+      : `${href}/?component=Avatar&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -24,8 +28,8 @@ describe('components render', () => {
 
   it('badge', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Badge&styled=true'
-      : 'http://localhost:3000/?component=Badge&styled=false';
+      ? `${href}/?component=Badge&styled=true`
+      : `${href}/?component=Badge&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -39,8 +43,8 @@ describe('components render', () => {
 
   it('buttons', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Button&styled=true'
-      : 'http://localhost:3000/?component=Button&styled=false';
+      ? `${href}/?component=Button&styled=true`
+      : `${href}/?component=Button&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -54,8 +58,8 @@ describe('components render', () => {
 
   it('check', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Check&styled=true'
-      : 'http://localhost:3000/?component=Check&styled=false';
+      ? `${href}/?component=Check&styled=true`
+      : `${href}/?component=Check&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -69,8 +73,8 @@ describe('components render', () => {
 
   it('dropdown', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Dropdown&styled=true'
-      : 'http://localhost:3000/?component=Dropdown&styled=false';
+      ? `${href}/?component=Dropdown&styled=true`
+      : `${href}/?component=Dropdown&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -84,8 +88,8 @@ describe('components render', () => {
 
   it('expansionPanel', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=ExpansionPanel&styled=true'
-      : 'http://localhost:3000/?component=ExpansionPanel&styled=false';
+      ? `${href}/?component=ExpansionPanel&styled=true`
+      : `${href}/?component=ExpansionPanel&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -100,8 +104,8 @@ describe('components render', () => {
   it('inlineEditSelect', async () => {
     console.log('process', process.env.STYLED);
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=InlineEditSelect&styled=true'
-      : 'http://localhost:3000/?component=InlineEditSelect&styled=false';
+      ? `${href}/?component=InlineEditSelect&styled=true`
+      : `${href}/?component=InlineEditSelect&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -116,8 +120,8 @@ describe('components render', () => {
   it('inlineEditText', async () => {
     console.log('process', process.env.STYLED);
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=InlineEditText&styled=true'
-      : 'http://localhost:3000/?component=InlineEditText&styled=false';
+      ? `${href}/?component=InlineEditText&styled=true`
+      : `${href}/?component=InlineEditText&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -132,8 +136,8 @@ describe('components render', () => {
   it('lozenge', async () => {
     console.log('process', process.env.STYLED);
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Lozenge&styled=true'
-      : 'http://localhost:3000/?component=Lozenge&styled=false';
+      ? `${href}/?component=Lozenge&styled=true`
+      : `${href}/?component=Lozenge&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -147,8 +151,8 @@ describe('components render', () => {
 
   it('menuItem', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=MenuItem&styled=true'
-      : 'http://localhost:3000/?component=MenuItem&styled=false';
+      ? `${href}/?component=MenuItem&styled=true`
+      : `${href}/?component=MenuItem&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -162,8 +166,8 @@ describe('components render', () => {
 
   it('navigation', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Navigation&styled=true'
-      : 'http://localhost:3000/?component=Navigation&styled=false';
+      ? `${href}/?component=Navigation&styled=true`
+      : `${href}/?component=Navigation&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -177,8 +181,8 @@ describe('components render', () => {
 
   it('pagination', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Pagination&styled=true'
-      : 'http://localhost:3000/?component=Pagination&styled=false';
+      ? `${href}/?component=Pagination&styled=true`
+      : `${href}/?component=Pagination&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -192,8 +196,8 @@ describe('components render', () => {
 
   it('select', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Select&styled=true'
-      : 'http://localhost:3000/?component=Select&styled=false';
+      ? `${href}/?component=Select&styled=true`
+      : `${href}/?component=Select&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -207,8 +211,8 @@ describe('components render', () => {
 
   it('switch', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Switch&styled=true'
-      : 'http://localhost:3000/?component=Switch&styled=false';
+      ? `${href}/?component=Switch&styled=true`
+      : `${href}/?component=Switch&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -222,8 +226,8 @@ describe('components render', () => {
 
   it('tablePagination', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=TablePagination&styled=true'
-      : 'http://localhost:3000/?component=TablePagination&styled=false';
+      ? `${href}/?component=TablePagination&styled=true`
+      : `${href}/?component=TablePagination&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -237,8 +241,8 @@ describe('components render', () => {
 
   it('table', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Table&styled=true'
-      : 'http://localhost:3000/?component=Table&styled=false';
+      ? `${href}/?component=Table&styled=true`
+      : `${href}/?component=Table&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -252,8 +256,8 @@ describe('components render', () => {
 
   it('tabs', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Tabs&styled=true'
-      : 'http://localhost:3000/?component=Tabs&styled=false';
+      ? `${href}/?component=Tabs&styled=true`
+      : `${href}/?component=Tabs&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -267,8 +271,8 @@ describe('components render', () => {
 
   it('tag', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Tag&styled=true'
-      : 'http://localhost:3000/?component=Tag&styled=false';
+      ? `${href}/?component=Tag&styled=true`
+      : `${href}/?component=Tag&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -282,8 +286,8 @@ describe('components render', () => {
 
   it('textarea', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=TextArea&styled=true'
-      : 'http://localhost:3000/?component=TextArea&styled=false';
+      ? `${href}/?component=TextArea&styled=true`
+      : `${href}/?component=TextArea&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -297,8 +301,8 @@ describe('components render', () => {
 
   it('textfield', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=TextField&styled=true'
-      : 'http://localhost:3000/?component=TextField&styled=false';
+      ? `${href}/?component=TextField&styled=true`
+      : `${href}/?component=TextField&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -312,8 +316,8 @@ describe('components render', () => {
 
   it('toasts', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Toasts&styled=true'
-      : 'http://localhost:3000/?component=Toasts&styled=false';
+      ? `${href}/?component=Toasts&styled=true`
+      : `${href}/?component=Toasts&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -327,8 +331,8 @@ describe('components render', () => {
 
   it('toggleButton', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=ToggleButton&styled=true'
-      : 'http://localhost:3000/?component=ToggleButton&styled=false';
+      ? `${href}/?component=ToggleButton&styled=true`
+      : `${href}/?component=ToggleButton&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -342,8 +346,8 @@ describe('components render', () => {
 
   it('toggleButtonGroup', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=ToggleButtonGroup&styled=true'
-      : 'http://localhost:3000/?component=ToggleButtonGroup&styled=false';
+      ? `${href}/?component=ToggleButtonGroup&styled=true`
+      : `${href}/?component=ToggleButtonGroup&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -357,8 +361,8 @@ describe('components render', () => {
 
   it('tooltip', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Tooltip&styled=true'
-      : 'http://localhost:3000/?component=Tooltip&styled=false';
+      ? `${href}/?component=Tooltip&styled=true`
+      : `${href}/?component=Tooltip&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
@@ -372,8 +376,8 @@ describe('components render', () => {
 
   it('typography', async () => {
     const url = process.env.STYLED
-      ? 'http://localhost:3000/?component=Typography&styled=true'
-      : 'http://localhost:3000/?component=Typography&styled=false';
+      ? `${href}/?component=Typography&styled=true`
+      : `${href}/?component=Typography&styled=false`;
     const page = await browser.newPage();
     await page.goto(url, {
       waitUntil: 'networkidle2',
