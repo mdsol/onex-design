@@ -1,30 +1,51 @@
 @import 'mixins';
+
 .onex-switch {
-     @include default-switch-styles();
-    .form-check-input {
-        height: $form-switch-height;
-        background-color: $form-switch-input-bg;
-        border: $form-switch-input-border;
-        margin-top: ($line-height-base - $form-switch-height) * 0.5;
-        margin-right: $onex-form-switch-margin-end;
+  @include default-switch-styles();
 
-        &:focus {
-            border-color: $form-switch-focus-border;
-            box-shadow: $form-switch-focus-box-shadow;
-        }
+  .form-check-input {
+    height: $form-switch-height;
+    background-color: $form-switch-input-bg;
+    border: $form-switch-input-border;
+    box-sizing: border-box;
+    margin-top: ($line-height-base - $form-switch-height) * 0.5;
 
-        &:checked {
-            background-color: $form-switch-checked-input-bg;
-            border: $form-switch-checked-input-bg;
-        }
+    &:focus {
+      @include switch-background-image($onex-form-switch-focus-color);
+      border-color: $onex-form-switch-focus-border;
+      box-shadow: $form-switch-focus-box-shadow;
     }
 
-    .form-check-input:hover {
-        background-color: $switch-check-input-hover-bg-color;
-        cursor: pointer;
-    }
+    &:checked {
+      background-color: $form-switch-checked-input-bg;
+      border-color: $form-switch-checked-input-bg;
 
-    .form-check-input:disabled {
-        background-color: $switch-check-input-disabled-bg-color;
+      &:hover,
+      &:focus {
+        @include switch-background-image($onex-form-switch-checked-hover-color);
+        background-color: $onex-form-switch-hover-checked-input-bg;
+        border-color: $onex-form-switch-hover-checked-input-bg;
+      }
+
+      &:disabled {
+        border-color: $form-switch-checked-input-bg;
+      }
     }
+  }
+
+  .form-check-input:active {
+    filter: none;
+  }
+
+  .form-check-input:hover {
+    @include switch-background-image($onex-form-switch-hover-color);
+    border-color: $onex-form-switch-hover-border;
+    cursor: pointer;
+  }
+
+  .form-check-input:disabled {
+    @include switch-background-image($onex-form-switch-disabled-color);
+    border-color: $onex-form-switch-input-disabled-border-color;
+    opacity: $onex-form-switch-disabled-opacity;
+  }
 }

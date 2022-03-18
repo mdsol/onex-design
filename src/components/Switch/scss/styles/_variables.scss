@@ -1,15 +1,30 @@
-$form-switch-input-bg: $secondary-500;
-$form-switch-input-border: none;
+$form-switch-input-bg: $white;
+$form-switch-input-border: 1px solid $interactive-border-default;
+$form-switch-border-radius: 1.25rem;
 $form-switch-height: $component-height-middle-sm;
-$form-switch-focus-border: $secondary-500;
 $form-switch-focus-box-shadow: none;
-
 $form-switch-checked-input-bg: $primary;
 
-$switch-check-input-hover-bg-color: $primary-700;
-$switch-check-input-disabled-bg-color: $secondary;
-$onex-form-switch-margin-end: 0.75rem;
-
 $onex-form-switch-width: 2.25rem;
-$onex-form-switch-padding-start: $onex-form-switch-width + .5rem;
-$onex-form-switch-focus-color: $white;
+$onex-form-switch-disabled-opacity: 0.4;
+
+$onex-form-switch-color: $secondary-400;
+$onex-form-switch-checked-color: $white;
+//hover
+$onex-form-switch-hover-color: $tertiary-600;
+$onex-form-switch-hover-checked-input-bg: $primary-400;
+$onex-form-switch-hover-border: $interactive-border-hover;
+$onex-form-switch-checked-hover-color: $white;
+
+//disabled
+$onex-form-switch-disabled-color: $secondary-400;
+$switch-check-input-disabled-bg-color: $secondary-400;
+$onex-form-switch-input-disabled-border-color: $interactive-border-default;
+
+//focus
+$onex-form-switch-focus-color: $tertiary-600;
+$onex-form-switch-focus-border: $interactive-border-hover;
+
+
+
+
