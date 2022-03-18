@@ -583,20 +583,20 @@ progress {
   line-height: 3rem;
 }
 .onex-typography--h1 {
-  font-size: 1.875rem;
+  font-size: 2.125rem;
   line-height: 2.5rem;
 }
 .onex-typography--h2 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.75rem;
+  line-height: 2rem;
 }
 .onex-typography--h3 {
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
 }
 .onex-typography--h4 {
-  font-size: 0.875rem;
-  line-height: 0.938rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 .onex-typography--h5 {
   font-size: 1rem;
