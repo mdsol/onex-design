@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const defaultVariantMapping = {
-  title: 'h1',
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -53,7 +52,7 @@ Typography.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   align: PropTypes.oneOf(['center', 'inherit', 'justify', 'left', 'right']),
-  variant: PropTypes.oneOf(['title', 'h1', 'h2', 'h3', 'h4', 'h5', 'body', 'label', 'caption']),
+  variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'body', 'label', 'caption']),
   semiBold: PropTypes.bool,
   marginBottom: PropTypes.bool,
   noWrap: PropTypes.bool,

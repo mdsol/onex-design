@@ -38,10 +38,6 @@
     font-weight: $onex-typography-heading-font-weight;
   }
 
-  &--title {
-    @include font-style($onex-typography-title-font-size, $onex-typography-title-line-height);
-  }
-
   &--h1 {
     @include font-style($onex-typography-h1-font-size, $onex-typography-h1-line-height);
   }
