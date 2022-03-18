@@ -533,6 +533,7 @@ progress {
 .onex-typography {
   display: block;
   font-family: Noto Sans;
+  font-style: normal;
   margin: 0;
 }
 .onex-typography.onex-typography--align-center {
@@ -551,7 +552,12 @@ progress {
   text-align: right;
 }
 .onex-typography--link.onex-typography--body, .onex-typography--link.onex-typography--caption {
+  font-weight: 600;
   text-decoration-line: underline;
+  color: #0070c0;
+}
+.onex-typography--link.onex-typography--label {
+  font-weight: 600;
   color: #0070c0;
 }
 .onex-typography--margin-bottom {
@@ -561,6 +567,13 @@ progress {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.onex-typography--semi-bold.onex-typography--body, .onex-typography--semi-bold.onex-typography--label, .onex-typography--semi-bold.onex-typography--caption {
+  font-weight: 600;
+}
+.onex-typography--uppercase.onex-typography--caption {
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .onex-typography--title, .onex-typography--h1, .onex-typography--h2, .onex-typography--h3, .onex-typography--h4, .onex-typography--h5 {
   font-weight: 600;
@@ -583,36 +596,21 @@ progress {
 }
 .onex-typography--h4 {
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 0.938rem;
 }
 .onex-typography--h5 {
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
-.onex-typography--body.onex-typography--lg {
-  font-size: 0.875rem;
+.onex-typography--body {
+  font-size: 1rem;
   line-height: 1.5rem;
 }
-.onex-typography--body.onex-typography--sm {
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-}
-.onex-typography--button {
-  font-weight: 600;
-}
-.onex-typography--button.onex-typography--lg {
+.onex-typography--label {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.onex-typography--button.onex-typography--sm {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-.onex-typography--caption.onex-typography--lg {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.onex-typography--caption.onex-typography--sm {
+.onex-typography--caption {
   font-size: 0.75rem;
   line-height: 1rem;
 }

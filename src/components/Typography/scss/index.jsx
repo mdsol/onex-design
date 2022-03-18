@@ -16,30 +16,34 @@ const Typography = ({
   children,
   align,
   variant,
-  size,
+  semiBold,
   marginBottom,
   noWrap,
-  link,
+  href,
   paragraph,
+  uppercase,
   dataTestId,
 }) => {
   const typographyClassNames = classNames(
     'onex-typography',
     `onex-typography--align-${align}`,
     `onex-typography--${variant}`,
-    `onex-typography--${size}`,
     {
       [className]: className,
       'onex-typography--margin-bottom': marginBottom,
       'onex-typography--no-wrap': noWrap,
-      'onex-typography--link': link,
+      'onex-typography--link': href,
+      'onex-typography--semi-bold': semiBold,
+      'onex-typography--uppercase': uppercase,
     },
   );
 
-  const TypographyComponent = (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
+  const TypographyComponent = href
+    ? 'a'
+    : (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
 
   return (
-    <TypographyComponent data-test-id={dataTestId} className={typographyClassNames}>
+    <TypographyComponent data-test-id={dataTestId} className={typographyClassNames} href>
       {children}
     </TypographyComponent>
   );
@@ -49,12 +53,13 @@ Typography.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   align: PropTypes.oneOf(['center', 'inherit', 'justify', 'left', 'right']),
-  variant: PropTypes.oneOf(['title', 'h1', 'h2', 'h3', 'h4', 'h5', 'body', 'button', 'caption']),
-  size: PropTypes.oneOf(['sm', 'lg']),
+  variant: PropTypes.oneOf(['title', 'h1', 'h2', 'h3', 'h4', 'h5', 'body', 'label', 'caption']),
+  semiBold: PropTypes.bool,
   marginBottom: PropTypes.bool,
   noWrap: PropTypes.bool,
-  link: PropTypes.bool,
+  href: PropTypes.string,
   paragraph: PropTypes.bool,
+  uppercase: PropTypes.bool,
   dataTestId: PropTypes.string,
 };
 
@@ -63,11 +68,12 @@ Typography.defaultProps = {
   children: undefined,
   align: 'inherit',
   variant: 'h1',
-  size: 'lg',
+  semiBold: false,
   marginBottom: false,
   noWrap: false,
-  link: false,
+  href: '',
   paragraph: false,
+  uppercase: false,
   dataTestId: '',
 };
 
