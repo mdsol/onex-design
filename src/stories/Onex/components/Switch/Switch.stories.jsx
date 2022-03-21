@@ -57,6 +57,13 @@ Disabled.args = {
   disabled: true,
 };
 
+export const CheckedDisabled = SwitchTemplate.bind({});
+CheckedDisabled.args = {
+  id: 'custom-disabled-switch',
+  checked: true,
+  disabled: true,
+};
+
 export const WithLabel = SwitchTemplate.bind({});
 WithLabel.args = {
   id: 'custom-checked-disabled-switch',
