@@ -6,3 +6,4 @@ dist
 storybook-static
 .eslintcache
 .idea
+.vscode/settings.json
