@@ -20,17 +20,9 @@ export default {
 
 const Template = (props) => <Check {...props} />;
 
-export const CheckboxSmall = Template.bind({});
+export const Checkbox = Template.bind({});
 
-CheckboxSmall.args = {
-  checked: true,
-  className: 'custom-badge',
-  dataTestId: 'text-badge-id',
-};
-
-export const CheckboxLarge = Template.bind({});
-
-CheckboxLarge.args = {
+Checkbox.args = {
   checked: true,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -62,45 +54,28 @@ CheckboxIndeterminateDisabled.args = {
   dataTestId: 'text-badge-id',
 };
 
-export const CheckboxLargeWithLabel = Template.bind({});
+export const CheckboxWithLabel = Template.bind({});
 
-CheckboxLargeWithLabel.args = {
+CheckboxWithLabel.args = {
   children: 'Label text',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const CheckboxSmallWithLabel = Template.bind({});
+export const CheckboxDisabledWithLabel = Template.bind({});
 
-CheckboxSmallWithLabel.args = {
-  children: 'Label text',
-  className: 'custom-badge',
-  dataTestId: 'text-badge-id',
-};
-
-export const CheckboxDisabledLargeWithLabel = Template.bind({});
-
-CheckboxDisabledLargeWithLabel.args = {
+CheckboxDisabledWithLabel.args = {
   children: 'Label text',
   disabled: true,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const RadioSmall = Template.bind({});
+export const Radio = Template.bind({});
 
-RadioSmall.args = {
+Radio.args = {
   type: 'radio',
   checked: true,
-  className: 'custom-badge',
-  dataTestId: 'text-badge-id',
-};
-
-export const RadioLarge = Template.bind({});
-
-RadioLarge.args = {
-  checked: true,
-  type: 'radio',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
@@ -115,27 +90,18 @@ RadioCheckedDisabled.args = {
   dataTestId: 'text-badge-id',
 };
 
-export const RadioLargeWithLabel = Template.bind({});
+export const RadioWithLabel = Template.bind({});
 
-RadioLargeWithLabel.args = {
+RadioWithLabel.args = {
   children: 'Label text',
   type: 'radio',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
 
-export const RadioSmallWithLabel = Template.bind({});
+export const RadioDisabledWithLabel = Template.bind({});
 
-RadioSmallWithLabel.args = {
-  children: 'Label text',
-  type: 'radio',
-  className: 'custom-badge',
-  dataTestId: 'text-badge-id',
-};
-
-export const RadioDisabledLargeWithLabel = Template.bind({});
-
-RadioDisabledLargeWithLabel.args = {
+RadioDisabledWithLabel.args = {
   children: 'Label text',
   disabled: true,
   type: 'radio',
