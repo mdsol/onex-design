@@ -38,11 +38,15 @@ export default {
       description: 'If ```true```, the element will be a paragraph element.',
       control: 'boolean',
     },
-    size: {
-      description: 'Can be used with variants: ```body```, ```button```, ```caption```.',
+    semiBold: {
+      description:
+        'Can be used with variants: ```body```, ```label```, ```caption```. Provide font-width:600.',
     },
     variant: {
       description: 'Different HTML elements that can be used as component.',
+    },
+    uppercase: {
+      description: 'Can be used with variant: ```caption```. Provide text-transform: uppercase.',
     },
   },
   parameters: {
@@ -125,76 +129,69 @@ H5.args = {
   variant: 'h5',
 };
 
-export const BodyLarge = TypographyTemplate.bind({});
-BodyLarge.args = {
-  children: 'Body Regular',
+export const Body = TypographyTemplate.bind({});
+Body.args = {
+  children: 'Body',
   variant: 'body',
-  size: 'lg',
 };
 
-export const BodyLargeLink = TypographyTemplate.bind({});
-BodyLargeLink.args = {
-  children: 'Body Regular Link',
+export const BodySemibold = TypographyTemplate.bind({});
+BodySemibold.args = {
+  children: 'Body SemiBold',
   variant: 'body',
-  size: 'lg',
+  semiBold: true,
+};
+
+export const BodyLink = TypographyTemplate.bind({});
+BodyLink.args = {
+  children: 'Body Link',
+  variant: 'body',
   href: '#',
 };
 
-export const BodySmall = TypographyTemplate.bind({});
-BodySmall.args = {
-  children: 'Body Small',
-  variant: 'body',
-  size: 'sm',
+export const Label = TypographyTemplate.bind({});
+Label.args = {
+  children: 'Label',
+  variant: 'label',
 };
 
-export const BodySmallLink = TypographyTemplate.bind({});
-BodySmallLink.args = {
-  children: 'Body Small Link',
-  variant: 'body',
-  size: 'sm',
+export const LabelSemibold = TypographyTemplate.bind({});
+LabelSemibold.args = {
+  children: 'Label SemiBold',
+  variant: 'label',
+  semiBold: true,
+};
+
+export const LabelLink = TypographyTemplate.bind({});
+LabelLink.args = {
+  children: 'Label Link',
+  variant: 'label',
   href: '#',
 };
 
-export const ButtonLarge = TypographyTemplate.bind({});
-ButtonLarge.args = {
-  children: 'Button Regular',
-  variant: 'button',
-  size: 'lg',
-};
-
-export const ButtonSmall = TypographyTemplate.bind({});
-ButtonSmall.args = {
-  children: 'Button Small',
-  variant: 'button',
-  size: 'sm',
-};
-
-export const CaptionLarge = TypographyTemplate.bind({});
-CaptionLarge.args = {
-  children: 'Caption Regular',
+export const Caption = TypographyTemplate.bind({});
+Caption.args = {
+  children: 'Caption',
   variant: 'caption',
-  size: 'lg',
 };
 
-export const CaptionLargeLink = TypographyTemplate.bind({});
-CaptionLargeLink.args = {
-  children: 'Caption Regular Link',
+export const CaptionSemibold = TypographyTemplate.bind({});
+CaptionSemibold.args = {
+  children: 'Caption SemiBold',
   variant: 'caption',
-  size: 'lg',
+  semiBold: true,
+};
+
+export const CaptionLink = TypographyTemplate.bind({});
+CaptionLink.args = {
+  children: 'Caption Link',
+  variant: 'caption',
   href: '#',
 };
 
-export const CaptionSmall = TypographyTemplate.bind({});
-CaptionSmall.args = {
-  children: 'Caption Small',
+export const CaptionUppercase = TypographyTemplate.bind({});
+CaptionUppercase.args = {
+  children: 'Caption Uppercase',
   variant: 'caption',
-  size: 'sm',
-};
-
-export const CaptionSmallLink = TypographyTemplate.bind({});
-CaptionSmallLink.args = {
-  children: 'Caption Small Link',
-  variant: 'caption',
-  size: 'sm',
-  href: '#',
+  uppercase: true,
 };

@@ -1,22 +1,42 @@
 @mixin font-style($font-size, $line-height) {
-    font-size: $font-size;
-    line-height: $line-height;
+  font-size: $font-size;
+  line-height: $line-height;
 }
 
 @mixin text-align() {
-    $aligns: 'center', 'inherit', 'justify', 'left', 'right';
+  $aligns: 'center', 'inherit', 'justify', 'left', 'right';
 
-    @each $align in $aligns {
-        &.onex-typography--align-#{$align} {
-            text-align: #{$align};
-        }
+  @each $align in $aligns {
+    &.onex-typography--align-#{$align} {
+      text-align: #{$align};
     }
+  }
 }
 
 @mixin text-link() {
-    &.onex-typography--body,
-    &.onex-typography--caption {
-        text-decoration-line: underline;
-        color: $primary;
-    }
+  &.onex-typography--body,
+  &.onex-typography--caption {
+    font-weight: 600;
+    text-decoration-line: underline;
+    color: $primary;
+  }
+  &.onex-typography--label {
+    font-weight: 600;
+    color: $primary;
+  }
+}
+
+@mixin semi-bold() {
+  &.onex-typography--body,
+  &.onex-typography--label,
+  &.onex-typography--caption {
+    font-weight: 600;
+  }
+}
+
+@mixin uppercase() {
+  &.onex-typography--caption {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 }
