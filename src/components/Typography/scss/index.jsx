@@ -37,9 +37,10 @@ const Typography = ({
     },
   );
 
-  const TypographyComponent = href
-    ? 'a'
-    : (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
+  const DefaultTypographyComponent = paragraph ? 'p' : defaultVariantMapping[variant] || 'span';
+
+  const TypographyComponent =
+    href && variant.search(/<\/?h[1-5]>/gi) !== -1 ? 'a' : DefaultTypographyComponent;
 
   return (
     <TypographyComponent data-test-id={dataTestId} className={typographyClassNames} href>
