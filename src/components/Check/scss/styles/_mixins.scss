@@ -28,7 +28,7 @@
         }
 
         &[type="checkbox"]:indeterminate {
-            background-color: $onex-form-check-input-indeterminate-bg-color;
+            background-color: $onex-form-check-input-indeterminate-border-color;
             border-color: $onex-form-check-input-indeterminate-border-color;
             background-image: escape-svg($onex-form-check-input-indeterminate-bg-image);
         }

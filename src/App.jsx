@@ -7,7 +7,7 @@ const DevExamples = () => (
   <div className="p-5">
     <div>
       <Check id="radio-bliat-id" type="radio" checked disabled>
-        Test bliat
+        Test label text
       </Check>
     </div>
   </div>
