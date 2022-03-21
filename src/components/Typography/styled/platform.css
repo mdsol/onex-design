@@ -535,6 +535,7 @@ progress {
   font-family: Noto Sans;
   font-style: normal;
   margin: 0;
+  color: #1a1c1e;
 }
 .onex-typography.onex-typography--align-center {
   text-align: center;
@@ -577,10 +578,6 @@ progress {
 }
 .onex-typography--title, .onex-typography--h1, .onex-typography--h2, .onex-typography--h3, .onex-typography--h4, .onex-typography--h5 {
   font-weight: 600;
-}
-.onex-typography--title {
-  font-size: 2.813rem;
-  line-height: 3rem;
 }
 .onex-typography--h1 {
   font-size: 2.125rem;
