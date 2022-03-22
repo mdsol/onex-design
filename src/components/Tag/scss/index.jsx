@@ -5,9 +5,7 @@ import XIcon from '../../../icons/XIcon';
 
 const Tag = ({
   icon,
-  variant,
   isRemovable,
-  size,
   className,
   path,
   onSelect,
@@ -19,10 +17,6 @@ const Tag = ({
   const [selected, setSelected] = useState(false);
   const tagClassNames = classNames('onex-tag', {
     [className]: className,
-    'onex-tag--lg': size === 'lg',
-    'onex-tag--sm': size === 'sm',
-    'onex-tag--rounded': variant === 'rounded',
-    'onex-tag--default': !variant || variant === 'default',
     'onex-tag--link': path,
     'onex-tag--selected': selected,
   });
@@ -58,9 +52,7 @@ const Tag = ({
 
 Tag.propTypes = {
   icon: PropTypes.node,
-  variant: PropTypes.oneOf(['default', 'rounded']),
   isRemovable: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'lg']),
   className: PropTypes.string,
   path: PropTypes.string,
   onSelect: PropTypes.func,
@@ -72,9 +64,7 @@ Tag.propTypes = {
 
 Tag.defaultProps = {
   icon: undefined,
-  variant: 'default',
   isRemovable: false,
-  size: 'sm',
   className: undefined,
   controlId: '',
   path: undefined,

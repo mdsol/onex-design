@@ -835,10 +835,8 @@ export const config = {
           {
             className: 'text',
             dataTestId: 'text',
-            size: 'sm',
-            variant: 'default',
-            isRemovable: true,
-            children: 'Small',
+            children: 'Tag label',
+            isRemovable: false,
           },
           {
             className: 'text',
