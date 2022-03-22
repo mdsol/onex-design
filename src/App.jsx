@@ -6,7 +6,7 @@ import ViewComponents from './view-components';
 const DevExamples = () => (
   <div className="p-5">
     <div>
-      <Check id="radio-bliat-id" type="radio" checked disabled>
+      <Check id="check-id" type="radio" checked disabled>
         Test label text
       </Check>
     </div>
