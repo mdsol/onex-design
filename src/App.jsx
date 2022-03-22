@@ -1,36 +1,14 @@
 import { useState, useEffect } from 'react';
-import LockIcon from '@mui/icons-material/Lock';
-import { Tabs, Badge } from './components';
+import { Tabs, Check } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
 const DevExamples = () => (
   <div className="p-5">
     <div>
-      <Badge type="default" variant="status-icon">
-        <LockIcon />
-      </Badge>
-    </div>
-    <div>
-      <Badge type="primary" variant="counter">
-        100
-      </Badge>
-    </div>
-    <div>
-      <Badge type="important" variant="status">
-        Important
-      </Badge>
-    </div>
-    <div>
-      <Badge type="success" variant="status-bold">
-        Success
-      </Badge>
-    </div>
-    <div>
-      <Badge type="added" variant="counter">
-        <LockIcon />
-        Test
-      </Badge>
+      <Check id="check-id" type="radio" checked disabled>
+        Test label text
+      </Check>
     </div>
   </div>
 );

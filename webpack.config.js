@@ -52,7 +52,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     hot: true,
-    port: 3000,
+    port: 3006,
     static: {
       directory: path.resolve(__dirname, './public'),
     },
