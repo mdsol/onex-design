@@ -4,91 +4,92 @@
 /* sizes variables */
 .onex-check {
   display: inline-flex;
+}
+
+.onex-check__wrapper {
+  display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: painted;
 }
-.onex-check .form-check-input {
+.onex-check__wrapper .onex-check__custom {
+  width: 1rem;
+  height: 1rem;
+}
+.onex-check__wrapper .form-check-label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.onex-check__wrapper.disabled, .onex-check__wrapper.disabled > .form-check-label {
+  pointer-events: none;
+}
+.onex-check__wrapper .onex-check__custom {
+  content: "";
+  display: block;
   border: 2px solid rgba(26, 28, 30, 0.2);
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
-.onex-check .form-check-input:focus {
-  border-color: #d1d8e0;
-  box-shadow: none;
+.onex-check__wrapper .form-check-input {
+  position: absolute;
+  opacity: 0 !important;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
-.onex-check .form-check-input:disabled {
-  opacity: 0.4;
+.onex-check__wrapper .form-check-input:disabled ~ .onex-check__custom {
+  opacity: 0.5;
+  pointer-events: none;
 }
-.onex-check .form-check-input:checked {
+.onex-check__wrapper:hover .form-check-input:not(:disabled) ~ .onex-check__custom {
+  border-color: rgba(26, 28, 30, 0.5);
+}
+.onex-check__wrapper:hover .form-check-input:checked ~ .onex-check__custom {
+  border-color: #005fab;
+}
+.onex-check__wrapper:hover .form-check-input:disabled ~ .onex-check__custom {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.onex-check__wrapper .form-check-label {
+  cursor: pointer;
+}
+.onex-check__wrapper .form-check-input[type=checkbox] ~ .onex-check__custom {
+  border-radius: 2px;
+}
+.onex-check__wrapper .form-check-input[type=checkbox]:checked ~ .onex-check__custom {
   border-color: #0070c0;
+  background-color: #0070c0;
+  background-image: url("data:image/svg+xml,%3csvg width='11.7' height='8.5' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.85334 8.80466C4.50667 9.15133 3.94667 9.15133 3.6 8.80466L0.408893 5.61355C0.0622267 5.26688 0.0622267 4.70688 0.408893 4.36022C0.75556 4.01355 1.31556 4.01355 1.66223 4.36022L4.22223 6.92022L10.3378 0.804662C10.6844 0.457995 11.2444 0.457995 11.5911 0.804662C11.9378 1.15133 11.9378 1.71133 11.5911 2.05799L4.85334 8.80466Z' fill='white'/%3e%3c/svg%3e");
 }
-.onex-check .form-check-input[type=checkbox]:indeterminate {
+.onex-check__wrapper .form-check-input[type=checkbox]:indeterminate ~ .onex-check__custom {
   background-color: #0070c0;
   border-color: #0070c0;
   background-image: url("data:image/svg+xml,%3csvg width='9' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3cpath d='M8.55556 1.88889H1.44445C0.955557 1.88889 0.555557 1.48889 0.555557 1C0.555557 0.511111 0.955557 0.111111 1.44445 0.111111H8.55556C9.04445 0.111111 9.44445 0.511111 9.44445 1C9.44445 1.48889 9.04445 1.88889 8.55556 1.88889Z' fill='white'/%3e %3c/svg%3e");
 }
-.onex-check .form-check-label {
-  color: #1a1c1e;
-  cursor: pointer;
+.onex-check__wrapper .form-check-input[type=radio] ~ .onex-check__custom {
+  border-radius: 100%;
 }
-.onex-check .form-check-input {
-  width: 1rem;
-  height: 1rem;
-}
-.onex-check .form-check-label {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.onex-check .form-check-input {
-  margin-top: 0;
-  cursor: pointer;
-}
-.onex-check .form-check-input:not(:checked) {
-  background-color: white;
-}
-.onex-check .form-check-input[type=checkbox] {
-  border-radius: 2px;
-}
-.onex-check .form-check-input[type=checkbox]:checked {
-  background-color: #0070c0;
-  background-image: url("data:image/svg+xml,%3csvg width='11.7' height='8.5' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.85334 8.80466C4.50667 9.15133 3.94667 9.15133 3.6 8.80466L0.408893 5.61355C0.0622267 5.26688 0.0622267 4.70688 0.408893 4.36022C0.75556 4.01355 1.31556 4.01355 1.66223 4.36022L4.22223 6.92022L10.3378 0.804662C10.6844 0.457995 11.2444 0.457995 11.5911 0.804662C11.9378 1.15133 11.9378 1.71133 11.5911 2.05799L4.85334 8.80466Z' fill='white'/%3e%3c/svg%3e");
-}
-.onex-check .form-check-input[type=checkbox]:indeterminate, .onex-check .form-check-input[type=checkbox].indeterminate {
-  background-size: 0.625rem;
-}
-.onex-check:not(.disabled):hover > .form-check-input[type=checkbox] {
-  border-color: rgba(26, 28, 30, 0.5);
-  background-color: white;
-}
-.onex-check:not(.disabled):hover > .form-check-input[type=checkbox]:checked, .onex-check:not(.disabled):hover > .form-check-input[type=checkbox]:indeterminate, .onex-check:not(.disabled):hover > .form-check-input[type=checkbox].indeterminate {
-  border-color: #005fab;
-  background-color: #005fab;
-}
-.onex-check:not(.disabled):hover > .form-check-input[type=radio] {
-  border-color: rgba(26, 28, 30, 0.5);
-}
-.onex-check.disabled > .form-check-label {
-  pointer-events: none;
-}
-.onex-check .form-check-input:checked:disabled,
-.onex-check .form-check-input:disabled {
-  pointer-events: none;
-  filter: none;
-}
-.onex-check .form-check-input:disabled {
-  border-color: rgba(26, 28, 30, 0.2);
-  background-color: transparent;
-}
-.onex-check .form-check-input:checked:disabled {
-  background-color: #0070c0;
-}
-.onex-check .form-check-input:checked[type=radio] {
+.onex-check__wrapper .form-check-input[type=radio]:checked ~ .onex-check__custom {
+  border-color: #0070c0;
   background-color: transparent;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%230070C0'/%3e%3c/svg%3e");
 }
-.onex-check .form-check-input:checked[type=radio]:hover {
-  background-color: transparent;
-  border-color: #005fab;
+.onex-check__wrapper:hover .form-check-input[type=radio]:checked ~ .onex-check__custom {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%23005FAB'/%3e%3c/svg%3e");
 }
-.onex-check .form-check-input:checked[type=radio]:disabled {
-  border-color: #0070c0;
+.onex-check__wrapper:hover .form-check-input[type=checkbox]:not(:disabled) ~ .onex-check__custom {
+  background-color: white;
+}
+.onex-check__wrapper:hover .form-check-input[type=checkbox]:checked ~ .onex-check__custom, .onex-check__wrapper:hover .form-check-input[type=checkbox]:indeterminate ~ .onex-check__custom {
+  border-color: #005fab;
+  background-color: #005fab;
 }

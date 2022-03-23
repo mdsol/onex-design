@@ -1,86 +1,72 @@
 @import 'mixins';
 
 .onex-check {
-    @include default-check-styles();
-    @include size($onex-checkbox-size, $onex-font-size-label, $onex-line-height-label);
+  display: inline-flex;
+}
 
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
+.onex-check__wrapper {
+  @include size($onex-checkbox-size, $onex-font-size-label, $onex-line-height-label);
+  @include default-check-styles();
 
-    .form-check-input {
-        margin-top: 0;
-        cursor: pointer;
-
-        &:not(:checked) {
-            background-color: $onex-check-input-bg-color;
-        }
+  .form-check-input[type='checkbox'] {
+    & ~ .onex-check__custom {
+      border-radius: 2px;
     }
 
-    .form-check-input[type='checkbox'] {
-      border-radius: 2px;
-
-      &:checked {
+    &:checked {
+      & ~ .onex-check__custom {
+        border-color: $onex-check-input-border-color;
         background-color: $onex-check-input-border-color;
         background-image: escape-svg($onex-form-check-input-bg-image);
       }
+    }
 
-      &:indeterminate,
-      &.indeterminate {
-        background-size: 0.625rem;
+    &:indeterminate {
+      & ~ .onex-check__custom {
+        background-color: $onex-form-check-input-indeterminate-border-color;
+        border-color: $onex-form-check-input-indeterminate-border-color;
+        background-image: escape-svg($onex-form-check-input-indeterminate-bg-image);
+      }
+    }
+  }
+
+  .form-check-input[type='radio'] {
+    & ~ .onex-check__custom {
+      border-radius: 100%;
+    }
+
+    &:checked {
+      & ~ .onex-check__custom {
+        border-color: $onex-form-check-input-indeterminate-border-color;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%230070C0'/%3e%3c/svg%3e");
+      }
+    }
+  }
+
+  &:hover {
+    .form-check-input[type='radio']:checked {
+      & ~ .onex-check__custom {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%23005FAB'/%3e%3c/svg%3e");
       }
     }
 
-    &:not(.disabled):hover {
-      & > .form-check-input[type='checkbox'] {
-        border-color: $onex-check-input-hover-border-color;
-        background-color: $onex-check-input-hover-bg-color;
+    .form-check-input[type='checkbox'] {
+      &:not(:disabled) {
+        & ~ .onex-check__custom {
+          background-color: $onex-check-input-hover-bg-color;
+        }
+      }
 
-        &:checked,
-        &:indeterminate,
-        &.indeterminate {
+      &:checked,
+      &:indeterminate {
+        & ~ .onex-check__custom {
           border-color: $primary-400;
           background-color: $primary-400;
         }
       }
-
-      & > .form-check-input[type='radio'] {
-        border-color: $onex-check-input-hover-border-color;
-      }
     }
-
-    &.disabled > .form-check-label {
-        pointer-events: none;
-    }
-
-    .form-check-input:checked:disabled,
-    .form-check-input:disabled {
-        pointer-events: none;
-        filter: none;
-    }
-
-    .form-check-input:disabled {
-      border-color: $secondary-opacity-20;
-      background-color: transparent;
-    }
-
-    .form-check-input:checked:disabled {
-        background-color: $onex-check-input-disabled-bg-color;
-    }
-
-
-    .form-check-input:checked[type=radio] {
-      background-color: transparent;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%230070C0'/%3e%3c/svg%3e");;
-
-      &:hover {
-        background-color: transparent;
-        border-color: $primary-400;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%23005FAB'/%3e%3c/svg%3e");
-      }
-
-      &:disabled {
-        border-color: $primary;
-      }
-    }
+  }
 }
+
+
