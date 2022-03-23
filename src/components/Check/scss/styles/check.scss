@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.onex-check {
+.onex-check__wrapper {
   @include size($onex-checkbox-size, $onex-font-size-label, $onex-line-height-label);
   @include default-check-styles();
 

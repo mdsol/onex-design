@@ -18,18 +18,19 @@ const Check = React.forwardRef((props, ref) => {
 
   return (
     <Form.Group controlId={id} className={formGroupClassNames} ref={ref} data-test-id={dataTestId}>
-      <Form.Check.Input
-        ref={checkboxRef}
-        type={type}
-        id={id}
-        disabled={disabled}
-        checked={checked}
-        onChange={onChange}
-        data-indeterminate={indeterminate}
-        className={classNames({ indeterminate })}
-      />
-      <span className="onex-check__custom" />
-      {children && <Form.Check.Label>{children}</Form.Check.Label>}
+      <Form.Check.Label onChange={onChange} className="onex-check__wrapper">
+        <Form.Check.Input
+          ref={checkboxRef}
+          type={type}
+          id={id}
+          disabled={disabled}
+          checked={checked}
+          data-indeterminate={indeterminate}
+          className={classNames({ indeterminate })}
+        />
+        <span className="onex-check__custom" />
+        {children && <Form.Check.Label>{children}</Form.Check.Label>}
+      </Form.Check.Label>
     </Form.Group>
   );
 });
