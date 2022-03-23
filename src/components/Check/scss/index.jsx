@@ -28,6 +28,7 @@ const Check = React.forwardRef((props, ref) => {
         data-indeterminate={indeterminate}
         className={classNames({ indeterminate })}
       />
+      <span className="onex-check__custom" />
       {children && <Form.Check.Label>{children}</Form.Check.Label>}
     </Form.Group>
   );
