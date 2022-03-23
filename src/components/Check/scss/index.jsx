@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { Form } from 'react-bootstrap';
 
 const Check = React.forwardRef((props, ref) => {
-  const { id, className, checked, disabled, indeterminate, type, dataTestId, children, onChange } =
+  const { id, className, checked, disabled, indeterminate, type, dataTestId, children, value, onChange } =
     props;
   const checkboxRef = useRef();
   const formGroupClassNames = classNames('onex-check', {
@@ -25,6 +25,7 @@ const Check = React.forwardRef((props, ref) => {
           id={id}
           disabled={disabled}
           checked={checked}
+          value={value}
           data-indeterminate={indeterminate}
           className={classNames({ indeterminate })}
         />
@@ -43,6 +44,7 @@ Check.propTypes = {
   type: PropTypes.oneOf(['checkbox', 'radio']),
   dataTestId: PropTypes.string,
   id: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
@@ -53,6 +55,7 @@ Check.defaultProps = {
   disabled: false,
   indeterminate: false,
   type: 'checkbox',
+  value: undefined,
   dataTestId: undefined,
   onChange: undefined,
   children: undefined,
