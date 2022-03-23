@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "storybook": "start-storybook -p 6006",
-    "build": "webpack --config webpack.config.pkg.js --mode production",
+    "build": "webpack --config webpack.config.pkg.js --mode production && babel dist/index.umd.js > dist/index-compat.js",
     "build:css": "sass --style=compressed ./src/scss/platform.scss dist/platform.css",
     "build:sb": "build-storybook",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
