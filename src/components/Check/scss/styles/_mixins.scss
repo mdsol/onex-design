@@ -1,5 +1,5 @@
 @mixin size($checkbox-size, $font-size, $line-height) {
-  .form-check-input {
+  .onex-check__custom {
     width: $checkbox-size;
     height: $checkbox-size;
   }
@@ -11,31 +11,72 @@
 }
 
 @mixin default-check-styles() {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: painted;
+
+
+  &.disabled,
+  &.disabled > .form-check-label {
+    pointer-events: none;
+  }
+
+  .onex-check__custom {
+    content: '';
+    display: block;
+    border: $onex-form-check-input-border;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .form-check-input {
+    position: absolute;
+    opacity: 0 !important;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:disabled {
+      & ~ .onex-check__custom {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &:hover {
     .form-check-input {
-        border: $onex-form-check-input-border;
-
-        &:focus {
-            border-color: $onex-form-check-input-focus-border;
-            box-shadow: $onex-form-check-input-focus-box-shadow;
+      &:not(:disabled) {
+        & ~ .onex-check__custom {
+          border-color: $onex-check-input-hover-border-color;
         }
+      }
 
-        &:disabled {
-            opacity: $onex-form-check-input-disabled-opacity;
+      &:checked {
+        & ~ .onex-check__custom {
+          border-color: $primary-400;
         }
+      }
 
-        &:checked {
-            border-color: $onex-check-input-border-color;
+      &:disabled {
+        & ~ .onex-check__custom {
+          opacity: 0.5;
+          pointer-events: none;
         }
-
-        &[type="checkbox"]:indeterminate {
-            background-color: $onex-form-check-input-indeterminate-border-color;
-            border-color: $onex-form-check-input-indeterminate-border-color;
-            background-image: escape-svg($onex-form-check-input-indeterminate-bg-image);
-        }
+      }
     }
+  }
 
-    .form-check-label {
-        color: $onex-form-check-label-color;
-        cursor: $onex-form-check-label-cursor;
-    }
+  .form-check-label {
+    cursor: pointer;
+  }
 }

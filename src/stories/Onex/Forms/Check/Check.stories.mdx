@@ -135,3 +135,39 @@ The name Check can be used when providing `default props` or `style` overrides i
     <Story id='onex-forms-check--checkbox-indeterminate' />
     <Story id='onex-forms-check--checkbox-indeterminate-disabled' />
 </Canvas>
+
+## Controlled
+You can control the radio and the checkbox with the ```checked``` and ```onChange``` props.
+<Canvas>
+  <Story name="Controlled">
+    {() => {
+      const [checkedRadio, setCheckedRadio] = React.useState();
+      const [checkedCheck, setCheckedCheck] = React.useState(true);
+      return (
+        <>
+          <div style={{display: 'flex', gap: '4px', marginBottom: '4px'}}>
+            <Check
+              type="radio"
+              value="custom-radio-1"
+              checked={checkedRadio === "custom-radio-1"}
+              onChange={(event) => setCheckedRadio(event.target.value)}
+              id="custom-radio-1"/>
+            <Check
+              type="radio"
+              value="custom-radio-2"
+              checked={checkedRadio === "custom-radio-2"}
+              onChange={(event) => setCheckedRadio(event.target.value)}
+              id="custom-radio-2"/>
+          </div>
+          <div>
+            <Check
+              type="checkbox"
+              checked={checkedCheck}
+              onChange={() => setCheckedCheck(!checkedCheck)}
+              id="custom-checkbox"/>
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
