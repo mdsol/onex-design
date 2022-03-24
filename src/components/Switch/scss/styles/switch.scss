@@ -9,6 +9,7 @@
     border: 1px solid $form-switch-input-border;
     box-sizing: border-box;
     margin-top: ($line-height-base - $form-switch-height) * 0.5;
+    -webkit-appearance: none;
 
     &:hover {
       @include switch-background-image($onex-form-switch-hover-color);
