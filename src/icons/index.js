@@ -14,6 +14,8 @@ import PersonIcon from './PersonIcon';
 import CameraFillIcon from './CameraFillIcon';
 import ChevronDownIcon from './ChevronDownIcon';
 import NextArrowIcon from './NextArrowIcon';
+import SettingsRoundIcon from './SettingsRoundIcon';
+import MoreVerticalIcon from './MoreVerticalIcon';
 
 export {
   CheckIcon,
@@ -32,4 +34,6 @@ export {
   CameraFillIcon,
   ChevronDownIcon,
   NextArrowIcon,
+  SettingsRoundIcon,
+  MoreVerticalIcon,
 };

@@ -5,6 +5,7 @@ import ErrorBoundary from '../ErrorBoundary';
 import { Select, Check } from '../components';
 import { config } from './components-config';
 
+import '../scss/platform.scss';
 import './styles.scss';
 
 const selectOptions = config.data.components.map((item) => ({
@@ -36,7 +37,6 @@ const ViewComponents = () => {
   const [wrap, setWrap] = useState(null);
   const [isTable, setIsTable] = useState(null);
   const [isTooltip, setIsTooltip] = useState(null);
-
   useEffect(() => {
     if (selectedOptions.length) {
       const newUrl = updateQueryStringParameter(

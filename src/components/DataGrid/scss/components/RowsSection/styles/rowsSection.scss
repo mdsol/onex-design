@@ -1,0 +1,44 @@
+.onex-dataGrid > .onex-dataGrid__rowsSection {
+    width: 100%;
+    thead {
+      .onex-dataGrid__sectionHeader {
+        position: relative;
+        th {
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 12px;
+        }
+        .isShown {
+            transform: rotate(180deg);
+        }
+        .onex-dataGrid__showRowsIndicator {
+          position: absolute;
+          top: 20px;
+          right: 21px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+      }
+      .onex-dataGrid__sectionHeaders {
+        background-color: #f8f9fb;
+        th span {
+          color: #676e7a;
+        }
+      }
+    }
+
+    tr {
+      height: 48px;
+      margin: 0;
+      padding: 0.5rem;
+      border-bottom: 1px solid rgba(26, 28, 30, 0.1);
+    }
+
+    .onex-dataGrid__rowCheck {
+      margin-left: 15px;
+    }
+    .onex-dataGrid__rowIcon {
+      text-align: center;
+    }
+  }

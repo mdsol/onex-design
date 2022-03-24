@@ -32,6 +32,7 @@ import StyledToggleButton from './ToggleButton/styled';
 import StyledToggleButtonGroup from './ToggleButtonGroup/styled';
 import StyledTooltip from './Tooltip/styled';
 import StyledTypography from './Typography/styled';
+import StyledDataGrid from './DataGrid/styled';
 
 export {
   StyledAvatar,
@@ -66,4 +67,5 @@ export {
   StyledDataTableCell,
   StyledTableControl,
   StyledTableName,
+  StyledDataGrid,
 };
