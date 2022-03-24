@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6
+
+This is the same as 0.1.5, 0.1.5 is unable to be released for technical reasons.
+
 ## 0.1.5
 
 Add a compatibility file with old webpack versions.
