@@ -1189,6 +1189,20 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'DataGrid',
+        componentName: 'DataGrid',
+        styledComponentName: 'DataGrid',
+        additionalComponents: [],
+        variants: [
+          {
+            type: 'important',
+            variant: 'status',
+            className: 'data-drid',
+            dataTestId: 'data-grid-id',
+          },
+        ],
+      },
     ],
   },
 };

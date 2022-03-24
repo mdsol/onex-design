@@ -61,6 +61,7 @@ import ToggleButton from './ToggleButton/scss';
 import ToggleButtonGroup from './ToggleButtonGroup/scss';
 import Tooltip from './Tooltip/scss';
 import Typography from './Typography/scss';
+import DataGrid from './DataGrid/scss';
 
 export {
   Avatar,
@@ -124,4 +125,5 @@ export {
   Popover,
   OverlayTrigger,
   Overlay,
+  DataGrid,
 };
