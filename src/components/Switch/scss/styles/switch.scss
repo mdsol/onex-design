@@ -18,17 +18,6 @@
     }
 
     &:focus {
-      box-shadow: none;
-      border-color: $form-switch-input-border;
-     }
-
-    //&:focus {
-    //  @include switch-background-image($onex-form-switch-focus-color);
-    //  border-color: $onex-form-switch-focus-border;
-    //  box-shadow: $form-switch-focus-box-shadow;
-    //}
-
-    &:active {
       @include switch-background-image($onex-form-switch-focus-color);
       border-color: $onex-form-switch-focus-border;
       box-shadow: $form-switch-focus-box-shadow;
@@ -44,17 +33,11 @@
         border-color: $onex-form-switch-hover-checked-input-bg;
       }
 
-      //&:focus {
-      //  box-shadow: none;
-      //  background-color: $form-switch-checked-input-bg;
-      //  border-color: $form-switch-checked-input-bg;
-      //}
-
-      //&:active {
-      //  box-shadow: none;
-      //  background-color: $form-switch-checked-input-bg;
-      //  border-color: $form-switch-checked-input-bg;
-      //}
+      &:focus {
+        box-shadow: $form-switch-focus-box-shadow;
+        background-color: $form-switch-checked-input-bg;
+        border-color: $form-switch-checked-input-bg;
+      }
 
       &:disabled {
         border-color: $form-switch-checked-input-bg;
