@@ -13,15 +13,12 @@ const CustomTooltip = (props) => {
     onToggle,
     placement,
     trigger,
-    variant,
-    hasArrow,
     tooltipChildren,
     dataTestId,
   } = props;
 
-  const toggleClassNames = classNames('onex-tooltip', `onex-tooltip--${variant}`, {
+  const toggleClassNames = classNames('onex-tooltip', `onex-tooltip--default`, {
     [className]: className,
-    'onex-tooltip--regular': !hasArrow,
   });
 
   return (
@@ -77,8 +74,6 @@ CustomTooltip.propTypes = {
     PropTypes.oneOf(['hover', 'click', 'focus']),
     PropTypes.arrayOf(PropTypes.oneOf(['hover', 'click', 'focus'])),
   ]),
-  variant: PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
-  hasArrow: PropTypes.bool,
   dataTestId: PropTypes.string,
 };
 
@@ -91,8 +86,6 @@ CustomTooltip.defaultProps = {
   defaultShow: false,
   placement: 'right',
   trigger: ['hover', 'focus'],
-  variant: 'default',
-  hasArrow: true,
   dataTestId: undefined,
   tooltipChildren: undefined,
 };

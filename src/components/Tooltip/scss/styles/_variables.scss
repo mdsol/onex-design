@@ -1,15 +1,15 @@
-$onex-tooltip-border-radius: 5px;
-$onex-tooltip-font-size: $font-size-lg;
-$onex-tooltip-line-height: $line-height-lg;
+$onex-tooltip-border-radius: 4px;
+$onex-tooltip-font-size: $font-size-sm;
+$onex-tooltip-line-height: $line-height-sm;
 $onex-tooltip-max-width: 20rem;
 
 /* bootstrap variables */
 $tooltip-font-size: $onex-tooltip-font-size;
-$tooltip-bg: $black;
+$tooltip-bg: $black-opacity-75;
 $tooltip-border-radius: $onex-tooltip-border-radius;
-$tooltip-opacity: 0.7;
-$tooltip-padding-y: 0.5rem;
-$tooltip-padding-x: 0.75rem;
+$tooltip-opacity: 1;
+$tooltip-padding-y: 0.25rem;
+$tooltip-padding-x: 0.5rem;
 $tooltip-max-width: $onex-tooltip-max-width;
 
 $tooltip-arrow-width: 0.75rem;
