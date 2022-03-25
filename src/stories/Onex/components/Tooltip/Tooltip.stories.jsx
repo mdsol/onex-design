@@ -29,7 +29,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   id: 'default-tooltip',
-  variant: 'default',
   tooltipChildren: 'Default tooltip',
   children: (
     <Lozenge type="default" size="lg">
@@ -37,74 +36,6 @@ Default.args = {
     </Lozenge>
   ),
 };
-
-export const Success = Template.bind({});
-
-Success.args = {
-  id: 'success-tooltip',
-  variant: 'success',
-  tooltipChildren: 'Success tooltip',
-  children: (
-    <Lozenge type="success" size="lg">
-      Hover to see
-    </Lozenge>
-  ),
-};
-
-export const Warning = Template.bind({});
-
-Warning.args = {
-  id: 'warning-tooltip',
-  variant: 'warning',
-  tooltipChildren: 'Warning tooltip',
-  children: (
-    <Lozenge type="warning" size="lg">
-      Hover to see
-    </Lozenge>
-  ),
-};
-
-export const Error = Template.bind({});
-
-Error.args = {
-  id: 'error-tooltip',
-  variant: 'error',
-  tooltipChildren: 'Error tooltip',
-  children: (
-    <Lozenge type="error" size="lg">
-      Hover to see
-    </Lozenge>
-  ),
-};
-
-export const Info = Template.bind({});
-
-Info.args = {
-  id: 'info-tooltip',
-  variant: 'info',
-  tooltipChildren: 'Info tooltip',
-  children: (
-    <Lozenge type="info" size="lg">
-      Hover to see
-    </Lozenge>
-  ),
-};
-
-export const Regular = Template.bind({});
-
-Regular.args = {
-  id: 'regular-tooltip',
-  variant: 'info',
-  tooltipChildren: 'Regular tooltip',
-  hasArrow: false,
-  children: (
-    <Lozenge type="info" size="lg">
-      Hover to see
-    </Lozenge>
-  ),
-};
-
-// Variants end
 
 // Position start
 export const Top = Template.bind({});
@@ -114,7 +45,6 @@ const tooltipeTopCode = `<CustomTooltip
   onToggle={() => {}}
   placement="top"
   tooltipChildren="Top tooltip"
-  variant="success"
 >
   <Lozenge
     size="lg"
@@ -126,7 +56,6 @@ const tooltipeTopCode = `<CustomTooltip
 
 Top.args = {
   id: 'top-tooltip',
-  variant: 'success',
   tooltipChildren: 'Top tooltip',
   placement: 'top',
   children: (
@@ -159,7 +88,6 @@ const tooltipLeftCode = `<CustomTooltip
   onToggle={() => {}}
   placement="left"
   tooltipChildren="Left tooltip"
-  variant="warning"
 >
   <Lozenge
     size="lg"
@@ -171,7 +99,6 @@ const tooltipLeftCode = `<CustomTooltip
 
 Left.args = {
   id: 'left-tooltip',
-  variant: 'warning',
   tooltipChildren: 'Left tooltip',
   placement: 'left',
   children: (
@@ -201,7 +128,6 @@ export const Bottom = Template.bind({});
 
 Bottom.args = {
   id: 'bottom-tooltip',
-  variant: 'default',
   tooltipChildren: 'Bottom tooltip',
   placement: 'bottom',
   children: (
@@ -215,7 +141,6 @@ export const Right = Template.bind({});
 
 Right.args = {
   id: 'right-tooltip',
-  variant: 'error',
   tooltipChildren: 'Right tooltip',
   placement: 'right',
   children: (
@@ -232,7 +157,6 @@ export const Hover = Template.bind({});
 
 Hover.args = {
   id: 'hover-tooltip',
-  variant: 'info',
   tooltipChildren: 'Hover tooltip',
   children: (
     <Lozenge type="info" size="lg">
@@ -245,7 +169,6 @@ export const Click = Template.bind({});
 
 Click.args = {
   id: 'click-tooltip',
-  variant: 'info',
   tooltipChildren: 'Click tooltip',
   trigger: 'click',
   children: (
@@ -259,7 +182,6 @@ export const Focus = Template.bind({});
 
 Focus.args = {
   id: 'click-tooltip',
-  variant: 'info',
   tooltipChildren: 'Focus tooltip',
   trigger: 'focus',
   children: <TextField type="text" placeholder="Focus to see" />,
@@ -271,7 +193,6 @@ export const ShowDelay1000ms = Template.bind({});
 
 ShowDelay1000ms.args = {
   id: 'show-delay-tooltip',
-  variant: 'info',
   tooltipChildren: 'Show delay 1000ms tooltip',
   delay: {
     show: 1000,
@@ -287,7 +208,6 @@ export const HideDelay2000ms = Template.bind({});
 
 HideDelay2000ms.args = {
   id: 'hide-delay-tooltip',
-  variant: 'info',
   tooltipChildren: 'Hide delay 2000ms tooltip',
   delay: {
     hide: 2000,

@@ -49,6 +49,9 @@
   opacity: 0.5;
   pointer-events: none;
 }
+.onex-check__wrapper .form-check-input:focus ~ .onex-check__custom {
+  box-shadow: 0px 0px 0px 2px #8dcaf9;
+}
 .onex-check__wrapper:hover .form-check-input:not(:disabled) ~ .onex-check__custom {
   border-color: rgba(26, 28, 30, 0.5);
 }

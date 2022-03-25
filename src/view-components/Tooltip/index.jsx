@@ -42,47 +42,19 @@ const Tooltip = ({ styled }) => {
             >
               <DynamicButton>Tooltip default</DynamicButton>
             </DynamicTooltip>
-
-            <DynamicTooltip
-              id="success-tooltip"
-              variant="success"
-              tooltipChildren="Success tooltip"
-              placement="bottom"
-              trigger="click"
-              show={showTooltip}
-            >
-              <DynamicButton>Tooltip success</DynamicButton>
-            </DynamicTooltip>
-            <DynamicTooltip
-              id="warning-tooltip"
-              variant="warning"
-              tooltipChildren="Warning tooltip"
-              placement="bottom"
-              trigger="click"
-              show={showTooltip}
-            >
-              <DynamicButton>Tooltip warning</DynamicButton>
-            </DynamicTooltip>
-            <DynamicTooltip
-              id="error-tooltip"
-              variant="error"
-              tooltipChildren="Error tooltip"
-              placement="bottom"
-              trigger="click"
-              show={showTooltip}
-            >
-              <DynamicButton>Tooltip error</DynamicButton>
-            </DynamicTooltip>
-            <DynamicTooltip
-              id="info-tooltip"
-              variant="info"
-              tooltipChildren="Info tooltip"
-              placement="bottom"
-              trigger="click"
-              show={showTooltip}
-            >
-              <DynamicButton>Tooltip info</DynamicButton>
-            </DynamicTooltip>
+            <div style={{ marginLeft: '200px' }}>
+              <DynamicTooltip
+                id="success-tooltip"
+                variant="success"
+                tooltipChildren="Yo Reddit! What’s a small thing that anyone can do at nearly anytime to improve
+                their mood and make them happier?"
+                placement="bottom"
+                trigger="click"
+                show={showTooltip}
+              >
+                <DynamicButton>Tooltip</DynamicButton>
+              </DynamicTooltip>
+            </div>
           </>
         )}
       </ErrorBoundary>

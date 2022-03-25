@@ -17,6 +17,7 @@
   border: 1px solid rgba(26, 28, 30, 0.2);
   box-sizing: border-box;
   margin-top: 0.125rem;
+  -webkit-appearance: none;
 }
 .onex-switch .form-check-input:hover {
   background-image: url("data:image/svg+xml,%3csvg width='16' height='16' viewBox='-2 -2 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3ccircle cx='8' cy='8' r='8' fill='%231a1c1e'/%3e %3c/svg%3e");
