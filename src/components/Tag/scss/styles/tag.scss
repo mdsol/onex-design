@@ -5,7 +5,7 @@
   align-items: center;
   background-color: $secondary-400-opacity-01;
   border: none;
-  height: $onex-tag-height;
+  height: $onex-tag-height-md;
   border-radius: $onex-tag-border-radius;
   font-family: Noto Sans;
   font-style: normal;
@@ -13,8 +13,21 @@
   line-height: $line-height-label;
   color: $secondary-900;
 
-  &:hover {
-    background-color: $secondary-350;
+
+  &--variant-selection {
+    &:hover {
+      background-color: $secondary-350;
+    }
+  }
+
+
+  &--variant-input {
+    cursor: auto !important;
+  }
+
+  &--size-sm {
+    height: $onex-tag-height-sm;
+    padding: 0.125rem 0.25rem 0.125rem 0.5rem;
   }
 
   &:disabled {
@@ -45,28 +58,18 @@
     justify-content: center;
     width: $onex-tag-img-size;
     height: $onex-tag-img-size;
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
     border-radius: 100%;
     overflow: hidden;
 
-    svg path {
-      fill: $primary-700;
+    & > img {
+      object-fit: cover;
+      overflow: hidden;
     }
   }
-
-  //&:hover {
-  //  & .onex-tag__close__icon {
-  //    fill: $onex-tag-hover-text-color;
-  //  }
-  //
-  //  & .onex-tag__img svg path {
-  //    fill: $white;
-  //  }
-  //}
 }
 
 .onex-tag--selected {
-  //border: 1px solid $primary;
   background-color: $tertiary-500;
 
   .onex-tag__close {
@@ -74,41 +77,6 @@
   }
 
   &:hover {
-    background-color: rgba(141, 202, 249, 1); //$secondary-200;
-    //
-    //& .onex-tag__img svg path {
-    //  fill: $black;
-    //}
-  }
-
-  //&:hover .onex-tag__close__icon {
-  //  fill: black;
-  //}
-}
-
-.onex-tag--link {
-  .onex-tag__close__icon {
-    fill: $primary;
-  }
-
-  .onex-tag__img svg path {
-    fill: $primary;
-  }
-
-  &:hover {
-    background-color: $secondary-200;
-    color: $primary;
-
-    & .onex-tag__img svg path {
-      fill: $primary;
-    }
-
-    .onex-tag__close__icon {
-      fill: $primary;
-    }
-  }
-
-  &:hover a {
-    text-decoration: underline;
+    background-color: rgba(141, 202, 249, 1);
   }
 }

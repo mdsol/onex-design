@@ -830,7 +830,7 @@ export const config = {
         name: 'Tag',
         componentName: 'Tag',
         styledComponentName: 'Tag',
-        additionalComponents: [],
+        additionalComponents: ['Avatar'],
         variants: [
           {
             className: 'text',
@@ -862,7 +862,112 @@ export const config = {
             className: 'text',
             dataTestId: 'text',
             children: 'Tag label',
-            image: <CheckCircle />,
+            image: (
+              <Avatar
+                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                size="sm"
+                hoverDisabled
+              />
+            ),
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: (
+              <Avatar
+                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                size="sm"
+                hoverDisabled
+              />
+            ),
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: (
+              <Avatar
+                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                size="sm"
+                hoverDisabled
+              />
+            ),
+            isRemovable: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: (
+              <Avatar
+                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                size="sm"
+                hoverDisabled
+              />
+            ),
+            isRemovable: true,
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'sm',
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'sm',
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'md',
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'md',
+            disabled: true,
+          },
+          {
+            image: (
+              <Avatar
+                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                size="sm"
+                hoverDisabled
+              />
+            ),
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'sm',
+          },
+          {
+            image: (
+              <Avatar
+                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                size="sm"
+                hoverDisabled
+              />
+            ),
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'sm',
+            disabled: true,
           },
         ],
       },

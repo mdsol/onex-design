@@ -7,24 +7,28 @@ const Tag = ({
   image,
   isRemovable,
   className,
-  path,
   onSelect,
   onRemove,
   controlId,
   dataTestId,
   disabled,
+  size,
   children,
+  variant,
 }) => {
+  const isImg = typeof image === 'string';
   const [selected, setSelected] = useState(false);
-  const tagClassNames = classNames('onex-tag', {
+  const tagClassNames = classNames('onex-tag', `onex-tag--variant-${variant}`, {
     [className]: className,
-    'onex-tag--link': path,
-    'onex-tag--selected': selected,
+    'onex-tag--size-sm': variant === 'input' && size === 'sm' && !image,
+    'onex-tag--selected': variant === 'selection' && selected,
   });
 
   const handleSelect = () => {
-    setSelected((prev) => !prev);
-    onSelect?.({ [controlId]: !selected });
+    if (variant === 'selection') {
+      setSelected((prev) => !prev);
+      onSelect?.({ [controlId]: !selected });
+    }
   };
 
   const handleRemove = (e) => {
@@ -40,10 +44,9 @@ const Tag = ({
       data-test-id={dataTestId}
       disabled={disabled}
     >
-      {image && <div className="onex-tag__img">{image}</div>}
-      {children && !path && <span className="onex-tag__text">{children}</span>}
-      {children && path && <a href={path}>{children}</a>}
-      {isRemovable && (
+      {image && <div className="onex-tag__img">{isImg ? <img src={image} alt="" /> : image}</div>}
+      {children && <span className="onex-tag__text">{children}</span>}
+      {(isRemovable || variant === 'input') && (
         <button type="button" className="onex-tag__close" onClick={handleRemove}>
           <CloseIcon className="onex-tag__close__icon" />
         </button>
@@ -53,16 +56,17 @@ const Tag = ({
 };
 
 Tag.propTypes = {
-  image: PropTypes.node,
+  image: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   isRemovable: PropTypes.bool,
   className: PropTypes.string,
-  path: PropTypes.string,
   onSelect: PropTypes.func,
   onRemove: PropTypes.func,
   controlId: PropTypes.string,
   dataTestId: PropTypes.string,
   disabled: PropTypes.bool,
+  size: PropTypes.oneOf(['sm', 'md']),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  variant: PropTypes.oneOf(['selection', 'input']),
 };
 
 Tag.defaultProps = {
@@ -70,12 +74,13 @@ Tag.defaultProps = {
   isRemovable: false,
   className: undefined,
   controlId: '',
-  path: undefined,
   onSelect: undefined,
   onRemove: undefined,
   dataTestId: undefined,
   disabled: false,
+  size: 'md',
   children: undefined,
+  variant: 'selection',
 };
 
 export default Tag;
