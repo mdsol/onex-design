@@ -1,0 +1,43 @@
+.onex-dataGrid__tableControls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(26, 28, 30, 0.1);
+    &__title {
+        display: flex;
+        flex-direction: row;
+        &__badge {
+            margin-left: 0.375rem;
+        }
+    }
+    &__controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        input {
+            height: 2rem;
+        }
+
+        button {
+             height: 2rem;
+        }
+        &__divider {
+            height: 1.5rem;
+            width: 0.063rem;
+            background-color: rgba(26, 28, 30, 0.1);
+        }
+        &__filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid rgba(26, 28, 30, 0.1);
+            border-radius: 0.5rem;
+        }
+    }
+
+    &__controls > * {
+        margin-left: 0.5rem;
+    }
+}

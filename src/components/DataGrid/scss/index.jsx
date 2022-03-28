@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RowsSection from './components/RowsSection';
+import TableControls from './components/TableControls';
 import makeData from '../makeData';
 
 const DataGrid = ({ className }) => {
@@ -65,7 +66,7 @@ const DataGrid = ({ className }) => {
     [],
   );
 
-  const data = React.useMemo(() => makeData(10), []);
+  const data = React.useMemo(() => [makeData(10), makeData(10)], []);
 
   const dataGridClasses = classNames('onex-dataGrid', {
     [className]: className,
@@ -73,8 +74,9 @@ const DataGrid = ({ className }) => {
 
   return (
     <div className={dataGridClasses}>
-      {sections.map((section) => (
-        <RowsSection columns={section} data={data} />
+      <TableControls />
+      {sections.map((section, index) => (
+        <RowsSection columns={section} data={data[index]} />
       ))}
     </div>
   );
