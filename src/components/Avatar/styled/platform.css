@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Noto Sans;
+  font-family: noto-sans, sans-serif;
   color: #b0b8bf;
   overflow: hidden;
 }
