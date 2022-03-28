@@ -28,6 +28,10 @@
   &--size-sm {
     height: $onex-tag-height-sm;
     padding: 0.125rem 0.25rem 0.125rem 0.5rem;
+
+    .onex-tag__img {
+      display: none;
+    }
   }
 
   &:disabled {
@@ -41,10 +45,14 @@
     align-items: center;
     justify-content: center;
     margin-left: 0.25rem;
-    padding: 0.281rem;
+    padding: 0; //0.281rem;
     border: 0;
     background-color: initial;
     color: $secondary-400;
+
+    & > svg {
+      font-size: 1.25rem;
+    }
 
     &__icon {
       height: $onex-tag-close-icon-size;

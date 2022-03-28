@@ -862,51 +862,59 @@ export const config = {
             className: 'text',
             dataTestId: 'text',
             children: 'Tag label',
-            image: (
-              <Avatar
-                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="sm"
-                hoverDisabled
-              />
-            ),
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
           },
           {
             className: 'text',
             dataTestId: 'text',
             children: 'Tag label',
-            image: (
-              <Avatar
-                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="sm"
-                hoverDisabled
-              />
-            ),
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
             disabled: true,
           },
           {
             className: 'text',
             dataTestId: 'text',
             children: 'Tag label',
-            image: (
-              <Avatar
-                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="sm"
-                hoverDisabled
-              />
-            ),
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
             isRemovable: true,
           },
           {
             className: 'text',
             dataTestId: 'text',
             children: 'Tag label',
-            image: (
-              <Avatar
-                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="sm"
-                hoverDisabled
-              />
-            ),
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
             isRemovable: true,
             disabled: true,
           },
@@ -941,32 +949,36 @@ export const config = {
             disabled: true,
           },
           {
-            image: (
-              <Avatar
-                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="sm"
-                hoverDisabled
-              />
-            ),
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
             className: 'text',
             dataTestId: 'text',
             children: 'Tag input label',
             variant: 'input',
-            size: 'sm',
+            size: 'md',
           },
           {
-            image: (
-              <Avatar
-                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="sm"
-                hoverDisabled
-              />
-            ),
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
             className: 'text',
             dataTestId: 'text',
             children: 'Tag input label',
             variant: 'input',
-            size: 'sm',
+            size: 'md',
             disabled: true,
           },
         ],

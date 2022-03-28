@@ -27,9 +27,15 @@ export default {
       description: 'Disables the component, preventing mouse events',
       control: 'boolean',
     },
+    toggle: {
+      description: `Toggle button content. Contains 2 items:
+                \n1.avatar - add Avatar to toggle button;
+                \n1.badge - add Badge to toggle button;`,
+    },
     image: {
-      description:
-        'Leading icon, can be svg, Avatar or just string with URL, in this case render img',
+      description: `Leading icon. Contains 2 items:
+                      \n1.icon - can be Avatar component or svg icon;
+                      \n2.src - provided string with URL, in this case render img ;`,
       options: Object.keys(icons),
       mapping: icons,
       control: {
@@ -116,13 +122,15 @@ SelectionLeadingIcon.args = {
   dataTestId: 'selection-leading-icon-tag-id',
   variant: 'selection',
   children: 'Tag label',
-  image: (
-    <Avatar
-      src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-      size="sm"
-      hoverDisabled
-    />
-  ),
+  image: {
+    icon: (
+      <Avatar
+        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+        size="sm"
+        hoverDisabled
+      />
+    ),
+  },
 };
 
 export const SelectionLeadingIconRemovable = Template.bind({});
@@ -132,13 +140,15 @@ SelectionLeadingIconRemovable.args = {
   dataTestId: 'selection-leading-icon-tag-id',
   variant: 'selection',
   children: 'Tag label',
-  image: (
-    <Avatar
-      src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-      size="sm"
-      hoverDisabled
-    />
-  ),
+  image: {
+    icon: (
+      <Avatar
+        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+        size="sm"
+        hoverDisabled
+      />
+    ),
+  },
   isRemovable: true,
 };
 
@@ -151,13 +161,15 @@ SelectionLeadingIconRemovableDisabled.args = {
   children: 'Tag label',
   isRemovable: true,
   disabled: true,
-  image: (
-    <Avatar
-      src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-      size="sm"
-      hoverDisabled
-    />
-  ),
+  image: {
+    icon: (
+      <Avatar
+        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+        size="sm"
+        hoverDisabled
+      />
+    ),
+  },
 };
 
 export const InputSmall = Template.bind({});
@@ -209,13 +221,15 @@ InputLeadingIcon.args = {
   dataTestId: 'input-leading-icon-tag-id',
   variant: 'input',
   children: 'Tag label',
-  image: (
-    <Avatar
-      src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-      size="sm"
-      hoverDisabled
-    />
-  ),
+  image: {
+    icon: (
+      <Avatar
+        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+        size="sm"
+        hoverDisabled
+      />
+    ),
+  },
 };
 
 export const InputLeadingIconDisabled = Template.bind({});
@@ -225,12 +239,14 @@ InputLeadingIconDisabled.args = {
   dataTestId: 'input-leading-icon-disabled-tag-id',
   variant: 'input',
   children: 'Tag label',
-  image: (
-    <Avatar
-      src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-      size="sm"
-      hoverDisabled
-    />
-  ),
+  image: {
+    icon: (
+      <Avatar
+        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+        size="sm"
+        hoverDisabled
+      />
+    ),
+  },
   disabled: true,
 };

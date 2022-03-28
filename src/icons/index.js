@@ -16,7 +16,6 @@ import ChevronDownIcon from './ChevronDownIcon';
 import NextArrowIcon from './NextArrowIcon';
 import SettingsRoundIcon from './SettingsRoundIcon';
 import MoreVerticalIcon from './MoreVerticalIcon';
-import CloseIcon from './CloseIcon';
 
 export {
   CheckIcon,
@@ -37,5 +36,4 @@ export {
   NextArrowIcon,
   SettingsRoundIcon,
   MoreVerticalIcon,
-  CloseIcon,
 };

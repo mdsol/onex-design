@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { CloseIcon } from '../../../icons';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Tag = ({
   image,
@@ -16,11 +16,10 @@ const Tag = ({
   children,
   variant,
 }) => {
-  const isImg = typeof image === 'string';
   const [selected, setSelected] = useState(false);
   const tagClassNames = classNames('onex-tag', `onex-tag--variant-${variant}`, {
     [className]: className,
-    'onex-tag--size-sm': variant === 'input' && size === 'sm' && !image,
+    'onex-tag--size-sm': variant === 'input' && size === 'sm',
     'onex-tag--selected': variant === 'selection' && selected,
   });
 
@@ -44,7 +43,12 @@ const Tag = ({
       data-test-id={dataTestId}
       disabled={disabled}
     >
-      {image && <div className="onex-tag__img">{isImg ? <img src={image} alt="" /> : image}</div>}
+      {image.icon && <div className="onex-tag__img">{image.icon}</div>}
+      {!image.icon && image.src && (
+        <div className="onex-tag__img">
+          <img src={image.src} alt="" />
+        </div>
+      )}
       {children && <span className="onex-tag__text">{children}</span>}
       {(isRemovable || variant === 'input') && (
         <button type="button" className="onex-tag__close" onClick={handleRemove}>
@@ -56,7 +60,10 @@ const Tag = ({
 };
 
 Tag.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  image: PropTypes.shape({
+    icon: PropTypes.node,
+    src: PropTypes.string,
+  }),
   isRemovable: PropTypes.bool,
   className: PropTypes.string,
   onSelect: PropTypes.func,
@@ -70,7 +77,10 @@ Tag.propTypes = {
 };
 
 Tag.defaultProps = {
-  image: undefined,
+  image: {
+    icon: undefined,
+    src: undefined,
+  },
   isRemovable: false,
   className: undefined,
   controlId: '',

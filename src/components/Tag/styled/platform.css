@@ -26,6 +26,9 @@
   height: 1.5rem;
   padding: 0.125rem 0.25rem 0.125rem 0.5rem;
 }
+.onex-tag--size-sm .onex-tag__img {
+  display: none;
+}
 .onex-tag:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -36,10 +39,13 @@
   align-items: center;
   justify-content: center;
   margin-left: 0.25rem;
-  padding: 0.281rem;
+  padding: 0;
   border: 0;
   background-color: initial;
   color: #676e7a;
+}
+.onex-tag__close > svg {
+  font-size: 1.25rem;
 }
 .onex-tag__close__icon {
   height: 0.688rem;
@@ -68,24 +74,4 @@
 }
 .onex-tag--selected:hover {
   background-color: #8dcaf9;
-}
-
-.onex-tag--link .onex-tag__close__icon {
-  fill: #0070c0;
-}
-.onex-tag--link .onex-tag__img svg path {
-  fill: #0070c0;
-}
-.onex-tag--link:hover {
-  background-color: #e7eef5;
-  color: #0070c0;
-}
-.onex-tag--link:hover .onex-tag__img svg path {
-  fill: #0070c0;
-}
-.onex-tag--link:hover .onex-tag__close__icon {
-  fill: #0070c0;
-}
-.onex-tag--link:hover a {
-  text-decoration: underline;
 }
