@@ -1,40 +1,47 @@
 @import 'mixins';
 
 .onex-text-field {
+    min-width: $tf-min-width;
     max-width: $tf-max-width;
 
     .form-label {
-        line-height: $fl-line-height;
+      color: $secondary-900;
+      font-size: $font-size-label;
+      line-height: $line-height-label;
+      font-weight: 400;
+      padding: 0 4px;
     }
 
     &__input {
-        position: relative;
+      position: relative;
     }
 
     /* input icon  */
     &__icon {
-        display: inline-flex;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: $tf-icon-color;
+      display: inline-flex;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $secondary-900;
     }
 
     &--lg &__icon {
-        @include icon-size($tf-icon-size-lg);
+        @include icon-size($icon-size-xlg);
 
         left: $tf-padding-x-lg;
+
+        svg path {
+          fill: $secondary-900;
+        }
     }
 
     &--sm &__icon {
-        @include icon-size($tf-icon-size-sm);
-
         left: $tf-padding-x-sm;
     }
 
-    &--disabled &__icon {
-        color: $tf-icon-disabled-color;
+    &--disabled {
+      opacity: 0.4;
     }
 
     &--has-icon {
@@ -49,7 +56,7 @@
 
     /* clear btn */
     &__clear-btn {
-        @include icon-size($tf-icon-size-sm);
+        @include icon-size($icon-size-xlg);
 
         position: absolute;
         display: inline-flex;
@@ -61,13 +68,12 @@
         border: none;
         padding: 0;
 
-        &:focus {
-            outline: none;
+        svg path {
+          fill: $tf-icon-color;
         }
 
-        &:disabled,
-        &.disabled {
-            color: $tf-icon-disabled-color;
+        &:focus {
+          outline: none;
         }
     }
 
@@ -89,16 +95,15 @@
         }
     }
 
-    /* error text */
-    &__error {
+    /* help text */
+    &__help.form-text {
         min-width: 1rem;
-        min-height: $fl-line-height;
+        min-height: $line-height-sm;
+        padding: 0 4px;
         display: inline-block;
-        line-height: $fl-line-height;
-        padding-left: 1.25rem;
-        background-image: escape-svg($em-background-image);
-        background-repeat: no-repeat;
-        background-position: left 0.25rem center;
+        color: $secondary-400;
+        font-size: $font-size-sm;
+        line-height: $line-height-sm;
     }
 
     /* form control */
@@ -133,18 +138,23 @@
             }
         }
 
+        &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
+          border-color: $tf-border-hover-color;
+
+        }
+
         &:disabled,
         &.disabled,
         &:disabled.is-invalid,
         &.disabled.is-invalid,
         &:disabled:invalid,
         &.disabled:invalid {
-            border-color: $tf-disabled-border-color;
             background-color: transparent;
+        }
 
-            &::placeholder {
-                color: $tf-disabled-placeholder-text-color;
-            }
+        &:focus {
+          border-color: $tf-focus-text-color;
+          box-shadow: $tf-focus-text-color 0px 0px 1px, $tf-focus-text-color 0px 0px 0px 1px;
         }
 
         &:focus ~ .onex-text-field__icon,
