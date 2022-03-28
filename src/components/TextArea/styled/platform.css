@@ -3,7 +3,7 @@
 /* dropdown menu */
 /* bootstrap variables */
 .onex-text-area {
-  font-family: Noto Sans;
+  font-family: noto-sans, sans-serif;
   max-width: 31.25rem;
 }
 .onex-text-area .form-control {
