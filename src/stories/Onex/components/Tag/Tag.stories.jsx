@@ -27,11 +27,6 @@ export default {
       description: 'Disables the component, preventing mouse events',
       control: 'boolean',
     },
-    toggle: {
-      description: `Toggle button content. Contains 2 items:
-                \n1.avatar - add Avatar to toggle button;
-                \n1.badge - add Badge to toggle button;`,
-    },
     image: {
       description: `Leading icon. Contains 2 items:
                       \n1.icon - can be Avatar component or svg icon;
