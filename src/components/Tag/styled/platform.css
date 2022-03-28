@@ -3,99 +3,75 @@
 /* dropdown menu */
 .onex-tag {
   box-sizing: border-box;
-  padding: 0.25rem 0.375rem 0.25rem 0.25rem;
+  padding: 0.375rem 0.5rem;
   display: flex;
   align-items: center;
-  background-color: #e7eef5;
+  background-color: rgba(103, 110, 122, 0.1);
   border: none;
+  height: 2rem;
+  border-radius: 0.25rem;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #1a1c1e;
 }
-.onex-tag:hover {
-  background-color: #002855;
-  color: white;
+.onex-tag--variant-selection:hover {
+  background-color: #dde0e5;
 }
-.onex-tag--lg {
-  height: 1.75rem;
+.onex-tag--variant-input {
+  cursor: auto !important;
 }
-.onex-tag--lg .onex-tag__close {
-  width: 0.875rem;
-  height: 0.875rem;
-}
-.onex-tag--sm {
+.onex-tag--size-sm {
   height: 1.5rem;
+  padding: 0.125rem 0.25rem 0.125rem 0.5rem;
 }
-.onex-tag--sm .onex-tag__close {
-  width: 0.75rem;
-  height: 0.75rem;
+.onex-tag--size-sm .onex-tag__img {
+  display: none;
 }
-.onex-tag--default {
-  border-radius: 0.375rem;
-}
-.onex-tag--rounded {
-  border-radius: 1.75rem;
+.onex-tag:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 .onex-tag__close {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 0.25rem;
-  border: 0;
   padding: 0;
-  background-color: inherit;
+  border: 0;
+  background-color: initial;
+  color: #676e7a;
+}
+.onex-tag__close > svg {
+  font-size: 1.25rem;
 }
 .onex-tag__close__icon {
-  height: 0.5rem;
-  width: 0.5rem;
+  height: 0.688rem;
+  width: 0.688rem;
 }
 .onex-tag__img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
   border-radius: 100%;
   overflow: hidden;
 }
-.onex-tag__img svg path {
-  fill: #002855;
-}
-.onex-tag:hover .onex-tag__close__icon {
-  fill: white;
-}
-.onex-tag:hover .onex-tag__img svg path {
-  fill: white;
+.onex-tag__img > img {
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .onex-tag--selected {
-  border: 1px solid #0070c0;
+  background-color: #c6e3fc;
+}
+.onex-tag--selected .onex-tag__close {
+  color: #005fab;
 }
 .onex-tag--selected:hover {
-  background-color: #e7eef5;
-  color: black;
-}
-.onex-tag--selected:hover .onex-tag__img svg path {
-  fill: black;
-}
-.onex-tag--selected:hover .onex-tag__close__icon {
-  fill: black;
-}
-
-.onex-tag--link .onex-tag__close__icon {
-  fill: #0070c0;
-}
-.onex-tag--link .onex-tag__img svg path {
-  fill: #0070c0;
-}
-.onex-tag--link:hover {
-  background-color: #e7eef5;
-  color: #0070c0;
-}
-.onex-tag--link:hover .onex-tag__img svg path {
-  fill: #0070c0;
-}
-.onex-tag--link:hover .onex-tag__close__icon {
-  fill: #0070c0;
-}
-.onex-tag--link:hover a {
-  text-decoration: underline;
+  background-color: #8dcaf9;
 }

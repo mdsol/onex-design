@@ -3,7 +3,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import InfoIcon from '@mui/icons-material/Info';
 import WarningIcon from '@mui/icons-material/Warning';
 import ErrorIcon from '@mui/icons-material/Error';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircle from '@mui/icons-material/CheckCircle';
 import FlagIcon from '@mui/icons-material/Flag';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { Avatar, Badge, ToggleButton } from '../components';
@@ -232,7 +232,7 @@ export const config = {
           },
           {
             type: 'success',
-            children: <CheckCircleIcon />,
+            children: <CheckCircle />,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
@@ -830,23 +830,156 @@ export const config = {
         name: 'Tag',
         componentName: 'Tag',
         styledComponentName: 'Tag',
-        additionalComponents: [],
+        additionalComponents: ['Avatar'],
         variants: [
           {
             className: 'text',
             dataTestId: 'text',
-            size: 'sm',
-            variant: 'default',
-            isRemovable: true,
-            children: 'Small',
+            children: 'Tag label',
+            isRemovable: false,
           },
           {
             className: 'text',
             dataTestId: 'text',
-            size: 'lg',
-            variant: 'default',
+            children: 'Tag label',
+            isRemovable: false,
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
             isRemovable: true,
-            children: 'Large',
+            children: 'Tag label',
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            isRemovable: true,
+            children: 'Tag label',
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
+            isRemovable: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag label',
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
+            isRemovable: true,
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'sm',
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'sm',
+            disabled: true,
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'md',
+          },
+          {
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'md',
+            disabled: true,
+          },
+          {
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'md',
+          },
+          {
+            image: {
+              icon: (
+                <Avatar
+                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                  size="sm"
+                  hoverDisabled
+                />
+              ),
+            },
+            className: 'text',
+            dataTestId: 'text',
+            children: 'Tag input label',
+            variant: 'input',
+            size: 'md',
+            disabled: true,
           },
         ],
       },
