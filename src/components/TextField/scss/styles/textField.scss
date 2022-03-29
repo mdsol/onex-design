@@ -129,8 +129,9 @@
         }
 
         &:invalid,
-        &.is-invalid {
-            border-color: $tf-invalid-border-color;
+        &.is-invalid,
+        &[required] {
+            border-color: $tf-invalid-border-color!important;
             background-image: none;
 
             &:focus {
