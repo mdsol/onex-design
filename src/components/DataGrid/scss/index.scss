@@ -3,4 +3,9 @@
 .onex-dataGrid {
     padding: 1rem;
     width: 100%;
+    &__pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 14px;
+    }
 }
