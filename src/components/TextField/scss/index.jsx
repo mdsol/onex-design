@@ -55,7 +55,7 @@ const TextField = React.forwardRef((props, ref) => {
 
   return (
     <Form.Group className={inputClassNames} data-test-id={dataTestId}>
-      {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
+      {label && <Form.Label>{label}</Form.Label>}
       <div className="onex-text-field__input">
         <Form.Control
           ref={ref}
@@ -87,7 +87,7 @@ const TextField = React.forwardRef((props, ref) => {
         )}
       </div>
       {(helpText || (isInvalid && !disabled)) && (
-        <Form.Text className="onex-text-field__help">{errorMessage}</Form.Text>
+        <Form.Text className="onex-text-field__help">{helpText || errorMessage}</Form.Text>
       )}
     </Form.Group>
   );

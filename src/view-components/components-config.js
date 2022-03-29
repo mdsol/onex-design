@@ -6,6 +6,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import CheckCircle from '@mui/icons-material/CheckCircle';
 import FlagIcon from '@mui/icons-material/Flag';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import FlutterDashIcon from '@mui/icons-material/FlutterDash';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
@@ -1036,11 +1037,41 @@ export const config = {
             label: 'Label',
             size: 'sm',
             placeholder: 'Small',
+            helpText: 'Help text',
+          },
+          {
+            size: 'sm',
+            label: 'Error',
+            placeholder: 'Placeholder',
+            errorMessage: 'Error message',
+            isInvalid: true,
+          },
+          {
+            size: 'sm',
+            placeholder: 'Placeholder',
+            label: 'Label',
+            showClearBtn: true,
+            value: 'Some text value',
+          },
+          {
+            size: 'sm',
+            placeholder: 'Placeholder',
+            label: 'Label',
+            showClearBtn: true,
+            showDefaultIcon: true,
+          },
+          {
+            size: 'sm',
+            placeholder: 'Placeholder',
+            label: 'Label',
+            showClearBtn: true,
+            icon: <FlutterDashIcon />,
           },
           {
             label: 'Label',
             size: 'lg',
             placeholder: 'Large',
+            helpText: 'Help text',
           },
           {
             size: 'lg',
@@ -1058,22 +1089,9 @@ export const config = {
           {
             size: 'lg',
             placeholder: 'Placeholder',
-            readOnly: true,
-            label: 'Label',
-            value: 'Read only',
-          },
-          {
-            size: 'lg',
-            placeholder: 'Placeholder',
-            required: true,
-            label: 'Required',
-          },
-          {
-            size: 'lg',
-            placeholder: 'Placeholder',
             label: 'Label',
             showClearBtn: true,
-            value: 'Placeholder',
+            value: 'Some text value',
           },
           {
             size: 'lg',
@@ -1087,7 +1105,7 @@ export const config = {
             placeholder: 'Placeholder',
             label: 'Label',
             showClearBtn: true,
-            icon: <PenFill />,
+            icon: <FlutterDashIcon />,
           },
         ],
       },

@@ -156,10 +156,5 @@
           border-color: $tf-focus-text-color;
           box-shadow: $tf-focus-text-color 0px 0px 1px, $tf-focus-text-color 0px 0px 0px 1px;
         }
-
-        &:focus ~ .onex-text-field__icon,
-        &:focus ~ .onex-text-field__clear-btn {
-            color: $tf-focus-text-color;
-        }
     }
 }
