@@ -1,9 +1,10 @@
-import { BugFill, Search } from 'react-bootstrap-icons';
+import FlutterDashIcon from '@mui/icons-material/FlutterDash';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { TextField } from '../../../../components';
 
 import TextFieldMDX from './Textfield.stories.mdx';
 
-const icons = { Bug: <BugFill />, Search: <Search /> };
+const icons = { Bird: <FlutterDashIcon />, Search: <SearchOutlinedIcon /> };
 
 export default {
   title: 'Onex/Forms/TextField',
@@ -28,7 +29,8 @@ export const Small = Template.bind({});
 Small.args = {
   label: 'Label',
   size: 'sm',
-  placeholder: 'Placeholder',
+  placeholder: 'Small',
+  helpText: 'Help text',
 };
 
 export const Large = Template.bind({});
@@ -36,7 +38,8 @@ export const Large = Template.bind({});
 Large.args = {
   label: 'Label',
   size: 'lg',
-  placeholder: 'Placeholder',
+  placeholder: 'Large',
+  helpText: 'Help text',
 };
 
 export const ErrorMessage = Template.bind({});
@@ -53,19 +56,12 @@ export const Disabled = Template.bind({});
 
 Disabled.args = {
   size: 'lg',
-  placeholder: 'Placeholder',
+  placeholder: 'Disabled',
   disabled: true,
   label: 'Label',
-};
-
-export const ReadOnly = Template.bind({});
-
-ReadOnly.args = {
-  size: 'lg',
-  placeholder: 'Placeholder',
-  readOnly: true,
-  label: 'Label',
-  value: 'Some text',
+  helpText: 'Help text',
+  showClearBtn: true,
+  showDefaultIcon: true,
 };
 
 export const Required = Template.bind({});
@@ -80,21 +76,33 @@ Required.args = {
 export const ClearButton = Template.bind({});
 
 ClearButton.args = {
-  size: 'lg',
+  size: 'sm',
   placeholder: 'Placeholder',
   label: 'Label',
   showClearBtn: true,
-  value: 'Some text',
+  value: 'Some text value',
 };
 
-export const DefaultIcon = Template.bind({});
+export const SearchFieldSmall = Template.bind({});
 
-DefaultIcon.args = {
+SearchFieldSmall.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Label',
+  showClearBtn: true,
+  showDefaultIcon: true,
+  helpText: 'Help text',
+};
+
+export const SearchFieldLarge = Template.bind({});
+
+SearchFieldLarge.args = {
   size: 'lg',
   placeholder: 'Placeholder',
   label: 'Label',
   showClearBtn: true,
   showDefaultIcon: true,
+  helpText: 'Help text',
 };
 
 export const Icon = Template.bind({});
@@ -122,5 +130,5 @@ Icon.args = {
   placeholder: 'Placeholder',
   label: 'Label',
   showClearBtn: true,
-  icon: <BugFill />,
+  icon: <FlutterDashIcon />,
 };

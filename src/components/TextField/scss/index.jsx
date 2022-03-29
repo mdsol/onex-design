@@ -1,9 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import CircleCloseIcon from '../../../icons/CircleCloseIcon';
-import SearchIcon from '../../../icons/SearchIcon';
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 const TextField = React.forwardRef((props, ref) => {
   const {
@@ -21,6 +21,7 @@ const TextField = React.forwardRef((props, ref) => {
     icon,
     showClearBtn,
     showDefaultIcon,
+    helpText,
     dataTestId,
   } = props;
 
@@ -54,7 +55,7 @@ const TextField = React.forwardRef((props, ref) => {
 
   return (
     <Form.Group className={inputClassNames} data-test-id={dataTestId}>
-      {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
+      {label && <Form.Label>{label}</Form.Label>}
       <div className="onex-text-field__input">
         <Form.Control
           ref={ref}
@@ -71,7 +72,7 @@ const TextField = React.forwardRef((props, ref) => {
         {(icon || showDefaultIcon) && (
           <div className="onex-text-field__icon">
             {icon && icon}
-            {showDefaultIcon && !icon && <SearchIcon />}
+            {showDefaultIcon && !icon && <SearchOutlinedIcon />}
           </div>
         )}
         {showClearBtn && (
@@ -81,12 +82,12 @@ const TextField = React.forwardRef((props, ref) => {
             onClick={handleClear}
             disabled={disabled}
           >
-            <CircleCloseIcon />
+            <HighlightOffOutlinedIcon />
           </button>
         )}
       </div>
-      {isInvalid && !disabled && (
-        <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
+      {(helpText || (isInvalid && !disabled)) && (
+        <Form.Text className="onex-text-field__help">{helpText || errorMessage}</Form.Text>
       )}
     </Form.Group>
   );
@@ -107,6 +108,7 @@ TextField.propTypes = {
   onChange: PropTypes.func,
   showClearBtn: PropTypes.bool,
   showDefaultIcon: PropTypes.bool,
+  helpText: PropTypes.string,
   dataTestId: PropTypes.string,
 };
 
@@ -124,6 +126,7 @@ TextField.defaultProps = {
   showClearBtn: false,
   showDefaultIcon: false,
   icon: undefined,
+  helpText: undefined,
   onChange: undefined,
   dataTestId: undefined,
 };
