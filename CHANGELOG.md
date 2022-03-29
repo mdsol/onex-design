@@ -1,4 +1,10 @@
 # Changelog
+## 0.1.8
+
+Switched font url to use Typekit, Tooltip designs updated, data grid css and pagination added.
+## 0.1.7
+
+Swapped Robot font url to different location in order to troubleshoot Webpack 3 issue.
 
 ## 0.1.6
 
