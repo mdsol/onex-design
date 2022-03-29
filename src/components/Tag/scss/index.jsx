@@ -1,35 +1,33 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import XIcon from '../../../icons/XIcon';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Tag = ({
-  icon,
-  variant,
+  image,
   isRemovable,
-  size,
   className,
-  path,
   onSelect,
   onRemove,
   controlId,
   dataTestId,
+  disabled,
+  size,
   children,
+  variant,
 }) => {
   const [selected, setSelected] = useState(false);
-  const tagClassNames = classNames('onex-tag', {
+  const tagClassNames = classNames('onex-tag', `onex-tag--variant-${variant}`, {
     [className]: className,
-    'onex-tag--lg': size === 'lg',
-    'onex-tag--sm': size === 'sm',
-    'onex-tag--rounded': variant === 'rounded',
-    'onex-tag--default': !variant || variant === 'default',
-    'onex-tag--link': path,
-    'onex-tag--selected': selected,
+    'onex-tag--size-sm': variant === 'input' && size === 'sm',
+    'onex-tag--selected': variant === 'selection' && selected,
   });
 
   const handleSelect = () => {
-    setSelected((prev) => !prev);
-    onSelect?.({ [controlId]: !selected });
+    if (variant === 'selection') {
+      setSelected((prev) => !prev);
+      onSelect?.({ [controlId]: !selected });
+    }
   };
 
   const handleRemove = (e) => {
@@ -43,13 +41,18 @@ const Tag = ({
       className={tagClassNames}
       onClick={handleSelect}
       data-test-id={dataTestId}
+      disabled={disabled}
     >
-      {icon && <div className="onex-tag__img">{icon}</div>}
-      {children && !path && <span className="onex-tag__text">{children}</span>}
-      {children && path && <a href={path}>{children}</a>}
-      {isRemovable && (
+      {image.icon && <div className="onex-tag__img">{image.icon}</div>}
+      {!image.icon && image.src && (
+        <div className="onex-tag__img">
+          <img src={image.src} alt="" />
+        </div>
+      )}
+      {children && <span className="onex-tag__text">{children}</span>}
+      {(isRemovable || variant === 'input') && (
         <button type="button" className="onex-tag__close" onClick={handleRemove}>
-          <XIcon className="onex-tag__close__icon" />
+          <CloseIcon className="onex-tag__close__icon" />
         </button>
       )}
     </button>
@@ -57,31 +60,37 @@ const Tag = ({
 };
 
 Tag.propTypes = {
-  icon: PropTypes.node,
-  variant: PropTypes.oneOf(['default', 'rounded']),
+  image: PropTypes.shape({
+    icon: PropTypes.node,
+    src: PropTypes.string,
+  }),
   isRemovable: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'lg']),
   className: PropTypes.string,
-  path: PropTypes.string,
   onSelect: PropTypes.func,
   onRemove: PropTypes.func,
   controlId: PropTypes.string,
   dataTestId: PropTypes.string,
+  disabled: PropTypes.bool,
+  size: PropTypes.oneOf(['sm', 'md']),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  variant: PropTypes.oneOf(['selection', 'input']),
 };
 
 Tag.defaultProps = {
-  icon: undefined,
-  variant: 'default',
+  image: {
+    icon: undefined,
+    src: undefined,
+  },
   isRemovable: false,
-  size: 'sm',
   className: undefined,
   controlId: '',
-  path: undefined,
   onSelect: undefined,
   onRemove: undefined,
   dataTestId: undefined,
+  disabled: false,
+  size: 'md',
   children: undefined,
+  variant: 'selection',
 };
 
 export default Tag;

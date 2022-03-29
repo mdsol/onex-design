@@ -270,7 +270,7 @@
 
 .onex-table {
   margin-bottom: 0;
-  font-family: Noto Sans;
+  font-family: noto-sans, sans-serif;
 }
 .onex-table__cell:first-child {
   border-radius: 8px 0 0 8px;

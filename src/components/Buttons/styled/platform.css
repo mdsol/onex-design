@@ -3,7 +3,7 @@
 /* dropdown menu */
 .btn {
   display: inline-block;
-  font-family: Noto Sans;
+  font-family: noto-sans, sans-serif;
   font-weight: 600;
   line-height: 1.25rem;
   color: #212529;

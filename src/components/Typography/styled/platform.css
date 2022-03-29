@@ -532,7 +532,7 @@ progress {
 
 .onex-typography {
   display: block;
-  font-family: Noto Sans;
+  font-family: noto-sans, sans-serif;
   font-style: normal;
   margin: 0;
   color: #1a1c1e;

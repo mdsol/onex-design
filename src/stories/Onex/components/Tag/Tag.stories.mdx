@@ -4,85 +4,68 @@ import { Tag } from '../../../../components';
 
 <Meta
     title="Onex/Components/Tag"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        size: {
-            description: 'The size of the component',
-        },
-        dataTestId: {
-            description: 'The id of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        isRemovable: {
-            description: 'If the props is true the Close icon will be shown',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        children: {
-            description: 'Tag text',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        icon: {
-            description: 'The icon before text',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        path: {
-            description: 'The path for the link',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-    }}
     component={Tag}
 />
 
 export const Template = (args) => <Tag {...args} />;
 
-## Tag
+# Tag
+Use tags to visually label UI objects for quick recognition and navigation.
+Tags can be used for various types of objects; including free form text, predefined text, rules, or contacts.
 
+## Variants
+Supports 2 variants: ```selection``` and ```input``` tag. Default value: ```selection```.
+
+### Selection tag
+This tag can be selected in order to provide or to change context.
+
+<Canvas>
+  <Story id='onex-components-tag--selection' />
+  <Story id='onex-components-tag--selection-removable' />
+  <Story id='onex-components-tag--selection-removable-disabled' />
+</Canvas>
+
+Leading icon can be represented as svg, Avatar or just string with URL, in this case render img.
+
+<Canvas>
+  <Story id='onex-components-tag--selection-leading-icon' />
+  <Story id='onex-components-tag--selection-leading-icon-removable' />
+  <Story id='onex-components-tag--selection-leading-icon-removable-disabled' />
+</Canvas>
+
+### Input tag
+Use in inputs only. This tag can't be selected, only added or removed.
+Supports 2 sizes: ```sm``` and ```md```.
+Size ```sm``` is supported just without leading icon.
+
+<Canvas>
+  <Story id='onex-components-tag--input-small' />
+  <Story id='onex-components-tag--input-small-disabled' />
+  <Story id='onex-components-tag--input-medium' />
+  <Story id='onex-components-tag--input-medium-disabled' />
+</Canvas>
+
+<Canvas>
+  <Story id='onex-components-tag--input-leading-icon' />
+  <Story id='onex-components-tag--input-leading-icon-disabled' />
+</Canvas>
+
+
+### Demo
 <Canvas>
     <Story
         name="Demo"
         args={{
-            size: 'lg',
-            className: 'inlineEditSelect',
-            dataTestId: 'inlineEditSelect',
-            children: 'Tag text',
+            children: 'Tag label',
+            className: 'selection-tag-demo-class',
+            dataTestId: 'selection-tag-demo-id',
+            disabled: false,
             isRemovable: true,
+            size: 'md',
+            variant: 'selection',
         }}>
         {Template.bind({})}
     </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
-
-### Tag sizes
-
-<Canvas>
-    <Story id='onex-components-tag--small' />
-    <Story id='onex-components-tag--large' />
-</Canvas>
