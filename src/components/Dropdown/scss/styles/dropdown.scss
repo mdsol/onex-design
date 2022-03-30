@@ -2,9 +2,18 @@
 
 .onex-dropdown {
     & > .btn {
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: 600;
         position: relative;
 
-        /* primary */
+        /* filled */
+      &.btn-filled {
+        background-color: $primary;
+
+
+      }
+
         &.btn-primary:disabled,
         &.btn-primary.disabled {
             @include bg-color($btn-primary-disabled-bg-color);
