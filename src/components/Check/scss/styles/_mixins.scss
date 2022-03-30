@@ -21,7 +21,7 @@
   -ms-user-select: none;
   user-select: none;
   pointer-events: painted;
-
+  font-family: $font-family;
 
   &.disabled,
   &.disabled > .form-check-label {

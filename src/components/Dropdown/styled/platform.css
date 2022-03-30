@@ -377,8 +377,8 @@
   line-height: 1.25rem;
 }
 .onex-dropdown > .btn.btn-sm {
-  min-width: 1.75rem;
-  height: 1.75rem;
+  min-width: 2rem;
+  height: 2rem;
   line-height: 1rem;
 }
 .onex-dropdown--text > .dropdown-toggle::after {
@@ -403,8 +403,8 @@
   height: 0.875rem;
 }
 .onex-dropdown--icon > .btn.btn-sm {
-  min-width: 1.75rem;
-  height: 1.75rem;
+  min-width: 2rem;
+  height: 2rem;
   line-height: 1rem;
   padding: 0.5rem;
 }

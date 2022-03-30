@@ -42,7 +42,54 @@
   text-align: center;
 }
 
+.onex-dataGrid__tableControls {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(26, 28, 30, 0.1);
+}
+.onex-dataGrid__tableControls__title {
+  display: flex;
+  flex-direction: row;
+}
+.onex-dataGrid__tableControls__title__badge {
+  margin-left: 0.375rem;
+}
+.onex-dataGrid__tableControls__controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.onex-dataGrid__tableControls__controls input {
+  height: 2rem;
+}
+.onex-dataGrid__tableControls__controls button {
+  height: 2rem;
+}
+.onex-dataGrid__tableControls__controls__divider {
+  height: 1.5rem;
+  width: 0.063rem;
+  background-color: rgba(26, 28, 30, 0.1);
+}
+.onex-dataGrid__tableControls__controls__filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(26, 28, 30, 0.1);
+  border-radius: 0.5rem;
+}
+.onex-dataGrid__tableControls__controls > * {
+  margin-left: 0.5rem;
+}
+
 .onex-dataGrid {
   padding: 1rem;
   width: 100%;
+}
+.onex-dataGrid__pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
 }

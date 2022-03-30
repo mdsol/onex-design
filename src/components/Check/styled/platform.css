@@ -17,6 +17,7 @@
   -ms-user-select: none;
   user-select: none;
   pointer-events: painted;
+  font-family: noto-sans, sans-serif;
 }
 .onex-check__wrapper .onex-check__custom {
   width: 1rem;

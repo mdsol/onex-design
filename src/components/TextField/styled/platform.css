@@ -5,6 +5,7 @@
 .onex-text-field {
   min-width: 16.625rem;
   max-width: 31.25rem;
+  font-family: noto-sans, sans-serif;
   /* input icon  */
   /* clear btn */
   /* help text */
@@ -106,11 +107,11 @@
 .onex-text-field .form-control.form-control-lg:invalid, .onex-text-field .form-control.form-control-lg.is-invalid {
   padding-right: 0.75rem;
 }
-.onex-text-field .form-control:invalid, .onex-text-field .form-control.is-invalid {
-  border-color: #d91522;
+.onex-text-field .form-control:invalid, .onex-text-field .form-control.is-invalid, .onex-text-field .form-control[required] {
+  border-color: #d91522 !important;
   background-image: none;
 }
-.onex-text-field .form-control:invalid:focus, .onex-text-field .form-control.is-invalid:focus {
+.onex-text-field .form-control:invalid:focus, .onex-text-field .form-control.is-invalid:focus, .onex-text-field .form-control[required]:focus {
   box-shadow: none;
 }
 .onex-text-field .form-control:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {

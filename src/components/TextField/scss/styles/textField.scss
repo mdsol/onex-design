@@ -3,6 +3,7 @@
 .onex-text-field {
     min-width: $tf-min-width;
     max-width: $tf-max-width;
+    font-family: $font-family;
 
     .form-label {
       color: $secondary-900;
