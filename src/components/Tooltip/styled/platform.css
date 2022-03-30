@@ -233,6 +233,7 @@
 }
 
 .onex-tooltip {
+  font-family: noto-sans, sans-serif;
   line-height: 1rem;
 }
 .onex-tooltip .tooltip-arrow {
