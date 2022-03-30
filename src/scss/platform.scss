@@ -40,6 +40,10 @@ $spacers: (
 @import '../../node_modules/bootstrap/scss/bootstrap-utilities';
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
 
+body {
+  font-family: $font-family;
+}
+
 @import './brand-colors';
 :root {
   @each $color, $value in $main-colors {
