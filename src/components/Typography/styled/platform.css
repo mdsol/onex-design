@@ -531,7 +531,6 @@ progress {
 }
 
 .onex-typography {
-  display: block;
   font-family: noto-sans, sans-serif;
   font-style: normal;
   margin: 0;
@@ -552,6 +551,9 @@ progress {
 .onex-typography.onex-typography--align-right {
   text-align: right;
 }
+.onex-typography--link {
+  cursor: pointer;
+}
 .onex-typography--link.onex-typography--body, .onex-typography--link.onex-typography--caption {
   font-weight: 600;
   text-decoration-line: underline;
@@ -560,6 +562,12 @@ progress {
 .onex-typography--link.onex-typography--label {
   font-weight: 600;
   color: #0070c0;
+}
+.onex-typography--link:hover {
+  color: #005fab;
+}
+.onex-typography--link:active {
+  color: #004786;
 }
 .onex-typography--margin-bottom {
   margin-bottom: 0.5rem;
