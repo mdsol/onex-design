@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 
 const CustomDropdown = React.forwardRef((props, ref) => {
   const {
@@ -23,19 +23,23 @@ const CustomDropdown = React.forwardRef((props, ref) => {
   });
 
   return (
-    <DropdownButton
-      as={as}
-      ref={ref}
-      className={buttonClassNames}
-      id={id}
-      title={title}
-      disabled={disabled}
-      variant={variant}
-      size={size}
-      align={align}
-      onSelect={onSelect}
-      data-test-id={dataTestId}
-    >
+    <Dropdown className={buttonClassNames} id={id} onSelect={onSelect} data-test-id={dataTestId}>
+      <Dropdown.Toogle as={as} disabled={disabled} variant={variant} size={size} align={align}>
+        {title}
+      </Dropdown.Toogle>
+      {/*     <DropdownButton */}
+      {/*       as={as} */}
+      {/*       ref={ref} */}
+      {/*       className={buttonClassNames} */}
+      {/*       id={id} */}
+      {/*       title={title} */}
+      {/*       disabled={disabled} */}
+      {/*       variant={variant} */}
+      {/*       size={size} */}
+      {/*       align={align} */}
+      {/*       onSelect={onSelect} */}
+      {/*       data-test-id={dataTestId} */}
+      {/*     > */}
       {!!items?.length &&
         items.map((item) => {
           const {
@@ -62,7 +66,7 @@ const CustomDropdown = React.forwardRef((props, ref) => {
             </>
           );
         })}
-    </DropdownButton>
+    </Dropdown>
   );
 });
 

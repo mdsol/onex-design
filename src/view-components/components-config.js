@@ -1271,73 +1271,73 @@ export const config = {
         styledComponentName: 'Typography',
         additionalComponents: [],
         variants: [
-          // {
-          //   children: 'Headline 1',
-          //   variant: 'h1',
-          // },
-          // {
-          //   children: 'Headline 2',
-          //   variant: 'h2',
-          // },
-          // {
-          //   children: 'Headline 3',
-          //   variant: 'h3',
-          // },
-          // {
-          //   children: 'Headline 4',
-          //   variant: 'h4',
-          // },
-          // {
-          //   children: 'Headline 5',
-          //   variant: 'h5',
-          // },
-          // {
-          //   children: 'Body',
-          //   variant: 'body',
-          // },
-          // {
-          //   children: 'Body SemiBold',
-          //   variant: 'body',
-          //   semiBold: true,
-          // },
+          {
+            children: 'Headline 1',
+            variant: 'h1',
+          },
+          {
+            children: 'Headline 2',
+            variant: 'h2',
+          },
+          {
+            children: 'Headline 3',
+            variant: 'h3',
+          },
+          {
+            children: 'Headline 4',
+            variant: 'h4',
+          },
+          {
+            children: 'Headline 5',
+            variant: 'h5',
+          },
+          {
+            children: 'Body',
+            variant: 'body',
+          },
+          {
+            children: 'Body SemiBold',
+            variant: 'body',
+            semiBold: true,
+          },
           {
             children: 'Body Link',
             variant: 'h1',
             href: '#',
           },
-          // {
-          //   children: 'Label',
-          //   variant: 'label',
-          // },
-          // {
-          //   children: 'Label SemiBold',
-          //   variant: 'label',
-          //   semiBold: true,
-          // },
-          // {
-          //   children: 'Label Link',
-          //   variant: 'label',
-          //   href: '#',
-          // },
-          // {
-          //   children: 'Caption',
-          //   variant: 'caption',
-          // },
-          // {
-          //   children: 'Caption SemiBold',
-          //   variant: 'caption',
-          //   semiBold: true,
-          // },
-          // {
-          //   children: 'Caption Link',
-          //   variant: 'caption',
-          //   href: '#',
-          // },
-          // {
-          //   children: 'Caption Uppercase',
-          //   variant: 'caption',
-          //   uppercase: true,
-          // },
+          {
+            children: 'Label',
+            variant: 'label',
+          },
+          {
+            children: 'Label SemiBold',
+            variant: 'label',
+            semiBold: true,
+          },
+          {
+            children: 'Label Link',
+            variant: 'label',
+            href: '#',
+          },
+          {
+            children: 'Caption',
+            variant: 'caption',
+          },
+          {
+            children: 'Caption SemiBold',
+            variant: 'caption',
+            semiBold: true,
+          },
+          {
+            children: 'Caption Link',
+            variant: 'caption',
+            href: '#',
+          },
+          {
+            children: 'Caption Uppercase',
+            variant: 'caption',
+            uppercase: true,
+          },
         ],
       },
       {
