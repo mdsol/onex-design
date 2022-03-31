@@ -4,8 +4,18 @@ import React, { useEffect, useRef } from 'react';
 import { Form } from 'react-bootstrap';
 
 const Check = React.forwardRef((props, ref) => {
-  const { id, className, checked, disabled, indeterminate, type, dataTestId, children, value, onChange } =
-    props;
+  const {
+    id,
+    className,
+    checked,
+    disabled,
+    indeterminate,
+    type,
+    dataTestId,
+    children,
+    value,
+    onChange,
+  } = props;
   const checkboxRef = useRef();
   const formGroupClassNames = classNames('onex-check', {
     [className]: className,
