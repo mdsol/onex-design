@@ -1,5 +1,4 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
-
 import { Check } from '../../../../components';
 
 <Meta
@@ -137,34 +136,96 @@ The name Check can be used when providing `default props` or `style` overrides i
 </Canvas>
 
 ## Controlled
-You can control the radio and the checkbox with the ```checked``` and ```onChange``` props.
+You can control the checkbox with ```checked``` and ```onChange``` props.
+
+export const CustomCheck = ({ id, label }) => {
+  const [checkedCheck, setCheckedCheck] = React.useState(false);
+  return (
+    <Check
+      type="checkbox"
+      id={id}
+      checked={checkedCheck}
+      onChange={() => setCheckedCheck(!checkedCheck)}
+    >
+      {label}
+    </Check>
+  )
+}
+
+export const Checkboxes = () => {
+  const checkboxData = React.useMemo(() => [
+    {
+      label: 'Apple',
+      id: 'apple'
+    },
+    {
+      label: 'Banana',
+      id: 'banana'
+    },
+    {
+      label: 'Strawberry',
+      id: 'strawberry'
+    }
+  ], []);
+  return (
+      <div>
+        {checkboxData.map((checkboxItem) => (
+            <div style={{ display: 'flex', marginBottom: '12px'}}>
+              <CustomCheck
+                id={checkboxItem.id}
+                label={checkboxItem.label}
+              />
+            </div>
+          )
+        )}
+      </div>
+  )
+}
+
 <Canvas>
-  <Story name="Controlled">
+  <Story name="Controlled checkbox">
+    {Checkboxes.bind({})}
+  </Story>
+</Canvas>
+
+You can control the radio with ```value``` and ```onChange``` props.
+
+<Canvas>
+  <Story name="Controlled radio">
     {() => {
+      const radioData = React.useMemo(() => [
+        {
+          value: 'hidden',
+          label: 'Hidden',
+          id: 'hidden'
+        },
+        {
+          value: 'optional',
+          label: 'Optional',
+          id: 'optional'
+        },
+        {
+          value: 'required',
+          label: 'Required',
+          id: 'required'
+        }
+      ], []);
       const [checkedRadio, setCheckedRadio] = React.useState();
-      const [checkedCheck, setCheckedCheck] = React.useState(true);
       return (
         <>
-          <div style={{display: 'flex', gap: '4px', marginBottom: '4px'}}>
-            <Check
-              type="radio"
-              value="custom-radio-1"
-              checked={checkedRadio === "custom-radio-1"}
-              onChange={(event) => setCheckedRadio(event.target.value)}
-              id="custom-radio-1"/>
-            <Check
-              type="radio"
-              value="custom-radio-2"
-              checked={checkedRadio === "custom-radio-2"}
-              onChange={(event) => setCheckedRadio(event.target.value)}
-              id="custom-radio-2"/>
-          </div>
           <div>
-            <Check
-              type="checkbox"
-              checked={checkedCheck}
-              onChange={() => setCheckedCheck(!checkedCheck)}
-              id="custom-checkbox"/>
+            {radioData.map((radioItem) =>
+              <div style={{ display: 'flex', marginBottom: '12px'}}>
+                <Check
+                  type="radio"
+                  value={radioItem.value}
+                  checked={checkedRadio === radioItem.value}
+                  onChange={(event) => setCheckedRadio(event.target.value)}
+                  id={radioItem.id}
+                >
+                  {radioItem.label}
+                </Check>
+              </div>)}
           </div>
         </>
       );
