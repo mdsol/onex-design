@@ -554,13 +554,9 @@ progress {
 .onex-typography--link {
   cursor: pointer;
 }
-.onex-typography--link.onex-typography--body, .onex-typography--link.onex-typography--caption {
+.onex-typography--link.onex-typography--body, .onex-typography--link.onex-typography--caption, .onex-typography--link.onex-typography--label {
   font-weight: 600;
   text-decoration-line: underline;
-  color: #0070c0;
-}
-.onex-typography--link.onex-typography--label {
-  font-weight: 600;
   color: #0070c0;
 }
 .onex-typography--link:hover {

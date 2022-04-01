@@ -13,9 +13,6 @@ export const Template = (args) => <Tag {...args} />;
 Use tags to visually label UI objects for quick recognition and navigation.
 Tags can be used for various types of objects; including free form text, predefined text, rules, or contacts.
 
-## Variants
-Supports 2 variants: ```selection``` and ```input``` tag. Default value: ```selection```.
-
 ### Selection tag
 This tag can be selected in order to provide or to change context.
 
@@ -33,22 +30,33 @@ Leading icon can be represented as svg, Avatar or just string with URL, in this 
   <Story id='onex-components-tag--selection-leading-icon-removable-disabled' />
 </Canvas>
 
-### Input tag
-Use in inputs only. This tag can't be selected, only added or removed.
-Supports 2 sizes: ```sm``` and ```md```.
-Size ```sm``` is supported just without leading icon.
-
-<Canvas>
-  <Story id='onex-components-tag--input-small' />
-  <Story id='onex-components-tag--input-small-disabled' />
-  <Story id='onex-components-tag--input-medium' />
-  <Story id='onex-components-tag--input-medium-disabled' />
-</Canvas>
-
-<Canvas>
-  <Story id='onex-components-tag--input-leading-icon' />
-  <Story id='onex-components-tag--input-leading-icon-disabled' />
-</Canvas>
+### Examples
+  <Canvas>
+    <Story
+      name="SelectionExample1"
+      args={{
+        children: 'Canada',
+        dataTestId: 'selection-tag-example-1',
+      }}>
+      {Template.bind({})}
+    </Story>
+    <Story
+      name="SelectionExample2"
+      args={{
+        children: 'Ukraine',
+        dataTestId: 'selection-tag-example-2',
+      }}>
+      {Template.bind({})}
+    </Story>
+    <Story
+      name="SelectionExample3"
+      args={{
+        children: 'United States',
+        dataTestId: 'selection-tag-example-3',
+      }}>
+      {Template.bind({})}
+    </Story>
+  </Canvas>
 
 
 ### Demo
@@ -61,7 +69,6 @@ Size ```sm``` is supported just without leading icon.
             dataTestId: 'selection-tag-demo-id',
             disabled: false,
             isRemovable: true,
-            size: 'md',
             variant: 'selection',
         }}>
         {Template.bind({})}

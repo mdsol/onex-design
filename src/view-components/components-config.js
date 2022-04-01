@@ -919,69 +919,6 @@ export const config = {
             isRemovable: true,
             disabled: true,
           },
-          {
-            className: 'text',
-            dataTestId: 'text',
-            children: 'Tag input label',
-            variant: 'input',
-            size: 'sm',
-          },
-          {
-            className: 'text',
-            dataTestId: 'text',
-            children: 'Tag input label',
-            variant: 'input',
-            size: 'sm',
-            disabled: true,
-          },
-          {
-            className: 'text',
-            dataTestId: 'text',
-            children: 'Tag input label',
-            variant: 'input',
-            size: 'md',
-          },
-          {
-            className: 'text',
-            dataTestId: 'text',
-            children: 'Tag input label',
-            variant: 'input',
-            size: 'md',
-            disabled: true,
-          },
-          {
-            image: {
-              icon: (
-                <Avatar
-                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="sm"
-                  hoverDisabled
-                />
-              ),
-            },
-            className: 'text',
-            dataTestId: 'text',
-            children: 'Tag input label',
-            variant: 'input',
-            size: 'md',
-          },
-          {
-            image: {
-              icon: (
-                <Avatar
-                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="sm"
-                  hoverDisabled
-                />
-              ),
-            },
-            className: 'text',
-            dataTestId: 'text',
-            children: 'Tag input label',
-            variant: 'input',
-            size: 'md',
-            disabled: true,
-          },
         ],
       },
       {
