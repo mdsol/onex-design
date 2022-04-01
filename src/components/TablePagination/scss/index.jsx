@@ -9,10 +9,11 @@ const TablePagination = ({
   rows,
   className,
   rowsDividers,
-  onSetTableRowsPerPage,
-  onSetLastActiveTableRow,
   defaultRowsPerPage,
   dataTestId,
+  previousPage,
+  nextPage,
+  setPageSize,
 }) => {
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
   const [lastActiveRow, setLastActiveRow] = useState(defaultRowsPerPage);
@@ -27,18 +28,17 @@ const TablePagination = ({
     const row = Number(e);
     setRowsPerPage(row);
     setLastActiveRow(row);
-    onSetTableRowsPerPage(row);
-    onSetLastActiveTableRow(row);
+    setPageSize(row);
   };
 
   const handleNextActiveRow = () => {
     setLastActiveRow((prev) => prev + rowsPerPage);
-    onSetLastActiveTableRow(lastActiveRow + rowsPerPage);
+    nextPage();
   };
 
   const handlePrevActiveRow = () => {
     setLastActiveRow((prev) => prev - rowsPerPage);
-    onSetLastActiveTableRow(lastActiveRow - rowsPerPage);
+    previousPage();
   };
 
   return (
@@ -86,23 +86,25 @@ const TablePagination = ({
 TablePagination.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(['lg', 'sm']),
-  onSetTableRowsPerPage: PropTypes.func,
+  previousPage: PropTypes.func,
   dataTestId: PropTypes.string,
   rowsDividers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])),
   rows: PropTypes.number,
-  onSetLastActiveTableRow: PropTypes.func,
+  nextPage: PropTypes.func,
   defaultRowsPerPage: PropTypes.number,
+  setPageSize: PropTypes.func,
 };
 
 TablePagination.defaultProps = {
   className: undefined,
   size: 'sm',
-  onSetTableRowsPerPage: undefined,
+  previousPage: undefined,
   dataTestId: undefined,
   rowsDividers: [],
   rows: 0,
-  onSetLastActiveTableRow: undefined,
+  nextPage: undefined,
   defaultRowsPerPage: 0,
+  setPageSize: undefined,
 };
 
 export default TablePagination;

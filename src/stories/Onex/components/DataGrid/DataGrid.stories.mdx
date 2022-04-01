@@ -1,0 +1,104 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { DataGrid } from '../../../../components';
+
+<Meta
+    title="Onex/Components/DataGrid"
+    argTypes={{
+        className: {
+            description: 'The className',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        rowsDividers: {
+          description: 'The array of quantities of rows per page',
+          table: {
+              defaultValue: {
+                  summary: 'undefined',
+              },
+          }
+        },
+        columns: {
+            description: 'The array of table columns',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        data: {
+            description: 'The array of data of each row, where key is equal for one of columns',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        }
+    }}
+    component={DataGrid}
+/>
+
+
+export const Template = (args) => <DataGrid {...args} />;
+
+## DataGrid
+
+A DataGrid is a table-presented data.
+
+### DataGrid
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            className: { control: 'text' },
+            columns: [
+            {
+                Header: 'Hospital',
+                columns: [
+                    {
+                        Header: 'ID',
+                        accessor: 'id',
+                    },
+                    {
+                        Header: 'Study',
+                        accessor: 'study',
+                    },
+                    {
+                        Header: 'Country',
+                        accessor: 'country',
+                    },
+                    {
+                        Header: 'Category',
+                        accessor: 'category',
+                    },
+                    {
+                        Header: 'Created',
+                        accessor: 'created',
+                    },
+                ],
+            }],
+            data: [
+                {
+                    id: 'M12345',
+                    study: 'United States30',
+                    country: 'United States10',
+                    category: 'Manegement',
+                    created: '26 Aug 20100',
+                }
+            ],
+            rowsDividers: [5, 10, 15, 20]
+            }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### DataGrid default
+
+<Canvas>
+    <Story id='onex-components-datagrid--default' />
+</Canvas>
