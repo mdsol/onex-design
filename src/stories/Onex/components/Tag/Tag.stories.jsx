@@ -1,9 +1,6 @@
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { Avatar, Tag } from '../../../../components';
 import TagMDX from './Tag.stories.mdx';
 
-const icons = { Check: <CheckCircleIcon />, Remove: <RemoveCircleIcon /> };
 export default {
   title: 'Onex/Components/Tag',
   component: Tag,
@@ -31,15 +28,6 @@ export default {
       description: `Leading icon. Contains 2 items:
                       \n1.icon - can be Avatar component or svg icon;
                       \n2.src - provided string with URL, in this case render img ;`,
-      options: Object.keys(icons),
-      mapping: icons,
-      control: {
-        type: 'select',
-        labels: {
-          Check: 'Check',
-          Remove: 'Remove',
-        },
-      },
     },
     isRemovable: {
       description: 'Added ```X``` to tag, added possibility to remove tag',
@@ -62,13 +50,6 @@ export default {
           summary: 'func',
         },
       },
-    },
-    size: {
-      description:
-        ' Size can be ```sm``` and ```md```. The parameter size can only be at tag with variant ```input```, size ```sm``` is supported just without leading icon',
-    },
-    variant: {
-      description: 'Supports 2 variants: ```selection``` and ```input```',
     },
   },
   parameters: {
@@ -165,83 +146,4 @@ SelectionLeadingIconRemovableDisabled.args = {
       />
     ),
   },
-};
-
-export const InputSmall = Template.bind({});
-
-InputSmall.args = {
-  className: 'input-small-tag-class',
-  dataTestId: 'input-small-tag-id',
-  variant: 'input',
-  children: 'Input small tag',
-  size: 'sm',
-};
-
-export const InputSmallDisabled = Template.bind({});
-
-InputSmallDisabled.args = {
-  className: 'input-small-disabled-tag-class',
-  dataTestId: 'input-small-disabled-tag-id',
-  variant: 'input',
-  children: 'Input small tag',
-  size: 'sm',
-  disabled: true,
-};
-
-export const InputMedium = Template.bind({});
-
-InputMedium.args = {
-  className: 'input-medium-tag-class',
-  dataTestId: 'input-medium-tag-id',
-  variant: 'input',
-  children: 'Input medium tag',
-  size: 'md',
-};
-
-export const InputMediumDisabled = Template.bind({});
-
-InputMediumDisabled.args = {
-  className: 'input-medium-disabled-tag-class',
-  dataTestId: 'input-medium-disabled-tag-id',
-  variant: 'input',
-  children: 'Input medium tag',
-  size: 'md',
-  disabled: true,
-};
-
-export const InputLeadingIcon = Template.bind({});
-
-InputLeadingIcon.args = {
-  className: 'input-leading-icon-tag-class',
-  dataTestId: 'input-leading-icon-tag-id',
-  variant: 'input',
-  children: 'Tag label',
-  image: {
-    icon: (
-      <Avatar
-        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-        size="sm"
-        hoverDisabled
-      />
-    ),
-  },
-};
-
-export const InputLeadingIconDisabled = Template.bind({});
-
-InputLeadingIconDisabled.args = {
-  className: 'input-leading-icon-disabled-tag-class',
-  dataTestId: 'input-leading-icon-disabled-tag-id',
-  variant: 'input',
-  children: 'Tag label',
-  image: {
-    icon: (
-      <Avatar
-        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-        size="sm"
-        hoverDisabled
-      />
-    ),
-  },
-  disabled: true,
 };
