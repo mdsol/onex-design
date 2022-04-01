@@ -1,4 +1,8 @@
 # Changelog
+
+## 0.1.9
+
+Datagrid css updated, storybook page created for integration. 
 ## 0.1.8
 
 Switched font url to use Typekit, Tooltip designs updated, data grid css and pagination added.
