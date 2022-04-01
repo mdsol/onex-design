@@ -8,8 +8,8 @@ const range = (len) => {
 
 const newPerson = () => ({
   id: 'M123',
-  study: 'United States',
-  country: 'United States',
+  study: `United States${Math.floor(Math.random() * 30)}`,
+  country: `United States${Math.floor(Math.random() * 1000)}`,
   category: 'Manegement',
   created: '26 Aug 2020',
 });
