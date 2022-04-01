@@ -1,5 +1,6 @@
-$select-height-lg: 2.5rem;
-$select-height-sm: 1.75rem;
+$select-height-lg: $component-height-lg;
+$select-height-sm: $component-height-sm;
+$select-min-width: 16.625rem;
 
 $select-lg-multi-value-height: 1.5rem;
 $select-input-container-padding: 0rem;

@@ -980,6 +980,26 @@ export const config = {
               { value: 'strawberry', label: 'Strawberry' },
               { value: 'vanilla', label: 'Vanilla' },
             ],
+          },
+          {
+            size: 'lg',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'sm',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
             isMulti: true,
           },
           {

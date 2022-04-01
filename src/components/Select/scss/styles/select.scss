@@ -1,35 +1,15 @@
+@import 'mixins';
+
 .onex-select--lg {
-    height: $select-height-lg;
-    .onex-select__control {
-        min-height: $select-height-lg;
-        .onex-select__value-container {
-            height: $select-height-lg;
-        }
-        .onex-select__indicators {
-            height: $select-height-lg;
-        }
-    }
-    .onex-select__multi-value {
-        height: $select-lg-multi-value-height;
-    }
+   @include size-select($select-height-lg, $select-lg-multi-value-height);
 }
 .onex-select--sm {
+  @include size-select($select-height-sm, $select-sm-multi-value-height);
     height: $select-height-sm;
-    .onex-select__control {
-        min-height: $select-height-sm;
-        .onex-select__value-container {
-            height: $select-height-sm;
-            .onex-select__input-container {
-                padding: $select-input-container-padding;
-                margin: $select-input-container-margin;
-            }
-        }
-        .onex-select__indicators {
-            height: $select-height-sm;
-        }
-    }
-    .onex-select__multi-value {
-        height: $select-sm-multi-value-height;
+
+    .onex-select__control .onex-select__input-container {
+      padding: $select-input-container-padding;
+      margin: $select-input-container-margin;
     }
 }
 
@@ -40,10 +20,21 @@
 }
 
 .onex-select {
+    box-sizing: border-box;
     max-width: $select-max-width;
+    min-width: $select-min-width;
+
+    &__value-container {
+      max-height: 100%;
+      box-sizing: border-box;
+    }
+
     .onex-select__control {
+        max-height: 100%;
+        box-sizing: border-box;
         border: $select-control-border solid $secondary;
         border-radius: $select-control-border-radius;
+
         &:hover {
             border-color: $primary-700;
         }

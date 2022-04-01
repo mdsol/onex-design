@@ -1,0 +1,11 @@
+@mixin size-select($height, $multi-height) {
+  .onex-select__control,
+  .onex-select__control .onex-select__value-container,
+  .onex-select__control .onex-select__indicators {
+    height: $height;
+  }
+
+  .onex-select__multi-value {
+    height: $multi-height;
+  }
+}
