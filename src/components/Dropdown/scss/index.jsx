@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 const CustomDropdown = React.forwardRef((props, ref) => {
   const {
@@ -23,23 +23,19 @@ const CustomDropdown = React.forwardRef((props, ref) => {
   });
 
   return (
-    <Dropdown className={buttonClassNames} id={id} onSelect={onSelect} data-test-id={dataTestId}>
-      <Dropdown.Toogle as={as} disabled={disabled} variant={variant} size={size} align={align}>
-        {title}
-      </Dropdown.Toogle>
-      {/*     <DropdownButton */}
-      {/*       as={as} */}
-      {/*       ref={ref} */}
-      {/*       className={buttonClassNames} */}
-      {/*       id={id} */}
-      {/*       title={title} */}
-      {/*       disabled={disabled} */}
-      {/*       variant={variant} */}
-      {/*       size={size} */}
-      {/*       align={align} */}
-      {/*       onSelect={onSelect} */}
-      {/*       data-test-id={dataTestId} */}
-      {/*     > */}
+    <DropdownButton
+      as={as}
+      ref={ref}
+      className={buttonClassNames}
+      id={id}
+      title={title}
+      disabled={disabled}
+      variant={variant}
+      size={size}
+      align={align}
+      onSelect={onSelect}
+      data-test-id={dataTestId}
+    >
       {!!items?.length &&
         items.map((item) => {
           const {
@@ -66,7 +62,7 @@ const CustomDropdown = React.forwardRef((props, ref) => {
             </>
           );
         })}
-    </Dropdown>
+    </DropdownButton>
   );
 });
 
@@ -74,7 +70,7 @@ CustomDropdown.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]),
-  variant: PropTypes.oneOf(['filled', 'primary', 'secondary', 'link', 'icon-link']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
   align: PropTypes.oneOf(['start', 'end']),
   buttonStyle: PropTypes.oneOf(['text', 'icon']),
   size: PropTypes.oneOf(['lg', 'sm']),
@@ -99,7 +95,7 @@ CustomDropdown.defaultProps = {
   disabled: false,
   title: undefined,
   items: null,
-  variant: 'filled',
+  variant: 'primary',
   size: 'sm',
   onSelect: undefined,
   align: 'start',

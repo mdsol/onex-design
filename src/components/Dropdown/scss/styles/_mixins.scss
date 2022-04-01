@@ -8,10 +8,9 @@
     height: $height;
 }
 
-@mixin btn-size($line-height, $width, $height: $width) {
+@mixin btn-size( $width ) {
     min-width: $width;
-    height: $height;
-    line-height: $line-height;
+    height: $width;
 };
 
 @mixin btn-link-before-size($padding-left, $padding-bottom) {

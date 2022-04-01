@@ -390,7 +390,7 @@ export const config = {
         additionalComponents: [],
         variants: [
           {
-            title: 'Small dropdown',
+            title: 'Label',
             id: 'small-dropdown',
             items: dropdownItems,
             size: 'sm',
