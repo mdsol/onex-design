@@ -238,6 +238,40 @@ TertiaryDefaultDisabledIcon.args = {
 };
 
 export const SecondaryCustomIcon = DropdownTemplate.bind({});
+const secondaryCustomIconCodeBody = `
+ <CustomDropdown
+    variant="secondary",
+    id="secondary-custom-icon-dropdown-lg",
+    items={[
+      {
+        eventKey: 'one',
+        title: 'item one'
+      },
+      {
+        eventKey: 'two',
+        title: 'item two'
+      },
+      {
+        eventKey: 'three',
+        title: 'item three'
+      },
+      {
+        eventKey: 'four',
+        title: 'item four'
+      }
+    ]}
+    size="md",
+    buttonStyle="icon",
+    title={<MoreVertIcon />}
+  />
+`;
+SecondaryCustomIcon.parameters = {
+  docs: {
+    source: {
+      code: secondaryCustomIconCodeBody,
+    },
+  },
+};
 SecondaryCustomIcon.args = {
   variant: 'secondary',
   id: 'secondary-custom-icon-dropdown-lg',
@@ -248,6 +282,41 @@ SecondaryCustomIcon.args = {
 };
 
 export const SecondaryCustomDisabledIcon = DropdownTemplate.bind({});
+const secondaryCustomDisabledIconCodeBody = `
+ <CustomDropdown
+    variant="secondary",
+    id="secondary-custom-icon-dropdown-lg",
+    items={[
+      {
+        eventKey: 'one',
+        title: 'item one'
+      },
+      {
+        eventKey: 'two',
+        title: 'item two'
+      },
+      {
+        eventKey: 'three',
+        title: 'item three'
+      },
+      {
+        eventKey: 'four',
+        title: 'item four'
+      }
+    ]}
+    size="md",
+    buttonStyle="icon",
+    disabled=true,
+    title={<MoreVertIcon />}
+  />
+`;
+SecondaryCustomDisabledIcon.parameters = {
+  docs: {
+    source: {
+      code: secondaryCustomDisabledIconCodeBody,
+    },
+  },
+};
 SecondaryCustomDisabledIcon.args = {
   variant: 'secondary',
   id: 'secondary-custom-icon-dropdown-sm',
@@ -259,6 +328,41 @@ SecondaryCustomDisabledIcon.args = {
 };
 
 export const TertiaryCustomIcon = DropdownTemplate.bind({});
+const tertiaryCustomIconCodeBody = `
+ <CustomDropdown
+    buttonStyle="icon"
+    id="tertiary-custom-icon-dropdown-lg"
+    items={[
+      {
+        eventKey: 'one',
+        title: 'item one'
+      },
+      {
+        eventKey: 'two',
+        title: 'item two'
+      },
+      {
+        eventKey: 'three',
+        title: 'item three'
+      },
+      {
+        eventKey: 'four',
+        title: 'item four'
+      }
+    ]}
+    onSelect={() => {}}
+    size="md"
+    title={<MoreVertIcon />}
+    variant="tertiary"
+  />`;
+TertiaryCustomIcon.parameters = {
+  docs: {
+    source: {
+      code: tertiaryCustomIconCodeBody,
+    },
+  },
+};
+
 TertiaryCustomIcon.args = {
   variant: 'tertiary',
   id: 'tertiary-custom-icon-dropdown-lg',
@@ -269,6 +373,41 @@ TertiaryCustomIcon.args = {
 };
 
 export const TertiaryCustomDisabledIcon = DropdownTemplate.bind({});
+const tertiaryCustomDisabledIconCodeBody = `
+ <CustomDropdown
+    buttonStyle="icon"
+    id="tertiary-custom-icon-dropdown-lg"
+    items={[
+      {
+        eventKey: 'one',
+        title: 'item one'
+      },
+      {
+        eventKey: 'two',
+        title: 'item two'
+      },
+      {
+        eventKey: 'three',
+        title: 'item three'
+      },
+      {
+        eventKey: 'four',
+        title: 'item four'
+      }
+    ]}
+    onSelect={() => {}}
+    size="md"
+    title={<MoreVertIcon />}
+    variant="tertiary",
+    disabled=true,
+  />`;
+TertiaryCustomDisabledIcon.parameters = {
+  docs: {
+    source: {
+      code: tertiaryCustomDisabledIconCodeBody,
+    },
+  },
+};
 TertiaryCustomDisabledIcon.args = {
   variant: 'tertiary',
   id: 'tertiary-custom-icon-dropdown-sm',
