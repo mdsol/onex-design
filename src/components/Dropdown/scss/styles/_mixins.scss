@@ -8,18 +8,16 @@
     height: $height;
 }
 
+@mixin btn-icon-size( $width ) {
+  min-width: $width;
+  min-height: $width;
+  height: auto;
+};
+
 @mixin btn-size( $width ) {
     min-width: $width;
     height: $width;
 };
-
-@mixin btn-link-before-size($padding-left, $padding-bottom) {
-    &::before {
-        width: calc(92% - #{$padding-left} * 2);
-        bottom: $padding-bottom;
-        left: $padding-left;
-    }
-}
 
 @mixin dropdown-menu($border-radius, $font-size, $line-height, $padding-x, $padding-y, $min-width) {
     border-radius: $border-radius;
@@ -27,4 +25,8 @@
     line-height: $line-height;
     padding: $padding-y $padding-x;
     min-width: $min-width;
+}
+
+@mixin dropdown-after-image($after-image-color) {
+  background-image: escape-svg(url("data:image/svg+xml,<svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='#{$after-image-color}'></path></svg>"));
 }
