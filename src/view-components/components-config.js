@@ -975,6 +975,7 @@ export const config = {
             size: 'sm',
             className: 'select',
             dataTestId: 'select',
+            isDisabled: true,
             options: [
               { value: 'chocolate', label: 'Chocolate' },
               { value: 'strawberry', label: 'Strawberry' },

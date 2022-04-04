@@ -5,47 +5,83 @@
 }
 .onex-select--sm {
   @include size-select($select-height-sm, $select-sm-multi-value-height);
-    height: $select-height-sm;
 
-    .onex-select__control .onex-select__input-container {
-      padding: $select-input-container-padding;
-      margin: $select-input-container-margin;
-    }
-}
-
-.onex-select--invalid {
-    .onex-select__control {
-        border-color: $error !important;
-    }
+  .onex-select__control .onex-select__input-container {
+    padding: $select-input-container-padding;
+    margin: $select-input-container-margin;
+  }
 }
 
 .onex-select {
+  font-family: $font-family;
+  box-sizing: border-box;
+  max-width: $select-max-width;
+  min-width: $select-min-width;
+
+  &__control {
+    align-items: stretch;
+    max-height: 100%;
     box-sizing: border-box;
-    max-width: $select-max-width;
-    min-width: $select-min-width;
+    border: $select-control-border solid $secondary-opacity-20;
+    border-radius: $select-control-border-radius!important;
 
-    &__value-container {
-      max-height: 100%;
-      box-sizing: border-box;
+    &:hover {
+      border-color: $secondary-opacity-50;
     }
 
+    &.onex-select__control--is-focused,
+    &.onex-select__control--is-focused.onex-select__control--menu-is-open {
+      border: $select-control-border solid $primary !important;
+      box-shadow: $primary 0px 0px 1px, $primary 0px 0px 0px 1px;
+
+      &:hover {
+        border-color: $primary !important;
+      }
+    }
+  }
+
+  &__control .onex-select__indicator.onex-select__dropdown-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    svg > path {
+      fill: $secondary-400;
+    }
+  }
+
+  &--invalid {
     .onex-select__control {
-        max-height: 100%;
-        box-sizing: border-box;
-        border: $select-control-border solid $secondary;
-        border-radius: $select-control-border-radius;
+      border-color: $error !important;
+    }
+  }
 
-        &:hover {
-            border-color: $primary-700;
-        }
+  .onex-select__placeholder {
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: 400;
+    color: $secondary-400;
+  }
+
+  &--is-disabled {
+    opacity: 0.4;
+
+    .onex-select__control--is-disabled {
+      background-color: $white;
+      border-color: $secondary-opacity-20;
     }
-    .onex-select__control--is-focused {
-        border: $select-control-border solid $select-control-border-color-focused;
-        box-shadow: none;
-        &:hover {
-            border-color: $select-control-border-color-focused;
-        }
-    }
+  }
+
+  &__value-container {
+    max-height: 100%;
+    box-sizing: border-box;
+  }
     .onex-select__option:hover {
         background-color: $secondary-100;
         color: black;
@@ -65,10 +101,9 @@
         display: none;
     }
 
-    .onex-select__control--is-focused .onex-select__indicator {
-        color: $select-control-border-color-focused;
-        transform: rotate(180deg);
-    }
+  .onex-select__control--menu-is-open .onex-select__indicator {
+    transform: rotate(180deg);
+  }
 
     .onex-select__multi-value {
         background-color: $secondary-100;

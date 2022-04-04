@@ -1,11 +1,24 @@
 @mixin size-select($height, $multi-height) {
-  .onex-select__control,
+  $content-select-height: calc(#{$height} - #{$select-control-border} * 2);
+
+  .onex-select__control {
+    height: $height;
+    min-height: $height;
+  }
+
   .onex-select__control .onex-select__value-container,
   .onex-select__control .onex-select__indicators {
-    height: $height;
+    height: $content-select-height;
+    min-height: $content-select-height;
+  }
+
+  .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
+    width: $content-select-height;
+    height: $content-select-height;
   }
 
   .onex-select__multi-value {
     height: $multi-height;
   }
 }
+
