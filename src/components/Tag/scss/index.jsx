@@ -12,14 +12,12 @@ const Tag = ({
   controlId,
   dataTestId,
   disabled,
-  size,
   children,
   variant,
 }) => {
   const [selected, setSelected] = useState(false);
   const tagClassNames = classNames('onex-tag', `onex-tag--variant-${variant}`, {
     [className]: className,
-    'onex-tag--size-sm': variant === 'input' && size === 'sm',
     'onex-tag--selected': variant === 'selection' && selected,
   });
 
@@ -71,9 +69,8 @@ Tag.propTypes = {
   controlId: PropTypes.string,
   dataTestId: PropTypes.string,
   disabled: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'md']),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  variant: PropTypes.oneOf(['selection', 'input']),
+  variant: PropTypes.oneOf(['selection']),
 };
 
 Tag.defaultProps = {
@@ -88,7 +85,6 @@ Tag.defaultProps = {
   onRemove: undefined,
   dataTestId: undefined,
   disabled: false,
-  size: 'md',
   children: undefined,
   variant: 'selection',
 };

@@ -1,73 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import RowsSection from './components/RowsSection';
 import TableControls from './components/TableControls';
-import makeData from '../makeData';
 
-const DataGrid = ({ className }) => {
-  const sections = React.useMemo(
-    () => [
-      [
-        {
-          Header: 'Hospital',
-          columns: [
-            {
-              Header: 'ID',
-              accessor: 'id',
-            },
-            {
-              Header: 'Study',
-              accessor: 'study',
-            },
-            {
-              Header: 'Country',
-              accessor: 'country',
-            },
-            {
-              Header: 'Category',
-              accessor: 'category',
-            },
-            {
-              Header: 'Created',
-              accessor: 'created',
-            },
-          ],
-        },
-      ],
-      [
-        {
-          Header: 'Hospital 1',
-          columns: [
-            {
-              Header: 'ID',
-              accessor: 'id',
-            },
-            {
-              Header: 'Study',
-              accessor: 'study',
-            },
-            {
-              Header: 'Country',
-              accessor: 'country',
-            },
-            {
-              Header: 'Category',
-              accessor: 'category',
-            },
-            {
-              Header: 'Created',
-              accessor: 'created',
-            },
-          ],
-        },
-      ],
-    ],
-    [],
-  );
-
-  const data = React.useMemo(() => [makeData(10), makeData(10)], []);
-
+const DataGrid = ({ className, data, columns, rowsDividers }) => {
   const dataGridClasses = classNames('onex-dataGrid', {
     [className]: className,
   });
@@ -75,19 +11,41 @@ const DataGrid = ({ className }) => {
   return (
     <div className={dataGridClasses}>
       <TableControls />
-      {sections.map((section, index) => (
-        <RowsSection columns={section} data={data[index]} />
-      ))}
+      <RowsSection columns={columns} data={data} rowsDividers={rowsDividers} />
     </div>
   );
 };
 
 DataGrid.propTypes = {
   className: PropTypes.string,
+  columns: PropTypes.arrayOf(
+    PropTypes.shape({
+      Header: PropTypes.string,
+      columns: PropTypes.arrayOf(
+        PropTypes.shape({
+          Header: PropTypes.string,
+          accessor: PropTypes.string,
+        }),
+      ),
+    }),
+  ),
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      study: PropTypes.string,
+      country: PropTypes.string,
+      category: PropTypes.string,
+      created: PropTypes.string,
+    }),
+  ),
+  rowsDividers: PropTypes.arrayOf(PropTypes.number),
 };
 
 DataGrid.defaultProps = {
   className: undefined,
+  data: [{}],
+  columns: [],
+  rowsDividers: [],
 };
 
 export default DataGrid;
