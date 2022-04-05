@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import Badge from '../../Badge/scss';
 
 const CustomDropdown = React.forwardRef((props, ref) => {
   const {
@@ -41,6 +42,7 @@ const CustomDropdown = React.forwardRef((props, ref) => {
         items.map((item) => {
           const {
             title: itemTitle,
+            badge,
             href,
             hasDividerAfter,
             active,
@@ -57,7 +59,12 @@ const CustomDropdown = React.forwardRef((props, ref) => {
                 eventKey={eventKey}
                 disabled={itemDisabled}
               >
-                {itemTitle}
+                <span>{itemTitle}</span>
+                {badge && (
+                  <Badge size="sm" type={active ? 'primary' : 'default'}>
+                    {badge}
+                  </Badge>
+                )}
               </Dropdown.Item>
               {hasDividerAfter && <Dropdown.Divider />}
             </>
@@ -79,6 +86,7 @@ CustomDropdown.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
+      badge: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       hasDividerAfter: PropTypes.bool,
       active: PropTypes.bool,
       disabled: PropTypes.bool,

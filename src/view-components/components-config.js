@@ -11,10 +11,10 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
-  { eventKey: 'one', title: 'item one' },
-  { eventKey: 'two', title: 'item two' },
-  { eventKey: 'three', title: 'item three' },
-  { eventKey: 'four', title: 'item four' },
+  { eventKey: 'one', title: 'item one', badge: 100, active: true },
+  { eventKey: 'two', title: 'item two', badge: 100 },
+  { eventKey: 'three', title: 'item three', disabled: true },
+  { eventKey: 'four', title: 'item four', badge: 100, disabled: true, active: true },
 ];
 
 const tabsVisibleItems = [

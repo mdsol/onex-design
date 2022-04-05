@@ -157,38 +157,74 @@
     font-family: $font-family;
   }
 
-  /* dropdown menu */
-  .btn-md ~ .dropdown-menu {
-    @include dropdown-menu(
-        $menu-border-radius-md,
-        $menu-font-size-md,
-        $menu-line-height-md,
-        $menu-padding-x-md,
-        $menu-padding-y-md,
-        $menu-min-width-md
-    );
+  .dropdown-menu {
+    border-radius: $menu-border-radius;
+    font-size: $menu-font-size;
+    line-height: $menu-line-height;
+    padding: $menu-padding-y $menu-padding-x;
+    max-height: 15.5rem;
 
     .dropdown-item {
-      padding: $menu-item-padding-y-md $menu-item-padding-x-md;
-      border-radius: $menu-border-radius-md;
+      padding: $menu-item-padding-y $menu-item-padding-x;
       text-decoration: none;
+      color: $menu-item-color;
+      min-width: 13.5rem;
+
+      & > span {
+        padding-right: 0.5rem;
+      }
+
+      &:hover {
+        background-color: $menu-item-hover-background-color;
+      }
+
+      &.active, &:active {
+        background-color: $menu-item-active-background-color;
+
+        &:hover {
+          background-color: $menu-item-active-hover-background-color;
+        }
+      }
+
+      &.disabled, &:disabled {
+        opacity: $menu-item-opacity;
+      }
     }
   }
 
-  .btn-sm ~ .dropdown-menu {
-    @include dropdown-menu(
-        $menu-border-radius-sm,
-        $menu-font-size-sm,
-        $menu-line-height-sm,
-        $menu-padding-x-sm,
-        $menu-padding-y-sm,
-        $menu-min-width-sm
-    );
 
-    .dropdown-item {
-      padding: $menu-item-padding-y-sm $menu-item-padding-x-sm;
-      border-radius: $menu-border-radius-sm;
-      text-decoration: none;
-    }
-  }
+  ///* dropdown menu */
+  //.btn-md ~ .dropdown-menu {
+  //  @include dropdown-menu(
+  //      $menu-border-radius-md,
+  //      $menu-font-size-md,
+  //      $menu-line-height-md,
+  //      $menu-padding-x-md,
+  //      $menu-padding-y-md,
+  //      $menu-min-width-md
+  //  );
+  //
+  //  .dropdown-item {
+  //    padding: $menu-item-padding-y-md $menu-item-padding-x-md;
+  //    border-radius: $menu-border-radius-md;
+  //    text-decoration: none;
+  //  }
+  //}
+
+  //.btn-sm ~ .dropdown-menu {
+  //  @include dropdown-menu(
+  //      $menu-border-radius-sm,
+  //      $menu-font-size-sm,
+  //      $menu-line-height-sm,
+  //      $menu-padding-x-sm,
+  //      $menu-padding-y-sm,
+  //      $menu-min-width-sm
+  //  );
+  //
+  //  .dropdown-item {
+  //    padding: $menu-item-padding-y-sm $menu-item-padding-x-sm;
+  //    border-radius: $menu-border-radius-sm;
+  //    text-decoration: none;
+  //  }
+  //}
 }
