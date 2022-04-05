@@ -13,7 +13,7 @@ import { ChevronDownIcon, SettingsRoundIcon, MoreVerticalIcon } from '../../../.
 const RowsSection = ({ columns, data, className, rowsDividers }) => {
   // Use the state and functions returned from useTable to build your UI
 
-  const [showRows, setShowRows] = useState(false);
+  // const [showRows, setShowRows] = useState(false);
   const [checkedRows, setCheckedRows] = useState({});
   const {
     getTableProps,
@@ -24,7 +24,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
     previousPage,
     nextPage,
     setPageSize,
-    state: { pageIndex, pageSize },
+    state: { pageSize },
   } = useTable(
     {
       columns,
@@ -55,7 +55,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
     <>
       <table className={tableClasses} {...getTableProps()}>
         <thead>
-          <tr
+          {/* <tr
             className="onex-dataGrid__sectionHeader"
             onClick={() => setShowRows(!showRows)}
             {...headerGroups[0].getHeaderGroupProps()}
@@ -70,84 +70,75 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
                 className={`onex-dataGrid__showRowsIndicator ${showRows && 'isShown'}`}
               />
             </th>
+          </tr> */}
+          <tr className="onex-dataGrid__sectionHeaders" {...headerGroups[1].getHeaderGroupProps()}>
+            <th>
+              <Check
+                checked={
+                  // eslint-disable-next-line react/prop-types
+                  Object.values(checkedRows).length === data.length &&
+                  Object.values(checkedRows).every((item) => item)
+                }
+                className="onex-dataGrid__rowCheck"
+                onChange={handleHeaderCheck}
+              />
+            </th>
+            {headerGroups[1].headers.map((column, i) => (
+              <th
+                key={`${column.accessor}_${i}`}
+                colSpan={i === headerGroups[1].headers.length - 1 ? '2' : '1'}
+              >
+                <Typography variant="caption" uppercase>
+                  {column.render('Header')}
+                </Typography>
+              </th>
+            ))}
+            <th className="onex-dataGrid__rowIcon">
+              <SettingsRoundIcon />
+            </th>
           </tr>
-          {showRows && (
-            <tr
-              className="onex-dataGrid__sectionHeaders"
-              {...headerGroups[1].getHeaderGroupProps()}
-            >
-              <th>
-                <Check
-                  checked={
-                    // eslint-disable-next-line react/prop-types
-                    Object.values(checkedRows).length === data.length &&
-                    Object.values(checkedRows).every((item) => item)
-                  }
-                  className="onex-dataGrid__rowCheck"
-                  onChange={handleHeaderCheck}
-                />
-              </th>
-              {headerGroups[1].headers.map((column, i) => (
-                <th
-                  key={`${column.accessor}_${i}`}
-                  colSpan={i === headerGroups[1].headers.length - 1 ? '2' : '1'}
-                >
-                  <Typography variant="caption" uppercase>
-                    {column.render('Header')}
-                  </Typography>
-                </th>
-              ))}
-              <th className="onex-dataGrid__rowIcon">
-                <SettingsRoundIcon />
-              </th>
-            </tr>
-          )}
         </thead>
-        {showRows && (
-          <tbody {...getTableBodyProps()}>
-            {page.map((row, i) => {
-              prepareRow(row);
-              return (
-                <tr key={`${row}_${i}`} {...row.getRowProps()}>
-                  <td>
-                    <Check
-                      className="onex-dataGrid__rowCheck"
-                      checked={checkedRows[i]}
-                      onChange={(e) =>
-                        setCheckedRows({
-                          ...checkedRows,
-                          [i]: e.target.checked,
-                        })
-                      }
-                    />
+        <tbody {...getTableBodyProps()}>
+          {page.map((row, i) => {
+            prepareRow(row);
+            return (
+              <tr key={`${row}_${i}`} {...row.getRowProps()}>
+                <td>
+                  <Check
+                    className="onex-dataGrid__rowCheck"
+                    checked={checkedRows[i]}
+                    onChange={(e) =>
+                      setCheckedRows({
+                        ...checkedRows,
+                        [i]: e.target.checked,
+                      })
+                    }
+                  />
+                </td>
+                {row.cells.map((cell) => (
+                  <td key={`${cell}_${i}`} {...cell.getCellProps()}>
+                    <Typography variant="label">{cell.render('Cell')}</Typography>
                   </td>
-                  {row.cells.map((cell) => (
-                    <td key={`${cell}_${i}`} {...cell.getCellProps()}>
-                      <Typography variant="label">{cell.render('Cell')}</Typography>
-                    </td>
-                  ))}
-                  <td colSpan="2" className="onex-dataGrid__rowIcon">
-                    <MoreVerticalIcon />
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        )}
+                ))}
+                <td colSpan="2" className="onex-dataGrid__rowIcon">
+                  <MoreVerticalIcon />
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
-      {showRows && (
-        <div className="onex-dataGrid__pagination">
-          <TablePagination
-            defaultRowsPerPage={pageSize}
-            rowsDividers={rowsDividers}
-            rows={data.length}
-            size="lg"
-            previousPage={previousPage}
-            nextPage={nextPage}
-            setPageSize={setPageSize}
-          />
-        </div>
-      )}
+      <div className="onex-dataGrid__pagination">
+        <TablePagination
+          defaultRowsPerPage={pageSize}
+          rowsDividers={rowsDividers}
+          rows={data.length}
+          size="lg"
+          previousPage={previousPage}
+          nextPage={nextPage}
+          setPageSize={setPageSize}
+        />
+      </div>
     </>
   );
 };
