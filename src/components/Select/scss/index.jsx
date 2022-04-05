@@ -2,14 +2,33 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import Select from 'react-select';
+import Select, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
+
+const Control = ({ children, ...props }) => (
+  <components.Control {...props}>
+    {props.icon && <span className="onex-select__icon">{props.icon}</span>} {children}
+  </components.Control>
+);
+
+Control.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  icon: PropTypes.node,
+};
+
+Control.defaultProps = {
+  children: undefined,
+  icon: undefined,
+};
 
 const CustomSelect = ({
   className,
   isMulti,
   isDisabled,
   size,
+  label,
+  icon,
+  helpText,
   isInvalid,
   errorMessage,
   selectedValues,
@@ -31,6 +50,7 @@ const CustomSelect = ({
     'onex-select--lg': size === 'lg',
     'onex-select--sm': size === 'sm',
     'onex-select--invalid': isInvalid,
+    'is-disabled': isDisabled,
   });
 
   const handleChange = (option) => {
@@ -44,12 +64,14 @@ const CustomSelect = ({
 
   return (
     <div className={selectClassNames}>
+      {label && <Form.Label className="onex-select__label">{label}</Form.Label>}
       {isAsync ? (
         <AsyncSelect
           cacheOptions
           defaultOptions
           classNamePrefix="onex-select"
           name="search"
+          components={{ Control }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}
           getOptionLabel={getOptionLabel}
@@ -61,15 +83,23 @@ const CustomSelect = ({
           isMulti={isMulti}
           options={options}
           isDisabled={isDisabled}
+          icon={icon}
+          components={{
+            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+            Control: ({ children, ...args }) => (
+              <Control {...args} icon={icon}>
+                {children}
+              </Control>
+            ),
+          }}
           onChange={handleChange}
           aria-invalid
           value={selectedOptions}
           data-test-id={dataTestId}
         />
       )}
-      {isInvalid && !isDisabled && (
-        <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
-      )}
+      {isInvalid && <Form.Text className="onex-select__help-text">{errorMessage}</Form.Text>}
+      {helpText && <Form.Text className="onex-select__help-text">{helpText}</Form.Text>}
     </div>
   );
 };
@@ -85,6 +115,9 @@ CustomSelect.propTypes = {
   selectedValues: PropTypes.arrayOf(optionType),
   options: PropTypes.arrayOf(optionType),
   size: PropTypes.oneOf(['lg', 'sm']),
+  label: PropTypes.string,
+  icon: PropTypes.node,
+  helpText: PropTypes.string,
   isMulti: PropTypes.bool,
   isDisabled: PropTypes.bool,
   isInvalid: PropTypes.bool,
@@ -101,6 +134,9 @@ CustomSelect.defaultProps = {
   errorMessage: undefined,
   selectedValues: [],
   size: 'sm',
+  label: undefined,
+  helpText: undefined,
+  icon: undefined,
   isMulti: false,
   isDisabled: false,
   isInvalid: false,

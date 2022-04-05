@@ -1,26 +1,51 @@
 @import 'mixins';
 
-.onex-select--lg {
-   @include size-select($select-height-lg, $select-lg-multi-value-height);
-}
-.onex-select--sm {
-  @include size-select($select-height-sm, $select-sm-multi-value-height);
-
-  .onex-select__control .onex-select__input-container {
-    padding: $select-input-container-padding;
-    margin: $select-input-container-margin;
-  }
-}
-
 .onex-select {
   font-family: $font-family;
   box-sizing: border-box;
   max-width: $select-max-width;
   min-width: $select-min-width;
 
+  /* label */
+  &__label.form-label {
+    padding: 0 4px;
+    font-family: $font-family;
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: 400;
+    color: $secondary-900;
+  }
+
+  /* help text */
+  &__help-text.form-text {
+    display: inline-block;
+    min-width: 1rem;
+    min-height: $line-height-sm;
+    padding: 0 4px;
+    color: $secondary-400;
+    font-family: $font-family;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  .onex-select__single-value {
+    color: $secondary-900;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+  }
+
+  .onex-select__icon {
+    margin-right: -0.25rem;
+
+    & > * {
+      width: $component-height-middle-sm;
+      height: $component-height-middle-sm;
+    }
+  }
+
   &__control {
-    align-items: stretch;
     max-height: 100%;
+    align-items: stretch;
     box-sizing: border-box;
     border: $select-control-border solid $secondary-opacity-20;
     border-radius: $select-control-border-radius!important;
@@ -116,4 +141,31 @@
             }
         }
     }
+}
+
+.onex-select--lg {
+  @include size-select($select-height-lg, $select-lg-multi-value-height);
+
+  .onex-select__icon {
+    padding-left: 0.75rem;
+  }
+}
+.onex-select--sm {
+  @include size-select($select-height-sm, $select-sm-multi-value-height);
+
+  .onex-select__icon {
+    padding-left: 0.5rem;
+  }
+
+  .onex-select__control .onex-select__input-container {
+    padding: $select-input-container-padding;
+    margin: $select-input-container-margin;
+  }
+}
+
+.is-disabled {
+  .onex-select__label.form-label,
+  .onex-select__help-text.form-text {
+    opacity: 0.4;
+  }
 }

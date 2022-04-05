@@ -976,6 +976,8 @@ export const config = {
             className: 'select',
             dataTestId: 'select',
             isDisabled: true,
+            label: 'Select label',
+            helpText: 'Some help text',
             options: [
               { value: 'chocolate', label: 'Chocolate' },
               { value: 'strawberry', label: 'Strawberry' },
@@ -986,6 +988,7 @@ export const config = {
             size: 'lg',
             className: 'select',
             dataTestId: 'select',
+            icon: <FlutterDashIcon />,
             options: [
               { value: 'chocolate', label: 'Chocolate' },
               { value: 'strawberry', label: 'Strawberry' },
