@@ -15,82 +15,70 @@ export default {
 
 const Template = (props) => <TextArea {...props} />;
 
-export const Small = Template.bind({});
-
-Small.args = {
-  size: 'sm',
+export const Default = Template.bind({});
+Default.args = {
   placeholder: 'Message',
 };
 
-export const Large = Template.bind({});
-
-Large.args = {
-  size: 'lg',
+export const DefaultDisabled = Template.bind({});
+DefaultDisabled.args = {
   placeholder: 'Message',
+  disabled: true,
 };
 
-export const Label = Template.bind({});
-
-Label.args = {
-  label: 'Label',
-  size: 'lg',
+export const DefaultError = Template.bind({});
+DefaultError.args = {
   placeholder: 'Message',
-};
-
-export const HelpText = Template.bind({});
-
-HelpText.args = {
-  size: 'lg',
-  placeholder: 'Message',
-  helpText: 'Help text',
-};
-
-export const ErrorMessage = Template.bind({});
-
-ErrorMessage.args = {
-  size: 'lg',
-  placeholder: 'Message',
-  errorMessage: 'Error message',
   isError: true,
 };
 
-export const MaxLength = Template.bind({});
-
-MaxLength.args = {
-  size: 'sm',
-  placeholder: 'Message',
-  errorMessage: 'Error message',
-  value: 'Some message',
-  helpText: 'Help text',
-  maxNumLength: 50,
-};
-
-export const MaxLengthError = Template.bind({});
-
-MaxLengthError.args = {
-  size: 'sm',
-  placeholder: 'Message',
-  errorMessage: 'Error message',
-  value: 'This attribute indicates whether the value of the control can be automatically',
-  helpText: 'Help text',
-  maxNumLength: 50,
-};
-
-export const Disabled = Template.bind({});
-
-Disabled.args = {
-  size: 'lg',
-  placeholder: 'Message',
-  helpText: 'Help text',
-  maxNumLength: 50,
-  disabled: true,
+export const Label = Template.bind({});
+Label.args = {
   label: 'Label',
+  placeholder: 'Message',
+};
+
+export const LabelDisabled = Template.bind({});
+LabelDisabled.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  disabled: true,
+};
+
+export const LabelError = Template.bind({});
+LabelError.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  isError: true,
+};
+
+export const LabelHelpText = Template.bind({});
+LabelHelpText.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  helpText: 'Help text',
+  value: 'Filled',
+};
+
+export const LabelHelpTextError = Template.bind({});
+LabelHelpTextError.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  helpText: 'Help text',
+  isError: true,
+};
+
+export const LabelHelpTextDisabled = Template.bind({});
+LabelHelpTextDisabled.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  helpText: 'Help text',
+  disabled: true,
 };
 
 export const ReadOnly = Template.bind({});
 
 ReadOnly.args = {
-  size: 'lg',
   placeholder: 'Message',
   readOnly: true,
   label: 'Label',
