@@ -10,7 +10,6 @@ const TextArea = React.forwardRef((props, ref) => {
     errorMessage,
     helpText,
     placeholder,
-    size,
     readOnly,
     disabled,
     value,
@@ -25,8 +24,6 @@ const TextArea = React.forwardRef((props, ref) => {
 
   const inputClassNames = classNames('onex-text-area', {
     [className]: className,
-    'onex-text-area--lg': size === 'lg',
-    'onex-text-area--sm': size === 'sm',
     'onex-text-area--disabled': disabled,
   });
 
@@ -66,12 +63,11 @@ const TextArea = React.forwardRef((props, ref) => {
 
   return (
     <Form.Group className={inputClassNames} data-test-id={dataTestId}>
-      {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
+      {label && <Form.Label>{label}</Form.Label>}
       <Form.Control
         ref={ref}
         as="textarea"
         placeholder={placeholder}
-        size={size}
         disabled={disabled}
         isInvalid={isInvalid}
         readOnly={readOnly}
@@ -81,10 +77,10 @@ const TextArea = React.forwardRef((props, ref) => {
         onChange={onHandleChange}
       />
       <div className="onex-text-area__footer">
-        {!disabled && isInvalid && (
+        {!disabled && isInvalid && errorMessage && (
           <Form.Text className="onex-text-area__error">{errorMessage}</Form.Text>
         )}
-        {!isInvalid && helpText && (
+        {!errorMessage && helpText && (
           <Form.Text className="onex-text-area__help">{helpText}</Form.Text>
         )}
         {maxNumLength && (
@@ -108,7 +104,6 @@ TextArea.propTypes = {
   helpText: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
-  size: PropTypes.oneOf(['lg', 'sm']),
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
   isError: PropTypes.bool,
@@ -127,7 +122,6 @@ TextArea.defaultProps = {
   helpText: undefined,
   value: '',
   placeholder: undefined,
-  size: 'sm',
   readOnly: false,
   disabled: false,
   isError: false,

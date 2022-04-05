@@ -6,29 +6,33 @@
   font-family: noto-sans, sans-serif;
   max-width: 31.25rem;
 }
-.onex-text-area .form-control {
-  color: black;
-  background-color: white;
-  border-color: #d1d8e0;
-  max-width: 31.25rem;
-  min-height: 7.5rem;
-  resize: none;
+.onex-text-area--disabled {
+  opacity: 0.4;
 }
-.onex-text-area .form-control--sm {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  border-radius: 0.375rem;
-}
-.onex-text-area .form-control--lg {
+.onex-text-area .form-label {
+  font-weight: 400;
+  color: #1a1c1e;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.onex-text-area .form-control {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #1a1c1e;
+  background-color: white;
+  border-color: rgba(26, 28, 30, 0.2);
   border-radius: 0.5rem;
+  max-width: 31.25rem;
+  min-height: 10rem;
+  min-width: 16.625rem;
+  padding: 0.625rem 0.75rem;
+  resize: none;
 }
 .onex-text-area .form-control:hover:not(:focus):not(:disabled) {
-  border-color: #002855;
+  border-color: rgba(26, 28, 30, 0.5);
 }
 .onex-text-area .form-control:focus {
-  border-color: #0070c0;
+  border: 2px solid #0070c0;
   outline: 0;
   box-shadow: none;
 }
@@ -36,12 +40,17 @@
   background-image: none;
   border-color: #d91522;
 }
+.onex-text-area .form-control.is-invalid:hover:not(:focus):not(:disabled), .onex-text-area .form-control:invalid:hover:not(:focus):not(:disabled) {
+  border-color: #d91522;
+}
+.onex-text-area .form-control.is-invalid:focus, .onex-text-area .form-control:invalid:focus {
+  border: 1px solid #d91522;
+  outline: 0;
+  box-shadow: none;
+}
 .onex-text-area .form-control:disabled, .onex-text-area .form-control.disabled {
   background-color: transparent;
-  border-color: #d1d8e0;
-}
-.onex-text-area .form-control:disabled::placeholder, .onex-text-area .form-control.disabled::placeholder {
-  color: #b0b8bf;
+  border-color: rgba(26, 28, 30, 0.2);
 }
 .onex-text-area .form-control:disabled + .onex-text-area__footer > .onex-text-area__nums, .onex-text-area .form-control.disabled + .onex-text-area__footer > .onex-text-area__nums {
   color: #b0b8bf;
@@ -82,4 +91,5 @@
 }
 .onex-text-area .form-text {
   margin-top: 0;
+  color: #676e7a;
 }
