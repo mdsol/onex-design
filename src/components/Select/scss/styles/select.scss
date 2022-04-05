@@ -131,15 +131,38 @@
   }
 
     .onex-select__multi-value {
-        background-color: $secondary-100;
-        border-radius: $select-multi-value-border-radius;
+      background-color: $secondary-400-opacity-01;
+      border-radius: $select-multi-value-border-radius;
+      align-items: center;
+      padding: 2px 2px 2px 8px;
+
+      .onex-select__multi-value__label {
+        padding: 0;
+        margin-right: 4px;
+        font-size: $font-size-lg;
+        line-height: $line-height-lg;
+        color: $secondary-900;
+      }
+
+      .onex-select__multi-value__remove {
+        display: flex;
         align-items: center;
-        .onex-select__multi-value__remove {
-            &:hover {
-                background-color: $secondary-100;
-                color: black;
-            }
+        justify-content: center;
+        width: $component-height-middle-sm;
+        height: $component-height-middle-sm;
+        padding: 0;
+        background-color: transparent;
+        color: $secondary-400;
+
+        svg {
+          width: $component-height-middle-sm;
+          height: $component-height-middle-sm;
+
+          & path {
+            fill: $secondary-400;
+          }
         }
+      }
     }
 }
 

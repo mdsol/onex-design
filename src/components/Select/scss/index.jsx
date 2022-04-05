@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const Control = ({ children, ...props }) => (
   <components.Control {...props}>
@@ -20,6 +21,12 @@ Control.defaultProps = {
   children: undefined,
   icon: undefined,
 };
+
+const MultiValueRemove = (props) => (
+  <components.MultiValueRemove {...props}>
+    <CloseRoundedIcon />
+  </components.MultiValueRemove>
+);
 
 const CustomSelect = ({
   className,
@@ -71,7 +78,15 @@ const CustomSelect = ({
           defaultOptions
           classNamePrefix="onex-select"
           name="search"
-          components={{ Control }}
+          components={{
+            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+            Control: ({ children, ...args }) => (
+              <Control {...args} icon={icon}>
+                {children}
+              </Control>
+            ),
+            MultiValueRemove,
+          }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}
           getOptionLabel={getOptionLabel}
@@ -91,6 +106,7 @@ const CustomSelect = ({
                 {children}
               </Control>
             ),
+            MultiValueRemove,
           }}
           onChange={handleChange}
           aria-invalid
