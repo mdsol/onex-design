@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FilterIcon } from '../../../../../icons';
 
 import Typography from '../../../../Typography/scss';
@@ -5,12 +6,12 @@ import Badge from '../../../../Badge/scss';
 import TextField from '../../../../TextField/scss';
 import Button from '../../../../Buttons/scss';
 
-const TableControls = () => (
+const TableControls = ({title, rowsQuantity}) => (
   <div className="onex-dataGrid__tableControls">
     <div className="onex-dataGrid__tableControls__title">
-      <Typography variant="h4">Title</Typography>
+      <Typography variant="h4">{title}</Typography>
       <Badge type="default" className="onex-dataGrid__tableControls__title__badge">
-        100
+        {rowsQuantity}
       </Badge>
     </div>
     <div className="onex-dataGrid__tableControls__controls">
@@ -27,5 +28,15 @@ const TableControls = () => (
     </div>
   </div>
 );
+
+TableControls.propTypes = {
+  title: PropTypes.string,
+  rowsQuantity: PropTypes.number,
+};
+
+TableControls.defaultProps = {
+  title: '',
+  rowsQuantity: 0,
+};
 
 export default TableControls;

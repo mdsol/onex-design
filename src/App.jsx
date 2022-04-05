@@ -60,7 +60,7 @@ const makeData = (...lens) => {
 };
 
 const DevExamples = () => {
-  const dataGridData = useMemo(() => makeData(15), []);
+  const dataGridData = useMemo(() => makeData(30), []);
 
   return (
     <div className="p-5">
@@ -70,7 +70,7 @@ const DevExamples = () => {
         </Check>
         <br />
         <br />
-        <DataGrid columns={dataGridColumns} data={dataGridData} rowsDividers={[5, 10, 15, 20]} />
+        <DataGrid columns={dataGridColumns} data={dataGridData} rowsDividers={[10, 20, 30]} />
       </div>
     </div>
   );

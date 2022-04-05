@@ -10,7 +10,7 @@ const DataGrid = ({ className, data, columns, rowsDividers }) => {
 
   return (
     <div className={dataGridClasses}>
-      <TableControls />
+      <TableControls title={columns[0].Header} rowsQuantity={data.length} />
       <RowsSection columns={columns} data={data} rowsDividers={rowsDividers} />
     </div>
   );
