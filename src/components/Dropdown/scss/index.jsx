@@ -20,6 +20,7 @@ const CustomDropdown = React.forwardRef((props, ref) => {
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
+    'onex-dropdown--default-icon': !title && buttonStyle === 'icon',
   });
 
   return (
@@ -70,10 +71,10 @@ CustomDropdown.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]),
-  variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
   align: PropTypes.oneOf(['start', 'end']),
   buttonStyle: PropTypes.oneOf(['text', 'icon']),
-  size: PropTypes.oneOf(['lg', 'sm']),
+  size: PropTypes.oneOf(['md', 'sm']),
   disabled: PropTypes.bool,
   items: PropTypes.arrayOf(
     PropTypes.shape({
