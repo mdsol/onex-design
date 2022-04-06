@@ -192,3 +192,7 @@
     opacity: 0.4;
   }
 }
+
+.multiselect-check.onex-check > .onex-check__wrapper.form-check-label {
+  pointer-events: none;
+}

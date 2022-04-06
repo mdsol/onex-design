@@ -5,6 +5,8 @@ import { Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import Check from '../../Check/scss';
+import Button from '../../Buttons/scss';
 
 const Control = ({ children, ...props }) => (
   <components.Control {...props}>
@@ -28,6 +30,35 @@ const MultiValueRemove = (props) => (
   </components.MultiValueRemove>
 );
 
+// eslint-disable-next-line react/prop-types
+const MenuList = ({ onHandleApply, ...props }) => (
+  <components.MenuList {...props}>
+    <div>{props.children}</div>
+    <div>
+      <Button
+        onClick={() => {
+          console.log('test', onHandleApply);
+          onHandleApply();
+        }}
+      >
+        Apply
+      </Button>
+    </div>
+  </components.MenuList>
+);
+const Option = ({ selectedOptions, ...props }) => {
+  console.log('PROPS', props);
+  const checkedValue = selectedOptions.some((elem) => elem.value === props.value);
+
+  return (
+    <components.Option {...props}>
+      <Check id={props.children} checked={checkedValue} className="multiselect-check">
+        {props.children}
+      </Check>
+    </components.Option>
+  );
+};
+
 const CustomSelect = ({
   className,
   isMulti,
@@ -47,7 +78,9 @@ const CustomSelect = ({
   getOptionValue,
   getOptionLabel,
 }) => {
-  const [selectedOptions, seSelectedOptions] = useState(selectedValues);
+  const [selectedOptions, setSelectedOptions] = useState(selectedValues);
+  const [multiSelectOptions, setMultiselectOptions] = useState(selectedValues);
+
   useEffect(() => {
     onSelect?.(selectedValues);
   }, [selectedValues, onSelect]);
@@ -60,13 +93,41 @@ const CustomSelect = ({
     'is-disabled': isDisabled,
   });
 
+  const setMultiselect = (option) => {
+    let multiOptions = [];
+
+    if (option.length !== 1) {
+      setSelectedOptions(option);
+      setMultiselectOptions(option);
+      return;
+    }
+
+    const hasOption = selectedOptions.some((elem) => elem.value === option[0].value);
+
+    if (hasOption) {
+      multiOptions = selectedOptions.filter((elem) => elem.value !== option[0].value);
+    } else {
+      multiOptions = [...selectedOptions, ...option];
+    }
+
+    setSelectedOptions(multiOptions);
+  };
+
   const handleChange = (option) => {
     if (!isMulti) {
-      seSelectedOptions([option]);
-      return onSelect?.([option]);
+      setSelectedOptions([option]);
+      onSelect?.([option]);
     }
-    seSelectedOptions([...option]);
-    return onSelect?.([...option]);
+
+    setMultiselect(option);
+    // setSelectedOptions([...selectedOptions, ...option]);
+    // return onSelect?.([...selectedOptions, ...option]);
+  };
+
+  const onHandleApply = () => {
+    console.log('test', selectedOptions);
+    setMultiselectOptions(selectedOptions);
+    onSelect?.(selectedOptions);
   };
 
   return (
@@ -86,11 +147,25 @@ const CustomSelect = ({
               </Control>
             ),
             MultiValueRemove,
+            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+            MenuList: ({ children, ...args }) => (
+              <MenuList {...args} onHandleApply={onHandleApply}>
+                {children}
+              </MenuList>
+            ),
+            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+            Option: ({ children, ...args }) => (
+              <Option {...args} selectedOptions={selectedOptions}>
+                {children}
+              </Option>
+            ),
           }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}
           getOptionLabel={getOptionLabel}
           getOptionValue={getOptionValue}
+          hideSelectedOptions={false}
+          closeMenuOnSelect={false}
         />
       ) : (
         <Select
@@ -106,12 +181,26 @@ const CustomSelect = ({
                 {children}
               </Control>
             ),
+            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+            MenuList: ({ children, ...args }) => (
+              <MenuList {...args} onHandleApply={onHandleApply} {...args}>
+                {children}
+              </MenuList>
+            ),
             MultiValueRemove,
+            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+            Option: ({ children, ...args }) => (
+              <Option {...args} selectedOptions={selectedOptions}>
+                {children}
+              </Option>
+            ),
           }}
           onChange={handleChange}
           aria-invalid
-          value={selectedOptions}
+          value={isMulti ? multiSelectOptions : selectedOptions}
           data-test-id={dataTestId}
+          hideSelectedOptions={false}
+          closeMenuOnSelect={false}
         />
       )}
       {isInvalid && <Form.Text className="onex-select__help-text">{errorMessage}</Form.Text>}
