@@ -14,9 +14,9 @@
   height: auto;
 };
 
-@mixin btn-size( $width ) {
+@mixin btn-size( $width, $height ) {
     min-width: $width;
-    height: $width;
+    height: $height;
 };
 
 @mixin dropdown-menu($border-radius, $font-size, $line-height, $padding-x, $padding-y, $min-width) {
