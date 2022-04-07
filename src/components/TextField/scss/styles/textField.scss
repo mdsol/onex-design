@@ -18,7 +18,10 @@
     }
 
     /* input icon  */
-    &__icon {
+    &__icon,
+    &__trailing-icon {
+      @include icon-size($icon-size-xlg);
+
       display: inline-flex;
       align-items: center;
       position: absolute;
@@ -27,18 +30,20 @@
       color: $secondary-400;
     }
 
+    &--lg &__trailing-icon {
+      right: $tf-padding-trailing-icon-lg;
+    }
+
+    &--sm &__trailing-icon {
+      right: $tf-padding-trailing-icon-sm;
+    }
+
     &--lg &__icon {
-        @include icon-size($icon-size-xlg);
-
-        left: $tf-padding-x-lg;
-
-        svg path {
-          fill: $secondary-900;
-        }
+      left: $tf-padding-x-lg;
     }
 
     &--sm &__icon {
-        left: $tf-padding-x-sm;
+      left: $tf-padding-x-sm;
     }
 
     &--disabled {
@@ -55,6 +60,21 @@
         }
     }
 
+    &--has-trailing-icon {
+      .form-control-sm {
+        padding-right: $tf-padding-icon-x-sm;
+      }
+
+      .form-control-lg {
+        padding-right: $tf-padding-icon-x-lg;
+      }
+    }
+
+
+    &--filled &__icon {
+      color: $secondary-900;
+    }
+
     /* clear btn */
     &__clear-btn {
         @include icon-size($icon-size-xlg);
@@ -68,10 +88,6 @@
         background: none;
         border: none;
         padding: 0;
-
-        svg path {
-          fill: $tf-icon-color;
-        }
 
         &:focus {
           outline: none;
@@ -105,6 +121,15 @@
         color: $secondary-400;
         font-size: $font-size-sm;
         line-height: $line-height-sm;
+    }
+
+    &__help--error.form-text {
+      flex-basis: 100%;
+      padding-left: 1.5rem;
+      background-image: escape-svg($em-background-image);
+      background-repeat: no-repeat;
+      background-position: left 0.25rem center;
+      color: $tf-invalid-border-color;
     }
 
     /* form control */

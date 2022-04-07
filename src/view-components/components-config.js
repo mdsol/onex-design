@@ -1176,8 +1176,8 @@ export const config = {
             size: 'sm',
             placeholder: 'Placeholder',
             label: 'Label',
-            showClearBtn: true,
             icon: <FlutterDashIcon />,
+            trailingIcon: <FlutterDashIcon />,
           },
           {
             label: 'Label',
@@ -1218,6 +1218,7 @@ export const config = {
             label: 'Label',
             showClearBtn: true,
             icon: <FlutterDashIcon />,
+            trailingIcon: <FlutterDashIcon />,
           },
         ],
       },
