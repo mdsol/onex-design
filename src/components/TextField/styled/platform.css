@@ -21,7 +21,7 @@
 .onex-text-field__input {
   position: relative;
 }
-.onex-text-field__icon {
+.onex-text-field__icon, .onex-text-field__trailing-icon {
   display: inline-flex;
   align-items: center;
   position: absolute;
@@ -29,15 +29,18 @@
   transform: translateY(-50%);
   color: #676e7a;
 }
-.onex-text-field--lg .onex-text-field__icon {
-  left: 0.75rem;
-}
-.onex-text-field--lg .onex-text-field__icon > svg {
+.onex-text-field__icon > svg, .onex-text-field__trailing-icon > svg {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-text-field--lg .onex-text-field__icon svg path {
-  fill: #1a1c1e;
+.onex-text-field--lg .onex-text-field__trailing-icon {
+  right: 0.625rem;
+}
+.onex-text-field--sm .onex-text-field__trailing-icon {
+  right: 0.375rem;
+}
+.onex-text-field--lg .onex-text-field__icon {
+  left: 0.75rem;
 }
 .onex-text-field--sm .onex-text-field__icon {
   left: 0.5rem;
@@ -51,13 +54,22 @@
 .onex-text-field--has-icon .form-control-lg {
   padding-left: 2.25rem;
 }
+.onex-text-field--has-trailing-icon .form-control-sm {
+  padding-right: 2rem;
+}
+.onex-text-field--has-trailing-icon .form-control-lg {
+  padding-right: 2.25rem;
+}
+.onex-text-field--filled .onex-text-field__icon {
+  color: #1a1c1e;
+}
 .onex-text-field__clear-btn {
   position: absolute;
   display: inline-flex;
   align-items: center;
   top: 50%;
   transform: translateY(-50%);
-  color: #676e7a;
+  color: #858c96;
   background: none;
   border: none;
   padding: 0;
@@ -65,9 +77,6 @@
 .onex-text-field__clear-btn > svg {
   width: 1.25rem;
   height: 1.25rem;
-}
-.onex-text-field__clear-btn svg path {
-  fill: #676e7a;
 }
 .onex-text-field__clear-btn:focus {
   outline: none;
@@ -92,6 +101,14 @@
   color: #676e7a;
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.onex-text-field__help--error.form-text {
+  flex-basis: 100%;
+  padding-left: 1.5rem;
+  background-image: url("data:image/svg+xml,%3csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z' fill='%23d91522'%3e%3c/path%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 0.25rem center;
+  color: #d91522;
 }
 .onex-text-field .form-control.form-control-sm {
   height: 2rem;
