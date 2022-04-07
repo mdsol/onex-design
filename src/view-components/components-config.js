@@ -11,10 +11,14 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
-  { eventKey: 'one', title: 'item one' },
-  { eventKey: 'two', title: 'item two' },
+  { eventKey: 'one', title: 'item one', badge: 100, active: true },
+  { eventKey: 'two', title: 'item two', badge: 100 },
   { eventKey: 'three', title: 'item three' },
-  { eventKey: 'four', title: 'item four' },
+  { eventKey: 'four', title: 'item four', badge: 100 },
+  { eventKey: 'five', title: 'item five', badge: 100 },
+  { eventKey: 'six', title: 'item six', badge: 100 },
+  { eventKey: 'seven', title: 'item seven', badge: 100 },
+  { eventKey: 'eight', title: 'item eight', badge: 100 },
 ];
 
 const tabsVisibleItems = [
@@ -395,6 +399,7 @@ export const config = {
             id: 'small-dropdown',
             items: dropdownItems,
             size: 'sm',
+            isSearchable: true,
           },
           {
             title: 'Label',

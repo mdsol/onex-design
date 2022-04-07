@@ -234,7 +234,7 @@
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.375rem;
+  padding: 0.25rem 1rem;
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -274,7 +274,7 @@
 
 .dropdown-item-text {
   display: block;
-  padding: 0.375rem 0.375rem;
+  padding: 0.25rem 1rem;
   color: #212529;
 }
 
@@ -309,7 +309,6 @@
 
 .onex-dropdown {
   /* buttonStyle (text, icon) */
-  /* dropdown menu */
 }
 .onex-dropdown > .btn {
   position: relative;
@@ -359,21 +358,21 @@
   color: #1a1c1e;
 }
 .onex-dropdown > .btn.btn-md {
-  min-width: 2.5rem;
+  min-width: 5rem;
   height: 2.5rem;
   padding: 0.625rem 0.5rem 0.625rem 0.75rem;
 }
 .onex-dropdown > .btn.btn-sm {
-  min-width: 2rem;
+  min-width: 5rem;
   height: 2rem;
   padding: 0.375rem 0.5rem 0.375rem 0.75rem;
 }
 .onex-dropdown--text > .dropdown-toggle::after, .onex-dropdown--default-icon > .dropdown-toggle::after {
   content: "";
   display: inline-block;
-  height: 20px;
-  width: 20px;
-  background-size: 20px 20px;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-size: 1.25rem 1.25rem;
   background-repeat: no-repeat;
   border: none;
   margin-left: 0.25rem;
@@ -429,28 +428,59 @@
 }
 .onex-dropdown .dropdown-menu {
   font-family: noto-sans, sans-serif;
-}
-.onex-dropdown .btn-md ~ .dropdown-menu {
   border-radius: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  padding: 0.75rem 0.625rem;
-  min-width: 10rem;
+  padding: 0.25rem 0;
+  max-height: 15.5rem;
+  overflow: hidden;
 }
-.onex-dropdown .btn-md ~ .dropdown-menu .dropdown-item {
-  padding: 0.375rem 0.625rem;
-  border-radius: 0.5rem;
+.onex-dropdown .dropdown-menu--search {
+  margin: 0.5rem 0.75rem 0.625rem 0.75rem;
+  min-width: 13.5rem;
+}
+.onex-dropdown .dropdown-menu--list {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  max-height: 10rem;
+  overflow-y: scroll;
+  margin-right: 0.75rem;
+  scrollbar-color: rgba(26, 28, 30, 0.1) transparent;
+  scrollbar-width: thin;
+}
+.onex-dropdown .dropdown-menu--list::-webkit-scrollbar {
+  width: 0.25rem;
+}
+.onex-dropdown .dropdown-menu--list::-webkit-scrollbar-track {
+  background: white;
+}
+.onex-dropdown .dropdown-menu--list::-webkit-scrollbar-thumb {
+  background: rgba(26, 28, 30, 0.1);
+  background-clip: padding-box;
+  border-radius: 0.125rem;
+}
+.onex-dropdown .dropdown-menu .dropdown-item {
+  padding: 0.625rem 0.75rem;
   text-decoration: none;
+  color: #1a1c1e;
+  min-width: 13.5rem;
 }
-.onex-dropdown .btn-sm ~ .dropdown-menu {
-  border-radius: 0.375rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  padding: 0.625rem 0.375rem;
-  min-width: 8rem;
+.onex-dropdown .dropdown-menu .dropdown-item > span {
+  padding-right: 0.5rem;
 }
-.onex-dropdown .btn-sm ~ .dropdown-menu .dropdown-item {
-  padding: 0.25rem 0.375rem;
-  border-radius: 0.375rem;
-  text-decoration: none;
+.onex-dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(103, 110, 122, 0.1);
+}
+.onex-dropdown .dropdown-menu .dropdown-item.active, .onex-dropdown .dropdown-menu .dropdown-item:active {
+  background-color: #c6e3fc;
+}
+.onex-dropdown .dropdown-menu .dropdown-item.active:hover, .onex-dropdown .dropdown-menu .dropdown-item:active:hover {
+  background-color: #8dcaf9;
+}
+.onex-dropdown .dropdown-menu .dropdown-item.active.disabled, .onex-dropdown .dropdown-menu .dropdown-item.active:disabled, .onex-dropdown .dropdown-menu .dropdown-item:active.disabled, .onex-dropdown .dropdown-menu .dropdown-item:active:disabled {
+  background-color: transparent;
+}
+.onex-dropdown .dropdown-menu .dropdown-item.disabled, .onex-dropdown .dropdown-menu .dropdown-item:disabled {
+  opacity: 0.4;
 }

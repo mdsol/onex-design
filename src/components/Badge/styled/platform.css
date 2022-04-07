@@ -48,7 +48,7 @@
   display: inline-flex;
 }
 .onex-badge.onex-badge--variant-counter.bg-default {
-  background-color: #e7eef5 !important;
+  background-color: rgba(103, 110, 122, 0.1) !important;
 }
 .onex-badge.onex-badge--variant-counter.bg-default-invert {
   background-color: #585f68 !important;

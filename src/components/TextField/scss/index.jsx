@@ -7,6 +7,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 const TextField = React.forwardRef((props, ref) => {
   const {
+    autoFocus,
     className,
     label,
     errorMessage,
@@ -59,6 +60,7 @@ const TextField = React.forwardRef((props, ref) => {
       <div className="onex-text-field__input">
         <Form.Control
           ref={ref}
+          autoFocus={autoFocus}
           type="text"
           placeholder={placeholder}
           size={size}
@@ -94,6 +96,7 @@ const TextField = React.forwardRef((props, ref) => {
 });
 
 TextField.propTypes = {
+  autoFocus: PropTypes.bool,
   className: PropTypes.string,
   label: PropTypes.string,
   errorMessage: PropTypes.string,
@@ -113,6 +116,7 @@ TextField.propTypes = {
 };
 
 TextField.defaultProps = {
+  autoFocus: false,
   className: undefined,
   label: undefined,
   errorMessage: undefined,

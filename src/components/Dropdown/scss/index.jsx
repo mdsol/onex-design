@@ -1,14 +1,17 @@
+import { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
+import Badge from '../../Badge/scss';
+import DropdownMenu from './components/DropdownMenu';
 
-const CustomDropdown = React.forwardRef((props, ref) => {
+const CustomDropdown = (props) => {
   const {
     className,
     disabled,
     id,
     title,
+    isSearchable,
     items,
     variant,
     size,
@@ -21,51 +24,59 @@ const CustomDropdown = React.forwardRef((props, ref) => {
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
     'onex-dropdown--default-icon': !title && buttonStyle === 'icon',
+    'onex-dropdown--menu-searchable': isSearchable,
   });
 
   return (
-    <DropdownButton
-      as={as}
-      ref={ref}
-      className={buttonClassNames}
-      id={id}
-      title={title}
-      disabled={disabled}
-      variant={variant}
-      size={size}
-      align={align}
-      onSelect={onSelect}
-      data-test-id={dataTestId}
-    >
-      {!!items?.length &&
-        items.map((item) => {
-          const {
-            title: itemTitle,
-            href,
-            hasDividerAfter,
-            active,
-            disabled: itemDisabled,
-            eventKey,
-          } = item;
+    <Dropdown onSelect={onSelect} className={buttonClassNames} data-test-id={dataTestId}>
+      <Dropdown.Toggle
+        as={as}
+        id={id}
+        disabled={disabled}
+        variant={variant}
+        size={size}
+        align={align}
+      >
+        {title}
+      </Dropdown.Toggle>
+      <Dropdown.Menu isSearchable={isSearchable} as={DropdownMenu}>
+        {!!items?.length &&
+          items.map((item) => {
+            const {
+              title: itemTitle,
+              badge,
+              href,
+              hasDividerAfter,
+              active,
+              disabled: itemDisabled,
+              eventKey,
+            } = item;
 
-          return (
-            <>
-              <Dropdown.Item
-                key={eventKey}
-                href={href}
-                active={active}
-                eventKey={eventKey}
-                disabled={itemDisabled}
-              >
-                {itemTitle}
-              </Dropdown.Item>
-              {hasDividerAfter && <Dropdown.Divider />}
-            </>
-          );
-        })}
-    </DropdownButton>
+            return (
+              <Fragment key={eventKey}>
+                <Dropdown.Item
+                  key={eventKey}
+                  href={href}
+                  active={active}
+                  eventKey={eventKey}
+                  disabled={itemDisabled}
+                  title={itemTitle}
+                >
+                  <span>{itemTitle}</span>
+                  {badge && (
+                    <Badge size="sm" type={active && !itemDisabled ? 'primary' : 'default'}>
+                      {badge}
+                    </Badge>
+                  )}
+                </Dropdown.Item>
+                {hasDividerAfter && <Dropdown.Divider />}
+              </Fragment>
+            );
+          })}
+      </Dropdown.Menu>
+    </Dropdown>
   );
-});
+};
 
 CustomDropdown.propTypes = {
   id: PropTypes.string.isRequired,
@@ -76,9 +87,11 @@ CustomDropdown.propTypes = {
   buttonStyle: PropTypes.oneOf(['text', 'icon']),
   size: PropTypes.oneOf(['md', 'sm']),
   disabled: PropTypes.bool,
+  isSearchable: PropTypes.bool,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
+      badge: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       hasDividerAfter: PropTypes.bool,
       active: PropTypes.bool,
       disabled: PropTypes.bool,
@@ -95,6 +108,7 @@ CustomDropdown.defaultProps = {
   className: undefined,
   disabled: false,
   title: undefined,
+  isSearchable: false,
   items: null,
   variant: 'primary',
   size: 'sm',

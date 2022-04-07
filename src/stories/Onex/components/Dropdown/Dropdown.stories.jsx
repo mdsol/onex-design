@@ -5,7 +5,7 @@ import DropdownDocumentation from './Dropdown.stories.mdx';
 export default {
   title: 'Onex/Components/Dropdown',
   component: Dropdown,
-  decorators: [(Story) => <div style={{ width: '12rem' }}>{Story()}</div>],
+  decorators: [(Story) => <div style={{ width: '15rem' }}>{Story()}</div>],
   argTypes: {
     align: {
       description: 'Aligns the dropdown menu to the specified side of the container',
@@ -27,6 +27,10 @@ export default {
     id: {
       description: 'An html id attribute for the Toggle button,',
       control: 'text',
+    },
+    isSearchable: {
+      description: 'Added Search input to menu',
+      control: 'boolean',
     },
     items: {
       description: `Array of menu items. Each item contain:
@@ -57,10 +61,14 @@ export default {
 };
 
 const dropdownItems = [
-  { eventKey: 'one', title: 'item one' },
-  { eventKey: 'two', title: 'item two' },
+  { eventKey: 'one', title: 'item one', badge: 100, active: true },
+  { eventKey: 'two', title: 'item two', badge: 100 },
   { eventKey: 'three', title: 'item three' },
-  { eventKey: 'four', title: 'item four' },
+  { eventKey: 'four', title: 'item four', badge: 100 },
+  { eventKey: 'five', title: 'item five', badge: 100 },
+  { eventKey: 'six', title: 'item six', badge: 100 },
+  { eventKey: 'seven', title: 'item seven', badge: 100 },
+  { eventKey: 'eight', title: 'item eight', badge: 100 },
 ];
 
 const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -416,4 +424,13 @@ TertiaryCustomDisabledIcon.args = {
   buttonStyle: 'icon',
   disabled: true,
   title: <MoreVertIcon />,
+};
+
+export const Search = DropdownTemplate.bind({});
+Search.args = {
+  title: 'Label',
+  id: 'small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  isSearchable: true,
 };
