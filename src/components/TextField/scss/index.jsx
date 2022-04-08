@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
-import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 const TextField = React.forwardRef((props, ref) => {
@@ -20,22 +20,29 @@ const TextField = React.forwardRef((props, ref) => {
     isInvalid,
     required,
     icon,
+    trailingIcon,
     showClearBtn,
     showDefaultIcon,
     helpText,
     dataTestId,
   } = props;
 
-  const inputClassNames = classNames('onex-text-field', {
-    [className]: className,
-    'onex-text-field--lg': size === 'lg',
-    'onex-text-field--sm': size === 'sm',
-    'onex-text-field--disabled': disabled,
-    'onex-text-field--has-icon': icon || showDefaultIcon,
-    'onex-text-field--has-clear-btn': showClearBtn,
-  });
-
   const [_value, _setValue] = useState(value);
+
+  const inputClassNames = useMemo(
+    () =>
+      classNames('onex-text-field', {
+        [className]: className,
+        'onex-text-field--lg': size === 'lg',
+        'onex-text-field--sm': size === 'sm',
+        'onex-text-field--disabled': disabled,
+        'onex-text-field--has-icon': icon || showDefaultIcon,
+        'onex-text-field--has-clear-btn': showClearBtn,
+        'onex-text-field--filled': _value,
+        'onex-text-field--has-trailing-icon': trailingIcon,
+      }),
+    [_value],
+  );
 
   const changeValue = (val) => {
     _setValue(val);
@@ -77,19 +84,27 @@ const TextField = React.forwardRef((props, ref) => {
             {showDefaultIcon && !icon && <SearchOutlinedIcon />}
           </div>
         )}
-        {showClearBtn && (
+        {showClearBtn && !!_value ? (
           <button
             className="onex-text-field__clear-btn"
             type="button"
             onClick={handleClear}
             disabled={disabled}
           >
-            <HighlightOffOutlinedIcon />
+            <CancelRoundedIcon />
           </button>
+        ) : (
+          trailingIcon && <div className="onex-text-field__trailing-icon">{trailingIcon}</div>
         )}
       </div>
       {(helpText || (isInvalid && !disabled)) && (
-        <Form.Text className="onex-text-field__help">{helpText || errorMessage}</Form.Text>
+        <Form.Text
+          className={classNames('onex-text-field__help', {
+            'onex-text-field__help--error': isInvalid,
+          })}
+        >
+          {helpText || errorMessage}
+        </Form.Text>
       )}
     </Form.Group>
   );
@@ -103,6 +118,7 @@ TextField.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(['lg', 'sm']),
+  trailingIcon: PropTypes.node,
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
   isInvalid: PropTypes.bool,
@@ -130,6 +146,7 @@ TextField.defaultProps = {
   showClearBtn: false,
   showDefaultIcon: false,
   icon: undefined,
+  trailingIcon: undefined,
   helpText: undefined,
   onChange: undefined,
   dataTestId: undefined,

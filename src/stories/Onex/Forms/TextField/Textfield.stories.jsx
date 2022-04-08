@@ -1,5 +1,6 @@
 import FlutterDashIcon from '@mui/icons-material/FlutterDash';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { TextField } from '../../../../components';
 
 import TextFieldMDX from './Textfield.stories.mdx';
@@ -11,6 +12,10 @@ export default {
   component: TextField,
   argTypes: {
     icon: {
+      options: Object.keys(icons),
+      mapping: icons,
+    },
+    trailingIcon: {
       options: Object.keys(icons),
       mapping: icons,
     },
@@ -46,10 +51,30 @@ export const ErrorMessage = Template.bind({});
 
 ErrorMessage.args = {
   size: 'lg',
-  label: 'Error',
+  label: 'Label',
   placeholder: 'Placeholder',
   errorMessage: 'Error message',
   isInvalid: true,
+};
+
+export const HelpText = Template.bind({});
+
+HelpText.args = {
+  size: 'lg',
+  label: 'Label',
+  placeholder: 'Placeholder',
+  helpText: 'Help text',
+};
+
+export const TrailingIcon = Template.bind({});
+
+TrailingIcon.args = {
+  size: 'lg',
+  label: 'Label',
+  placeholder: 'Placeholder',
+  helpText: 'Help text',
+  trailingIcon: <InfoRoundedIcon />,
+  showClearBtn: true,
 };
 
 export const Disabled = Template.bind({});
