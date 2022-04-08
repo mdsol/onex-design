@@ -1,4 +1,4 @@
-import { BugFill } from 'react-bootstrap-icons';
+import BugReportIcon from '@mui/icons-material/BugReport';
 import { Avatar } from '../../../../components';
 import AvatarDocumentation from './Avatar.stories.mdx';
 
@@ -20,14 +20,14 @@ export default {
     children: {
       description:
         'Used to render icon or text elements inside the Avatar. This can be an element, or just a string',
-      control: 'text',
     },
     src: {
       description: 'The url of a remote image or an image object',
       control: 'text',
     },
     hoverDisabled: {
-      description: 'Disables the avatar hover',
+      description:
+        'Disables the avatar hover, for size ```xs``` and ```sm``` hover disabled automatically',
     },
     dataTestId: {
       description: 'Id of the component for testing',
@@ -44,16 +44,6 @@ const AvatarTemplate = (args) => <Avatar {...args} />;
 
 export const Default = AvatarTemplate.bind({});
 
-export const Initials = AvatarTemplate.bind({});
-Initials.args = {
-  children: 'KK',
-};
-
-export const Name = AvatarTemplate.bind({});
-Name.args = {
-  name: 'Test User',
-};
-
 export const Image = AvatarTemplate.bind({});
 Image.args = {
   src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
@@ -63,7 +53,7 @@ export const Icon = AvatarTemplate.bind({});
 
 const iconSourceBody = `
 <Avatar>
-    <BugFill />
+    <BugReportIcon />
 </Avatar>
 `;
 
@@ -75,7 +65,7 @@ Icon.parameters = {
   },
 };
 Icon.args = {
-  children: <BugFill />,
+  children: <BugReportIcon />,
 };
 
 export const ExtraSmall = AvatarTemplate.bind({});
@@ -100,16 +90,4 @@ export const Large = AvatarTemplate.bind({});
 Large.args = {
   src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
   size: 'lg',
-};
-
-export const ExtraLarge = AvatarTemplate.bind({});
-ExtraLarge.args = {
-  src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-  size: 'xl',
-};
-
-export const ExtraExtraLarge = AvatarTemplate.bind({});
-ExtraExtraLarge.args = {
-  src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-  size: 'xxl',
 };

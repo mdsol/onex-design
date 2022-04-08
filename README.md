@@ -83,6 +83,8 @@ Story book
 
     http://localhost:6006/
 
+Before run tests please run dev environment
+
 Update test snapshots
 
     $yarn test -u

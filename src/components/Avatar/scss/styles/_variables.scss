@@ -1,22 +1,24 @@
-$onex-avatar-height-xs: $component-height-middle-sm;
-$onex-avatar-width-svg-xs: 0.9rem;
-$onex-avatar-height-svg-xs: 0.75rem;
+$onex-avatar-height-xs: 1.5rem;
+$onex-avatar-font-size-xs: 0.5rem;
+$onex-avatar-line-height-xs: 0.5rem;
+$onex-avatar-size-svg-xs: 0.938rem;
+$onex-avatar-size-svg-hover-xs: 0.625rem;
 
-$onex-avatar-height-sm: $component-height-middle-lg;
-$onex-avatar-font-size-sm: 0.5rem;
-$onex-avatar-line-height-sm: 0.5rem;
-$onex-avatar-width-svg-sm: 1rem;
-$onex-avatar-height-svg-sm: 0.8rem;
+$onex-avatar-height-sm: $component-height-sm;
+$onex-avatar-size-svg-sm: 1.25rem;
+$onex-avatar-size-svg-hover-sm: 0.938rem;
 
-$onex-avatar-height-md: 2rem;
-$onex-avatar-width-svg-md: 1.2rem;
-$onex-avatar-height-svg-md: 1rem;
+$onex-avatar-height-md: 2.5rem;
+$onex-avatar-font-size-md: $font-size-sm;
+$onex-avatar-line-height-md: $line-height-sm;
+$onex-avatar-size-svg-md: 1.563rem;
+$onex-avatar-size-svg-hover-md: 1.25rem;
 
-$onex-avatar-height-lg: 2.5rem;
-$onex-avatar-font-size-lg: $font-size-sm;
-$onex-avatar-line-height-lg: $line-height-sm;
-$onex-avatar-width-svg-lg: 1.5rem;
-$onex-avatar-height-svg-lg: 1.3rem;
+$onex-avatar-height-lg: 4rem;
+$onex-avatar-font-size-lg: $font-size-lg;
+$onex-avatar-line-height-lg: $line-height-lg;
+$onex-avatar-size-svg-hover-lg: 2rem;
+$onex-avatar-size-svg-lg: 2.5rem;
 
 $onex-avatar-height-xl: 4rem;
 $onex-avatar-width-svg-xl: 3rem;
