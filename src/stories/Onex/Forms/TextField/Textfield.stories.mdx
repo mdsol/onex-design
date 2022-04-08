@@ -34,10 +34,14 @@ import { TextField } from '../../../../components';
         },
         value: {
             description: 'The value of the textarea element, required for a controlled component.',
+            control: 'text',
             table: {
                 defaultValue: {
                     summary: 'undefined',
                 },
+                type: {
+                  summary: 'string'
+                }
             }
         },
         placeholder: {
@@ -67,6 +71,14 @@ import { TextField } from '../../../../components';
                     summary: 'undefined',
                 },
             }
+        },
+        trailingIcon: {
+          description: 'Node element placed in right side of input element. ',
+          table: {
+            defaultValue: {
+              summary: 'undefined',
+            },
+          }
         },
         showClearBtn: {
             description: 'If true, the input has clear button in the end. '
