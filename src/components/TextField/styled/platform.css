@@ -27,11 +27,16 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #676e7a;
 }
 .onex-text-field__icon > svg, .onex-text-field__trailing-icon > svg {
   width: 1.25rem;
   height: 1.25rem;
+}
+.onex-text-field__icon {
+  color: #676e7a;
+}
+.onex-text-field__trailing-icon {
+  color: #858c96;
 }
 .onex-text-field--lg .onex-text-field__trailing-icon {
   right: 0.625rem;
@@ -82,10 +87,10 @@
   outline: none;
 }
 .onex-text-field--lg .onex-text-field__clear-btn {
-  right: 0.75rem;
+  right: 0.625rem;
 }
 .onex-text-field--sm .onex-text-field__clear-btn {
-  right: 0.5rem;
+  right: 0.375rem;
 }
 .onex-text-field--has-clear-btn .form-control-sm {
   padding-right: 2rem;

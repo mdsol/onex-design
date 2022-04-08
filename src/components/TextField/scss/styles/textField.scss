@@ -27,7 +27,14 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+    }
+
+    &__icon {
       color: $secondary-400;
+    }
+
+    &__trailing-icon {
+      color: $tf-icon-color;
     }
 
     &--lg &__trailing-icon {
@@ -95,11 +102,11 @@
     }
 
     &--lg &__clear-btn {
-        right: $tf-padding-x-lg;
+        right: $tf-padding-trailing-icon-lg;
     }
 
     &--sm &__clear-btn {
-        right: $tf-padding-x-sm;
+        right: $tf-padding-trailing-icon-sm;
     }
 
     &--has-clear-btn {
