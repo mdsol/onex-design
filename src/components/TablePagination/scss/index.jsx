@@ -14,9 +14,12 @@ const TablePagination = ({
   previousPage,
   nextPage,
   setPageSize,
+  pageSize,
+  canPreviousPage,
+  canNextPage,
+  lastRow,
 }) => {
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
-  const [lastActiveRow, setLastActiveRow] = useState(defaultRowsPerPage);
 
   const tablePaginationClassNames = classNames('tablePagination', {
     [className]: className,
@@ -27,17 +30,14 @@ const TablePagination = ({
   const handleRowsPerPageSelect = (e) => {
     const row = Number(e);
     setRowsPerPage(row);
-    setLastActiveRow(row);
     setPageSize(row);
   };
 
   const handleNextActiveRow = () => {
-    setLastActiveRow((prev) => prev + rowsPerPage);
     nextPage();
   };
 
   const handlePrevActiveRow = () => {
-    setLastActiveRow((prev) => prev - rowsPerPage);
     previousPage();
   };
 
@@ -59,21 +59,21 @@ const TablePagination = ({
         </DropdownButton>
       </div>
       <span className="rows-text">
-        {lastActiveRow - rowsPerPage + 1}-{lastActiveRow} of {rows}
+        {lastRow - pageSize + 1}-{lastRow} of {rows}
       </span>
       <div className="pageArrows">
         <button
           type="button"
-          className={`${lastActiveRow === rowsPerPage ? `disabled` : ''}`}
-          disabled={lastActiveRow === rowsPerPage}
+          className={`${!canPreviousPage ? `disabled` : ''}`}
+          disabled={!canPreviousPage}
           onClick={handlePrevActiveRow}
         >
           <NextArrowIcon />
         </button>
         <button
           type="button"
-          className={`pageArrows_button_next ${lastActiveRow === rows ? `disabled` : ''}`}
-          disabled={lastActiveRow === rows}
+          className={`pageArrows_button_next ${!canNextPage ? `disabled` : ''}`}
+          disabled={!canNextPage}
           onClick={handleNextActiveRow}
         >
           <NextArrowIcon />
@@ -93,6 +93,10 @@ TablePagination.propTypes = {
   nextPage: PropTypes.func,
   defaultRowsPerPage: PropTypes.number,
   setPageSize: PropTypes.func,
+  pageSize: PropTypes.number,
+  canPreviousPage: PropTypes.bool,
+  canNextPage: PropTypes.bool,
+  lastRow: PropTypes.number,
 };
 
 TablePagination.defaultProps = {
@@ -105,6 +109,10 @@ TablePagination.defaultProps = {
   nextPage: undefined,
   defaultRowsPerPage: 0,
   setPageSize: undefined,
+  pageSize: 0,
+  canPreviousPage: false,
+  canNextPage: false,
+  lastRow: 0,
 };
 
 export default TablePagination;

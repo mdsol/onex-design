@@ -24,6 +24,8 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
     previousPage,
     nextPage,
     setPageSize,
+    canNextPage,
+    canPreviousPage,
     state: { pageSize },
   } = useTable(
     {
@@ -137,6 +139,10 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
           previousPage={previousPage}
           nextPage={nextPage}
           setPageSize={setPageSize}
+          pageSize={page.length}
+          canNextPage={canNextPage}
+          canPreviousPage={canPreviousPage}
+          lastRow={Number(page[page.length - 1].id) + 1}
         />
       </div>
     </>
