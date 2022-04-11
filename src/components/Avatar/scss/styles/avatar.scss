@@ -4,11 +4,10 @@
     @include avatar-layout();
     position: relative;
     border-radius: $onex-avatar-border-radius;
-    cursor: pointer;
-    color: $secondary-500;
+    color: rgba(103, 110, 122, 1);
     overflow: hidden;
-    box-shadow: inset 0 0 0 1px $secondary;
-    background-color: $secondary-100;
+    box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
+    background-color: rgba(103, 110, 122, 0.1);
 
     &__img {
         object-fit: cover;
@@ -21,6 +20,7 @@
 
     &:not(.hover-disabled):hover {
         box-shadow: inset 0 0 0 1px transparent;
+        cursor: pointer;
     }
 
     &__hover {
@@ -35,7 +35,7 @@
         top: 0;
         left: 0;
         color: $white;
-        background-color: $black-opacity-07;
+        background-color: rgba(0, 0, 0, 0.75);
     }
 
     &:hover &__hover {
@@ -52,30 +52,30 @@
     &--size-xs {
         @include avatar-size(
             $onex-avatar-height-xs,
-            $onex-avatar-font-size-sm,
-            $onex-avatar-line-height-sm,
-            $onex-avatar-width-svg-xs,
-            $onex-avatar-height-svg-xs
+            $onex-avatar-font-size-xs,
+            $onex-avatar-line-height-xs,
+            $onex-avatar-size-svg-xs,
+            $onex-avatar-size-svg-hover-xs
         );
     }
 
     &--size-sm {
         @include avatar-size(
             $onex-avatar-height-sm,
-            $onex-avatar-font-size-sm,
-            $onex-avatar-line-height-sm,
-            $onex-avatar-width-svg-sm,
-            $onex-avatar-height-svg-sm
+            $onex-avatar-font-size-md,
+            $onex-avatar-line-height-md,
+            $onex-avatar-size-svg-sm,
+            $onex-avatar-size-svg-hover-sm
         );
     }
 
     &--size-md {
         @include avatar-size(
             $onex-avatar-height-md,
-            $onex-avatar-font-size-lg,
-            $onex-avatar-line-height-lg,
-            $onex-avatar-width-svg-md,
-            $onex-avatar-height-svg-md
+            $onex-avatar-font-size-md,
+            $onex-avatar-line-height-md,
+            $onex-avatar-size-svg-md,
+            $onex-avatar-size-svg-hover-md
         );
     }
 
@@ -84,28 +84,8 @@
             $onex-avatar-height-lg,
             $onex-avatar-font-size-lg,
             $onex-avatar-line-height-lg,
-            $onex-avatar-width-svg-lg,
-            $onex-avatar-height-svg-lg
-        );
-    }
-
-    &--size-xl {
-        @include avatar-size(
-            $onex-avatar-height-xl,
-            $onex-avatar-font-size-xxl,
-            $onex-avatar-line-height-xxl,
-            $onex-avatar-width-svg-xl,
-            $onex-avatar-height-svg-xl
-        );
-    }
-
-    &--size-xxl {
-        @include avatar-size(
-            $onex-avatar-height-xxl,
-            $onex-avatar-font-size-xxl,
-            $onex-avatar-font-size-xxl,
-            $onex-avatar-width-svg-xxl,
-            $onex-avatar-height-svg-xxl
+            $onex-avatar-size-svg-lg,
+            $onex-avatar-size-svg-hover-lg,
         );
     }
 }

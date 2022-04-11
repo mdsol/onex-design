@@ -1,5 +1,6 @@
 <!-- Avatar.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import BugReportIcon from '@mui/icons-material/BugReport';
 import { Avatar } from '../../../../components';
 
 <Meta
@@ -19,16 +20,6 @@ along side a user's information and/or content that they have created.
 ### Default avatar
 <Canvas>
   <Story id="onex-components-avatar--default" />
-</Canvas>
-
-### Letter avatar
-
-Avatar containing simple characters can be created by passing a string as ```children```
-or by passing ```name``` prop, which used to generate initials of the person.
-
-<Canvas>
-  <Story id="onex-components-avatar--initials" />
-  <Story id="onex-components-avatar--name" />
 </Canvas>
 
 ### Image avatar
@@ -54,8 +45,6 @@ An avatar component can vary in size.
   <Story id="onex-components-avatar--small" />
   <Story id="onex-components-avatar--medium" />
   <Story id="onex-components-avatar--large" />
-  <Story id="onex-components-avatar--extra-large" />
-  <Story id="onex-components-avatar--extra-extra-large" />
 </Canvas>
 
 ## Demo
@@ -65,9 +54,8 @@ An avatar component can vary in size.
     name="Demo"
     args={{
       className: 'custom-avatar',
-      size: 'xl',
-      children: 'KK',
-      name: 'Test User',
+      size: 'lg',
+      children: <BugReportIcon />,
       hoverDisabled: false,
       dataTestId: 'test-avatar-id',
     }}>

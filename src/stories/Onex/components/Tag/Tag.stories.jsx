@@ -102,7 +102,7 @@ SelectionLeadingIcon.args = {
     icon: (
       <Avatar
         src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-        size="sm"
+        size="xs"
         hoverDisabled
       />
     ),
@@ -120,7 +120,7 @@ SelectionLeadingIconRemovable.args = {
     icon: (
       <Avatar
         src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-        size="sm"
+        size="xs"
         hoverDisabled
       />
     ),
@@ -141,7 +141,7 @@ SelectionLeadingIconRemovableDisabled.args = {
     icon: (
       <Avatar
         src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-        size="sm"
+        size="xs"
         hoverDisabled
       />
     ),

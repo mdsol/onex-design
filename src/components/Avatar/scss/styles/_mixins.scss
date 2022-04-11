@@ -1,11 +1,11 @@
-@mixin avatar-size($size, $fontSize, $lineHeight, $svgWidth, $svgHeight) {
+@mixin avatar-size($size, $fontSize, $lineHeight, $svgSize, $svgHoverSize) {
     width: $size;
     height: $size;
     min-width: $size;
     min-height: $size;
     svg {
-        width: svg-default($size);
-        height: svg-default($size);
+      width: $svgSize;
+      height: $svgSize;
     }
     & .onex-avatar__children {
         font-size: $fontSize;
@@ -19,8 +19,8 @@
     }
 
     & .onex-avatar__hover svg {
-        width: $svgWidth;
-        height: $svgHeight;
+        width: $svgHoverSize;
+        height: $svgHoverSize;
     }
 }
 

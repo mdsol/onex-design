@@ -41,34 +41,32 @@ export const config = {
         additionalComponents: [],
         variants: [
           {
-            name: 'Test User',
+            size: 'lg',
           },
           {
-            children: 'KK',
-          },
-          {
+            size: 'lg',
             src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-            size: 'xs',
           },
           {
-            src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-            size: 'sm',
+            size: 'md',
           },
           {
             src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
             size: 'md',
           },
           {
-            src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-            size: 'lg',
+            size: 'sm',
           },
           {
             src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-            size: 'xl',
+            size: 'sm',
+          },
+          {
+            size: 'xs',
           },
           {
             src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
-            size: 'xxl',
+            size: 'xs',
           },
         ],
       },
@@ -1018,7 +1016,7 @@ export const config = {
               icon: (
                 <Avatar
                   src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="sm"
+                  size="xs"
                   hoverDisabled
                 />
               ),
@@ -1032,7 +1030,7 @@ export const config = {
               icon: (
                 <Avatar
                   src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="sm"
+                  size="xs"
                   hoverDisabled
                 />
               ),
@@ -1047,7 +1045,7 @@ export const config = {
               icon: (
                 <Avatar
                   src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="sm"
+                  size="xs"
                   hoverDisabled
                 />
               ),
@@ -1062,7 +1060,7 @@ export const config = {
               icon: (
                 <Avatar
                   src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="sm"
+                  size="xs"
                   hoverDisabled
                 />
               ),
