@@ -1293,14 +1293,14 @@ export const config = {
         additionalComponents: [],
         variants: [
           {
-            id: 'id-toogle-button-default',
-            name: 'toogle-button-default',
+            id: 'id-toggle-button-default',
+            name: 'toggle-button-default',
             children: 'Caption',
             value: 1,
           },
           {
-            id: 'id-toogle-button-with-icon',
-            name: 'toogle-button-with-icon',
+            id: 'id-toggle-button-with-icon',
+            name: 'toggle-button-with-icon',
             children: (
               <>
                 <ExclamationLg />
@@ -1310,15 +1310,15 @@ export const config = {
             value: 1,
           },
           {
-            id: 'id-toogle-button-icon',
-            name: 'toogle-button-icon',
+            id: 'id-toggle-button-icon',
+            name: 'toggle-button-icon',
             children: <PlusCircleFill />,
             value: 1,
           },
           {
             disabled: true,
-            id: 'id-toogle-button-disabled',
-            name: 'toogle-button-disabled',
+            id: 'id-toggle-button-disabled',
+            name: 'toggle-button-disabled',
             children: 'Caption',
             value: 1,
           },

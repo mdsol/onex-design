@@ -18,7 +18,7 @@ try {
       if (err) {
         console.error(err);
       }
-      console.info('Storbyook data written.');
+      console.info('Storybook data written.');
     },
   );
 } catch (err) {

@@ -47,8 +47,8 @@ const ToggleButtonTemplate = (args) => <ToggleButton {...args} />;
 
 export const Default = ToggleButtonTemplate.bind({});
 Default.args = {
-  id: 'id-toogle-button-default',
-  name: 'toogle-button-default',
+  id: 'id-toggle-button-default',
+  name: 'toggle-button-default',
   children: 'Caption',
   value: 1,
 };
@@ -56,8 +56,8 @@ Default.args = {
 export const WithIcon = ToggleButtonTemplate.bind({});
 const withIconCodeBody = `
 <CustomToggleButton
-id="id-toogle-button-with-icon"
-name="toogle-button-with-icon"
+id="id-toggle-button-with-icon"
+name="toggle-button-with-icon"
 value={1}
 >
 <>
@@ -74,8 +74,8 @@ WithIcon.parameters = {
   },
 };
 WithIcon.args = {
-  id: 'id-toogle-button-with-icon',
-  name: 'toogle-button-with-icon',
+  id: 'id-toggle-button-with-icon',
+  name: 'toggle-button-with-icon',
   children: (
     <>
       <CheckCircleFill />
@@ -88,8 +88,8 @@ WithIcon.args = {
 export const Icon = ToggleButtonTemplate.bind({});
 const iconCodeBody = `
 <CustomToggleButton
-id="id-toogle-button-with-icon"
-name="toogle-button-with-icon"
+id="id-toggle-button-with-icon"
+name="toggle-button-with-icon"
 value={1}
 >
 <Dice4Fill />
@@ -103,8 +103,8 @@ Icon.parameters = {
   },
 };
 Icon.args = {
-  id: 'id-toogle-button-icon',
-  name: 'toogle-button-icon',
+  id: 'id-toggle-button-icon',
+  name: 'toggle-button-icon',
   children: <Dice4Fill />,
   value: 1,
 };
@@ -112,8 +112,8 @@ Icon.args = {
 export const Disabled = ToggleButtonTemplate.bind({});
 Disabled.args = {
   disabled: true,
-  id: 'id-toogle-button-disabled',
-  name: 'toogle-button-disabled',
+  id: 'id-toggle-button-disabled',
+  name: 'toggle-button-disabled',
   children: 'Caption',
   value: 1,
 };
