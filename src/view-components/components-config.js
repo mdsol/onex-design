@@ -12,6 +12,7 @@ import {
   EditRounded,
   BugReportRounded,
 } from '@mui/icons-material';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
@@ -257,6 +258,7 @@ export const config = {
             variant: 'primary',
             size: 'sm',
             children: 'Small button',
+            disabled: true,
           },
           {
             variant: 'primary',
@@ -279,8 +281,9 @@ export const config = {
             variant: 'primary',
             children: (
               <>
-                <AddCircleRounded />
+                <StarRoundedIcon />
                 <span> Primary button with icon </span>
+                <StarRoundedIcon />
               </>
             ),
           },
@@ -288,7 +291,7 @@ export const config = {
             variant: 'secondary',
             children: (
               <>
-                <AddCircleRounded />
+                <StarRoundedIcon />
                 <span> Secondary button with icon </span>
               </>
             ),
@@ -297,7 +300,7 @@ export const config = {
             variant: 'link',
             children: (
               <>
-                <AddCircleRounded />
+                <StarRoundedIcon />
                 <span> Link button with icon </span>
               </>
             ),
@@ -309,15 +312,18 @@ export const config = {
           },
           {
             variant: 'primary',
-            children: <AddCircleRounded />,
+            children: <StarRoundedIcon />,
+            type: 'icon',
           },
           {
             variant: 'secondary',
-            children: <AddCircleRounded />,
+            children: <StarRoundedIcon />,
+            type: 'icon',
           },
           {
             variant: 'link',
-            children: <AddCircleRounded />,
+            children: <StarRoundedIcon />,
+            type: 'icon',
           },
         ],
       },
