@@ -5,7 +5,7 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 // import { PersonIcon } from '../../../icons';
 import { getInitials } from './utils';
 
-const Avatar = ({ className, size, name, children, src, hoverDisabled, dataTestId }) => {
+const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
   const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {
     [className]: className,
     'hover-disabled': hoverDisabled || size === 'sm' || size === 'xs',
@@ -13,7 +13,14 @@ const Avatar = ({ className, size, name, children, src, hoverDisabled, dataTestI
   const childComponent = Array.isArray(children) ? children[0] : children;
 
   return (
-    <div className={avatarClassNames} data-test-id={dataTestId}>
+    <div
+      role="button"
+      tabIndex={0}
+      aria-hidden="true"
+      className={avatarClassNames}
+      data-test-id={dataTestId}
+      onClick={onClick}
+    >
       {src && <img className="onex-avatar__img" src={src} alt={name || ''} />}
       {!src && (name || childComponent) && (
         <div className="onex-avatar__children">{childComponent || getInitials(name)}</div>
@@ -35,6 +42,7 @@ Avatar.propTypes = {
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
   name: PropTypes.string,
   children: PropTypes.node,
+  onClick: PropTypes.func,
   src: PropTypes.string,
   hoverDisabled: PropTypes.bool,
   dataTestId: PropTypes.string,
@@ -47,6 +55,7 @@ Avatar.defaultProps = {
   children: undefined,
   src: undefined,
   hoverDisabled: false,
+  onClick: undefined,
   dataTestId: '',
 };
 

@@ -32,6 +32,9 @@ export default {
     dataTestId: {
       description: 'Id of the component for testing',
     },
+    onClick: {
+      description: 'Callback fired when click on component',
+    },
   },
   parameters: {
     docs: {
