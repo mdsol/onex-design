@@ -6,4 +6,4 @@ dist
 storybook-static
 .eslintcache
 .idea
-.vscode/settings.json
+.yarn/install-state.gz

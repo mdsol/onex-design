@@ -1,0 +1,40 @@
+  {
+    "cSpell.words": [
+      "Astinus",
+      "audiobook",
+      "bookbag",
+      "browserslist",
+      "browserslistrc",
+      "bulllet",
+      "checkmark",
+      "compat",
+      "factbook",
+      "ghpages",
+      "infographic",
+      "inlineeditselect",
+      "inlineedittext",
+      "kaios",
+      "mauth",
+      "mdsol",
+      "Medidata",
+      "medistrano",
+      "networkidle",
+      "npmrc",
+      "Prefixer",
+      "preprod",
+      "textfield",
+      "togglebutton",
+      "unstyled",
+      "Vertebrobasilar"
+    ],
+    "cSpell.ignorePaths": [
+      "package-lock.json",
+      "package.json",
+      "node_modules",
+      "vscode-extension",
+      "yarn.lock",
+      ".git/objects",
+      ".vscode",
+      ".vscode-insiders"
+    ]
+}

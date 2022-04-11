@@ -1,5 +1,5 @@
 # This is your base factbook, please update all values in <>
-# Remove all the unnecesary extra comments from the file.
+# Remove all the unnecessary extra comments from the file.
 
 # This YAML file starts starts with '---', which is the separator for YAML documents
 # within the same file. Learn more: https://yaml.org/spec/1.2/spec.html#id2800401
@@ -22,7 +22,7 @@ metadata:
   # Uncomment and fill in the security section if this repository holds the codebase of a service.
   #  security:
   #    authentication: [mauth] # List all the authentication methods used in our service. See the json schema for options.
-  #    network_accessiblity: [private] # `private` == internal vpn only, `public` == directly accesible outside the vpn
+  #    network_accessibility: [private] # `private` == internal vpn only, `public` == directly accessible outside the vpn
   #    data_types: [clinical] # List the type of data used in your service.
   teams:
     - name: Arcus
