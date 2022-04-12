@@ -1,11 +1,11 @@
 import FlutterDashIcon from '@mui/icons-material/FlutterDash';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { TextField } from '../../../../components';
 
 import TextFieldMDX from './Textfield.stories.mdx';
 
-const icons = { Bird: <FlutterDashIcon />, Search: <SearchOutlinedIcon /> };
+const icons = { Bird: <FlutterDashIcon />, Search: <SearchRoundedIcon /> };
 
 export default {
   title: 'Onex/Forms/TextField',
@@ -36,6 +36,7 @@ Small.args = {
   size: 'sm',
   placeholder: 'Small',
   helpText: 'Help text',
+  showClearBtn: true,
 };
 
 export const Large = Template.bind({});
@@ -45,6 +46,7 @@ Large.args = {
   size: 'lg',
   placeholder: 'Large',
   helpText: 'Help text',
+  showClearBtn: true,
 };
 
 export const ErrorMessage = Template.bind({});
@@ -55,6 +57,7 @@ ErrorMessage.args = {
   placeholder: 'Placeholder',
   errorMessage: 'Error message',
   isInvalid: true,
+  showClearBtn: true,
 };
 
 export const HelpText = Template.bind({});
@@ -64,6 +67,7 @@ HelpText.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   helpText: 'Help text',
+  showClearBtn: true,
 };
 
 export const TrailingIcon = Template.bind({});
@@ -72,7 +76,6 @@ TrailingIcon.args = {
   size: 'lg',
   label: 'Label',
   placeholder: 'Placeholder',
-  helpText: 'Help text',
   trailingIcon: <InfoRoundedIcon />,
   showClearBtn: true,
 };
@@ -96,6 +99,7 @@ Required.args = {
   placeholder: 'Placeholder',
   required: true,
   label: 'Required',
+  showClearBtn: true,
 };
 
 export const ClearButton = Template.bind({});
@@ -113,10 +117,8 @@ export const SearchFieldSmall = Template.bind({});
 SearchFieldSmall.args = {
   size: 'sm',
   placeholder: 'Placeholder',
-  label: 'Label',
   showClearBtn: true,
   showDefaultIcon: true,
-  helpText: 'Help text',
 };
 
 export const SearchFieldLarge = Template.bind({});
@@ -124,10 +126,8 @@ export const SearchFieldLarge = Template.bind({});
 SearchFieldLarge.args = {
   size: 'lg',
   placeholder: 'Placeholder',
-  label: 'Label',
   showClearBtn: true,
   showDefaultIcon: true,
-  helpText: 'Help text',
 };
 
 export const Icon = Template.bind({});
