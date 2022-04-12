@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
 const TextField = React.forwardRef((props, ref) => {
   const {
@@ -81,7 +81,7 @@ const TextField = React.forwardRef((props, ref) => {
         {(icon || showDefaultIcon) && (
           <div className="onex-text-field__icon">
             {icon && icon}
-            {showDefaultIcon && !icon && <SearchOutlinedIcon />}
+            {showDefaultIcon && !icon && <SearchRoundedIcon />}
           </div>
         )}
         {showClearBtn && !!_value ? (
