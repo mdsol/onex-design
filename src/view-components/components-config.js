@@ -1,13 +1,17 @@
-import { PlusCircleFill, PenFill, ExclamationLg } from 'react-bootstrap-icons';
-import LockIcon from '@mui/icons-material/Lock';
-import InfoIcon from '@mui/icons-material/Info';
-import WarningIcon from '@mui/icons-material/Warning';
-import ErrorIcon from '@mui/icons-material/Error';
-import CheckCircle from '@mui/icons-material/CheckCircle';
-import FlagIcon from '@mui/icons-material/Flag';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import FlutterDashIcon from '@mui/icons-material/FlutterDash';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import {
+  LockRounded,
+  InfoRounded,
+  WarningRounded,
+  ErrorRounded,
+  CheckCircleRounded,
+  FlagRounded,
+  ArrowDownwardRounded,
+  FlutterDashRounded,
+  MoreVertRounded,
+  AddCircleRounded,
+  EditRounded,
+  BugReportRounded,
+} from '@mui/icons-material';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
@@ -45,27 +49,27 @@ export const config = {
           },
           {
             size: 'lg',
-            src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
+            children: <BugReportRounded />,
           },
           {
             size: 'md',
           },
           {
-            src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
+            children: <BugReportRounded />,
             size: 'md',
           },
           {
             size: 'sm',
           },
           {
-            src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
+            children: <BugReportRounded />,
             size: 'sm',
           },
           {
             size: 'xs',
           },
           {
-            src: 'https://robohash.org/my-own-slug.png?size=300x300&set=set1',
+            children: <BugReportRounded />,
             size: 'xs',
           },
         ],
@@ -125,7 +129,7 @@ export const config = {
           {
             type: 'primary',
             children: '100',
-            iconStart: <FlagIcon />,
+            iconStart: <FlagRounded />,
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
@@ -133,7 +137,7 @@ export const config = {
             type: 'primary',
             children: '100',
             className: 'custom-badge',
-            iconEnd: <ArrowDownwardIcon />,
+            iconEnd: <ArrowDownwardRounded />,
             dataTestId: 'text-badge-id',
           },
           {
@@ -208,35 +212,35 @@ export const config = {
           },
           {
             type: 'default',
-            children: <LockIcon />,
+            children: <LockRounded />,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'info',
-            children: <InfoIcon />,
+            children: <InfoRounded />,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'warning',
-            children: <WarningIcon />,
+            children: <WarningRounded />,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'important',
-            children: <ErrorIcon />,
+            children: <ErrorRounded />,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'success',
-            children: <CheckCircle />,
+            children: <CheckCircleRounded />,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
@@ -275,7 +279,7 @@ export const config = {
             variant: 'primary',
             children: (
               <>
-                <PlusCircleFill />
+                <AddCircleRounded />
                 <span> Primary button with icon </span>
               </>
             ),
@@ -284,7 +288,7 @@ export const config = {
             variant: 'secondary',
             children: (
               <>
-                <PlusCircleFill />
+                <AddCircleRounded />
                 <span> Secondary button with icon </span>
               </>
             ),
@@ -293,7 +297,7 @@ export const config = {
             variant: 'link',
             children: (
               <>
-                <PlusCircleFill />
+                <AddCircleRounded />
                 <span> Link button with icon </span>
               </>
             ),
@@ -305,15 +309,15 @@ export const config = {
           },
           {
             variant: 'primary',
-            children: <PlusCircleFill />,
+            children: <AddCircleRounded />,
           },
           {
             variant: 'secondary',
-            children: <PlusCircleFill />,
+            children: <AddCircleRounded />,
           },
           {
             variant: 'link',
-            children: <PlusCircleFill />,
+            children: <AddCircleRounded />,
           },
         ],
       },
@@ -515,7 +519,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
           },
           {
             variant: 'secondary',
@@ -523,7 +527,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
             disabled: true,
           },
           {
@@ -532,7 +536,7 @@ export const config = {
             items: dropdownItems,
             size: 'md',
             buttonStyle: 'icon',
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
           },
           {
             variant: 'secondary',
@@ -541,7 +545,7 @@ export const config = {
             size: 'md',
             buttonStyle: 'icon',
             disabled: true,
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
           },
           {
             variant: 'tertiary',
@@ -579,7 +583,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
           },
           {
             variant: 'tertiary',
@@ -587,7 +591,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
             disabled: true,
           },
           {
@@ -596,7 +600,7 @@ export const config = {
             items: dropdownItems,
             size: 'md',
             buttonStyle: 'icon',
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
           },
           {
             variant: 'tertiary',
@@ -605,7 +609,7 @@ export const config = {
             size: 'md',
             buttonStyle: 'icon',
             disabled: true,
-            title: <MoreVertIcon />,
+            title: <MoreVertRounded />,
           },
         ],
       },
@@ -707,7 +711,7 @@ export const config = {
           {
             variant: 'icon',
             type: 'success',
-            icon: <PlusCircleFill />,
+            icon: <AddCircleRounded />,
             size: 'lg',
             children: 'Success',
           },
@@ -726,7 +730,7 @@ export const config = {
           {
             variant: 'icon',
             type: 'warning',
-            icon: <PlusCircleFill />,
+            icon: <AddCircleRounded />,
             size: 'lg',
             children: 'Warning',
           },
@@ -745,7 +749,7 @@ export const config = {
           {
             variant: 'icon',
             type: 'error',
-            icon: <PlusCircleFill />,
+            icon: <AddCircleRounded />,
             size: 'lg',
             children: 'Error',
           },
@@ -764,7 +768,7 @@ export const config = {
           {
             variant: 'icon',
             type: 'info',
-            icon: <PlusCircleFill />,
+            icon: <AddCircleRounded />,
             size: 'lg',
             children: 'Info',
           },
@@ -791,7 +795,7 @@ export const config = {
             path: '',
             onSelect: undefined,
             disabled: false,
-            leadingIcon: <PenFill />,
+            leadingIcon: <EditRounded />,
             trailingIcon: undefined,
             badge: undefined,
             unavailable: false,
@@ -801,8 +805,8 @@ export const config = {
             path: '',
             onSelect: undefined,
             disabled: false,
-            leadingIcon: <PenFill />,
-            trailingIcon: <ExclamationLg />,
+            leadingIcon: <EditRounded />,
+            trailingIcon: <ErrorRounded />,
             badge: undefined,
             unavailable: false,
             isSelected: true,
@@ -812,7 +816,7 @@ export const config = {
             path: '',
             onSelect: undefined,
             disabled: false,
-            leadingIcon: <PenFill />,
+            leadingIcon: <EditRounded />,
             badge: <Badge type="important">100</Badge>,
             unavailable: false,
             isSelected: true,
@@ -1013,13 +1017,7 @@ export const config = {
             dataTestId: 'text',
             children: 'Tag label',
             image: {
-              icon: (
-                <Avatar
-                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="xs"
-                  hoverDisabled
-                />
-              ),
+              icon: <Avatar size="xs" hoverDisabled />,
             },
           },
           {
@@ -1027,13 +1025,7 @@ export const config = {
             dataTestId: 'text',
             children: 'Tag label',
             image: {
-              icon: (
-                <Avatar
-                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="xs"
-                  hoverDisabled
-                />
-              ),
+              icon: <Avatar size="xs" hoverDisabled />,
             },
             disabled: true,
           },
@@ -1042,13 +1034,7 @@ export const config = {
             dataTestId: 'text',
             children: 'Tag label',
             image: {
-              icon: (
-                <Avatar
-                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="xs"
-                  hoverDisabled
-                />
-              ),
+              icon: <Avatar size="xs" hoverDisabled />,
             },
             isRemovable: true,
           },
@@ -1057,13 +1043,7 @@ export const config = {
             dataTestId: 'text',
             children: 'Tag label',
             image: {
-              icon: (
-                <Avatar
-                  src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                  size="xs"
-                  hoverDisabled
-                />
-              ),
+              icon: <Avatar size="xs" hoverDisabled />,
             },
             isRemovable: true,
             disabled: true,
@@ -1090,16 +1070,19 @@ export const config = {
           {
             label: 'Label',
             placeholder: 'Empty',
+            maxNumLength: 240,
           },
           {
             label: 'Label',
             placeholder: 'Empty',
             isError: true,
+            maxNumLength: -5,
           },
           {
             label: 'Label',
             placeholder: 'Empty',
             disabled: true,
+            maxNumLength: 240,
           },
           {
             placeholder: 'Empty',
@@ -1182,13 +1165,13 @@ export const config = {
             size: 'sm',
             placeholder: 'Placeholder',
             label: 'Label',
-            icon: <FlutterDashIcon />,
+            icon: <FlutterDashRounded />,
           },
           {
             size: 'sm',
             placeholder: 'Placeholder',
             label: 'Label',
-            trailingIcon: <FlutterDashIcon />,
+            trailingIcon: <FlutterDashRounded />,
           },
           {
             size: 'sm',
@@ -1239,13 +1222,13 @@ export const config = {
             size: 'lg',
             placeholder: 'Placeholder',
             label: 'Label',
-            icon: <FlutterDashIcon />,
+            icon: <FlutterDashRounded />,
           },
           {
             size: 'lg',
             placeholder: 'Placeholder',
             label: 'Label',
-            trailingIcon: <FlutterDashIcon />,
+            trailingIcon: <FlutterDashRounded />,
           },
           {
             size: 'lg',
@@ -1303,7 +1286,7 @@ export const config = {
             name: 'toggle-button-with-icon',
             children: (
               <>
-                <ExclamationLg />
+                <ErrorRounded />
                 <span> Caption </span>
               </>
             ),
@@ -1312,7 +1295,7 @@ export const config = {
           {
             id: 'id-toggle-button-icon',
             name: 'toggle-button-icon',
-            children: <PlusCircleFill />,
+            children: <AddCircleRounded />,
             value: 1,
           },
           {
@@ -1337,13 +1320,13 @@ export const config = {
             typeContent: 'title',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                <ToggleButton id="one" name="one" icon={<EditRounded />}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                <ToggleButton id="two" name="two" icon={<EditRounded />}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                <ToggleButton id="three" name="three" icon={<EditRounded />}>
                   Three
                 </ToggleButton>
               </>
@@ -1356,13 +1339,13 @@ export const config = {
             typeContent: 'title',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                <ToggleButton id="one" name="one" icon={<EditRounded />}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                <ToggleButton id="two" name="two" icon={<EditRounded />}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                <ToggleButton id="three" name="three" icon={<EditRounded />}>
                   Three
                 </ToggleButton>
               </>
@@ -1375,13 +1358,13 @@ export const config = {
             typeContent: 'icon',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                <ToggleButton id="one" name="one" icon={<EditRounded />}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                <ToggleButton id="two" name="two" icon={<EditRounded />}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                <ToggleButton id="three" name="three" icon={<EditRounded />}>
                   Three
                 </ToggleButton>
               </>
@@ -1394,13 +1377,13 @@ export const config = {
             typeContent: 'icon',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<PenFill />}>
+                <ToggleButton id="one" name="one" icon={<EditRounded />}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<PenFill />}>
+                <ToggleButton id="two" name="two" icon={<EditRounded />}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<PenFill />}>
+                <ToggleButton id="three" name="three" icon={<EditRounded />}>
                   Three
                 </ToggleButton>
               </>
@@ -1499,7 +1482,7 @@ export const config = {
           {
             type: 'important',
             variant: 'status',
-            className: 'data-drid',
+            className: 'data-grid',
             dataTestId: 'data-grid-id',
           },
         ],

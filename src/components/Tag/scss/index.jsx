@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const Tag = ({
   image,
@@ -50,7 +50,7 @@ const Tag = ({
       {children && <span className="onex-tag__text">{children}</span>}
       {(isRemovable || variant === 'input') && (
         <button type="button" className="onex-tag__close" onClick={handleRemove}>
-          <CloseIcon className="onex-tag__close__icon" />
+          <CloseRoundedIcon className="onex-tag__close__icon" />
         </button>
       )}
     </button>
