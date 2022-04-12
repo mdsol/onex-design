@@ -14,7 +14,6 @@ const CustomButton = React.forwardRef((props, ref) => {
   return (
     <Button ref={ref} className={buttonClassNames} data-test-id={dataTestId} {...accProps}>
       {children}
-      {accProps.variant === 'link' && <span className="onex-btn__decorator" />}
     </Button>
   );
 });
@@ -22,7 +21,7 @@ const CustomButton = React.forwardRef((props, ref) => {
 CustomButton.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
   type: PropTypes.oneOf(['default', 'icon']),
   size: PropTypes.oneOf(['lg', 'sm']),
   onClick: PropTypes.func,

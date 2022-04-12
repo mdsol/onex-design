@@ -257,8 +257,13 @@ export const config = {
           {
             variant: 'primary',
             size: 'sm',
-            children: 'Small button',
             disabled: true,
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span>Small disabled button</span>
+              </>
+            ),
           },
           {
             variant: 'primary',
@@ -270,12 +275,16 @@ export const config = {
             children: 'Primary button',
           },
           {
-            variant: 'secondary',
-            children: 'Secondary button',
+            variant: 'primary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'lg',
           },
           {
-            variant: 'link',
-            children: 'Link button',
+            variant: 'primary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'sm',
           },
           {
             variant: 'primary',
@@ -288,16 +297,69 @@ export const config = {
             ),
           },
           {
-            variant: 'secondary',
+            variant: 'primary',
+            size: 'lg',
             children: (
               <>
                 <StarRoundedIcon />
-                <span> Secondary button with icon </span>
+                <span> Primary button with icon </span>
               </>
             ),
           },
           {
-            variant: 'link',
+            variant: 'secondary',
+            size: 'sm',
+            disabled: true,
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span>Small disabled button</span>
+              </>
+            ),
+          },
+          {
+            variant: 'secondary',
+            size: 'lg',
+            children: 'Large button',
+          },
+          {
+            variant: 'secondary',
+            children: 'Primary button',
+          },
+          {
+            variant: 'secondary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'lg',
+          },
+          {
+            variant: 'secondary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'sm',
+          },
+          {
+            variant: 'secondary',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+                <StarRoundedIcon />
+              </>
+            ),
+          },
+          {
+            variant: 'secondary',
+            size: 'lg',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+              </>
+            ),
+          },
+          {
+            variant: 'tertiary',
             children: (
               <>
                 <StarRoundedIcon />
@@ -306,24 +368,56 @@ export const config = {
             ),
           },
           {
-            variant: 'primary',
+            variant: 'tertiary',
+            size: 'sm',
             disabled: true,
-            children: 'Disabled button',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span>Small disabled button</span>
+              </>
+            ),
           },
           {
-            variant: 'primary',
-            children: <StarRoundedIcon />,
-            type: 'icon',
+            variant: 'tertiary',
+            size: 'lg',
+            children: 'Large button',
           },
           {
-            variant: 'secondary',
-            children: <StarRoundedIcon />,
-            type: 'icon',
+            variant: 'tertiary',
+            children: 'Primary button',
           },
           {
-            variant: 'link',
+            variant: 'tertiary',
             children: <StarRoundedIcon />,
             type: 'icon',
+            size: 'lg',
+          },
+          {
+            variant: 'tertiary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'sm',
+          },
+          {
+            variant: 'tertiary',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+                <StarRoundedIcon />
+              </>
+            ),
+          },
+          {
+            variant: 'tertiary',
+            size: 'lg',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+              </>
+            ),
           },
         ],
       },
