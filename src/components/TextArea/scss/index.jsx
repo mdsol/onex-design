@@ -63,7 +63,18 @@ const TextArea = React.forwardRef((props, ref) => {
 
   return (
     <Form.Group className={inputClassNames} data-test-id={dataTestId}>
-      {label && <Form.Label>{label}</Form.Label>}
+      <div className="onex-text-area__header">
+        {label && <Form.Label>{label}</Form.Label>}
+        {maxNumLength && (
+          <div
+            className={classNames('onex-text-area__nums', {
+              'onex-text-area__nums--err': symbolNum < 0,
+            })}
+          >
+            {symbolNum}
+          </div>
+        )}
+      </div>
       <Form.Control
         ref={ref}
         as="textarea"
@@ -82,15 +93,6 @@ const TextArea = React.forwardRef((props, ref) => {
         )}
         {!errorMessage && helpText && (
           <Form.Text className="onex-text-area__help">{helpText}</Form.Text>
-        )}
-        {maxNumLength && (
-          <div
-            className={classNames('onex-text-area__nums', {
-              'onex-text-area__nums--err': symbolNum < 0,
-            })}
-          >
-            {symbolNum}
-          </div>
         )}
       </div>
     </Form.Group>

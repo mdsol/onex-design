@@ -1,8 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import PersonIcon from '@mui/icons-material/Person';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
-// import { PersonIcon } from '../../../icons';
+import { PersonRounded, PhotoCameraRounded } from '@mui/icons-material';
 import { getInitials } from './utils';
 
 const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
@@ -26,11 +24,11 @@ const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, 
         <div className="onex-avatar__children">{childComponent || getInitials(name)}</div>
       )}
       <div className={(name || src || childComponent) && `onex-avatar__icon-decorator`}>
-        <PersonIcon />
+        <PersonRounded />
       </div>
       {!hoverDisabled && size !== 'sm' && size !== 'xs' && (
         <div className="onex-avatar__hover">
-          <PhotoCameraIcon />
+          <PhotoCameraRounded />
         </div>
       )}
     </div>

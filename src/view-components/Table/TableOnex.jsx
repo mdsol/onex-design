@@ -44,7 +44,7 @@ const TableOnex = () => (
           <Check id="check-1" size="sm" />
         </TableCell>
         <TableCell>
-          <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" size="md" />
+          <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" size="sm" />
           Clinical and Radiological Evaluation of Patients With Vertebrobasilar Insufficiency
         </TableCell>
         <TableCell>Sinus pressure study</TableCell>
@@ -64,7 +64,7 @@ const TableOnex = () => (
         <TableCell>
           <DataTableCell
             img={
-              <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" size="md" />
+              <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" size="sm" />
             }
             subTitle="Vertebrobasilar Insufficiency"
           >

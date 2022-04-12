@@ -1,11 +1,11 @@
-import FlutterDashIcon from '@mui/icons-material/FlutterDash';
+import FlutterDashRoundedIcon from '@mui/icons-material/FlutterDashRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { TextField } from '../../../../components';
 
 import TextFieldMDX from './Textfield.stories.mdx';
 
-const icons = { Bird: <FlutterDashIcon />, Search: <SearchRoundedIcon /> };
+const icons = { Bird: <FlutterDashRoundedIcon />, Search: <SearchRoundedIcon /> };
 
 export default {
   title: 'Onex/Forms/TextField',
@@ -155,5 +155,5 @@ Icon.args = {
   placeholder: 'Placeholder',
   label: 'Label',
   showClearBtn: true,
-  icon: <FlutterDashIcon />,
+  icon: <FlutterDashRoundedIcon />,
 };

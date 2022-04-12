@@ -70,10 +70,10 @@
   background-repeat: no-repeat;
   background-position: left 0.25rem center;
 }
-.onex-text-area__footer {
+.onex-text-area__footer, .onex-text-area__header {
   display: flex;
   align-items: stretch;
-  justify-content: flex-end;
+  justify-content: space-between;
   max-width: 31.25rem;
   margin-top: 0.25rem;
 }
@@ -83,7 +83,8 @@
   padding-right: 0.25rem;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #626b78;
+  font-weight: 600;
+  color: #676e7a;
   flex-basis: 10%;
 }
 .onex-text-area__nums--err {

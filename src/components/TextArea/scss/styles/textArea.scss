@@ -80,10 +80,11 @@
     background-position: left 0.25rem center;
   }
 
-  &__footer {
+  &__footer,
+  &__header {
     display: flex;
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: space-between;
     max-width: $text-area-max-width;
     margin-top: 0.25rem;
   }
@@ -94,6 +95,7 @@
     padding-right: 0.25rem;
     font-size: $form-text-font-size;
     line-height: $text-area-label-line-height;
+    font-weight: 600;
     color: $text-area-num-text-color;
     flex-basis: 10%;
 

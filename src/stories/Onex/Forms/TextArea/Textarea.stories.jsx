@@ -52,6 +52,29 @@ LabelError.args = {
   isError: true,
 };
 
+export const LabelNumCounter = Template.bind({});
+LabelNumCounter.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  maxNumLength: 240,
+};
+
+export const LabelNumCounterDisabled = Template.bind({});
+LabelNumCounterDisabled.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  disabled: true,
+  maxNumLength: 240,
+};
+
+export const LabelNumCounterError = Template.bind({});
+LabelNumCounterError.args = {
+  label: 'Label',
+  placeholder: 'Message',
+  isError: true,
+  maxNumLength: -5,
+};
+
 export const LabelHelpText = Template.bind({});
 LabelHelpText.args = {
   label: 'Label',
