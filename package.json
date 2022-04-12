@@ -1,6 +1,6 @@
 {
   "name": "@mdsol/onex-design",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "author": "JT <jathompson@mdsol.com>",
   "files": [
     "dist"
@@ -18,10 +18,10 @@
     "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
   },
   "engines": {
-    "npm": "please-use-yarn",
+    "node": ">=16.14.2",
+    "npm": ">=8.5.0",
     "yarn": ">= 3.2.0"
   },
-  "packageManager": "yarn@3.2.0-rc.12",
   "scripts": {
     "dev": "webpack serve --mode development",
     "storybook": "start-storybook -p 6006",
