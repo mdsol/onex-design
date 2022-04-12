@@ -1,16 +1,16 @@
-import { ArrowDown, ArrowUp } from 'react-bootstrap-icons';
-import FlagIcon from '@mui/icons-material/Flag';
-import LockIcon from '@mui/icons-material/Lock';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ErrorIcon from '@mui/icons-material/Error';
-import WarningIcon from '@mui/icons-material/Warning';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import InfoIcon from '@mui/icons-material/Info';
+import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
+import LockRoundedIcon from '@mui/icons-material/LockRounded';
+import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
+import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
+import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Badge } from '../../../../components';
 
 import BudgeMDX from './Badge.stories.mdx';
 
-const icons = { ArrowUp: <ArrowUp />, ArrowDown: <ArrowDown /> };
+const icons = { ArrowUp: <ArrowUpwardRoundedIcon />, ArrowDown: <ArrowDownwardRoundedIcon /> };
 
 export default {
   title: 'Onex/Components/Badge',
@@ -97,7 +97,7 @@ export const CounterIconStart = Template.bind({});
 CounterIconStart.args = {
   type: 'primary',
   children: '100',
-  iconStart: <FlagIcon />,
+  iconStart: <FlagRoundedIcon />,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
@@ -108,7 +108,7 @@ CounterIconEnd.args = {
   type: 'primary',
   children: '100',
   className: 'custom-badge',
-  iconEnd: <ArrowDownwardIcon />,
+  iconEnd: <ArrowDownwardRoundedIcon />,
   dataTestId: 'text-badge-id',
 };
 
@@ -216,7 +216,7 @@ export const StatusIconDefault = Template.bind({});
 
 StatusIconDefault.args = {
   type: 'default',
-  children: <LockIcon />,
+  children: <LockRoundedIcon />,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -226,7 +226,7 @@ export const StatusIconInfo = Template.bind({});
 
 StatusIconInfo.args = {
   type: 'info',
-  children: <InfoIcon />,
+  children: <InfoRoundedIcon />,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -236,7 +236,7 @@ export const StatusIconWarning = Template.bind({});
 
 StatusIconWarning.args = {
   type: 'warning',
-  children: <WarningIcon />,
+  children: <WarningRoundedIcon />,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -246,7 +246,7 @@ export const StatusIconImportant = Template.bind({});
 
 StatusIconImportant.args = {
   type: 'important',
-  children: <ErrorIcon />,
+  children: <ErrorRoundedIcon />,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -256,7 +256,7 @@ export const StatusIconSuccess = Template.bind({});
 
 StatusIconSuccess.args = {
   type: 'success',
-  children: <CheckCircleIcon />,
+  children: <CheckCircleRoundedIcon />,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',

@@ -46,7 +46,7 @@ const TableStyled = () => (
         <StyledTableCell>
           <StyledAvatar
             src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-            size="md"
+            size="sm"
           />
           Clinical and Radiological Evaluation of Patients With Vertebrobasilar Insufficiency
         </StyledTableCell>
@@ -69,7 +69,7 @@ const TableStyled = () => (
             img={
               <StyledAvatar
                 src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
-                size="md"
+                size="sm"
               />
             }
             subTitle="Vertebrobasilar Insufficiency"
