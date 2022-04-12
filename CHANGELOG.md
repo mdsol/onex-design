@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+Datagrid, Avatar, Dropdown and Textfield designs updated to match Figma specs. VSCode settings cleanup and new spellings added/fixed. Remove enforcement of Yarn, instead provide minimum engine version. 
+
+Datagrid css updated, storybook page created for integration. 
+
 ## 0.1.9
 
 Datagrid css updated, storybook page created for integration. 
