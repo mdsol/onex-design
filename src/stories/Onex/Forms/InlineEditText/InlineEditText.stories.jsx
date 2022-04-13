@@ -10,7 +10,9 @@ export default {
     size: 'lg',
     disabled: false,
     isInvalid: false,
-    errorMessage: undefined,
+    errorMessage: {
+      type: { name: 'string', required: false },
+    },
     placeholder: 'Edit',
   },
   parameters: {

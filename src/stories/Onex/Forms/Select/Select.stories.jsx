@@ -16,7 +16,9 @@ export default {
     isMulti: true,
     isDisabled: false,
     isInvalid: false,
-    errorMessage: undefined,
+    errorMessage: {
+      type: { name: 'string', required: false },
+    },
     selectedValues: [],
     isAsync: false,
   },
