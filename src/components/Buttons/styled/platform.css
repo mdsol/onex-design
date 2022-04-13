@@ -8,6 +8,7 @@
   line-height: 1.25rem;
   color: #212529;
   text-align: center;
+  text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
@@ -478,17 +479,13 @@
 .btn-link {
   font-weight: 400;
   color: #0070c0;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .btn-link:hover {
-  color: #002855;
-  text-decoration: none;
-}
-.btn-link:focus {
-  text-decoration: none;
+  color: #005a9a;
 }
 .btn-link:disabled, .btn-link.disabled {
-  color: #b0b8bf;
+  color: #6c757d;
 }
 
 .btn-lg {
@@ -498,8 +495,8 @@
 }
 
 .btn-sm {
-  padding: 0.375rem 0.625rem;
-  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
   border-radius: 0.5rem;
 }
 
@@ -522,64 +519,69 @@
   fill: white;
 }
 .onex-btn.btn-primary:disabled, .onex-btn.btn-primary.disabled {
-  background-color: #b0b8bf;
-  border-color: #b0b8bf;
+  background-color: #005fab;
+  border-color: #005fab;
+  opacity: 0.4;
 }
 .onex-btn.btn-primary.focus:hover, .onex-btn.btn-primary:hover {
-  background-color: #002855;
-  border-color: #002855;
+  background-color: #005fab;
+  border-color: #005fab;
 }
 .onex-btn.btn-secondary {
-  color: #002855;
+  background-color: rgba(103, 110, 122, 0.1);
+  border-color: rgba(103, 110, 122, 0.1);
+  color: #1a1c1e;
 }
 .onex-btn.btn-secondary svg path {
-  fill: #002855;
+  fill: #1a1c1e;
 }
 .onex-btn.btn-secondary:hover {
-  background-color: #002855;
-  border-color: #002855;
-  color: white;
+  background-color: #dde0e5;
+  border-color: #dde0e5;
+  color: #1a1c1e;
 }
 .onex-btn.btn-secondary:hover svg path {
-  fill: white;
+  fill: #1a1c1e;
 }
 .onex-btn.btn-secondary:disabled, .onex-btn.btn-secondary.disabled {
-  background-color: #e7eef5;
-  border-color: #e7eef5;
-  color: #b0b8bf;
+  background-color: rgba(103, 110, 122, 0.1);
+  border-color: rgba(103, 110, 122, 0.1);
+  color: #1a1c1e;
+  opacity: 0.4;
 }
-.onex-btn.btn-link {
+.onex-btn.btn-tertiary {
   font-weight: 600;
+  color: #676e7a;
 }
-.onex-btn.btn-link svg path {
-  fill: #0070c0;
+.onex-btn.btn-tertiary svg path {
+  fill: #676e7a;
 }
-.onex-btn.btn-link:hover, .onex-btn.btn-link.hover {
-  color: #002855;
+.onex-btn.btn-tertiary.disabled, .onex-btn.btn-tertiary:disabled {
+  opacity: 0.4;
 }
-.onex-btn.btn-link:hover svg path, .onex-btn.btn-link.hover svg path {
-  fill: #002855;
+.onex-btn.btn-tertiary:hover, .onex-btn.btn-tertiary.hover {
+  background-color: rgba(103, 110, 122, 0.1);
+  border-color: rgba(103, 110, 122, 0.1);
+  color: #676e7a;
 }
-.onex-btn.btn-link:hover > .onex-btn__decorator, .onex-btn.btn-link.hover > .onex-btn__decorator {
-  display: block;
-  position: absolute;
-  border-bottom: 1px solid #002855;
+.onex-btn.btn-tertiary:hover svg path, .onex-btn.btn-tertiary.hover svg path {
+  fill: #676e7a;
 }
-.onex-btn.btn-lg.btn-link .onex-btn__decorator {
+.onex-btn.btn-lg.btn-tertiary .onex-btn__decorator {
   width: calc(100% - 0.75rem * 2);
   bottom: 0.625rem;
   right: 0.75rem;
 }
-.onex-btn.btn-lg.btn-link > svg ~ .onex-btn__decorator {
-  width: calc(100% - 0.75rem * 2 - 0.875rem - 0.25rem);
+.onex-btn.btn-lg.btn-tertiary > svg ~ .onex-btn__decorator {
+  width: calc(100% - 0.75rem * 2 - 1.25rem - 0.25rem);
 }
-.onex-btn.btn-sm.btn-link .onex-btn__decorator {
+.onex-btn.btn-sm.btn-tertiary .onex-btn__decorator {
   width: calc(100% - 0.5rem * 2);
   bottom: 0.375rem;
   right: 0.5rem;
 }
-.onex-btn.btn-sm.btn-link > svg ~ .onex-btn__decorator {
-  width: calc(100% - 0.5rem * 2 - 0.75rem - 0.25rem);
+.onex-btn.btn-sm.btn-tertiary > svg ~ .onex-btn__decorator {
+  width: calc(100% - 0.5rem * 2 - 1.25rem - 0.25rem);
 }
 .onex-btn.btn-icon-link svg path {
   fill: #002855;
@@ -601,16 +603,21 @@
 .onex-btn.btn-sm {
   min-width: 2rem;
   height: 2rem;
-  padding: 0.375rem 0.5rem;
 }
 .onex-btn svg, .onex-btn.btn-lg svg {
-  width: 0.875rem;
-  height: 0.875rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 .onex-btn.btn-sm svg {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 .onex-btn svg:only-child {
   margin: 0.125rem 0;
+}
+.onex-btn.onex-btn--icon.btn-sm {
+  padding: 0.375rem;
+}
+.onex-btn.onex-btn--icon.btn-lg {
+  padding: 0.625rem;
 }

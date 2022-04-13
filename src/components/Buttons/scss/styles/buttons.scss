@@ -16,66 +16,71 @@
     svg path {
       fill: $onex-btn-primary-text-color;
     }
-  }
 
-  &.btn-primary:disabled,
-  &.btn-primary.disabled {
-    @include bg-color($onex-btn-primary-disabled-bg-color);
-  }
+    &:disabled,
+    &.disabled {
+      @include bg-color($onex-btn-primary-disabled-bg-color);
+      opacity: 0.4;
+    }
 
-  &.btn-primary.focus:hover,
-  &.btn-primary:hover {
-    @include bg-color($onex-btn-primary-hover-bg-color);
+    &.focus:hover,
+    &:hover {
+      @include bg-color($onex-btn-primary-hover-bg-color);
+    }
   }
 
   /* secondary */
   &.btn-secondary {
+    @include bg-color($onex-btn-bg-color);
     color: $onex-btn-secondary-text-color;
-    svg path {
-      fill: $onex-btn-secondary-hover-bg-color;
-    }
-  }
-
-  &.btn-secondary:hover {
-    @include bg-color($onex-btn-secondary-hover-bg-color);
-    color: $onex-btn-secondary-hover-text-color;
 
     svg path {
-      fill: $onex-btn-secondary-hover-text-color;
+      fill: $onex-btn-secondary-text-color;
     }
-  }
 
-  &.btn-secondary:disabled,
-  &.btn-secondary.disabled {
-    @include bg-color($onex-btn-secondary-disabled-bg-color);
-    color: $onex-btn-secondary-disabled-text-color;
+    &:hover {
+      @include bg-color($onex-btn-secondary-hover-bg-color);
+      color: $onex-btn-secondary-hover-text-color;
+
+      svg path {
+        fill: $onex-btn-secondary-hover-text-color;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      @include bg-color($onex-btn-secondary-disabled-bg-color);
+      color: $onex-btn-secondary-disabled-text-color;
+      opacity: 0.4;
+    }
   }
 
   /* link */
-  &.btn-link {
+  &.btn-tertiary {
     font-weight: $btn-font-weight;
+    color: $onex-btn-tertiary-color;
 
     svg path {
-      fill: $onex-btn-icon-link-text-color;
+      fill: $onex-btn-tertiary-color;
+    }
+
+    &.disabled,
+    &:disabled {
+      opacity: 0.4;
+    }
+
+    &:hover,
+    &.hover {
+      @include bg-color($onex-btn-tertiary-hover-bg-color);
+      color: $onex-btn-tertiary-hover-color;
+
+      svg path {
+        fill: $onex-btn-tertiary-hover-color;
+      }
     }
   }
 
-  &.btn-link:hover,
-  &.btn-link.hover {
-    color: $onex-btn-link-hover-text-color;
-
-    svg path {
-      fill: $onex-btn-link-hover-text-color;
-    }
-
-    & > .onex-btn__decorator {
-      display: block;
-      position: absolute;
-      border-bottom: 1px solid $onex-btn-link-hover-text-color;
-    }
-  }
-
-  &.btn-lg.btn-link {
+  &.btn-lg.btn-tertiary {
     @include btn-link-decorator-size(
       $onex-btn-padding-x-lg,
       $onex-btn-padding-y-lg,
@@ -84,7 +89,7 @@
     );
   }
 
-  &.btn-sm.btn-link {
+  &.btn-sm.btn-tertiary {
     @include btn-link-decorator-size(
       $onex-btn-padding-x-sm,
       $onex-btn-padding-y-sm,
@@ -92,6 +97,7 @@
       $onex-btn-size-gap
     );
   }
+
 
   /* icon-link */
   &.btn-icon-link {
@@ -122,8 +128,6 @@
 
   &.btn-sm {
     @include btn-size($onex-btn-height-sm);
-
-    padding: $onex-btn-padding-y-sm $onex-btn-padding-x-sm;
   }
 
   & svg,
@@ -135,8 +139,18 @@
     @include icon-size($onex-btn-icon-size-sm);
   }
 
+
   /* only icon child */
   & svg:only-child {
     margin: 0.125rem 0;
+  }
+
+  &.onex-btn--icon {
+    &.btn-sm {
+      padding: $btn-padding-y-sm;
+    }
+    &.btn-lg {
+      padding: $btn-padding-y-lg;
+    }
   }
 }

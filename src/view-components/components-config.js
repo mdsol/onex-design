@@ -12,6 +12,7 @@ import {
   EditRounded,
   BugReportRounded,
 } from '@mui/icons-material';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Avatar, Badge, ToggleButton } from '../components';
 
 const dropdownItems = [
@@ -256,7 +257,13 @@ export const config = {
           {
             variant: 'primary',
             size: 'sm',
-            children: 'Small button',
+            disabled: true,
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span>Small disabled button</span>
+              </>
+            ),
           },
           {
             variant: 'primary',
@@ -268,56 +275,149 @@ export const config = {
             children: 'Primary button',
           },
           {
-            variant: 'secondary',
-            children: 'Secondary button',
+            variant: 'primary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'lg',
           },
           {
-            variant: 'link',
-            children: 'Link button',
+            variant: 'primary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'sm',
           },
           {
             variant: 'primary',
             children: (
               <>
-                <AddCircleRounded />
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+                <StarRoundedIcon />
+              </>
+            ),
+          },
+          {
+            variant: 'primary',
+            size: 'lg',
+            children: (
+              <>
+                <StarRoundedIcon />
                 <span> Primary button with icon </span>
               </>
             ),
           },
           {
             variant: 'secondary',
+            size: 'sm',
+            disabled: true,
             children: (
               <>
-                <AddCircleRounded />
-                <span> Secondary button with icon </span>
+                <StarRoundedIcon />
+                <span>Small disabled button</span>
               </>
             ),
           },
           {
-            variant: 'link',
+            variant: 'secondary',
+            size: 'lg',
+            children: 'Large button',
+          },
+          {
+            variant: 'secondary',
+            children: 'Primary button',
+          },
+          {
+            variant: 'secondary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'lg',
+          },
+          {
+            variant: 'secondary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'sm',
+          },
+          {
+            variant: 'secondary',
             children: (
               <>
-                <AddCircleRounded />
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+                <StarRoundedIcon />
+              </>
+            ),
+          },
+          {
+            variant: 'secondary',
+            size: 'lg',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+              </>
+            ),
+          },
+          {
+            variant: 'tertiary',
+            children: (
+              <>
+                <StarRoundedIcon />
                 <span> Link button with icon </span>
               </>
             ),
           },
           {
-            variant: 'primary',
+            variant: 'tertiary',
+            size: 'sm',
             disabled: true,
-            children: 'Disabled button',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span>Small disabled button</span>
+              </>
+            ),
           },
           {
-            variant: 'primary',
-            children: <AddCircleRounded />,
+            variant: 'tertiary',
+            size: 'lg',
+            children: 'Large button',
           },
           {
-            variant: 'secondary',
-            children: <AddCircleRounded />,
+            variant: 'tertiary',
+            children: 'Primary button',
           },
           {
-            variant: 'link',
-            children: <AddCircleRounded />,
+            variant: 'tertiary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'lg',
+          },
+          {
+            variant: 'tertiary',
+            children: <StarRoundedIcon />,
+            type: 'icon',
+            size: 'sm',
+          },
+          {
+            variant: 'tertiary',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+                <StarRoundedIcon />
+              </>
+            ),
+          },
+          {
+            variant: 'tertiary',
+            size: 'lg',
+            children: (
+              <>
+                <StarRoundedIcon />
+                <span> Primary button with icon </span>
+              </>
+            ),
           },
         ],
       },

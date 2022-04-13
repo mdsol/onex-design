@@ -18,8 +18,8 @@ Buttons are clickable items used for actions. They can have different styles dep
 Supports two button sizes: `small` and `large`.
 
 <Canvas>
-  <Story id="onex-components-button--small" />
-  <Story id="onex-components-button--large" />
+  <Story id="onex-components-button--primary-small" />
+  <Story id="onex-components-button--primary-large" />
 </Canvas>
 
 ### Variations
@@ -27,31 +27,37 @@ Supports two button sizes: `small` and `large`.
 #### Primary
 
 <Canvas>
-  <Story id="onex-components-button--primary" />
+  <Story id="onex-components-button--primary-small" />
+  <Story id="onex-components-button--primary-large" />
   <Story id="onex-components-button--primary-with-icon" />
-  <Story id="onex-components-button--primary-icon" />
+  <Story id="onex-components-button--primary-with-two-icons" />
+  <Story id="onex-components-button--primary-small-icon" />
+  <Story id="onex-components-button--primary-large-icon" />
   <Story id="onex-components-button--primary-disabled" />
-  <Story id="onex-components-button--primary-anchor" />
 </Canvas>
 
 #### Secondary
 
 <Canvas>
-  <Story id="onex-components-button--secondary" />
+  <Story id="onex-components-button--secondary-small" />
+  <Story id="onex-components-button--secondary-large" />
   <Story id="onex-components-button--secondary-with-icon" />
-  <Story id="onex-components-button--secondary-icon" />
+  <Story id="onex-components-button--secondary-with-two-icons" />
+  <Story id="onex-components-button--secondary-icon-small" />
+  <Story id="onex-components-button--secondary-icon-large" />
   <Story id="onex-components-button--secondary-disabled" />
-  <Story id="onex-components-button--secondary-anchor" />
 </Canvas>
 
 #### Tertiary
 
 <Canvas>
-  <Story id="onex-components-button--tertiary" />
+  <Story id="onex-components-button--tertiary-small" />
+  <Story id="onex-components-button--tertiary-large" />
   <Story id="onex-components-button--tertiary-with-icon" />
-  <Story id="onex-components-button--tertiary-icon" />
+  <Story id="onex-components-button--tertiary-with-two-icons" />
+  <Story id="onex-components-button--tertiary-icon-small" />
+  <Story id="onex-components-button--tertiary-icon-large" />
   <Story id="onex-components-button--tertiary-disabled" />
-  <Story id="onex-components-button--tertiary-anchor" />
 </Canvas>
 
 ### Demo
@@ -64,6 +70,7 @@ Supports two button sizes: `small` and `large`.
       size: 'lg',
       children: 'Basic button',
       className: 'custom-button',
+      type: 'default',
       dataTestId: 'test-button-id',
       onClick: () => {},
     }}
