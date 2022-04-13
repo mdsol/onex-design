@@ -1,4 +1,4 @@
-import { PlusCircleFill, ChevronRight, XLg } from 'react-bootstrap-icons';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Button } from '../../../../components';
 import ButtonDocumentation from './Button.stories.mdx';
 
@@ -32,6 +32,9 @@ export default {
     variant: {
       description: 'Button variation',
     },
+    type: {
+      description: 'Button type',
+    },
   },
   parameters: {
     docs: {
@@ -42,32 +45,26 @@ export default {
 
 const ButtonTemplate = (args) => <Button {...args} />;
 
-export const Small = ButtonTemplate.bind({});
-Small.args = {
+export const PrimarySmall = ButtonTemplate.bind({});
+PrimarySmall.args = {
   variant: 'primary',
   size: 'sm',
   children: 'Small button',
 };
 
-export const Large = ButtonTemplate.bind({});
-Large.args = {
+export const PrimaryLarge = ButtonTemplate.bind({});
+PrimaryLarge.args = {
   variant: 'primary',
   size: 'lg',
   children: 'Large button',
-};
-
-export const Primary = ButtonTemplate.bind({});
-Primary.args = {
-  variant: 'primary',
-  children: 'Basic button',
 };
 
 export const PrimaryWithIcon = ButtonTemplate.bind({});
 const withIconPrimaryCodeBody = `
 <CustomButton onClick={() => {}}>
 <>
-     <PlusCircleFill />
-     <span> Button with icon </span>
+     <StarRoundedIcon />
+     <span>Button with icon</span>
 <>
 </CustomButton>
 `;
@@ -82,28 +79,39 @@ PrimaryWithIcon.args = {
   variant: 'primary',
   children: (
     <>
-      <PlusCircleFill />
-      <span> Button with icon </span>
+      <StarRoundedIcon />
+      <span>Button with icon</span>
     </>
   ),
 };
 
-export const PrimaryIcon = ButtonTemplate.bind({});
-const iconPrimaryCodeBody = `
+export const PrimaryWithTwoIcons = ButtonTemplate.bind({});
+const withTwoIconsPrimaryCodeBody = `
 <CustomButton onClick={() => {}}>
-     <XLg />
+<>
+     <StarRoundedIcon />
+     <span>Button with icon</span>
+     <StarRoundedIcon />
+<>
 </CustomButton>
 `;
-PrimaryIcon.parameters = {
+PrimaryWithTwoIcons.parameters = {
   docs: {
     source: {
-      code: iconPrimaryCodeBody,
+      code: withTwoIconsPrimaryCodeBody,
     },
   },
 };
-PrimaryIcon.args = {
+PrimaryWithTwoIcons.args = {
   variant: 'primary',
-  children: <XLg />,
+  size: 'sm',
+  children: (
+    <>
+      <StarRoundedIcon />
+      <span>Button with icon</span>
+      <StarRoundedIcon />
+    </>
+  ),
 };
 
 export const PrimaryDisabled = ButtonTemplate.bind({});
@@ -113,17 +121,58 @@ PrimaryDisabled.args = {
   children: 'Disabled button',
 };
 
-export const PrimaryAnchor = ButtonTemplate.bind({});
-PrimaryAnchor.args = {
+export const PrimarySmallIcon = ButtonTemplate.bind({});
+const iconPrimarySmallCodeBody = `
+<CustomButton onClick={() => {}}>
+     <StarRoundedIcon />
+</CustomButton>
+`;
+PrimarySmallIcon.parameters = {
+  docs: {
+    source: {
+      code: iconPrimarySmallCodeBody,
+    },
+  },
+};
+PrimarySmallIcon.args = {
   variant: 'primary',
-  children: 'This is an anchor',
-  href: '#',
+  type: 'icon',
+  size: 'sm',
+  children: <StarRoundedIcon />,
 };
 
-export const Secondary = ButtonTemplate.bind({});
-Secondary.args = {
+export const PrimaryLargeIcon = ButtonTemplate.bind({});
+const iconPrimaryLargeCodeBody = `
+<CustomButton onClick={() => {}}>
+     <StarRoundedIcon />
+</CustomButton>
+`;
+PrimaryLargeIcon.parameters = {
+  docs: {
+    source: {
+      code: iconPrimaryLargeCodeBody,
+    },
+  },
+};
+PrimaryLargeIcon.args = {
+  variant: 'primary',
+  type: 'icon',
+  size: 'lg',
+  children: <StarRoundedIcon />,
+};
+
+export const SecondarySmall = ButtonTemplate.bind({});
+SecondarySmall.args = {
   variant: 'secondary',
-  children: 'Basic button',
+  size: 'sm',
+  children: 'Small button',
+};
+
+export const SecondaryLarge = ButtonTemplate.bind({});
+SecondaryLarge.args = {
+  variant: 'secondary',
+  size: 'lg',
+  children: 'Large button',
 };
 
 export const SecondaryWithIcon = ButtonTemplate.bind({});
@@ -133,7 +182,7 @@ const withIconSecondaryCodeBody = `
     variant="secondary"
     >
 <>
-     <span> Button with icon </span>
+     <span>Button with icon</span>
      <ChevronRight />
 <>
 </CustomButton>
@@ -149,31 +198,84 @@ SecondaryWithIcon.args = {
   variant: 'secondary',
   children: (
     <>
-      <span> Button with icon </span>
-      <ChevronRight />
+      <span>Button with icon</span>
+      <StarRoundedIcon />
     </>
   ),
 };
 
-export const SecondaryIcon = ButtonTemplate.bind({});
-const iconSecondaryCodeBody = `
+export const SecondaryWithTwoIcons = ButtonTemplate.bind({});
+const withTwoIconsSecondaryCodeBody = `
+<CustomButton onClick={() => {}}>
+<>
+     <StarRoundedIcon />
+     <span>Button with icon</span>
+     <StarRoundedIcon />
+<>
+</CustomButton>
+`;
+SecondaryWithTwoIcons.parameters = {
+  docs: {
+    source: {
+      code: withTwoIconsSecondaryCodeBody,
+    },
+  },
+};
+SecondaryWithTwoIcons.args = {
+  variant: 'secondary',
+  children: (
+    <>
+      <StarRoundedIcon />
+      <span>Button with icon</span>
+      <StarRoundedIcon />
+    </>
+  ),
+};
+
+export const SecondaryIconSmall = ButtonTemplate.bind({});
+const iconSecondarySmallCodeBody = `
 <CustomButton
     onClick={() => {}}
     variant="secondary"
     >
-     <XLg />
+     <StarRoundedIcon />
 </CustomButton>
 `;
-SecondaryIcon.parameters = {
+SecondaryIconSmall.parameters = {
   docs: {
     source: {
-      code: iconSecondaryCodeBody,
+      code: iconSecondarySmallCodeBody,
     },
   },
 };
-SecondaryIcon.args = {
+SecondaryIconSmall.args = {
   variant: 'secondary',
-  children: <XLg />,
+  type: 'icon',
+  size: 'sm',
+  children: <StarRoundedIcon />,
+};
+
+export const SecondaryIconLarge = ButtonTemplate.bind({});
+const iconSecondaryLargeCodeBody = `
+<CustomButton
+    onClick={() => {}}
+    variant="secondary"
+    >
+     <StarRoundedIcon />
+</CustomButton>
+`;
+SecondaryIconLarge.parameters = {
+  docs: {
+    source: {
+      code: iconSecondaryLargeCodeBody,
+    },
+  },
+};
+SecondaryIconLarge.args = {
+  variant: 'secondary',
+  type: 'icon',
+  size: 'lg',
+  children: <StarRoundedIcon />,
 };
 
 export const SecondaryDisabled = ButtonTemplate.bind({});
@@ -183,16 +285,17 @@ SecondaryDisabled.args = {
   children: 'Disabled button',
 };
 
-export const SecondaryAnchor = ButtonTemplate.bind({});
-SecondaryAnchor.args = {
-  variant: 'secondary',
-  children: 'This is an anchor',
-  href: '#',
+export const TertiarySmall = ButtonTemplate.bind({});
+TertiarySmall.args = {
+  variant: 'tertiary',
+  size: 'sm',
+  children: 'Basic button',
 };
 
-export const Tertiary = ButtonTemplate.bind({});
-Tertiary.args = {
-  variant: 'link',
+export const TertiaryLarge = ButtonTemplate.bind({});
+TertiaryLarge.args = {
+  variant: 'tertiary',
+  size: 'lg',
   children: 'Basic button',
 };
 
@@ -200,11 +303,11 @@ export const TertiaryWithIcon = ButtonTemplate.bind({});
 const withIconTertiaryCodeBody = `
 <CustomButton
   onClick={() => {}}
-  variant="link"
+  variant="tertiary"
   >
 <>
-     <PlusCircleFill />
-     <span> Button with icon </span>
+     <StarRoundedIcon />
+     <span>Button with icon</span>
 <>
 </CustomButton>
 `;
@@ -216,46 +319,96 @@ TertiaryWithIcon.parameters = {
   },
 };
 TertiaryWithIcon.args = {
-  variant: 'link',
+  variant: 'tertiary',
   children: (
     <>
-      <PlusCircleFill />
-      <span> Button with icon </span>
+      <StarRoundedIcon />
+      <span>Button with icon</span>
     </>
   ),
 };
 
-export const TertiaryIcon = ButtonTemplate.bind({});
-const iconTertiaryCodeBody = `
+export const TertiaryWithTwoIcons = ButtonTemplate.bind({});
+const withTwoIconsTertiaryCodeBody = `
 <CustomButton
-    onClick={() => {}}
-    variant="icon-link"
-    >
-     <XLg />
+  onClick={() => {}}
+  variant="tertiary"
+  >
+<>
+     <StarRoundedIcon />
+     <span>Button with icon</span>
+     <StarRoundedIcon />
+<>
 </CustomButton>
 `;
-TertiaryIcon.parameters = {
+TertiaryWithTwoIcons.parameters = {
   docs: {
     source: {
-      code: iconTertiaryCodeBody,
+      code: withTwoIconsTertiaryCodeBody,
     },
   },
 };
-TertiaryIcon.args = {
-  variant: 'icon-link',
-  children: <XLg />,
+TertiaryWithTwoIcons.args = {
+  variant: 'tertiary',
+  children: (
+    <>
+      <StarRoundedIcon />
+      <span>Button with icon</span>
+      <StarRoundedIcon />
+    </>
+  ),
+};
+
+export const TertiaryIconSmall = ButtonTemplate.bind({});
+const iconTertiarySmallCodeBody = `
+<CustomButton
+    onClick={() => {}}
+    variant="tertiary"
+    type="icon"
+    >
+     <StarRoundedIcon />
+</CustomButton>
+`;
+TertiaryIconSmall.parameters = {
+  docs: {
+    source: {
+      code: iconTertiarySmallCodeBody,
+    },
+  },
+};
+TertiaryIconSmall.args = {
+  variant: 'tertiary',
+  type: 'icon',
+  children: <StarRoundedIcon />,
+};
+
+export const TertiaryIconLarge = ButtonTemplate.bind({});
+const iconTertiaryLargeCodeBody = `
+<CustomButton
+    onClick={() => {}}
+    variant="tertiary"
+    type="icon"
+    >
+     <StarRoundedIcon />
+</CustomButton>
+`;
+TertiaryIconLarge.parameters = {
+  docs: {
+    source: {
+      code: iconTertiaryLargeCodeBody,
+    },
+  },
+};
+TertiaryIconLarge.args = {
+  variant: 'tertiary',
+  type: 'icon',
+  size: 'lg',
+  children: <StarRoundedIcon />,
 };
 
 export const TertiaryDisabled = ButtonTemplate.bind({});
 TertiaryDisabled.args = {
-  variant: 'link',
+  variant: 'tertiary',
   disabled: true,
   children: 'Disabled button',
-};
-
-export const TertiaryAnchor = ButtonTemplate.bind({});
-TertiaryAnchor.args = {
-  variant: 'link',
-  children: 'This is an anchor',
-  href: '#',
 };
