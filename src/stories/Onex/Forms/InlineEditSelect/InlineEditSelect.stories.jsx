@@ -1,5 +1,4 @@
 import { InlineEditSelect } from '../../../../components';
-import InlineEditSelectMDX from './InlineEditSelect.stories.mdx';
 
 export default {
   title: 'Onex/Forms/InlineEditSelect',
@@ -16,13 +15,10 @@ export default {
     isMulti: true,
     disabled: false,
     isInvalid: false,
-    errorMessage: undefined,
-    selectedOptions: [],
-  },
-  parameters: {
-    docs: {
-      page: InlineEditSelectMDX,
+    errorMessage: {
+      type: { name: 'string', required: false },
     },
+    selectedOptions: [],
   },
 };
 

@@ -1,6 +1,5 @@
 /* eslint-disable storybook/story-exports */
 import { Carousel } from '../../../components';
-import CarouselMDX from './Carousel.stories.mdx';
 
 const pauseVariants = {
   hover: 'hover',
@@ -273,11 +272,6 @@ export default {
           summary: 'func',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: CarouselMDX,
     },
   },
 };

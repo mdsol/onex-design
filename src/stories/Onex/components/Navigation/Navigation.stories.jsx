@@ -1,7 +1,5 @@
 import { Navigation } from '../../../../components';
 
-import NavigationMDX from './Navigation.stories.mdx';
-
 export default {
   title: 'Onex/Components/Navigation',
   component: Navigation,
@@ -12,11 +10,6 @@ export default {
     dataTestId: { control: 'text' },
     dropdownTitle: { control: 'text' },
     dataTestIdDropdown: { control: 'text' },
-  },
-  parameters: {
-    docs: {
-      page: NavigationMDX,
-    },
   },
 };
 

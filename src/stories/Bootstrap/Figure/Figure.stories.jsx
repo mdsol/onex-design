@@ -1,6 +1,5 @@
 /* eslint-disable storybook/story-exports */
 import { Figure } from '../../../components';
-import FigureMDX from './Figure.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Figure',
@@ -17,11 +16,6 @@ export default {
           summary: 'elementType',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: FigureMDX,
     },
   },
 };

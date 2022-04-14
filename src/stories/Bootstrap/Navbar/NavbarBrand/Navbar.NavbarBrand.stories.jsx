@@ -1,6 +1,5 @@
 /* eslint-disable storybook/story-exports */
 import { Navbar } from '../../../../components';
-import NavbarBrandMDX from './Navbar.NavbarBrand.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Navbar/NavbarBrand',
@@ -39,11 +38,6 @@ export default {
           summary: 'undefined',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: NavbarBrandMDX,
     },
   },
 };

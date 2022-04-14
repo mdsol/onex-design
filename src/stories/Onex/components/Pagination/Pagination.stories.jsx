@@ -1,5 +1,4 @@
 import { Pagination } from '../../../../components';
-import PaginationMDX from './Pagination.stories.mdx';
 
 export default {
   title: 'Onex/Components/Pagination',
@@ -9,11 +8,6 @@ export default {
     dataTestId: { control: 'text' },
     items: [1, 2, 3, 4, 5],
     size: 'lg',
-  },
-  parameters: {
-    docs: {
-      page: PaginationMDX,
-    },
   },
 };
 

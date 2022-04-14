@@ -1,6 +1,5 @@
 import { CheckCircleFill, Dice4Fill } from 'react-bootstrap-icons';
 import { ToggleButton } from '../../../../components';
-import ToggleButtonDocumentation from './ToggleButton.stories.mdx';
 
 export default {
   title: 'Onex/Components/Toggle/ToggleButton',
@@ -34,11 +33,6 @@ export default {
       description:
         "The value of the input, should be unique amongst it's siblings when nested in a ```ToggleButtonGroup```",
       control: 'text',
-    },
-  },
-  parameters: {
-    docs: {
-      page: ToggleButtonDocumentation,
     },
   },
 };

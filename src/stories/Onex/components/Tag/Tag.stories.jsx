@@ -1,5 +1,4 @@
 import { Avatar, Tag } from '../../../../components';
-import TagMDX from './Tag.stories.mdx';
 
 export default {
   title: 'Onex/Components/Tag',
@@ -50,11 +49,6 @@ export default {
           summary: 'func',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: TagMDX,
     },
   },
 };

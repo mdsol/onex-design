@@ -1,5 +1,4 @@
 import { TableName, TextField, TableControl } from '../../../../../../components';
-import TableControlDocumentation from './Table.TableControl.stories.mdx';
 
 export default {
   title: 'Onex/Components/Table/TableControl',
@@ -15,12 +14,6 @@ export default {
     dataTestId: {
       description: 'Id of the component for testing',
       control: 'text',
-    },
-  },
-
-  parameters: {
-    docs: {
-      page: TableControlDocumentation,
     },
   },
 };

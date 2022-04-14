@@ -1,5 +1,4 @@
 import { Stack, Button } from '../../../../components';
-import StackDocumentation from './Stack.stories.mdx';
 
 export default {
   title: 'Bootstrap/Layout/Stack',
@@ -34,12 +33,6 @@ export default {
           summary: 'string',
         },
       },
-    },
-  },
-
-  parameters: {
-    docs: {
-      page: StackDocumentation,
     },
   },
 };
