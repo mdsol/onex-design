@@ -1,7 +1,5 @@
 import { ListGroup } from '../../../../components';
 
-import ListGroupItemMDX from './ListGroup.ListGroupItem.stories.mdx';
-
 const variantsItem = {
   primary: 'primary',
   secondary: 'secondary',
@@ -43,11 +41,6 @@ export default {
       },
     },
     children: { control: 'object' },
-  },
-  parameters: {
-    docs: {
-      page: ListGroupItemMDX,
-    },
   },
 };
 

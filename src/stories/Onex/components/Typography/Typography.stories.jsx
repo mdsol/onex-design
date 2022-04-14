@@ -1,5 +1,4 @@
 import { Typography } from '../../../../components';
-import TypographyDocumentation from './Typography.stories.mdx';
 
 export default {
   title: 'Typography',
@@ -47,11 +46,6 @@ export default {
     },
     uppercase: {
       description: 'Can be used with variant: ```caption```. Provide text-transform: uppercase.',
-    },
-  },
-  parameters: {
-    docs: {
-      page: TypographyDocumentation,
     },
   },
 };

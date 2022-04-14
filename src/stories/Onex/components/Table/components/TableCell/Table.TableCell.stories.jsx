@@ -1,5 +1,4 @@
 import { Table, TableBody, TableRow, TableCell, TableHead } from '../../../../../../components';
-import TableCellDocumentation from './Table.TableCell.stories.mdx';
 
 export default {
   title: 'Onex/Components/Table/TableCell',
@@ -29,11 +28,6 @@ export default {
     },
     width: {
       description: 'Specify the cell width',
-    },
-  },
-  parameters: {
-    docs: {
-      page: TableCellDocumentation,
     },
   },
 };

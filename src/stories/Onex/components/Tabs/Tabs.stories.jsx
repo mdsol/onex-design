@@ -1,5 +1,4 @@
 import { Tabs } from '../../../../components';
-import TabsDocumentation from './Tabs.stories.mdx';
 
 export default {
   title: 'Onex/Components/Tabs',
@@ -78,11 +77,6 @@ export default {
                     }]`,
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: TabsDocumentation,
     },
   },
 };

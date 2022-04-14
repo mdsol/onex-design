@@ -1,5 +1,4 @@
 import { Table, TableCell, TableHead, TableRow, TableBody } from '../../../../../../components';
-import TableRowDocumentation from './Table.TableRow.stories.mdx';
 
 export default {
   title: 'Onex/Components/Table/TableRow',
@@ -26,11 +25,6 @@ export default {
     },
     variant: {
       description: 'Automatically set variant based on the table element parent (head, body, etc)',
-    },
-  },
-  parameters: {
-    docs: {
-      page: TableRowDocumentation,
     },
   },
 };

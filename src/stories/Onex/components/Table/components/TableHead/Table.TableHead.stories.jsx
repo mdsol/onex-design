@@ -1,6 +1,5 @@
 import { ExclamationDiamondFill } from 'react-bootstrap-icons';
 import { Table, TableHead, TableRow, TableCell, Check } from '../../../../../../components';
-import TableHeadDocumentation from './Table.TableHead.stories.mdx';
 
 export default {
   title: 'Onex/Components/Table/TableHead',
@@ -16,11 +15,6 @@ export default {
     dataTestId: {
       description: 'Id of the component for testing',
       control: 'text',
-    },
-  },
-  parameters: {
-    docs: {
-      page: TableHeadDocumentation,
     },
   },
 };

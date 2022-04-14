@@ -1,6 +1,5 @@
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Button } from '../../../../components';
-import ButtonDocumentation from './Button.stories.mdx';
 
 export default {
   title: 'Onex/Components/Button',
@@ -34,11 +33,6 @@ export default {
     },
     type: {
       description: 'Button type',
-    },
-  },
-  parameters: {
-    docs: {
-      page: ButtonDocumentation,
     },
   },
 };

@@ -1,6 +1,5 @@
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Dropdown } from '../../../../components';
-import DropdownDocumentation from './Dropdown.stories.mdx';
 
 export default {
   title: 'Onex/Components/Dropdown',
@@ -51,11 +50,6 @@ export default {
     },
     variant: {
       description: 'Non-toggle button variation',
-    },
-  },
-  parameters: {
-    docs: {
-      page: DropdownDocumentation,
     },
   },
 };

@@ -3,8 +3,6 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { TextField } from '../../../../components';
 
-import TextFieldMDX from './Textfield.stories.mdx';
-
 const icons = { Bird: <FlutterDashRoundedIcon />, Search: <SearchRoundedIcon /> };
 
 export default {
@@ -18,11 +16,6 @@ export default {
     trailingIcon: {
       options: Object.keys(icons),
       mapping: icons,
-    },
-  },
-  parameters: {
-    docs: {
-      page: TextFieldMDX,
     },
   },
 };

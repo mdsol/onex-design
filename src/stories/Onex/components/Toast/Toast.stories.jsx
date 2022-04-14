@@ -1,8 +1,6 @@
 import { BugFill, ClockFill } from 'react-bootstrap-icons';
 import { Toast } from '../../../../components';
 
-import ToastMDX from './Toast.stories.mdx';
-
 const icons = { Bug: <BugFill />, ClockFill: <ClockFill /> };
 
 export default {
@@ -16,11 +14,6 @@ export default {
     icon: {
       options: Object.keys(icons),
       mapping: icons,
-    },
-  },
-  parameters: {
-    docs: {
-      page: ToastMDX,
     },
   },
 };

@@ -1,7 +1,5 @@
 import { Tooltip, Lozenge, TextField } from '../../../../components';
 
-import TooltipMDX from './Tooltip.stories.mdx';
-
 export default {
   title: 'Onex/Components/Tooltip',
   component: Tooltip,
@@ -13,11 +11,6 @@ export default {
     trigger: {
       options: ['hover', 'click', 'focus'],
       control: { type: 'check' },
-    },
-  },
-  parameters: {
-    docs: {
-      page: TooltipMDX,
     },
   },
 };

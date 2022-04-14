@@ -1,6 +1,5 @@
 import React from 'react';
 import { Offcanvas, Button } from '../../../components';
-import OffcanvasDocumentation from './Offcanvas.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Offcanvas',
@@ -195,11 +194,6 @@ export default {
           summary: 'boolean',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: OffcanvasDocumentation,
     },
   },
 };

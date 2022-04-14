@@ -1,16 +1,10 @@
 import { Container, Row, Col } from '../../../../components';
-import GridDocumentation from './Grid.stories.mdx';
 
 import { containerArgTypes, columnArgTypes, rowArgTypes } from './data';
 
 export default {
   title: 'Bootstrap/Layout/Grid',
   component: Container,
-  parameters: {
-    docs: {
-      page: GridDocumentation,
-    },
-  },
 };
 
 export const GridContainer = (args) => (

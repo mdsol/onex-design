@@ -1,6 +1,5 @@
 import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
 import { Avatar } from '../../../../components';
-import AvatarDocumentation from './Avatar.stories.mdx';
 
 export default {
   title: 'Onex/Components/Avatar',
@@ -34,11 +33,6 @@ export default {
     },
     onClick: {
       description: 'Callback fired when click on component',
-    },
-  },
-  parameters: {
-    docs: {
-      page: AvatarDocumentation,
     },
   },
 };

@@ -1,5 +1,4 @@
 import { Switch } from '../../../../components';
-import SwitchDocumentation from './Switch.stories.mdx';
 
 export default {
   title: 'Onex/Components/Switch',
@@ -29,11 +28,6 @@ export default {
     onChange: {
       description: 'Callback fired when the state is changed.',
       action: 'change',
-    },
-  },
-  parameters: {
-    docs: {
-      page: SwitchDocumentation,
     },
   },
 };

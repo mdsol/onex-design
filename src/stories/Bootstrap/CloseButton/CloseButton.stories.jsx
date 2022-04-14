@@ -1,7 +1,5 @@
 import { CloseButton } from '../../../components';
 
-import CloseButtonMDX from './CloseButton.stories.mdx';
-
 export default {
   title: 'Bootstrap/Components/CloseButton',
   component: CloseButton,
@@ -44,11 +42,6 @@ export default {
     disabled: {
       description: 'Disables the Button, preventing mouse events',
       control: 'boolean',
-    },
-  },
-  parameters: {
-    docs: {
-      page: CloseButtonMDX,
     },
   },
 };

@@ -1,5 +1,4 @@
 import { Placeholder, Card, Button } from '../../../components';
-import PlaceholderDocumentation from './Placeholder.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Placeholder',
@@ -47,11 +46,6 @@ export default {
           summary: 'string',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: PlaceholderDocumentation,
     },
   },
 };

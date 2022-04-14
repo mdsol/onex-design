@@ -1,5 +1,4 @@
 import { TablePagination } from '../../../../components';
-import TablePaginationMDX from './TablePagination.stories.mdx';
 
 export default {
   title: 'Onex/Components/TablePagination',
@@ -11,11 +10,6 @@ export default {
     rowsDividers: [5, 10, 20, 25, 50],
     defaultRowsPerPage: 10,
     size: 'lg',
-  },
-  parameters: {
-    docs: {
-      page: TablePaginationMDX,
-    },
   },
 };
 

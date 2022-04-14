@@ -1,6 +1,5 @@
 import { toggleButtonItems } from './data';
 import { ToggleButton, ToggleButtonGroup } from '../../../../components';
-import ToggleButtonGroupDocumentation from './ToggleButtonGroup.stories.mdx';
 
 export default {
   title: 'Onex/Components/Toggle/ToggleButtonGroup',
@@ -48,11 +47,6 @@ export default {
     vertical: {
       description: 'Make the set of Buttons appear vertically stacked',
       control: 'boolean',
-    },
-  },
-  parameters: {
-    docs: {
-      page: ToggleButtonGroupDocumentation,
     },
   },
 };
