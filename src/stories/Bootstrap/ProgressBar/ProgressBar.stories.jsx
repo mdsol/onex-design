@@ -1,7 +1,5 @@
 import { ProgressBar } from '../../../components';
 
-import ProgressBarMDX from './ProgressBar.stories.mdx';
-
 const variants = ['success', 'danger', 'warning', 'info'];
 const defaultProps = {
   animated: false,
@@ -134,11 +132,6 @@ export default {
           summary: 'boolean',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: ProgressBarMDX,
     },
   },
 };

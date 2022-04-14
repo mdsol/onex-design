@@ -1,5 +1,4 @@
 import { InlineEditText } from '../../../../components';
-import InlineEditTextMDX from './InlineEditText.stories.mdx';
 
 export default {
   title: 'Onex/Forms/InlineEditText',
@@ -10,13 +9,10 @@ export default {
     size: 'lg',
     disabled: false,
     isInvalid: false,
-    errorMessage: undefined,
-    placeholder: 'Edit',
-  },
-  parameters: {
-    docs: {
-      page: InlineEditTextMDX,
+    errorMessage: {
+      type: { name: 'string', required: false },
     },
+    placeholder: 'Edit',
   },
 };
 

@@ -1,5 +1,4 @@
 import { ListGroup } from '../../../../components';
-import ListGroupMDX from './ListGroup.ListGroup.stories.mdx';
 
 const horizontalTypes = {
   true: true,
@@ -29,11 +28,6 @@ export default {
       control: { type: 'check' },
     },
     children: { control: 'object' },
-  },
-  parameters: {
-    docs: {
-      page: ListGroupMDX,
-    },
   },
 };
 

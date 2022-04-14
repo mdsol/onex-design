@@ -7,7 +7,6 @@ import {
   TableRow,
   Avatar,
 } from '../../../../../../components';
-import DataTableCellDocumentation from './Table.TableCell.DataTableCell.stories.mdx';
 
 const icons = { Bug: <BugFill />, Binoculars: <BinocularsFill /> };
 
@@ -48,11 +47,6 @@ export default {
     subTitle: {
       description: 'Caption displayed at the bottom',
       control: 'text',
-    },
-  },
-  parameters: {
-    docs: {
-      page: DataTableCellDocumentation,
     },
   },
 };

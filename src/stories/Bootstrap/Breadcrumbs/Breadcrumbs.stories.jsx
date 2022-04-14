@@ -1,14 +1,8 @@
 import { Breadcrumb } from '../../../components';
-import BreadcrumbDocumentation from './Breadcrumbs.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Breadcrumbs',
   component: Breadcrumb,
-  parameters: {
-    docs: {
-      page: BreadcrumbDocumentation,
-    },
-  },
 };
 
 export const Example = () => (

@@ -1,7 +1,5 @@
 import { Card } from '../../../components';
 
-import CardMDX from './Card.stories.mdx';
-
 const bgVariants = {
   primary: 'primary',
   secondary: 'secondary',
@@ -52,11 +50,6 @@ export default {
         type: 'select',
         label: textVariants,
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: CardMDX,
     },
   },
 };

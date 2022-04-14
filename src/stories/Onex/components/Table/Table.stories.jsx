@@ -13,7 +13,6 @@ import {
   Badge,
   Check,
 } from '../../../../components';
-import TableMDX from './Table.stories.mdx';
 
 export default {
   title: 'Onex/Components/Table/Table',
@@ -44,11 +43,6 @@ export default {
     },
     tableStyle: {
       description: 'Defines the table display style: filled or default',
-    },
-  },
-  parameters: {
-    docs: {
-      page: TableMDX,
     },
   },
 };

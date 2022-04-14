@@ -1,7 +1,5 @@
 import { Navbar, Container, Nav, NavDropdown, Offcanvas } from '../../../../components';
 
-import NavbarMDX from './Navbar.Navbar.stories.mdx';
-
 const expands = {
   false: false,
   true: true,
@@ -187,11 +185,6 @@ export default {
           summary: 'undefined',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: NavbarMDX,
     },
   },
 };

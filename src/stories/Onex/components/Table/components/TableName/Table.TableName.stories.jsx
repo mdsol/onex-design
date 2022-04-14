@@ -1,5 +1,4 @@
 import { TableName } from '../../../../../../components';
-import TableNameDocumentation from './Table.TableName.stories.mdx';
 
 export default {
   title: 'Onex/Components/Table/TableName',
@@ -20,11 +19,6 @@ export default {
     dataTestId: {
       description: 'Id of the component for testing',
       control: 'text',
-    },
-  },
-  parameters: {
-    docs: {
-      page: TableNameDocumentation,
     },
   },
 };

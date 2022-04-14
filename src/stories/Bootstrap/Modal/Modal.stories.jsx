@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal, Button } from '../../../components';
-import ModalDocumentation from './Modal.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Modal',
@@ -269,11 +268,6 @@ export default {
           summary: "'sm' | 'lg' | 'xl'",
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: ModalDocumentation,
     },
   },
 };

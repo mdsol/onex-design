@@ -1,5 +1,4 @@
 import { Select } from '../../../../components';
-import SelectMDX from './Select.stories.mdx';
 
 export default {
   title: 'Onex/Forms/Select',
@@ -16,14 +15,11 @@ export default {
     isMulti: true,
     isDisabled: false,
     isInvalid: false,
-    errorMessage: undefined,
+    errorMessage: {
+      type: { name: 'string', required: false },
+    },
     selectedValues: [],
     isAsync: false,
-  },
-  parameters: {
-    docs: {
-      page: SelectMDX,
-    },
   },
 };
 

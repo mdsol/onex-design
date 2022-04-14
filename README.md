@@ -4,7 +4,7 @@ First, [Set up artifactory](https://learn.mdsol.com/display/CA/Artifactory+Strat
 
 ## Add the package
 
-Go to artifactory, and select "Set me up" from the top right corner. Select package type "NPM" and repo "npm-virtual". Artifactory will give you instructions on how to set up your local access.
+Go to artifactory, and select "Set me up" from the top right corner. Select package type "NPM" and repo "npm-prod-virtual". Artifactory will give you instructions on how to set up your local access.
 
 You can now add the package to your repo:
 
@@ -23,7 +23,7 @@ yarn add @mdsol/onex-design
 To access artifactory in CI, you will need a service account, which has a username like `project-preprod-robot`, and a token. Add the username and token as secrets to CI. I'm using the names `ARTIFACTORY_USERNAME` and `ARTIFACTORY_PASSWORD` for the variables, respectively. Now add a line in your CI that does the following before trying to install yarn/npm packages:
 
 ```sh
-curl -u${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} "https://mdsol.jfrog.io/mdsol/api/npm/npm-virtual/auth/mdsol" > ./.npmrc
+curl -u${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} "https://mdsol.jfrog.io/mdsol/api/npm/npm-prod-virtual/auth/mdsol" > ./.npmrc
 ```
 
 Now you can `yarn` or `npm ci` as usual.
@@ -41,7 +41,7 @@ to the top of your Dockerfile, and before you try to install packages, you need 
 ```dockerfile
 RUN --mount=type=secret,id=artifactory,uid=9999,gid=9999 \
     source /run/secrets/artifactory \
-    curl -u${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} "https://mdsol.jfrog.io/mdsol/api/npm/npm-virtual/auth/mdsol" > ./.npmrc
+    curl -u${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD} "https://mdsol.jfrog.io/mdsol/api/npm/npm-prod-virtual/auth/mdsol" > ./.npmrc
 ```
 
 which will allow you to install packages normally.

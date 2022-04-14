@@ -1,6 +1,5 @@
 /* eslint-disable storybook/story-exports */
 import { Navbar } from '../../../../components';
-import NavbarToggleMDX from './Navbar.NavbarToggle.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Navbar/NavbarToggle',
@@ -53,11 +52,6 @@ export default {
           summary: 'node',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: NavbarToggleMDX,
     },
   },
 };

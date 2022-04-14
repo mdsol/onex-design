@@ -8,8 +8,6 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Badge } from '../../../../components';
 
-import BudgeMDX from './Badge.stories.mdx';
-
 const icons = { ArrowUp: <ArrowUpwardRoundedIcon />, ArrowDown: <ArrowDownwardRoundedIcon /> };
 
 export default {
@@ -29,11 +27,6 @@ export default {
           ArrowDown: 'Down',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: BudgeMDX,
     },
   },
 };

@@ -6,7 +6,6 @@ import {
   InfoLg,
 } from 'react-bootstrap-icons';
 import { Lozenge } from '../../../../components';
-import LozengeDocumentation from './Lozenge.stories.mdx';
 
 export default {
   title: 'Onex/Components/Lozenge',
@@ -35,11 +34,6 @@ export default {
     },
     variant: {
       description: 'Lozenge variation',
-    },
-  },
-  parameters: {
-    docs: {
-      page: LozengeDocumentation,
     },
   },
 };

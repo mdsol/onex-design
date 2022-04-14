@@ -1,6 +1,5 @@
 import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
 import { Avatar } from '../../../../components';
-import AvatarDocumentation from './Avatar.stories.mdx';
 
 export default {
   title: 'Onex/Components/Avatar',
@@ -27,18 +26,13 @@ export default {
     },
     hoverDisabled: {
       description:
-        'Disables the avatar hover, for size ```xs``` and ```sm``` hover disabled automatically',
+        'Disables the avatar hover, for size ```xs```, ```sm``` and ```md``` hover disabled automatically',
     },
     dataTestId: {
       description: 'Id of the component for testing',
     },
     onClick: {
       description: 'Callback fired when click on component',
-    },
-  },
-  parameters: {
-    docs: {
-      page: AvatarDocumentation,
     },
   },
 };

@@ -1,5 +1,4 @@
 import { DataGrid } from '../../../../components';
-import DataGridMDX from './DataGrid.stories.mdx';
 
 export default {
   title: 'Onex/Components/DataGrid',
@@ -43,11 +42,6 @@ export default {
       },
     ],
     rowsDividers: [5, 10, 15, 20],
-  },
-  parameters: {
-    docs: {
-      page: DataGridMDX,
-    },
   },
 };
 

@@ -1,5 +1,4 @@
 import { Popover, OverlayTrigger, Button } from '../../../components';
-import PopoverDocumentation from './Popovers.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Popover',
@@ -107,9 +106,6 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    docs: {
-      page: PopoverDocumentation,
-    },
   },
 };
 

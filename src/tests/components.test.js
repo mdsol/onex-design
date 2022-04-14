@@ -1,6 +1,6 @@
+const puppeteer = require('puppeteer');
 // eslint-disable-next-line import/no-unresolved
 const configs = require('../../webpack.config');
-const puppeteer = require('puppeteer');
 
 const href = `http://localhost:${configs.devServer.port}`;
 

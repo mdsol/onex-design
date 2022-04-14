@@ -1,6 +1,5 @@
 import { FileEarmarkCode, Check } from 'react-bootstrap-icons';
 import { Avatar, ExpansionPanel } from '../../../../components';
-import ExpansionPanelDocumentation from './ExpansionPanel.stories.mdx';
 
 export default {
   title: 'Onex/Components/ExpansionPanel',
@@ -42,11 +41,6 @@ export default {
       description: `Toggle button content. Contains 2 items:
             \n1.avatar - add Avatar to toggle button;
             \n1.badge - add Badge to toggle button;`,
-    },
-  },
-  parameters: {
-    docs: {
-      page: ExpansionPanelDocumentation,
     },
   },
 };

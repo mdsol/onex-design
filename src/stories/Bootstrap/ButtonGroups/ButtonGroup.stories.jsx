@@ -1,7 +1,5 @@
 import { ButtonGroup, Button, Dropdown, ButtonToolbar } from '../../../components';
 
-import ButtonGroupMDX from './ButtonGroup.stories.mdx';
-
 export default {
   title: 'Bootstrap/Components/ButtonGroup',
   component: ButtonGroup,
@@ -54,11 +52,6 @@ export default {
           summary: 'boolean',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: ButtonGroupMDX,
     },
   },
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Alert, Button } from '../../../components';
-import AlertDocumentation from './Alert.stories.mdx';
 
 export default {
   title: 'Bootstrap/Components/Alert',
@@ -87,11 +86,6 @@ export default {
           summary: 'primary | secondary | success | danger | warning | info | dark | light',
         },
       },
-    },
-  },
-  parameters: {
-    docs: {
-      page: AlertDocumentation,
     },
   },
 };

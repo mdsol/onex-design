@@ -1,7 +1,5 @@
 import { Check } from '../../../../components';
 
-import CheckMDX from './Check.stories.mdx';
-
 export default {
   title: 'Onex/Forms/Check',
   component: Check,
@@ -10,11 +8,6 @@ export default {
     className: { control: 'text' },
     dataTestId: { control: 'text' },
     onChange: { action: 'checked' },
-  },
-  parameters: {
-    docs: {
-      page: CheckMDX,
-    },
   },
 };
 

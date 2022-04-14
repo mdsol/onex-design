@@ -1,16 +1,9 @@
 import { TextArea } from '../../../../components';
 
-import TextareaMDX from './Textarea.stories.mdx';
-
 export default {
   title: 'Onex/Forms/Textarea',
   component: TextArea,
   argTypes: {},
-  parameters: {
-    docs: {
-      page: TextareaMDX,
-    },
-  },
 };
 
 const Template = (props) => <TextArea {...props} />;
