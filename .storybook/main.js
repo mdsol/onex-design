@@ -7,7 +7,7 @@ module.exports = {
   features: {
     babelModeV7: true,
   },
-  addons: ['@storybook/preset-scss', '@storybook/addon-links', '@storybook/addon-essentials'],
+  addons: ['@storybook/preset-scss', '@storybook/addon-essentials'],
 
   stories: [
     '../src/stories/Introduction.stories.mdx',
