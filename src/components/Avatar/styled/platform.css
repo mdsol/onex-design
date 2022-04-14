@@ -19,6 +19,9 @@
 .onex-avatar__icon-decorator {
   display: none;
 }
+.onex-avatar.hover-disabled {
+  cursor: auto;
+}
 .onex-avatar:not(.hover-disabled):hover {
   box-shadow: inset 0 0 0 1px transparent;
   cursor: pointer;

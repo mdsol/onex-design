@@ -6,7 +6,7 @@ import { getInitials } from './utils';
 const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
   const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {
     [className]: className,
-    'hover-disabled': hoverDisabled || size === 'sm' || size === 'xs',
+    'hover-disabled': hoverDisabled || size !== 'lg',
   });
   const childComponent = Array.isArray(children) ? children[0] : children;
 
@@ -26,7 +26,7 @@ const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, 
       <div className={(name || src || childComponent) && `onex-avatar__icon-decorator`}>
         <PersonRounded />
       </div>
-      {!hoverDisabled && size !== 'sm' && size !== 'xs' && (
+      {!hoverDisabled && size === 'lg' && (
         <div className="onex-avatar__hover">
           <PhotoCameraRounded />
         </div>

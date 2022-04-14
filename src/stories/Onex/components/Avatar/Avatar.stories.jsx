@@ -27,7 +27,7 @@ export default {
     },
     hoverDisabled: {
       description:
-        'Disables the avatar hover, for size ```xs``` and ```sm``` hover disabled automatically',
+        'Disables the avatar hover, for size ```xs```, ```sm``` and ```md``` hover disabled automatically',
     },
     dataTestId: {
       description: 'Id of the component for testing',
