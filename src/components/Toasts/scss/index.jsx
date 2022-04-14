@@ -60,6 +60,7 @@ const CustomToast = React.forwardRef((props, ref) => {
             </Button>
           )}
         </Toast.Header>
+        {children && <Toast.Body> {children} </Toast.Body>}
       </Toast>
     </ToastContainer>
   );

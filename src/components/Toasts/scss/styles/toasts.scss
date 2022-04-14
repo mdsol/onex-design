@@ -1,49 +1,64 @@
 @import 'mixins';
 
 .onex-toast {
-    @include toast-color-variant();
+  @include toast-color-variant();
 
-    &__block {
-        overflow: hidden;
-        height: $onex-toast-height;
+  &__block {
+    font-family: $font-family;
+    font-style: normal;
+    line-height: 20px;
+    border: 1px solid rgba(26, 28, 30, 0.1);
+    box-shadow: 0px 4px 24px rgba(0, 28, 59, 0.12);
+    border-radius: 16px;
+    //overflow: hidden;
+    //height: $onex-toast-height;
+    padding: 16px;
+  }
+
+  &__header {
+    height: 100%;
+    //padding-right: $onex-toast-padding-right-x;
+
+    .onex-toast__btn-close {
+      width: 20px;
+      height: 20px;
+      //display: inline-flex;
+      //align-items: center;
+      //justify-content: center;
+      //min-width: $onex-btn-close-size;
+      //height: $onex-btn-close-size;
+      //border-radius: 100%;
+
+      svg {
+        fill: $onex-btn-close-icon-color;
+      }
     }
+  }
 
-    &__header {
-        height: 100%;
-        padding-right: $onex-toast-padding-right-x;
+  &__icon > svg {
+    width: 20px;
+    height: 20px;
+  }
 
-        .onex-toast__btn-close {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: $onex-btn-close-size;
-            height: $onex-btn-close-size;
-            border-radius: 100%;
 
-            svg {
-                fill: $onex-btn-close-icon-color;
-            }
-        }
-    }
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //height: 100%;
+  //padding: $onex-icon-wrapper-padding-x;
 
-    &__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        padding: $onex-icon-wrapper-padding-x;
+  //svg {
+  //    width: $onex-toast-icon-size;
+  //    height: $onex-toast-icon-size;
+  //}
 
-        svg {
-            width: $onex-toast-icon-size;
-            height: $onex-toast-icon-size;
-        }
-    }
-
-    &__message {
-        display: flex;
-        align-items: center;
-        justify-content: stretch;
-        flex-grow: 2;
-        padding: 0 $onex-message-padding-x;
-    }
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 2;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 $onex-message-padding-x;
+  }
 }

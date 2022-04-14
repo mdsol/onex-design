@@ -7,29 +7,26 @@ $onex-toast-border-radius: $component-border-radius-lg;
 $onex-toast-height: 2.75rem;
 $onex-toast-icon-size: $icon-size-lg;
 $onex-icon-wrapper-padding-x: 0.75rem;
-$onex-message-padding-x: 0.875rem;
+$onex-message-padding-x: 1rem;
 $onex-toast-padding-right-x: 0.25rem;
 $onex-btn-close-size: 2rem;
 $onex-btn-close-icon-color: $secondary-600;
 
 $onex-toast-text-color: $secondary-800;
 
-$onex-toast-info-bg-color: $white;
+$onex-toast-bg-color: $white;
 $onex-toast-info-main-color: $primary;
-$onex-toast-warning-bg-color: $warning-100;
 $onex-toast-warning-main-color: $warning;
-$onex-toast-error-bg-color: $error-100;
 $onex-toast-error-main-color: $error;
-$onex-toast-success-bg-color: $success-100;
 $onex-toast-success-main-color: $success;
 
 /* bootstrap variables */
-$toast-max-width: $onex-toast-max-width;
+//$toast-max-width: $onex-toast-max-width;
 $toast-padding-x: $onex-toast-padding-x;
 $toast-padding-y: $onex-toast-padding-y;
 $toast-font-size: $onex-toast-font-size;
 $toast-color: $onex-toast-text-color;
-$toast-background-color: $onex-toast-info-bg-color;
+$toast-background-color: $onex-toast-bg-color;
 $toast-border-width: $onex-toast-border-width;
 $toast-border-color: $onex-toast-info-main-color;
 $toast-border-radius: $onex-toast-border-radius;

@@ -1350,23 +1350,24 @@ export const config = {
         wrapper: 'banner_wrap',
         variants: [
           {
-            id: 'info-toast',
-            variant: 'info',
-            children: 'Example of an informational banner message. ',
+            id: 'error-toast',
+            variant: 'error',
+            header: 'Failed to send the message',
+            children: 'Server is not responding.',
             show: true,
           },
-          {
-            id: 'success-toast',
-            variant: 'success',
-            children: 'Example of a success banner message.',
-            show: true,
-          },
-          {
-            id: 'warning-toast',
-            variant: 'warning',
-            children: 'Example of a warning banner message.',
-            show: true,
-          },
+          // {
+          //   id: 'success-toast',
+          //   variant: 'success',
+          //   children: 'Example of a success banner message.',
+          //   show: true,
+          // },
+          // {
+          //   id: 'warning-toast',
+          //   variant: 'warning',
+          //   children: 'Example of a warning banner message.',
+          //   show: true,
+          // },
         ],
       },
       {
