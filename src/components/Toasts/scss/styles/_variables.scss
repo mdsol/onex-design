@@ -1,36 +1,36 @@
-$onex-toast-max-width: 50rem;
+$onex-toast-line-height: $line-height-lg;
+$onex-toast-font-size-header: $font-size-body;
+$onex-toast-font-size-body: $font-size-label;
+$onex-toast-max-width: 25rem;
+$onex-toast-padding: 1rem;
 $onex-toast-padding-x: 0;
 $onex-toast-padding-y: 0;
-$onex-toast-font-size: $font-size-lg;
-$onex-toast-border-width: 1px;
-$onex-toast-border-radius: $component-border-radius-lg;
-$onex-toast-height: 2.75rem;
-$onex-toast-icon-size: $icon-size-lg;
-$onex-icon-wrapper-padding-x: 0.75rem;
+$onex-toast-border-color: $secondary-900-opacity-10;
+$onex-toast-box-shadow-color: $secondary-900-opacity-12;
+$onex-toast-border-radius: 1rem;
 $onex-message-padding-x: 1rem;
-$onex-toast-padding-right-x: 0.25rem;
-$onex-btn-close-size: 2rem;
-$onex-btn-close-icon-color: $secondary-600;
 
-$onex-toast-text-color: $secondary-800;
+$onex-icon-width: 1.25rem;
+$onex-icon-height: 1.25rem;
+
+$onex-btn-close-min-width: 1.25rem;
+$onex-btn-close-width: 1.25rem;
+$onex-btn-close-height: 1.25rem;
+$onex-btn-close-icon-color: $secondary-400;
+$onex-toast-text-color: $secondary-900;
 
 $onex-toast-bg-color: $white;
 $onex-toast-info-main-color: $primary;
-$onex-toast-warning-main-color: $warning;
+$onex-toast-warning-main-color: $warning-400;
 $onex-toast-error-main-color: $error;
 $onex-toast-success-main-color: $success;
 
 /* bootstrap variables */
-//$toast-max-width: $onex-toast-max-width;
+$toast-max-width: $onex-toast-max-width;
 $toast-padding-x: $onex-toast-padding-x;
 $toast-padding-y: $onex-toast-padding-y;
-$toast-font-size: $onex-toast-font-size;
 $toast-color: $onex-toast-text-color;
 $toast-background-color: $onex-toast-bg-color;
-$toast-border-width: $onex-toast-border-width;
-$toast-border-color: $onex-toast-info-main-color;
-$toast-border-radius: $onex-toast-border-radius;
-$toast-box-shadow: none;
 
 $toast-header-color: $onex-toast-text-color;
 $toast-header-background-color: none;

@@ -13,7 +13,7 @@ import {
   BugReportRounded,
 } from '@mui/icons-material';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import { Avatar, Badge, ToggleButton } from '../components';
+import { Avatar, Badge, Button, ToggleButton } from '../components';
 
 const dropdownItems = [
   { eventKey: 'one', title: 'item one', badge: 100, active: true },
@@ -1346,28 +1346,89 @@ export const config = {
         name: 'Toasts',
         componentName: 'Toasts',
         styledComponentName: 'Toasts',
-        additionalComponents: [],
+        additionalComponents: ['Button'],
         wrapper: 'banner_wrap',
         variants: [
           {
-            id: 'error-toast',
+            id: 'error-toast-button-text',
             variant: 'error',
-            header: 'Failed to send the message',
-            children: 'Server is not responding.',
+            header: 'Error toast example',
+            children: (
+              <>
+                Error toast message.
+                <div className="onex-toast-button-group">
+                  <Button variant="secondary" onClick={() => console.log('Resend')}>
+                    Resend
+                  </Button>
+                  <Button variant="tertiary" onClick={() => console.log('Discard')}>
+                    Discard
+                  </Button>
+                </div>
+              </>
+            ),
             show: true,
+            position: 'top-start',
           },
-          // {
-          //   id: 'success-toast',
-          //   variant: 'success',
-          //   children: 'Example of a success banner message.',
-          //   show: true,
-          // },
-          // {
-          //   id: 'warning-toast',
-          //   variant: 'warning',
-          //   children: 'Example of a warning banner message.',
-          //   show: true,
-          // },
+          {
+            id: 'warning-toast-button-text',
+            variant: 'warning',
+            header: 'Warning toast example',
+            children: (
+              <>
+                Warning toast message.
+                <div className="onex-toast-button-group">
+                  <Button variant="secondary" onClick={() => console.log('Resend')}>
+                    Resend
+                  </Button>
+                  <Button variant="tertiary" onClick={() => console.log('Discard')}>
+                    Discard
+                  </Button>
+                </div>
+              </>
+            ),
+            show: true,
+            position: 'top-start',
+          },
+          {
+            id: 'info-toast-button-text',
+            variant: 'info',
+            header: 'Info toast example',
+            children: (
+              <>
+                Info toast message.
+                <div className="onex-toast-button-group">
+                  <Button variant="secondary" onClick={() => console.log('Resend')}>
+                    Resend
+                  </Button>
+                  <Button variant="tertiary" onClick={() => console.log('Discard')}>
+                    Discard
+                  </Button>
+                </div>
+              </>
+            ),
+            show: true,
+            position: 'top-start',
+          },
+          {
+            id: 'success-toast-button-text',
+            variant: 'success',
+            header: 'Success toast example',
+            children: (
+              <>
+                Success toast message.
+                <div className="onex-toast-button-group">
+                  <Button variant="secondary" onClick={() => console.log('Resend')}>
+                    Resend
+                  </Button>
+                  <Button variant="tertiary" onClick={() => console.log('Discard')}>
+                    Discard
+                  </Button>
+                </div>
+              </>
+            ),
+            show: true,
+            position: 'top-start',
+          },
         ],
       },
       {

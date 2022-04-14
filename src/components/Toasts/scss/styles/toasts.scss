@@ -6,51 +6,50 @@
   &__block {
     font-family: $font-family;
     font-style: normal;
-    line-height: 20px;
-    border: 1px solid rgba(26, 28, 30, 0.1);
-    box-shadow: 0px 4px 24px rgba(0, 28, 59, 0.12);
-    border-radius: 16px;
-    //overflow: hidden;
-    //height: $onex-toast-height;
-    padding: 16px;
+    line-height: $onex-toast-line-height;
+    border: 1px solid $onex-toast-border-color;
+    box-shadow: 0 0.25rem 1.5rem $onex-toast-box-shadow-color;
+    border-radius: $onex-toast-border-radius;
+    padding: $onex-toast-padding;
+    background-color: $onex-toast-bg-color!important;
   }
 
   &__header {
     height: 100%;
-    //padding-right: $onex-toast-padding-right-x;
-
     .onex-toast__btn-close {
-      width: 20px;
-      height: 20px;
-      //display: inline-flex;
-      //align-items: center;
-      //justify-content: center;
-      //min-width: $onex-btn-close-size;
-      //height: $onex-btn-close-size;
-      //border-radius: 100%;
-
-      svg {
+      min-width: $onex-btn-close-min-width;
+      width: $onex-btn-close-width;
+      height: $onex-btn-close-height;
+      padding: 0!important;
+      color: $onex-btn-close-icon-color;
+      & > svg {
+        margin: 0;
         fill: $onex-btn-close-icon-color;
+      }
+      &:hover {
+        background-color: white;
+        border: none;
+        color: $onex-btn-close-icon-color;
       }
     }
   }
 
-  &__icon > svg {
-    width: 20px;
-    height: 20px;
+  &__body {
+    padding: 0.5rem 1rem 0 2.25rem;
+    font-size: $onex-toast-font-size-body;
   }
 
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: $onex-icon-width;
+    height: $onex-icon-height;
 
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
-  //height: 100%;
-  //padding: $onex-icon-wrapper-padding-x;
-
-  //svg {
-  //    width: $onex-toast-icon-size;
-  //    height: $onex-toast-icon-size;
-  //}
+    & > svg {
+      width: $onex-icon-width;
+      height: $onex-icon-height;
+    }
+  }
 
   &__message {
     display: flex;
@@ -58,7 +57,7 @@
     justify-content: stretch;
     flex-grow: 2;
     font-weight: 600;
-    font-size: 16px;
+    font-size: $onex-toast-font-size-header;
     padding: 0 $onex-message-padding-x;
   }
 }

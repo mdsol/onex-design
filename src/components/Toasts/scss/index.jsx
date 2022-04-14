@@ -55,12 +55,17 @@ const CustomToast = React.forwardRef((props, ref) => {
           )}
           <div className="onex-toast__message">{header}</div>
           {closeButton && (
-            <Button className="onex-toast__btn-close" variant="icon-link" onClick={onClose}>
+            <Button
+              className="onex-toast__btn-close"
+              variant="tertiary"
+              type="icon"
+              onClick={onClose}
+            >
               <Close />
             </Button>
           )}
         </Toast.Header>
-        {children && <Toast.Body> {children} </Toast.Body>}
+        {children && <Toast.Body className="onex-toast__body"> {children} </Toast.Body>}
       </Toast>
     </ToastContainer>
   );
