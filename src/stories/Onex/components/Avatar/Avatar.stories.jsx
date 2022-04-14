@@ -1,6 +1,8 @@
 import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
 import { Avatar } from '../../../../components';
 
+const AvatarTemplate = (args) => <Avatar {...args} />;
+
 export default {
   title: 'Onex/Components/Avatar',
   component: Avatar,
@@ -36,8 +38,6 @@ export default {
     },
   },
 };
-
-const AvatarTemplate = (args) => <Avatar {...args} />;
 
 export const Default = AvatarTemplate.bind({});
 
