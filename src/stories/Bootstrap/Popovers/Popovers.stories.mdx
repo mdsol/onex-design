@@ -1,6 +1,7 @@
 <!-- Popover.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Popover, OverlayTrigger, Button } from '../../../components';
+import * as stories from './Popovers.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Popover"
@@ -13,10 +14,10 @@ A popover component, like those found in iOS.
 You can control the placement of the Popover.
 
 <Canvas isColumn>
-    <Story id="bootstrap-components-popover--top" />
-    <Story id="bootstrap-components-popover--right" />
-    <Story id="bootstrap-components-popover--left" />
-    <Story id="bootstrap-components-popover--bottom" />
+    <Story name="Top" story={stories.Top} />
+    <Story name="Right" story={stories.Right} />
+    <Story name="Left" story={stories.Left} />
+    <Story name="Bottom" story={stories.Bottom} />
 </Canvas>
 
 # Demo

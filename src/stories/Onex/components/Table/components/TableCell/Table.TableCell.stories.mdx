@@ -1,5 +1,6 @@
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 import { Table, TableHead, TableRow, TableCell, Badge, Avatar } from '../../../../../../components';
+import * as stories from './Table.TableCell.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/TableCell"
@@ -24,12 +25,12 @@ The component renders a ```<th>``` element when the parent context is a header o
 
 #### Header
 <Canvas>
-  <Story id='onex-components-table-tablecell--header' />
+  <Story name="Header" story={stories.Header} />
 </Canvas>
 
 #### Body
 <Canvas>
-  <Story id='onex-components-table-tablecell--body' />
+  <Story name="Body" story={stories.Body} />
 </Canvas>
 
 ## Demo

@@ -1,6 +1,7 @@
 <!-- Offcanvas.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Offcanvas, Button } from '../../../components';
+import * as stories from './Offcanvas.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Offcanvas"
@@ -24,10 +25,10 @@ Offcanvas supports a few different placements:
 4. ```bottom``` places offcanvas on the bottom of the viewport
 
 <Canvas>
-    <Story id='bootstrap-components-offcanvas--start-placement' />
-    <Story id='bootstrap-components-offcanvas--end-placement' />
-    <Story id='bootstrap-components-offcanvas--top-placement' />
-    <Story id='bootstrap-components-offcanvas--bottom-placement' />
+    <Story name="StartPlacement" story={stories.StartPlacement} />
+    <Story name="EndPlacement" story={stories.EndPlacement} />
+    <Story name="TopPlacement" story={stories.TopPlacement} />
+    <Story name="BottomPlacement" story={stories.BottomPlacement} />
 </Canvas>
 
 ### Backdrop
@@ -35,10 +36,10 @@ Scrolling the ```<body>``` element is disabled when an offcanvas and its backdro
 Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``` prop to toggle the backdrop.
 
 <Canvas>
-    <Story id='bootstrap-components-offcanvas--enable-backdrop' />
-    <Story id='bootstrap-components-offcanvas--disable-backdrop' />
-    <Story id='bootstrap-components-offcanvas--enable-scrolling' />
-    <Story id='bootstrap-components-offcanvas--enable-scrolling-backdrop' />
+    <Story name="EnableBackdrop" story={stories.EnableBackdrop} />
+    <Story name="DisableBackdrop" story={stories.DisableBackdrop} />
+    <Story name="EnableScrolling" story={stories.EnableScrolling} />
+    <Story name="EnableScrollingBackdrop" story={stories.EnableScrollingBackdrop} />
 </Canvas>
 
 ## Demo

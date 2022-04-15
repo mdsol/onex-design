@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { DataGrid } from '../../../../components';
+import * as stories from './DataGrid.stories.jsx';
 
 <Meta
     title="Onex/Components/DataGrid"
@@ -100,5 +101,5 @@ A DataGrid is a table-presented data.
 ### DataGrid default
 
 <Canvas>
-    <Story id='onex-components-datagrid--default' />
+    <Story name="Default" story={stories.Default} />
 </Canvas>

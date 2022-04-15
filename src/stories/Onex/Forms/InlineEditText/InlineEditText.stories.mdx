@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { InlineEditText } from '../../../../components';
+import * as stories from './InlineEditText.stories.jsx';
 
 <Meta
     title="Onex/Forms/InlineEditText"
@@ -137,6 +138,6 @@ export const Template = (args) => <InlineEditText {...args} />;
 ### InlineEditText sizes
 
 <Canvas>
-    <Story id='onex-forms-inlineedittext--small' />
-    <Story id='onex-forms-inlineedittext--large' />
+    <Story name="Small" story={stories.Small} />
+    <Story name="Large" story={stories.Large} />
 </Canvas>

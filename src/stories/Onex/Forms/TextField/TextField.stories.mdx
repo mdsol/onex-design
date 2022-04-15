@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { TextField } from '../../../../components';
+import * as stories from './TextField.stories.jsx';
 
 <Meta
     title="Onex/Forms/TextField"
@@ -129,41 +130,41 @@ The TextField component based on input DOM element.
 ### TextField sizes
 
 <Canvas>
-    <Story id='onex-forms-textfield--small' />
-    <Story id='onex-forms-textfield--large' />
+    <Story name="Small" story={stories.Small} />
+    <Story name="Large" story={stories.Large} />
 </Canvas>
 
 ### TextField has clear button
 
 <Canvas>
-    <Story id='onex-forms-textfield--clear-button' />
+    <Story name="ClearButton" story={stories.ClearButton} />
 </Canvas>
 
 ### TextField has custom 'icon' or 'trailing-icon'
 
 <Canvas>
-  <Story id='onex-forms-textfield--icon' />
-  <Story id='onex-forms-textfield--trailing-icon' />
+  <Story name="Icon" story={stories.Icon} />
+  <Story name="TrailingIcon" story={stories.TrailingIcon} />
 </Canvas>
 
 ### Search field
 
 <Canvas>
-    <Story id='onex-forms-textfield--search-field-small' />
-    <Story id='onex-forms-textfield--search-field-large' />
+    <Story name="SearchFieldSmall" story={stories.SearchFieldSmall} />
+    <Story name="SearchFieldLarge" story={stories.SearchFieldLarge} />
 </Canvas>
 
 ### TextField with error message and required
 
 <Canvas>
     <div style={{display: 'flex', alignItems: 'flex-start', gap: '25px'}}>
-        <Story id='onex-forms-textfield--error-message' />
-        <Story id='onex-forms-textfield--required' />
+        <Story name="ErrorMessage" story={stories.ErrorMessage} />
+        <Story name="Required" story={stories.Required} />
     </div>
 </Canvas>
 
 ### Disabled TextField
 
 <Canvas>
-    <Story id='onex-forms-textfield--disabled' />
+    <Story name="Disabled" story={stories.Disabled} />
 </Canvas>

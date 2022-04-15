@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { Select } from '../../../../components';
+import * as stories from './Select.stories.jsx';
 
 <Meta
     title="Onex/Forms/Select"
@@ -116,6 +117,6 @@ export const Template = (args) => <Select {...args} />;
 ### Select sizes
 
 <Canvas>
-    <Story id='onex-forms-select--small' />
-    <Story id='onex-forms-select--large' />
+    <Story name="Small" story={stories.Small} />
+    <Story name="Large" story={stories.Large} />
 </Canvas>

@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { Navbar, Container } from '../../../../components';
+import * as stories from './Navbar.Navbar.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Navbar/Navbar"
@@ -54,7 +55,7 @@ A responsive navigation header, including support for branding, navigation, and 
 A simple flexible branding component. Images are supported but will likely require custom styling to work well.
 
 <Canvas>
-    <Story id="bootstrap-components-navbar-navbar--brand" />
+    <Story name="Brand" story={stories.Brand} />
 </Canvas>
 
 #### Responsive behaviors
@@ -64,7 +65,7 @@ Use the <b>expand</b> prop as well as the <b>Navbar.Toggle</b> and <b>Navbar.Col
 Set the <b>defaultExpanded</b> prop to make the Navbar start expanded. Set <b>collapseOnSelect</b> to make the Navbar collapse automatically when the user selects an item. You can also finely control the collapsing behavior by using the <b>expanded</b> and <b>onToggle</b> props.
 
 <Canvas>
-    <Story id="bootstrap-components-navbar-navbar--responsive-behaviors" />
+    <Story name="ResponsiveBehaviors" story={stories.ResponsiveBehaviors} />
 </Canvas>
 
 #### Offcanvas
@@ -74,7 +75,7 @@ Transform your expanding and collapsing navbar into an offcanvas drawer with the
 In the example below, to create an offcanvas navbar that is always collapsed across all breakpoints, set the <b>expand</b> prop to <b>false</b>.
 
 <Canvas>
-    <Story id="bootstrap-components-navbar-navbar--navbar-offcanvas" />
+    <Story name="NavbarOffcanvas" story={stories.NavbarOffcanvas} />
 </Canvas>
 
 #### Scrolling
