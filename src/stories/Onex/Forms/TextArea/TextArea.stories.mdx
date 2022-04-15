@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { TextArea } from '../../../../components';
+import * as stories from './TextArea.stories.jsx';
 
 <Meta
     title="Onex/Forms/Textarea"
@@ -108,45 +109,45 @@ The Textarea is a multi-line plain-text editing control, useful when you want to
 ### Textarea
 
 <Canvas>
-    <Story id='onex-forms-textarea--default' />
-    <Story id='onex-forms-textarea--default-disabled' />
-    <Story id='onex-forms-textarea--default-error' />
+    <Story name="Default" story={stories.Default} />
+    <Story name="DefaultDisabled" story={stories.DefaultDisabled} />
+    <Story name="DefaultError" story={stories.DefaultError} />
 </Canvas>
 
 ### Textarea with label text
 
 <Canvas>
-    <Story id='onex-forms-textarea--label' />
-    <Story id='onex-forms-textarea--label-disabled' />
-    <Story id='onex-forms-textarea--label-error' />
+    <Story name="Label" story={stories.Label} />
+    <Story name="LabelDisabled" story={stories.LabelDisabled} />
+    <Story name="LabelError" story={stories.LabelError} />
 </Canvas>
 
 ### Textarea with label and character counter
 
 <Canvas>
-  <Story id='onex-forms-textarea--label-num-counter' />
-  <Story id='onex-forms-textarea--label-num-counter-disabled' />
-  <Story id='onex-forms-textarea--label-num-counter-error' />
+  <Story name="LabelNumCounter" story={stories.LabelNumCounter} />
+  <Story name="LabelNumCounterDisabled" story={stories.LabelNumCounterDisabled} />
+  <Story name="LabelNumCounterError" story={stories.LabelNumCounterError} />
 </Canvas>
 
 ### Textarea with help text and label
 
 <Canvas>
-    <Story id='onex-forms-textarea--label-help-text' />
-    <Story id='onex-forms-textarea--label-help-text-disabled' />
-    <Story id='onex-forms-textarea--label-help-text-error' />
+    <Story name="LabelHelpText" story={stories.LabelHelpText} />
+    <Story name="LabelHelpTextDisabled" story={stories.LabelHelpTextDisabled} />
+    <Story name="LabelHelpTextError" story={stories.LabelHelpTextError} />
 </Canvas>
 
 ### Read only textarea
 
 <Canvas>
-    <Story id='onex-forms-textarea--read-only' />
+    <Story name="ReadOnly" story={stories.ReadOnly} />
 </Canvas>
 
 ### Textarea has 10 rows
 
 <Canvas>
-    <Story id='onex-forms-textarea--rows' />
+    <Story name="Rows" story={stories.Rows} />
 </Canvas>
 
 ### Demo

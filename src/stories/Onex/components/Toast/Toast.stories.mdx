@@ -2,6 +2,7 @@ import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 import { styled } from '@storybook/theming';
 
 import { Toast } from '../../../../components';
+import * as stories from './Toast.stories.jsx';
 
 <Meta
     title="Onex/Components/Toast"
@@ -142,31 +143,31 @@ The component has 4 variants such as "info", "success", "warning", "error".
 ##### <i>info</i>
 
 <Canvas>
-    <Story id='onex-components-toast--info' position="relative" height="60px" />
+    <Story name="Info" story={stories.Info} position="relative" height="60px" />
 </Canvas>
 
 ##### <i>success</i>
 
 <Canvas>
-    <Story id='onex-components-toast--success' height="60px" position="relative" />
+    <Story name="Success" story={stories.Success} height="60px" position="relative" />
 </Canvas>
 
 ##### <i>warning</i>
 
 <Canvas>
-    <Story id='onex-components-toast--warning' height="60px" position="relative" />
+    <Story name="Warning" story={stories.Warning} height="60px" position="relative" />
 </Canvas>
 
 ##### <i>error</i>
 
 <Canvas>
-    <Story id='onex-components-toast--error' height="60px" position="relative" />
+    <Story name="Error" story={stories.Error} height="60px" position="relative" />
 </Canvas>
 
 ### Toast with custom icon
 
 <Canvas>
-    <Story id='onex-components-toast--custom-icon' height="60px" position="relative" />
+    <Story name="CustomIcon" story={stories.CustomIcon} height="60px" position="relative" />
 </Canvas>
 
 ### Toast placement
@@ -174,53 +175,53 @@ The component has 4 variants such as "info", "success", "warning", "error".
 ##### <i>top-start</i>
 
 <Canvas>
-    <Story id='onex-components-toast--top-start' height="100px" position="relative" />
+    <Story name="TopStart" story={stories.TopStart} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>top-center</i>
 
 <Canvas>
-    <Story id='onex-components-toast--top-center' height="100px" position="relative" />
+    <Story name="TopCenter" story={stories.TopCenter} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>top-end</i>
 
 <Canvas>
-    <Story id='onex-components-toast--top-end' height="100px" position="relative" />
+    <Story name="TopEnd" story={stories.TopEnd} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>middle-start</i>
 
 <Canvas>
-    <Story id='onex-components-toast--middle-start' height="100px" position="relative" />
+    <Story name="MiddleStart" story={stories.MiddleStart} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>middle-center</i>
 
 <Canvas>
-    <Story id='onex-components-toast--middle-center' height="100px" position="relative" />
+    <Story name="MiddleCenter" story={stories.MiddleCenter} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>middle-end</i>
 
 <Canvas>
-    <Story id='onex-components-toast--middle-end' height="100px" position="relative" />
+    <Story name="MiddleEnd" story={stories.MiddleEnd} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>bottom-start</i>
 
 <Canvas>
-    <Story id='onex-components-toast--bottom-start' height="100px" position="relative" />
+    <Story name="BottomStart" story={stories.BottomStart} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>bottom-center</i>
 
 <Canvas>
-    <Story id='onex-components-toast--bottom-center' height="100px" position="relative" />
+    <Story name="BottomCenter" story={stories.BottomCenter} height="100px" position="relative" />
 </Canvas>
 
 ##### <i>bottom-end</i>
 
 <Canvas>
-    <Story id='onex-components-toast--bottom-end' height="100px" position="relative" />
+    <Story name="BottomEnd" story={stories.BottomEnd} height="100px" position="relative" />
 </Canvas>

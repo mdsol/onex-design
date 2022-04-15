@@ -2,6 +2,7 @@
 import { Check } from 'react-bootstrap-icons';
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import { Lozenge } from '../../../../components';
+import * as stories from './Lozenge.stories.jsx';
 
 <Meta
   title="Onex/Components/Lozenge"
@@ -20,61 +21,61 @@ A lozenge is a visual indicator used to highlight an item's status for quick rec
 Supports two lozenge sizes: ```small``` and  ```large```.
 
 <Canvas>
-  <Story id='onex-components-lozenge--small' />
-  <Story id='onex-components-lozenge--large' />
+  <Story name="Small" story={stories.Small} />
+  <Story name="Large" story={stories.Large} />
 </Canvas>
 
 ### Variations
 #### Subtle
 
 <Canvas>
-  <Story id='onex-components-lozenge--subtle' />
+  <Story name="Subtle" story={stories.Subtle} />
 </Canvas>
 
 #### Bold
 <Canvas>
-  <Story id='onex-components-lozenge--bold' />
+  <Story name="Bold" story={stories.Bold} />
 </Canvas>
 
 #### Icon
 <Canvas>
-  <Story id='onex-components-lozenge--icon' />
+  <Story name="Icon" story={stories.Icon} />
 </Canvas>
 
 ### Types
 #### Default
 <Canvas>
-  <Story id='onex-components-lozenge--default-subtle' />
-  <Story id='onex-components-lozenge--default-bold' />
-  <Story id='onex-components-lozenge--default-icon' />
+  <Story name="DefaultSubtle" story={stories.DefaultSubtle} />
+  <Story name="DefaultBold" story={stories.DefaultBold} />
+  <Story name="DefaultIcon" story={stories.DefaultIcon} />
 </Canvas>
 
 #### Success
 <Canvas>
-  <Story id='onex-components-lozenge--success-subtle' />
-  <Story id='onex-components-lozenge--success-bold' />
-  <Story id='onex-components-lozenge--success-icon' />
+  <Story name="SuccessSubtle" story={stories.SuccessSubtle} />
+  <Story name="SuccessBold" story={stories.SuccessBold} />
+  <Story name="SuccessIcon" story={stories.SuccessIcon} />
 </Canvas>
 
 #### Warning
 <Canvas>
-  <Story id='onex-components-lozenge--warning-subtle' />
-  <Story id='onex-components-lozenge--warning-bold' />
-  <Story id='onex-components-lozenge--warning-icon' />
+  <Story name="WarningSubtle" story={stories.WarningSubtle} />
+  <Story name="WarningBold" story={stories.WarningBold} />
+  <Story name="WarningIcon" story={stories.WarningIcon} />
 </Canvas>
 
 #### Error
 <Canvas>
-  <Story id='onex-components-lozenge--error-subtle' />
-  <Story id='onex-components-lozenge--error-bold' />
-  <Story id='onex-components-lozenge--error-icon' />
+  <Story name="ErrorSubtle" story={stories.ErrorSubtle} />
+  <Story name="ErrorBold" story={stories.ErrorBold} />
+  <Story name="ErrorIcon" story={stories.ErrorIcon} />
 </Canvas>
 
 #### Info
 <Canvas>
-  <Story id='onex-components-lozenge--info-subtle' />
-  <Story id='onex-components-lozenge--info-bold' />
-  <Story id='onex-components-lozenge--info-icon' />
+  <Story name="InfoSubtle" story={stories.InfoSubtle} />
+  <Story name="InfoBold" story={stories.InfoBold} />
+  <Story name="InfoIcon" story={stories.InfoIcon} />
 </Canvas>
 
 ## Demo

@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { TableName, TextField, TableControl } from '../../../../../../components';
+import * as stories from './Table.TableControl.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/TableControl"
@@ -15,7 +16,7 @@ TableControl contains table name and text search field.
 
 ### Default
   <Canvas>
-    <Story id='onex-components-table-tablecontrol--default' />
+    <Story name="Default" story={stories.Default} />
   </Canvas>
 
 ## Demo

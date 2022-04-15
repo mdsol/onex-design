@@ -1,50 +1,51 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { Badge } from '../../../../components';
+import * as stories from './Badge.stories.jsx';
 
 <Meta
-    title="Onex/Components/Badge"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+  title="Onex/Components/Badge"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        children: {
-            description: 'The content of the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    children: {
+      description: 'The content of the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        type: {
-            description: 'The type to use.'
+      },
+    },
+    type: {
+      description: 'The type to use.',
+    },
+    size: {
+      description: 'The size of the component. small is equivalent to the dense button styling.',
+    },
+    icon: {
+      description: 'Element placed before the children.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        size: {
-            description: 'The size of the component. small is equivalent to the dense button styling.',
+      },
+    },
+    dataTestId: {
+      description: 'The it of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        icon: {
-            description: 'Element placed before the children.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        dataTestId: {
-            description: 'The it of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-    }}
-    component={Badge}
+      },
+    },
+  }}
+  component={Badge}
 />
 
 export const Template = (args) => <Badge {...args} />;
@@ -54,18 +55,20 @@ export const Template = (args) => <Badge {...args} />;
 A badge is a visual indicator for numeric values such as tallies and scores.
 
 ### Badge details
+
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-            type: 'primary',
-            size: 'sm',
-            children: '100',
-            className: 'custom-badge',
-            dataTestId: 'text-badge-id',
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    args={{
+      type: 'primary',
+      size: 'sm',
+      children: '100',
+      className: 'custom-badge',
+      dataTestId: 'text-badge-id',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
@@ -73,42 +76,42 @@ A badge is a visual indicator for numeric values such as tallies and scores.
 ### Badge counter types
 
 <Canvas>
-    <Story id='onex-components-badge--counter-primary' height="20px" />
-    <Story id='onex-components-badge--counter-important' height="20px" />
-    <Story id='onex-components-badge--counter-default' height="20px" />
-    <Story id='onex-components-badge--counter-default-invert' height="20px" />
-    <Story id='onex-components-badge--counter-removed' height="20px" />
-    <Story id='onex-components-badge--counter-added' height="20px" />
-    <Story id='onex-components-badge--counter-icon-start' height="20px" />
-    <Story id='onex-components-badge--counter-icon-end' height="20px" />
+  <Story name="Counter Primary" story={stories.CounterPrimary} height="20px" />
+  <Story name="Counter Important" story={stories.CounterImportant} height="20px" />
+  <Story name="Counter Default" story={stories.CounterDefault} height="20px" />
+  <Story name="Counter Default Invert" story={stories.CounterDefaultInvert} height="20px" />
+  <Story name="Counter Removed" story={stories.CounterRemoved} height="20px" />
+  <Story name="Counter Added" story={stories.CounterAdded} height="20px" />
+  <Story name="Counter Icon Start" story={stories.CounterIconStart} height="20px" />
+  <Story name="Counter Icon End" story={stories.CounterIconEnd} height="20px" />
 </Canvas>
 
 ### Badge status types
 
 <Canvas>
-    <Story id='onex-components-badge--status-default' />
-    <Story id='onex-components-badge--status-info' />
-    <Story id='onex-components-badge--status-warning' />
-    <Story id='onex-components-badge--status-important' />
-    <Story id='onex-components-badge--status-success' />
+  <Story name="Status Default" story={stories.StatusDefault} />
+  <Story name="Status Info" story={stories.StatusInfo} />
+  <Story name="Status Warning" story={stories.StatusWarning} />
+  <Story name="Status Important" story={stories.StatusImportant} />
+  <Story name="Status Success" story={stories.StatusSuccess} />
 </Canvas>
 
 ### Badge bold status types
 
 <Canvas>
-  <Story id='onex-components-badge--status-bold-default' />
-  <Story id='onex-components-badge--status-bold-info' />
-  <Story id='onex-components-badge--status-bold-warning' />
-  <Story id='onex-components-badge--status-bold-important' />
-  <Story id='onex-components-badge--status-bold-success' />
+  <Story name="Status Bold Default" story={stories.StatusBoldDefault} />
+  <Story name="Status Bold Info" story={stories.StatusBoldInfo} />
+  <Story name="Status Bold Warning" story={stories.StatusBoldWarning} />
+  <Story name="Status Bold Important" story={stories.StatusBoldImportant} />
+  <Story name="Status Bold Success" story={stories.StatusBoldSuccess} />
 </Canvas>
 
 ### Badge icon status types
 
 <Canvas>
-  <Story id='onex-components-badge--status-icon-default' />
-  <Story id='onex-components-badge--status-icon-info' />
-  <Story id='onex-components-badge--status-icon-warning' />
-  <Story id='onex-components-badge--status-icon-important' />
-  <Story id='onex-components-badge--status-icon-success' />
+  <Story name="Status Icon Default" story={stories.StatusIconDefault} />
+  <Story name="Status Icon Info" story={stories.StatusIconInfo} />
+  <Story name="Status Icon Warning" story={stories.StatusIconWarning} />
+  <Story name="Status Icon Important" story={stories.StatusIconImportant} />
+  <Story name="Status Icon Success" story={stories.StatusIconSuccess} />
 </Canvas>

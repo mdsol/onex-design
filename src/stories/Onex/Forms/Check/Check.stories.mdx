@@ -1,5 +1,6 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 import { Check } from '../../../../components';
+import * as stories from './Check.stories.jsx';
 
 <Meta
     title="Onex/Forms/Check"
@@ -98,41 +99,34 @@ The name Check can be used when providing `default props` or `style` overrides i
 
 <ArgsTable story="Demo" />
 
-### Check types
-
-<Canvas>
-    <Story id='onex-forms-check--checkbox' />
-    <Story id='onex-forms-check--radio' />
-</Canvas>
-
 ### CheckBox
 
 <Canvas>
-    <Story id='onex-forms-check--checkbox' />
-    <Story id='onex-forms-check--checkbox-with-label' />
+    <Story name="Checkbox" story={stories.Checkbox} />
+    <Story name="CheckboxWithLabel" story={stories.CheckboxWithLabel} />
 </Canvas>
 
 ### Radio
 
 <Canvas>
-    <Story id='onex-forms-check--radio' />
-    <Story id='onex-forms-check--radio-with-label' />
+    <Story name="Radio" story={stories.Radio} />
+    <Story name="RadioWithLabel" story={stories.RadioWithLabel} />
 </Canvas>
 
 ### CheckBox and Radio disabled
 
 <Canvas>
-    <Story id='onex-forms-check--checkbox-checked-disabled' />
-    <Story id='onex-forms-check--checkbox-disabled-with-label' />
-    <Story id='onex-forms-check--radio-checked-disabled' />
-    <Story id='onex-forms-check--radio-disabled-with-label' />
+    <Story name="CheckboxCheckedDisabled" story={stories.CheckboxCheckedDisabled} />
+    <Story name="CheckboxDisabledWithLabel" story={stories.CheckboxDisabledWithLabel} />
+    <Story name="RadioCheckedDisabled" story={stories.RadioCheckedDisabled} />
+    <Story name="RadioDisabledWithLabel" story={stories.RadioDisabledWithLabel} />
 </Canvas>
 
 ### CheckBox indeterminate
 
 <Canvas>
-    <Story id='onex-forms-check--checkbox-indeterminate' />
-    <Story id='onex-forms-check--checkbox-indeterminate-disabled' />
+    <Story name="CheckboxIndeterminate" story={stories.CheckboxIndeterminate} />
+    <Story name="CheckboxIndeterminateDisabled" story={stories.CheckboxIndeterminateDisabled} />
 </Canvas>
 
 ## Controlled

@@ -1,12 +1,11 @@
 <!-- Avatar.mdx -->
+
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
 import { Avatar } from '../../../../components';
+import * as stories from './Avatar.stories.jsx';
 
-<Meta
-  title="Onex/Components/Avatar"
-  component={Avatar}
-/>
+<Meta title="Onex/Components/Avatar" component={Avatar} />
 
 export const AvatarTemplate = (args) => <Avatar {...args} />;
 
@@ -18,33 +17,36 @@ along side a user's information and/or content that they have created.
 ## Usage
 
 ### Default avatar
+
 <Canvas>
-  <Story id="onex-components-avatar--default" />
+  <Story name="Default" story={stories.Default} />
 </Canvas>
 
 ### Image avatar
 
-Image avatar can be created by passing standard img props ```src``` to the component.
+Image avatar can be created by passing standard img props `src` to the component.
+
 <Canvas>
-  <Story id="onex-components-avatar--image" />
+  <Story name="Image" story={stories.Image} />
 </Canvas>
 
 ### Icon avatar
 
-Icon avatar is created by passing an icon as ```children```.
+Icon avatar is created by passing an icon as `children`.
 
 <Canvas>
-  <Story id="onex-components-avatar--icon" />
+  <Story name="Icon" story={stories.Icon} />
 </Canvas>
 
 ### Sizes
+
 An avatar component can vary in size.
 
 <Canvas>
-  <Story id="onex-components-avatar--extra-small" />
-  <Story id="onex-components-avatar--small" />
-  <Story id="onex-components-avatar--medium" />
-  <Story id="onex-components-avatar--large" />
+  <Story name="Extra Small" story={stories.ExtraSmall} />
+  <Story name="Small" story={stories.Small} />
+  <Story name="Medium" story={stories.Medium} />
+  <Story name="Large" story={stories.Large} />
 </Canvas>
 
 ## Demo
@@ -58,15 +60,10 @@ An avatar component can vary in size.
       children: <BugReportRoundedIcon />,
       hoverDisabled: false,
       dataTestId: 'test-avatar-id',
-    }}>
+    }}
+  >
     {AvatarTemplate.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
-
-
-
-
-
-

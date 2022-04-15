@@ -1,6 +1,7 @@
 <!-- Typography.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import { Typography } from '../../../../components';
+import * as stories from './Typography.stories.jsx';
 
 <Meta
   title="Typography"
@@ -16,11 +17,11 @@ Use typography to present your design and content as clearly and efficiently as 
 
 ### Alignment
 <Canvas isColumn>
-  <Story id='typography--center-align' />
-  <Story id='typography--inherit-align' />
-  <Story id='typography--justify-align' />
-  <Story id='typography--left-align' />
-  <Story id='typography--right-align' />
+  <Story name="CenterAlign" story={stories.CenterAlign} />
+  <Story name="InheritAlign" story={stories.InheritAlign} />
+  <Story name="JustifyAlign" story={stories.JustifyAlign} />
+  <Story name="LeftAlign" story={stories.LeftAlign} />
+  <Story name="RightAlign" story={stories.RightAlign} />
 </Canvas>
 
 ### Variants
@@ -28,11 +29,11 @@ Use typography to present your design and content as clearly and efficiently as 
 #### Headings
 Supports from ```h1``` till ```h5```
 <Canvas isColumn>
-  <Story id='typography--h-1' />
-  <Story id='typography--h-2' />
-  <Story id='typography--h-3' />
-  <Story id='typography--h-4' />
-  <Story id='typography--h-5' />
+  <Story name="H1" story={stories.H1} />
+  <Story name="H2" story={stories.H2} />
+  <Story name="H3" story={stories.H3} />
+  <Story name="H4" story={stories.H4} />
+  <Story name="H5" story={stories.H5} />
 </Canvas>
 
 #### Body
@@ -42,9 +43,9 @@ Providing a ```href``` will render an ```<a>``` element.
 Providing a ```semiBold```  argument will render an ```<p>``` element with width ```600```.
 
 <Canvas isColumn>
-  <Story id='typography--body' />
-  <Story id='typography--body-semibold' />
-  <Story id='typography--body-link' />
+  <Story name="Body" story={stories.Body} />
+  <Story name="BodySemibold" story={stories.BodySemibold} />
+  <Story name="BodyLink" story={stories.BodyLink} />
 </Canvas>
 
 #### Label
@@ -54,9 +55,9 @@ Providing a ```href``` will render an ```<a>``` element.
 Providing a ```semiBold```  argument will render an ```<span>``` element with width ```600```.
 
 <Canvas isColumn>
-  <Story id='typography--label' />
-  <Story id='typography--label-semibold' />
-  <Story id='typography--label-link' />
+  <Story name="Label" story={stories.Label} />
+  <Story name="LabelSemibold" story={stories.LabelSemibold} />
+  <Story name="LabelLink" story={stories.LabelLink} />
 </Canvas>
 
 #### Caption
@@ -67,10 +68,10 @@ Providing a ```semiBold```  argument will render an ```<span>``` element with wi
 Providing a ```uppercase```  argument will render an ```<span>``` element with text-transform ```uppercase```.
 
 <Canvas isColumn>
-  <Story id='typography--caption' />
-  <Story id='typography--caption-semibold' />
-  <Story id='typography--caption-link' />
-  <Story id='typography--caption-uppercase' />
+  <Story name="Caption" story={stories.Caption} />
+  <Story name="CaptionSemibold" story={stories.CaptionSemibold} />
+  <Story name="CaptionLink" story={stories.CaptionLink} />
+  <Story name="CaptionUppercase" story={stories.CaptionUppercase} />
 </Canvas>
 
 

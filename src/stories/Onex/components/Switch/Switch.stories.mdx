@@ -1,5 +1,6 @@
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import { Switch } from '../../../../components';
+import * as stories from './Switch.stories.jsx';
 
 <Meta
   title="Onex/Components/Switch"
@@ -14,15 +15,15 @@ Switches toggle the state of a single setting on or off.
 
 ## Basic switches
 <Canvas>
-  <Story id='onex-components-switch--default' />
-  <Story id='onex-components-switch--checked' />
-  <Story id='onex-components-switch--disabled' />
-  <Story id='onex-components-switch--checked-disabled' />
+  <Story name="Default" story={stories.Default} />
+  <Story name="Checked" story={stories.Checked} />
+  <Story name="Disabled" story={stories.Disabled} />
+  <Story name="CheckedDisabled" story={stories.CheckedDisabled} />
 </Canvas>
 
 ## With label
 <Canvas>
-  <Story id='onex-components-switch--with-label' />
+  <Story name="WithLabel" story={stories.WithLabel} />
 </Canvas>
 
 ## Controlled

@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
 
 import { ListGroup } from '../../../../components';
+import * as stories from './ListGroup.ListGroup.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/ListGroup/ListGroup"
@@ -97,7 +98,7 @@ Toggle the `actio`n prop to create actionable list group items, with disabled, h
 List items `actions` are distinct from plain items to ensure that click or tap affordances aren't applied to non-interactive items.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroup--actionable" />
+    <Story name="Actionable" story={stories.Actionable} />
 </Canvas>
 
 #### Flush
@@ -105,7 +106,7 @@ List items `actions` are distinct from plain items to ensure that click or tap a
 Add the `flush` variant to remove outer borders and rounded corners to render list group items edge-to-edge in a parent container.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroup--flush" />
+    <Story name="Flush" story={stories.Flush} />
 </Canvas>
 
 #### Numbered
@@ -113,7 +114,7 @@ Add the `flush` variant to remove outer borders and rounded corners to render li
 Add the `numbered` prop to opt into numbered list group items. Numbers are generated via CSS (as opposed to a `<ol>`s default browser styling) for better placement inside list group items and to allow for better customization.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroup--numbered" />
+    <Story name="Numbered" story={stories.Numbered} />
 </Canvas>
 
 #### Horizontal
@@ -122,7 +123,7 @@ Use the `horizontal` prop to make the ListGroup render horizontally. Currently <
 There are responsive variants to `horizontal`: setting it to `{sm|md|lg|xl|xxl}` makes the list group horizontal starting at that breakpoint’s `min-width`.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroup--horizontal" />
+    <Story name="Horizontal" story={stories.Horizontal} />
 </Canvas>
 
 #### Contextual classes
@@ -131,5 +132,5 @@ Use contextual variants on `<ListGroup.Item>`s to style them with a stateful bac
 When paired with `action`s, additional hover and active styles apply.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroup--contextual-classes" />
+    <Story name="ContextualClasses" story={stories.ContextualClasses} />
 </Canvas>
