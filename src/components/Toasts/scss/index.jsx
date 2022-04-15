@@ -106,7 +106,7 @@ CustomToast.defaultProps = {
   delay: 5000,
   show: false,
   closeButton: true,
-  position: 'top-end',
+  position: 'bottom-end',
   icon: undefined,
   showDefaultIcon: true,
   onClose: undefined,
