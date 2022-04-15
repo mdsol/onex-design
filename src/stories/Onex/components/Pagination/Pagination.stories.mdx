@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { Pagination } from '../../../../components';
+import * as stories from './Pagination.stories.jsx';
 
 <Meta
     title="Onex/Components/Pagination"
@@ -59,6 +60,6 @@ export const Template = (args) => <Pagination {...args} />;
 ### Pagination sizes
 
 <Canvas>
-    <Story id='onex-components-pagination--small' />
-    <Story id='onex-components-pagination--large' />
+    <Story name="Small" story={stories.Small} />
+    <Story name="Large" story={stories.Large} />
 </Canvas>

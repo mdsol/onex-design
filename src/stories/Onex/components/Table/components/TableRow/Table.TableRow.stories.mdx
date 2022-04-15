@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { Table, TableHead, TableBody, TableCell, TableRow } from '../../../../../../components';
+import * as stories from './Table.TableRow.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/TableRow"
@@ -23,12 +24,12 @@ Will automatically set variant based on the table element parent (head, body, et
 
 #### Body
 <Canvas>
-  <Story id='onex-components-table-tablerow--body' />
+  <Story name="Body" story={stories.Body} />
 </Canvas>
 
 #### Header
 <Canvas>
-  <Story id='onex-components-table-tablerow--header' />
+  <Story name="Header" story={stories.Header} />
 </Canvas>
 
 ## Demo

@@ -2,6 +2,7 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { ToggleButton, ToggleButtonGroup } from '../../../../components';
 import { toggleButtonItems } from './data';
+import * as stories from './ToggleButtonGroup.stories.jsx';
 
 <Meta
   title="Onex/Components/Toggle/ToggleButtonGroup"
@@ -20,8 +21,8 @@ The ```ToggleButtonGroup``` controls the selected state of its child buttons whe
 Supports two sizes: ```small``` and  ```large```.
 
 <Canvas>
-  <Story id='onex-components-toggle-togglebuttongroup--small' />
-  <Story id='onex-components-toggle-togglebuttongroup--large' />
+  <Story name="Small" story={stories.Small} />
+  <Story name="Large" story={stories.Large} />
 </Canvas>
 
 ### Types
@@ -29,15 +30,15 @@ Buttons can also be used to style ```checkbox``` and ```radio``` form elements.
 This is helpful when you want a toggle button that works neatly inside an HTML form.
 
 <Canvas>
-  <Story id='onex-components-toggle-togglebuttongroup--checkbox' />
-  <Story id='onex-components-toggle-togglebuttongroup--radio' />
+  <Story name="Checkbox" story={stories.Checkbox} />
+  <Story name="Radio" story={stories.Radio} />
 </Canvas>
 
 ### Variants
 
 <Canvas>
-  <Story id='onex-components-toggle-togglebuttongroup--tab' />
-  <Story id='onex-components-toggle-togglebuttongroup--button' />
+  <Story name="Tab" story={stories.Tab} />
+  <Story name="Button" story={stories.Button} />
 </Canvas>
 
 
@@ -45,7 +46,7 @@ This is helpful when you want a toggle button that works neatly inside an HTML f
 The buttons can be stacked vertically.
 
 <Canvas>
-  <Story id='onex-components-toggle-togglebuttongroup--vertical' />
+  <Story name="Vertical" story={stories.Vertical} />
 </Canvas>
 
 

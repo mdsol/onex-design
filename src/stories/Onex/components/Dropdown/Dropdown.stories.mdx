@@ -1,10 +1,12 @@
 <!-- Dropdown.mdx -->
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { Dropdown } from '../../../../components';
+import * as stories from './Dropdown.stories.jsx';
 
 <Meta
   title="Onex/Components/Dropdown"
   component={Dropdown}
+  decorators={[(Story) => <div style={{ width: '15rem' }}>{Story()}</div>]}
 />
 
 export const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -19,8 +21,8 @@ A dropdown menu displays a list of actions to take.
 Supports two dropdown sizes: ```small``` and  ```medium```.
 
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--small' />
-  <Story height="15rem" id='onex-components-dropdown--medium' />
+  <Story height="15rem" name="Small" story={stories.Small} />
+  <Story height="15rem" name="Medium" story={stories.Medium} />
 </Canvas>
 
 ### Variations
@@ -28,40 +30,40 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
 #### Primary
 ##### Small size
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--primary-small' />
-  <Story height="15rem" id='onex-components-dropdown--primary-small-disabled' />
+  <Story height="15rem" name="PrimarySmall" story={stories.PrimarySmall} />
+  <Story height="15rem" name="PrimarySmallDisabled" story={stories.PrimarySmallDisabled} />
 </Canvas>
 
 ##### Medium size
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--primary-medium' />
-  <Story height="15rem" id='onex-components-dropdown--primary-medium-disabled' />
+  <Story height="15rem" name="PrimaryMedium" story={stories.PrimaryMedium} />
+  <Story height="15rem" name="PrimaryMediumDisabled" story={stories.PrimaryMediumDisabled} />
 </Canvas>
 
 #### Secondary
 ##### Small size
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--secondary-small' />
-  <Story height="15rem" id='onex-components-dropdown--secondary-small-disabled' />
+  <Story height="15rem" name="SecondarySmall" story={stories.SecondarySmall} />
+  <Story height="15rem" name="SecondarySmallDisabled" story={stories.SecondarySmallDisabled} />
 </Canvas>
 
 ##### Medium size
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--secondary-medium' />
-  <Story height="15rem" id='onex-components-dropdown--secondary-medium-disabled' />
+  <Story height="15rem" name="SecondaryMedium" story={stories.SecondaryMedium} />
+  <Story height="15rem" name="SecondaryMediumDisabled" story={stories.SecondaryMediumDisabled} />
 </Canvas>
 
 #### Tertiary
 ##### Small size
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--tertiary-small' />
-  <Story height="15rem" id='onex-components-dropdown--tertiary-small-disabled' />
+  <Story height="15rem" name="TertiarySmall" story={stories.TertiarySmall} />
+  <Story height="15rem" name="TertiarySmallDisabled" story={stories.TertiarySmallDisabled} />
 </Canvas>
 
 ##### Medium size
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--tertiary-medium' />
-  <Story height="15rem" id='onex-components-dropdown--tertiary-medium-disabled' />
+  <Story height="15rem" name="TertiaryMedium" story={stories.TertiaryMedium} />
+  <Story height="15rem" name="TertiaryMediumDisabled" story={stories.TertiaryMediumDisabled} />
 </Canvas>
 
 
@@ -69,32 +71,32 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
 ##### Default icon
 If no ```title``` is specified and ```buttonStyle``` is ```icon``` , the Chevron icon is the default.
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--secondary-default-icon' />
-  <Story height="15rem" id='onex-components-dropdown--tertiary-default-icon' />
+  <Story height="15rem" name="SecondaryDefaultIcon" story={stories.SecondaryDefaultIcon} />
+  <Story height="15rem" name="TertiaryDefaultIcon" story={stories.TertiaryDefaultIcon} />
 </Canvas>
 
 Disabled
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--secondary-default-disabled-icon' />
-  <Story height="15rem" id='onex-components-dropdown--tertiary-default-disabled-icon' />
+  <Story height="15rem" name="SecondaryDefaultDisabledIcon" story={stories.SecondaryDefaultDisabledIcon} />
+  <Story height="15rem" name="TertiaryDefaultDisabledIcon" story={stories.TertiaryDefaultDisabledIcon} />
 </Canvas>
 
 ##### Custom icon
 If ```buttonStyle``` is ```icon``` in ```title``` is specified custom icon(svg).
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--secondary-custom-icon' />
-  <Story height="15rem" id='onex-components-dropdown--tertiary-custom-icon' />
+  <Story height="15rem" name="SecondaryCustomIcon" story={stories.SecondaryCustomIcon} />
+  <Story height="15rem" name="TertiaryCustomIcon" story={stories.TertiaryCustomIcon} />
 </Canvas>
 
 Disabled
 <Canvas>
-  <Story height="15rem" id='onex-components-dropdown--secondary-custom-disabled-icon' />
-  <Story height="15rem" id='onex-components-dropdown--tertiary-custom-disabled-icon' />
+  <Story height="15rem" name="SecondaryCustomDisabledIcon" story={stories.SecondaryCustomDisabledIcon} />
+  <Story height="15rem" name="TertiaryCustomDisabledIcon" story={stories.TertiaryCustomDisabledIcon} />
 </Canvas>
 
 ### Searchable dropdown
 <Canvas>
-  <Story height="16rem" id='onex-components-dropdown--search' />
+  <Story height="16rem" name="Search" story={stories.Search} />
 </Canvas>
 
 

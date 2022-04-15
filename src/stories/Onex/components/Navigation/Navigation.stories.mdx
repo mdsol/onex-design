@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { Navigation } from '../../../../components';
+import * as stories from './Navigation.stories.jsx';
 
 <Meta
     title="Onex/Components/Navigation"
@@ -137,17 +138,17 @@ export const Template = (args) => <Navigation {...args} />;
 ### Default
 
 <Canvas>
-    <Story id="onex-components-navigation--default" height="15rem" />
+    <Story name="Default" story={stories.Default} height="15rem" />
 </Canvas>
 
 ### With <b>More</b> button
 
 <Canvas>
-    <Story id="onex-components-navigation--with-more-dropdown" height="15rem" />
+    <Story name="WithMoreDropdown" story={stories.WithMoreDropdown} height="15rem" />
 </Canvas>
 
 ### Has disabled items
 
 <Canvas>
-    <Story id="onex-components-navigation--disabled-items" height="15rem" />
+    <Story name="DisabledItems" story={stories.DisabledItems} height="15rem" />
 </Canvas>
