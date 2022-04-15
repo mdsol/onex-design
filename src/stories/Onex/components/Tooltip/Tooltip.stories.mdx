@@ -1,99 +1,100 @@
-import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+import {Story, Canvas, ArgsTable, Meta} from '@storybook/addon-docs';
 
-import { Tooltip, Lozenge } from '../../../../components';
+import {Tooltip, Lozenge} from '../../../../components';
+import * as stories from './Tooltip.stories.jsx';
 
 <Meta
-    title="Onex/Components/Tooltip"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
+  title="Onex/Components/Tooltip"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        id: {
-            description: 'An html id attribute, necessary for accessibility ',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
+      },
+    },
+    id: {
+      description: 'An html id attribute, necessary for accessibility ',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        children: {
-            description:
-                'The react component or DOM element relative to which the tooltip will be shown. ',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
+      },
+    },
+    children: {
+      description:
+        'The react component or DOM element relative to which the tooltip will be shown. ',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        delay: {
-            description: 'A millisecond delay amount to show and hide the Overlay once triggered. ',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
+      },
+    },
+    delay: {
+      description: 'A millisecond delay amount to show and hide the Overlay once triggered. ',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        defaultShow: {
-            description: 'The initial visibility state of the Overlay.',
-            table: {
-                defaultValue: {
-                    summary: 'false',
-                },
-            },
+      },
+    },
+    defaultShow: {
+      description: 'The initial visibility state of the Overlay.',
+      table: {
+        defaultValue: {
+          summary: 'false',
         },
-        show: {
-            description:
-                'controlled by: <b>onToggle</b>, initial prop: <b>defaultShow</b> The visibility of the Overlay. <b>show</b> is a controlled prop so should be paired with <b>onToggle</b> to avoid breaking user interactions. Manually toggling show does not wait for delay to change the visibility.',
-            table: {
-                defaultValue: {
-                    summary: 'false',
-                },
-            },
+      },
+    },
+    show: {
+      description:
+        'controlled by: <b>onToggle</b>, initial prop: <b>defaultShow</b> The visibility of the Overlay. <b>show</b> is a controlled prop so should be paired with <b>onToggle</b> to avoid breaking user interactions. Manually toggling show does not wait for delay to change the visibility.',
+      table: {
+        defaultValue: {
+          summary: 'false',
         },
-        trigger: {
-            description:
-                "Specify which action or actions trigger Overlay visibility. 'hover' | 'click' |'focus' | Array<'hover' | 'click' |'focus'>",
-            table: {
-                defaultValue: {
-                    summary: '[hover, focus]',
-                },
-            },
+      },
+    },
+    trigger: {
+      description:
+        "Specify which action or actions trigger Overlay visibility. 'hover' | 'click' |'focus' | Array<'hover' | 'click' |'focus'>",
+      table: {
+        defaultValue: {
+          summary: '[hover, focus]',
         },
-        placement: {
-            description: 'Specify which action or actions trigger Overlay visibility',
+      },
+    },
+    placement: {
+      description: 'Specify which action or actions trigger Overlay visibility',
+    },
+    tooltipChildren: {
+      description: 'The content of the tooltip',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        tooltipChildren: {
-            description: 'The content of the tooltip',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
+      },
+    },
+    onToggle: {
+      description:
+        'A callback that fires when the user triggers a change in tooltip visibility. <b>onToggle</b> is called with the desired next <b>show</b>, and generally should be passed back to the <b>show</b> prop. <b>onToggle</b> fires after the configured delay',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        onToggle: {
-            description:
-                'A callback that fires when the user triggers a change in tooltip visibility. <b>onToggle</b> is called with the desired next <b>show</b>, and generally should be passed back to the <b>show</b> prop. <b>onToggle</b> fires after the configured delay',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
+      },
+    },
+    dataTestId: {
+      description: 'The it of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        dataTestId: {
-            description: 'The it of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            },
-        },
-    }}
-    component={Tooltip}
+      },
+    },
+  }}
+  component={Tooltip}
 />
 
 export const Template = (args) => <Tooltip {...args} />;
@@ -105,60 +106,56 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
 ### Tooltip details
 
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-            id: 'demo-tooltip',
-            variant: 'default',
-            tooltipChildren: 'demo tooltip',
-            className: 'onex-demo-tooltip',
-            delay: { show: 100, hide: 1000 },
-            defaultShow: false,
-            dataTestId: 'demo-tooltip-id',
-            trigger: 'hover',
-            children: (
-                <Lozenge type="default" size="lg">
-                    Hover to see
-                </Lozenge>
-            ),
-        }}
-    >
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    args={{
+      id: 'demo-tooltip',
+      variant: 'default',
+      tooltipChildren: 'demo tooltip',
+      className: 'onex-demo-tooltip',
+      delay: {show: 100, hide: 1000},
+      defaultShow: false,
+      dataTestId: 'demo-tooltip-id',
+      trigger: 'hover',
+      children: (
+        <Lozenge type="default" size="lg">
+          Hover to see
+        </Lozenge>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-<ArgsTable story="Demo" />
+<ArgsTable story="Demo"/>
 
 ### Tooltip variants
 
 <Canvas>
-    <Story id="onex-components-tooltip--default" />
+  <Story name="Default" story={stories.Default}/>
 </Canvas>
 
 ### Tooltip placement
 
 <Canvas>
-    <div style={{ marginLeft: '-150px' }}>
-        <Story id="onex-components-tooltip--left" />
-    </div>
-    <div style={{ marginTop: '-50px' }}>
-        <Story id="onex-components-tooltip--top" />
-    </div>
-    <Story id="onex-components-tooltip--right" />
-    <Story id="onex-components-tooltip--bottom" />
+  <Story name="Left" story={stories.Left}/>
+  <Story name="Top" story={stories.Top}/>
+  <Story name="Right" story={stories.Right}/>
+  <Story name="Bottom" story={stories.Bottom}/>
 </Canvas>
 
 ### Tooltip trigger
 
 <Canvas>
-    <Story id="onex-components-tooltip--hover" />
-    <Story id="onex-components-tooltip--focus" />
-    <Story id="onex-components-tooltip--click" />
+  <Story name="Hover" story={stories.Hover}/>
+  <Story name="Focus" story={stories.Focus}/>
+  <Story name="Click" story={stories.Click}/>
 </Canvas>
 
 ### Tooltip delay
 
 <Canvas>
-    <Story id="onex-components-tooltip--show-delay-1000-ms" />
-    <Story id="onex-components-tooltip--hide-delay-2000-ms" />
+  <Story name="ShowDelay1000ms" story={stories.ShowDelay1000ms}/>
+  <Story name="HideDelay2000ms" story={stories.HideDelay2000ms}/>
 </Canvas>

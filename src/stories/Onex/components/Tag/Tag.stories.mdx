@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { Tag } from '../../../../components';
+import * as stories from './Tag.stories.jsx';
 
 <Meta
     title="Onex/Components/Tag"
@@ -17,17 +18,17 @@ Tags can be used for various types of objects; including free form text, predefi
 This tag can be selected in order to provide or to change context.
 
 <Canvas>
-  <Story id='onex-components-tag--selection' />
-  <Story id='onex-components-tag--selection-removable' />
-  <Story id='onex-components-tag--selection-removable-disabled' />
+  <Story name="Selection" story={stories.Selection} />
+  <Story name="SelectionRemovable" story={stories.SelectionRemovable} />
+  <Story name="SelectionRemovableDisabled" story={stories.SelectionRemovableDisabled} />
 </Canvas>
 
 Leading icon can be represented as svg, Avatar or just string with URL, in this case render img.
 
 <Canvas>
-  <Story id='onex-components-tag--selection-leading-icon' />
-  <Story id='onex-components-tag--selection-leading-icon-removable' />
-  <Story id='onex-components-tag--selection-leading-icon-removable-disabled' />
+  <Story name="SelectionLeadingIcon" story={stories.SelectionLeadingIcon} />
+  <Story name="SelectionLeadingIconRemovable" story={stories.SelectionLeadingIconRemovable} />
+  <Story name="SelectionLeadingIconRemovableDisabled" story={stories.SelectionLeadingIconRemovableDisabled} />
 </Canvas>
 
 ### Examples

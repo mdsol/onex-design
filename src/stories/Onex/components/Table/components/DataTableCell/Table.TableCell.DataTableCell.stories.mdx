@@ -1,6 +1,7 @@
 import { BugFill } from 'react-bootstrap-icons';
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 import { Avatar, Table, TableBody, TableRow, TableCell, DataTableCell } from '../../../../../../components';
+import * as stories from './Table.TableCell.DataTableCell.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/TableCell/DataTableCell"
@@ -23,7 +24,7 @@ export const DataTableCellTemplate = (args) => (
 DataTableCell component represents content of ```TableCell```.
 
 <Canvas>
-  <Story id='onex-components-table-tablecell-datatablecell--default' />
+  <Story name="Default" story={stories.Default} />
 </Canvas>
 
 
