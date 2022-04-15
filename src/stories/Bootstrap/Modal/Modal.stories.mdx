@@ -1,5 +1,6 @@
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Modal, Button } from '../../../components';
+import * as stories from './Modal.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Modal"
@@ -17,28 +18,28 @@ Add dialogs to your site for lightboxes, user notifications, or completely custo
 Below is a static modal dialog (without the positioning) to demonstrate the look and feel of the Modal.
 
 <Canvas>
-    <Story id='bootstrap-components-modal--static-markup' />
+    <Story name="StaticMarkup" story={stories.StaticMarkup} />
 </Canvas>
 
 ### Static backdrop
 When backdrop is set to static, the modal will not close when clicking outside it. Click the button below to try it.
 
 <Canvas>
-    <Story id='bootstrap-components-modal--static-backdrop' />
+    <Story name="StaticBackdrop" story={stories.StaticBackdrop} />
 </Canvas>
 
 ### Without Animation
 A Modal can also be without an animation. For that set the ```animation``` prop to ```false```.
 
 <Canvas>
-    <Story id='bootstrap-components-modal--without-animation' />
+    <Story name="WithoutAnimation" story={stories.WithoutAnimation} />
 </Canvas>
 
 ### Vertically centered
 You can vertically center a modal by passing the ```centered``` prop.
 
 <Canvas>
-    <Story id='bootstrap-components-modal--vertically-centered' />
+    <Story name="VerticallyCentered" story={stories.VerticallyCentered} />
 </Canvas>
 
 ### Optional Sizes
@@ -46,7 +47,7 @@ You can specify a bootstrap large or small modal by using the ```size``` prop.
 
 
 <Canvas>
-    <Story id='bootstrap-components-modal--sizes' />
+    <Story name="Sizes" story={stories.Sizes} />
 </Canvas>
 
 ### Fullscreen Modal
@@ -54,7 +55,7 @@ You can use the ```fullscreen``` prop to make the modal fullscreen.
 Specifying a breakpoint will only set the modal as fullscreen below the breakpoint size.
 
 <Canvas>
-    <Story id='bootstrap-components-modal--fullscreen' />
+    <Story name="Fullscreen" story={stories.Fullscreen} />
 </Canvas>
 
 ### Sizing modals using custom CSS
@@ -62,7 +63,7 @@ You can apply custom css to the modal dialog div using the ```dialogClassName```
 Example is using a custom css class with width set to 90%.
 
 <Canvas>
-    <Story id='bootstrap-components-modal--custom-sizing' />
+    <Story name="CustomSizing" story={stories.CustomSizing} />
 </Canvas>
 
 ### Live demo

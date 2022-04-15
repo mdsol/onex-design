@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
 
 import { ButtonGroup, Button } from '../../../components';
+import * as stories from './ButtonGroups.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/ButtonGroup"
@@ -44,7 +45,7 @@ The ARIA role describing the button toolbar. Generally the default "toolbar" rol
 Feel free to mix input groups with button groups in your toolbars. Similar to the example above, you’ll likely need some utilities though to space things properly.
 
 <Canvas>
-    <Story id="bootstrap-components-buttongroup--toolbar-button" />
+    <Story name="ToolbarButton" story={stories.ToolbarButton} />
 </Canvas>
 
 ### Sizing
@@ -52,7 +53,7 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 Instead of applying button sizing props to every button in a group, just add `size` prop to the `<ButtonGroup>`.
 
 <Canvas>
-    <Story id="bootstrap-components-buttongroup--size" />
+    <Story name="Size" story={stories.Size} />
 </Canvas>
 
 ### Nesting
@@ -60,7 +61,7 @@ Instead of applying button sizing props to every button in a group, just add `si
 You can place other button types within the `<ButtonGroup>` like `<DropdownButton>`s.
 
 <Canvas>
-    <Story id="bootstrap-components-buttongroup--nesting" />
+    <Story name="Nesting" story={stories.Nesting} />
 </Canvas>
 
 
@@ -70,7 +71,7 @@ Make a set of buttons appear vertically stacked rather than horizontally, by add
 <b>Split button dropdowns are not supported here.</b>
 
 <Canvas>
-    <Story id="bootstrap-components-buttongroup--vertical" />
+    <Story name="Vertical" story={stories.Vertical} />
 </Canvas>
 
 

@@ -1,6 +1,7 @@
 <!-- Breadcrumbs.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Breadcrumb } from '../../../components';
+import * as stories from './Breadcrumbs.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Breadcrumbs"
@@ -23,7 +24,7 @@ Add ```active``` prop to active ```Breadcrumb.Item```. Do not set both ```active
 
 ## Example
 <Canvas>
-    <Story id='bootstrap-components-breadcrumbs--example' />
+    <Story name="Example" story={stories.Example} />
 </Canvas>
 
 

@@ -1,91 +1,96 @@
 @import 'mixins';
 
 .onex-avatar {
-    @include avatar-layout();
-    position: relative;
-    border-radius: $onex-avatar-border-radius;
-    color: rgba(103, 110, 122, 1);
+  @include avatar-layout();
+  position: relative;
+  border-radius: $onex-avatar-border-radius;
+  color: rgba(103, 110, 122, 1);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
+  background-color: rgba(103, 110, 122, 0.1);
+
+  &__img {
+    object-fit: cover;
     overflow: hidden;
-    box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
-    background-color: rgba(103, 110, 122, 0.1);
+  }
 
-    &__img {
-        object-fit: cover;
-        overflow: hidden;
-    }
+  &__icon-decorator {
+    display: none;
+  }
 
-    &__icon-decorator {
-        display: none;
-    }
+  &.hover-disabled {
+    cursor: auto;
+  }
 
-    &:not(.hover-disabled):hover {
-        box-shadow: inset 0 0 0 1px transparent;
-        cursor: pointer;
-    }
 
-    &__hover {
-        @include avatar-layout();
-        border-radius: $onex-avatar-border-radius;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        transition: 0.2s ease;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: $white;
-        background-color: rgba(0, 0, 0, 0.75);
-    }
+  &:not(.hover-disabled):hover {
+    box-shadow: inset 0 0 0 1px transparent;
+    cursor: pointer;
+  }
 
-    &:hover &__hover {
-        opacity: 1;
-    }
+  &__hover {
+    @include avatar-layout();
+    border-radius: $onex-avatar-border-radius;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
 
-    &__children {
-        @include avatar-layout();
-        font-family: $font-family;
-        color: $secondary-500;
-        overflow: hidden;
-    }
+  &:hover &__hover {
+    opacity: 1;
+  }
 
-    &--size-xs {
-        @include avatar-size(
-            $onex-avatar-height-xs,
-            $onex-avatar-font-size-xs,
-            $onex-avatar-line-height-xs,
-            $onex-avatar-size-svg-xs,
-            $onex-avatar-size-svg-hover-xs
-        );
-    }
+  &__children {
+    @include avatar-layout();
+    font-family: $font-family;
+    color: $secondary-500;
+    overflow: hidden;
+  }
 
-    &--size-sm {
-        @include avatar-size(
-            $onex-avatar-height-sm,
-            $onex-avatar-font-size-md,
-            $onex-avatar-line-height-md,
-            $onex-avatar-size-svg-sm,
-            $onex-avatar-size-svg-hover-sm
-        );
-    }
+  &--size-xs {
+    @include avatar-size(
+        $onex-avatar-height-xs,
+        $onex-avatar-font-size-xs,
+        $onex-avatar-line-height-xs,
+        $onex-avatar-size-svg-xs,
+        $onex-avatar-size-svg-hover-xs
+    );
+  }
 
-    &--size-md {
-        @include avatar-size(
-            $onex-avatar-height-md,
-            $onex-avatar-font-size-md,
-            $onex-avatar-line-height-md,
-            $onex-avatar-size-svg-md,
-            $onex-avatar-size-svg-hover-md
-        );
-    }
+  &--size-sm {
+    @include avatar-size(
+        $onex-avatar-height-sm,
+        $onex-avatar-font-size-md,
+        $onex-avatar-line-height-md,
+        $onex-avatar-size-svg-sm,
+        $onex-avatar-size-svg-hover-sm
+    );
+  }
 
-    &--size-lg {
-        @include avatar-size(
-            $onex-avatar-height-lg,
-            $onex-avatar-font-size-lg,
-            $onex-avatar-line-height-lg,
-            $onex-avatar-size-svg-lg,
-            $onex-avatar-size-svg-hover-lg,
-        );
-    }
+  &--size-md {
+    @include avatar-size(
+        $onex-avatar-height-md,
+        $onex-avatar-font-size-md,
+        $onex-avatar-line-height-md,
+        $onex-avatar-size-svg-md,
+        $onex-avatar-size-svg-hover-md
+    );
+  }
+
+  &--size-lg {
+    @include avatar-size(
+        $onex-avatar-height-lg,
+        $onex-avatar-font-size-lg,
+        $onex-avatar-line-height-lg,
+        $onex-avatar-size-svg-lg,
+        $onex-avatar-size-svg-hover-lg,
+    );
+  }
 }

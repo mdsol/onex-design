@@ -1,6 +1,7 @@
 <!-- Alert.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Alert } from '../../../components';
+import * as stories from './Alert.stories.jsx';
 
 <Meta
   title="Bootstrap/Components/Alert"
@@ -18,7 +19,7 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 For proper styling, use one of the eight variants.
 
 <Canvas>
-  <Story id='bootstrap-components-alert--examples' />
+  <Story name="Examples" story={stories.Examples} />
 </Canvas>
 
 ## Links
@@ -26,7 +27,7 @@ For proper styling, use one of the eight variants.
 For links, use the ```<Alert.Link>``` component to provide matching colored links within any alert.
 
 <Canvas>
-  <Story id='bootstrap-components-alert--links' />
+  <Story name="Links" story={stories.Links} />
 </Canvas>
 
 ## Additional content
@@ -34,20 +35,20 @@ For links, use the ```<Alert.Link>``` component to provide matching colored link
 Alerts can contain whatever content you like. Headers, paragraphs, dividers, go crazy.
 
 <Canvas>
-<Story id='bootstrap-components-alert--additional-content' />
+<Story name="AdditionalContent" story={stories.AdditionalContent} />
 </Canvas>
 
 ## Dismissing
 Add the ```dismissible``` prop to add a functioning dismiss button to the Alert.
 
 <Canvas>
-  <Story id='bootstrap-components-alert--dismissing-error' />
+  <Story name="DismissingError" story={stories.DismissingError} />
 </Canvas>
 
 You can also control the visual state directly which is great if you want to build more complicated alerts.
 
 <Canvas>
-  <Story id='bootstrap-components-alert--dismissing-success' />
+  <Story name="DismissingSuccess" story={stories.DismissingSuccess} />
 </Canvas>
 
 

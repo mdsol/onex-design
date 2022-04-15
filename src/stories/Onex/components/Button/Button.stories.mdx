@@ -2,6 +2,7 @@
 
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { Button } from '../../../../components';
+import * as stories from './Button.stories.jsx';
 
 <Meta title="Onex/Components/Button" component={Button} />
 
@@ -18,8 +19,8 @@ Buttons are clickable items used for actions. They can have different styles dep
 Supports two button sizes: `small` and `large`.
 
 <Canvas>
-  <Story id="onex-components-button--primary-small" />
-  <Story id="onex-components-button--primary-large" />
+  <Story name="Small" story={stories.Small} />
+  <Story name="Large" story={stories.Large} />
 </Canvas>
 
 ### Variations
@@ -27,37 +28,37 @@ Supports two button sizes: `small` and `large`.
 #### Primary
 
 <Canvas>
-  <Story id="onex-components-button--primary-small" />
-  <Story id="onex-components-button--primary-large" />
-  <Story id="onex-components-button--primary-with-icon" />
-  <Story id="onex-components-button--primary-with-two-icons" />
-  <Story id="onex-components-button--primary-small-icon" />
-  <Story id="onex-components-button--primary-large-icon" />
-  <Story id="onex-components-button--primary-disabled" />
+  <Story name="PrimarySmall" story={stories.PrimarySmall} />
+  <Story name="PrimaryLarge" story={stories.PrimaryLarge} />
+  <Story name="PrimaryWithIcon" story={stories.PrimaryWithIcon} />
+  <Story name="PrimaryWithTwoIcons" story={stories.PrimaryWithTwoIcons} />
+  <Story name="PrimarySmallIcon" story={stories.PrimarySmallIcon} />
+  <Story name="PrimaryLargeIcon" story={stories.PrimaryLargeIcon} />
+  <Story name="PrimaryDisabled" story={stories.PrimaryDisabled} />
 </Canvas>
 
 #### Secondary
 
 <Canvas>
-  <Story id="onex-components-button--secondary-small" />
-  <Story id="onex-components-button--secondary-large" />
-  <Story id="onex-components-button--secondary-with-icon" />
-  <Story id="onex-components-button--secondary-with-two-icons" />
-  <Story id="onex-components-button--secondary-icon-small" />
-  <Story id="onex-components-button--secondary-icon-large" />
-  <Story id="onex-components-button--secondary-disabled" />
+  <Story name="SecondarySmall" story={stories.SecondarySmall} />
+  <Story name="SecondaryLarge" story={stories.SecondaryLarge} />
+  <Story name="SecondaryWithIcon" story={stories.SecondaryWithIcon} />
+  <Story name="SecondaryWithTwoIcons" story={stories.SecondaryWithTwoIcons} />
+  <Story name="SecondaryIconSmall" story={stories.SecondaryIconSmall} />
+  <Story name="SecondaryIconLarge" story={stories.SecondaryIconLarge} />
+  <Story name="SecondaryDisabled" story={stories.SecondaryDisabled} />
 </Canvas>
 
 #### Tertiary
 
 <Canvas>
-  <Story id="onex-components-button--tertiary-small" />
-  <Story id="onex-components-button--tertiary-large" />
-  <Story id="onex-components-button--tertiary-with-icon" />
-  <Story id="onex-components-button--tertiary-with-two-icons" />
-  <Story id="onex-components-button--tertiary-icon-small" />
-  <Story id="onex-components-button--tertiary-icon-large" />
-  <Story id="onex-components-button--tertiary-disabled" />
+  <Story name="TertiarySmall" story={stories.TertiarySmall} />
+  <Story name="TertiaryLarge" story={stories.TertiaryLarge} />
+  <Story name="TertiaryWithIcon" story={stories.TertiaryWithIcon} />
+  <Story name="TertiaryWithTwoIcons" story={stories.TertiaryWithTwoIcons} />
+  <Story name="TertiaryIconSmall" story={stories.TertiaryIconSmall} />
+  <Story name="TertiaryIconLarge" story={stories.TertiaryIconLarge} />
+  <Story name="TertiaryDisabled" story={stories.TertiaryDisabled} />
 </Canvas>
 
 ### Demo

@@ -1,6 +1,7 @@
 <!-- Placeholder.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Placeholder } from '../../../components';
+import * as stories from './Placeholder.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Placeholder"
@@ -24,31 +25,31 @@ In the example below, we take a typical card component and recreate it with plac
 Size and proportions are the same between the two.
 
 <Canvas>
-    <Story id='bootstrap-components-placeholder--example' />
+    <Story name="Example" story={stories.Example} />
 </Canvas>
 
 ## Width
 You can change the ```width``` through grid column classes, width utilities, or inline styles.
 
 <Canvas isColumn>
-    <Story id='bootstrap-components-placeholder--width-grid' />
-    <Story id='bootstrap-components-placeholder--width-utilities' />
-    <Story id='bootstrap-components-placeholder--width-inline-styles' />
+    <Story name="WidthGrid" story={stories.WidthGrid} />
+    <Story name="WidthUtilities" story={stories.WidthUtilities} />
+    <Story name="WidthInlineStyles" story={stories.WidthInlineStyles} />
 </Canvas>
 
 ## Color
 By default, the ```Placeholder``` uses ```currentColor```. This can be overriden with a custom color or utility class.
 
 <Canvas isColumn>
-    <Story id='bootstrap-components-placeholder--color-default' />
-    <Story id='bootstrap-components-placeholder--color-primary' />
-    <Story id='bootstrap-components-placeholder--color-secondary' />
-    <Story id='bootstrap-components-placeholder--color-success' />
-    <Story id='bootstrap-components-placeholder--color-danger' />
-    <Story id='bootstrap-components-placeholder--color-warning' />
-    <Story id='bootstrap-components-placeholder--color-info' />
-    <Story id='bootstrap-components-placeholder--color-light' />
-    <Story id='bootstrap-components-placeholder--color-dark' />
+    <Story name="ColorDefault" story={stories.ColorDefault} />
+    <Story name="ColorPrimary" story={stories.ColorPrimary} />
+    <Story name="ColorSecondary" story={stories.ColorSecondary} />
+    <Story name="ColorSuccess" story={stories.ColorSuccess} />
+    <Story name="ColorDanger" story={stories.ColorDanger} />
+    <Story name="ColorWarning" story={stories.ColorWarning} />
+    <Story name="ColorInfo" story={stories.ColorInfo} />
+    <Story name="ColorLight" story={stories.ColorLight} />
+    <Story name="ColorDark" story={stories.ColorDark} />
 </Canvas>
 
 ## Sizing
@@ -56,10 +57,10 @@ The size of ```Placeholders``` are based on the typographic style of the parent 
 Customize them with sizing props: ```lg```, ```sm```, or ```xs```.
 
 <Canvas isColumn>
-    <Story id='bootstrap-components-placeholder--size-default' />
-    <Story id='bootstrap-components-placeholder--size-lg' />
-    <Story id='bootstrap-components-placeholder--size-sm' />
-    <Story id='bootstrap-components-placeholder--size-xs' />
+    <Story name="SizeDefault" story={stories.SizeDefault} />
+    <Story name="SizeLg" story={stories.SizeLg} />
+    <Story name="SizeSm" story={stories.SizeSm} />
+    <Story name="SizeXs" story={stories.SizeXs} />
 </Canvas>
 
 ## Animation
@@ -67,8 +68,8 @@ Animate placeholders by setting the prop ```animation``` to ```glow``` or ```wav
 the perception of something being actively loaded.
 
 <Canvas isColumn>
-    <Story id='bootstrap-components-placeholder--animation-wave' />
-    <Story id='bootstrap-components-placeholder--animation-glow' />
+    <Story name="AnimationWave" story={stories.AnimationWave} />
+    <Story name="AnimationGlow" story={stories.AnimationGlow} />
 </Canvas>
 
 

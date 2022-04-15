@@ -39,6 +39,20 @@ export default {
 
 const ButtonTemplate = (args) => <Button {...args} />;
 
+export const Small = ButtonTemplate.bind({});
+Small.args = {
+  variant: 'primary',
+  size: 'sm',
+  children: 'Small button',
+};
+
+export const Large = ButtonTemplate.bind({});
+Large.args = {
+  variant: 'primary',
+  size: 'lg',
+  children: 'Large button',
+};
+
 export const PrimarySmall = ButtonTemplate.bind({});
 PrimarySmall.args = {
   variant: 'primary',
