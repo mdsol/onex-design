@@ -1,5 +1,5 @@
 import { BugFill, ClockFill } from 'react-bootstrap-icons';
-import { Toast } from '../../../../components';
+import { Button, Toast } from '../../../../components';
 
 const icons = { Bug: <BugFill />, ClockFill: <ClockFill /> };
 
@@ -23,37 +23,93 @@ const Template = (props) => <Toast {...props} />;
 export const Info = Template.bind({});
 
 Info.args = {
-  id: 'info-toast',
+  id: 'info-toast-button-text',
   variant: 'info',
-  children: 'Example of an informational banner message. ',
+  header: 'Info toast example',
+  children: (
+    <>
+      Info toast message.
+      <div style={{ paddingTop: '1rem' }}>
+        <Button variant="secondary" onClick={() => console.log('Resend')}>
+          Resend
+        </Button>
+        <Button variant="tertiary" onClick={() => console.log('Discard')}>
+          Discard
+        </Button>
+      </div>
+    </>
+  ),
   show: true,
+  position: 'top-start',
 };
 
 export const Success = Template.bind({});
 
 Success.args = {
-  id: 'success-toast',
+  id: 'success-toast-button-text',
   variant: 'success',
-  children: 'Example of a success banner message.',
+  header: 'Success toast example',
+  children: (
+    <>
+      Success toast message.
+      <div style={{ paddingTop: '1rem' }}>
+        <Button variant="secondary" onClick={() => console.log('Resend')}>
+          Resend
+        </Button>
+        <Button variant="tertiary" onClick={() => console.log('Discard')}>
+          Discard
+        </Button>
+      </div>
+    </>
+  ),
   show: true,
+  position: 'top-start',
 };
 
 export const Warning = Template.bind({});
 
 Warning.args = {
-  id: 'warning-toast',
+  id: 'warning-toast-button-text',
   variant: 'warning',
-  children: 'Example of a warning banner message.',
+  header: 'Warning toast example',
+  children: (
+    <>
+      Warning toast message.
+      <div style={{ paddingTop: '1rem' }}>
+        <Button variant="secondary" onClick={() => console.log('Resend')}>
+          Resend
+        </Button>
+        <Button variant="tertiary" onClick={() => console.log('Discard')}>
+          Discard
+        </Button>
+      </div>
+    </>
+  ),
   show: true,
+  position: 'top-start',
 };
 
 export const Error = Template.bind({});
 
 Error.args = {
-  id: 'error-toast',
+  id: 'error-toast-button-text',
   variant: 'error',
-  children: 'Example of an error banner message.',
+  header: 'Error toast example',
+  children: (
+    <>
+      Error toast message.
+      <div style={{ paddingTop: '1rem' }}>
+        <Button variant="secondary" onClick={() => console.log('Resend')}>
+          Resend
+        </Button>
+        <Button variant="tertiary" onClick={() => console.log('Discard')}>
+          Discard
+        </Button>
+      </div>
+    </>
+  ),
   show: true,
+  position: 'top-start',
 };
 
 export const TopStart = Template.bind({});
@@ -61,7 +117,8 @@ export const TopStart = Template.bind({});
 TopStart.args = {
   id: 'top-start-toast',
   variant: 'info',
-  children: 'Example of an info banner message.',
+  header: 'Example of an info banner message.',
+  children: 'Info banner message.',
   show: true,
   position: 'top-start',
 };
@@ -71,7 +128,8 @@ export const TopCenter = Template.bind({});
 TopCenter.args = {
   id: 'top-center-toast',
   variant: 'success',
-  children: 'Example of an info banner message.',
+  header: 'Example of a success banner message.',
+  children: 'Success banner message.',
   show: true,
   position: 'top-center',
 };
@@ -81,7 +139,8 @@ export const TopEnd = Template.bind({});
 TopEnd.args = {
   id: 'top-end-toast',
   variant: 'warning',
-  children: 'Example of an info banner message.',
+  header: 'Example of an warning banner message.',
+  children: 'Warning banner message.',
   show: true,
   position: 'top-end',
 };
@@ -91,7 +150,8 @@ export const MiddleStart = Template.bind({});
 MiddleStart.args = {
   id: 'middle-start-toast',
   variant: 'info',
-  children: 'Example of an info banner message.',
+  header: 'Example of an info banner message.',
+  children: 'Info banner message.',
   show: true,
   position: 'middle-start',
 };
@@ -101,7 +161,8 @@ export const MiddleCenter = Template.bind({});
 MiddleCenter.args = {
   id: 'middle-center-toast',
   variant: 'success',
-  children: 'Example of an info banner message.',
+  header: 'Example of a success banner message.',
+  children: 'Success banner message.',
   show: true,
   position: 'middle-center',
 };
@@ -111,7 +172,8 @@ export const MiddleEnd = Template.bind({});
 MiddleEnd.args = {
   id: 'middle-end-toast',
   variant: 'warning',
-  children: 'Example of an info banner message.',
+  header: 'Example of an warning banner message.',
+  children: 'Warning banner message.',
   show: true,
   position: 'middle-end',
 };
@@ -121,7 +183,8 @@ export const BottomStart = Template.bind({});
 BottomStart.args = {
   id: 'bottom-start-toast',
   variant: 'info',
-  children: 'Example of an info banner message.',
+  header: 'Example of an info banner message.',
+  children: 'Info banner message.',
   show: true,
   position: 'bottom-start',
 };
@@ -131,7 +194,8 @@ export const BottomCenter = Template.bind({});
 BottomCenter.args = {
   id: 'bottom-center-toast',
   variant: 'success',
-  children: 'Example of an info banner message.',
+  header: 'Example of a success banner message.',
+  children: 'Success banner message.',
   show: true,
   position: 'bottom-center',
 };
@@ -141,18 +205,8 @@ export const BottomEnd = Template.bind({});
 BottomEnd.args = {
   id: 'bottom-end-toast',
   variant: 'warning',
-  children: 'Example of an info banner message.',
+  header: 'Example of an warning banner message.',
+  children: 'Warning banner message.',
   show: true,
   position: 'bottom-end',
-};
-
-export const CustomIcon = Template.bind({});
-
-CustomIcon.args = {
-  id: 'custom-icon-toast',
-  variant: 'success',
-  children: 'Example of an success banner message.',
-  show: true,
-  showDefaultIcon: false,
-  icon: <ClockFill />,
 };

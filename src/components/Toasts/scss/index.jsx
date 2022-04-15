@@ -2,20 +2,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Toast, ToastContainer } from 'react-bootstrap';
-import {
-  CheckIcon,
-  ErrorFillIcon,
-  InfoRoundFillIcon,
-  WarningTriangleFillIcon,
-  XIcon,
-} from '../../../icons';
+import { Error, Warning, Info, CheckCircle, Close } from '@mui/icons-material';
 import Button from '../../Buttons/scss';
 
 const IconVariants = {
-  info: <InfoRoundFillIcon />,
-  success: <CheckIcon />,
-  warning: <WarningTriangleFillIcon />,
-  error: <ErrorFillIcon />,
+  info: <Info />,
+  success: <CheckCircle />,
+  warning: <Warning />,
+  error: <Error />,
 };
 
 const CustomToast = React.forwardRef((props, ref) => {
@@ -30,6 +24,7 @@ const CustomToast = React.forwardRef((props, ref) => {
     position,
     showDefaultIcon,
     icon,
+    header,
     children,
     onClose,
     dataTestId,
@@ -58,13 +53,19 @@ const CustomToast = React.forwardRef((props, ref) => {
           {(showDefaultIcon || icon) && (
             <div className="onex-toast__icon">{icon || IconVariants[variant]}</div>
           )}
-          <div className="onex-toast__message">{children}</div>
+          <div className="onex-toast__message">{header}</div>
           {closeButton && (
-            <Button className="onex-toast__btn-close" variant="icon-link" onClick={onClose}>
-              <XIcon />
+            <Button
+              className="onex-toast__btn-close"
+              variant="tertiary"
+              type="icon"
+              onClick={onClose}
+            >
+              <Close />
             </Button>
           )}
         </Toast.Header>
+        {children && <Toast.Body className="onex-toast__body"> {children} </Toast.Body>}
       </Toast>
     </ToastContainer>
   );
@@ -93,6 +94,7 @@ CustomToast.propTypes = {
   showDefaultIcon: PropTypes.bool,
   onClose: PropTypes.func,
   dataTestId: PropTypes.string,
+  header: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
@@ -104,11 +106,12 @@ CustomToast.defaultProps = {
   delay: 5000,
   show: false,
   closeButton: true,
-  position: 'top-end',
+  position: 'bottom-end',
   icon: undefined,
   showDefaultIcon: true,
   onClose: undefined,
   dataTestId: undefined,
+  header: undefined,
   children: undefined,
 };
 
