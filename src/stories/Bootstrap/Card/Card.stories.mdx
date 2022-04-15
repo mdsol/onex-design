@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
 
 import { Card } from '../../../components';
+import * as stories from './Card.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Card"
@@ -106,27 +107,27 @@ Using `<Card.Title>`, `<Card.Subtitle>`, and `<Card.Text>` inside the `<Card.Bod
 You can change a card's appearance by changing their `<bg>`, and `<text>` props.
 
 <Canvas>
-    <Story id="bootstrap-components-card--primary" />
-    <Story id="bootstrap-components-card--secondary" />
-    <Story id="bootstrap-components-card--success" />
-    <Story id="bootstrap-components-card--warning" />
-    <Story id="bootstrap-components-card--danger" />
-    <Story id="bootstrap-components-card--info" />
-    <Story id="bootstrap-components-card--light" />
-    <Story id="bootstrap-components-card--dark" />
+    <Story name="Primary" story={stories.Primary} />
+    <Story name="Secondary" story={stories.Secondary} />
+    <Story name="Success" story={stories.Success} />
+    <Story name="Warning" story={stories.Warning} />
+    <Story name="Danger" story={stories.Danger} />
+    <Story name="Info" story={stories.Info} />
+    <Story name="Light" story={stories.Light} />
+    <Story name="Dark" story={stories.Dark} />
 </Canvas>
 
 ## Border and text color types
 
 <Canvas>
-    <Story id="bootstrap-components-card--primary-border-and-text" />
-    <Story id="bootstrap-components-card--secondary-border-and-text" />
-    <Story id="bootstrap-components-card--success-border-and-text" />
-    <Story id="bootstrap-components-card--warning-border-and-text" />
-    <Story id="bootstrap-components-card--danger-border-and-text" />
-    <Story id="bootstrap-components-card--info-border-and-text" />
-    <Story id="bootstrap-components-card--light-border-and-text" />
-    <Story id="bootstrap-components-card--dark-border-and-text" />
+    <Story name="PrimaryBorderAndText" story={stories.PrimaryBorderAndText} />
+    <Story name="SecondaryBorderAndText" story={stories.SecondaryBorderAndText} />
+    <Story name="SuccessBorderAndText" story={stories.SuccessBorderAndText} />
+    <Story name="WarningBorderAndText" story={stories.WarningBorderAndText} />
+    <Story name="DangerBorderAndText" story={stories.DangerBorderAndText} />
+    <Story name="InfoBorderAndText" story={stories.InfoBorderAndText} />
+    <Story name="LightBorderAndText" story={stories.LightBorderAndText} />
+    <Story name="DarkBorderAndText" story={stories.DarkBorderAndText} />
 </Canvas>
 
 ## Header and Footer
@@ -137,12 +138,12 @@ A `<CardHeader>` can be styled by passing a heading element through the `<as>` p
 You may add a footer by adding a `<Card.Footer>` component.
 
 <Canvas>
-    <Story id="bootstrap-components-card--has-footer" />
+    <Story name="HasFooter" story={stories.HasFooter} />
 </Canvas>
 
 ## Images
 Cards include a few options for working with images. Choose from appending “image caps” at either end of a card, overlaying images with card content use for it `<Card.Img variant="top | bottom" src="your_src">`, or simply embedding the image in a card.
 
 <Canvas>
-    <Story id="bootstrap-components-card--has-image" />
+    <Story name="HasImage" story={stories.HasImage} />
 </Canvas>

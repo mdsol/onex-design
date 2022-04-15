@@ -54,13 +54,6 @@ Disabled.args = {
   disabled: 'true',
 };
 
-export const Variant = (props) => (
-  <div className="bg-dark p-3">
-    <CloseButton variant="white" {...props} />
-    <CloseButton variant="white" disabled {...props} />
-  </div>
-);
-
 export const Accessibility = ButtonTemplate.bind({});
 
 Accessibility.args = {

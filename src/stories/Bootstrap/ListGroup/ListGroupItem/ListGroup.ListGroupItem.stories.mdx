@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
 
 import { ListGroup } from '../../../../components';
+import * as stories from './ListGroup.ListGroupItem.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/ListGroup/ListGroupItem"
@@ -139,14 +140,14 @@ export const Template = (args) => <ListGroup.Item {...args} />;
 Use contextual variants on `<ListGroup.Item>`s to style them with a stateful background and color.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroupitem--primary" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--secondary" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--success" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--warning" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--danger" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--info" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--light" />
-    <Story id="bootstrap-components-listgroup-listgroupitem--dark" />
+    <Story name="Primary" story={stories.Primary} />
+    <Story name="Secondary" story={stories.Secondary} />
+    <Story name="Success" story={stories.Success} />
+    <Story name="Warning" story={stories.Warning} />
+    <Story name="Danger" story={stories.Danger} />
+    <Story name="Info" story={stories.Info} />
+    <Story name="Light" story={stories.Light} />
+    <Story name="Dark" story={stories.Dark} />
 </Canvas>
 
 #### Active items
@@ -154,7 +155,7 @@ Use contextual variants on `<ListGroup.Item>`s to style them with a stateful bac
 Set the active prop to indicate the list groups current active selection.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroupitem--active" />
+    <Story name="Active" story={stories.Active} />
 </Canvas>
 
 #### Disabled items
@@ -162,5 +163,5 @@ Set the active prop to indicate the list groups current active selection.
 Set the `disabled` prop to prevent actions on a `<ListGroup.Item>`. For elements that aren't naturally disable-able (like anchors) `onClick` handlers are added that call `preventDefault` to mimick disabled behavior.
 
 <Canvas>
-    <Story id="bootstrap-components-listgroup-listgroupitem--disabled" />
+    <Story name="Disabled" story={stories.Disabled} />
 </Canvas>
