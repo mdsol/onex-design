@@ -1,6 +1,7 @@
 import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
 
 import { ProgressBar } from '../../../components';
+import * as stories from './ProgressBar.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/ProgressBar"
@@ -37,7 +38,7 @@ Add a `label` prop to show a visible percentage. For low percentages, consider a
 Add a `visuallyHidden` prop to hide the label visually.
 
 <Canvas>
-    <Story id="bootstrap-components-progressbar--label" />
+    <Story name="Label" story={stories.Label} />
 </Canvas>
 
 ### Contextual alternatives
@@ -45,7 +46,7 @@ Add a `visuallyHidden` prop to hide the label visually.
 Progress bars use some of the same button and alert classes for consistent styles.
 
 <Canvas>
-    <Story id="bootstrap-components-progressbar--contextual-alternatives" />
+    <Story name="ContextualAlternatives" story={stories.ContextualAlternatives} />
 </Canvas>
 
 ### Striped
@@ -53,7 +54,7 @@ Progress bars use some of the same button and alert classes for consistent style
 Uses a gradient to create a striped effect.
 
 <Canvas>
-    <Story id="bootstrap-components-progressbar--striped" />
+    <Story name="Striped" story={stories.Striped} />
 </Canvas>
 
 ### Animated
@@ -61,7 +62,7 @@ Uses a gradient to create a striped effect.
 Add `animated` prop to animate the stripes right to left.
 
 <Canvas>
-    <Story id="bootstrap-components-progressbar--animated" />
+    <Story name="Animated" story={stories.Animated} />
 </Canvas>
 
 ### Stacked
@@ -69,5 +70,5 @@ Add `animated` prop to animate the stripes right to left.
 Nest `<ProgressBar />`s to stack them.
 
 <Canvas>
-    <Story id="bootstrap-components-progressbar--stacked" />
+    <Story name="Stacked" story={stories.Stacked} />
 </Canvas>

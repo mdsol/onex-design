@@ -2,6 +2,7 @@
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import  { Stack } from '../../../../components';
 
+import * as stories from './Stack.stories.jsx';
 
 <Meta
     title="Bootstrap/Layout/Stack"
@@ -17,7 +18,7 @@ Shorthand helpers that build on top of our flexbox utilities to make component l
 Stacks are vertical by default and stacked items are full-width by default. Use the gap prop to add space between items.
 
 <Canvas>
-    <Story id='bootstrap-layout-stack--vertical' />
+    <Story name="Vertical" story={stories.Vertical} />
 </Canvas>
 
 ## Horizontal
@@ -26,20 +27,20 @@ Use ```direction="horizontal"``` for horizontal layouts. Stacked items are verti
 and only take up their necessary width. Use the ```gap``` prop to add space between items.
 
 <Canvas>
-    <Story id='bootstrap-layout-stack--horizontal' />
+    <Story name="Horizontal" story={stories.Horizontal} />
 </Canvas>
 
 ## Examples
 Use a vertical ```Stack``` to stack buttons and other elements:
 
 <Canvas>
-    <Story id='bootstrap-layout-stack--vertical-example' />
+    <Story name="VerticalExample" story={stories.VerticalExample} />
 </Canvas>
 
 Create an inline form with a horizontal ```Stack```:
 
 <Canvas>
-    <Story id='bootstrap-layout-stack--horizontal-example' />
+    <Story name="HorizontalExample" story={stories.HorizontalExample} />
 </Canvas>
 
 <Canvas>
