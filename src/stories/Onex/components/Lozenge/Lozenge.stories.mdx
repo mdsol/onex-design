@@ -6,6 +6,32 @@ import * as stories from './Lozenge.stories.jsx';
 
 <Meta
   title="Onex/Components/Lozenge"
+  argTypes={{
+    children: {
+      description: 'The content of the component.',
+      control: 'text',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+    icon: {
+      description: 'Element placed before the children.',
+    },
+    size: {
+      description: 'Specifies a large or small lozenge',
+    },
+    type: {
+      description: 'Types of lozenges',
+    },
+    variant: {
+      description: 'Lozenge variation',
+    },
+  }}
   component={Lozenge}
 />
 

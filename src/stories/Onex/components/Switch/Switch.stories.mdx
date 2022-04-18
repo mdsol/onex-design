@@ -4,6 +4,33 @@ import * as stories from './Switch.stories.jsx';
 
 <Meta
   title="Onex/Components/Switch"
+  argTypes={{
+    checked: {
+      description: 'If ```true```, the component is checked',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+    disabled: {
+      description: 'If ```true```, the component is disabled',
+    },
+    id: {
+      description: 'An html id attribute for the Switch component',
+      control: 'text',
+    },
+    label: {
+      description: 'Label for the control',
+    },
+    onChange: {
+      description: 'Callback fired when the state is changed.',
+      action: 'change',
+    },
+  }}
   component={Switch}
 />
 

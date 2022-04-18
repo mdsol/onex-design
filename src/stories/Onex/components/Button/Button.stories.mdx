@@ -4,7 +4,41 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { Button } from '../../../../components';
 import * as stories from './Button.stories.jsx';
 
-<Meta title="Onex/Components/Button" component={Button} />
+<Meta
+  title="Onex/Components/Button"
+  argTypes={{
+    children: {
+      description: 'The content of the button',
+      control: 'text',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+    },
+    disabled: {
+      description: 'Disables the Button, preventing mouse events',
+      control: 'boolean',
+    },
+    href: {
+      description: 'Providing a href will render an "a" element, styled as a button',
+      control: 'text',
+    },
+    size: {
+      description: 'Specifies a large or small button',
+    },
+    onClick: { action: 'clicked' },
+    variant: {
+      description: 'Button variation',
+    },
+    type: {
+      description: 'Button type',
+    },
+  }}
+  component={Button}
+/>
 
 export const ButtonTemplate = (args) => <Button {...args} />;
 

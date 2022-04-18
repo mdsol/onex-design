@@ -5,7 +5,41 @@ import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
 import { Avatar } from '../../../../components';
 import * as stories from './Avatar.stories.jsx';
 
-<Meta title="Onex/Components/Avatar" component={Avatar} />
+<Meta
+  title="Onex/Components/Avatar"
+  argTypes={{
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    size: {
+      description: 'Size of the avatar',
+    },
+    name: {
+      description: 'Will be used to generate avatar based on the initials of the person',
+      control: 'text',
+    },
+    children: {
+      description:
+        'Used to render icon or text elements inside the Avatar. This can be an element, or just a string',
+    },
+    src: {
+      description: 'The url of a remote image or an image object',
+      control: 'text',
+    },
+    hoverDisabled: {
+      description:
+        'Disables the avatar hover, for size ```xs```, ```sm``` and ```md``` hover disabled automatically',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+    },
+    onClick: {
+      description: 'Callback fired when click on component',
+    },
+  }}
+  component={Avatar}
+/>
 
 export const AvatarTemplate = (args) => <Avatar {...args} />;
 

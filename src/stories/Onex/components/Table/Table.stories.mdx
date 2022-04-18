@@ -18,6 +18,34 @@ import * as stories from './Table.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/Table"
+  argTypes={{
+    bordered: {
+      description: 'Adds borders on all sides of the table and cells',
+    },
+    children: {
+      description: 'The content of the component',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+    hover: {
+      description: 'Enable a hover state on table rows within a ```<tbody>```',
+    },
+    striped: {
+      description: 'Adds zebra-striping to any table row within the ```<tbody>```',
+    },
+    tableControlComponent: {
+      description: 'Control component, normally ```TableControl```',
+    },
+    tableStyle: {
+      description: 'Defines the table display style: filled or default',
+    },
+  }}
   component={Table}
 />
 

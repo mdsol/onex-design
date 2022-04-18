@@ -5,6 +5,37 @@ import * as stories from './ToggleButton.stories.jsx';
 
 <Meta
   title="Onex/Components/Toggle/ToggleButton"
+  argTypes={{
+    children: {
+      description: 'The content of the component',
+      control: 'text',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+    },
+    disabled: {
+      description: 'The disabled state of both the label and input',
+      control: 'boolean',
+    },
+    id: {
+      description: '```id``` is required for button clicks to toggle input',
+      control: 'text',
+    },
+    name: {
+      description:
+        'The HTML input name, used to group like checkboxes or radio buttons together semantically',
+      control: 'text',
+    },
+    value: {
+      description:
+        "The value of the input, should be unique amongst it's siblings when nested in a ```ToggleButtonGroup```",
+      control: 'text',
+    },
+  }}
   component={ToggleButton}
 />
 

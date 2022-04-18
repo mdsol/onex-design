@@ -4,6 +4,20 @@ import { Figure } from '../../../components';
 
 <Meta
     title="Bootstrap/Components/Figure"
+    argTypes={{
+      as: {
+        control: 'object',
+        description: 'You can use a custom element type for this component.',
+        table: {
+          defaultValue: {
+            summary: undefined,
+          },
+          type: {
+            summary: 'elementType',
+          },
+        },
+      },
+    }}
     component={Figure}
 />
 

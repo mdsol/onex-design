@@ -5,6 +5,51 @@ import * as stories from './Typography.stories.jsx';
 
 <Meta
   title="Typography"
+  argTypes={{
+    align: {
+      description: 'Set the text-align on the component.',
+    },
+    children: {
+      description: 'The content of the component.',
+      control: 'text',
+    },
+    className: {
+      description: 'Name of the CSS class.',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing.',
+      control: 'text',
+    },
+    href: {
+      description: 'Providing a ```href``` will render an ```<a>``` element.',
+      control: 'text',
+    },
+    marginBottom: {
+      description: 'If ```true```, the text will have a bottom margin.',
+      control: 'boolean',
+    },
+    noWrap: {
+      description: `If true, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+                          Note that text overflow can only happen with block or inline-block level elements
+                          (the element needs to have a width in order to overflow).`,
+      control: 'boolean',
+    },
+    paragraph: {
+      description: 'If ```true```, the element will be a paragraph element.',
+      control: 'boolean',
+    },
+    semiBold: {
+      description:
+        'Can be used with variants: ```body```, ```label```, ```caption```. Provide font-width:600.',
+    },
+    variant: {
+      description: 'Different HTML elements that can be used as component.',
+    },
+    uppercase: {
+      description: 'Can be used with variant: ```caption```. Provide text-transform: uppercase.',
+    },
+  }}
   component={Typography}
 />
 

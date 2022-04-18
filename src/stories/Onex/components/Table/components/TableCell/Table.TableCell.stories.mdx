@@ -4,6 +4,33 @@ import * as stories from './Table.TableCell.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/TableCell"
+  argTypes={{
+    align: {
+      description: 'Set the text-align on the table cell content',
+    },
+    children: {
+      description: 'The content of the component',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    component: {
+      description: 'The component used for the root node',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+    variant: {
+      description:
+        'Specify the cell type. The prop defaults to the value inherited from the parent TableHead or TableBody components.',
+    },
+    width: {
+      description: 'Specify the cell width',
+    },
+  }}
   component={TableCell}
 />
 

@@ -5,6 +5,54 @@ import * as stories from './Tag.stories.jsx';
 
 <Meta
     title="Onex/Components/Tag"
+    argTypes={{
+      children: {
+        description: 'The content of the component',
+        control: 'text',
+      },
+      className: {
+        description: 'Name of the CSS class',
+        control: 'text',
+      },
+      dataTestId: {
+        description: 'Id of the component for testing',
+      },
+      controlId: {
+        description: 'Sets id on component',
+        control: 'text',
+      },
+      disabled: {
+        description: 'Disables the component, preventing mouse events',
+        control: 'boolean',
+      },
+      image: {
+        description: `Leading icon. Contains 2 items:
+                      \n1.icon - can be Avatar component or svg icon;
+                      \n2.src - provided string with URL, in this case render img ;`,
+      },
+      isRemovable: {
+        description: 'Added ```X``` to tag, added possibility to remove tag',
+        control: 'boolean',
+      },
+      onSelect: {
+        description: 'A callback fired when a tag is selected. ',
+        action: 'select',
+        table: {
+          type: {
+            summary: 'func',
+          },
+        },
+      },
+      onRemove: {
+        description: 'A callback fired when a tag is removed.',
+        action: 'remove',
+        table: {
+          type: {
+            summary: 'func',
+          },
+        },
+      },
+    }}
     component={Tag}
 />
 
