@@ -1,10 +1,94 @@
 <!-- Alert.mdx -->
-import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
-import  { Alert } from '../../../components';
+import {Meta, ArgsTable, Canvas, Story} from '@storybook/addon-docs';
+import {Alert} from '../../../components';
 import * as stories from './Alert.stories.jsx';
 
 <Meta
   title="Bootstrap/Components/Alert"
+  argTypes={{
+    children: {
+      description: 'The content of the component',
+      control: 'text',
+    },
+    closeLabel: {
+      description: 'Sets the text for alert close button.',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'Close alert',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    closeVariant: {
+      description: 'Sets the text for alert close button.',
+      control: 'text',
+      table: {
+        type: {
+          summary: 'white',
+        },
+      },
+    },
+    dismissible: {
+      description:
+        'Renders a properly aligned dismiss button, as well as adding extra horizontal padding to the Alert.',
+      control: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
+    onClose: {
+      description: 'Callback fired when alert is closed.',
+      action: 'close',
+      table: {
+        type: {
+          summary: 'func',
+        },
+      },
+    },
+    show: {
+      description: 'Controls the visual state of the Alert.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
+    transition: {
+      description:
+        'Animate the alert dismissal. Defaults to using ```<Fade>``` animation or use ```false``` to disable. A custom ```react-transition-group``` Transition can also be provided.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'Fade',
+        },
+        type: {
+          summary: 'boolean|elementType',
+        },
+      },
+    },
+    variant: {
+      description: 'The Alert visual variant',
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'],
+      control: {type: 'select'},
+      table: {
+        defaultValue: {
+          summary: 'primary',
+        },
+        type: {
+          summary: 'primary | secondary | success | danger | warning | info | dark | light',
+        },
+      },
+    },
+  }}
   component={Alert}
 />
 
@@ -15,40 +99,39 @@ export const AlertTemplate = (args) => <Alert {...args} />;
 Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
 
 ## Examples
-Alerts are available for any length of text, as well as an optional dismiss button.
-For proper styling, use one of the eight variants.
+Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight variants.
 
 <Canvas>
-  <Story name="Examples" story={stories.Examples} />
+  <Story name="Examples" story={stories.Examples}/>
 </Canvas>
 
 ## Links
 
-For links, use the ```<Alert.Link>``` component to provide matching colored links within any alert.
+For links, use the```<Alert.Link>``` component to provide matching colored links within any alert.
 
 <Canvas>
-  <Story name="Links" story={stories.Links} />
+  <Story name="Links" story={stories.Links}/>
 </Canvas>
 
 ## Additional content
 
-Alerts can contain whatever content you like. Headers, paragraphs, dividers, go crazy.
+Alerts can contain whatever content you like.Headers, paragraphs, dividers, go crazy.
 
 <Canvas>
-<Story name="AdditionalContent" story={stories.AdditionalContent} />
+  <Story name="AdditionalContent" story={stories.AdditionalContent}/>
 </Canvas>
 
 ## Dismissing
-Add the ```dismissible``` prop to add a functioning dismiss button to the Alert.
+Add the```dismissible``` prop to add a functioning dismiss button to the Alert.
 
 <Canvas>
-  <Story name="DismissingError" story={stories.DismissingError} />
+  <Story name="DismissingError" story={stories.DismissingError}/>
 </Canvas>
 
 You can also control the visual state directly which is great if you want to build more complicated alerts.
 
 <Canvas>
-  <Story name="DismissingSuccess" story={stories.DismissingSuccess} />
+  <Story name="DismissingSuccess" story={stories.DismissingSuccess}/>
 </Canvas>
 
 
@@ -60,7 +143,7 @@ You can also control the visual state directly which is great if you want to bui
     args={{
       children: "This is a demo warning alert!",
       closeLabel: 'Close',
-      variant:'warning',
+      variant: 'warning',
       dismissible: false,
       show: true,
     }}>
@@ -68,5 +151,5 @@ You can also control the visual state directly which is great if you want to bui
   </Story>
 </Canvas>
 
-<ArgsTable story="Demo" />
+<ArgsTable story="Demo"/>
 

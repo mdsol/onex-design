@@ -6,6 +6,38 @@ import * as stories from './Stack.stories.jsx';
 
 <Meta
     title="Bootstrap/Layout/Stack"
+    argTypes={{
+      gap: {
+        description: 'Sets the spacing between each item. Valid values are 0-5.',
+        control: 'number',
+        table: {
+          type: {
+            summary: 'responsivePropType(PropTypes.number)',
+          },
+        },
+      },
+      bsPrefix: {
+        description: `Change the underlying component CSS base class name and modifier class names prefix.
+                     This is an escape hatch for working with heavily customized bootstrap css.
+                     Defaults to hstack if direction is horizontal or vstack if direction is vertical.`,
+        control: 'text',
+        table: {
+          type: {
+            summary: 'string',
+          },
+        },
+      },
+      direction: {
+        description:
+          'Vertical direction - by default. Use direction="horizontal" for horizontal layouts.',
+        control: 'text',
+        table: {
+          type: {
+            summary: 'string',
+          },
+        },
+      },
+    }}
     component={Stack}
 />
 

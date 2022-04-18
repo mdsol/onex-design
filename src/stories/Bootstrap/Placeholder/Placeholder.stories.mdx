@@ -5,6 +5,51 @@ import * as stories from './Placeholder.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Placeholder"
+    argTypes={{
+      animation: {
+        description: 'Changes the animation of the placeholder.',
+        options: ['glow', 'wave'],
+        control: { type: 'select' },
+        table: {
+          type: {
+            summary: "'glow' | 'wave'",
+          },
+        },
+      },
+      bg: {
+        description: 'Change the background color of the placeholder.',
+        options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+        control: { type: 'select' },
+        table: {
+          type: {
+            summary: "'primary'| 'secondary'| 'success'| 'danger'|'warning'|'info'|'light'|'dark'",
+          },
+        },
+      },
+      size: {
+        description: 'Component size variations.',
+        options: ['xs', 'sm', 'lg'],
+        control: { type: 'select' },
+        table: {
+          type: {
+            summary: "'xs'| 'sm'| 'lg'",
+          },
+        },
+      },
+      bsPrefix: {
+        description: `Change the underlying component CSS base class name and modifier class names prefix.
+                    This is an escape hatch for working with heavily customized bootstrap css.`,
+        control: 'text',
+        table: {
+          defaultValue: {
+            summary: 'placeholder',
+          },
+          type: {
+            summary: 'string',
+          },
+        },
+      },
+    }}
     component={Placeholder}
 />
 

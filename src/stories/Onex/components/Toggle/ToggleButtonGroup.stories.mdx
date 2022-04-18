@@ -6,6 +6,51 @@ import * as stories from './ToggleButtonGroup.stories.jsx';
 
 <Meta
   title="Onex/Components/Toggle/ToggleButtonGroup"
+  argTypes={{
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+    defaultValue: {
+      description: 'Value by default',
+      control: 'number',
+    },
+    children: {
+      description: 'The content of the component, normally ```ToggleButton```',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    name: {
+      description:
+        "An HTML ```<input>``` name for each child button. Required if type is set to 'radio'",
+      control: 'text',
+    },
+    onChange: {
+      description:
+        'Callback fired when a button is pressed, depending on whether the type is ```radio``` or ```checkbox```, onChange will be called with the value or array of active values',
+      action: 'change',
+    },
+    size: {
+      description: 'Sets the size for all Buttons in the group',
+    },
+    type: {
+      description:
+        'The input type of the rendered buttons, determines the toggle behavior of the buttons',
+    },
+    value: {
+      description: 'The value, or array of values, of the active (pressed) buttons',
+      control: 'number',
+    },
+    variant: {
+      description: 'Supports 2 variants',
+    },
+    vertical: {
+      description: 'Make the set of Buttons appear vertically stacked',
+      control: 'boolean',
+    },
+  }}
   component={ToggleButtonGroup}
 />
 

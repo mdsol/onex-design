@@ -5,6 +5,19 @@ import * as stories from './Table.TableBody.stories.jsx';
 
 <Meta
   title="Onex/Components/Table/TableBody"
+  argTypes={{
+    children: {
+      description: 'The content of the component, normally ```TableRow``` with ```TableCells```',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+  }}
   component={TableBody}
 />
 

@@ -87,12 +87,6 @@ RightAlign.args = {
   variant: 'body',
 };
 
-export const Title = TypographyTemplate.bind({});
-Title.args = {
-  children: 'Title',
-  variant: 'title',
-};
-
 export const H1 = TypographyTemplate.bind({});
 H1.args = {
   children: 'Heading 1',

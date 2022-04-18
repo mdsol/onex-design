@@ -5,6 +5,53 @@ import * as stories from './Dropdown.stories.jsx';
 
 <Meta
   title="Onex/Components/Dropdown"
+  argTypes={{
+    align: {
+      description: 'Aligns the dropdown menu to the specified side of the container',
+    },
+    buttonStyle: {
+      description: 'Defines the dropdown display style: text or icon',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+    },
+    disabled: {
+      description: 'Disables the Dropdown, preventing mouse events',
+      control: 'boolean',
+    },
+    id: {
+      description: 'An html id attribute for the Toggle button,',
+      control: 'text',
+    },
+    isSearchable: {
+      description: 'Added Search input to menu',
+      control: 'boolean',
+    },
+    items: {
+      description: `Array of menu items. Each item contain:
+                           \n1.title* - content of menu item;
+                           \n2.hasDividerAfter - create divider after menu item;
+                           \n3.active - highlight the menu item as active;
+                           \n4.disabled - disable the menu item, making it unselectable;
+                           \n5.eventKey - value passed to the onSelect handler, useful for identifying the selected menu item;
+                           \n6.href - HTML href attribute corresponding to a.href.`,
+    },
+    onSelect: { action: 'select' },
+    size: {
+      description: 'Specifies a medium or small dropdown',
+    },
+    title: {
+      description: 'The content of the non-toggle Button',
+      control: 'text',
+    },
+    variant: {
+      description: 'Non-toggle button variation',
+    },
+  }}
   component={Dropdown}
   decorators={[(Story) => <div style={{ width: '15rem' }}>{Story()}</div>]}
 />

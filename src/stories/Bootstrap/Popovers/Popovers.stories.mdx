@@ -5,6 +5,107 @@ import * as stories from './Popovers.stories.jsx';
 
 <Meta
     title="Bootstrap/Components/Popover"
+    argTypes={{
+      arrowProps: {
+        description: `An Overlay injected set of props for positioning the popover arrow.
+            This is generally provided by the Overlay component positioning the popover`,
+        table: {
+          type: {
+            summary: 'shape',
+          },
+        },
+      },
+      body: {
+        description: `When this prop is set, it creates a Popover with a Popover.
+            Body inside passing the children directly to it`,
+        control: 'boolean',
+        table: {
+          type: {
+            summary: 'boolean',
+          },
+        },
+      },
+      id: {
+        description: 'An html id attribute, necessary for accessibility',
+        control: 'string',
+        required: true,
+        table: {
+          type: {
+            summary: 'string',
+          },
+        },
+      },
+      placement: {
+        description: `Sets the direction the Popover is positioned towards.
+            This is generally provided by the Overlay component positioning the popover`,
+        options: [
+          'auto-start',
+          'auto',
+          'auto-end',
+          'top-start',
+          'top',
+          'top-end',
+          'right-start',
+          'right',
+          'right-end',
+          'bottom-end',
+          'bottom',
+          'bottom-start',
+          'left-end',
+          'left',
+          'left-start',
+        ],
+        control: { type: 'select' },
+        table: {
+          defaultValue: {
+            summary: 'right',
+          },
+          type: {
+            summary: `'auto-start' |
+                         'auto' |
+                         'auto-end' |
+                         'top-start' |
+                         'top' |
+                         'top-end' |
+                         'right-start'|
+                         'right' |
+                         'right-end' |
+                         'bottom-end' |
+                         'bottom' |
+                         'bottom-start' |
+                         'left-end' |
+                         'left' |
+                         'left-start'`,
+          },
+        },
+      },
+      popper: {
+        table: {
+          type: {
+            summary: 'object',
+          },
+        },
+      },
+      show: {
+        table: {
+          type: {
+            summary: 'boolean',
+          },
+        },
+      },
+      bsPrefix: {
+        description: `Change the underlying component CSS base class name and modifier class names prefix.
+                    This is an escape hatch for working with heavily customized bootstrap css.`,
+        table: {
+          defaultValue: {
+            summary: 'popover',
+          },
+          type: {
+            summary: 'string',
+          },
+        },
+      },
+    }}
     component={Popover}
 />
 
