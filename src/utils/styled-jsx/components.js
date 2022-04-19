@@ -97,6 +97,11 @@ module.exports = [
     replaceUrl: ['.onex-'],
   },
   {
+    name: 'SearchField',
+    importName: 'SearchField',
+    replaceUrl: ['.onex-'],
+  },
+  {
     name: 'Toasts',
     importName: 'Toast',
     replaceUrl: ['.onex-', '.toast'],

@@ -47,6 +47,7 @@ componentsInfo.map(({ name, importName, replaceUrl }) => {
   return null;
 });
 
+// eslint-disable-next-line no-unused-vars
 const writeImportComponents = () => {
   const { importBody, exportBody } = componentsInfo.reduce(
     (acc, curr) => {
@@ -86,4 +87,4 @@ ${exportBody},
   });
 };
 
-writeImportComponents();
+// writeImportComponents();
