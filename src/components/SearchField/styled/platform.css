@@ -1,0 +1,100 @@
+/* fonts */
+/* button */
+/* dropdown menu */
+/* bootstrap variables*/
+.onex-search-field {
+  min-width: 16.625rem;
+  max-width: 31.25rem;
+  font-family: noto-sans, sans-serif;
+  /* input icon  */
+  /* clear btn */
+  /* form control */
+}
+.onex-search-field .form-label {
+  color: rgb(26, 28, 30);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  padding: 0 4px;
+}
+.onex-search-field .form-control-sm {
+  padding-left: 2rem;
+}
+.onex-search-field .form-control-lg {
+  padding-left: 2.25rem;
+}
+.onex-search-field__input {
+  position: relative;
+}
+.onex-search-field__icon {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(103, 110, 122);
+}
+.onex-search-field__icon > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.onex-search-field--lg .onex-search-field__icon {
+  left: 0.75rem;
+}
+.onex-search-field--sm .onex-search-field__icon {
+  left: 0.5rem;
+}
+.onex-search-field--disabled {
+  opacity: 0.4;
+}
+.onex-search-field--filled .onex-search-field__icon {
+  color: rgb(26, 28, 30);
+}
+.onex-search-field__clear-btn {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(133, 140, 150);
+  background: none;
+  border: none;
+  padding: 0;
+}
+.onex-search-field__clear-btn > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.onex-search-field__clear-btn:focus {
+  outline: none;
+}
+.onex-search-field--lg .onex-search-field__clear-btn {
+  right: 0.625rem;
+}
+.onex-search-field--sm .onex-search-field__clear-btn {
+  right: 0.375rem;
+}
+.onex-search-field--has-clear-btn .form-control-sm {
+  padding-right: 2rem;
+}
+.onex-search-field--has-clear-btn .form-control-lg {
+  padding-right: 2.25rem;
+}
+.onex-search-field .form-control.form-control-sm {
+  height: 2rem;
+  line-height: 1.25rem;
+}
+.onex-search-field .form-control.form-control-lg {
+  height: 2.5rem;
+  line-height: 1.25rem;
+}
+.onex-search-field .form-control:not(:focus):not(:disabled):hover {
+  border-color: rgba(26, 28, 30, 0.5);
+}
+.onex-search-field .form-control:disabled, .onex-search-field .form-control.disabled {
+  background-color: transparent;
+}
+.onex-search-field .form-control:focus {
+  border-color: rgb(0, 112, 192);
+  box-shadow: rgb(0, 112, 192) 0px 0px 1px, rgb(0, 112, 192) 0px 0px 0px 1px;
+}

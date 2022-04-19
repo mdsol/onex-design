@@ -1343,6 +1343,48 @@ export const config = {
         ],
       },
       {
+        name: 'SearchField',
+        componentName: 'SearchField',
+        styledComponentName: 'SearchField',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            placeholder: 'Small',
+          },
+          {
+            size: 'sm',
+            value: 'Some text',
+            placeholder: 'Placeholder',
+            showClearBtn: true,
+          },
+          {
+            size: 'sm',
+            disabled: true,
+            value: 'some text',
+            placeholder: 'Placeholder',
+            showClearBtn: true,
+          },
+          {
+            size: 'lg',
+            placeholder: 'Large',
+          },
+          {
+            size: 'lg',
+            placeholder: 'Placeholder',
+            showClearBtn: true,
+            value: 'Some text value',
+          },
+          {
+            size: 'lg',
+            disabled: true,
+            value: 'some text',
+            placeholder: 'Placeholder',
+            showClearBtn: true,
+          },
+        ],
+      },
+      {
         name: 'Toasts',
         componentName: 'Toasts',
         styledComponentName: 'Toasts',

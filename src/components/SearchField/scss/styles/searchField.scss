@@ -1,0 +1,121 @@
+@import 'mixins';
+
+.onex-search-field {
+  min-width: $tf-min-width;
+  max-width: $tf-max-width;
+  font-family: $font-family;
+
+  .form-label {
+    color: $secondary-900;
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: 400;
+    padding: 0 4px;
+  }
+
+  .form-control-sm {
+    padding-left: $tf-padding-icon-x-sm;
+  }
+
+  .form-control-lg {
+    padding-left: $tf-padding-icon-x-lg;
+  }
+
+  &__input {
+    position: relative;
+  }
+
+  /* input icon  */
+  &__icon, {
+    @include icon-size($icon-size-xlg);
+
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $secondary-400;
+  }
+
+  &--lg &__icon {
+    left: $tf-padding-x-lg;
+  }
+
+  &--sm &__icon {
+    left: $tf-padding-x-sm;
+  }
+
+  &--disabled {
+    opacity: 0.4;
+  }
+
+  &--filled &__icon {
+    color: $secondary-900;
+  }
+
+  /* clear btn */
+  &__clear-btn {
+    @include icon-size($icon-size-xlg);
+
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $tf-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--lg &__clear-btn {
+      right: $tf-padding-trailing-icon-lg;
+  }
+
+  &--sm &__clear-btn {
+      right: $tf-padding-trailing-icon-sm;
+  }
+
+  &--has-clear-btn {
+    .form-control-sm {
+        padding-right: $tf-padding-icon-x-sm;
+    }
+
+    .form-control-lg {
+        padding-right: $tf-padding-icon-x-lg;
+    }
+  }
+
+  /* form control */
+  .form-control {
+    &.form-control-sm {
+      height: $tf-height-sm;
+      line-height: $tf-line-height-sm;
+    }
+
+    &.form-control-lg {
+      height: $tf-height-lg;
+      line-height: $tf-line-height-lg;
+    }
+
+
+    &:not(:focus):not(:disabled):hover {
+      border-color: $tf-border-hover-color;
+
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: transparent;
+    }
+
+    &:focus {
+      border-color: $tf-focus-text-color;
+      box-shadow: $tf-focus-text-color 0px 0px 1px, $tf-focus-text-color 0px 0px 0px 1px;
+    }
+  }
+}

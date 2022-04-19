@@ -27,6 +27,7 @@ import StyledTabs from './Tabs/styled';
 import StyledTag from './Tag/styled';
 import StyledTextArea from './TextArea/styled';
 import StyledTextField from './TextField/styled';
+import StyledSearchField from './SearchField/styled';
 import StyledToasts from './Toasts/styled';
 import StyledToggleButton from './ToggleButton/styled';
 import StyledToggleButtonGroup from './ToggleButtonGroup/styled';
@@ -54,6 +55,7 @@ export {
   StyledTag,
   StyledTextArea,
   StyledTextField,
+  StyledSearchField,
   StyledToasts,
   StyledToggleButton,
   StyledToggleButtonGroup,
