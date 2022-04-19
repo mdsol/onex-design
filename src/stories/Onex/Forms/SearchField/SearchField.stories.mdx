@@ -1,0 +1,96 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { SearchField } from '../../../../components';
+import * as stories from './SearchField.stories.jsx';
+
+<Meta
+    title="Onex/Forms/SearchField"
+    argTypes={{
+        className: {
+            description: 'Override or extend the styles applied to the component.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        size: {
+            description: 'The size of the component. small is equivalent to the dense button styling.',
+        },
+        value: {
+            description: 'The value of the textarea element, required for a controlled component.',
+            control: 'text',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+                type: {
+                  summary: 'string'
+                }
+            }
+        },
+        placeholder: {
+            description: 'The short hint displayed in the textarea before the user enters a value.',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+        disabled: {
+            description: 'If true, the component is disabled.'
+        },
+        showClearBtn: {
+            description: 'If true, the input has clear button in the end. '
+        },
+        onChange: {
+            description: 'Callback fired when the value is changed.'
+        },
+        dataTestId: {
+            description: 'The it of the component for test',
+            table: {
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            }
+        },
+    }}
+    component={SearchField}
+/>
+
+export const Template = (args) => <SearchField {...args} />;
+
+## SearchField
+
+The SearchField component based on input DOM element.
+
+### SearchField details
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            size: 'lg',
+            placeholder: 'Placeholder',
+            showClearBtn: true,
+            className: 'custom-searchfield',
+            dataTestId: 'text-searchfield-id',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### SearchField sizes
+
+<Canvas>
+    <Story name="Small" story={stories.Small} />
+    <Story name="Large" story={stories.Large} />
+</Canvas>
+
+### Disabled SearchField
+
+<Canvas>
+    <Story name="DisabledSmall" story={stories.DisabledSmall} />
+    <Story name="DisabledLarge" story={stories.DisabledLarge} />
+</Canvas>
