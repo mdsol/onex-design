@@ -314,6 +314,21 @@ describe('components render', () => {
     expect(image).toMatchImageSnapshot();
   });
 
+  it('searchField', async () => {
+    const url = process.env.STYLED
+      ? `${href}/?component=SearchField&styled=true`
+      : `${href}/?component=SearchField&styled=false`;
+    const page = await browser.newPage();
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+    });
+    await page.waitForSelector('#app > div > div.wrapper');
+    const element = await page.$('#app > div > div.wrapper');
+    const image = await element.screenshot();
+
+    expect(image).toMatchImageSnapshot();
+  });
+
   it('toasts', async () => {
     const url = process.env.STYLED
       ? `${href}/?component=Toasts&styled=true`
