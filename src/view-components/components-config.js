@@ -1677,20 +1677,20 @@ export const config = {
           },
         ],
       },
-      {
-        name: 'DataGrid',
-        componentName: 'DataGrid',
-        styledComponentName: 'DataGrid',
-        additionalComponents: [],
-        variants: [
-          {
-            type: 'important',
-            variant: 'status',
-            className: 'data-grid',
-            dataTestId: 'data-grid-id',
-          },
-        ],
-      },
+      // {
+      //   name: 'DataGrid',
+      //   componentName: 'DataGrid',
+      //   styledComponentName: 'DataGrid',
+      //   additionalComponents: [],
+      //   variants: [
+      //     {
+      //       type: 'important',
+      //       variant: 'status',
+      //       className: 'data-grid',
+      //       dataTestId: 'data-grid-id',
+      //     },
+      //   ],
+      // },
     ],
   },
 };
