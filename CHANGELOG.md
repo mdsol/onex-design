@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+Version dependencies updated. Fixes for search field, avatar, textfield, icons, buttons, toasts. Storybook reconfigured. Styled components added to export. 
+
+
 ## 0.2.0
 
 Datagrid, Avatar, Dropdown and Textfield designs updated to match Figma specs. VSCode settings cleanup and new spellings added/fixed. Remove enforcement of Yarn, instead provide minimum engine version. 
