@@ -4,7 +4,7 @@ const pkg = require('./package.json');
 
 module.exports = {
   mode: 'production',
-  entry: './src/components/index.js',
+  entry: ['./src/components/index.js', './src/components/styledComponents.js'],
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'index.umd.js',
