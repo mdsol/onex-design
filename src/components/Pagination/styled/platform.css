@@ -10,9 +10,9 @@
 .page-link {
   position: relative;
   display: block;
-  color: #0070c0;
+  color: rgb(0, 112, 192);
   text-decoration: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 1px solid #dee2e6;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -40,14 +40,14 @@
 }
 .page-item.active .page-link {
   z-index: 3;
-  color: white;
-  background-color: #0070c0;
-  border-color: #0070c0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 112, 192);
+  border-color: rgb(0, 112, 192);
 }
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-color: #dee2e6;
 }
 
@@ -91,17 +91,17 @@
 }
 
 .pagination button {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: none;
   display: flex;
   align-items: center;
   margin-right: 1.5rem;
 }
 .pagination button:hover svg path {
-  fill: #0070c0;
+  fill: rgb(0, 112, 192);
 }
 .pagination .disabled:hover svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .pagination button:last-child {
   margin-right: 0rem;
@@ -119,35 +119,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: rgb(0, 0, 0);
   border-radius: 0.375rem;
   transition: none;
   text-decoration: none;
 }
 .pagination .page-item .page-link:hover {
-  background-color: #002855;
-  color: white;
+  background-color: rgb(0, 40, 85);
+  color: rgb(255, 255, 255);
 }
 .pagination .pagination_arrow .page-link {
-  background-color: white;
-  color: #0070c0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 112, 192);
 }
 .pagination .pagination_arrow .page-link:hover {
-  background-color: white;
-  color: black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .pagination .pagination_arrow--diasabled .page-link {
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
 }
 
 .pagination .active {
   border-radius: 0.375rem;
 }
 .pagination .active .page-link {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .pagination .active .page-link:hover {
-  background-color: #0070c0;
+  background-color: rgb(0, 112, 192);
 }
 
 .pagination--sm .page-item .page-link {

@@ -13,7 +13,7 @@
   justify-content: center;
 }
 .onex-lozenge__icon svg {
-  fill: white;
+  fill: rgb(255, 255, 255);
 }
 .onex-lozenge__text {
   padding: 0 0.125rem;
@@ -30,7 +30,7 @@
   height: 0.75rem;
 }
 .onex-lozenge--size-lg .onex-lozenge__icon svg path {
-  fill: white;
+  fill: rgb(255, 255, 255);
 }
 .onex-lozenge--size-lg .onex-lozenge__icon + .onex-lozenge__text {
   margin-left: 0.25rem;
@@ -47,87 +47,87 @@
   height: 0.5rem;
 }
 .onex-lozenge--size-sm .onex-lozenge__icon svg path {
-  fill: white;
+  fill: rgb(255, 255, 255);
 }
 .onex-lozenge--size-sm .onex-lozenge__icon + .onex-lozenge__text {
   margin-left: 0.125rem;
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-default {
   background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-success {
-  background-color: #007e4c;
-  color: white;
+  background-color: rgb(0, 126, 76);
+  color: rgb(255, 255, 255);
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-warning {
-  background-color: #fcb916;
-  color: black;
+  background-color: rgb(252, 185, 22);
+  color: rgb(0, 0, 0);
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-error {
-  background-color: #d91522;
-  color: white;
+  background-color: rgb(217, 21, 34);
+  color: rgb(255, 255, 255);
 }
 .onex-lozenge--variant-bold.onex-lozenge--type-info {
-  background-color: #0070c0;
-  color: white;
+  background-color: rgb(0, 112, 192);
+  color: rgb(255, 255, 255);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-default {
-  background-color: #f4f8fc;
-  color: black;
-  border: 1px solid #d1d8e0;
+  background-color: rgb(244, 248, 252);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(209, 216, 224);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-default .onex-lozenge__icon svg path {
-  fill: #d1d8e0;
+  fill: rgb(209, 216, 224);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-success {
-  background-color: #e0f6ea;
-  color: black;
-  border: 1px solid #007e4c;
+  background-color: rgb(224, 246, 234);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 126, 76);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-success .onex-lozenge__icon svg path {
-  fill: #007e4c;
+  fill: rgb(0, 126, 76);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-warning {
-  background-color: #fff1b8;
-  color: black;
-  border: 1px solid #fcb916;
+  background-color: rgb(255, 241, 184);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(252, 185, 22);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-warning .onex-lozenge__icon svg path {
-  fill: #fcb916;
+  fill: rgb(252, 185, 22);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-error {
-  background-color: #ffecee;
-  color: black;
-  border: 1px solid #d91522;
+  background-color: rgb(255, 236, 238);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(217, 21, 34);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-error .onex-lozenge__icon svg path {
-  fill: #d91522;
+  fill: rgb(217, 21, 34);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-info {
-  background-color: white;
-  color: black;
-  border: 1px solid #0070c0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 112, 192);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-info .onex-lozenge__icon svg path {
-  fill: #0070c0;
+  fill: rgb(0, 112, 192);
 }
 .onex-lozenge--variant-icon {
   border-radius: 100%;
   padding: 0.125rem;
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-default {
-  background-color: #b0b8bf;
+  background-color: rgb(176, 184, 191);
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-success {
-  background-color: #007e4c;
+  background-color: rgb(0, 126, 76);
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-warning {
-  background-color: #fcb916;
+  background-color: rgb(252, 185, 22);
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-error {
-  background-color: #d91522;
+  background-color: rgb(217, 21, 34);
 }
 .onex-lozenge--variant-icon.onex-lozenge--type-info {
-  background-color: #0070c0;
+  background-color: rgb(0, 112, 192);
 }

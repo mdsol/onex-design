@@ -25,14 +25,38 @@
     min-width: $text-area-width;
     padding: $text-area-padding-y $text-area-padding-x;
     resize: none;
+    scrollbar-color: $text-area-scrollbar-color transparent;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: $text-area-scrollbar-width;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 0.25rem solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      -webkit-border-radius: $text-area-scrollbar-border-radius;
+      background-color: $text-area-scrollbar-color;
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
 
-    &:hover:not(:focus):not(:disabled) {
+    &:hover:not(:focus):not(:disabled):not(:read-only) {
       border-color: $text-area-hover-border-color;
     }
 
     &:focus {
-      border: 2px solid $text-area-focus-border-color;
-      outline: 0;
+      border-color: $text-area-focus-border-color;
+      box-shadow: $text-area-focus-border-color 0px 0px 1px, $text-area-focus-border-color 0px 0px 0px 1px;
+    }
+
+    &[readonly]:focus {
+      border-color: $text-area-border-color;
       box-shadow: none;
     }
 

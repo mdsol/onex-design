@@ -14,10 +14,10 @@
   font-style: normal;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #1a1c1e;
+  color: rgb(26, 28, 30);
 }
 .onex-tag--variant-selection:hover {
-  background-color: #dde0e5;
+  background-color: rgb(221, 224, 229);
 }
 .onex-tag--variant-input {
   cursor: auto !important;
@@ -42,7 +42,7 @@
   padding: 0;
   border: 0;
   background-color: initial;
-  color: #676e7a;
+  color: rgb(103, 110, 122);
 }
 .onex-tag__close > svg {
   font-size: 1.25rem;
@@ -67,11 +67,11 @@
 }
 
 .onex-tag--selected {
-  background-color: #c6e3fc;
+  background-color: rgb(198, 227, 252);
 }
 .onex-tag--selected .onex-tag__close {
-  color: #005fab;
+  color: rgb(0, 95, 171);
 }
 .onex-tag--selected:hover {
-  background-color: #8dcaf9;
+  background-color: rgb(141, 202, 249);
 }

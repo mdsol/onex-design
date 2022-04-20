@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #626b78;
+  color: rgb(98, 107, 120);
 }
 .onex-tab--size-sm .nav-link {
   height: 2rem;

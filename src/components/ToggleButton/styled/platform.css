@@ -53,15 +53,15 @@
 
 .btn-group .onex-toggle-btn-wrapper {
   padding: 1px;
-  border-top: 1px solid #d1d8e0;
-  border-bottom: 1px solid #d1d8e0;
+  border-top: 1px solid rgb(209, 216, 224);
+  border-bottom: 1px solid rgb(209, 216, 224);
 }
 .btn-group .onex-toggle-btn-wrapper:first-child {
-  border-left: 1px solid #d1d8e0;
+  border-left: 1px solid rgb(209, 216, 224);
   padding-left: 1px;
 }
 .btn-group .onex-toggle-btn-wrapper:last-child {
-  border-right: 1px solid #d1d8e0;
+  border-right: 1px solid rgb(209, 216, 224);
   padding-right: 1px;
 }
 
@@ -69,7 +69,7 @@
   padding: 1px;
 }
 .btn-group.onex-toggle-btn-group--button .onex-toggle-btn-wrapper:not(:first-child) {
-  border-left: 1px solid #d1d8e0;
+  border-left: 1px solid rgb(209, 216, 224);
 }
 .btn-group.onex-toggle-btn-group--button.btn-group-lg .onex-toggle-btn {
   padding: 0.625rem;
@@ -85,25 +85,25 @@
   align-items: center;
   position: relative;
   gap: 0.25rem;
-  color: #002855;
+  color: rgb(0, 40, 85);
 }
 .onex-toggle-btn.btn:hover {
-  background-color: #e6f1f6;
-  border-color: #e6f1f6;
-  color: #002855;
+  background-color: rgb(230, 241, 246);
+  border-color: rgb(230, 241, 246);
+  color: rgb(0, 40, 85);
 }
 .onex-toggle-btn.btn:disabled, .onex-toggle-btn.btn.disabled {
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0);
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
 }
 
 .btn-check:checked + .onex-toggle-btn.btn {
-  background-color: #b3d4e5;
-  border-color: #b3d4e5;
-  color: #002855;
+  background-color: rgb(179, 212, 229);
+  border-color: rgb(179, 212, 229);
+  color: rgb(0, 40, 85);
 }
 .btn-check:checked + .onex-toggle-btn.btn:hover {
-  background-color: #cce2ee;
-  border-color: #cce2ee;
+  background-color: rgb(204, 226, 238);
+  border-color: rgb(204, 226, 238);
 }

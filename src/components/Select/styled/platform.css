@@ -38,18 +38,18 @@
 }
 
 .onex-select--invalid .onex-select__control {
-  border-color: #d91522 !important;
+  border-color: rgb(217, 21, 34) !important;
 }
 
 .onex-select {
   max-width: 31.25rem;
 }
 .onex-select .onex-select__control {
-  border: 0.063rem solid #d1d8e0;
+  border: 0.063rem solid rgb(209, 216, 224);
   border-radius: 0.5rem;
 }
 .onex-select .onex-select__control:hover {
-  border-color: #002855;
+  border-color: rgb(0, 40, 85);
 }
 .onex-select .onex-select__control--is-focused {
   border: 0.063rem solid #0070A8;
@@ -59,12 +59,12 @@
   border-color: #0070A8;
 }
 .onex-select .onex-select__option:hover {
-  background-color: #f4f8fc;
+  background-color: rgb(244, 248, 252);
   color: black;
   cursor: pointer;
 }
 .onex-select .onex-select__option--is-selected {
-  background-color: #f4f8fc;
+  background-color: rgb(244, 248, 252);
   color: black;
 }
 .onex-select .onex-select__indicator-separator {
@@ -78,11 +78,11 @@
   transform: rotate(180deg);
 }
 .onex-select .onex-select__multi-value {
-  background-color: #f4f8fc;
+  background-color: rgb(244, 248, 252);
   border-radius: 0.375rem;
   align-items: center;
 }
 .onex-select .onex-select__multi-value .onex-select__multi-value__remove:hover {
-  background-color: #f4f8fc;
+  background-color: rgb(244, 248, 252);
   color: black;
 }
