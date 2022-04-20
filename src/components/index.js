@@ -56,6 +56,7 @@ import Tabs from './Tabs/scss';
 import Tag from './Tag/scss';
 import TextArea from './TextArea/scss';
 import TextField from './TextField/scss';
+import SearchField from './SearchField/scss';
 import Toast from './Toasts/scss';
 import ToggleButton from './ToggleButton/scss';
 import ToggleButtonGroup from './ToggleButtonGroup/scss';
@@ -91,6 +92,7 @@ export {
   Tag,
   TextArea,
   TextField,
+  SearchField,
   Toast,
   ToggleButton,
   ToggleButtonGroup,
