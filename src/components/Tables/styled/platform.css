@@ -4,17 +4,17 @@
 .table {
   --bs-table-bg: rgba(255, 255, 255, 0);
   --bs-table-accent-bg: rgba(255, 255, 255, 0);
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-striped-bg: rgba(255, 255, 255, 0);
-  --bs-table-active-color: black;
-  --bs-table-active-bg: #f4f8fc;
-  --bs-table-hover-color: black;
-  --bs-table-hover-bg: #f4f8fc;
+  --bs-table-active-color: rgb(0, 0, 0);
+  --bs-table-active-bg: rgb(244, 248, 252);
+  --bs-table-hover-color: rgb(0, 0, 0);
+  --bs-table-hover-bg: rgb(244, 248, 252);
   width: 100%;
   margin-bottom: 1rem;
-  color: black;
+  color: rgb(0, 0, 0);
   vertical-align: middle;
-  border-color: #d1d8e0;
+  border-color: rgb(209, 216, 224);
 }
 .table > :not(caption) > * > * {
   padding: 1rem 0.75rem;
@@ -72,96 +72,96 @@
 .table-primary {
   --bs-table-bg: #cce2f2;
   --bs-table-striped-bg: #c2d7e6;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #b8cbda;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #bdd1e0;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #b8cbda;
 }
 
 .table-secondary {
   --bs-table-bg: #f6f7f9;
   --bs-table-striped-bg: #eaebed;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #dddee0;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #e4e4e6;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #dddee0;
 }
 
 .table-success {
   --bs-table-bg: #cce5db;
   --bs-table-striped-bg: #c2dad0;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #b8cec5;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #bdd4cb;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #b8cec5;
 }
 
 .table-info {
   --bs-table-bg: #cff4fc;
   --bs-table-striped-bg: #c5e8ef;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #badce3;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #bfe2e9;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #badce3;
 }
 
 .table-warning {
   --bs-table-bg: #fef1d0;
   --bs-table-striped-bg: #f1e5c6;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #e5d9bb;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #ebdfc0;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #e5d9bb;
 }
 
 .table-danger {
   --bs-table-bg: #f8d7da;
   --bs-table-striped-bg: #eccccf;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #dfc2c4;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #e5c7ca;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #dfc2c4;
 }
 
 .table-light {
   --bs-table-bg: #f8f9fa;
   --bs-table-striped-bg: #ecedee;
-  --bs-table-striped-color: black;
+  --bs-table-striped-color: rgb(0, 0, 0);
   --bs-table-active-bg: #dfe0e1;
-  --bs-table-active-color: black;
+  --bs-table-active-color: rgb(0, 0, 0);
   --bs-table-hover-bg: #e5e6e7;
-  --bs-table-hover-color: black;
-  color: black;
+  --bs-table-hover-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-color: #dfe0e1;
 }
 
 .table-dark {
   --bs-table-bg: #212529;
   --bs-table-striped-bg: #2c3034;
-  --bs-table-striped-color: white;
+  --bs-table-striped-color: rgb(255, 255, 255);
   --bs-table-active-bg: #373b3e;
-  --bs-table-active-color: white;
+  --bs-table-active-color: rgb(255, 255, 255);
   --bs-table-hover-bg: #323539;
-  --bs-table-hover-color: white;
-  color: white;
+  --bs-table-hover-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   border-color: #373b3e;
 }
 
@@ -235,19 +235,19 @@
   height: 0.75rem;
 }
 .onex-table__cell:last-child svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-table__cell--variant-header {
   height: 3.5rem;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #626b78;
+  color: rgb(98, 107, 120);
 }
 .onex-table__cell--variant-body {
   height: 4rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .onex-table__cell img {
   max-height: 2rem;
@@ -262,10 +262,10 @@
 
 .onex-table-wrap--filled {
   padding: 0 0.25rem 0.25rem 0.25rem;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #d1d8e0;
+  border: 1px solid rgb(209, 216, 224);
 }
 
 .onex-table {
@@ -290,7 +290,7 @@
   bottom: 0;
   width: calc(100% - 2 * 8px);
   height: 1px;
-  background-color: #d1d8e0;
+  background-color: rgb(209, 216, 224);
 }
 .onex-table__body .onex-table__row:last-child::after {
   display: none;
@@ -327,7 +327,7 @@
 .onex-data-table__subTitle {
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #626b78;
+  color: rgb(98, 107, 120);
 }
 
 .onex-table__cell--variant-header .onex-data-table__icon--start {
@@ -343,7 +343,7 @@
   max-height: 100%;
 }
 .onex-table__cell--variant-header .onex-data-table__icon--start svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-table__cell--variant-header .onex-data-table__icon--end {
   display: flex;
@@ -357,7 +357,7 @@
   max-height: 100%;
 }
 .onex-table__cell--variant-header .onex-data-table__icon--end svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-table__cell--variant-header .onex-data-table:only-child .onex-data-table__icon:only-child {
   display: flex;
@@ -371,7 +371,7 @@
   max-height: 100%;
 }
 .onex-table__cell--variant-header .onex-data-table:only-child .onex-data-table__icon:only-child svg path {
-  fill: black;
+  fill: rgb(0, 0, 0);
 }
 
 .onex-table__cell--variant-body .onex-data-table__icon {
@@ -386,7 +386,7 @@
   max-height: 100%;
 }
 .onex-table__cell--variant-body .onex-data-table__icon svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-table__cell--variant-body .onex-data-table__icon--start {
   margin-right: 0.5rem;
@@ -395,7 +395,7 @@
   margin-left: 2px;
 }
 .onex-table__cell--variant-body .onex-data-table__icon--end svg path {
-  fill: black;
+  fill: rgb(0, 0, 0);
 }
 .onex-table__cell--variant-body .onex-data-table:only-child .onex-data-table__icon:only-child {
   display: flex;
@@ -409,7 +409,7 @@
   max-height: 100%;
 }
 .onex-table__cell--variant-body .onex-data-table:only-child .onex-data-table__icon:only-child svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 
 .onex-table-control {
@@ -435,7 +435,7 @@
   margin-bottom: 0;
   font-size: 1.75rem;
   line-height: 2rem;
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 600;
 }
 

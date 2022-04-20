@@ -6,9 +6,9 @@
   width: 25rem;
   max-width: 100%;
   font-size: 0.875rem;
-  color: #1a1c1e;
+  color: rgb(26, 28, 30);
   pointer-events: auto;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   padding: 0 0;
-  color: #1a1c1e;
+  color: rgb(26, 28, 30);
   background-color: none;
   background-clip: padding-box;
   border-bottom: 1px solid none;
@@ -52,16 +52,16 @@
 }
 
 .onex-toast.onex-toast--variant-success .onex-toast__icon {
-  color: #007e4c;
+  color: rgb(0, 126, 76);
 }
 .onex-toast.onex-toast--variant-info .onex-toast__icon {
-  color: #0070c0;
+  color: rgb(0, 112, 192);
 }
 .onex-toast.onex-toast--variant-warning .onex-toast__icon {
-  color: #df6a05;
+  color: rgb(223, 106, 5);
 }
 .onex-toast.onex-toast--variant-error .onex-toast__icon {
-  color: #d91522;
+  color: rgb(217, 21, 34);
 }
 .onex-toast__block {
   font-family: noto-sans, sans-serif;
@@ -71,7 +71,7 @@
   box-shadow: 0 0.25rem 1.5rem rgba(26, 28, 30, 0.12);
   border-radius: 1rem;
   padding: 1rem;
-  background-color: white !important;
+  background-color: rgb(255, 255, 255) !important;
 }
 .onex-toast__header {
   height: 100%;
@@ -81,16 +81,16 @@
   width: 1.25rem;
   height: 1.25rem;
   padding: 0 !important;
-  color: #676e7a;
+  color: rgb(103, 110, 122);
 }
 .onex-toast__header .onex-toast__btn-close > svg {
   margin: 0;
-  fill: #676e7a;
+  fill: rgb(103, 110, 122);
 }
 .onex-toast__header .onex-toast__btn-close:hover {
   background-color: white;
   border: none;
-  color: #676e7a;
+  color: rgb(103, 110, 122);
 }
 .onex-toast__body {
   padding: 0.5rem 1rem 0 2.25rem;

@@ -7,7 +7,7 @@
   align-items: center;
   position: relative;
   border-radius: 50%;
-  color: #676e7a;
+  color: rgb(103, 110, 122);
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
   background-color: rgba(103, 110, 122, 0.1);
@@ -39,7 +39,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.75);
 }
 .onex-avatar:hover .onex-avatar__hover {
@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: center;
   font-family: noto-sans, sans-serif;
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
   overflow: hidden;
 }
 .onex-avatar--size-xs {

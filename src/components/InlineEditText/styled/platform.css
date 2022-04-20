@@ -17,16 +17,16 @@
   font-weight: 600;
 }
 .onex-edit-text__input:hover {
-  background-color: #f4f8fc;
+  background-color: rgb(244, 248, 252);
 }
 .onex-edit-text__input:hover + .onex-edit-text__icon {
   display: inline-flex;
 }
 .onex-edit-text__input__active {
-  border-color: #0070c0;
+  border-color: rgb(0, 112, 192);
 }
 .onex-edit-text__input__disabled {
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
 }
 .onex-edit-text__input__disabled:hover + .onex-edit-text__icon {
   display: none;
@@ -52,5 +52,5 @@
   justify-content: center;
 }
 .status-buttons__cancel:hover svg {
-  fill: white;
+  fill: rgb(255, 255, 255);
 }

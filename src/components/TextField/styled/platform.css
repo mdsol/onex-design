@@ -12,7 +12,7 @@
   /* form control */
 }
 .onex-text-field .form-label {
-  color: #1a1c1e;
+  color: rgb(26, 28, 30);
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 400;
@@ -33,10 +33,10 @@
   height: 1.25rem;
 }
 .onex-text-field__icon {
-  color: #676e7a;
+  color: rgb(103, 110, 122);
 }
 .onex-text-field__trailing-icon {
-  color: #858c96;
+  color: rgb(133, 140, 150);
 }
 .onex-text-field--lg .onex-text-field__trailing-icon {
   right: 0.625rem;
@@ -66,7 +66,7 @@
   padding-right: 2.25rem;
 }
 .onex-text-field--filled .onex-text-field__icon {
-  color: #1a1c1e;
+  color: rgb(26, 28, 30);
 }
 .onex-text-field__clear-btn {
   position: absolute;
@@ -74,7 +74,7 @@
   align-items: center;
   top: 50%;
   transform: translateY(-50%);
-  color: #858c96;
+  color: rgb(133, 140, 150);
   background: none;
   border: none;
   padding: 0;
@@ -103,17 +103,17 @@
   min-height: 1rem;
   padding: 0 4px;
   display: inline-block;
-  color: #676e7a;
+  color: rgb(103, 110, 122);
   font-size: 0.75rem;
   line-height: 1rem;
 }
 .onex-text-field__help--error.form-text {
   flex-basis: 100%;
   padding-left: 1.5rem;
-  background-image: url("data:image/svg+xml,%3csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z' fill='%23d91522'%3e%3c/path%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z' fill='rgb%28217, 21, 34%29'%3e%3c/path%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: left 0.25rem center;
-  color: #d91522;
+  color: rgb(217, 21, 34);
 }
 .onex-text-field .form-control.form-control-sm {
   height: 2rem;
@@ -130,7 +130,7 @@
   padding-right: 0.75rem;
 }
 .onex-text-field .form-control:invalid, .onex-text-field .form-control.is-invalid, .onex-text-field .form-control[required] {
-  border-color: #d91522 !important;
+  border-color: rgb(217, 21, 34) !important;
   background-image: none;
 }
 .onex-text-field .form-control:invalid:focus, .onex-text-field .form-control.is-invalid:focus, .onex-text-field .form-control[required]:focus {
@@ -143,6 +143,6 @@
   background-color: transparent;
 }
 .onex-text-field .form-control:focus {
-  border-color: #0070c0;
-  box-shadow: #0070c0 0px 0px 1px, #0070c0 0px 0px 0px 1px;
+  border-color: rgb(0, 112, 192);
+  box-shadow: rgb(0, 112, 192) 0px 0px 1px, rgb(0, 112, 192) 0px 0px 0px 1px;
 }

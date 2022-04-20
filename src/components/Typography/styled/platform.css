@@ -171,7 +171,7 @@ sup {
 }
 
 a {
-  color: #0070c0;
+  color: rgb(0, 112, 192);
   text-decoration: underline;
 }
 a:hover {
@@ -218,7 +218,7 @@ a > code {
 kbd {
   padding: 0.2rem 0.4rem;
   font-size: 0.875em;
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: #212529;
   border-radius: 0.2rem;
 }
@@ -534,7 +534,7 @@ progress {
   font-family: noto-sans, sans-serif;
   font-style: normal;
   margin: 0;
-  color: #1a1c1e;
+  color: rgb(26, 28, 30);
 }
 .onex-typography.onex-typography--align-center {
   text-align: center;
@@ -557,13 +557,13 @@ progress {
 .onex-typography--link.onex-typography--body, .onex-typography--link.onex-typography--caption, .onex-typography--link.onex-typography--label {
   font-weight: 600;
   text-decoration-line: underline;
-  color: #0070c0;
+  color: rgb(0, 112, 192);
 }
 .onex-typography--link:hover {
-  color: #005fab;
+  color: rgb(0, 95, 171);
 }
 .onex-typography--link:active {
-  color: #004786;
+  color: rgb(0, 71, 134);
 }
 .onex-typography--margin-bottom {
   margin-bottom: 0.5rem;

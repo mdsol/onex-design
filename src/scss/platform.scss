@@ -3,6 +3,8 @@
 @use 'sass:map';
 @import url('https://use.typekit.net/wra3ezi.css');
 
+
+
 $grid-gutter-width: 2rem;
 $grid-breakpoints: (
   xs: 0,
@@ -42,6 +44,10 @@ $spacers: (
 
 body {
   font-family: $font-family;
+}
+
+.innerZoomElementWrapper > * {
+  vertical-align: top;
 }
 
 @import './brand-colors';

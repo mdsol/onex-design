@@ -14,14 +14,14 @@
   padding: 0.5rem;
 }
 .onex-expansionPanel-toggle__icon {
-  color: #002855;
+  color: rgb(0, 40, 85);
 }
 .onex-expansionPanel-toggle:disabled .onex-expansionPanel-toggle__icon {
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
 }
 
 .onex-expansionPanel-item svg path {
-  fill: black;
+  fill: rgb(0, 0, 0);
 }
 .onex-expansionPanel-item__icon {
   display: flex;
@@ -37,60 +37,60 @@
   right: 0.875rem;
 }
 .onex-expansionPanel-item:active {
-  color: #002855;
+  color: rgb(0, 40, 85);
   font-weight: 600;
 }
 .onex-expansionPanel-item:active svg path {
-  fill: #002855;
+  fill: rgb(0, 40, 85);
 }
 .onex-expansionPanel-item--leading-icon:active {
-  color: #0070c0;
+  color: rgb(0, 112, 192);
 }
 .onex-expansionPanel-item--leading-icon:active svg path {
-  fill: #0070c0;
+  fill: rgb(0, 112, 192);
 }
 .onex-expansionPanel-item--icons:active svg path {
-  fill: #0070c0;
+  fill: rgb(0, 112, 192);
 }
 .onex-expansionPanel-item:hover, .onex-expansionPanel-item:focus {
-  background-color: #f4f8fc;
+  background-color: rgb(244, 248, 252);
 }
 .onex-expansionPanel-item.disabled {
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item.disabled svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item--unavailable {
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item--unavailable svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item--unavailable:hover, .onex-expansionPanel-item--unavailable:focus {
-  background-color: white;
-  color: #b0b8bf;
+  background-color: rgb(255, 255, 255);
+  color: rgb(176, 184, 191);
   cursor: initial;
 }
 .onex-expansionPanel-item--unavailable:hover svg path, .onex-expansionPanel-item--unavailable:focus svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item--unavailable:active {
   pointer-events: none;
-  color: #b0b8bf;
+  color: rgb(176, 184, 191);
   font-weight: 400;
 }
 .onex-expansionPanel-item--unavailable:active svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item--unavailable .onex-expansionPanel-item__icon svg path {
-  fill: #0070c0;
+  fill: rgb(0, 112, 192);
 }
 .onex-expansionPanel-item--unavailable.onex-expansionPanel-item--icons .onex-expansionPanel-item__icon__leading svg path {
-  fill: #b0b8bf;
+  fill: rgb(176, 184, 191);
 }
 .onex-expansionPanel-item--unavailable.onex-expansionPanel-item--icons .onex-expansionPanel-item__icon__trailing svg path {
-  fill: #0070c0;
+  fill: rgb(0, 112, 192);
 }
 
 .onex-expansionPanel > .btn {
@@ -100,9 +100,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  color: black;
-  border: 1px solid #d1d8e0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(209, 216, 224);
   border-radius: 0.5rem;
   padding: 0.5rem;
   padding-right: 1.075rem;
@@ -113,16 +113,16 @@
   min-width: 14.25rem;
 }
 .onex-expansionPanel > .btn.btn-primary:hover {
-  background-color: #f4f8fc;
-  color: black;
+  background-color: rgb(244, 248, 252);
+  color: rgb(0, 0, 0);
 }
 .onex-expansionPanel > .btn.btn-primary:active {
-  background-color: white;
-  color: black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .onex-expansionPanel > .btn.btn-primary:disabled {
-  background-color: white;
-  color: #b0b8bf;
+  background-color: rgb(255, 255, 255);
+  color: rgb(176, 184, 191);
 }
 .onex-expansionPanel.show .btn-primary {
   border-radius: 0.5rem 0.5rem 0 0;
