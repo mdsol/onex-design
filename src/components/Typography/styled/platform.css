@@ -560,10 +560,10 @@ progress {
   color: rgb(0, 112, 192);
 }
 .onex-typography--link:hover {
-  color: rgb(0, 95, 171);
+  color: rgb(0, 71, 134);
 }
 .onex-typography--link:active {
-  color: rgb(0, 71, 134);
+  color: rgb(5, 48, 96);
 }
 .onex-typography--margin-bottom {
   margin-bottom: 0.5rem;
