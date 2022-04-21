@@ -50,7 +50,7 @@ const Tag = ({
       {children && <span className="onex-tag__text">{children}</span>}
       {(isRemovable || variant === 'input') && (
         <button type="button" className="onex-tag__close" onClick={handleRemove}>
-          <CloseRoundedIcon className="onex-tag__close__icon" />
+          <CloseRoundedIcon />
         </button>
       )}
     </button>

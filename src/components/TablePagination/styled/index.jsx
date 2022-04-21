@@ -6,10 +6,13 @@ import cssString from './platform.css?raw';
 // eslint-disable-next-line react/prop-types
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
+// eslint-disable-next-line prefer-template
+const handleCssString = (str) => '&' + str;
+
 const StyledComponent = styled(TablePagination)`
   ${() =>
     cssString
-      .replaceAll('.onex-', '&.onex-')
-      .replaceAll('.tablePagination', '&.tablePagination')
-      .replaceAll('.tablePagination-', '&.tablePagination-')}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.tablePagination.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.tablePagination-.[^__]+?[.|\s]/g, handleCssString)}
 `;

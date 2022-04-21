@@ -6,10 +6,13 @@ import cssString from './platform.css?raw';
 // eslint-disable-next-line react/prop-types
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
+// eslint-disable-next-line prefer-template
+const handleCssString = (str) => '&' + str;
+
 const StyledComponent = styled(Tooltip)`
   ${() =>
     cssString
-      .replaceAll('.onex-', '&.onex-')
-      .replaceAll('.tooltip', '&.tooltip')
-      .replaceAll('.popover', '&.popover')}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.tooltip.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.popover.[^__]+?[.|\s]/g, handleCssString)}
 `;

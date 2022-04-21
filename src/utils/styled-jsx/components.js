@@ -69,7 +69,7 @@ module.exports = [
   {
     name: 'Switch',
     importName: 'Switch',
-    replaceUrl: ['.onex-'],
+    replaceUrl: ['.onex-', '.form-switch'],
   },
   {
     name: 'TablePagination',
