@@ -18,7 +18,6 @@
     }
 
     /* input icon  */
-    &__icon,
     &__trailing-icon {
       @include icon-size($icon-size-xlg);
 
@@ -27,10 +26,6 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-    }
-
-    &__icon {
-      color: $secondary-400;
     }
 
     &__trailing-icon {
@@ -45,26 +40,8 @@
       right: $tf-padding-trailing-icon-sm;
     }
 
-    &--lg &__icon {
-      left: $tf-padding-x-lg;
-    }
-
-    &--sm &__icon {
-      left: $tf-padding-x-sm;
-    }
-
     &--disabled {
       opacity: 0.4;
-    }
-
-    &--has-icon {
-        .form-control-sm {
-            padding-left: $tf-padding-icon-x-sm;
-        }
-
-        .form-control-lg {
-            padding-left: $tf-padding-icon-x-lg;
-        }
     }
 
     &--has-trailing-icon {
