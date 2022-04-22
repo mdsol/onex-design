@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid } from './components';
+import { Tabs, Check, DataGrid, Modal, Button } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -60,7 +60,11 @@ const makeData = (...lens) => {
 };
 
 const DevExamples = () => {
+  const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
+
+  const handleModalPrimaryAction = () => setShow(false);
+  const handleModalSecondaryAction = () => setShow(false);
 
   return (
     <div className="p-5">
@@ -71,6 +75,22 @@ const DevExamples = () => {
         <br />
         <br />
         <DataGrid columns={dataGridColumns} data={dataGridData} rowsDividers={[10, 20, 30]} />
+        <br />
+        <Button variant="primary" onClick={() => setShow(true)}>
+          Launch demo modal
+        </Button>
+        <Modal
+          show={show}
+          handleClose={() => setShow(false)}
+          onSecondaryClick={handleModalSecondaryAction}
+          onPrimaryClick={handleModalPrimaryAction}
+          secondaryActionName="Secondary Action"
+          primaryActionName="Save Changes"
+          size="lg"
+          showFooter={false}
+        >
+          Woohoo, youre reading this text in a modal!
+        </Modal>
       </div>
     </div>
   );
