@@ -2,6 +2,9 @@
 
 .onex-switch {
   @include default-switch-styles();
+  font-family: $font-family;
+  font-size: $form-switch-font-size;
+  line-height: $form-switch-line-height;
 
   .form-check-input {
     height: $form-switch-height;
@@ -10,6 +13,7 @@
     box-sizing: border-box;
     margin-top: ($line-height-base - $form-switch-height) * 0.5;
     -webkit-appearance: none;
+    float: left;
 
     &:hover {
       @include switch-background-image($onex-form-switch-hover-color);

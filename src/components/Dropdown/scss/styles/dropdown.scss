@@ -1,6 +1,7 @@
 @import 'mixins';
 
 .onex-dropdown {
+  position: relative;
   & > .btn {
     position: relative;
     font-family: $font-family;
@@ -8,6 +9,7 @@
     font-weight: 600;
     font-size: $onex-dropdown-btn-font-size;
     line-height: $onex-dropdown-btn-line-height;
+    border-radius: $btn-border-radius;
 
 
     /* primary */
@@ -159,8 +161,6 @@
     font-size: $menu-font-size;
     line-height: $menu-line-height;
     padding: $menu-padding-y $menu-padding-x;
-    max-height: $menu-max-height;
-    overflow: hidden;
 
     &--search {
       margin: $menu-search-padding-y $menu-search-padding-x $menu-item-padding-y $menu-search-padding-x;
@@ -171,22 +171,6 @@
       padding-left: 0;
       list-style: none;
       margin: 0;
-      max-height: $menu-list-max-height;
-      overflow-y: scroll;
-      margin-right: $menu-list-margin-y;
-      scrollbar-color: $scrollbar-thumb-color transparent;
-      scrollbar-width: thin;
-      &::-webkit-scrollbar {
-        width: $scrollbar-width;
-      }
-      &::-webkit-scrollbar-track {
-        background: white;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: $scrollbar-thumb-color;
-        background-clip: padding-box;
-        border-radius: $scrollbar-thumb-border-radius;
-      }
     }
 
     .dropdown-item {

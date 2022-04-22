@@ -6,10 +6,13 @@ import cssString from './platform.css?raw';
 // eslint-disable-next-line react/prop-types
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
+// eslint-disable-next-line prefer-template
+const handleCssString = (str) => '&' + str;
+
 const StyledComponent = styled(Button)`
   ${() =>
     cssString
-      .replaceAll('.onex-', '&.onex-')
-      .replaceAll('.btn', '&.btn')
-      .replaceAll('.btn-', '&.btn-')}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.btn.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.btn-.[^__]+?[.|\s]/g, handleCssString)}
 `;

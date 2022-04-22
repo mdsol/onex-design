@@ -6,10 +6,9 @@ import cssString from './platform.css?raw';
 // eslint-disable-next-line react/prop-types
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
+// eslint-disable-next-line prefer-template
+const handleCssString = (str) => '&' + str;
+
 const StyledComponent = styled(Dropdown)`
-  ${() =>
-    cssString
-      .replaceAll('.onex-', '&.onex-')
-      .replaceAll('.dropdown', '&.dropdown')
-      .replaceAll('.dropdown-', '&.dropdown-')}
+  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)}
 `;

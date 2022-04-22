@@ -24,6 +24,9 @@ scssFileNames.map((componentName) => {
         ${themeImportFiles}
         @import 'node_modules/bootstrap/scss/variables';
         @import 'node_modules/bootstrap/scss/mixins';
+        @import 'node_modules/bootstrap/scss/bootstrap-reboot';
+        @import 'node_modules/bootstrap/scss/bootstrap-utilities';
+        @import 'node_modules/bootstrap/scss/bootstrap-grid';
         @import 'src/components/${componentName}/scss/index.scss';`,
     });
     if (result.css) {

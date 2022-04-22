@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import TextField from '../../../../TextField/scss';
+import TextField from '../../../../TextField/styled';
 
 const CustomMenu = React.forwardRef(({ children, style, className, isSearchable }, ref) => {
   const [value, setValue] = useState('');

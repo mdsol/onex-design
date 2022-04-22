@@ -4,11 +4,13 @@ const componentsInfo = require('./components');
 const getFileBody = (componentName, replaceClasses) => {
   const cssString = replaceClasses.reduce((acc, className) => {
     if (replaceClasses.length < 3) {
-      return `${acc === 'cssString' ? ' ' : ''}${acc}.replaceAll('${className}', '&${className}')`;
+      return `${
+        acc === 'cssString' ? ' ' : ''
+      }${acc}.replaceAll(/\\${className}.[^__]+?[.|\\s]/g, handleCssString)`;
     }
     return `${
       acc === 'cssString' ? '\n    ' : ''
-    }${acc}\n      .replaceAll('${className}', '&${className}')`;
+    }${acc}\n      .replaceAll(/\\${className}.[^__]+?[.|\\s]/g, handleCssString)`;
   }, 'cssString');
 
   return `import styled from 'styled-components';
@@ -18,6 +20,9 @@ import cssString from './platform.css?raw';
 
 // eslint-disable-next-line react/prop-types
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
+
+// eslint-disable-next-line prefer-template
+const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(${componentName})\`
   \${() =>${cssString}}

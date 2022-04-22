@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
-import Badge from '../../Badge/scss';
+import Badge from '../../Badge/styled';
 import DropdownMenu from './components/DropdownMenu';
 
 const CustomDropdown = (props) => {

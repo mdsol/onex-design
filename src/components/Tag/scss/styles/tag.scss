@@ -12,9 +12,11 @@
   font-size: $font-size-label;
   line-height: $line-height-label;
   color: $secondary-900;
+  cursor: pointer;
 
 
   &--variant-selection {
+    cursor: pointer;
     &:hover {
       background-color: $secondary-350;
     }
@@ -41,6 +43,7 @@
   }
 
   &__close {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,10 +57,10 @@
       font-size: 1.25rem;
     }
 
-    &__icon {
-      height: $onex-tag-close-icon-size;
-      width: $onex-tag-close-icon-size;
-    }
+    //&__icon {
+    //  height: $onex-tag-close-icon-size;
+    //  width: $onex-tag-close-icon-size;
+    //}
   }
 
   &__img {
