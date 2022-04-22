@@ -6,17 +6,15 @@ import Badge from '../../../../Badge/scss';
 import TextField from '../../../../TextField/scss';
 import Button from '../../../../Buttons/scss';
 
-const TableControls = ({title, rowsQuantity}) => (
+const TableControls = ({ title, rowsQuantity }) => (
   <div className="onex-dataGrid__tableControls">
     <div className="onex-dataGrid__tableControls__title">
       <Typography variant="h4">{title}</Typography>
-      <Badge type="default" className="onex-dataGrid__tableControls__title__badge">
+      {/* <Badge type="default" className="onex-dataGrid__tableControls__title__badge">
         {rowsQuantity}
-      </Badge>
+      </Badge> */}
     </div>
-    <div className="onex-dataGrid__tableControls__controls">
-      <div />
-      <div />
+    {/* <div className="onex-dataGrid__tableControls__controls">
       <div className="onex-dataGrid__tableControls__controls__filter">
         <FilterIcon />
       </div>
@@ -25,7 +23,7 @@ const TableControls = ({title, rowsQuantity}) => (
       <Button size="sm" variant="primary">
         Action Button
       </Button>
-    </div>
+    </div> */}
   </div>
 );
 

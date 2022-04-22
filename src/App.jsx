@@ -102,7 +102,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('testMode');
+  const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
     if (currentTab === 'devMode') {
