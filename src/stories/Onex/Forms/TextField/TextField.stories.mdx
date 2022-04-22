@@ -6,98 +6,112 @@ import * as stories from './TextField.stories.jsx';
 <Meta
     title="Onex/Forms/TextField"
     argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        label: {
-            description: 'The label content.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        errorMessage: {
-            description: 'The text of error message.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        size: {
-            description: 'The size of the component. small is equivalent to the dense button styling.',
-        },
-        value: {
-            description: 'The value of the textarea element, required for a controlled component.',
-            control: 'text',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-                type: {
-                  summary: 'string'
-                }
-            }
-        },
-        placeholder: {
-            description: 'The short hint displayed in the textarea before the user enters a value.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        readOnly: {
-            description: 'If true, the component is only for reading.'
-        },
-        disabled: {
-            description: 'If true, the component is disabled.'
-        },
-        isInvalid: {
-            description: 'If true, the component has red border and show error message.'
-        },
-        required: {
-            description: 'If true, the component is required.'
-        },
-        icon: {
-            description: 'Node element placed in left side of input element. ',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        trailingIcon: {
-          description: 'Node element placed in right side of input element. ',
-          table: {
-            defaultValue: {
-              summary: 'undefined',
-            },
+      className: {
+        description: 'Override or extend the styles applied to the component.',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+        }
+      },
+      label: {
+        description: 'The label content.',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+        }
+      },
+      type: {
+        description: 'Input\'s type',
+        control: { type: 'select' },
+        table: {
+          defaultValue: {
+            summary: 'text',
+          },
+        }
+      },
+      passwordVariant: {
+        description: 'The password variant that indicates how strong the password is',
+        options: ['strong', 'medium', 'weak'],
+        control: { type: 'select' },
+        table: {
+          defaultValue: {
+            summary: undefined,
+          },
+          type: {
+            summary: 'strong | medium | weak',
+          },
+        }
+      },
+      passwordHelpText: {
+        description: 'The password help text for different variant of password',
+        table: {
+          defaultValue: {
+            summary: { strong: 'Strong'},
+          },
+          type: {
+            summary: 'object[key: strong | medium | weak, value: string]',
+          },
+        }
+      },
+      errorMessage: {
+        description: 'The text of error message.',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+        }
+      },
+      size: {
+        description: 'The size of the component. small is equivalent to the dense button styling.',
+      },
+      value: {
+        description: 'The value of the textarea element, required for a controlled component.',
+        control: 'text',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+          type: {
+            summary: 'string'
           }
-        },
-        showClearBtn: {
-            description: 'If true, the input has clear button in the end. '
-        },
-        showDefaultIcon: {
-            description: 'If true, the input has search icon in left side. '
-        },
-        onChange: {
-            description: 'Callback fired when the value is changed.'
-        },
-        dataTestId: {
-            description: 'The it of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
+        }
+      },
+      placeholder: {
+        description: 'The short hint displayed in the textarea before the user enters a value.',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+        }
+      },
+      readOnly: {
+        description: 'If true, the component is only for reading.'
+      },
+      disabled: {
+        description: 'If true, the component is disabled.'
+      },
+      isInvalid: {
+        description: 'If true, the component has red border and show error message.'
+      },
+      required: {
+        description: 'If true, the component is required.'
+      },
+      showClearBtn: {
+        description: 'If true, the input has clear button in the end. '
+      },
+      onChange: {
+        description: 'Callback fired when the value is changed.'
+      },
+      dataTestId: {
+        description: 'The it of the component for test',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+        }
+      },
     }}
     component={TextField}
 />
@@ -117,7 +131,6 @@ The TextField component based on input DOM element.
             placeholder: 'Placeholder',
             label: 'Label',
             showClearBtn: true,
-            showDefaultIcon: true,
             className: 'custom-textfield',
             dataTestId: 'text-textfield-id',
         }}>
@@ -140,31 +153,23 @@ The TextField component based on input DOM element.
     <Story name="ClearButton" story={stories.ClearButton} />
 </Canvas>
 
-### TextField has custom 'icon' or 'trailing-icon'
-
-<Canvas>
-  <Story name="Icon" story={stories.Icon} />
-  <Story name="TrailingIcon" story={stories.TrailingIcon} />
-</Canvas>
-
-### Search field
-
-<Canvas>
-    <Story name="SearchFieldSmall" story={stories.SearchFieldSmall} />
-    <Story name="SearchFieldLarge" story={stories.SearchFieldLarge} />
-</Canvas>
 
 ### TextField with error message and required
 
 <Canvas>
-    <div style={{display: 'flex', alignItems: 'flex-start', gap: '25px'}}>
-        <Story name="ErrorMessage" story={stories.ErrorMessage} />
-        <Story name="Required" story={stories.Required} />
-    </div>
+    <Story name="ErrorMessage" story={stories.ErrorMessage} />
+    <Story name="Required" story={stories.Required} />
 </Canvas>
 
 ### Disabled TextField
 
 <Canvas>
     <Story name="Disabled" story={stories.Disabled} />
+</Canvas>
+
+### PasswordField
+
+<Canvas>
+  <Story name="PasswordSmall" story={stories.PasswordSmall} />
+  <Story name="PasswordLarge" story={stories.PasswordLarge} />
 </Canvas>
