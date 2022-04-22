@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@use 'sass:math';
+@use 'sass:map';
+@import url('https://use.typekit.net/wra3ezi.css');
+
+
+
+$grid-gutter-width: 2rem;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: math.div($spacer, 4),
+  2: math.div($spacer, 2),
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2.5,
+  6: $spacer * 3,
+  7: $spacer * 4,
+  8: $spacer * 5,
+  9: $spacer * 6.5,
+  10: $spacer * 10.5,
+);

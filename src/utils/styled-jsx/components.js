@@ -24,7 +24,7 @@ module.exports = [
   {
     name: 'Dropdown',
     importName: 'Dropdown',
-    replaceUrl: ['.onex-', '.dropdown', '.dropdown-'],
+    replaceUrl: ['.onex-'],
   },
   {
     name: 'ExpansionPanel',

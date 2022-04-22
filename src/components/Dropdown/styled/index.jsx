@@ -10,9 +10,5 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(Dropdown)`
-  ${() =>
-    cssString
-      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.dropdown.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.dropdown-.[^__]+?[.|\s]/g, handleCssString)}
+  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)}
 `;
