@@ -1,171 +1,144 @@
 @import 'mixins';
 
 .onex-text-field {
-    min-width: $tf-min-width;
-    max-width: $tf-max-width;
-    font-family: $font-family;
+  min-width: $tf-min-width;
+  max-width: $tf-max-width;
+  font-family: $font-family;
 
-    .form-label {
-      color: $secondary-900;
-      font-size: $font-size-label;
-      line-height: $line-height-label;
-      font-weight: 400;
-      padding: 0 4px;
+  .form-label {
+    color: $secondary-900;
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: 400;
+    padding: 0 4px;
+  }
+
+  &__input {
+    position: relative;
+  }
+
+  &--disabled {
+    opacity: 0.4;
+  }
+
+  &--filled &__icon {
+    color: $secondary-900;
+  }
+
+  /* clear btn */
+  &__clear-btn,
+  &__toggle-pass {
+    @include icon-size($icon-size-xlg);
+
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $tf-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--lg &__clear-btn,
+  &--lg &__toggle-pass {
+    right: $tf-padding-trailing-icon-lg;
+  }
+
+  &--sm &__clear-btn,
+  &--sm &__toggle-pass {
+    right: $tf-padding-trailing-icon-sm;
+  }
+
+  &--has-clear-btn {
+    .form-control-sm {
+      padding-right: $tf-padding-icon-x-sm;
     }
 
-    &__input {
-      position: relative;
+    .form-control-lg {
+      padding-right: $tf-padding-icon-x-lg;
     }
+  }
 
-    /* input icon  */
-    &__trailing-icon {
-      @include icon-size($icon-size-xlg);
+  /* help text */
+  &__help.form-text {
+    min-width: 1rem;
+    min-height: $line-height-sm;
+    padding: 0 4px;
+    display: inline-block;
+    color: $secondary-400;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
 
-      display: inline-flex;
-      align-items: center;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+  &__help--password.form-text {
+    @include pass-help-style();
 
-    &__trailing-icon {
-      color: $tf-icon-color;
-    }
+    flex-basis: 100%;
+    padding-left: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: left 0.25rem center;
+  }
 
-    &--lg &__trailing-icon {
-      right: $tf-padding-trailing-icon-lg;
-    }
+  &__help--error.form-text {
+    color: $tf-invalid-border-color;
+  }
 
-    &--sm &__trailing-icon {
-      right: $tf-padding-trailing-icon-sm;
-    }
+  /* form control */
+  .form-control {
+    &.form-control-sm {
+      height: $tf-height-sm;
+      line-height: $tf-line-height-sm;
 
-    &--disabled {
-      opacity: 0.4;
-    }
-
-    &--has-trailing-icon {
-      .form-control-sm {
-        padding-right: $tf-padding-icon-x-sm;
+      &:invalid,
+      &.is-invalid {
+        padding-right: $tf-padding-x-sm;
       }
+    }
 
-      .form-control-lg {
-        padding-right: $tf-padding-icon-x-lg;
+    &.form-control-lg {
+      height: $tf-height-lg;
+      line-height: $tf-line-height-lg;
+
+      &:invalid,
+      &.is-invalid {
+        padding-right: $tf-padding-x-lg;
       }
     }
 
+    &:invalid,
+    &.is-invalid,
+    &[required] {
+      border-color: $tf-invalid-border-color!important;
+      background-image: none;
 
-    &--filled &__icon {
-      color: $secondary-900;
+      &:focus {
+        box-shadow: none;
+      }
     }
 
-    /* clear btn */
-    &__clear-btn {
-        @include icon-size($icon-size-xlg);
+    &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
+      border-color: $tf-border-hover-color;
 
-        position: absolute;
-        display: inline-flex;
-        align-items: center;
-        top: 50%;
-        transform: translateY(-50%);
-        color: $tf-icon-color;
-        background: none;
-        border: none;
-        padding: 0;
-
-        &:focus {
-          outline: none;
-        }
     }
 
-    &--lg &__clear-btn {
-        right: $tf-padding-trailing-icon-lg;
+    &:disabled,
+    &.disabled,
+    &:disabled.is-invalid,
+    &.disabled.is-invalid,
+    &:disabled:invalid,
+    &.disabled:invalid {
+      background-color: transparent;
     }
 
-    &--sm &__clear-btn {
-        right: $tf-padding-trailing-icon-sm;
+    &:focus {
+      border-color: $tf-focus-text-color;
+      box-shadow: $tf-focus-text-color 0px 0px 1px, $tf-focus-text-color 0px 0px 0px 1px;
     }
-
-    &--has-clear-btn {
-        .form-control-sm {
-            padding-right: $tf-padding-icon-x-sm;
-        }
-
-        .form-control-lg {
-            padding-right: $tf-padding-icon-x-lg;
-        }
-    }
-
-    /* help text */
-    &__help.form-text {
-        min-width: 1rem;
-        min-height: $line-height-sm;
-        padding: 0 4px;
-        display: inline-block;
-        color: $secondary-400;
-        font-size: $font-size-sm;
-        line-height: $line-height-sm;
-    }
-
-    &__help--error.form-text {
-      flex-basis: 100%;
-      padding-left: 1.5rem;
-      background-image: escape-svg($em-background-image);
-      background-repeat: no-repeat;
-      background-position: left 0.25rem center;
-      color: $tf-invalid-border-color;
-    }
-
-    /* form control */
-    .form-control {
-        &.form-control-sm {
-            height: $tf-height-sm;
-            line-height: $tf-line-height-sm;
-
-            &:invalid,
-            &.is-invalid {
-                padding-right: $tf-padding-x-sm;
-            }
-        }
-
-        &.form-control-lg {
-            height: $tf-height-lg;
-            line-height: $tf-line-height-lg;
-
-            &:invalid,
-            &.is-invalid {
-                padding-right: $tf-padding-x-lg;
-            }
-        }
-
-        &:invalid,
-        &.is-invalid,
-        &[required] {
-            border-color: $tf-invalid-border-color!important;
-            background-image: none;
-
-            &:focus {
-                box-shadow: none;
-            }
-        }
-
-        &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
-          border-color: $tf-border-hover-color;
-
-        }
-
-        &:disabled,
-        &.disabled,
-        &:disabled.is-invalid,
-        &.disabled.is-invalid,
-        &:disabled:invalid,
-        &.disabled:invalid {
-            background-color: transparent;
-        }
-
-        &:focus {
-          border-color: $tf-focus-text-color;
-          box-shadow: $tf-focus-text-color 0px 0px 1px, $tf-focus-text-color 0px 0px 0px 1px;
-        }
-    }
+  }
 }

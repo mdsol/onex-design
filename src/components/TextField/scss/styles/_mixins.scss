@@ -4,3 +4,16 @@
     height: $size;
   }
 }
+
+@mixin pass-help-style () {
+  $types: 'strong' $pf-pass-strong-color $pf-pass-strong-background-image,
+  'medium' $pf-pass-medium-color $pf-pass-medium-background-image,
+  'weak' $pf-pass-weak-color $pf-pass-weak-background-image;
+
+  @each $type, $main-color, $icon in $types {
+    &.onex-text-field__help--password--#{$type} {
+      color: $main-color;
+      background-image: escape-svg($icon);
+    }
+  }
+}
