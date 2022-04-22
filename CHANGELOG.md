@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2
+
+Modal added, refactor several StyledComponents. 
 ## 0.2.1
 
 Version dependencies updated. Fixes for search field, avatar, textfield, icons, buttons, toasts. Storybook reconfigured. Styled components added to export. 
