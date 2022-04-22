@@ -13,7 +13,6 @@ import {
   Figure,
   Image,
   ListGroup,
-  Modal,
   Nav,
   Navbar,
   NavDropdown,
@@ -62,6 +61,7 @@ import ToggleButtonGroup from './ToggleButtonGroup/scss';
 import Tooltip from './Tooltip/scss';
 import Typography from './Typography/scss';
 import DataGrid from './DataGrid/scss';
+import Modal from './Modal/scss';
 
 export {
   Avatar,
