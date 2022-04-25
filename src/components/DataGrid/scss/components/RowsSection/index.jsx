@@ -88,16 +88,16 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
             {headerGroups[1].headers.map((column, i) => (
               <th
                 key={`${column.accessor}_${i}`}
-                colSpan={i === headerGroups[1].headers.length - 1 ? '2' : '1'}
+                // colSpan={i === headerGroups[1].headers.length - 1 ? '2' : '1'}
               >
                 <Typography variant="caption" uppercase>
                   {column.render('Header')}
                 </Typography>
               </th>
             ))}
-            <th className="onex-dataGrid__rowIcon">
+            {/* <th className="onex-dataGrid__rowIcon">
               <SettingsRoundIcon />
-            </th>
+            </th> */}
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -122,15 +122,15 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
                     <Typography variant="label">{cell.render('Cell')}</Typography>
                   </td>
                 ))}
-                <td colSpan="2" className="onex-dataGrid__rowIcon">
+                {/* <td colSpan="2" className="onex-dataGrid__rowIcon">
                   <MoreVerticalIcon />
-                </td>
+                </td> */}
               </tr>
             );
           })}
         </tbody>
       </table>
-      <div className="onex-dataGrid__pagination">
+      {/* <div className="onex-dataGrid__pagination">
         <TablePagination
           defaultRowsPerPage={pageSize}
           rowsDividers={rowsDividers}
@@ -144,7 +144,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
           canPreviousPage={canPreviousPage}
           lastRow={Number(page[page.length - 1].id) + 1}
         />
-      </div>
+      </div> */}
     </>
   );
 };
