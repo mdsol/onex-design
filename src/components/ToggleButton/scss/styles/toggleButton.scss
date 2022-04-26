@@ -1,7 +1,7 @@
 @import 'mixins';
 
 .btn-group.btn-group-sm .onex-toggle-btn.btn,
-.onex-toggle-btn.btn.btn-sm {
+.onex-toggle__btn.btn.btn-sm {
     @include button-size(
         $toggle-padding-y-sm,
         $toggle-padding-x-sm,
@@ -16,8 +16,8 @@
     }
 }
 
-.btn-group.btn-group-lg .onex-toggle-btn.btn,
-.onex-toggle-btn.btn.btn-lg {
+.btn-group.btn-group-lg .onex-toggle__btn.btn,
+.onex-toggle__btn.btn.btn-lg {
     @include button-size(
         $toggle-padding-y-lg,
         $toggle-padding-x-lg,
@@ -70,19 +70,19 @@
     }
 
     &.btn-group-lg {
-        .onex-toggle-btn {
+        .onex-toggle__btn {
             padding: $toggle-padding-btn-lg;
         }
     }
 
     &.btn-group-sm {
-        .onex-toggle-btn {
+        .onex-toggle__btn {
             padding: $toggle-padding-btn-sm;
         }
     }
 }
 
-.onex-toggle-btn.btn {
+.onex-toggle__btn.btn {
     @include bg-color($toggle-main);
 
     display: inline-flex;
@@ -103,7 +103,7 @@
     }
 }
 
-.btn-check:checked + .onex-toggle-btn.btn {
+.btn-check:checked + .onex-toggle__btn.btn {
     @include bg-color($toggle-active-color);
 
     color: $toggle-text-color;

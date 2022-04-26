@@ -5,16 +5,16 @@ import { ToggleButton } from 'react-bootstrap';
 
 const CustomToggleButton = React.forwardRef((props, ref) => {
   const { children, className, disabled, value, id, name, dataTestId, ...accProps } = props;
-  const buttonClassNames = classNames('onex-toggle-btn', {
+  const buttonClassNames = classNames('onex-toggle-btn-wrapper', {
     [className]: className,
   });
 
   return (
-    <div className="onex-toggle-btn-wrapper">
+    <div className={buttonClassNames}>
       <ToggleButton
         id={id}
         ref={ref}
-        className={buttonClassNames}
+        className="onex-toggle__btn"
         value={value}
         disabled={disabled}
         name={name}
