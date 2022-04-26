@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.3
+
+Fixed styled components for toggle group, toggle button, text area, text field.
 ## 0.2.2
 
 Modal added, refactor several StyledComponents. 
