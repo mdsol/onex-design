@@ -27,21 +27,25 @@
     resize: none;
     scrollbar-color: $text-area-scrollbar-color transparent;
     scrollbar-width: thin;
+
     &::-webkit-scrollbar {
       width: $text-area-scrollbar-width;
     }
+
     &::-webkit-scrollbar-thumb {
       border: 0.25rem solid rgba(0, 0, 0, 0);
       background-clip: padding-box;
       -webkit-border-radius: $text-area-scrollbar-border-radius;
       background-color: $text-area-scrollbar-color;
-      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0), inset 1px 1px 0px rgba(0, 0, 0, 0);
     }
+
     &::-webkit-scrollbar-button {
       width: 0;
       height: 0;
       display: none;
     }
+
     &::-webkit-scrollbar-corner {
       background-color: transparent;
     }
@@ -87,21 +91,12 @@
     }
   }
 
-  &__help {
-    padding-left: 0.25rem;
-    line-height: $text-area-label-line-height;
-    flex-basis: 100%;
+  &__help.form-text {
+    color: $text-area-form-text;
   }
 
-  &__error {
-    flex-basis: 100%;
-    min-width: 1rem;
-    display: inline-block;
-    line-height: $text-area-label-line-height;
-    padding-left: 1.25rem;
-    background-image: escape-svg($error-message-background-image);
-    background-repeat: no-repeat;
-    background-position: left 0.25rem center;
+  &__error.form-text {
+    color: $text-area-err-text-color;
   }
 
   &__footer,
@@ -130,6 +125,9 @@
 
   .form-text {
     margin-top: 0;
-    color: $text-area-form-text;
+    padding-left: 0.25rem;
+    font-size: $text-area-font-size-form-text;
+    line-height: $text-area-label-line-height;
+    flex-basis: 100%;
   }
 }
