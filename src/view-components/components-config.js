@@ -1170,13 +1170,15 @@ export const config = {
           {
             label: 'Label',
             placeholder: 'Empty',
-            maxNumLength: 240,
+            maxNumLength: 10,
+            errorMessage: 'Number of characters exceeded',
           },
           {
             label: 'Label',
             placeholder: 'Empty',
             isError: true,
             maxNumLength: -5,
+            errorMessage: 'Number of characters exceeded',
           },
           {
             label: 'Label',

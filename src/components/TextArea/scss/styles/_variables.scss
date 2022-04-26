@@ -10,7 +10,7 @@ $text-area-num-text-color: $secondary-400;
 $text-area-err-text-color: $error;
 
 $text-area-scrollbar-color: $secondary-900-opacity-10;
-$text-area-scrollbar-width: 0.625rem;
+$text-area-scrollbar-width: 0.75rem;
 $text-area-scrollbar-border-radius: 0.438rem;
 
 $text-area-height: 10rem;
@@ -22,6 +22,8 @@ $text-area-font-family: $font-family;
 $text-area-font-size: 0.875rem;
 $text-area-line-height: 1.25rem;
 $text-area-border-radius: $component-border-radius-lg;
+
+$text-area-font-size-form-text: 0.75rem;
 
 $text-area-padding-y: 0.625rem;
 $text-area-padding-x: 0.75rem;

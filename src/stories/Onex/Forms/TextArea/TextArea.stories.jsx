@@ -50,6 +50,7 @@ LabelNumCounter.args = {
   label: 'Label',
   placeholder: 'Message',
   maxNumLength: 240,
+  errorMessage: 'Number of characters exceeded',
 };
 
 export const LabelNumCounterDisabled = Template.bind({});
@@ -66,6 +67,7 @@ LabelNumCounterError.args = {
   placeholder: 'Message',
   isError: true,
   maxNumLength: -5,
+  errorMessage: 'Number of characters exceeded',
 };
 
 export const LabelHelpText = Template.bind({});
