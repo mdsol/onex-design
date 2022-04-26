@@ -114,7 +114,7 @@ module.exports = [
   {
     name: 'ToggleButtonGroup',
     importName: 'ToggleButtonGroup',
-    replaceUrl: ['.onex-'],
+    replaceUrl: ['.onex-', 'btn-group'],
   },
   {
     name: 'Tooltip',
