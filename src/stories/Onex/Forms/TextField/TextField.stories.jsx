@@ -1,23 +1,14 @@
-import FlutterDashRoundedIcon from '@mui/icons-material/FlutterDashRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { TextField } from '../../../../components';
 
-const icons = { Bird: <FlutterDashRoundedIcon />, Search: <SearchRoundedIcon /> };
+const helpPassText = {
+  weak: 'Weak',
+  medium: 'Medium',
+  strong: 'Strong',
+};
 
 export default {
   title: 'Onex/Forms/TextField',
   component: TextField,
-  argTypes: {
-    icon: {
-      options: Object.keys(icons),
-      mapping: icons,
-    },
-    trailingIcon: {
-      options: Object.keys(icons),
-      mapping: icons,
-    },
-  },
 };
 
 const Template = (props) => <TextField {...props} />;
@@ -63,16 +54,6 @@ HelpText.args = {
   showClearBtn: true,
 };
 
-export const TrailingIcon = Template.bind({});
-
-TrailingIcon.args = {
-  size: 'lg',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  trailingIcon: <InfoRoundedIcon />,
-  showClearBtn: true,
-};
-
 export const Disabled = Template.bind({});
 
 Disabled.args = {
@@ -82,7 +63,6 @@ Disabled.args = {
   label: 'Label',
   helpText: 'Help text',
   showClearBtn: true,
-  showDefaultIcon: true,
 };
 
 export const Required = Template.bind({});
@@ -105,48 +85,56 @@ ClearButton.args = {
   value: 'Some text value',
 };
 
-export const SearchFieldSmall = Template.bind({});
+export const PasswordSmall = Template.bind({});
 
-SearchFieldSmall.args = {
+PasswordSmall.args = {
   size: 'sm',
   placeholder: 'Placeholder',
-  showClearBtn: true,
-  showDefaultIcon: true,
+  label: 'Label',
+  type: 'password',
 };
 
-export const SearchFieldLarge = Template.bind({});
+export const PasswordLarge = Template.bind({});
 
-SearchFieldLarge.args = {
-  size: 'lg',
-  placeholder: 'Placeholder',
-  showClearBtn: true,
-  showDefaultIcon: true,
-};
-
-export const Icon = Template.bind({});
-
-const iconSourceBody = `
-<TextField
-  size="lg"
-  placeholder="Placeholder"
-  icon={<BugFill />}
-  label="Label"
-  showClearBtn
-  onChange={() => {}}
-/>
-`;
-Icon.parameters = {
-  docs: {
-    source: {
-      code: iconSourceBody,
-    },
-  },
-};
-
-Icon.args = {
-  size: 'lg',
+PasswordLarge.args = {
+  size: 'sm',
   placeholder: 'Placeholder',
   label: 'Label',
-  showClearBtn: true,
-  icon: <FlutterDashRoundedIcon />,
+  type: 'password',
+};
+
+export const PasswordWeak = Template.bind({});
+
+PasswordWeak.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Password',
+  type: 'password',
+  value: '123',
+  passwordVariant: 'weak',
+  passwordHelpText: helpPassText,
+};
+
+export const PasswordMedium = Template.bind({});
+
+PasswordMedium.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Password',
+  type: 'password',
+  value: '1234658',
+  passwordVariant: 'medium',
+  passwordHelpText: helpPassText,
+};
+
+export const PasswordStrong = Template.bind({});
+
+PasswordStrong.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Password',
+  type: 'password',
+  value: '1234658',
+  passwordVariant: 'strong',
+  passwordHelpText: helpPassText,
 };

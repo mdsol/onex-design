@@ -15,6 +15,12 @@ import {
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Avatar, Badge, Button, ToggleButton } from '../components';
 
+const passwordHelpText = {
+  strong: 'Strong',
+  medium: 'Medium',
+  weak: 'Weak',
+};
+
 const dropdownItems = [
   { eventKey: 'one', title: 'item one', badge: 100, active: true },
   { eventKey: 'two', title: 'item two', badge: 100 },
@@ -1228,6 +1234,54 @@ export const config = {
         styledComponentName: 'TextField',
         additionalComponents: [],
         variants: [
+          {
+            label: 'Label',
+            type: 'password',
+            size: 'sm',
+            value: '234556',
+            placeholder: 'Small',
+            passwordHelpText,
+            passwordVariant: 'medium',
+          },
+          {
+            label: 'Label',
+            type: 'password',
+            size: 'lg',
+            placeholder: 'Small',
+            value: '234556',
+            passwordHelpText,
+            passwordVariant: 'strong',
+          },
+          {
+            label: 'Label',
+            type: 'password',
+            size: 'sm',
+            placeholder: 'Small',
+            value: '234556',
+            passwordHelpText,
+            passwordVariant: 'weak',
+          },
+          {
+            label: 'Label',
+            type: 'password',
+            size: 'sm',
+            placeholder: 'Small',
+            value: '234556',
+            passwordHelpText,
+            disabled: true,
+            passwordVariant: 'weak',
+          },
+          {
+            label: 'Label',
+            type: 'password',
+            size: 'sm',
+            placeholder: 'Small',
+            value: '234556',
+            passwordHelpText,
+            passwordVariant: 'weak',
+            errorMessage: 'Error message',
+            isInvalid: true,
+          },
           {
             label: 'Label',
             size: 'sm',

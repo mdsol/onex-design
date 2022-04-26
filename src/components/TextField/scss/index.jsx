@@ -2,8 +2,10 @@ import React, { useEffect, useState, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+// eslint-disable-next-line import/named
+import { passwordVariantType, passwordHelpTextType } from './propTypes';
+import HelpText from './components/HelpText';
+import InputButton from './components/InputButton';
 
 const TextField = React.forwardRef((props, ref) => {
   const {
@@ -13,21 +15,22 @@ const TextField = React.forwardRef((props, ref) => {
     errorMessage,
     placeholder,
     size,
+    type,
     readOnly,
     disabled,
     value,
     onChange,
     isInvalid,
     required,
-    icon,
-    trailingIcon,
     showClearBtn,
-    showDefaultIcon,
     helpText,
     dataTestId,
+    passwordHelpText,
+    passwordVariant,
   } = props;
 
   const [_value, _setValue] = useState(value);
+  const [showPassword, setShowPassword] = useState(false);
 
   const inputClassNames = useMemo(
     () =>
@@ -36,10 +39,10 @@ const TextField = React.forwardRef((props, ref) => {
         'onex-text-field--lg': size === 'lg',
         'onex-text-field--sm': size === 'sm',
         'onex-text-field--disabled': disabled,
-        'onex-text-field--has-icon': icon || showDefaultIcon,
         'onex-text-field--has-clear-btn': showClearBtn,
         'onex-text-field--filled': _value,
-        'onex-text-field--has-trailing-icon': trailingIcon,
+        'onex-text-field--text': type === 'text',
+        'onex-text-field--password': size === 'password',
       }),
     [_value],
   );
@@ -53,9 +56,21 @@ const TextField = React.forwardRef((props, ref) => {
     changeValue('');
   };
 
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const onHandleChange = (event) => {
     changeValue(event.target.value);
   };
+
+  const inputType = useMemo(() => {
+    if (type === 'text') {
+      return type;
+    }
+
+    return showPassword ? 'text' : type;
+  }, [showPassword]);
 
   useEffect(() => {
     _setValue(value);
@@ -68,7 +83,7 @@ const TextField = React.forwardRef((props, ref) => {
         <Form.Control
           ref={ref}
           autoFocus={autoFocus}
-          type="text"
+          type={inputType}
           placeholder={placeholder}
           size={size}
           disabled={disabled}
@@ -78,34 +93,25 @@ const TextField = React.forwardRef((props, ref) => {
           value={_value}
           onChange={onHandleChange}
         />
-        {(icon || showDefaultIcon) && (
-          <div className="onex-text-field__icon">
-            {icon && icon}
-            {showDefaultIcon && !icon && <SearchRoundedIcon />}
-          </div>
-        )}
-        {showClearBtn && !!_value ? (
-          <button
-            className="onex-text-field__clear-btn"
-            type="button"
-            onClick={handleClear}
-            disabled={disabled}
-          >
-            <CancelRoundedIcon />
-          </button>
-        ) : (
-          trailingIcon && <div className="onex-text-field__trailing-icon">{trailingIcon}</div>
-        )}
+        <InputButton
+          disabled={disabled}
+          showClearBtn={showClearBtn}
+          value={_value}
+          type={type}
+          showPassword={showPassword}
+          handleClick={type === 'password' ? handleTogglePassword : handleClear}
+        />
       </div>
-      {(helpText || (isInvalid && !disabled)) && (
-        <Form.Text
-          className={classNames('onex-text-field__help', {
-            'onex-text-field__help--error': isInvalid,
-          })}
-        >
-          {helpText || errorMessage}
-        </Form.Text>
-      )}
+
+      <HelpText
+        helpText={helpText}
+        disabled={disabled}
+        errorMessage={errorMessage}
+        passwordHelpText={passwordHelpText}
+        passwordVariant={passwordVariant}
+        isInvalid={isInvalid}
+        value={_value}
+      />
     </Form.Group>
   );
 });
@@ -118,15 +124,15 @@ TextField.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(['lg', 'sm']),
-  trailingIcon: PropTypes.node,
+  type: PropTypes.oneOf(['text', 'password', 'email', 'number']),
+  passwordVariant: passwordVariantType,
+  passwordHelpText: passwordHelpTextType,
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
   isInvalid: PropTypes.bool,
   required: PropTypes.bool,
-  icon: PropTypes.node,
   onChange: PropTypes.func,
   showClearBtn: PropTypes.bool,
-  showDefaultIcon: PropTypes.bool,
   helpText: PropTypes.string,
   dataTestId: PropTypes.string,
 };
@@ -139,14 +145,14 @@ TextField.defaultProps = {
   value: '',
   placeholder: undefined,
   size: 'sm',
+  type: 'text',
+  passwordVariant: undefined,
   readOnly: false,
   disabled: false,
   isInvalid: false,
   required: false,
   showClearBtn: false,
-  showDefaultIcon: false,
-  icon: undefined,
-  trailingIcon: undefined,
+  passwordHelpText: {},
   helpText: undefined,
   onChange: undefined,
   dataTestId: undefined,
