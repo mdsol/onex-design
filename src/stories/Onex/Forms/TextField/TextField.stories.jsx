@@ -1,5 +1,11 @@
 import { TextField } from '../../../../components';
 
+const helpPassText = {
+  weak: 'Weak',
+  medium: 'Medium',
+  strong: 'Strong',
+};
+
 export default {
   title: 'Onex/Forms/TextField',
   component: TextField,
@@ -95,4 +101,40 @@ PasswordLarge.args = {
   placeholder: 'Placeholder',
   label: 'Label',
   type: 'password',
+};
+
+export const PasswordWeak = Template.bind({});
+
+PasswordWeak.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Password',
+  type: 'password',
+  value: '123',
+  passwordVariant: 'weak',
+  passwordHelpText: helpPassText,
+};
+
+export const PasswordMedium = Template.bind({});
+
+PasswordMedium.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Password',
+  type: 'password',
+  value: '1234658',
+  passwordVariant: 'medium',
+  passwordHelpText: helpPassText,
+};
+
+export const PasswordStrong = Template.bind({});
+
+PasswordStrong.args = {
+  size: 'sm',
+  placeholder: 'Placeholder',
+  label: 'Password',
+  type: 'password',
+  value: '1234658',
+  passwordVariant: 'strong',
+  passwordHelpText: helpPassText,
 };

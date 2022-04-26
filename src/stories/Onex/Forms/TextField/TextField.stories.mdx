@@ -173,3 +173,65 @@ The TextField component based on input DOM element.
   <Story name="PasswordSmall" story={stories.PasswordSmall} />
   <Story name="PasswordLarge" story={stories.PasswordLarge} />
 </Canvas>
+
+### PasswordField example how strong your password
+
+<Canvas>
+  <Story name="PasswordWeak" story={stories.PasswordWeak} />
+  <Story name="PasswordMedium" story={stories.PasswordMedium} />
+  <Story name="PasswordStrong" story={stories.PasswordStrong} />
+</Canvas>
+
+### Example of password field
+
+You can check password validation based on simple verification rules.
+ - length < 8 and length > 30 is error;
+ - length less 12 is weak;
+ - length between 12 and 20 is medium;
+ - length bigger than 20 is strong;
+
+<Canvas>
+  <Story name="Password example">
+    {() => {
+      const passwordHelpText = React.useMemo(() => ({
+        weak: 'Weak',
+        medium: 'Medium',
+        strong: 'Strong',
+      }), []);
+      const [password, setPassword] = React.useState();
+      const [isInvalid, setIsInvalid] = React.useState(false);
+      const [passwordVariant, setPasswordVariant] = React.useState('');
+      React.useEffect(() => {
+        if (!password) {
+          return;
+        }
+        if (password?.length < 8 || password?.length > 30) {
+          setIsInvalid(true);
+        } else {
+          setIsInvalid(false);
+        }
+        if (password?.length < 12) {
+          setPasswordVariant('weak');
+        }
+        if (password?.length >= 12 && password?.length < 20) {
+          setPasswordVariant('medium');
+        }
+        if (password?.length >= 20 && password?.length < 30) {
+          setPasswordVariant('strong');
+        }
+      }, [password]);
+      return (
+        <TextField
+          type="password"
+          placeholder="password"
+          label="Password"
+          value={password}
+          onChange={setPassword}
+          isInvalid={isInvalid}
+          passwordVariant={passwordVariant}
+          errorMessage='Your password needs to be between 8 and 30 characters long'
+          passwordHelpText={passwordHelpText} />
+      );
+    }}
+  </Story>
+</Canvas>
