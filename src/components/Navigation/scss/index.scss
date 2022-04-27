@@ -1,2 +1,10 @@
 @import 'styles/variables';
+@import 'components/styles/variables';
+@import 'components/NavItemDropdown/styles/variables';
+@import '../../../../node_modules/bootstrap/scss/nav';
+@import '../../../../node_modules/bootstrap/scss/navbar';
+@import '../../../../node_modules/bootstrap/scss/dropdown';
 @import 'styles/navigation';
+@import 'components/styles/index';
+@import 'components/NavItem/styles/navItem';
+@import 'components/NavItemDropdown/styles/navItemDropdown';
