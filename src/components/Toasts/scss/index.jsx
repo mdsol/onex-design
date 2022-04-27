@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Toast, ToastContainer } from 'react-bootstrap';
 import { Error, Warning, Info, CheckCircle, Close } from '@mui/icons-material';
-import Button from '../../Buttons/scss';
+import Button from '../../Buttons/styled';
 
 const IconVariants = {
   info: <Info />,
