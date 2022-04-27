@@ -104,7 +104,7 @@ module.exports = [
   {
     name: 'Toasts',
     importName: 'Toast',
-    replaceUrl: ['.onex-', '.toast'],
+    replaceUrl: ['.onex-', '.toast-container'],
   },
   {
     name: 'ToggleButton',

@@ -43,10 +43,9 @@ const CustomSelect = ({
   };
 
   return (
-    <div>
+    <div className={selectClassNames}>
       {isAsync ? (
         <AsyncSelect
-          className={selectClassNames}
           cacheOptions
           defaultOptions
           classNamePrefix="onex-select"
@@ -58,7 +57,6 @@ const CustomSelect = ({
         />
       ) : (
         <Select
-          className={selectClassNames}
           classNamePrefix="onex-select"
           isMulti={isMulti}
           options={options}

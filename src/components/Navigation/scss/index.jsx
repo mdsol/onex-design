@@ -49,48 +49,49 @@ const Navigation = (props) => {
   }, [isAdaptiveWidth]);
 
   return (
-    <Nav
-      ref={navRef}
-      className={navGroupClassNames}
-      variant="tabs"
-      activeKey={activeKey}
-      defaultActiveKey={defaultActiveKey}
-      onSelect={handleSelect}
-      data-test-id={dataTestId}
-    >
-      {!!visibleItems?.length &&
-        visibleItems.map((item) => {
-          const {
-            title: itemTitle,
-            href,
-            eventKey: itemEventKey,
-            disabled: itemDisabled,
-            dataTestId: itemDataTestId,
-          } = item;
+    <div className={navGroupClassNames}>
+      <Nav
+        ref={navRef}
+        variant="tabs"
+        activeKey={activeKey}
+        defaultActiveKey={defaultActiveKey}
+        onSelect={handleSelect}
+        data-test-id={dataTestId}
+      >
+        {!!visibleItems?.length &&
+          visibleItems.map((item) => {
+            const {
+              title: itemTitle,
+              href,
+              eventKey: itemEventKey,
+              disabled: itemDisabled,
+              dataTestId: itemDataTestId,
+            } = item;
 
-          return (
-            <NavItem
-              id={itemEventKey}
-              eventKey={itemEventKey}
-              disabled={itemDisabled}
-              href={href}
-              dataTestId={itemDataTestId}
-            >
-              {itemTitle}
-            </NavItem>
-          );
-        })}
-      {dropdownItems.length > 0 && (
-        <NavItemDropdown
-          ref={dropdownRef}
-          title={dropdownTitle}
-          eventKey="dropdown"
-          items={dropdownItems}
-          isActive={isActiveDropdownItem}
-          dataTestId={dataTestIdDropdown}
-        />
-      )}
-    </Nav>
+            return (
+              <NavItem
+                id={itemEventKey}
+                eventKey={itemEventKey}
+                disabled={itemDisabled}
+                href={href}
+                dataTestId={itemDataTestId}
+              >
+                {itemTitle}
+              </NavItem>
+            );
+          })}
+        {dropdownItems.length > 0 && (
+          <NavItemDropdown
+            ref={dropdownRef}
+            title={dropdownTitle}
+            eventKey="dropdown"
+            items={dropdownItems}
+            isActive={isActiveDropdownItem}
+            dataTestId={dataTestIdDropdown}
+          />
+        )}
+      </Nav>
+    </div>
   );
 };
 
