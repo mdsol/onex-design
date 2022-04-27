@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.4
+
+Fixed that only styled modules were being exported.
 ## 0.2.3
 
 Fixed styled components for toggle group, toggle button, text area, text field.
