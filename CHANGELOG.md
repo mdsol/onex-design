@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.5
+
+Located issue with empty styled component css, removed typekit import and switched to inline.
 ## 0.2.4
 
 Fixed that only styled modules were being exported.
