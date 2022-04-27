@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.5
+## 0.2.6
 
 Switched to inline css instead of external typekit url. Navigation, Select, Tabs, TextArea, Toasts, ToggleButton, Typography StyledComponents updated. 
 
