@@ -186,6 +186,88 @@ export const Checkboxes = () => {
   </Story>
 </Canvas>
 
+Example with indeterminate checkbox
+
+export const CheckboxesIndeterminate = () => {
+  const ids = { DS: 'ds', JS: 'js', CF: 'cf' };
+  const [checkAll, setCheckAll] = React.useState(false);
+  const [isIndeterminate, setIsIndeterminate] = React.useState(false);
+  const [checkItems, setCheckItems] = React.useState({[ids.DS]: false, [ids.JS]: false, [ids.CF]: false});
+  const checkboxData = React.useMemo(() => [
+    {
+      label: 'Design System',
+      id: [ids.DS]
+    },
+    {
+      label: 'Jira Software',
+      id: [ids.JS]
+    },
+    {
+      label: 'Confluence',
+      id: [ids.CF]
+    }
+  ], []);
+  const handleCheckItem = (id) => {
+    setCheckItems({...checkItems, [id]: !checkItems[id]});
+  }
+  const handleCheckAll = () => {
+    const checked = !checkAll;
+    const checkedItems = checkboxData.reduce((acc, elem) => {
+      return {...acc, [elem.id]: checked};
+    }, {});
+    setCheckItems(checkedItems);
+    setCheckAll(checked);
+  }
+  React.useEffect(() => {
+    const checkedItems = Object.values(checkItems);
+    const everyChecked = checkedItems.every(elem => elem);
+    const everyUnChecked = checkedItems.every(elem => !elem);
+    if (everyChecked) {
+      setCheckAll(true);
+      setIsIndeterminate(false);
+    }
+    if (everyUnChecked) {
+      setCheckAll(false);
+      setIsIndeterminate(false);
+    }
+    if (!everyChecked && !everyUnChecked) {
+      setIsIndeterminate(true);
+    }
+  }, [checkItems])
+  return (
+    <div>
+      <Check
+        type="checkbox"
+        id="check-indeterminate"
+        checked={checkAll}
+        indeterminate={isIndeterminate}
+        onChange={handleCheckAll}
+      >
+        All projects
+      </Check>
+      {checkboxData.map((checkboxItem) => (
+          <div style={{ display: 'flex', margin: '10px 15px 15px 15px'}}>
+            <Check
+              type="checkbox"
+              id={checkboxItem.id}
+              checked={checkItems[checkboxItem.id]}
+              onChange={() => handleCheckItem(checkboxItem.id)}
+            >
+              {checkboxItem.label}
+            </Check>
+          </div>
+        )
+      )}
+    </div>
+  )
+}
+
+<Canvas>
+  <Story name="Controlled checkbox indeterminate">
+    {CheckboxesIndeterminate.bind({})}
+  </Story>
+</Canvas>
+
 You can control the radio with ```value``` and ```onChange``` props.
 
 <Canvas>
