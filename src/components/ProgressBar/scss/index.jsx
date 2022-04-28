@@ -22,6 +22,10 @@ CustomProgressBar.propTypes = {
 CustomProgressBar.defaultProps = {
   now: 0,
   variant: 'info',
+  min: 0,
+  max: 100,
+  striped: false,
+  animated: false,
 };
 
 export default CustomProgressBar;
