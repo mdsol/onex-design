@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import CheckIcon from '../../../icons/CheckIcon';
-import PenEditIcon from '../../../icons/PenEdit';
-import XIcon from '../../../icons/XIcon';
-import CustomButton from '../../Buttons/scss';
+import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import CustomButton from '../../Buttons/styled';
 
 const InlineEditText = React.forwardRef((props, ref) => {
   const {
@@ -97,7 +97,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
         />
         {!isActive && (
           <div className="onex-edit-text__icon">
-            <PenEditIcon />
+            <EditRoundedIcon />
           </div>
         )}
       </div>
@@ -108,14 +108,14 @@ const InlineEditText = React.forwardRef((props, ref) => {
             variant="primary"
             onClick={handleComplete}
           >
-            <CheckIcon />
+            <DoneRoundedIcon className="status-buttons__complete-svg" />
           </CustomButton>
           <CustomButton
             className="status-buttons__cancel"
             variant="secondary"
             onClick={handleCancel}
           >
-            <XIcon />
+            <CloseRoundedIcon />
           </CustomButton>
         </div>
       )}
