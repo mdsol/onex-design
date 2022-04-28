@@ -126,4 +126,9 @@ module.exports = [
     importName: 'Typography',
     replaceUrl: ['.onex-'],
   },
+  {
+    name: 'ProgressBar',
+    importName: 'CustomProgressBar',
+    replaceUrl: ['.onex-'],
+  },
 ];

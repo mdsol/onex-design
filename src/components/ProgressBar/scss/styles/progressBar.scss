@@ -1,0 +1,19 @@
+.onex-progressbar {
+
+    &.progress {
+        height: $progressbar-height;
+        width: 100%;
+    }
+    
+    & .bg-danger {
+        background-color: $onex-progreesbar-danger !important;
+    }
+
+    & .bg-info {
+        background-color: $onex-progreesbar-info !important;
+    }
+
+    & .bg-success {
+        background-color: $onex-progreesbar-success !important;
+    }
+}

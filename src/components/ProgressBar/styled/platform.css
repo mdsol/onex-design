@@ -10101,147 +10101,61 @@ progress {
     display: none !important;
   }
 }
-.onex-avatar {
+@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: 1rem;
+  }
+}
+.progress {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 50%;
-  color: rgb(103, 110, 122);
+  height: 1rem;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
-  background-color: rgba(103, 110, 122, 0.1);
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
 }
-.onex-avatar__img {
-  object-fit: cover;
-  overflow: hidden;
-}
-.onex-avatar__icon-decorator {
-  display: none;
-}
-.onex-avatar.hover-disabled {
-  cursor: auto;
-}
-.onex-avatar:not(.hover-disabled):hover {
-  box-shadow: inset 0 0 0 1px transparent;
-  cursor: pointer;
-}
-.onex-avatar__hover {
+
+.progress-bar {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  transition: 0.2s ease;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+  overflow: hidden;
   color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  background-color: rgb(0, 112, 192);
+  transition: width 0.6s ease;
 }
-.onex-avatar:hover .onex-avatar__hover {
-  opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar {
+    transition: none;
+  }
 }
-.onex-avatar__children {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: noto-sans, sans-serif;
-  color: rgb(176, 184, 191);
-  overflow: hidden;
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
 }
-.onex-avatar--size-xs {
-  width: 1.5rem;
-  height: 1.5rem;
-  min-width: 1.5rem;
-  min-height: 1.5rem;
+
+.progress-bar-animated {
+  animation: 1s linear infinite progress-bar-stripes;
 }
-.onex-avatar--size-xs svg {
-  width: 0.938rem;
-  height: 0.938rem;
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar-animated {
+    animation: none;
+  }
 }
-.onex-avatar--size-xs .onex-avatar__children {
-  font-size: 0.5rem;
-  line-height: 0.5rem;
-  max-width: calc(1.5rem * (1 - (2 * 0.15)));
+
+.onex-progressbar.progress {
+  height: 0.25rem;
+  width: 100%;
 }
-.onex-avatar--size-xs .onex-avatar__img {
-  width: 1.5rem;
-  height: 1.5rem;
+.onex-progressbar .bg-danger {
+  background-color: rgb(217, 21, 34) !important;
 }
-.onex-avatar--size-xs .onex-avatar__hover svg {
-  width: 0.625rem;
-  height: 0.625rem;
+.onex-progressbar .bg-info {
+  background-color: rgb(0, 112, 192) !important;
 }
-.onex-avatar--size-sm {
-  width: 2rem;
-  height: 2rem;
-  min-width: 2rem;
-  min-height: 2rem;
-}
-.onex-avatar--size-sm svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-.onex-avatar--size-sm .onex-avatar__children {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  max-width: calc(2rem * (1 - (2 * 0.15)));
-}
-.onex-avatar--size-sm .onex-avatar__img {
-  width: 2rem;
-  height: 2rem;
-}
-.onex-avatar--size-sm .onex-avatar__hover svg {
-  width: 0.938rem;
-  height: 0.938rem;
-}
-.onex-avatar--size-md {
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-}
-.onex-avatar--size-md svg {
-  width: 1.563rem;
-  height: 1.563rem;
-}
-.onex-avatar--size-md .onex-avatar__children {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  max-width: calc(2.5rem * (1 - (2 * 0.15)));
-}
-.onex-avatar--size-md .onex-avatar__img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-.onex-avatar--size-md .onex-avatar__hover svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-.onex-avatar--size-lg {
-  width: 4rem;
-  height: 4rem;
-  min-width: 4rem;
-  min-height: 4rem;
-}
-.onex-avatar--size-lg svg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-.onex-avatar--size-lg .onex-avatar__children {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  max-width: calc(4rem * (1 - (2 * 0.15)));
-}
-.onex-avatar--size-lg .onex-avatar__img {
-  width: 4rem;
-  height: 4rem;
-}
-.onex-avatar--size-lg .onex-avatar__hover svg {
-  width: 2rem;
-  height: 2rem;
+.onex-progressbar .bg-success {
+  background-color: rgb(0, 126, 76) !important;
 }
