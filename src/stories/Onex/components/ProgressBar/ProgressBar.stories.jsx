@@ -1,17 +1,15 @@
-import { ProgressBar } from '../../../components';
+import { ProgressBar } from '../../../../components';
 
 const variants = ['success', 'danger', 'warning', 'info'];
 const defaultProps = {
   animated: false,
-  isChild: false,
   max: 100,
   min: 0,
   striped: false,
-  visuallyHidden: false,
 };
 
 export default {
-  title: 'Bootstrap/Components/ProgressBar',
+  title: 'Onex/Components/ProgressBar',
   component: ProgressBar,
   argTypes: {
     animated: {
@@ -23,40 +21,6 @@ export default {
         },
         type: {
           summary: 'boolean',
-        },
-      },
-    },
-    children: {
-      description: 'Child elements (only allows elements of type)',
-      table: {
-        defaultValue: {
-          summary: undefined,
-        },
-        type: {
-          summary: 'onlyProgressBar',
-        },
-      },
-    },
-    isChild: {
-      control: 'boolean',
-      table: {
-        defaultValue: {
-          summary: false,
-        },
-        type: {
-          summary: 'boolean',
-        },
-      },
-    },
-    label: {
-      control: 'text',
-      description: 'Show label that represents visual percentage. EG. 60%',
-      table: {
-        defaultValue: {
-          summary: undefined,
-        },
-        type: {
-          summary: 'node',
         },
       },
     },
@@ -121,18 +85,6 @@ export default {
         },
       },
     },
-    visuallyHidden: {
-      control: 'boolean',
-      description: "Hide's the label visually.",
-      table: {
-        defaultValue: {
-          summary: false,
-        },
-        type: {
-          summary: 'boolean',
-        },
-      },
-    },
   },
 };
 
@@ -143,7 +95,6 @@ export const Label = Template.bind({});
 Label.args = {
   ...defaultProps,
   now: 60,
-  label: '60%',
 };
 
 const variantProgressBars = (args) => {

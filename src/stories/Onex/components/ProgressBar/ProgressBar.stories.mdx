@@ -1,13 +1,12 @@
 import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
 
-import { ProgressBar } from '../../../components';
+import { ProgressBar } from '../../../../components';
 import * as stories from './ProgressBar.stories.jsx';
 
 export const variants = ['success', 'danger', 'warning', 'info'];
 
 export const defaultProps = {
   animated: false,
-  isChild: false,
   max: 100,
   min: 0,
   striped: false,
@@ -15,7 +14,7 @@ export const defaultProps = {
 };
 
 <Meta
-    title="Bootstrap/Components/ProgressBar"
+    title="Onex/Components/ProgressBar"
     argTypes={{
       animated: {
         control: 'boolean',
@@ -37,29 +36,6 @@ export const defaultProps = {
           },
           type: {
             summary: 'onlyProgressBar',
-          },
-        },
-      },
-      isChild: {
-        control: 'boolean',
-        table: {
-          defaultValue: {
-            summary: false,
-          },
-          type: {
-            summary: 'boolean',
-          },
-        },
-      },
-      label: {
-        control: 'text',
-        description: 'Show label that represents visual percentage. EG. 60%',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'node',
           },
         },
       },
@@ -162,16 +138,6 @@ Default progress bar.
 </Canvas>
 
 <ArgsTable story="Demo" />
-
-### With label
-
-Add a `label` prop to show a visible percentage. For low percentages, consider adding a min-width to ensure the label's text is fully visible.
-
-Add a `visuallyHidden` prop to hide the label visually.
-
-<Canvas>
-    <Story name="Label" story={stories.Label} />
-</Canvas>
 
 ### Contextual alternatives
 
