@@ -20,7 +20,6 @@ import {
   OverlayTrigger,
   Placeholder,
   Popover,
-  ProgressBar,
   Row,
   Spinner,
   Stack,
@@ -63,6 +62,7 @@ import Tooltip from './Tooltip/scss';
 import Typography from './Typography/scss';
 import DataGrid from './DataGrid/scss';
 import Modal from './Modal/scss';
+import ProgressBar from './ProgressBar/scss';
 
 import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
@@ -101,6 +101,7 @@ import StyledTooltip from './Tooltip/styled';
 import StyledTypography from './Typography/styled';
 import StyledDataGrid from './DataGrid/styled';
 import StyledModal from './Modal/styled';
+import StyledProgressBar from './ProgressBar/styled';
 
 export {
   Avatar,
@@ -136,6 +137,10 @@ export {
   ToggleButtonGroup,
   Tooltip,
   Typography,
+  ProgressBar,
+};
+
+export {
   ListGroup,
   Accordion,
   Alert,
@@ -151,7 +156,6 @@ export {
   Nav,
   NavDropdown,
   Offcanvas,
-  ProgressBar,
   Placeholder,
   Row,
   Col,
@@ -198,4 +202,5 @@ export {
   StyledTableName,
   StyledDataGrid,
   StyledModal,
+  StyledProgressBar,
 };

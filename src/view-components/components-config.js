@@ -1733,6 +1733,26 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'ProgressBar',
+        componentName: 'ProgressBar',
+        styledComponentName: 'ProgressBar',
+        additionalComponents: [],
+        variants: [
+          {
+            now: 10,
+            variant: 'danger',
+          },
+          {
+            now: 100,
+            variant: 'success',
+          },
+          {
+            now: 50,
+            variant: 'info',
+          },
+        ],
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',

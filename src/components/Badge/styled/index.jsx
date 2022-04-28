@@ -10,5 +10,8 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(Badge)`
-  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString).replaceAll(/\.badge.[^__]+?[.|\s]/g, handleCssString)}
+  ${() =>
+    cssString
+      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/.badge.[^__]+?[.|\s]/g, handleCssString)}
 `;

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6
+
+Switched to inline css instead of external typekit url. Navigation, Select, Tabs, TextArea, Toasts, ToggleButton, Typography StyledComponents updated. 
+
 ## 0.2.4
 
 Fixed that only styled modules were being exported.

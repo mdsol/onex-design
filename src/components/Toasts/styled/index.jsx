@@ -12,6 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(Toast)`
   ${() =>
     cssString
-      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.toast-container.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/.toast-container.[^__]+?[.|\s]/g, handleCssString)}
 `;
