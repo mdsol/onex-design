@@ -12,6 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(ToggleButtonGroup)`
   ${() =>
     cssString
-      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.btn-group.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/.btn-group.[^__]+?[.|\s]/g, handleCssString)}
 `;

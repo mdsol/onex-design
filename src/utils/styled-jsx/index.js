@@ -2,15 +2,15 @@ const fs = require('fs');
 const componentsInfo = require('./components');
 
 const getFileBody = (componentName, replaceClasses) => {
-  const cssString = replaceClasses.reduce((acc, className) => {
-    if (replaceClasses.length < 3) {
-      return `${
-        acc === 'cssString' ? ' ' : ''
-      }${acc}.replaceAll(/\\${className}.[^__]+?[.|\\s]/g, handleCssString)`;
+  const cssString = replaceClasses.reduce((acc, { className, classRegex }) => {
+    const regex = new RegExp(`${className}${classRegex}`, 'g');
+
+    if (replaceClasses.length < 2) {
+      return `${acc === 'cssString' ? ' ' : ''}${acc}.replaceAll(${regex}, handleCssString)`;
     }
     return `${
       acc === 'cssString' ? '\n    ' : ''
-    }${acc}\n      .replaceAll(/\\${className}.[^__]+?[.|\\s]/g, handleCssString)`;
+    }${acc}\n      .replaceAll(${regex}, handleCssString)`;
   }, 'cssString');
 
   return `import styled from 'styled-components';
