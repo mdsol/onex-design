@@ -10,5 +10,8 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(Pagination)`
-  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString).replaceAll(/\.pagination.[^__]+?[.|\s]/g, handleCssString)}
+  ${() =>
+    cssString
+      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/.pagination.[^__]+?[.|\s]/g, handleCssString)}
 `;

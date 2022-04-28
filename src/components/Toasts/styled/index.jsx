@@ -10,5 +10,8 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(Toast)`
-  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString).replaceAll(/\.toast-container.[^__]+?[.|\s]/g, handleCssString)}
+  ${() =>
+    cssString
+      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/.toast-container.[^__]+?[.|\s]/g, handleCssString)}
 `;
