@@ -5,7 +5,6 @@ import ExclamationFillIcon from './ExclamationFillIcon';
 import ExclamationIcon from './ExclamationIcon';
 import InfoFillIcon from './InfoFillIcon';
 import InfoRoundFillIcon from './InfoRoundFillIcon';
-import PenEditIcon from './PenEdit';
 import SearchIcon from './SearchIcon';
 import XIcon from './XIcon';
 import PersonIcon from './PersonIcon';
@@ -24,7 +23,6 @@ export {
   ExclamationIcon,
   InfoFillIcon,
   InfoRoundFillIcon,
-  PenEditIcon,
   SearchIcon,
   XIcon,
   PersonIcon,
