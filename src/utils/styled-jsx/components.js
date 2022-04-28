@@ -1,129 +1,164 @@
 // Tables components were added manually
 
+const classRegexBase = '.[^__]+?[.|\\s]';
+const classRegexBootstrap = '.[^-]+?[.|\\s]';
+
 module.exports = [
   {
     name: 'Avatar',
     importName: 'Avatar',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Badge',
     importName: 'Badge',
-    replaceUrl: ['.onex-', '.badge'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.badge', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Buttons',
     importName: 'Button',
-    replaceUrl: ['.onex-', '.btn', '.btn-'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.btn', classRegex: classRegexBase },
+      { className: '.btn-', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Check',
     importName: 'Check',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Dropdown',
     importName: 'Dropdown',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'ExpansionPanel',
     importName: 'ExpansionPanel',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'InlineEditSelect',
     importName: 'InlineEditSelect',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'InlineEditText',
     importName: 'InlineEditText',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Lozenge',
     importName: 'Lozenge',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'MenuItem',
     importName: 'MenuItem',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+  },
+  {
+    name: 'Modal',
+    importName: 'Modal',
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Navigation',
     importName: 'Navigation',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Pagination',
     importName: 'Pagination',
-    replaceUrl: ['.onex-', '.pagination'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.pagination', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Select',
     importName: 'Select',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Switch',
     importName: 'Switch',
-    replaceUrl: ['.onex-', '.form-switch'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.form-switch', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'TablePagination',
     importName: 'TablePagination',
-    replaceUrl: ['.onex-', '.tablePagination', '.tablePagination-'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.tablePagination', classRegex: classRegexBase },
+      { className: '.tablePagination-', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Tabs',
     importName: 'Tabs',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Tag',
     importName: 'Tag',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'TextArea',
     importName: 'TextArea',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'TextField',
     importName: 'TextField',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'SearchField',
     importName: 'SearchField',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Toasts',
     importName: 'Toast',
-    replaceUrl: ['.onex-', '.toast-container'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.toast-container', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'ToggleButton',
     importName: 'ToggleButton',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'ToggleButtonGroup',
     importName: 'ToggleButtonGroup',
-    replaceUrl: ['.onex-', 'btn-group'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.btn-group', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Tooltip',
     importName: 'Tooltip',
-    replaceUrl: ['.onex-', '.tooltip', '.popover'],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.tooltip', classRegex: classRegexBootstrap },
+      { className: '.popover', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Typography',
     importName: 'Typography',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
 ];
