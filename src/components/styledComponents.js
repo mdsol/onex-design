@@ -35,6 +35,7 @@ import StyledTooltip from './Tooltip/styled';
 import StyledTypography from './Typography/styled';
 import StyledDataGrid from './DataGrid/styled';
 import StyledModal from './Modal/styled';
+import StyledProgressBar from './ProgressBar/styled';
 
 export {
   StyledAvatar,
@@ -72,4 +73,5 @@ export {
   StyledTableName,
   StyledDataGrid,
   StyledModal,
+  StyledProgressBar,
 };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CustomProgressBar from '../scss';
+import ProgressBar from '../scss';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -9,6 +9,6 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 // eslint-disable-next-line prefer-template
 const handleCssString = (str) => '&' + str;
 
-const StyledComponent = styled(CustomProgressBar)`
+const StyledComponent = styled(ProgressBar)`
   ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)}
 `;

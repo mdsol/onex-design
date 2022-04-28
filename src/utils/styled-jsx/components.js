@@ -128,7 +128,7 @@ module.exports = [
   },
   {
     name: 'ProgressBar',
-    importName: 'CustomProgressBar',
+    importName: 'ProgressBar',
     replaceUrl: ['.onex-'],
   },
 ];

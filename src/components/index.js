@@ -101,6 +101,7 @@ import StyledTooltip from './Tooltip/styled';
 import StyledTypography from './Typography/styled';
 import StyledDataGrid from './DataGrid/styled';
 import StyledModal from './Modal/styled';
+import StyledProgressBar from './ProgressBar/styled';
 
 export {
   Avatar,
@@ -201,4 +202,5 @@ export {
   StyledTableName,
   StyledDataGrid,
   StyledModal,
+  StyledProgressBar,
 };

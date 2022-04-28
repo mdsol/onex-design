@@ -12,7 +12,11 @@ const CustomProgressBar = (props) => {
 
 CustomProgressBar.propTypes = {
   now: PropTypes.number,
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf(['info', 'danger', 'success', 'warning']).isRequired,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  striped: PropTypes.bool,
+  animated: PropTypes.bool
 };
 
 CustomProgressBar.defaultProps = {
