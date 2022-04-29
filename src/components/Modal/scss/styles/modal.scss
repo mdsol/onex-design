@@ -1,9 +1,16 @@
-.modal-header .btn-close {
-    box-sizing: content-box;
-    padding: 1rem;
-    color: #000;
-    background: $btn-close-bg;
-    border: 0;
-    border-radius: 0.25rem;
-    opacity: 0.5;
+.onex-modal {
+    .modal-content {
+        border: 0rem;
+    }
+    .modal-header .btn-close {
+        box-sizing: content-box;
+        padding: 1rem;
+        color: #000;
+        background: $btn-close-bg;
+        border: 0rem;
+        border-radius: 0.25rem;
+        opacity: 0.5;
+        padding: 0.5rem 0.5rem;
+        margin: -0.5rem 0rem -0.5rem auto;
+    }
 }

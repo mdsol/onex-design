@@ -87,7 +87,7 @@ const DevExamples = () => {
           secondaryActionName="Secondary Action"
           primaryActionName="Save Changes"
           size="lg"
-          showFooter={false}
+          showFooter
         >
           Woohoo, youre reading this text in a modal!
         </Modal>
