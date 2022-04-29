@@ -166,6 +166,6 @@ module.exports = [
   {
     name: 'ProgressBar',
     importName: 'ProgressBar',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
 ];
