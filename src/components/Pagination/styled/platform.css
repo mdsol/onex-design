@@ -10189,31 +10189,38 @@ progress {
   border-bottom-right-radius: 0.2rem;
 }
 
-.pagination button {
+.onex-pagination button {
   background-color: rgb(255, 255, 255);
   border: none;
   display: flex;
   align-items: center;
   margin-right: 1.5rem;
 }
-.pagination button:hover svg path {
-  fill: rgb(0, 112, 192);
+.onex-pagination button > svg {
+  width: 0.875rem;
+  height: 0.875rem;
 }
-.pagination .disabled:hover svg path {
+.onex-pagination button > svg path {
   fill: rgb(176, 184, 191);
 }
-.pagination button:last-child {
+.onex-pagination button:hover svg path {
+  fill: rgb(0, 112, 192);
+}
+.onex-pagination .disabled:hover svg path {
+  fill: rgb(176, 184, 191);
+}
+.onex-pagination button:last-child {
   margin-right: 0rem;
   margin-left: 1rem;
   transform: rotate(180deg);
 }
-.pagination .page-item {
+.onex-pagination .page-item {
   margin-right: 0.5rem;
 }
-.pagination .page-item:focus {
+.onex-pagination .page-item:focus {
   border-width: 0rem;
 }
-.pagination .page-item .page-link {
+.onex-pagination .page-item .page-link {
   border-width: 0rem;
   display: flex;
   align-items: center;
@@ -10223,39 +10230,39 @@ progress {
   transition: none;
   text-decoration: none;
 }
-.pagination .page-item .page-link:hover {
+.onex-pagination .page-item .page-link:hover {
   background-color: rgb(0, 40, 85);
   color: rgb(255, 255, 255);
 }
-.pagination .pagination_arrow .page-link {
+.onex-pagination .pagination_arrow .page-link {
   background-color: rgb(255, 255, 255);
-  color: rgb(0, 112, 192);
+  color: rgb(176, 184, 191);
 }
-.pagination .pagination_arrow .page-link:hover {
+.onex-pagination .pagination_arrow .page-link:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
 }
-.pagination .pagination_arrow--diasabled .page-link {
+.onex-pagination .pagination_arrow--diasabled .page-link {
   color: rgb(176, 184, 191);
 }
 
-.pagination .active {
+.onex-pagination .active {
   border-radius: 0.375rem;
 }
-.pagination .active .page-link {
+.onex-pagination .active .page-link {
   color: rgb(255, 255, 255);
 }
-.pagination .active .page-link:hover {
+.onex-pagination .active .page-link:hover {
   background-color: rgb(0, 112, 192);
 }
 
-.pagination--sm .page-item .page-link {
+.onex-pagination--sm .page-item .page-link {
   width: 1.75rem;
   height: 1.75rem;
   font-size: 0.75rem;
 }
 
-.pagination--lg .page-item .page-link {
+.onex-pagination--lg .page-item .page-link {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 0.875rem;

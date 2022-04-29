@@ -16,6 +16,9 @@
         }
         &:hover + .onex-edit-text__icon {
             display: inline-flex;
+          & > svg {
+            fill: $onex-inline-edit-icon-color;
+          }
         }
         &__active {
             border-color: $onex-inline-edit-active-border-color;
@@ -28,16 +31,28 @@
         }
     }
 }
-
-.onex-text-field--complete {
+.onex-text-field {
+  min-width: $onex-inline-edit-min-width;
+  max-width: $onex-inline-edit-max-width;
+  position: relative;
+  &--complete {
     font-weight: 600;
     line-height: 14px;
+  }
 }
+
 
 .status-buttons {
     display: flex;
     justify-content: flex-end;
     margin-top: 4px;
+
+  &__complete, &__cancel {
+    min-width: $onex-inline-edit-status-button-width!important;
+    width: $onex-inline-edit-status-button-width;
+    height: $onex-inline-edit-status-button-height!important;
+  }
+
     &__complete {
         margin-right: 5px;
         padding: 0.375rem;

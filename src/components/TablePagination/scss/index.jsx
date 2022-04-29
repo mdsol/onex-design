@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-import { NextArrowIcon } from '../../../icons';
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 
 const TablePagination = ({
   size,
@@ -21,10 +21,10 @@ const TablePagination = ({
 }) => {
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
 
-  const tablePaginationClassNames = classNames('tablePagination', {
+  const tablePaginationClassNames = classNames('onex-table-pagination', {
     [className]: className,
-    'tablePagination--lg': size === 'lg',
-    'tablePagination--sm': size === 'sm',
+    'onex-table-pagination--lg': size === 'lg',
+    'onex-table-pagination--sm': size === 'sm',
   });
 
   const handleRowsPerPageSelect = (e) => {
@@ -68,7 +68,7 @@ const TablePagination = ({
           disabled={!canPreviousPage}
           onClick={handlePrevActiveRow}
         >
-          <NextArrowIcon />
+          <ArrowBackIosNewRoundedIcon />
         </button>
         <button
           type="button"
@@ -76,7 +76,7 @@ const TablePagination = ({
           disabled={!canNextPage}
           onClick={handleNextActiveRow}
         >
-          <NextArrowIcon />
+          <ArrowBackIosNewRoundedIcon />
         </button>
       </div>
     </div>

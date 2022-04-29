@@ -1,10 +1,17 @@
-.pagination {
+.onex-pagination {
     button {
       background-color: $white;
       border: none;
       display: flex;
       align-items: center;
       margin-right: $pagination-button-margin;
+      & > svg {
+        width: $pagination-next-width;
+        height: $pagination-next-height;
+      }
+      & > svg path {
+        fill: $pagination-arrow-color;
+      }
       &:hover {
         svg path {
           fill: $pagination-next-color-hover;
@@ -55,7 +62,7 @@
   }
 }
 
-.pagination .active{
+.onex-pagination .active{
   border-radius: $pagination-item-border-radius;
   .page-link {
     color:$white;
@@ -64,13 +71,13 @@
     }
   }
 }
-.pagination--sm .page-item  .page-link {
+.onex-pagination--sm .page-item  .page-link {
   width: $pagination-item-sm-size;
   height: $pagination-item-sm-size;
   font-size: $pagination-item-sm-font-size;
 }
 
-.pagination--lg .page-item  .page-link {
+.onex-pagination--lg .page-item  .page-link {
   width: $pagination-item-lg-size;
   height: $pagination-item-lg-size;
   font-size: $pagination-item-lg-font-size;
