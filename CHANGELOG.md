@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.7
+
+Modal header css updates
 ## 0.2.6
 
 Switched to inline css instead of external typekit url. Navigation, Select, Tabs, TextArea, Toasts, ToggleButton, Typography StyledComponents updated. 
