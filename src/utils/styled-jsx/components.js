@@ -63,7 +63,10 @@ module.exports = [
   {
     name: 'Modal',
     importName: 'Modal',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.modal', classRegex: classRegexBootstrap },
+    ],
   },
   {
     name: 'Navigation',
