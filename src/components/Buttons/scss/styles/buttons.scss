@@ -1,11 +1,13 @@
 @import 'mixins';
 
 .onex-btn {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  gap: $onex-btn-size-gap;
+  &.btn {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    gap: $onex-btn-size-gap;
+  }
 
   .onex-btn__decorator {
     display: none;

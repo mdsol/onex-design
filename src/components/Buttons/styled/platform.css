@@ -1,4 +1,3 @@
-
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10601,16 +10600,18 @@ progress {
 }
 
 .onex-btn {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  gap: 0.25rem;
   /* primary */
   /* secondary */
   /* link */
   /* icon-link */
   /* only icon child */
+}
+.onex-btn.btn {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  gap: 0.25rem;
 }
 .onex-btn .onex-btn__decorator {
   display: none;

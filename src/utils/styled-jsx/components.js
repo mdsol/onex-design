@@ -22,8 +22,7 @@ module.exports = [
     importName: 'Button',
     replaceUrl: [
       { className: '.onex-', classRegex: classRegexBase },
-      { className: '.btn', classRegex: classRegexBase },
-      { className: '.btn-', classRegex: classRegexBase },
+      { className: '.btn', classRegex: classRegexBootstrap },
     ],
   },
   {
@@ -64,7 +63,10 @@ module.exports = [
   {
     name: 'Modal',
     importName: 'Modal',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.modal', classRegex: classRegexBootstrap },
+    ],
   },
   {
     name: 'Navigation',
@@ -164,6 +166,6 @@ module.exports = [
   {
     name: 'ProgressBar',
     importName: 'ProgressBar',
-    replaceUrl: ['.onex-'],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
 ];
