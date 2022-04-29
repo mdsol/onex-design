@@ -97,11 +97,7 @@ module.exports = [
   {
     name: 'TablePagination',
     importName: 'TablePagination',
-    replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
-      { className: '.tablePagination', classRegex: classRegexBase },
-      { className: '.tablePagination-', classRegex: classRegexBase },
-    ],
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
   },
   {
     name: 'Tabs',
