@@ -48,7 +48,7 @@ module.exports = [
   {
     name: 'InlineEditText',
     importName: 'InlineEditText',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-text-field', classRegex: classRegexBase }],
   },
   {
     name: 'Lozenge',
