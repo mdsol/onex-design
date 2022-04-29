@@ -12,6 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(Pagination)`
   ${() =>
     cssString
-      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/.pagination.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.pagination.[^__]+?[.|\s]/g, handleCssString)}
 `;

@@ -12,7 +12,7 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(TablePagination)`
   ${() =>
     cssString
-      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/.tablePagination.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/.tablePagination-.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.tablePagination.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.tablePagination-.[^__]+?[.|\s]/g, handleCssString)}
 `;

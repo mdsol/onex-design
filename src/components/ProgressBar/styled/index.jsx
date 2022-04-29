@@ -10,5 +10,5 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(ProgressBar)`
-  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)}
+  ${() => cssString.replaceAll(/\undefinedundefined/g, handleCssString)}
 `;

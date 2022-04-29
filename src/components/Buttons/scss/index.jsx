@@ -4,7 +4,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 const CustomButton = React.forwardRef((props, ref) => {
-  const { children, className, dataTestId, type, ...accProps } = props;
+  const { children, className, dataTestId, type, leadingIcon, trailingIcon, ...accProps } = props;
   const buttonClassNames = classNames('onex-btn', {
     [className]: className,
     'onex-btn--default': type === 'default',
@@ -13,7 +13,9 @@ const CustomButton = React.forwardRef((props, ref) => {
 
   return (
     <Button ref={ref} className={buttonClassNames} data-test-id={dataTestId} {...accProps}>
+      {leadingIcon && leadingIcon}
       {children}
+      {trailingIcon && trailingIcon}
     </Button>
   );
 });
@@ -26,6 +28,8 @@ CustomButton.propTypes = {
   size: PropTypes.oneOf(['lg', 'sm']),
   onClick: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  leadingIcon: PropTypes.node,
+  trailingIcon: PropTypes.node,
   dataTestId: PropTypes.string,
 };
 
@@ -36,6 +40,8 @@ CustomButton.defaultProps = {
   size: 'sm',
   type: 'default',
   children: undefined,
+  trailingIcon: undefined,
+  leadingIcon: undefined,
   onClick: undefined,
   dataTestId: undefined,
 };

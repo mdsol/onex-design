@@ -22,8 +22,7 @@ module.exports = [
     importName: 'Button',
     replaceUrl: [
       { className: '.onex-', classRegex: classRegexBase },
-      { className: '.btn', classRegex: classRegexBase },
-      { className: '.btn-', classRegex: classRegexBase },
+      { className: '.btn', classRegex: classRegexBootstrap },
     ],
   },
   {

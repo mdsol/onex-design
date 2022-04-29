@@ -12,7 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(Button)`
   ${() =>
     cssString
-      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/.btn.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/.btn-.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.btn.[^-]+?[.|\s]/g, handleCssString)}
 `;

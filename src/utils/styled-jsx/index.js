@@ -3,7 +3,7 @@ const componentsInfo = require('./components');
 
 const getFileBody = (componentName, replaceClasses) => {
   const cssString = replaceClasses.reduce((acc, { className, classRegex }) => {
-    const regex = new RegExp(`${className}${classRegex}`, 'g');
+    const regex = new RegExp(`\\${className}${classRegex}`, 'g');
 
     if (replaceClasses.length < 2) {
       return `${acc === 'cssString' ? ' ' : ''}${acc}.replaceAll(${regex}, handleCssString)`;

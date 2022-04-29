@@ -12,6 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(Switch)`
   ${() =>
     cssString
-      .replaceAll(/.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/.form-switch.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.form-switch.[^__]+?[.|\s]/g, handleCssString)}
 `;
