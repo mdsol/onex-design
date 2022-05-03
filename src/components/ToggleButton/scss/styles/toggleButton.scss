@@ -2,7 +2,7 @@
 
 .btn-group.btn-group-sm .onex-toggle-btn.btn,
 .onex-toggle__btn.btn.btn-sm {
-    @include button-size(
+    @include toggle-button-size(
         $toggle-padding-y-sm,
         $toggle-padding-x-sm,
         $toggle-size-sm,
@@ -18,7 +18,7 @@
 
 .btn-group.btn-group-lg .onex-toggle__btn.btn,
 .onex-toggle__btn.btn.btn-lg {
-    @include button-size(
+    @include toggle-button-size(
         $toggle-padding-y-lg,
         $toggle-padding-x-lg,
         $toggle-size-lg,

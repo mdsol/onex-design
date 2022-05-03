@@ -14,5 +14,7 @@ const StyledComponent = styled(Tooltip)`
     cssString
       .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
       .replaceAll(/\.tooltip[^-]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.popover.[^__]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.popover.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.fade.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.bs-tooltip.[^__]+?[.|\s]/g, handleCssString)}
 `;
