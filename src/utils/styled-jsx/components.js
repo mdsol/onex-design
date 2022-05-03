@@ -1,7 +1,7 @@
 // Tables components were added manually
 
 const classRegexBase = '.[^__]+?[.|\\s]';
-const classRegexBootstrap = '.[^-]+?[.|\\s]';
+const classRegexBootstrap = '[^-]+?[.|\\s]';
 
 module.exports = [
   {
