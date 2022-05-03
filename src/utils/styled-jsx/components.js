@@ -33,12 +33,12 @@ module.exports = [
   {
     name: 'Dropdown',
     importName: 'Dropdown',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-dropdown', classRegex: classRegexBase }],
   },
   {
     name: 'ExpansionPanel',
     importName: 'ExpansionPanel',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-expansionPanel', classRegex: classRegexBase }],
   },
   {
     name: 'InlineEditSelect',

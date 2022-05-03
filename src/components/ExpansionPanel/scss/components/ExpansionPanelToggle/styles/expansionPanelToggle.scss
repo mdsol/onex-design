@@ -1,26 +1,31 @@
 .onex-expansionPanel {
-    &.show &-toggle__icon {
-        transform: rotateX(-180deg);
-        transition: transform ease-in-out 0.15s;
+  &.show &__toggle__icon {
+    transform: rotateX(-180deg);
+    transition: transform ease-in-out 0.15s;
+  }
+
+  &__toggle {
+    &:focus, &.focus, &:active:focus {
+      box-shadow: none;
     }
 
-    &-toggle {
-        &__children {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        &__title {
-            padding: 0.5rem;
-        }
-
-        &__icon {
-            color: $btn-toggle-icon-color;
-        }
-
-        &:disabled &__icon {
-            color: $btn-toggle-icon-disabled-color;
-        }
+    &__children {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    &__title {
+      padding: 0.5rem;
+    }
+
+    &__icon {
+      font-size: 1.25rem !important;
+      color: $btn-toggle-icon-color;
+    }
+
+    &:disabled &__icon {
+      color: $btn-toggle-icon-disabled-color;
+    }
+  }
 }

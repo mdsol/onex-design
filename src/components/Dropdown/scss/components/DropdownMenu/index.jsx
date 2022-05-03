@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import TextField from '../../../../TextField/styled';
+import SearchField from '../../../../SearchField/scss';
 
 const CustomMenu = React.forwardRef(({ children, style, className, isSearchable }, ref) => {
   const [value, setValue] = useState('');
@@ -9,13 +9,13 @@ const CustomMenu = React.forwardRef(({ children, style, className, isSearchable 
   return (
     <div ref={ref} style={style} className={className}>
       {isSearchable && (
-        <TextField
+        <SearchField
           className="dropdown-menu--search"
           autoFocus
-          showDefaultIcon
           placeholder="Search"
           onChange={(val) => setValue(val)}
           value={value}
+          size="sm"
         />
       )}
       <ul className="dropdown-menu--list">

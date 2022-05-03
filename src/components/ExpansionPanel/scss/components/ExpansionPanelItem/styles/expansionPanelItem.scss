@@ -1,4 +1,4 @@
-.onex-expansionPanel-item {
+.onex-expansionPanel__item {
     svg path {
         fill: $black;
     }
@@ -75,17 +75,17 @@
             }
         }
 
-        .onex-expansionPanel-item__icon svg path {
+        .onex-expansionPanel__item__icon svg path {
             fill: $menu-item-with-icon-active-color;
         }
     }
 
-    &--unavailable.onex-expansionPanel-item--icons {
-        .onex-expansionPanel-item__icon__leading svg path {
+    &--unavailable.onex-expansionPanel__item--icons {
+        .onex-expansionPanel__item__icon__leading svg path {
             fill: $menu-item-disabled-color;
         }
 
-        .onex-expansionPanel-item__icon__trailing svg path {
+        .onex-expansionPanel__item__icon__trailing svg path {
             fill: $menu-item-with-icon-active-color;
         }
     }
