@@ -13,5 +13,5 @@ const StyledComponent = styled(ProgressBar)`
   ${() =>
     cssString
       .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.progress.[^-]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.progress[^-]+?[.|\s]/g, handleCssString)}
 `;

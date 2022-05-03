@@ -13,5 +13,5 @@ const StyledComponent = styled(Modal)`
   ${() =>
     cssString
       .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
-      .replaceAll(/\.modal.[^-]+?[.|\s]/g, handleCssString)}
+      .replaceAll(/\.modal[^-]+?[.|\s]/g, handleCssString)}
 `;
