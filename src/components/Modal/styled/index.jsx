@@ -12,6 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(Modal)`
   ${() =>
     cssString
-      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.onex-modal.[^__]+?[.|\s]/g, handleCssString)
       .replaceAll(/\.modal[^-]+?[.|\s]/g, handleCssString)}
 `;

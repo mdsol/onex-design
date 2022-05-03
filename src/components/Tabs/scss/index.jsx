@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Navigation from '../../Navigation/styled';
+import Navigation from '../../Navigation/scss';
 
 const Tabs = (props) => {
   const {

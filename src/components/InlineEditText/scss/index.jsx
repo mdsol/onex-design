@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import CustomButton from '../../Buttons/styled';
+import CustomButton from '../../Buttons/scss';
 
 const InlineEditText = React.forwardRef((props, ref) => {
   const {

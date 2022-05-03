@@ -64,7 +64,7 @@ module.exports = [
     name: 'Modal',
     importName: 'Modal',
     replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.onex-modal', classRegex: classRegexBase },
       { className: '.modal', classRegex: classRegexBootstrap },
     ],
   },
@@ -128,7 +128,7 @@ module.exports = [
     name: 'Toasts',
     importName: 'Toast',
     replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.onex-toast', classRegex: classRegexBase },
       { className: '.toast-container', classRegex: classRegexBase },
     ],
   },

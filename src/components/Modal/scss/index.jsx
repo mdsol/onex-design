@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import classNames from 'classnames';
 
-import Button from '../../Buttons/styled';
-import Typography from '../../Typography/styled';
+import Button from '../../Buttons/scss';
+import Typography from '../../Typography/scss';
 
 const CustomModal = ({
   handleClose,

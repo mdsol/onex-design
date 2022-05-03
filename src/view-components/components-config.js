@@ -13,7 +13,10 @@ import {
   BugReportRounded,
 } from '@mui/icons-material';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import { Avatar, Badge, Button, ToggleButton } from '../components';
+import Avatar from '../components/Avatar/scss';
+import Badge from '../components/Badge/scss';
+import Button from '../components/Buttons/scss';
+import ToggleButton from '../components/ToggleButton/scss';
 
 const passwordHelpText = {
   strong: 'Strong',
@@ -48,7 +51,7 @@ export const config = {
       {
         name: 'Avatar',
         componentName: 'Avatar',
-        styledComponentName: 'Avatar',
+        styledComponentName: 'StyledAvatar',
         additionalComponents: [],
         variants: [
           {
