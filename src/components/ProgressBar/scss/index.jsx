@@ -16,7 +16,8 @@ CustomProgressBar.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   striped: PropTypes.bool,
-  animated: PropTypes.bool
+  animated: PropTypes.bool,
+  className: PropTypes.string
 };
 
 CustomProgressBar.defaultProps = {
@@ -26,6 +27,7 @@ CustomProgressBar.defaultProps = {
   max: 100,
   striped: false,
   animated: false,
+  className: '',
 };
 
 export default CustomProgressBar;
