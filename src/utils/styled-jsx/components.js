@@ -66,6 +66,8 @@ module.exports = [
     replaceUrl: [
       { className: '.onex-modal', classRegex: classRegexBase },
       { className: '.modal', classRegex: classRegexBootstrap },
+      { className: '.fade', classRegex: classRegexBase },
+      { className: '.show', classRegex: classRegexBase },
     ],
   },
   {
