@@ -49,7 +49,6 @@ const CustomSelect = ({
   isDisabled,
   size,
   label,
-  icon,
   helpText,
   isInvalid,
   errorMessage,
@@ -82,8 +81,8 @@ const CustomSelect = ({
       onSelect?.([option]);
     }
 
-    setSelectedOptions([...selectedOptions, ...option]);
-    return onSelect?.([...selectedOptions, ...option]);
+    setSelectedOptions([...option]);
+    return onSelect?.([...option]);
   };
 
   return (
@@ -125,14 +124,9 @@ const CustomSelect = ({
           isMulti={isMulti}
           options={options}
           isDisabled={isDisabled}
-          icon={icon}
           components={{
             // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            Control: ({ children, ...args }) => (
-              <Control {...args} icon={icon}>
-                {children}
-              </Control>
-            ),
+            Control: ({ children, ...args }) => <Control {...args}>{children}</Control>,
             // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
             MenuList,
             MultiValueRemove,
@@ -169,7 +163,6 @@ CustomSelect.propTypes = {
   options: PropTypes.arrayOf(optionType),
   size: PropTypes.oneOf(['lg', 'sm']),
   label: PropTypes.string,
-  icon: PropTypes.node,
   helpText: PropTypes.string,
   isMulti: PropTypes.bool,
   isDisabled: PropTypes.bool,
@@ -189,7 +182,6 @@ CustomSelect.defaultProps = {
   size: 'sm',
   label: undefined,
   helpText: undefined,
-  icon: undefined,
   isMulti: false,
   isDisabled: false,
   isInvalid: false,

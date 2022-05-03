@@ -988,7 +988,6 @@ export const config = {
             size: 'lg',
             className: 'select',
             dataTestId: 'select',
-            icon: <FlutterDashIcon />,
             options: [
               { value: 'chocolate', label: 'Chocolate' },
               { value: 'strawberry', label: 'Strawberry' },
