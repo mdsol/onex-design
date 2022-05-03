@@ -152,6 +152,8 @@ module.exports = [
       { className: '.onex-', classRegex: classRegexBase },
       { className: '.tooltip', classRegex: classRegexBootstrap },
       { className: '.popover', classRegex: classRegexBase },
+      { className: '.fade', classRegex: classRegexBase },
+      { className: '.bs-tooltip', classRegex: classRegexBase },
     ],
   },
   {

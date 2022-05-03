@@ -51,7 +51,7 @@ export const config = {
       {
         name: 'Avatar',
         componentName: 'Avatar',
-        styledComponentName: 'StyledAvatar',
+        styledComponentName: 'Avatar',
         additionalComponents: [],
         variants: [
           {
