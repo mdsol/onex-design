@@ -1,27 +1,11 @@
+import { useEffect, useState, memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Check from '../../Check/scss';
-
-const Control = ({ children, ...props }) => (
-  <components.Control {...props}>
-    {props.icon && <span className="onex-select__icon">{props.icon}</span>} {children}
-  </components.Control>
-);
-
-Control.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  icon: PropTypes.node,
-};
-
-Control.defaultProps = {
-  children: undefined,
-  icon: undefined,
-};
 
 const MultiValueRemove = (props) => (
   <components.MultiValueRemove {...props}>
@@ -29,19 +13,28 @@ const MultiValueRemove = (props) => (
   </components.MultiValueRemove>
 );
 
-// eslint-disable-next-line react/prop-types
-const MenuList = (props) => <components.MenuList {...props}>{props.children}</components.MenuList>;
-const Option = ({ selectedOptions, ...props }) => {
+const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
   const checkedValue = selectedOptions.some((elem) => elem.value === props.value);
 
   return (
-    <components.Option {...props}>
-      <Check id={props.children} checked={checkedValue} className="multiselect-check">
-        {props.children}
-      </Check>
+    <components.Option
+      {...props}
+      className={classNames({ 'onex-select__option--text': !showCheckInOption })}
+    >
+      {showCheckInOption ? (
+        <Check id={props.children} checked={checkedValue} className="multiselect-check">
+          {props.children}
+        </Check>
+      ) : (
+        props.children
+      )}
     </components.Option>
   );
 };
+
+/*
+ * Select component
+ */
 
 const CustomSelect = ({
   className,
@@ -55,6 +48,8 @@ const CustomSelect = ({
   selectedValues,
   onSelect,
   options,
+  groupedOptions,
+  showCheckInOption,
   dataTestId,
   isAsync,
   onLoadOptions,
@@ -95,21 +90,13 @@ const CustomSelect = ({
           classNamePrefix="onex-select"
           name="search"
           components={{
-            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            Control: ({ children, ...args }) => (
-              <Control {...args} icon={icon}>
-                {children}
-              </Control>
-            ),
             MultiValueRemove,
-            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            MenuList,
-            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            Option: ({ children, ...args }) => (
+            // eslint-disable-next-line react/prop-types
+            Option: memo(({ children, ...args }) => (
               <Option {...args} selectedOptions={selectedOptions}>
                 {children}
               </Option>
-            ),
+            )),
           }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}
@@ -122,20 +109,20 @@ const CustomSelect = ({
         <Select
           classNamePrefix="onex-select"
           isMulti={isMulti}
-          options={options}
+          options={groupedOptions.length ? groupedOptions : options}
           isDisabled={isDisabled}
           components={{
-            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            Control: ({ children, ...args }) => <Control {...args}>{children}</Control>,
-            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            MenuList,
             MultiValueRemove,
-            // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-            Option: ({ children, ...args }) => (
-              <Option {...args} selectedOptions={selectedOptions}>
+            // eslint-disable-next-line react/prop-types
+            Option: memo(({ children, ...args }) => (
+              <Option
+                {...args}
+                showCheckInOption={showCheckInOption}
+                selectedOptions={selectedOptions}
+              >
                 {children}
               </Option>
-            ),
+            )),
           }}
           onChange={handleChange}
           aria-invalid
@@ -156,11 +143,32 @@ const optionType = PropTypes.shape({
   label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 });
 
+const groupedOptions = PropTypes.shape({
+  label: PropTypes.string,
+  options: PropTypes.arrayOf(optionType),
+});
+
+Option.propTypes = {
+  selectedOptions: PropTypes.arrayOf(optionType),
+  showCheckInOption: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+};
+
+Option.defaultProps = {
+  selectedOptions: [],
+  showCheckInOption: false,
+  value: [],
+  children: undefined,
+};
+
 CustomSelect.propTypes = {
   className: PropTypes.string,
   errorMessage: PropTypes.string,
   selectedValues: PropTypes.arrayOf(optionType),
   options: PropTypes.arrayOf(optionType),
+  groupedOptions: PropTypes.arrayOf(groupedOptions),
+  showCheckInOption: PropTypes.bool,
   size: PropTypes.oneOf(['lg', 'sm']),
   label: PropTypes.string,
   helpText: PropTypes.string,
@@ -186,6 +194,8 @@ CustomSelect.defaultProps = {
   isDisabled: false,
   isInvalid: false,
   options: [],
+  showCheckInOption: true,
+  groupedOptions: [],
   onSelect: undefined,
   dataTestId: '',
   isAsync: false,

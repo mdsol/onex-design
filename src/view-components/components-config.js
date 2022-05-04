@@ -975,13 +975,30 @@ export const config = {
             size: 'sm',
             className: 'select',
             dataTestId: 'select',
-            isDisabled: true,
             label: 'Select label',
             helpText: 'Some help text',
             options: [
               { value: 'chocolate', label: 'Chocolate' },
               { value: 'strawberry', label: 'Strawberry' },
               { value: 'vanilla', label: 'Vanilla' },
+            ],
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
             ],
           },
           {
