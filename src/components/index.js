@@ -21,7 +21,6 @@ import {
   Placeholder,
   Popover,
   Row,
-  Spinner,
   Stack,
 } from 'react-bootstrap';
 import Avatar from './Avatar/scss';
@@ -63,6 +62,7 @@ import Typography from './Typography/scss';
 import DataGrid from './DataGrid/scss';
 import Modal from './Modal/scss';
 import ProgressBar from './ProgressBar/scss';
+import Spinner from './Spinner/scss';
 
 import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
@@ -138,6 +138,7 @@ export {
   Tooltip,
   Typography,
   ProgressBar,
+  Spinner,
 };
 
 export {
@@ -148,7 +149,6 @@ export {
   Card,
   Carousel,
   Figure,
-  Spinner,
   Image,
   Modal,
   Navbar,

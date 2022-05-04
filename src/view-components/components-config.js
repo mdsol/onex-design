@@ -1755,6 +1755,24 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'Spinner',
+        componentName: 'Spinner',
+        styledComponentName: 'Spinner',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'lg',
+          },
+          {
+            size: 'md',
+            animation: 'grow',
+          },
+          {
+            size: 'sm',
+          },
+        ],
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',
