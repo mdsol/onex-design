@@ -36,6 +36,11 @@
       @include bg-color($btn-primary-hover-bg-color);
     }
 
+    &.btn-primary.active,
+    &.btn-primary:active {
+      @include bg-color($btn-primary-active-bg-color);
+    }
+
     /* secondary, tertiary */
     &.btn-secondary {
       border: 1px solid $btn-secondary-border-color;
@@ -70,6 +75,18 @@
     &.btn-tertiary.disabled {
       opacity: $btn-dropdown-disabled-opacity;
       color: $btn-secondary-disabled-text-color;
+    }
+
+    &.btn-secondary.active,
+    &.btn-secondary:active,
+    &.btn-tertiary.active,
+    &.btn-tertiary:active {
+      color: $btn-secondary-active-text-color;
+      background-color: $btn-secondary-active-bg-color;
+      border-color: $btn-secondary-active-border-color;
+      &.dropdown-toggle::after {
+        @include dropdown-after-image($btn-secondary-active-text-color);
+      }
     }
 
     &.btn-md {
@@ -140,7 +157,9 @@
 
     &.btn-primary {
       @include bg-color($btn-primary-active-bg-color);
-
+      &:focus {
+        box-shadow: none;
+      }
     }
 
     &.btn-secondary,
@@ -148,6 +167,9 @@
       color: $btn-secondary-active-text-color;
       background-color: $btn-secondary-active-bg-color;
       border-color: $btn-secondary-active-border-color;
+      &:focus {
+        box-shadow: none;
+      }
 
       &.dropdown-toggle::after {
         @include dropdown-after-image($btn-secondary-active-text-color);
@@ -161,11 +183,8 @@
     font-size: $menu-font-size;
     line-height: $menu-line-height;
     padding: $menu-padding-y $menu-padding-x;
-
-    &--search {
-      margin: $menu-search-padding-y $menu-search-padding-x $menu-item-padding-y $menu-search-padding-x;
-      min-width: $menu-search-min-width;
-    }
+    border-color: $menu-border-color;
+    box-shadow: 0 0.25rem 1.5rem $menu-box-shadow-color;
 
     &--list {
       padding-left: 0;
@@ -202,6 +221,14 @@
       &.disabled, &:disabled {
         opacity: $menu-item-opacity;
       }
+    }
+
+    .dropdown-divider {
+      margin: 0;
+      border-top: 1px solid $divider-color;
+      color: $divider-color;
+      background-color: $divider-color;
+      opacity: 1;
     }
   }
 }
