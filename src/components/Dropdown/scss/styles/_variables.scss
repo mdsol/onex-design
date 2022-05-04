@@ -16,10 +16,12 @@ $menu-max-height: 15.5rem;
 $menu-list-margin-y: 0.75rem;
 $menu-list-max-height: 10rem;
 $menu-border-radius: $component-border-radius-lg;
+$menu-border-color: $secondary-900-opacity-10;
 $menu-font-size: $font-size-lg;
 $menu-line-height: $line-height-lg;
 $menu-padding-x: 0;
 $menu-padding-y: 0.25rem;
+$menu-box-shadow-color: rgba(0, 28, 59, 0.12);
 $menu-search-padding-x: 0.75rem;
 $menu-search-padding-y: 0.5rem;
 $menu-search-min-width: 13.5rem;
@@ -27,11 +29,13 @@ $menu-item-padding-y: $dropdown-menu-item-padding-x-lg;
 $menu-item-padding-x: 0.75rem;
 $menu-item-color: $tertiary-600;
 $menu-item-opacity: 0.4;
-$menu-item-min-width: 13.5rem;
+$menu-item-min-width: 12.5rem;
+
+$divider-color: $secondary-900-opacity-10;
 
 $menu-item-hover-background-color: $secondary-400-opacity-01;
-$menu-item-active-background-color: $tertiary-500;
-$menu-item-active-hover-background-color: $tertiary-300;
+$menu-item-active-background-color: $secondary-350;
+$menu-item-active-hover-background-color: $secondary-350;
 
 $menu-font-size-sm: $font-size-sm;
 $menu-border-radius-sm: $component-border-radius-sm;
