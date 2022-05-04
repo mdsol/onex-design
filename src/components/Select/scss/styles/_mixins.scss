@@ -1,5 +1,5 @@
 @mixin size-select($height, $multi-height) {
-  $content-select-height: calc(#{$height} - #{$select-control-border} * 2);
+  $content-select-height: calc(#{$height} - #{$onex-select-control-border} * 2);
 
   .onex-select__control {
     height: $height;

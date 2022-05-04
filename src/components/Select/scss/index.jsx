@@ -5,7 +5,15 @@ import { Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import Check from '../../Check/scss';
+
+// eslint-disable-next-line react/prop-types
+const ClearIndicator = ({ innerProps: { ref, ...restInnerProps } }) => (
+  <div className="onex-select__clear-btn" {...restInnerProps} ref={ref}>
+    <HighlightOffRoundedIcon />
+  </div>
+);
 
 const MultiValueRemove = (props) => (
   <components.MultiValueRemove {...props}>
@@ -55,6 +63,7 @@ const CustomSelect = ({
   onLoadOptions,
   getOptionValue,
   getOptionLabel,
+  hasClearButton,
 }) => {
   const [selectedOptions, setSelectedOptions] = useState(selectedValues);
 
@@ -97,6 +106,7 @@ const CustomSelect = ({
                 {children}
               </Option>
             )),
+            ClearIndicator,
           }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}
@@ -123,6 +133,7 @@ const CustomSelect = ({
                 {children}
               </Option>
             )),
+            ClearIndicator: hasClearButton && ClearIndicator,
           }}
           onChange={handleChange}
           aria-invalid
@@ -132,8 +143,14 @@ const CustomSelect = ({
           closeMenuOnSelect={false}
         />
       )}
-      {isInvalid && <Form.Text className="onex-select__help-text">{errorMessage}</Form.Text>}
-      {helpText && <Form.Text className="onex-select__help-text">{helpText}</Form.Text>}
+      {isInvalid && (
+        <Form.Text className="onex-select__help-text onex-select__help--error">
+          {errorMessage}
+        </Form.Text>
+      )}
+      {helpText && !isInvalid && (
+        <Form.Text className="onex-select__help-text">{helpText}</Form.Text>
+      )}
     </div>
   );
 };
@@ -169,6 +186,7 @@ CustomSelect.propTypes = {
   options: PropTypes.arrayOf(optionType),
   groupedOptions: PropTypes.arrayOf(groupedOptions),
   showCheckInOption: PropTypes.bool,
+  hasClearButton: PropTypes.bool,
   size: PropTypes.oneOf(['lg', 'sm']),
   label: PropTypes.string,
   helpText: PropTypes.string,
@@ -197,6 +215,7 @@ CustomSelect.defaultProps = {
   showCheckInOption: true,
   groupedOptions: [],
   onSelect: undefined,
+  hasClearButton: false,
   dataTestId: '',
   isAsync: false,
   onLoadOptions: undefined,

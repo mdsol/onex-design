@@ -3,8 +3,28 @@
 .onex-select {
   font-family: $font-family;
   box-sizing: border-box;
-  max-width: $select-max-width;
-  min-width: $select-min-width;
+  max-width: $onex-select-max-width;
+  min-width: $onex-select-min-width;
+
+  /* clear btn */
+  &__clear-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__clear-btn svg {
+    @include icon-size($icon-size-xlg);
+
+    color: $onex-select-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
 
   /* label */
   &__label.form-label {
@@ -18,14 +38,17 @@
 
   /* help text */
   &__help-text.form-text {
-    display: inline-block;
     min-width: 1rem;
     min-height: $line-height-sm;
     padding: 0 4px;
+    display: inline-block;
     color: $secondary-400;
-    font-family: $font-family;
     font-size: $font-size-sm;
     line-height: $line-height-sm;
+  }
+
+  &__help--error.form-text {
+    color: $error !important;
   }
 
   .onex-select__single-value {
@@ -47,8 +70,8 @@
     max-height: 100%;
     align-items: stretch;
     box-sizing: border-box;
-    border: $select-control-border solid $secondary-opacity-20;
-    border-radius: $select-control-border-radius!important;
+    border: $onex-select-control-border solid $secondary-opacity-20;
+    border-radius: $onex-select-control-border-radius!important;
 
     &:hover {
       border-color: $secondary-opacity-50;
@@ -56,7 +79,7 @@
 
     &.onex-select__control--is-focused,
     &.onex-select__control--is-focused.onex-select__control--menu-is-open {
-      border: $select-control-border solid $primary !important;
+      border: $onex-select-control-border solid $primary !important;
       box-shadow: $primary 0px 0px 1px, $primary 0px 0px 0px 1px;
 
       &:hover {
@@ -104,10 +127,38 @@
   }
 
   .onex-select__menu {
-    border: 1px solid $select-menu-border-color;
+    border: 1px solid $onex-select-menu-border-color;
     box-shadow: 0px 4px 24px $secondary-900-opacity-12;
-    border-radius: $select-control-border-radius;
+    border-radius: $onex-select-control-border-radius;
     padding: 0;
+  }
+
+  .onex-select__menu-list {
+    max-height: $onex-select-max-height;
+    scrollbar-color: $onex-select-scrollbar-color transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: $onex-select-scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 0.25rem solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      -webkit-border-radius: $onex-select-scrollbar-border-radius;
+      background-color: $onex-select-scrollbar-color;
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0), inset 1px 1px 0px rgba(0, 0, 0, 0);
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
   }
 
   &__value-container {
@@ -116,18 +167,24 @@
   }
 
   .onex-select__option {
+    display: inline-flex;
+    align-items: center;
     padding: $onex-btn-padding-y $onex-btn-padding-x;
     font-size: $font-size-label;
     line-height: $line-height-label;
-    color: $select-option-text-color;
+    color: $onex-select-option-text-color;
 
     &:hover {
-      background-color: $select-option-hover-bg-color;
+      background-color: $onex-select-option-hover-bg-color;
       cursor: pointer;
     }
 
     .onex-check__wrapper {
       gap: 0.625rem;
+    }
+
+    label.onex-check__wrapper {
+      display: inline-flex;
     }
   }
 
@@ -137,21 +194,21 @@
     background-color: transparent;
 
     &:hover {
-      background-color: $select-option-hover-bg-color;
+      background-color: $onex-select-option-hover-bg-color;
     }
   }
 
   .onex-select__option--text.onex-select__option--is-selected {
-    background-color: $select-option-focused-bg-color;
+    background-color: $onex-select-option-focused-bg-color;
 
     &:hover {
-      background-color: $select-option-focused-hover-bg-color;
+      background-color: $onex-select-option-focused-hover-bg-color;
     }
   }
 
   .onex-select__group {
     padding: 0.25rem 0 0;
-    border-bottom: 1px solid $select-menu-border-color;
+    border-bottom: 1px solid $onex-select-menu-border-color;
 
     &:last-child {
       border: none;
@@ -185,7 +242,7 @@
 
     .onex-select__multi-value {
       background-color: $secondary-400-opacity-01;
-      border-radius: $select-multi-value-border-radius;
+      border-radius: $onex-select-multi-value-border-radius;
       align-items: center;
       padding: 2px 2px 2px 8px;
 
@@ -220,22 +277,22 @@
 }
 
 .onex-select--lg {
-  @include size-select($select-height-lg, $select-lg-multi-value-height);
+  @include size-select($onex-select-height-lg, $onex-select-lg-multi-value-height);
 
   .onex-select__icon {
     padding-left: 0.75rem;
   }
 }
 .onex-select--sm {
-  @include size-select($select-height-sm, $select-sm-multi-value-height);
+  @include size-select($onex-select-height-sm, $onex-select-sm-multi-value-height);
 
   .onex-select__icon {
     padding-left: 0.5rem;
   }
 
   .onex-select__control .onex-select__input-container {
-    padding: $select-input-container-padding;
-    margin: $select-input-container-margin;
+    padding: $onex-select-input-container-padding;
+    margin: $onex-select-input-container-margin;
   }
 }
 
