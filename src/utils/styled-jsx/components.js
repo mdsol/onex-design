@@ -171,4 +171,11 @@ module.exports = [
       { className: '.progress', classRegex: classRegexBootstrap },
     ],
   },
+  {
+    name: 'Spinner',
+    importName: 'Spinner',
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+    ],
+  },
 ];
