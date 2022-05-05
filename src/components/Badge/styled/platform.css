@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10134,7 +10135,7 @@ progress {
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: rgb(0, 0, 0);
   border-radius: 1.25rem;
 }

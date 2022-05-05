@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -11075,7 +11076,7 @@ progress {
   border-radius: 0.5rem;
   padding: 0.5rem;
   padding-right: 1.075rem;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -11136,7 +11137,7 @@ progress {
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: rgb(0, 0, 0);
   border-radius: 1.25rem;
 }

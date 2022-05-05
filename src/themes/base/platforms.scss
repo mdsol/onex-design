@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @use 'sass:math';
 @use 'sass:map';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 $grid-gutter-width: 2rem;
 $grid-breakpoints: (
   xs: 0,

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10374,7 +10375,7 @@ progress {
 
 .btn {
   display: inline-block;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   line-height: 1.25rem;
   color: #212529;
@@ -10898,7 +10899,7 @@ progress {
 }
 .onex-dropdown > .btn {
   position: relative;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 0.875rem;
@@ -11032,7 +11033,7 @@ progress {
   background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%2826, 28, 30%29'%3e%3c/path%3e%3c/svg%3e");
 }
 .onex-dropdown .dropdown-menu {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -11090,7 +11091,7 @@ progress {
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: rgb(0, 0, 0);
   border-radius: 1.25rem;
 }
