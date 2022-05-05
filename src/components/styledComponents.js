@@ -37,6 +37,7 @@ import StyledDataGrid from './DataGrid/styled';
 import StyledModal from './Modal/styled';
 import StyledProgressBar from './ProgressBar/styled';
 import StyledCard from './Card/styled';
+import StyledSpinner from './Spinner/styled';
 
 export {
   StyledAvatar,
@@ -76,4 +77,5 @@ export {
   StyledModal,
   StyledProgressBar,
   StyledCard,
+  StyledSpinner,
 };

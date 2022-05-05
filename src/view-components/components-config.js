@@ -13,7 +13,10 @@ import {
   BugReportRounded,
 } from '@mui/icons-material';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import { Avatar, Badge, Button, ToggleButton } from '../components';
+import Avatar from '../components/Avatar/scss';
+import Badge from '../components/Badge/scss';
+import Button from '../components/Buttons/scss';
+import ToggleButton from '../components/ToggleButton/scss';
 
 const passwordHelpText = {
   strong: 'Strong',
@@ -22,14 +25,14 @@ const passwordHelpText = {
 };
 
 const dropdownItems = [
-  { eventKey: 'one', title: 'item one', badge: 100, active: true },
-  { eventKey: 'two', title: 'item two', badge: 100 },
+  { eventKey: 'one', title: 'item one', badge: 100 },
+  { eventKey: 'two', title: 'item two' },
   { eventKey: 'three', title: 'item three' },
-  { eventKey: 'four', title: 'item four', badge: 100 },
-  { eventKey: 'five', title: 'item five', badge: 100 },
-  { eventKey: 'six', title: 'item six', badge: 100 },
-  { eventKey: 'seven', title: 'item seven', badge: 100 },
-  { eventKey: 'eight', title: 'item eight', badge: 100 },
+  { eventKey: 'four', title: 'item four', hasDividerAfter: true },
+  { eventKey: 'five', title: 'item five' },
+  { eventKey: 'six', title: 'item six' },
+  { eventKey: 'seven', title: 'item seven' },
+  { eventKey: 'eight', title: 'item eight' },
 ];
 
 const tabsVisibleItems = [
@@ -507,7 +510,6 @@ export const config = {
             id: 'small-dropdown',
             items: dropdownItems,
             size: 'sm',
-            isSearchable: true,
           },
           {
             title: 'Label',
@@ -1750,6 +1752,24 @@ export const config = {
           {
             now: 50,
             variant: 'info',
+          },
+        ],
+      },
+      {
+        name: 'Spinner',
+        componentName: 'Spinner',
+        styledComponentName: 'Spinner',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'lg',
+          },
+          {
+            size: 'md',
+            animation: 'grow',
+          },
+          {
+            size: 'sm',
           },
         ],
       },

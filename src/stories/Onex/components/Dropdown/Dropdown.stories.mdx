@@ -27,10 +27,6 @@ import * as stories from './Dropdown.stories.jsx';
       description: 'An html id attribute for the Toggle button,',
       control: 'text',
     },
-    isSearchable: {
-      description: 'Added Search input to menu',
-      control: 'boolean',
-    },
     items: {
       description: `Array of menu items. Each item contain:
                            \n1.title* - content of menu item;
@@ -141,9 +137,10 @@ Disabled
   <Story height="15rem" name="TertiaryCustomDisabledIcon" story={stories.TertiaryCustomDisabledIcon} />
 </Canvas>
 
-### Searchable dropdown
+### Menu dividers
+Separate groups of related menu items with a divider.
 <Canvas>
-  <Story height="16rem" name="Search" story={stories.Search} />
+  <Story height="18.5rem" name="WithDivider" story={stories.WithDivider} />
 </Canvas>
 
 
@@ -165,7 +162,6 @@ Disabled
         { eventKey: 'three', title: 'item three', href: '#' },
         { eventKey: 'four', title: 'item four' },
         { eventKey: 'five', title: 'item five' },
-        { eventKey: 'six', title: 'item six' },
       ],
       size: 'sm',
       title: 'Dropdown demo',

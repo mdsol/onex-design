@@ -27,10 +27,6 @@ export default {
       description: 'An html id attribute for the Toggle button,',
       control: 'text',
     },
-    isSearchable: {
-      description: 'Added Search input to menu',
-      control: 'boolean',
-    },
     items: {
       description: `Array of menu items. Each item contain:
                            \n1.title* - content of menu item;
@@ -55,14 +51,19 @@ export default {
 };
 
 const dropdownItems = [
-  { eventKey: 'one', title: 'item one', badge: 100, active: true },
-  { eventKey: 'two', title: 'item two', badge: 100 },
+  { eventKey: 'one', title: 'item one' },
+  { eventKey: 'two', title: 'item two' },
   { eventKey: 'three', title: 'item three' },
-  { eventKey: 'four', title: 'item four', badge: 100 },
-  { eventKey: 'five', title: 'item five', badge: 100 },
-  { eventKey: 'six', title: 'item six', badge: 100 },
-  { eventKey: 'seven', title: 'item seven', badge: 100 },
-  { eventKey: 'eight', title: 'item eight', badge: 100 },
+  { eventKey: 'four', title: 'item four' },
+];
+
+const dropdownItemsWithDivider = [
+  { eventKey: 'one', title: 'item one' },
+  { eventKey: 'two', title: 'item two' },
+  { eventKey: 'three', title: 'item three' },
+  { eventKey: 'four', title: 'item four', hasDividerAfter: true },
+  { eventKey: 'five', title: 'item five' },
+  { eventKey: 'six', title: 'item six' },
 ];
 
 const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -420,11 +421,11 @@ TertiaryCustomDisabledIcon.args = {
   title: <MoreVertIcon />,
 };
 
-export const Search = DropdownTemplate.bind({});
-Search.args = {
+export const WithDivider = DropdownTemplate.bind({});
+WithDivider.args = {
+  variant: 'primary',
   title: 'Label',
-  id: 'small-dropdown',
-  items: dropdownItems,
-  size: 'sm',
-  isSearchable: true,
+  id: 'with-divider-dropdown',
+  items: dropdownItemsWithDivider,
+  size: 'md',
 };

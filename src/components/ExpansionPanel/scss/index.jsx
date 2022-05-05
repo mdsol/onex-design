@@ -23,7 +23,7 @@ const ExpansionPanel = (props) => {
       >
         {children}
       </Dropdown.Toggle>
-      <Dropdown.Menu renderOnMount flip={false} className="onex-expansionPanel-menu">
+      <Dropdown.Menu renderOnMount flip={false} className="onex-expansionPanel__menu">
         {!!items?.length &&
           items.map((item) => {
             const {

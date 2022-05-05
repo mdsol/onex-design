@@ -1,4 +1,4 @@
-@mixin button-size($padding-top, $padding-left, $height, $border-radius, $font-size, $line-height) {
+@mixin toggle-button-size($padding-top, $padding-left, $height, $border-radius, $font-size, $line-height) {
   padding: $padding-top $padding-left;
   height: $height;
   min-width: $height;
