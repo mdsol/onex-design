@@ -62,6 +62,7 @@ import Typography from './Typography/scss';
 import DataGrid from './DataGrid/scss';
 import Modal from './Modal/scss';
 import ProgressBar from './ProgressBar/scss';
+import CustomCard from './Card/scss';
 import Spinner from './Spinner/scss';
 
 import StyledAvatar from './Avatar/styled';
@@ -167,6 +168,7 @@ export {
   OverlayTrigger,
   Overlay,
   DataGrid,
+  CustomCard,
   StyledAvatar,
   StyledBadge,
   StyledButtons,

@@ -1,5 +1,5 @@
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Dropdown } from '../../../../components';
+import Dropdown from '../../../../components/Dropdown/scss';
 
 export default {
   title: 'Onex/Components/Dropdown',

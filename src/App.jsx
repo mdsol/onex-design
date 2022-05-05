@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid, Modal, Button } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, CustomCard } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -59,6 +59,17 @@ const makeData = (...lens) => {
   return makeDataLevel();
 };
 
+const dropdownItems = [
+  { eventKey: 'one', title: 'item one', badge: 100, active: true },
+  { eventKey: 'two', title: 'item two', badge: 100 },
+  { eventKey: 'three', title: 'item three' },
+  { eventKey: 'four', title: 'item four', badge: 100 },
+  { eventKey: 'five', title: 'item five', badge: 100 },
+  { eventKey: 'six', title: 'item six', badge: 100 },
+  { eventKey: 'seven', title: 'item seven', badge: 100 },
+  { eventKey: 'eight', title: 'item eight', badge: 100 },
+];
+
 const DevExamples = () => {
   const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
@@ -91,6 +102,18 @@ const DevExamples = () => {
         >
           Woohoo, youre reading this text in a modal!
         </Modal>
+        <br />
+        <br />
+        <CustomCard
+          showActionBar
+          showTitleBar
+          actionName="Tertiary Button"
+          dropdownItems={dropdownItems}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum
+          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur
+          nobis eligendi, debitis quaerat, voluptatem inventore.
+        </CustomCard>
       </div>
     </div>
   );
@@ -102,7 +125,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('testMode');
+  const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
     if (currentTab === 'devMode') {
