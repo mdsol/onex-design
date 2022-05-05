@@ -167,4 +167,12 @@ module.exports = [
       { className: '.progress', classRegex: classRegexBootstrap },
     ],
   },
+  {
+    name: 'Card',
+    importName: 'Card',
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.card', classRegex: classRegexBootstrap },
+    ],
+  },
 ];
