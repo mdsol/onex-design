@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import Badge from '../../Badge/scss';
 import DropdownMenu from './components/DropdownMenu';
 
@@ -36,6 +37,7 @@ const CustomDropdown = (props) => {
         align={align}
       >
         {title}
+        <ExpandMoreRoundedIcon className="onex-dropdown__chevron-icon" />
       </Dropdown.Toggle>
       <Dropdown.Menu as={DropdownMenu}>
         {!!items?.length &&

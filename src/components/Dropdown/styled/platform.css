@@ -10897,6 +10897,9 @@ progress {
   /* buttonStyle (text, icon) */
 }
 .onex-dropdown > .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   font-family: noto-sans, sans-serif;
   font-style: normal;
@@ -10907,8 +10910,12 @@ progress {
   /* primary */
   /* secondary, tertiary */
 }
-.onex-dropdown > .btn.btn-primary.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%28255, 255, 255%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown > .btn > .onex-dropdown__chevron-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.onex-dropdown > .btn.btn-primary > .onex-dropdown__chevron-icon {
+  color: rgb(255, 255, 255);
 }
 .onex-dropdown > .btn.btn-primary:disabled, .onex-dropdown > .btn.btn-primary.disabled {
   opacity: 0.4;
@@ -10935,8 +10942,8 @@ progress {
   color: rgb(103, 110, 122);
   background-color: rgb(255, 255, 255);
 }
-.onex-dropdown > .btn.btn-secondary.dropdown-toggle::after, .onex-dropdown > .btn.btn-tertiary.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%28103, 110, 122%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown > .btn.btn-secondary > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary > .onex-dropdown__chevron-icon {
+  color: rgb(103, 110, 122);
 }
 .onex-dropdown > .btn.btn-secondary:hover {
   border-color: rgba(26, 28, 30, 0.5);
@@ -10953,8 +10960,8 @@ progress {
   background-color: rgb(221, 224, 229);
   border-color: rgba(26, 28, 30, 0.5);
 }
-.onex-dropdown > .btn.btn-secondary.active.dropdown-toggle::after, .onex-dropdown > .btn.btn-secondary:active.dropdown-toggle::after, .onex-dropdown > .btn.btn-tertiary.active.dropdown-toggle::after, .onex-dropdown > .btn.btn-tertiary:active.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%2826, 28, 30%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown > .btn.btn-secondary.active > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-secondary:active > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary.active > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary:active > .onex-dropdown__chevron-icon {
+  color: rgb(26, 28, 30);
 }
 .onex-dropdown > .btn.btn-md {
   min-width: 5rem;
@@ -10966,22 +10973,14 @@ progress {
   height: 2rem;
   padding: 0.375rem 0.5rem 0.375rem 0.75rem;
 }
-.onex-dropdown--text > .dropdown-toggle::after, .onex-dropdown--default-icon > .dropdown-toggle::after {
-  content: "";
-  display: inline-block;
-  height: 1.25rem;
-  width: 1.25rem;
-  background-size: 1.25rem 1.25rem;
-  background-repeat: no-repeat;
-  border: none;
-  margin-left: 0.25rem;
-  vertical-align: middle;
+.onex-dropdown--text > .dropdown-toggle::after, .onex-dropdown--icon > .dropdown-toggle::after {
+  display: none;
 }
-.onex-dropdown--icon.onex-dropdown--default-icon > .dropdown-toggle::after {
+.onex-dropdown--icon.onex-dropdown--default-icon > .btn > .onex-dropdown__chevron-icon {
   display: inline-block;
   margin-left: 0;
 }
-.onex-dropdown--icon > .dropdown-toggle::after {
+.onex-dropdown--icon > .btn > .onex-dropdown__chevron-icon {
   display: none;
 }
 .onex-dropdown--icon > .btn {
@@ -11009,7 +11008,7 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-dropdown.show > .dropdown-toggle::after {
+.onex-dropdown.show > .dropdown-toggle > .onex-dropdown__chevron-icon {
   transform: rotateX(-180deg);
   transition: transform ease-in-out 0.15s;
 }
@@ -11028,8 +11027,8 @@ progress {
 .onex-dropdown.show > .dropdown-toggle.btn-secondary:focus, .onex-dropdown.show > .dropdown-toggle.btn-tertiary:focus {
   box-shadow: none;
 }
-.onex-dropdown.show > .dropdown-toggle.btn-secondary.dropdown-toggle::after, .onex-dropdown.show > .dropdown-toggle.btn-tertiary.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%2826, 28, 30%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown.show > .dropdown-toggle.btn-secondary > .onex-dropdown__chevron-icon, .onex-dropdown.show > .dropdown-toggle.btn-tertiary > .onex-dropdown__chevron-icon {
+  color: rgb(26, 28, 30);
 }
 .onex-dropdown .dropdown-menu {
   font-family: noto-sans, sans-serif;

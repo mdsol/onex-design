@@ -2,7 +2,11 @@
 
 .onex-dropdown {
   position: relative;
+
   & > .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     font-family: $font-family;
     font-style: normal;
@@ -11,11 +15,14 @@
     line-height: $onex-dropdown-btn-line-height;
     border-radius: $btn-border-radius;
 
+    & > .onex-dropdown__chevron-icon {
+      @include icon-size($btn-icon-type-icon-size-sm);
+    }
 
     /* primary */
     &.btn-primary {
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($white);
+      & > .onex-dropdown__chevron-icon {
+        color: $white;
       }
     }
 
@@ -55,8 +62,8 @@
       color: $btn-secondary-text-color;
       background-color: $btn-secondary-bg-color;
 
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($btn-secondary-text-color);
+      & > .onex-dropdown__chevron-icon {
+        color: $btn-secondary-text-color;
       }
     }
 
@@ -84,8 +91,9 @@
       color: $btn-secondary-active-text-color;
       background-color: $btn-secondary-active-bg-color;
       border-color: $btn-secondary-active-border-color;
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($btn-secondary-active-text-color);
+
+      & > .onex-dropdown__chevron-icon {
+        color: $btn-secondary-active-text-color;
       }
     }
 
@@ -102,27 +110,28 @@
 
   /* buttonStyle (text, icon) */
   &--text > .dropdown-toggle::after,
-  &--default-icon > .dropdown-toggle::after {
-    content: "";
-    display: inline-block;
-    height: $btn-dropdown-toggle-icon-size;
-    width: $btn-dropdown-toggle-icon-size;
-    background-size: $btn-dropdown-toggle-icon-size $btn-dropdown-toggle-icon-size;
-    background-repeat: no-repeat;
-    border: none;
-    margin-left: $btn-dropdown-toggle-icon-margin-y;
-    vertical-align: middle;
+  &--icon > .dropdown-toggle::after {
+    display: none;
   }
 
   &--icon {
-    &.onex-dropdown--default-icon > .dropdown-toggle::after {
-      display: inline-block;
-      margin-left: 0;
+    &.onex-dropdown--default-icon > .btn  {
+      & > .onex-dropdown__chevron-icon {
+        display: inline-block;
+        margin-left: 0;
+      }
     }
 
-    & > .dropdown-toggle::after {
-      display: none;
+    & > .btn {
+      & > .onex-dropdown__chevron-icon {
+        display: none;
+      }
+
     }
+
+    //& > .onex-dropdown__chevron-icon {
+    //  display: none;
+    //}
 
     & > .btn {
       display: inline-flex;
@@ -150,13 +159,14 @@
   }
 
   &.show > .dropdown-toggle {
-    &::after {
+    & > .onex-dropdown__chevron-icon  {
       transform: rotateX(-180deg);
       transition: transform ease-in-out 0.15s;
     }
 
     &.btn-primary {
       @include bg-color($btn-primary-active-bg-color);
+
       &:focus {
         box-shadow: none;
       }
@@ -167,12 +177,12 @@
       color: $btn-secondary-active-text-color;
       background-color: $btn-secondary-active-bg-color;
       border-color: $btn-secondary-active-border-color;
+
       &:focus {
         box-shadow: none;
       }
-
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($btn-secondary-active-text-color);
+      & > .onex-dropdown__chevron-icon  {
+        color: $btn-secondary-active-text-color;
       }
     }
   }
