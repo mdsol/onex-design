@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10374,7 +10375,7 @@ progress {
 
 .btn {
   display: inline-block;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   line-height: 1.25rem;
   color: #212529;
@@ -10901,7 +10902,7 @@ progress {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 0.875rem;
@@ -11031,7 +11032,7 @@ progress {
   color: rgb(26, 28, 30);
 }
 .onex-dropdown .dropdown-menu {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -11089,7 +11090,7 @@ progress {
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: rgb(0, 0, 0);
   border-radius: 1.25rem;
 }

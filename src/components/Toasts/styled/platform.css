@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10152,7 +10153,7 @@ progress {
 
 .btn {
   display: inline-block;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   line-height: 1.25rem;
   color: #212529;
@@ -10662,7 +10663,7 @@ progress {
   color: rgb(217, 21, 34);
 }
 .onex-toast__block {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   line-height: 1.25rem;
   border: 1px solid rgba(26, 28, 30, 0.1);

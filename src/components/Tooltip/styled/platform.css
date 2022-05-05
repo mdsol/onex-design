@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10369,7 +10370,7 @@ progress {
 }
 
 .onex-tooltip {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   line-height: 1rem;
 }
 .onex-tooltip .tooltip-arrow {

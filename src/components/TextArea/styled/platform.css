@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10102,7 +10103,7 @@ progress {
 }
 /* bootstrap variables */
 .onex-text-area {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   max-width: 31.25rem;
 }
 .onex-text-area--disabled {
