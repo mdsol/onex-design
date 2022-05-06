@@ -1,10 +1,104 @@
 import React from 'react';
-import { Offcanvas, Button } from '../../../components';
+import { Offcanvas, Button } from '../../../../components';
 
 export default {
-  title: 'Bootstrap/Components/Offcanvas',
+  title: 'Onex/Components/Offcanvas',
   component: Offcanvas,
   argTypes: {
+    link: {
+      description: `Link for solo link btn in footar`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    linkText: {
+      description: `Text for solo link btn in footar`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    primaryActionFc: {
+      description: 'A callback fired when the user click on Primary Btn',
+      action: 'primaryFc',
+      table: {
+        type: {
+          summary: 'func',
+        },
+      },
+    },
+    primaryActionText: {
+      description: `Text for Primary Btn`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    secondaryActionFc: {
+      description: 'A callback fired when the user click on Secondary Btn',
+      action: 'primaryFc',
+      table: {
+        type: {
+          summary: 'func',
+        },
+      },
+    },
+    secondaryActionText: {
+      description: `Text for Secondary Btn`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    title: {
+      description: `Text for title`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    children: {
+      description: 'The content of the Offcanvas',
+      control: 'text',
+    },
+    badge: {
+      description: `Badge for title`,
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'number',
+        },
+      },
+    },
     autoFocus: {
       description: `When true The offcanvas will automatically shift focus to itself when it opens,
                 and replace it to the last focused element when it closes. Generally this should never be set
@@ -28,6 +122,18 @@ export default {
         },
         type: {
           summary: 'boolean',
+        },
+      },
+    },
+    className: {
+      description: `ClassName`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
         },
       },
     },
@@ -136,19 +242,6 @@ export default {
         },
       },
     },
-    placement: {
-      description: 'Which side of the viewport the offcanvas will appear from.',
-      options: ['start', 'end', 'top', 'bottom'],
-      control: { type: 'select' },
-      table: {
-        defaultValue: {
-          summary: 'start',
-        },
-        type: {
-          summary: "'start' | 'end' | 'top' | 'bottom'",
-        },
-      },
-    },
     restoreFocus: {
       description: `When true The offcanvas will restore focus to previously
                         focused element once offcanvas is hidden`,
@@ -198,51 +291,6 @@ export default {
   },
 };
 
-const OffcanvasPlacementTemplate = (args) => {
-  const [show, setShow] = React.useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const { placement } = args;
-
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow} className="me-2">
-        {placement}
-      </Button>
-      <Offcanvas show={show} onHide={handleClose} {...args}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you have chosen. Like,
-          text, images, lists, etc.
-        </Offcanvas.Body>
-      </Offcanvas>
-    </>
-  );
-};
-
-export const StartPlacement = OffcanvasPlacementTemplate.bind({});
-StartPlacement.args = {
-  placement: 'start',
-};
-
-export const EndPlacement = OffcanvasPlacementTemplate.bind({});
-EndPlacement.args = {
-  placement: 'end',
-};
-
-export const TopPlacement = OffcanvasPlacementTemplate.bind({});
-TopPlacement.args = {
-  placement: 'top',
-};
-
-export const BottomPlacement = OffcanvasPlacementTemplate.bind({});
-BottomPlacement.args = {
-  placement: 'bottom',
-};
-
 const OffcanvasBackdropTemplate = (args) => {
   const [show, setShow] = React.useState(false);
 
@@ -255,14 +303,8 @@ const OffcanvasBackdropTemplate = (args) => {
       <Button variant="primary" onClick={toggleShow} className="me-2">
         {name}
       </Button>
-      <Offcanvas show={show} onHide={handleClose} {...args}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you have chosen. Like,
-          text, images, lists, etc.
-        </Offcanvas.Body>
+      <Offcanvas {...args} show={show} onHide={handleClose}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consectetur.
       </Offcanvas>
     </>
   );
@@ -271,6 +313,7 @@ const OffcanvasBackdropTemplate = (args) => {
 export const EnableBackdrop = OffcanvasBackdropTemplate.bind({});
 EnableBackdrop.args = {
   name: 'Enable backdrop (default)',
+  title: 'Title',
   scroll: false,
   backdrop: true,
 };
@@ -278,6 +321,7 @@ EnableBackdrop.args = {
 export const DisableBackdrop = OffcanvasBackdropTemplate.bind({});
 DisableBackdrop.args = {
   name: 'Disable backdrop',
+  title: 'Title',
   scroll: false,
   backdrop: false,
 };
@@ -285,6 +329,7 @@ DisableBackdrop.args = {
 export const EnableScrolling = OffcanvasBackdropTemplate.bind({});
 EnableScrolling.args = {
   name: 'Enable body scrolling',
+  title: 'Title',
   scroll: true,
   backdrop: false,
 };
@@ -292,6 +337,37 @@ EnableScrolling.args = {
 export const EnableScrollingBackdrop = OffcanvasBackdropTemplate.bind({});
 EnableScrollingBackdrop.args = {
   name: 'Enable both scrolling & backdrop',
+  title: 'Title',
   scroll: true,
   backdrop: true,
+};
+
+export const OnlyPrimaryBtn = OffcanvasBackdropTemplate.bind({});
+OnlyPrimaryBtn.args = {
+  name: 'OnlyPrimaryBtn(default)',
+  title: 'Title',
+  secondaryActionFc: null,
+};
+
+export const PrimaryAndSecondaryBtns = OffcanvasBackdropTemplate.bind({});
+PrimaryAndSecondaryBtns.args = {
+  name: 'PrimaryAndSecondaryBtns',
+  title: 'Title',
+  secondaryActionFc: () => {},
+  secondaryActionText: 'Secondary'
+};
+
+export const LinkBtn = OffcanvasBackdropTemplate.bind({});
+LinkBtn.args = {
+  name: 'LinkBtn',
+  title: 'Title',
+  link: 'frfefe',
+  linkText: 'Link',
+};
+
+export const BadgeVariant = OffcanvasBackdropTemplate.bind({});
+BadgeVariant.args = {
+  name: 'Variant with badge',
+  title: 'Title',
+  badge: 29,
 };

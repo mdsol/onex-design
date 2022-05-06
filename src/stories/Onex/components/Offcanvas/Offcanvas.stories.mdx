@@ -1,11 +1,105 @@
 <!-- Offcanvas.mdx -->
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
-import  { Offcanvas, Button } from '../../../components';
+import  { Offcanvas, Button } from '../../../../components';
 import * as stories from './Offcanvas.stories.jsx';
 
 <Meta
-    title="Bootstrap/Components/Offcanvas"
+    title="Onex/Components/Offcanvas"
     argTypes={{
+      link: {
+      description: `Link for solo link btn in footar`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+        linkText: {
+      description: `Text for solo link btn in footar`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    primaryActionFc: {
+      description: 'A callback fired when the user click on Primary Btn',
+      action: 'primaryFc',
+      table: {
+        type: {
+          summary: 'func',
+        },
+      },
+    },
+    primaryActionText: {
+      description: `Text for Primary Btn`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    secondaryActionFc: {
+      description: 'A callback fired when the user click on Secondary Btn',
+      action: 'primaryFc',
+      table: {
+        type: {
+          summary: 'func',
+        },
+      },
+    },
+    secondaryActionText: {
+      description: `Text for Secondary Btn`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    title: {
+      description: `Text for title`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+      children: {
+      description: 'The content of the Offcanvas',
+      control: 'text',
+    },
+      badge: {
+        description: `Badge for title`,
+        control: 'number',
+        table: {
+          defaultValue: {
+            summary: '',
+          },
+          type: {
+            summary: 'number',
+          },
+        },
+      },
       autoFocus: {
         description: `When true The offcanvas will automatically shift focus to itself when it opens,
                 and replace it to the last focused element when it closes. Generally this should never be set
@@ -137,19 +231,6 @@ import * as stories from './Offcanvas.stories.jsx';
           },
         },
       },
-      placement: {
-        description: 'Which side of the viewport the offcanvas will appear from.',
-        options: ['start', 'end', 'top', 'bottom'],
-        control: { type: 'select' },
-        table: {
-          defaultValue: {
-            summary: 'start',
-          },
-          type: {
-            summary: "'start' | 'end' | 'top' | 'bottom'",
-          },
-        },
-      },
       restoreFocus: {
         description: `When true The offcanvas will restore focus to previously
                         focused element once offcanvas is hidden`,
@@ -205,22 +286,20 @@ export const OffcanvasTemplate = (args) => <Offcanvas {...args} />;
 # Offcanvas
 Build hidden sidebars into your project for navigation, shopping carts, and more.
 
-## Examples
-Offcanvas includes support for a header with a close button and an optional body class for some initial padding.
-We suggest that you include offcanvas headers with dismiss actions whenever possible, or provide an explicit dismiss action.
-
-### Placement
-Offcanvas supports a few different placements:
-1. ```start``` places offcanvas on the left of the viewport
-2. ```end``` places offcanvas on the right of the viewport
-3. ```top``` places offcanvas on the top of the viewport
-4. ```bottom``` places offcanvas on the bottom of the viewport
+### Different Actions Buttons
+You can have different btns in your offcanvas footer, if you use link props - its have high priority and will be onli link btn, if not, by default you have only Primary Action Btn, but if you need, you can use secondaryActionFc and secondaryActionText props for add secondary btn.
 
 <Canvas>
-    <Story name="StartPlacement" story={stories.StartPlacement} />
-    <Story name="EndPlacement" story={stories.EndPlacement} />
-    <Story name="TopPlacement" story={stories.TopPlacement} />
-    <Story name="BottomPlacement" story={stories.BottomPlacement} />
+  <Story name="OnlyPrimaryBtn(default)" story={stories.OnlyPrimaryBtn} />
+  <Story name="PrimaryAndSecondaryBtns" story={stories.PrimaryAndSecondaryBtns} />
+  <Story name="LinkBtn" story={stories.LinkBtn} />
+</Canvas>
+
+### Badge for title
+Also you can add badge for title in offcanvas window, just use badge prop.
+
+<Canvas>
+  <Story name="Variant with badge" story={stories.BadgeVariant} />
 </Canvas>
 
 ### Backdrop
@@ -240,7 +319,7 @@ Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``
     <Story name="Demo"
            args={{
                scroll: true,
-               placement: 'top',
+               secondaryActionFc: null,
            }}>
         {(args) => {
             const [show, setShow] = React.useState(false);
@@ -249,14 +328,8 @@ Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``
                     <Button variant="primary" onClick={() => setShow(true)}>
                         Launch
                     </Button>
-                    <Offcanvas {...args} show={show} onHide={() => setShow(false)}>
-                        <Offcanvas.Header closeButton>
-                            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-                        </Offcanvas.Header>
-                        <Offcanvas.Body>
-                            Some text as placeholder. In real life you can have the elements you
-                            have chosen. Like, text, images, lists, etc.
-                        </Offcanvas.Body>
+                    <Offcanvas {...args} show={show} onHide={() => setShow(false)} title="title">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consectetur.
                     </Offcanvas>
                 </>
             );
