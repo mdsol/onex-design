@@ -16,7 +16,6 @@ import {
   Nav,
   Navbar,
   NavDropdown,
-  Offcanvas,
   OverlayTrigger,
   Placeholder,
   Popover,
@@ -64,6 +63,7 @@ import Modal from './Modal/scss';
 import ProgressBar from './ProgressBar/scss';
 import CustomCard from './Card/scss';
 import Spinner from './Spinner/scss';
+import Offcanvas from './Offcanvas/scss';
 
 import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
@@ -140,6 +140,7 @@ export {
   Typography,
   ProgressBar,
   Spinner,
+  Offcanvas,
 };
 
 export {
@@ -156,7 +157,6 @@ export {
   Container,
   Nav,
   NavDropdown,
-  Offcanvas,
   Placeholder,
   Row,
   Col,

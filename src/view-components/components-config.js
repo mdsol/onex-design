@@ -1773,6 +1773,20 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'Offcanvas',
+        componentName: 'Offcanvas',
+        styledComponentName: 'Offcanvas',
+        additionalComponents: [],
+        variants: [
+          {
+            show: true,
+            title: 'Title',
+            secondaryActionFc: '',
+            secondaryActionText: 'Secondary',
+          },
+        ],
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',

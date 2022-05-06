@@ -1,0 +1,40 @@
+.onex-offcanvas {
+
+    .offcanvas-title {
+        h5 {
+            font-weight: $font-weight-600;
+
+            .badge {
+                font-size: $font-size-sm;
+                font-weight: $font-weight-400;
+                margin-left: 0.5rem;
+                background-color: $secondary-550-opacity-01 !important;
+            }
+        }
+    }
+
+    .offcanvas-footer {
+        height: 64px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 0 1rem;
+
+        .primary {
+            margin-left: 1rem;
+        }
+        
+        .action-link {
+            width: 100%;
+            color: $primary;
+            font-weight: $font-weight-600;
+            text-decoration: none;
+            text-align: center;
+            &:hover {
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}
