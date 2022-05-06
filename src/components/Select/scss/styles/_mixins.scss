@@ -1,3 +1,10 @@
+@mixin icon-size ($size) {
+  & > svg {
+    width: $size;
+    height: $size;
+  }
+}
+
 @mixin size-select($height, $multi-height) {
   $content-select-height: calc(#{$height} - #{$onex-select-control-border} * 2);
 

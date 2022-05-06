@@ -10102,30 +10102,51 @@ progress {
   }
 }
 .onex-select {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   box-sizing: border-box;
   max-width: 31.25rem;
   min-width: 16.625rem;
+  /* clear btn */
   /* label */
   /* help text */
 }
+.onex-select__clear-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.onex-select__clear-btn svg {
+  color: rgb(103, 110, 122);
+  background: none;
+  border: none;
+  padding: 0;
+}
+.onex-select__clear-btn svg > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.onex-select__clear-btn svg:focus {
+  outline: none;
+}
 .onex-select__label.form-label {
   padding: 0 4px;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 400;
   color: rgb(26, 28, 30);
 }
 .onex-select__help-text.form-text {
-  display: inline-block;
   min-width: 1rem;
   min-height: 1rem;
   padding: 0 4px;
+  display: inline-block;
   color: rgb(103, 110, 122);
-  font-family: noto-sans, sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.onex-select__help--error.form-text {
+  color: rgb(217, 21, 34) !important;
 }
 .onex-select .onex-select__single-value {
   color: rgb(26, 28, 30);
@@ -10219,6 +10240,8 @@ progress {
   box-sizing: border-box;
 }
 .onex-select .onex-select__option {
+  display: inline-flex;
+  align-items: center;
   padding: 0.625rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -10230,6 +10253,9 @@ progress {
 }
 .onex-select .onex-select__option .onex-check__wrapper {
   gap: 0.625rem;
+}
+.onex-select .onex-select__option label.onex-check__wrapper {
+  display: inline-flex;
 }
 .onex-select .onex-select__option.onex-select__option--is-focused,
 .onex-select .onex-select__option--is-selected,
@@ -10305,23 +10331,23 @@ progress {
   fill: rgb(103, 110, 122);
 }
 
-.onex-select--lg .onex-select__control {
+.onex-select--md .onex-select__control {
   height: 2.5rem;
   min-height: 2.5rem;
 }
-.onex-select--lg .onex-select__control .onex-select__value-container,
-.onex-select--lg .onex-select__control .onex-select__indicators {
+.onex-select--md .onex-select__control .onex-select__value-container,
+.onex-select--md .onex-select__control .onex-select__indicators {
   height: calc(2.5rem - 1px * 2);
   min-height: calc(2.5rem - 1px * 2);
 }
-.onex-select--lg .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
+.onex-select--md .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
   width: calc(2.5rem - 1px * 2);
   height: calc(2.5rem - 1px * 2);
 }
-.onex-select--lg .onex-select__multi-value {
+.onex-select--md .onex-select__multi-value {
   height: 1.5rem;
 }
-.onex-select--lg .onex-select__icon {
+.onex-select--md .onex-select__icon {
   padding-left: 0.75rem;
 }
 
