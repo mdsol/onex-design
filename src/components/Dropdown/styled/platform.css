@@ -11100,12 +11100,14 @@ progress {
   gap: 2px;
 }
 .onex-badge.badge {
+  display: inline-flex;
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   font-family: "Noto Sans", sans-serif;
   color: rgb(0, 0, 0);
   border-radius: 1.25rem;
+  line-height: 1rem;
 }
 .onex-badge .onex-badge__icon svg,
 .onex-badge svg {
