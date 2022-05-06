@@ -64,6 +64,7 @@ const CustomSelect = ({
   getOptionValue,
   getOptionLabel,
   hasClearButton,
+  ...props
 }) => {
   const [selectedOptions, setSelectedOptions] = useState(selectedValues);
 
@@ -73,7 +74,7 @@ const CustomSelect = ({
 
   const selectClassNames = classNames('onex-select', {
     [className]: className,
-    'onex-select--lg': size === 'lg',
+    'onex-select--md': size === 'md',
     'onex-select--sm': size === 'sm',
     'onex-select--invalid': isInvalid,
     'is-disabled': isDisabled,
@@ -114,6 +115,7 @@ const CustomSelect = ({
           getOptionValue={getOptionValue}
           hideSelectedOptions={false}
           closeMenuOnSelect={false}
+          {...props}
         />
       ) : (
         <Select
@@ -141,6 +143,7 @@ const CustomSelect = ({
           data-test-id={dataTestId}
           hideSelectedOptions={false}
           closeMenuOnSelect={false}
+          {...props}
         />
       )}
       {isInvalid && (
@@ -187,7 +190,7 @@ CustomSelect.propTypes = {
   groupedOptions: PropTypes.arrayOf(groupedOptions),
   showCheckInOption: PropTypes.bool,
   hasClearButton: PropTypes.bool,
-  size: PropTypes.oneOf(['lg', 'sm']),
+  size: PropTypes.oneOf(['md', 'sm']),
   label: PropTypes.string,
   helpText: PropTypes.string,
   isMulti: PropTypes.bool,
@@ -212,7 +215,7 @@ CustomSelect.defaultProps = {
   isDisabled: false,
   isInvalid: false,
   options: [],
-  showCheckInOption: true,
+  showCheckInOption: false,
   groupedOptions: [],
   onSelect: undefined,
   hasClearButton: false,

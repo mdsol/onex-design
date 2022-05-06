@@ -276,8 +276,8 @@
     }
 }
 
-.onex-select--lg {
-  @include size-select($onex-select-height-lg, $onex-select-lg-multi-value-height);
+.onex-select--md {
+  @include size-select($onex-select-height-md, $onex-select-md-multi-value-height);
 
   .onex-select__icon {
     padding-left: 0.75rem;

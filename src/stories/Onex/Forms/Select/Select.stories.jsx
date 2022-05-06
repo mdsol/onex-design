@@ -7,12 +7,12 @@ export default {
     className: { control: 'text' },
     dataTestId: { control: 'text' },
     options: [
-      { value: 'chocolate', label: 'Chocolate' },
-      { value: 'strawberry', label: 'Strawberry' },
-      { value: 'vanilla', label: 'Vanilla' },
+      { value: 'albania', label: 'Albania' },
+      { value: 'belgium', label: 'Belgium' },
+      { value: 'canada', label: 'Canada' },
     ],
-    size: 'lg',
-    isMulti: true,
+    size: 'md',
+    isMulti: false,
     isDisabled: false,
     isInvalid: false,
     errorMessage: {
@@ -32,23 +32,155 @@ Small.args = {
   className: 'select',
   dataTestId: 'select',
   options: [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+};
+
+export const Medium = Template.bind({});
+
+Medium.args = {
+  size: 'md',
+  className: 'select',
+  dataTestId: 'select',
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+};
+
+export const WithCheckboxes = Template.bind({});
+
+WithCheckboxes.args = {
+  size: 'sm',
+  className: 'select',
+  dataTestId: 'select',
+  showCheckInOption: true,
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+};
+
+export const Multi = Template.bind({});
+
+Multi.args = {
+  size: 'md',
+  className: 'select',
+  dataTestId: 'select',
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
   ],
   isMulti: true,
 };
 
-export const Large = Template.bind({});
+export const GroupOption = Template.bind({});
 
-Large.args = {
-  size: 'lg',
+GroupOption.args = {
+  size: 'md',
   className: 'select',
   dataTestId: 'select',
-  options: [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
+  groupedOptions: [
+    {
+      label: 'Europe',
+      options: [
+        { value: 'poland', label: 'Poland' },
+        { value: 'portugal', label: 'Portugal' },
+        { value: 'spain', label: 'Spain' },
+      ],
+    },
+    {
+      label: 'South America',
+      options: [
+        { value: 'brazil', label: 'Brazil' },
+        { value: 'colombia', label: 'Colombia' },
+        { value: 'peru', label: 'Peru' },
+      ],
+    },
   ],
   isMulti: true,
+  hasClearButton: true,
+};
+
+export const Label = Template.bind({});
+
+Label.args = {
+  size: 'sm',
+  className: 'select',
+  dataTestId: 'select',
+  label: 'Select country',
+  showCheckInOption: true,
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+};
+
+export const HelpText = Template.bind({});
+
+HelpText.args = {
+  size: 'sm',
+  className: 'select',
+  dataTestId: 'select',
+  label: 'Select country',
+  helpText: 'select one country',
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+};
+
+export const ErrorField = Template.bind({});
+
+ErrorField.args = {
+  size: 'sm',
+  className: 'select',
+  dataTestId: 'select',
+  label: 'Select country',
+  errorMessage: 'value is required',
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+  isInvalid: true,
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  size: 'sm',
+  className: 'select',
+  dataTestId: 'select',
+  label: 'Select country',
+  helpText: 'select one country',
+  isDisabled: true,
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+};
+
+export const HasClearButton = Template.bind({});
+
+HasClearButton.args = {
+  size: 'md',
+  className: 'select',
+  dataTestId: 'select',
+  showCheckInOption: true,
+  options: [
+    { value: 'albania', label: 'Albania' },
+    { value: 'belgium', label: 'Belgium' },
+    { value: 'canada', label: 'Canada' },
+  ],
+  isMulti: true,
+  hasClearButton: true,
 };
