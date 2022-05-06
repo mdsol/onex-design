@@ -122,10 +122,9 @@
       }
     }
 
-    &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
-      border-color: $tf-border-hover-color;
-
-    }
+        &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
+          border-color: $tf-border-hover-color;
+        }
 
     &:disabled,
     &.disabled,

@@ -86,7 +86,7 @@ module.exports = [
   {
     name: 'Select',
     importName: 'Select',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-select', classRegex: classRegexBase }],
   },
   {
     name: 'Switch',
