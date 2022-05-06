@@ -11,6 +11,7 @@ import {
   AddCircleRounded,
   EditRounded,
   BugReportRounded,
+  LanguageRounded,
 } from '@mui/icons-material';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import Avatar from '../components/Avatar/scss';
@@ -513,6 +514,13 @@ export const config = {
           },
           {
             title: 'Label',
+            id: 'small-dropdown',
+            items: dropdownItems,
+            size: 'sm',
+            leadingIcon: <LanguageRounded />,
+          },
+          {
+            title: 'Label',
             id: 'small-dropdown-disabled',
             items: dropdownItems,
             size: 'sm',
@@ -523,6 +531,13 @@ export const config = {
             id: 'large-dropdown',
             items: dropdownItems,
             size: 'md',
+          },
+          {
+            title: 'Label',
+            id: 'large-dropdown',
+            items: dropdownItems,
+            size: 'md',
+            leadingIcon: <LanguageRounded />,
           },
           {
             title: 'Label',
@@ -541,6 +556,14 @@ export const config = {
           {
             variant: 'secondary',
             title: 'Label',
+            id: 'secondary-dropdown',
+            items: dropdownItems,
+            size: 'sm',
+            leadingIcon: <LanguageRounded />,
+          },
+          {
+            variant: 'secondary',
+            title: 'Label',
             id: 'secondary-dropdown-disabled',
             items: dropdownItems,
             size: 'sm',
@@ -556,6 +579,14 @@ export const config = {
           {
             variant: 'secondary',
             title: 'Label',
+            id: 'secondary-dropdown',
+            items: dropdownItems,
+            size: 'md',
+            leadingIcon: <LanguageRounded />,
+          },
+          {
+            variant: 'secondary',
+            title: 'Label',
             id: 'secondary-dropdown-disabled',
             items: dropdownItems,
             size: 'md',
@@ -571,6 +602,14 @@ export const config = {
           {
             variant: 'tertiary',
             title: 'Label',
+            id: 'tertiary-dropdown',
+            items: dropdownItems,
+            size: 'sm',
+            leadingIcon: <LanguageRounded />,
+          },
+          {
+            variant: 'tertiary',
+            title: 'Label',
             id: 'tertiary-dropdown-disabled',
             items: dropdownItems,
             size: 'sm',
@@ -582,6 +621,14 @@ export const config = {
             id: 'tertiary-dropdown',
             items: dropdownItems,
             size: 'md',
+          },
+          {
+            variant: 'tertiary',
+            title: 'Label',
+            id: 'tertiary-dropdown',
+            items: dropdownItems,
+            size: 'md',
+            leadingIcon: <LanguageRounded />,
           },
           {
             variant: 'tertiary',
