@@ -1022,6 +1022,59 @@ export const config = {
             size: 'sm',
             className: 'select',
             dataTestId: 'select',
+            label: 'Select label',
+            helpText: 'Some help text',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'lg',
+            className: 'select',
+            dataTestId: 'select',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'sm',
+            className: 'select',
+            dataTestId: 'select',
+            label: 'Select label',
+            isInvalid: true,
+            errorMessage: 'Some help text',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'sm',
+            className: 'select',
+            dataTestId: 'select',
             options: [
               { value: 'chocolate', label: 'Chocolate' },
               { value: 'strawberry', label: 'Strawberry' },
@@ -1817,6 +1870,20 @@ export const config = {
           },
           {
             size: 'sm',
+          },
+        ],
+      },
+      {
+        name: 'Offcanvas',
+        componentName: 'Offcanvas',
+        styledComponentName: 'Offcanvas',
+        additionalComponents: [],
+        variants: [
+          {
+            show: true,
+            title: 'Title',
+            secondaryActionFc: '',
+            secondaryActionText: 'Secondary',
           },
         ],
       },

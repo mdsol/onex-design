@@ -38,6 +38,7 @@ import StyledModal from './Modal/styled';
 import StyledProgressBar from './ProgressBar/styled';
 import StyledCard from './Card/styled';
 import StyledSpinner from './Spinner/styled';
+import StyledOffcanvas from './Offcanvas/styled';
 
 export {
   StyledAvatar,
@@ -78,4 +79,5 @@ export {
   StyledProgressBar,
   StyledCard,
   StyledSpinner,
+  StyledOffcanvas,
 };

@@ -1,70 +1,232 @@
-.onex-select--lg {
-    height: $select-height-lg;
-    .onex-select__control {
-        min-height: $select-height-lg;
-        .onex-select__value-container {
-            height: $select-height-lg;
-        }
-        .onex-select__indicators {
-            height: $select-height-lg;
-        }
-    }
-    .onex-select__multi-value {
-        height: $select-lg-multi-value-height;
-    }
-}
-.onex-select--sm {
-    height: $select-height-sm;
-    .onex-select__control {
-        min-height: $select-height-sm;
-        .onex-select__value-container {
-            height: $select-height-sm;
-            .onex-select__input-container {
-                padding: $select-input-container-padding;
-                margin: $select-input-container-margin;
-            }
-        }
-        .onex-select__indicators {
-            height: $select-height-sm;
-        }
-    }
-    .onex-select__multi-value {
-        height: $select-sm-multi-value-height;
-    }
-}
-
-.onex-select--invalid {
-    .onex-select__control {
-        border-color: $error !important;
-    }
-}
+@import 'mixins';
 
 .onex-select {
-    max-width: $select-max-width;
-    .onex-select__control {
-        border: $select-control-border solid $secondary;
-        border-radius: $select-control-border-radius;
-        &:hover {
-            border-color: $primary-700;
-        }
+  font-family: $font-family;
+  box-sizing: border-box;
+  max-width: $onex-select-max-width;
+  min-width: $onex-select-min-width;
+
+  /* clear btn */
+  &__clear-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__clear-btn svg {
+    @include icon-size($icon-size-xlg);
+
+    color: $onex-select-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
     }
-    .onex-select__control--is-focused {
-        border: $select-control-border solid $select-control-border-color-focused;
-        box-shadow: none;
-        &:hover {
-            border-color: $select-control-border-color-focused;
-        }
+  }
+
+  /* label */
+  &__label.form-label {
+    padding: 0 4px;
+    font-family: $font-family;
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: 400;
+    color: $secondary-900;
+  }
+
+  /* help text */
+  &__help-text.form-text {
+    min-width: 1rem;
+    min-height: $line-height-sm;
+    padding: 0 4px;
+    display: inline-block;
+    color: $secondary-400;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  &__help--error.form-text {
+    color: $error !important;
+  }
+
+  .onex-select__single-value {
+    color: $secondary-900;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+  }
+
+  .onex-select__icon {
+    margin-right: -0.25rem;
+
+    & > * {
+      width: $component-height-middle-sm;
+      height: $component-height-middle-sm;
     }
-    .onex-select__option:hover {
-        background-color: $secondary-100;
-        color: black;
-        cursor: pointer;
+  }
+
+  &__control {
+    max-height: 100%;
+    align-items: stretch;
+    box-sizing: border-box;
+    border: $onex-select-control-border solid $secondary-opacity-20;
+    border-radius: $onex-select-control-border-radius!important;
+
+    &:hover {
+      border-color: $secondary-opacity-50;
     }
 
-    .onex-select__option--is-selected {
-        background-color: $secondary-100;
-        color: black;
+    &.onex-select__control--is-focused,
+    &.onex-select__control--is-focused.onex-select__control--menu-is-open {
+      border: $onex-select-control-border solid $primary !important;
+      box-shadow: $primary 0px 0px 1px, $primary 0px 0px 0px 1px;
+
+      &:hover {
+        border-color: $primary !important;
+      }
     }
+  }
+
+  &__control .onex-select__indicator.onex-select__dropdown-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    svg > path {
+      fill: $secondary-400;
+    }
+  }
+
+  &--invalid {
+    .onex-select__control {
+      border-color: $error !important;
+    }
+  }
+
+  .onex-select__placeholder {
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: 400;
+    color: $secondary-400;
+  }
+
+  &--is-disabled {
+    opacity: 0.4;
+
+    .onex-select__control--is-disabled {
+      background-color: $white;
+      border-color: $secondary-opacity-20;
+    }
+  }
+
+  .onex-select__menu {
+    border: 1px solid $onex-select-menu-border-color;
+    box-shadow: 0px 4px 24px $secondary-900-opacity-12;
+    border-radius: $onex-select-control-border-radius;
+    padding: 0;
+  }
+
+  .onex-select__menu-list {
+    max-height: $onex-select-max-height;
+    scrollbar-color: $onex-select-scrollbar-color transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: $onex-select-scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 0.25rem solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      -webkit-border-radius: $onex-select-scrollbar-border-radius;
+      background-color: $onex-select-scrollbar-color;
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0), inset 1px 1px 0px rgba(0, 0, 0, 0);
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+  }
+
+  &__value-container {
+    max-height: 100%;
+    box-sizing: border-box;
+  }
+
+  .onex-select__option {
+    display: inline-flex;
+    align-items: center;
+    padding: $onex-btn-padding-y $onex-btn-padding-x;
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    color: $onex-select-option-text-color;
+
+    &:hover {
+      background-color: $onex-select-option-hover-bg-color;
+      cursor: pointer;
+    }
+
+    .onex-check__wrapper {
+      gap: 0.625rem;
+    }
+
+    label.onex-check__wrapper {
+      display: inline-flex;
+    }
+  }
+
+  .onex-select__option.onex-select__option--is-focused,
+  .onex-select__option--is-selected,
+  .onex-select__option--is-selected.onex-select__option--is-focused {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $onex-select-option-hover-bg-color;
+    }
+  }
+
+  .onex-select__option--text.onex-select__option--is-selected {
+    background-color: $onex-select-option-focused-bg-color;
+
+    &:hover {
+      background-color: $onex-select-option-focused-hover-bg-color;
+    }
+  }
+
+  .onex-select__group {
+    padding: 0.25rem 0 0;
+    border-bottom: 1px solid $onex-select-menu-border-color;
+
+    &:last-child {
+      border: none;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .onex-select__group-heading {
+    padding: 1rem $onex-btn-padding-x 0.5rem;
+    margin: 0;
+    font-size: $font-size-caption;
+    line-height: $line-height-caption;
+    color: $secondary-400;
+    font-weight: 600;
+  }
 
     .onex-select__indicator-separator {
         display: none;
@@ -74,20 +236,73 @@
         display: none;
     }
 
-    .onex-select__control--is-focused .onex-select__indicator {
-        color: $select-control-border-color-focused;
-        transform: rotate(180deg);
-    }
+  .onex-select__control--menu-is-open .onex-select__indicator {
+    transform: rotate(180deg);
+  }
 
     .onex-select__multi-value {
-        background-color: $secondary-100;
-        border-radius: $select-multi-value-border-radius;
+      background-color: $secondary-400-opacity-01;
+      border-radius: $onex-select-multi-value-border-radius;
+      align-items: center;
+      padding: 2px 2px 2px 8px;
+
+      .onex-select__multi-value__label {
+        padding: 0;
+        margin-right: 4px;
+        font-size: $font-size-lg;
+        line-height: $line-height-lg;
+        color: $secondary-900;
+      }
+
+      .onex-select__multi-value__remove {
+        display: flex;
         align-items: center;
-        .onex-select__multi-value__remove {
-            &:hover {
-                background-color: $secondary-100;
-                color: black;
-            }
+        justify-content: center;
+        width: $component-height-middle-sm;
+        height: $component-height-middle-sm;
+        padding: 0;
+        background-color: transparent;
+        color: $secondary-400;
+
+        svg {
+          width: $component-height-middle-sm;
+          height: $component-height-middle-sm;
+
+          & path {
+            fill: $secondary-400;
+          }
         }
+      }
     }
+}
+
+.onex-select--md {
+  @include size-select($onex-select-height-md, $onex-select-md-multi-value-height);
+
+  .onex-select__icon {
+    padding-left: 0.75rem;
+  }
+}
+.onex-select--sm {
+  @include size-select($onex-select-height-sm, $onex-select-sm-multi-value-height);
+
+  .onex-select__icon {
+    padding-left: 0.5rem;
+  }
+
+  .onex-select__control .onex-select__input-container {
+    padding: $onex-select-input-container-padding;
+    margin: $onex-select-input-container-margin;
+  }
+}
+
+.is-disabled {
+  .onex-select__label.form-label,
+  .onex-select__help-text.form-text {
+    opacity: 0.4;
+  }
+}
+
+.multiselect-check.onex-check > .onex-check__wrapper.form-check-label {
+  pointer-events: none;
 }

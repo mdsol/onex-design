@@ -57,7 +57,6 @@ const LargeModal = (args) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -65,11 +64,11 @@ const LargeModal = (args) => {
       </Button>
 
       <Modal
+        {...args}
         show={show}
         handleClose={() => setShow(false)}
         onSecondaryClick={handleClose}
         onPrimaryClick={handleClose}
-        {...args}
       >
         Large Modal
       </Modal>
@@ -98,11 +97,11 @@ const SmallModal = (args) => {
       </Button>
 
       <Modal
+        {...args}
         show={show}
         handleClose={handleClose}
         onSecondaryClick={handleClose}
         onPrimaryClick={handleClose}
-        {...args}
       >
         Small Modal
       </Modal>
