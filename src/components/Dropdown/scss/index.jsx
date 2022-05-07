@@ -12,6 +12,7 @@ const CustomDropdown = (props) => {
     disabled,
     id,
     title,
+    leadingIcon,
     items,
     variant,
     size,
@@ -36,6 +37,7 @@ const CustomDropdown = (props) => {
         size={size}
         align={align}
       >
+        {buttonStyle !== 'icon' && leadingIcon && leadingIcon}
         {title}
         <ExpandMoreRoundedIcon className="onex-dropdown__chevron-icon" />
       </Dropdown.Toggle>
@@ -87,6 +89,7 @@ CustomDropdown.propTypes = {
   buttonStyle: PropTypes.oneOf(['text', 'icon']),
   size: PropTypes.oneOf(['md', 'sm']),
   disabled: PropTypes.bool,
+  leadingIcon: PropTypes.node,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -107,6 +110,7 @@ CustomDropdown.defaultProps = {
   className: undefined,
   disabled: false,
   title: undefined,
+  leadingIcon: undefined,
   items: null,
   variant: 'primary',
   size: 'sm',

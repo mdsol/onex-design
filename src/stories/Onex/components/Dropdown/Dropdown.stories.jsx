@@ -1,4 +1,5 @@
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import Dropdown from '../../../../components/Dropdown/scss';
 
 export default {
@@ -92,6 +93,15 @@ PrimarySmall.args = {
   size: 'sm',
 };
 
+export const PrimarySmallLeadingIcon = DropdownTemplate.bind({});
+PrimarySmallLeadingIcon.args = {
+  title: 'Label',
+  id: 'primary-small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const PrimarySmallDisabled = DropdownTemplate.bind({});
 PrimarySmallDisabled.args = {
   title: 'Label',
@@ -109,20 +119,21 @@ PrimaryMedium.args = {
   size: 'md',
 };
 
+export const PrimaryMediumLeadingIcon = DropdownTemplate.bind({});
+PrimaryMediumLeadingIcon.args = {
+  title: 'Label',
+  id: 'primary-medium-dropdown',
+  items: dropdownItems,
+  size: 'md',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const PrimaryMediumDisabled = DropdownTemplate.bind({});
 PrimaryMediumDisabled.args = {
   title: 'Label',
   id: 'primary-medium-disabled-dropdown',
   items: dropdownItems,
   size: 'md',
-  disabled: true,
-};
-
-export const PrimaryDisabled = DropdownTemplate.bind({});
-PrimaryDisabled.args = {
-  title: 'Disabled dropdown',
-  id: 'primary-disabled-dropdown',
-  items: dropdownItems,
   disabled: true,
 };
 
@@ -133,6 +144,16 @@ SecondarySmall.args = {
   id: 'secondary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
+};
+
+export const SecondarySmallLeadingIcon = DropdownTemplate.bind({});
+SecondarySmallLeadingIcon.args = {
+  variant: 'secondary',
+  title: 'Label',
+  id: 'secondary-small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  leadingIcon: <LanguageRoundedIcon />,
 };
 
 export const SecondarySmallDisabled = DropdownTemplate.bind({});
@@ -154,6 +175,16 @@ SecondaryMedium.args = {
   size: 'md',
 };
 
+export const SecondaryMediumLeadingIcon = DropdownTemplate.bind({});
+SecondaryMediumLeadingIcon.args = {
+  variant: 'secondary',
+  title: 'Label',
+  id: 'secondary-medium-dropdown',
+  items: dropdownItems,
+  size: 'md',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const SecondaryMediumDisabled = DropdownTemplate.bind({});
 SecondaryMediumDisabled.args = {
   variant: 'secondary',
@@ -173,6 +204,16 @@ TertiarySmall.args = {
   size: 'sm',
 };
 
+export const TertiarySmallLeadingIcon = DropdownTemplate.bind({});
+TertiarySmallLeadingIcon.args = {
+  variant: 'tertiary',
+  title: 'Label',
+  id: 'tertiary-small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const TertiarySmallDisabled = DropdownTemplate.bind({});
 TertiarySmallDisabled.args = {
   variant: 'tertiary',
@@ -190,6 +231,16 @@ TertiaryMedium.args = {
   id: 'tertiary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
+};
+
+export const TertiaryMediumLeadingIcon = DropdownTemplate.bind({});
+TertiaryMediumLeadingIcon.args = {
+  variant: 'tertiary',
+  title: 'Label',
+  id: 'tertiary-medium-dropdown',
+  items: dropdownItems,
+  size: 'md',
+  leadingIcon: <LanguageRoundedIcon />,
 };
 
 export const TertiaryMediumDisabled = DropdownTemplate.bind({});
