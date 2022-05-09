@@ -3603,8 +3603,8 @@ __metadata:
     webpack-cli: ^4.9.2
     webpack-dev-server: ^4.8.1
   peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: ">=17.0.2"
+    react-dom: ">=17.0.2"
   languageName: unknown
   linkType: soft
 
