@@ -1,12 +1,23 @@
-$select-height-lg: 2.5rem;
-$select-height-sm: 1.75rem;
+$onex-select-height-md: $component-height-lg;
+$onex-select-height-sm: $component-height-sm;
+$onex-select-min-width: 16.625rem;
 
-$select-lg-multi-value-height: 1.5rem;
-$select-input-container-padding: 0rem;
-$select-input-container-margin: 0rem;
-$select-sm-multi-value-height: 1.25rem;
-$select-max-width: 31.25rem;
-$select-control-border: 0.063rem;
-$select-control-border-radius: 0.5rem;
-$select-control-border-color-focused: #0070A8;
-$select-multi-value-border-radius: 0.375rem;
+$onex-select-md-multi-value-height: 1.5rem;
+$onex-select-input-container-padding: 0rem;
+$onex-select-input-container-margin: 0rem;
+$onex-select-sm-multi-value-height: 1.25rem;
+$onex-select-max-width: 31.25rem;
+$onex-select-control-border: 1px;
+$onex-select-control-border-radius: 0.5rem;
+$onex-select-multi-value-border-radius: 0.25rem;
+$onex-select-menu-border-color: $secondary-900-opacity-10;
+$onex-select-option-text-color: $secondary-900;
+$onex-select-option-hover-bg-color: $secondary-400-opacity-01;
+$onex-select-option-focused-bg-color: $tertiary-500;
+$onex-select-option-focused-hover-bg-color: $tertiary-300;
+
+$onex-select-scrollbar-color: $secondary-900-opacity-10;
+$onex-select-scrollbar-width: 0.75rem;
+$onex-select-scrollbar-border-radius: 0.438rem;
+$onex-select-max-height: 25.5rem;
+$onex-select-icon-color: $secondary-400;

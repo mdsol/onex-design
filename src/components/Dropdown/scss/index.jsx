@@ -2,7 +2,8 @@ import { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
-import Badge from '../../Badge/styled';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import Badge from '../../Badge/scss';
 import DropdownMenu from './components/DropdownMenu';
 
 const CustomDropdown = (props) => {
@@ -11,7 +12,7 @@ const CustomDropdown = (props) => {
     disabled,
     id,
     title,
-    isSearchable,
+    leadingIcon,
     items,
     variant,
     size,
@@ -24,7 +25,6 @@ const CustomDropdown = (props) => {
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
     'onex-dropdown--default-icon': !title && buttonStyle === 'icon',
-    'onex-dropdown--menu-searchable': isSearchable,
   });
 
   return (
@@ -37,9 +37,11 @@ const CustomDropdown = (props) => {
         size={size}
         align={align}
       >
+        {buttonStyle !== 'icon' && leadingIcon && leadingIcon}
         {title}
+        <ExpandMoreRoundedIcon className="onex-dropdown__chevron-icon" />
       </Dropdown.Toggle>
-      <Dropdown.Menu isSearchable={isSearchable} as={DropdownMenu}>
+      <Dropdown.Menu as={DropdownMenu}>
         {!!items?.length &&
           items.map((item) => {
             const {
@@ -87,7 +89,7 @@ CustomDropdown.propTypes = {
   buttonStyle: PropTypes.oneOf(['text', 'icon']),
   size: PropTypes.oneOf(['md', 'sm']),
   disabled: PropTypes.bool,
-  isSearchable: PropTypes.bool,
+  leadingIcon: PropTypes.node,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -108,7 +110,7 @@ CustomDropdown.defaultProps = {
   className: undefined,
   disabled: false,
   title: undefined,
-  isSearchable: false,
+  leadingIcon: undefined,
   items: null,
   variant: 'primary',
   size: 'sm',

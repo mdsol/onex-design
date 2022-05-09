@@ -16,12 +16,10 @@ import {
   Nav,
   Navbar,
   NavDropdown,
-  Offcanvas,
   OverlayTrigger,
   Placeholder,
   Popover,
   Row,
-  Spinner,
   Stack,
 } from 'react-bootstrap';
 import Avatar from './Avatar/scss';
@@ -63,6 +61,9 @@ import Typography from './Typography/scss';
 import DataGrid from './DataGrid/scss';
 import Modal from './Modal/scss';
 import ProgressBar from './ProgressBar/scss';
+import CustomCard from './Card/scss';
+import Spinner from './Spinner/scss';
+import Offcanvas from './Offcanvas/scss';
 
 import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
@@ -138,6 +139,8 @@ export {
   Tooltip,
   Typography,
   ProgressBar,
+  Spinner,
+  Offcanvas,
 };
 
 export {
@@ -148,14 +151,12 @@ export {
   Card,
   Carousel,
   Figure,
-  Spinner,
   Image,
   Modal,
   Navbar,
   Container,
   Nav,
   NavDropdown,
-  Offcanvas,
   Placeholder,
   Row,
   Col,
@@ -167,6 +168,7 @@ export {
   OverlayTrigger,
   Overlay,
   DataGrid,
+  CustomCard,
   StyledAvatar,
   StyledBadge,
   StyledButtons,

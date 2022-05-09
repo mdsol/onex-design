@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10374,7 +10375,7 @@ progress {
 
 .btn {
   display: inline-block;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   line-height: 1.25rem;
   color: #212529;
@@ -10866,9 +10867,30 @@ progress {
 }
 
 .btn-sm {
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.5rem;
   font-size: 0.75rem;
   border-radius: 0.2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+.badge:empty {
+  display: none;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
 }
 
 .onex-dropdown {
@@ -10876,8 +10898,11 @@ progress {
   /* buttonStyle (text, icon) */
 }
 .onex-dropdown > .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 0.875rem;
@@ -10886,8 +10911,19 @@ progress {
   /* primary */
   /* secondary, tertiary */
 }
-.onex-dropdown > .btn.btn-primary.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%28255, 255, 255%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown > .btn > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.25rem;
+}
+.onex-dropdown > .btn > .onex-dropdown__chevron-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
+.onex-dropdown > .btn.btn-primary > .onex-dropdown__chevron-icon {
+  color: rgb(255, 255, 255);
 }
 .onex-dropdown > .btn.btn-primary:disabled, .onex-dropdown > .btn.btn-primary.disabled {
   opacity: 0.4;
@@ -10900,6 +10936,10 @@ progress {
   background-color: rgb(0, 95, 171);
   border-color: rgb(0, 95, 171);
 }
+.onex-dropdown > .btn.btn-primary.active, .onex-dropdown > .btn.btn-primary:active {
+  background-color: rgb(0, 71, 134);
+  border-color: rgb(0, 71, 134);
+}
 .onex-dropdown > .btn.btn-secondary {
   border: 1px solid rgba(26, 28, 30, 0.2);
 }
@@ -10910,8 +10950,8 @@ progress {
   color: rgb(103, 110, 122);
   background-color: rgb(255, 255, 255);
 }
-.onex-dropdown > .btn.btn-secondary.dropdown-toggle::after, .onex-dropdown > .btn.btn-tertiary.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%28103, 110, 122%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown > .btn.btn-secondary > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary > .onex-dropdown__chevron-icon {
+  color: rgb(103, 110, 122);
 }
 .onex-dropdown > .btn.btn-secondary:hover {
   border-color: rgba(26, 28, 30, 0.5);
@@ -10923,6 +10963,14 @@ progress {
   opacity: 0.4;
   color: rgb(26, 28, 30);
 }
+.onex-dropdown > .btn.btn-secondary.active, .onex-dropdown > .btn.btn-secondary:active, .onex-dropdown > .btn.btn-tertiary.active, .onex-dropdown > .btn.btn-tertiary:active {
+  color: rgb(26, 28, 30);
+  background-color: rgb(221, 224, 229);
+  border-color: rgba(26, 28, 30, 0.5);
+}
+.onex-dropdown > .btn.btn-secondary.active > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-secondary:active > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary.active > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary:active > .onex-dropdown__chevron-icon {
+  color: rgb(26, 28, 30);
+}
 .onex-dropdown > .btn.btn-md {
   min-width: 5rem;
   height: 2.5rem;
@@ -10931,24 +10979,22 @@ progress {
 .onex-dropdown > .btn.btn-sm {
   min-width: 5rem;
   height: 2rem;
-  padding: 0.375rem 0.5rem 0.375rem 0.75rem;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
 }
-.onex-dropdown--text > .dropdown-toggle::after, .onex-dropdown--default-icon > .dropdown-toggle::after {
-  content: "";
-  display: inline-block;
-  height: 1.25rem;
-  width: 1.25rem;
-  background-size: 1.25rem 1.25rem;
-  background-repeat: no-repeat;
-  border: none;
-  margin-left: 0.25rem;
-  vertical-align: middle;
+.onex-dropdown > .btn.btn-sm.btn-tertiary {
+  padding: 0.375rem 0.5rem 0.375rem 0.25rem;
 }
-.onex-dropdown--icon.onex-dropdown--default-icon > .dropdown-toggle::after {
+.onex-dropdown > .btn.btn-md.btn-tertiary {
+  padding: 0.625rem 0.5rem 0.625rem 0.5rem;
+}
+.onex-dropdown--text > .dropdown-toggle::after, .onex-dropdown--icon > .dropdown-toggle::after {
+  display: none;
+}
+.onex-dropdown--icon.onex-dropdown--default-icon > .btn > .onex-dropdown__chevron-icon {
   display: inline-block;
   margin-left: 0;
 }
-.onex-dropdown--icon > .dropdown-toggle::after {
+.onex-dropdown--icon > .btn > .onex-dropdown__chevron-icon {
   display: none;
 }
 .onex-dropdown--icon > .btn {
@@ -10976,7 +11022,7 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-dropdown.show > .dropdown-toggle::after {
+.onex-dropdown.show > .dropdown-toggle > .onex-dropdown__chevron-icon {
   transform: rotateX(-180deg);
   transition: transform ease-in-out 0.15s;
 }
@@ -10984,24 +11030,28 @@ progress {
   background-color: rgb(0, 71, 134);
   border-color: rgb(0, 71, 134);
 }
+.onex-dropdown.show > .dropdown-toggle.btn-primary:focus {
+  box-shadow: none;
+}
 .onex-dropdown.show > .dropdown-toggle.btn-secondary, .onex-dropdown.show > .dropdown-toggle.btn-tertiary {
   color: rgb(26, 28, 30);
   background-color: rgb(221, 224, 229);
   border-color: rgba(26, 28, 30, 0.5);
 }
-.onex-dropdown.show > .dropdown-toggle.btn-secondary.dropdown-toggle::after, .onex-dropdown.show > .dropdown-toggle.btn-tertiary.dropdown-toggle::after {
-  background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='rgb%2826, 28, 30%29'%3e%3c/path%3e%3c/svg%3e");
+.onex-dropdown.show > .dropdown-toggle.btn-secondary:focus, .onex-dropdown.show > .dropdown-toggle.btn-tertiary:focus {
+  box-shadow: none;
+}
+.onex-dropdown.show > .dropdown-toggle.btn-secondary > .onex-dropdown__chevron-icon, .onex-dropdown.show > .dropdown-toggle.btn-tertiary > .onex-dropdown__chevron-icon {
+  color: rgb(26, 28, 30);
 }
 .onex-dropdown .dropdown-menu {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   padding: 0.25rem 0;
-}
-.onex-dropdown .dropdown-menu--search {
-  margin: 0.5rem 0.75rem 0.625rem 0.75rem;
-  min-width: 13.5rem;
+  border-color: rgba(26, 28, 30, 0.1);
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 28, 59, 0.12);
 }
 .onex-dropdown .dropdown-menu--list {
   padding-left: 0;
@@ -11012,7 +11062,7 @@ progress {
   padding: 0.625rem 0.75rem;
   text-decoration: none;
   color: rgb(26, 28, 30);
-  min-width: 13.5rem;
+  min-width: 12.5rem;
 }
 .onex-dropdown .dropdown-menu .dropdown-item > span {
   padding-right: 0.5rem;
@@ -11021,14 +11071,218 @@ progress {
   background-color: rgba(103, 110, 122, 0.1);
 }
 .onex-dropdown .dropdown-menu .dropdown-item.active, .onex-dropdown .dropdown-menu .dropdown-item:active {
-  background-color: rgb(198, 227, 252);
+  background-color: rgb(221, 224, 229);
 }
 .onex-dropdown .dropdown-menu .dropdown-item.active:hover, .onex-dropdown .dropdown-menu .dropdown-item:active:hover {
-  background-color: rgb(141, 202, 249);
+  background-color: rgb(221, 224, 229);
 }
 .onex-dropdown .dropdown-menu .dropdown-item.active.disabled, .onex-dropdown .dropdown-menu .dropdown-item.active:disabled, .onex-dropdown .dropdown-menu .dropdown-item:active.disabled, .onex-dropdown .dropdown-menu .dropdown-item:active:disabled {
   background-color: transparent;
 }
 .onex-dropdown .dropdown-menu .dropdown-item.disabled, .onex-dropdown .dropdown-menu .dropdown-item:disabled {
   opacity: 0.4;
+}
+.onex-dropdown .dropdown-menu .dropdown-divider {
+  margin: 0;
+  border-top: 1px solid rgba(26, 28, 30, 0.1);
+  color: rgba(26, 28, 30, 0.1);
+  background-color: rgba(26, 28, 30, 0.1);
+  opacity: 1;
+}
+
+.onex-badge {
+  height: 1.25rem;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  border-radius: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.onex-badge.badge {
+  display: inline-flex;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: rgb(0, 0, 0);
+  border-radius: 1.25rem;
+  line-height: 1rem;
+}
+.onex-badge .onex-badge__icon svg,
+.onex-badge svg {
+  width: 1rem;
+  height: 1rem;
+}
+.onex-badge .onex-badge__icon {
+  display: inline-flex;
+}
+.onex-badge.onex-badge--variant-counter.bg-default {
+  background-color: rgba(103, 110, 122, 0.1) !important;
+}
+.onex-badge.onex-badge--variant-counter.bg-default-invert {
+  background-color: rgb(88, 95, 104) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-default-invert svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-important {
+  background-color: rgb(217, 21, 34) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-important svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-primary {
+  background-color: rgb(0, 112, 192) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-primary svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-added {
+  background-color: rgb(224, 246, 234) !important;
+  color: rgb(47, 131, 54);
+}
+.onex-badge.onex-badge--variant-counter.bg-added svg path {
+  fill: rgb(47, 131, 54);
+}
+.onex-badge.onex-badge--variant-counter.bg-removed {
+  background-color: rgb(255, 236, 238) !important;
+  color: rgb(228, 7, 7);
+}
+.onex-badge.onex-badge--variant-counter.bg-removed svg path {
+  fill: rgb(228, 7, 7);
+}
+.onex-badge.onex-badge--variant-status {
+  border-radius: 0.25rem !important;
+  text-transform: uppercase;
+}
+.onex-badge.onex-badge--variant-status.bg-default {
+  background-color: rgba(103, 110, 122, 0.1) !important;
+  color: rgb(103, 110, 122);
+  border: 1px solid rgba(26, 28, 30, 0.1) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-default svg path {
+  fill: rgb(103, 110, 122);
+}
+.onex-badge.onex-badge--variant-status.bg-info {
+  background-color: rgb(231, 242, 254) !important;
+  color: rgb(0, 112, 192);
+  border: 1px solid rgb(198, 227, 252) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-info svg path {
+  fill: rgb(0, 112, 192);
+}
+.onex-badge.onex-badge--variant-status.bg-success {
+  background-color: rgb(224, 246, 234) !important;
+  color: rgb(0, 126, 76);
+  border: 1px solid rgb(181, 235, 212) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-success svg path {
+  fill: rgb(0, 126, 76);
+}
+.onex-badge.onex-badge--variant-status.bg-warning {
+  background-color: rgb(255, 241, 184) !important;
+  color: rgb(196, 64, 0);
+  border: 1px solid rgb(253, 222, 104) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-warning svg path {
+  fill: rgb(196, 64, 0);
+}
+.onex-badge.onex-badge--variant-status.bg-important {
+  background-color: rgb(255, 236, 238) !important;
+  color: rgb(217, 21, 34);
+  border: 1px solid rgb(253, 215, 217) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-important svg path {
+  fill: rgb(217, 21, 34);
+}
+.onex-badge.onex-badge--variant-status-bold {
+  border-radius: 0.25rem !important;
+  text-transform: uppercase;
+}
+.onex-badge.onex-badge--variant-status-bold.bg-default {
+  background-color: rgb(88, 95, 104) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-default svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-info {
+  background-color: rgb(0, 112, 192) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-info svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-success {
+  background-color: rgb(0, 126, 76) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-success svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-warning {
+  background-color: rgb(252, 185, 22) !important;
+  color: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-warning svg path {
+  fill: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-important {
+  background-color: rgb(217, 21, 34) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-important svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem !important;
+  padding: 0.125rem 0.125rem;
+  width: 1.25rem;
+}
+.onex-badge.onex-badge--variant-status-icon.bg-default {
+  background-color: rgb(88, 95, 104) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-default svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-info {
+  background-color: rgb(0, 112, 192) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-info svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-success {
+  background-color: rgb(0, 126, 76) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-success svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-warning {
+  background-color: rgb(252, 185, 22) !important;
+  color: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-warning svg path {
+  fill: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-important {
+  background-color: rgb(217, 21, 34) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-important svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon .onex-badge__icon svg,
+.onex-badge.onex-badge--variant-status-icon svg {
+  width: 1rem;
+  height: 1rem;
 }

@@ -1,7 +1,7 @@
 // Tables components were added manually
 
 const classRegexBase = '.[^__]+?[.|\\s]';
-const classRegexBootstrap = '.[^-]+?[.|\\s]';
+const classRegexBootstrap = '[^-]+?[.|\\s]';
 
 module.exports = [
   {
@@ -33,12 +33,12 @@ module.exports = [
   {
     name: 'Dropdown',
     importName: 'Dropdown',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-dropdown', classRegex: classRegexBase }],
   },
   {
     name: 'ExpansionPanel',
     importName: 'ExpansionPanel',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-expansionPanel', classRegex: classRegexBase }],
   },
   {
     name: 'InlineEditSelect',
@@ -64,8 +64,10 @@ module.exports = [
     name: 'Modal',
     importName: 'Modal',
     replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.onex-modal', classRegex: classRegexBase },
       { className: '.modal', classRegex: classRegexBootstrap },
+      { className: '.fade', classRegex: classRegexBase },
+      { className: '.show', classRegex: classRegexBase },
     ],
   },
   {
@@ -84,7 +86,7 @@ module.exports = [
   {
     name: 'Select',
     importName: 'Select',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-select', classRegex: classRegexBase }],
   },
   {
     name: 'Switch',
@@ -128,7 +130,7 @@ module.exports = [
     name: 'Toasts',
     importName: 'Toast',
     replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.onex-toast', classRegex: classRegexBase },
       { className: '.toast-container', classRegex: classRegexBase },
     ],
   },
@@ -152,6 +154,8 @@ module.exports = [
       { className: '.onex-', classRegex: classRegexBase },
       { className: '.tooltip', classRegex: classRegexBootstrap },
       { className: '.popover', classRegex: classRegexBase },
+      { className: '.fade', classRegex: classRegexBase },
+      { className: '.bs-tooltip', classRegex: classRegexBase },
     ],
   },
   {
@@ -165,6 +169,32 @@ module.exports = [
     replaceUrl: [
       { className: '.onex-', classRegex: classRegexBase },
       { className: '.progress', classRegex: classRegexBootstrap },
+    ],
+  },
+  {
+    name: 'Card',
+    importName: 'Card',
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.card', classRegex: classRegexBootstrap },
+    ]
+  },
+  {
+    name: 'Spinner',
+    importName: 'Spinner',
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+    ]
+    },
+    {
+    name: 'Offcanvas',
+    importName: 'Offcanvas',
+    replaceUrl: [
+      { className: '.onex-offcanvas', classRegex: classRegexBase },
+      { className: '.offcanvas', classRegex: classRegexBootstrap },
+      { className: '.offcanvas-end', classRegex: classRegexBootstrap },
+      { className: '.fade', classRegex: classRegexBase },
+      { className: '.show', classRegex: classRegexBase },
     ],
   },
 ];

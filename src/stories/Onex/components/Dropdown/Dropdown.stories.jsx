@@ -1,5 +1,6 @@
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Dropdown } from '../../../../components';
+import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
+import Dropdown from '../../../../components/Dropdown/scss';
 
 export default {
   title: 'Onex/Components/Dropdown',
@@ -27,10 +28,6 @@ export default {
       description: 'An html id attribute for the Toggle button,',
       control: 'text',
     },
-    isSearchable: {
-      description: 'Added Search input to menu',
-      control: 'boolean',
-    },
     items: {
       description: `Array of menu items. Each item contain:
                            \n1.title* - content of menu item;
@@ -55,14 +52,19 @@ export default {
 };
 
 const dropdownItems = [
-  { eventKey: 'one', title: 'item one', badge: 100, active: true },
-  { eventKey: 'two', title: 'item two', badge: 100 },
+  { eventKey: 'one', title: 'item one' },
+  { eventKey: 'two', title: 'item two' },
   { eventKey: 'three', title: 'item three' },
-  { eventKey: 'four', title: 'item four', badge: 100 },
-  { eventKey: 'five', title: 'item five', badge: 100 },
-  { eventKey: 'six', title: 'item six', badge: 100 },
-  { eventKey: 'seven', title: 'item seven', badge: 100 },
-  { eventKey: 'eight', title: 'item eight', badge: 100 },
+  { eventKey: 'four', title: 'item four' },
+];
+
+const dropdownItemsWithDivider = [
+  { eventKey: 'one', title: 'item one' },
+  { eventKey: 'two', title: 'item two' },
+  { eventKey: 'three', title: 'item three' },
+  { eventKey: 'four', title: 'item four', hasDividerAfter: true },
+  { eventKey: 'five', title: 'item five' },
+  { eventKey: 'six', title: 'item six' },
 ];
 
 const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -91,6 +93,15 @@ PrimarySmall.args = {
   size: 'sm',
 };
 
+export const PrimarySmallLeadingIcon = DropdownTemplate.bind({});
+PrimarySmallLeadingIcon.args = {
+  title: 'Label',
+  id: 'primary-small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const PrimarySmallDisabled = DropdownTemplate.bind({});
 PrimarySmallDisabled.args = {
   title: 'Label',
@@ -108,20 +119,21 @@ PrimaryMedium.args = {
   size: 'md',
 };
 
+export const PrimaryMediumLeadingIcon = DropdownTemplate.bind({});
+PrimaryMediumLeadingIcon.args = {
+  title: 'Label',
+  id: 'primary-medium-dropdown',
+  items: dropdownItems,
+  size: 'md',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const PrimaryMediumDisabled = DropdownTemplate.bind({});
 PrimaryMediumDisabled.args = {
   title: 'Label',
   id: 'primary-medium-disabled-dropdown',
   items: dropdownItems,
   size: 'md',
-  disabled: true,
-};
-
-export const PrimaryDisabled = DropdownTemplate.bind({});
-PrimaryDisabled.args = {
-  title: 'Disabled dropdown',
-  id: 'primary-disabled-dropdown',
-  items: dropdownItems,
   disabled: true,
 };
 
@@ -132,6 +144,16 @@ SecondarySmall.args = {
   id: 'secondary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
+};
+
+export const SecondarySmallLeadingIcon = DropdownTemplate.bind({});
+SecondarySmallLeadingIcon.args = {
+  variant: 'secondary',
+  title: 'Label',
+  id: 'secondary-small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  leadingIcon: <LanguageRoundedIcon />,
 };
 
 export const SecondarySmallDisabled = DropdownTemplate.bind({});
@@ -153,6 +175,16 @@ SecondaryMedium.args = {
   size: 'md',
 };
 
+export const SecondaryMediumLeadingIcon = DropdownTemplate.bind({});
+SecondaryMediumLeadingIcon.args = {
+  variant: 'secondary',
+  title: 'Label',
+  id: 'secondary-medium-dropdown',
+  items: dropdownItems,
+  size: 'md',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const SecondaryMediumDisabled = DropdownTemplate.bind({});
 SecondaryMediumDisabled.args = {
   variant: 'secondary',
@@ -172,6 +204,16 @@ TertiarySmall.args = {
   size: 'sm',
 };
 
+export const TertiarySmallLeadingIcon = DropdownTemplate.bind({});
+TertiarySmallLeadingIcon.args = {
+  variant: 'tertiary',
+  title: 'Label',
+  id: 'tertiary-small-dropdown',
+  items: dropdownItems,
+  size: 'sm',
+  leadingIcon: <LanguageRoundedIcon />,
+};
+
 export const TertiarySmallDisabled = DropdownTemplate.bind({});
 TertiarySmallDisabled.args = {
   variant: 'tertiary',
@@ -189,6 +231,16 @@ TertiaryMedium.args = {
   id: 'tertiary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
+};
+
+export const TertiaryMediumLeadingIcon = DropdownTemplate.bind({});
+TertiaryMediumLeadingIcon.args = {
+  variant: 'tertiary',
+  title: 'Label',
+  id: 'tertiary-medium-dropdown',
+  items: dropdownItems,
+  size: 'md',
+  leadingIcon: <LanguageRoundedIcon />,
 };
 
 export const TertiaryMediumDisabled = DropdownTemplate.bind({});
@@ -420,11 +472,11 @@ TertiaryCustomDisabledIcon.args = {
   title: <MoreVertIcon />,
 };
 
-export const Search = DropdownTemplate.bind({});
-Search.args = {
+export const WithDivider = DropdownTemplate.bind({});
+WithDivider.args = {
+  variant: 'primary',
   title: 'Label',
-  id: 'small-dropdown',
-  items: dropdownItems,
-  size: 'sm',
-  isSearchable: true,
+  id: 'with-divider-dropdown',
+  items: dropdownItemsWithDivider,
+  size: 'md',
 };

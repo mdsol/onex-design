@@ -15,13 +15,14 @@
 
   /* primary */
   &.btn-primary {
+    @include bg-color($onex-btn-primary-disabled-bg-color);
+    color: $onex-btn-primary-text-color;
     svg path {
       fill: $onex-btn-primary-text-color;
     }
 
     &:disabled,
     &.disabled {
-      @include bg-color($onex-btn-primary-disabled-bg-color);
       opacity: 0.4;
     }
 

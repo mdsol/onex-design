@@ -2,7 +2,11 @@
 
 .onex-dropdown {
   position: relative;
+
   & > .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     font-family: $font-family;
     font-style: normal;
@@ -11,11 +15,21 @@
     line-height: $onex-dropdown-btn-line-height;
     border-radius: $btn-border-radius;
 
+    & > svg {
+      @include icon-size($btn-icon-type-icon-size-sm);
+      margin-right: 0.25rem;
+    }
+
+    & > .onex-dropdown__chevron-icon {
+      @include icon-size($btn-icon-type-icon-size-sm);
+      margin-right: 0;
+      margin-left: 0.25rem;
+    }
 
     /* primary */
     &.btn-primary {
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($white);
+      & > .onex-dropdown__chevron-icon {
+        color: $white;
       }
     }
 
@@ -36,6 +50,11 @@
       @include bg-color($btn-primary-hover-bg-color);
     }
 
+    &.btn-primary.active,
+    &.btn-primary:active {
+      @include bg-color($btn-primary-active-bg-color);
+    }
+
     /* secondary, tertiary */
     &.btn-secondary {
       border: 1px solid $btn-secondary-border-color;
@@ -50,8 +69,8 @@
       color: $btn-secondary-text-color;
       background-color: $btn-secondary-bg-color;
 
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($btn-secondary-text-color);
+      & > .onex-dropdown__chevron-icon {
+        color: $btn-secondary-text-color;
       }
     }
 
@@ -72,6 +91,19 @@
       color: $btn-secondary-disabled-text-color;
     }
 
+    &.btn-secondary.active,
+    &.btn-secondary:active,
+    &.btn-tertiary.active,
+    &.btn-tertiary:active {
+      color: $btn-secondary-active-text-color;
+      background-color: $btn-secondary-active-bg-color;
+      border-color: $btn-secondary-active-border-color;
+
+      & > .onex-dropdown__chevron-icon {
+        color: $btn-secondary-active-text-color;
+      }
+    }
+
     &.btn-md {
       @include btn-size($btn-min-width, $btn-height-md);
       padding: $btn-padding-y-md 0.5rem $btn-padding-y-md $btn-padding-x-md;
@@ -79,33 +111,42 @@
 
     &.btn-sm {
       @include btn-size($btn-min-width, $btn-height-sm);
-      padding: $btn-padding-y-sm 0.5rem $btn-padding-y-sm $btn-padding-x-sm;
+      padding: $btn-padding-y-sm $btn-padding-x-sm $btn-padding-y-sm $btn-padding-x-sm;
+    }
+
+    &.btn-sm.btn-tertiary {
+      padding: $btn-padding-y-sm $btn-padding-x-sm $btn-padding-y-sm 0.25rem;
+    }
+
+    &.btn-md.btn-tertiary {
+      padding: $btn-padding-y-md $btn-tertiary-padding-x-md $btn-padding-y-md $btn-tertiary-padding-x-md;
     }
   }
 
   /* buttonStyle (text, icon) */
   &--text > .dropdown-toggle::after,
-  &--default-icon > .dropdown-toggle::after {
-    content: "";
-    display: inline-block;
-    height: $btn-dropdown-toggle-icon-size;
-    width: $btn-dropdown-toggle-icon-size;
-    background-size: $btn-dropdown-toggle-icon-size $btn-dropdown-toggle-icon-size;
-    background-repeat: no-repeat;
-    border: none;
-    margin-left: $btn-dropdown-toggle-icon-margin-y;
-    vertical-align: middle;
+  &--icon > .dropdown-toggle::after {
+    display: none;
   }
 
   &--icon {
-    &.onex-dropdown--default-icon > .dropdown-toggle::after {
-      display: inline-block;
-      margin-left: 0;
+    &.onex-dropdown--default-icon > .btn  {
+      & > .onex-dropdown__chevron-icon {
+        display: inline-block;
+        margin-left: 0;
+      }
     }
 
-    & > .dropdown-toggle::after {
-      display: none;
+    & > .btn {
+      & > .onex-dropdown__chevron-icon {
+        display: none;
+      }
+
     }
+
+    //& > .onex-dropdown__chevron-icon {
+    //  display: none;
+    //}
 
     & > .btn {
       display: inline-flex;
@@ -133,7 +174,7 @@
   }
 
   &.show > .dropdown-toggle {
-    &::after {
+    & > .onex-dropdown__chevron-icon  {
       transform: rotateX(-180deg);
       transition: transform ease-in-out 0.15s;
     }
@@ -141,6 +182,9 @@
     &.btn-primary {
       @include bg-color($btn-primary-active-bg-color);
 
+      &:focus {
+        box-shadow: none;
+      }
     }
 
     &.btn-secondary,
@@ -149,8 +193,11 @@
       background-color: $btn-secondary-active-bg-color;
       border-color: $btn-secondary-active-border-color;
 
-      &.dropdown-toggle::after {
-        @include dropdown-after-image($btn-secondary-active-text-color);
+      &:focus {
+        box-shadow: none;
+      }
+      & > .onex-dropdown__chevron-icon  {
+        color: $btn-secondary-active-text-color;
       }
     }
   }
@@ -161,11 +208,8 @@
     font-size: $menu-font-size;
     line-height: $menu-line-height;
     padding: $menu-padding-y $menu-padding-x;
-
-    &--search {
-      margin: $menu-search-padding-y $menu-search-padding-x $menu-item-padding-y $menu-search-padding-x;
-      min-width: $menu-search-min-width;
-    }
+    border-color: $menu-border-color;
+    box-shadow: 0 0.25rem 1.5rem $menu-box-shadow-color;
 
     &--list {
       padding-left: 0;
@@ -202,6 +246,14 @@
       &.disabled, &:disabled {
         opacity: $menu-item-opacity;
       }
+    }
+
+    .dropdown-divider {
+      margin: 0;
+      border-top: 1px solid $divider-color;
+      color: $divider-color;
+      background-color: $divider-color;
+      opacity: 1;
     }
   }
 }

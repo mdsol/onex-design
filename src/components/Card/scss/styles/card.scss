@@ -1,0 +1,24 @@
+.card {
+    display: inline-block!important;
+    border-radius: 1rem;
+    .card-body {
+        border: 0rem;
+    }
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: content-box;
+        padding: 1rem;
+        color: #000;
+        background: white;
+        border: 0rem;
+    }
+    .card-footer {
+        box-sizing: content-box;
+        padding: 0.5rem 0.5rem;
+        color: #000;
+        background: white;
+        border: 0rem;
+    }
+}

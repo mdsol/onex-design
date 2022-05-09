@@ -26,11 +26,25 @@ import * as stories from './Select.stories.jsx';
             }
         },
         options: {
-          description: 'The array of page numbers',
+          description: 'The array of select\'s options.',
           table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
+            defaultValue: {
+                summary: 'undefined',
+            },
+            type: {
+              summary: 'Array({ value: string | number, label: string | number })'
+            }
+          }
+        },
+        groupedOptions: {
+          description: 'The array of select\'s options with group.',
+          table: {
+            defaultValue: {
+              summary: 'undefined',
+            },
+            type: {
+              summary: 'Array({ label: string, options: Array({ value: string | number, label: string | number })})'
+            }
           }
         },
         isMulti: {
@@ -71,6 +85,41 @@ import * as stories from './Select.stories.jsx';
               defaultValue: {
                   summary: 'undefined',
               },
+              type: {
+                summary: 'Array({ value: string | number, label: string | number })'
+              }
+          }
+        },
+        showCheckInOption: {
+          description: 'This is determined by whether the checkbox will be displayed in option or not',
+          table: {
+            defaultValue: {
+              summary: 'false',
+            },
+          }
+        },
+        hasClearButton: {
+          description: 'This is determined by whether the clear button will be displayed in multi select. isMulty should to by true.',
+          table: {
+            defaultValue: {
+              summary: 'false',
+            },
+          }
+        },
+        label: {
+          description: 'The label content.',
+          table: {
+            defaultValue: {
+              summary: 'undefined',
+            },
+          }
+        },
+        helpText: {
+          description: 'The text with helpful information.',
+          table: {
+            defaultValue: {
+              summary: 'undefined',
+            },
           }
         },
         isAsync: {
@@ -81,10 +130,18 @@ import * as stories from './Select.stories.jsx';
                 },
             }
         },
+        onSelect: {
+          description: 'Callback fired when the option is select.',
+        },
         onLoadOptions: { description: 'async function which returns array of options' },
         getOptionValue: { description: 'function returns the value of selected option in async Select' },
         getOptionLabel: { description: 'function returns the label of selected option in async Select' },
     }}
+    decorators={[(Story) => (
+      <div className="left-wrap" style={{ padding: '20px', height: '300px' }}>
+        <Story />
+      </div>
+    )]}
     component={Select}
 />
 
@@ -92,25 +149,33 @@ export const Template = (args) => <Select {...args} />;
 
 ## Select
 
-### Select
+The select component allows users to choose single or multiple options from a list.
+
+### Select details
+
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-            size: 'lg',
-            className: 'select',
-            dataTestId: 'select',
-            options: [
-                { value: 'chocolate', label: 'Chocolate' },
-                { value: 'strawberry', label: 'Strawberry' },
-                { value: 'vanilla', label: 'Vanilla' },
-            ],
-            isMulti: true,
-            selectedValues: [],
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    height="200px"
+    padding="10px"
+    args={{
+      size: 'lg',
+      className: 'select',
+      dataTestId: 'select',
+      options: [
+        { value: 'brazil', label: 'Brazil' },
+        { value: 'colombia', label: 'Colombia' },
+        { value: 'poland', label: 'Poland' },
+        { value: 'portugal', label: 'Portugal' },
+        { value: 'spain', label: 'Spain' },
+      ],
+      isMulti: true,
+      selectedValues: [],
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
+
 
 <ArgsTable story="Demo" />
 
@@ -118,5 +183,43 @@ export const Template = (args) => <Select {...args} />;
 
 <Canvas>
     <Story name="Small" story={stories.Small} />
-    <Story name="Large" story={stories.Large} />
+    <Story name="Medium" story={stories.Medium} />
+</Canvas>
+
+### MultiSelect
+
+<Canvas>
+  <Story name="MultiSelect" story={stories.Multi} />
+</Canvas>
+
+### Select with grouped options. If you need options divided into groups, you should use "gropedOptions" property.
+
+<Canvas>
+  <Story height="450px" name="GroupOption" story={stories.GroupOption} />
+</Canvas>
+
+#### Select with checkbox in items
+
+<Canvas>
+  <Story name="WithCheckboxes" story={stories.WithCheckboxes} />
+</Canvas>
+
+### Select with help text, label and error message
+
+<Canvas>
+  <Story name="Label" story={stories.Label} />
+  <Story name="HelpText" story={stories.HelpText} />
+  <Story name="ErrorField" story={stories.ErrorField} />
+</Canvas>
+
+### Disabled Select
+
+<Canvas>
+  <Story name="Disabled" story={stories.Disabled} />
+</Canvas>
+
+### Example of MultiSelect with clear button
+
+<Canvas>
+  <Story name="HasClearButton" story={stories.HasClearButton} />
 </Canvas>

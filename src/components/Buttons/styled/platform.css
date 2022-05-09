@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10102,7 +10103,7 @@ progress {
 }
 .btn {
   display: inline-block;
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   line-height: 1.25rem;
   color: #212529;
@@ -10616,12 +10617,15 @@ progress {
 .onex-btn .onex-btn__decorator {
   display: none;
 }
+.onex-btn.btn-primary {
+  background-color: rgb(0, 95, 171);
+  border-color: rgb(0, 95, 171);
+  color: rgb(255, 255, 255);
+}
 .onex-btn.btn-primary svg path {
   fill: rgb(255, 255, 255);
 }
 .onex-btn.btn-primary:disabled, .onex-btn.btn-primary.disabled {
-  background-color: rgb(0, 95, 171);
-  border-color: rgb(0, 95, 171);
   opacity: 0.4;
 }
 .onex-btn.btn-primary.focus:hover, .onex-btn.btn-primary:hover {
