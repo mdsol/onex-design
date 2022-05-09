@@ -1,44 +1,40 @@
 {
   "name": "@mdsol/onex-design",
-  "version": "0.2.7",
-  "author": "JT <jathompson@mdsol.com>",
-  "files": [
-    "dist"
-  ],
+  "version": "0.2.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/mdsol/onex-design.git"
   },
-  "main": "index.js",
-  "module": "index.umd.js",
-  "modules.root": "dist",
+  "author": "JT <jathompson@mdsol.com>",
   "exports": {
     ".": "./dist/index.umd.js",
     "./dist/*": "./dist/*"
   },
-  "publishConfig": {
-    "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
-  },
-  "engines": {
-    "node": ">=16.14.2",
-    "npm": ">=8.5.0",
-    "yarn": ">= 3.2.0"
-  },
+  "main": "index.js",
+  "module": "index.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "storybook": "start-storybook -p 6006",
     "build": "webpack --config webpack.config.pkg.js --mode production && babel dist/index.umd.js > dist/index.js",
     "build:css": "sass --style=compressed ./src/scss/platform.scss dist/platform.css",
     "build:sb": "build-storybook",
+    "deploy:sb": "storybook-to-ghpages",
+    "dev": "webpack serve --mode development",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
     "lint:fix": "eslint ./src --fix",
     "sc-css": "node src/utils/styled-css.js base",
     "sc-jsx": "node src/utils/styled-jsx/index.js",
-    "deploy:sb": "storybook-to-ghpages",
-    "utils:bl": "browserslist@latest --update-db",
-    "utils:sb-browsers": "node src/utils/sb-browsers.js",
+    "storybook": "start-storybook -p 6006",
     "test": "jest",
-    "test:styled": "STYLED=true jest"
+    "test:styled": "STYLED=true jest",
+    "utils:bl": "browserslist@latest --update-db",
+    "utils:sb-browsers": "node src/utils/sb-browsers.js"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ]
   },
   "dependencies": {
     "@babel/cli": "^7.17.6",
@@ -110,12 +106,16 @@
     "webpack-dev-server": "^4.8.1"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest-setup.js"
-    ]
-  }
+  "engines": {
+    "node": ">=16.14.2",
+    "npm": ">=8.5.0",
+    "yarn": ">= 3.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
+  },
+  "modules.root": "dist"
 }

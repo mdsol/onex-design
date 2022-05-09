@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8
+
+Allow >= 17.0.2 React as a dependency. Pagination, TablePagination, ProgressBar, InlineEdit styled components fixed. 
+
 ## 0.2.7
 
 Modal header css updates
