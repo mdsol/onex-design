@@ -1,2 +1,8 @@
 @import 'styles/variables';
+@import '../../Buttons/scss/styles/variables';
+@import '../../Select/scss/styles/variables';
+@import '../../../../node_modules/bootstrap/scss/forms';
+@import '../../../../node_modules/bootstrap/scss/buttons';
 @import 'styles/inlineEditSelect';
+@import '../../Buttons/scss/styles/buttons';
+@import '../../Select/scss/styles/select';

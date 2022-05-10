@@ -1125,12 +1125,6 @@ export const config = {
         ],
       },
       {
-        name: 'Table',
-        componentName: 'TableOnex',
-        styledComponentName: 'TableStyled',
-        additionalComponents: [],
-      },
-      {
         name: 'Tabs',
         componentName: 'Tabs',
         styledComponentName: 'Tabs',

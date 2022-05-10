@@ -43,7 +43,7 @@ module.exports = [
   {
     name: 'InlineEditSelect',
     importName: 'InlineEditSelect',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.inline-edit-select-wrapper', classRegex: classRegexBase }],
   },
   {
     name: 'InlineEditText',
