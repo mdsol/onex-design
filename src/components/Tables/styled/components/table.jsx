@@ -6,10 +6,9 @@ import cssString from '../platform.css?raw';
 // eslint-disable-next-line react/prop-types
 export default ({ children, ...props }) => <StyledComponent {...props}>{children}</StyledComponent>;
 
+// eslint-disable-next-line prefer-template
+const handleCssString = (str) => '&' + str;
+
 const StyledComponent = styled(Table)`
-  ${() =>
-    cssString
-      .replaceAll('.onex-', '&.onex-')
-      .replaceAll('.table', '&.table')
-      .replaceAll('.table-', '&.table-')}
+  ${() => cssString.replaceAll(/\.onex-table-wrap.[^__]+?[.|\s]/g, handleCssString)}
 `;
