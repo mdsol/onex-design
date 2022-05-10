@@ -9,16 +9,24 @@
     gap: $onex-btn-size-gap;
   }
 
+  &.onex-btn--default.btn {
+    min-width: $onex-btn-min-width;
+  }
+
   .onex-btn__decorator {
     display: none;
   }
 
   /* primary */
   &.btn-primary {
-    @include bg-color($onex-btn-primary-disabled-bg-color);
+    @include bg-color($onex-btn-primary-bg-color);
     color: $onex-btn-primary-text-color;
     svg path {
       fill: $onex-btn-primary-text-color;
+    }
+
+    &:hover {
+      @include bg-color($onex-btn-primary-hover-bg-color);
     }
 
     &:disabled,
@@ -26,9 +34,9 @@
       opacity: 0.4;
     }
 
-    &.focus:hover,
-    &:hover {
-      @include bg-color($onex-btn-primary-hover-bg-color);
+    &.active,
+    &:active {
+      @include bg-color($onex-btn-primary-active-bg-color);
     }
   }
 
@@ -56,9 +64,14 @@
       color: $onex-btn-secondary-disabled-text-color;
       opacity: 0.4;
     }
+
+    &.active,
+    &:active {
+      @include bg-color($onex-btn-secondary-active-bg-color);
+    }
   }
 
-  /* link */
+  /* tertiary */
   &.btn-tertiary {
     font-weight: $btn-font-weight;
     color: $onex-btn-tertiary-color;
@@ -81,15 +94,22 @@
         fill: $onex-btn-tertiary-hover-color;
       }
     }
+
+    &.active,
+    &:active {
+      @include bg-color($onex-btn-tertiary-active-bg-color);
+    }
   }
 
-  &.btn-lg.btn-tertiary {
+  &.btn-md.btn-tertiary {
     @include btn-link-decorator-size(
-      $onex-btn-padding-x-lg,
-      $onex-btn-padding-y-lg,
-      $onex-btn-icon-size-lg,
+      $onex-btn-padding-x-md,
+      $onex-btn-padding-y-md,
+      $onex-btn-icon-size-md,
       $onex-btn-size-gap
     );
+
+    padding: $onex-btn-tertiary-padding-y-md $onex-btn-tertiary-padding-x-md;
   }
 
   &.btn-sm.btn-tertiary {
@@ -99,34 +119,16 @@
       $onex-btn-icon-size-sm,
       $onex-btn-size-gap
     );
+
+    padding: $onex-btn-tertiary-padding-y-sm $onex-btn-tertiary-padding-x-sm;
   }
 
+  &.btn-md {
+    @include btn-size($onex-btn-height-md);
 
-  /* icon-link */
-  &.btn-icon-link {
-    svg path {
-      fill: $onex-btn-icon-link-hover-text-color;
-    }
-  }
-
-  &.btn-icon-link:hover,
-  &.btn-icon-link.hover {
-    @include bg-color($onex-btn-icon-link-hover-bg-color);
-
-    svg path {
-      fill: $onex-btn-icon-link-hover-text-color;
-    }
-  }
-
-  &.btn-icon-link:disabled,
-  &.btn-icon-link.disabled {
-    svg path {
-      fill: $onex-btn-icon-link-disabled-text-color;
-    }
-  }
-
-  &.btn-lg {
-    @include btn-size($onex-btn-height-lg);
+    font-size: $onex-btn-font-size-md;
+    border-radius: $onex-btn-border-radius-md;
+    padding: $onex-btn-padding-y-md $onex-btn-padding-x-md;
   }
 
   &.btn-sm {
@@ -134,8 +136,8 @@
   }
 
   & svg,
-  &.btn-lg svg {
-    @include icon-size($onex-btn-icon-size-lg);
+  &.btn-md svg {
+    @include icon-size($onex-btn-icon-size-md);
   }
 
   &.btn-sm svg {
@@ -152,7 +154,7 @@
     &.btn-sm {
       padding: $btn-padding-y-sm;
     }
-    &.btn-lg {
+    &.btn-md {
       padding: $btn-padding-y-lg;
     }
   }

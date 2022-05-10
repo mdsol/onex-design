@@ -29,11 +29,11 @@ Small.args = {
   children: 'Small button',
 };
 
-export const Large = ButtonTemplate.bind({});
-Large.args = {
+export const Middle = ButtonTemplate.bind({});
+Middle.args = {
   variant: 'primary',
-  size: 'lg',
-  children: 'Large button',
+  size: 'md',
+  children: 'Middle button',
 };
 
 export const PrimarySmall = ButtonTemplate.bind({});
@@ -43,11 +43,11 @@ PrimarySmall.args = {
   children: 'Small button',
 };
 
-export const PrimaryLarge = ButtonTemplate.bind({});
-PrimaryLarge.args = {
+export const PrimaryMiddle = ButtonTemplate.bind({});
+PrimaryMiddle.args = {
   variant: 'primary',
-  size: 'lg',
-  children: 'Large button',
+  size: 'md',
+  children: 'Middle button',
 };
 
 export const PrimaryWithLeadingIcon = ButtonTemplate.bind({});
@@ -100,38 +100,38 @@ PrimarySmallIcon.args = {
   children: <StarRoundedIcon />,
 };
 
-export const PrimaryLargeIcon = ButtonTemplate.bind({});
-const iconPrimaryLargeCodeBody = `
+export const PrimaryMiddleIcon = ButtonTemplate.bind({});
+const iconPrimaryMiddleCodeBody = `
 <CustomButton onClick={() => {}}>
      <StarRoundedIcon />
 </CustomButton>
 `;
-PrimaryLargeIcon.parameters = {
+PrimaryMiddleIcon.parameters = {
   docs: {
     source: {
-      code: iconPrimaryLargeCodeBody,
+      code: iconPrimaryMiddleCodeBody,
     },
   },
 };
-PrimaryLargeIcon.args = {
+PrimaryMiddleIcon.args = {
   variant: 'primary',
   type: 'icon',
-  size: 'lg',
+  size: 'md',
   children: <StarRoundedIcon />,
 };
 
-export const PrimaryLargeIconDisabled = ButtonTemplate.bind({});
-PrimaryLargeIconDisabled.parameters = {
+export const PrimaryMiddleIconDisabled = ButtonTemplate.bind({});
+PrimaryMiddleIconDisabled.parameters = {
   docs: {
     source: {
-      code: iconPrimaryLargeCodeBody,
+      code: iconPrimaryMiddleCodeBody,
     },
   },
 };
-PrimaryLargeIconDisabled.args = {
+PrimaryMiddleIconDisabled.args = {
   variant: 'primary',
   type: 'icon',
-  size: 'lg',
+  size: 'md',
   disabled: true,
   children: <StarRoundedIcon />,
 };
@@ -143,11 +143,11 @@ SecondarySmall.args = {
   children: 'Small button',
 };
 
-export const SecondaryLarge = ButtonTemplate.bind({});
-SecondaryLarge.args = {
+export const SecondaryMiddle = ButtonTemplate.bind({});
+SecondaryMiddle.args = {
   variant: 'secondary',
-  size: 'lg',
-  children: 'Large button',
+  size: 'md',
+  children: 'Middle button',
 };
 
 export const SecondaryWithLeadingIcon = ButtonTemplate.bind({});
@@ -200,8 +200,8 @@ SecondaryIconSmall.args = {
   children: <StarRoundedIcon />,
 };
 
-export const SecondaryIconLarge = ButtonTemplate.bind({});
-const iconSecondaryLargeCodeBody = `
+export const SecondaryIconMiddle = ButtonTemplate.bind({});
+const iconSecondaryMiddleCodeBody = `
 <CustomButton
     onClick={() => {}}
     variant="secondary"
@@ -209,32 +209,32 @@ const iconSecondaryLargeCodeBody = `
      <StarRoundedIcon />
 </CustomButton>
 `;
-SecondaryIconLarge.parameters = {
+SecondaryIconMiddle.parameters = {
   docs: {
     source: {
-      code: iconSecondaryLargeCodeBody,
+      code: iconSecondaryMiddleCodeBody,
     },
   },
 };
-SecondaryIconLarge.args = {
+SecondaryIconMiddle.args = {
   variant: 'secondary',
   type: 'icon',
-  size: 'lg',
+  size: 'md',
   children: <StarRoundedIcon />,
 };
 
-export const SecondaryIconLargeDisabled = ButtonTemplate.bind({});
-SecondaryIconLargeDisabled.parameters = {
+export const SecondaryIconMiddleDisabled = ButtonTemplate.bind({});
+SecondaryIconMiddleDisabled.parameters = {
   docs: {
     source: {
-      code: iconSecondaryLargeCodeBody,
+      code: iconSecondaryMiddleCodeBody,
     },
   },
 };
-SecondaryIconLargeDisabled.args = {
+SecondaryIconMiddleDisabled.args = {
   variant: 'secondary',
   type: 'icon',
-  size: 'lg',
+  size: 'md',
   disabled: true,
   children: <StarRoundedIcon />,
 };
@@ -253,10 +253,10 @@ TertiarySmall.args = {
   children: 'Basic button',
 };
 
-export const TertiaryLarge = ButtonTemplate.bind({});
-TertiaryLarge.args = {
+export const TertiaryMiddle = ButtonTemplate.bind({});
+TertiaryMiddle.args = {
   variant: 'tertiary',
-  size: 'lg',
+  size: 'md',
   children: 'Basic button',
 };
 
@@ -308,8 +308,8 @@ TertiaryIconSmall.args = {
   children: <StarRoundedIcon />,
 };
 
-export const TertiaryIconLarge = ButtonTemplate.bind({});
-const iconTertiaryLargeCodeBody = `
+export const TertiaryIconMiddle = ButtonTemplate.bind({});
+const iconTertiaryMiddleCodeBody = `
 <CustomButton
     onClick={() => {}}
     variant="tertiary"
@@ -318,32 +318,32 @@ const iconTertiaryLargeCodeBody = `
      <StarRoundedIcon />
 </CustomButton>
 `;
-TertiaryIconLarge.parameters = {
+TertiaryIconMiddle.parameters = {
   docs: {
     source: {
-      code: iconTertiaryLargeCodeBody,
+      code: iconTertiaryMiddleCodeBody,
     },
   },
 };
-TertiaryIconLarge.args = {
+TertiaryIconMiddle.args = {
   variant: 'tertiary',
   type: 'icon',
-  size: 'lg',
+  size: 'md',
   children: <StarRoundedIcon />,
 };
 
-export const TertiaryIconLargeDisabled = ButtonTemplate.bind({});
-TertiaryIconLargeDisabled.parameters = {
+export const TertiaryIconMiddleDisabled = ButtonTemplate.bind({});
+TertiaryIconMiddleDisabled.parameters = {
   docs: {
     source: {
-      code: iconTertiaryLargeCodeBody,
+      code: iconTertiaryMiddleCodeBody,
     },
   },
 };
-TertiaryIconLargeDisabled.args = {
+TertiaryIconMiddleDisabled.args = {
   variant: 'tertiary',
   type: 'icon',
-  size: 'lg',
+  size: 'md',
   disabled: true,
   children: <StarRoundedIcon />,
 };

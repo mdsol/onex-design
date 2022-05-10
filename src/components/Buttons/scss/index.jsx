@@ -25,7 +25,7 @@ CustomButton.propTypes = {
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
   type: PropTypes.oneOf(['default', 'icon']),
-  size: PropTypes.oneOf(['lg', 'sm']),
+  size: PropTypes.oneOf(['md', 'sm']),
   onClick: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   leadingIcon: PropTypes.node,
