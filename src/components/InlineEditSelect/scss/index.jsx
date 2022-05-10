@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import CheckIcon from '../../../icons/CheckIcon';
-import XIcon from '../../../icons/XIcon';
+import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CustomButton from '../../Buttons/scss';
 import Select from '../../Select/scss';
 
@@ -29,7 +29,7 @@ const InlineEditSelect = ({
     setSelectedOptions(selectedOptions);
   }, [selectedOptions]);
 
-  const inlineEditSelectClassNames = classNames('inline-edit-select', {
+  const inlineEditSelectClassNames = classNames('inline-edit-select-wrapper', {
     [className]: className,
     'inline-edit-select--invalid': isInvalid,
   });
@@ -61,7 +61,7 @@ const InlineEditSelect = ({
 
   return (
     <Form.Group
-      className="inline-edit-select-wrapper"
+      className={inlineEditSelectClassNames}
       controlId={controlId}
       onFocus={onFocus}
       onBlur={onBlur}
@@ -70,7 +70,7 @@ const InlineEditSelect = ({
       <Select
         onSelect={handleSelect}
         options={selectOptions}
-        className={inlineEditSelectClassNames}
+        className="inline-edit-select"
         selectedValues={_selectedOptions}
         size={size}
         isMulti={isMulti}
@@ -82,14 +82,14 @@ const InlineEditSelect = ({
             variant="primary"
             onClick={handleComplete}
           >
-            <CheckIcon />
+            <DoneRoundedIcon />
           </CustomButton>
           <CustomButton
             className="status-buttons__cancel"
             variant="secondary"
             onClick={handleCancel}
           >
-            <XIcon />
+            <CloseRoundedIcon />
           </CustomButton>
         </div>
       )}
