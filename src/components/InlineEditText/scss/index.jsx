@@ -120,7 +120,9 @@ const InlineEditText = React.forwardRef((props, ref) => {
         </div>
       )}
       {isInvalid && !disabled && (
-        <Form.Text className="onex-text-field__error">{errorMessage}</Form.Text>
+        <Form.Text className="onex-text-field__help onex-text-field__help--error">
+          {errorMessage}
+        </Form.Text>
       )}
     </Form.Group>
   );
