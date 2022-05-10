@@ -63,7 +63,7 @@ export const icons = { StarRoundedIcon: <StarRoundedIcon />, StarsRoundedIcon: <
       control: 'boolean',
     },
     size: {
-      description: 'Specifies a large or small button',
+      description: 'Specifies a middle or small button',
     },
     onClick: { action: 'clicked' },
     variant: {
@@ -86,11 +86,11 @@ Buttons are clickable items used for actions. They can have different styles dep
 
 ### Sizes
 
-Supports two button sizes: `small` and `large`.
+Supports two button sizes: `small` and `middle`.
 
 <Canvas>
   <Story name="Small" story={stories.Small} />
-  <Story name="Large" story={stories.Large} />
+  <Story name="Middle" story={stories.Middle} />
 </Canvas>
 
 ### Variations
@@ -99,13 +99,13 @@ Supports two button sizes: `small` and `large`.
 
 <Canvas>
   <Story name="PrimarySmall" story={stories.PrimarySmall} />
-  <Story name="PrimaryLarge" story={stories.PrimaryLarge} />
+  <Story name="PrimaryMiddle" story={stories.PrimaryMiddle} />
   <Story name="PrimaryWithTrailingIcon" story={stories.PrimaryWithTrailingIcon} />
   <Story name="PrimaryWithLeadingIcon" story={stories.PrimaryWithLeadingIcon} />
   <Story name="PrimaryWithTwoIcons" story={stories.PrimaryWithTwoIcons} />
   <Story name="PrimarySmallIcon" story={stories.PrimarySmallIcon} />
-  <Story name="PrimaryLargeIcon" story={stories.PrimaryLargeIcon} />
-  <Story name="PrimaryLargeIconDisabled" story={stories.PrimaryLargeIconDisabled} />
+  <Story name="PrimaryMiddleIcon" story={stories.PrimaryMiddleIcon} />
+  <Story name="PrimaryMiddleIconDisabled" story={stories.PrimaryMiddleIconDisabled} />
   <Story name="PrimaryDisabled" story={stories.PrimaryDisabled} />
 </Canvas>
 
@@ -113,13 +113,13 @@ Supports two button sizes: `small` and `large`.
 
 <Canvas>
   <Story name="SecondarySmall" story={stories.SecondarySmall} />
-  <Story name="SecondaryLarge" story={stories.SecondaryLarge} />
+  <Story name="SecondaryMiddle" story={stories.SecondaryMiddle} />
   <Story name="SecondaryWithTrailingIcon" story={stories.SecondaryWithTrailingIcon} />
   <Story name="SecondaryWithLeadingIcon" story={stories.SecondaryWithLeadingIcon} />
   <Story name="SecondaryWithTwoIcons" story={stories.SecondaryWithTwoIcons} />
   <Story name="SecondaryIconSmall" story={stories.SecondaryIconSmall} />
-  <Story name="SecondaryIconLarge" story={stories.SecondaryIconLarge} />
-  <Story name="SecondaryIconLargeDisabled" story={stories.SecondaryIconLargeDisabled} />
+  <Story name="SecondaryIconMiddle" story={stories.SecondaryIconMiddle} />
+  <Story name="SecondaryIconMiddleDisabled" story={stories.SecondaryIconMiddleDisabled} />
   <Story name="SecondaryDisabled" story={stories.SecondaryDisabled} />
 </Canvas>
 
@@ -127,13 +127,13 @@ Supports two button sizes: `small` and `large`.
 
 <Canvas>
   <Story name="TertiarySmall" story={stories.TertiarySmall} />
-  <Story name="TertiaryLarge" story={stories.TertiaryLarge} />
+  <Story name="TertiaryMiddle" story={stories.TertiaryMiddle} />
   <Story name="TertiaryWithTrailingIcon" story={stories.TertiaryWithTrailingIcon} />
   <Story name="TertiaryWithLeadingIcon" story={stories.TertiaryWithLeadingIcon} />
   <Story name="TertiaryWithTwoIcons" story={stories.TertiaryWithTwoIcons} />
   <Story name="TertiaryIconSmall" story={stories.TertiaryIconSmall} />
-  <Story name="TertiaryIconLarge" story={stories.TertiaryIconLarge} />
-  <Story name="TertiaryIconLargeDisabled" story={stories.TertiaryIconLargeDisabled} />
+  <Story name="TertiaryIconMiddle" story={stories.TertiaryIconMiddle} />
+  <Story name="TertiaryIconMiddleDisabled" story={stories.TertiaryIconMiddleDisabled} />
   <Story name="TertiaryDisabled" story={stories.TertiaryDisabled} />
 </Canvas>
 
@@ -158,7 +158,7 @@ Supports two button sizes: `small` and `large`.
         <Button
           type="default"
           className="custom-button"
-          size="lg"
+          size="md"
           dataTestId="test-button-id"
           variant="primary"
           onClick={() => {}}
