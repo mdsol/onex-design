@@ -177,16 +177,14 @@ module.exports = [
     replaceUrl: [
       { className: '.onex-', classRegex: classRegexBase },
       { className: '.card', classRegex: classRegexBootstrap },
-    ]
+    ],
   },
   {
     name: 'Spinner',
     importName: 'Spinner',
-    replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
-    ]
-    },
-    {
+    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+  },
+  {
     name: 'Offcanvas',
     importName: 'Offcanvas',
     replaceUrl: [
