@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.0
+
+SCSS variable typo fixed. Select Storybook demo fixed. Text, Select, Button and SearchField sizes fixed. MenuItem Styled component fixed. 
 ## 0.2.9
 
 Grid, progressbar, spinner, button updates. 
