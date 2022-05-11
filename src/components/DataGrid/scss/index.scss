@@ -1,4 +1,15 @@
+@import '../../Badge/scss/styles/variables';
+@import '../../Typography/scss/styles/variables';
+@import '../../Buttons/scss/styles/variables';
+
 @import 'styles/dataGrid.scss';
+
+@import '../../Badge/scss/styles/badge';
+@import '../../Typography/scss/styles/typography';
+@import '../../Buttons/scss/styles/buttons';
+@import '../../../../node_modules/bootstrap/scss/buttons';
+@import '../../../../node_modules/bootstrap/scss/badge';
+
 
 .onex-dataGrid {
     padding: 1rem;
