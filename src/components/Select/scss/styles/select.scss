@@ -93,10 +93,12 @@
     align-items: center;
     justify-content: center;
     padding: 0.25rem;
+    width: auto;
+    height: 100%;
 
     svg {
-      width: 1rem;
-      height: 1rem;
+      width: $icon-size-xlg;
+      height: $icon-size-xlg;
     }
 
     svg > path {
@@ -282,6 +284,19 @@
   .onex-select__icon {
     padding-left: 0.75rem;
   }
+
+  .onex-select__value-container {
+    padding-left: $onex-select-padding-x-md;
+  }
+
+  & .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
+    padding-right: $onex-select-padding-x-md;
+  }
+
+  & .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
+    padding-left: $onex-select-padding-x-md;
+    padding-right: 0.25rem;
+  }
 }
 .onex-select--sm {
   @include size-select($onex-select-height-sm, $onex-select-sm-multi-value-height);
@@ -293,6 +308,19 @@
   .onex-select__control .onex-select__input-container {
     padding: $onex-select-input-container-padding;
     margin: $onex-select-input-container-margin;
+  }
+
+  .onex-select__value-container {
+    padding-left: $onex-select-padding-x-sm;
+  }
+
+  & .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
+    padding-right: $onex-select-padding-x-sm;
+  }
+
+  & .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
+    padding-left: $onex-select-padding-x-sm;
+    padding-right: 0.25rem;
   }
 }
 

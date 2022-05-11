@@ -1008,7 +1008,7 @@ export const config = {
             ],
           },
           {
-            size: 'lg',
+            size: 'md',
             className: 'select',
             dataTestId: 'select',
             options: [
@@ -1054,7 +1054,7 @@ export const config = {
             isMulti: true,
           },
           {
-            size: 'lg',
+            size: 'md',
             className: 'select',
             dataTestId: 'select',
             options: [
