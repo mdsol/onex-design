@@ -10914,7 +10914,6 @@ progress {
 .onex-dropdown > .btn > svg {
   width: 1.25rem;
   height: 1.25rem;
-  margin-right: 0.25rem;
 }
 .onex-dropdown > .btn > .onex-dropdown__chevron-icon {
   width: 1.25rem;
@@ -10981,11 +10980,14 @@ progress {
   height: 2rem;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
 }
-.onex-dropdown > .btn.btn-sm.btn-tertiary {
-  padding: 0.375rem 0.5rem 0.375rem 0.25rem;
+.onex-dropdown--text > .btn.btn-sm.btn-tertiary {
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
 }
-.onex-dropdown > .btn.btn-md.btn-tertiary {
+.onex-dropdown--text > .btn.btn-md.btn-tertiary {
   padding: 0.625rem 0.5rem 0.625rem 0.5rem;
+}
+.onex-dropdown--text > .btn > svg {
+  margin-right: 0.25rem;
 }
 .onex-dropdown--text > .dropdown-toggle::after, .onex-dropdown--icon > .dropdown-toggle::after {
   display: none;
@@ -11011,6 +11013,7 @@ progress {
 .onex-dropdown--icon > .btn.btn-md > svg {
   width: 1.25rem;
   height: 1.25rem;
+  margin-right: 0;
 }
 .onex-dropdown--icon > .btn.btn-sm {
   min-width: 2rem;
@@ -11021,6 +11024,7 @@ progress {
 .onex-dropdown--icon > .btn.btn-sm > svg {
   width: 1.25rem;
   height: 1.25rem;
+  margin-right: 0;
 }
 .onex-dropdown.show > .dropdown-toggle > .onex-dropdown__chevron-icon {
   transform: rotateX(-180deg);
