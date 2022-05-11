@@ -1,6 +1,6 @@
 .onex-spinner {
-    width: $default-spinner-diametr;
-    height: $default-spinner-diametr;
+    width: $default-spinner-diameter;
+    height: $default-spinner-diameter;
     border: $default-spinner-border-width solid $background-border-color;
     border-radius: 50%;
     position: relative;
@@ -15,8 +15,8 @@
     }
 
     &--sm {
-        width: $spinner-diametr-sm;
-        height: $spinner-diametr-sm;
+        width: $spinner-diameter-sm;
+        height: $spinner-diameter-sm;
         border-width: $spinner-border-width-sm;
 
         & > div {
@@ -26,13 +26,13 @@
     }
 
     &--lg {
-        width: $spinner-diametr-lg;
-        height: $spinner-diametr-lg;
+        width: $spinner-diameter-lg;
+        height: $spinner-diameter-lg;
         border-width: $spinner-border-width-lg;
 
         & > div {
-            width: $spinner-diametr-lg;
-            height: $spinner-diametr-lg;
+            width: $spinner-diameter-lg;
+            height: $spinner-diameter-lg;
             left: -$spinner-border-width-lg;
             top: -$spinner-border-width-lg;
             border-width: $spinner-border-width-lg;
