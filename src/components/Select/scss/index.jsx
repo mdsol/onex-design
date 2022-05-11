@@ -107,7 +107,7 @@ const CustomSelect = ({
                 {children}
               </Option>
             )),
-            ClearIndicator,
+            ClearIndicator: hasClearButton && ClearIndicator,
           }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}

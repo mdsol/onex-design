@@ -36,7 +36,7 @@ const TextField = React.forwardRef((props, ref) => {
     () =>
       classNames('onex-text-field', {
         [className]: className,
-        'onex-text-field--lg': size === 'lg',
+        'onex-text-field--lg': size === 'lg' || size === 'md',
         'onex-text-field--sm': size === 'sm',
         'onex-text-field--disabled': disabled,
         'onex-text-field--has-clear-btn': showClearBtn,
@@ -85,7 +85,7 @@ const TextField = React.forwardRef((props, ref) => {
           autoFocus={autoFocus}
           type={inputType}
           placeholder={placeholder}
-          size={size}
+          size={size === 'md' ? 'lg' : size}
           disabled={disabled}
           isInvalid={isInvalid}
           readOnly={readOnly}
@@ -123,7 +123,7 @@ TextField.propTypes = {
   errorMessage: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
-  size: PropTypes.oneOf(['lg', 'sm']),
+  size: PropTypes.oneOf(['md', 'sm']),
   type: PropTypes.oneOf(['text', 'password', 'email', 'number']),
   passwordVariant: passwordVariantType,
   passwordHelpText: passwordHelpTextType,

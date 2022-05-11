@@ -23,12 +23,12 @@ Small.args = {
   showClearBtn: true,
 };
 
-export const Large = Template.bind({});
+export const Middle = Template.bind({});
 
-Large.args = {
+Middle.args = {
   label: 'Label',
-  size: 'lg',
-  placeholder: 'Large',
+  size: 'md',
+  placeholder: 'Middle',
   helpText: 'Help text',
   showClearBtn: true,
 };
@@ -36,7 +36,7 @@ Large.args = {
 export const ErrorMessage = Template.bind({});
 
 ErrorMessage.args = {
-  size: 'lg',
+  size: 'md',
   label: 'Label',
   placeholder: 'Placeholder',
   errorMessage: 'Error message',
@@ -47,7 +47,7 @@ ErrorMessage.args = {
 export const HelpText = Template.bind({});
 
 HelpText.args = {
-  size: 'lg',
+  size: 'md',
   label: 'Label',
   placeholder: 'Placeholder',
   helpText: 'Help text',
@@ -57,7 +57,7 @@ HelpText.args = {
 export const Disabled = Template.bind({});
 
 Disabled.args = {
-  size: 'lg',
+  size: 'md',
   placeholder: 'Disabled',
   disabled: true,
   label: 'Label',
@@ -68,7 +68,7 @@ Disabled.args = {
 export const Required = Template.bind({});
 
 Required.args = {
-  size: 'lg',
+  size: 'md',
   placeholder: 'Placeholder',
   required: true,
   label: 'Required',
@@ -94,9 +94,9 @@ PasswordSmall.args = {
   type: 'password',
 };
 
-export const PasswordLarge = Template.bind({});
+export const PasswordMiddle = Template.bind({});
 
-PasswordLarge.args = {
+PasswordMiddle.args = {
   size: 'sm',
   placeholder: 'Placeholder',
   label: 'Label',

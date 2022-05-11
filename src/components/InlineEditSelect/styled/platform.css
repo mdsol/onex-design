@@ -11615,10 +11615,12 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   padding: 0.25rem;
+  width: auto;
+  height: 100%;
 }
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator svg > path {
   fill: rgb(103, 110, 122);
@@ -11783,6 +11785,16 @@ textarea.form-control-lg {
 .onex-select--md .onex-select__icon {
   padding-left: 0.75rem;
 }
+.onex-select--md .onex-select__value-container {
+  padding-left: 0.75rem;
+}
+.onex-select--md .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
+  padding-right: 0.75rem;
+}
+.onex-select--md .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
+  padding-left: 0.75rem;
+  padding-right: 0.25rem;
+}
 
 .onex-select--sm .onex-select__control {
   height: 2rem;
@@ -11806,6 +11818,16 @@ textarea.form-control-lg {
 .onex-select--sm .onex-select__control .onex-select__input-container {
   padding: 0rem;
   margin: 0rem;
+}
+.onex-select--sm .onex-select__value-container {
+  padding-left: 0.5rem;
+}
+.onex-select--sm .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
+  padding-right: 0.5rem;
+}
+.onex-select--sm .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
+  padding-left: 0.5rem;
+  padding-right: 0.25rem;
 }
 
 .is-disabled .onex-select__label.form-label,
