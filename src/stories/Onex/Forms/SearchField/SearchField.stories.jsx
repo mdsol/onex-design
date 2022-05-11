@@ -15,11 +15,11 @@ Small.args = {
   showClearBtn: true,
 };
 
-export const Large = Template.bind({});
+export const Middle = Template.bind({});
 
-Large.args = {
-  size: 'lg',
-  placeholder: 'Large',
+Middle.args = {
+  size: 'md',
+  placeholder: 'Middle',
   showClearBtn: true,
 };
 
@@ -33,10 +33,10 @@ DisabledSmall.args = {
   showClearBtn: true,
 };
 
-export const DisabledLarge = Template.bind({});
+export const DisabledMiddle = Template.bind({});
 
-DisabledLarge.args = {
-  size: 'lg',
+DisabledMiddle.args = {
+  size: 'md',
   placeholder: 'Disabled',
   disabled: true,
   label: 'Label',

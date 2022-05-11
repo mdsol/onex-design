@@ -24,7 +24,7 @@ const SearchField = React.forwardRef((props, ref) => {
     () =>
       classNames('onex-search-field', {
         [className]: className,
-        'onex-search-field--lg': size === 'lg',
+        'onex-search-field--lg': size === 'md' || size === 'lg',
         'onex-search-field--sm': size === 'sm',
         'onex-search-field--disabled': disabled,
         'onex-search-field--has-clear-btn': showClearBtn,
@@ -58,7 +58,7 @@ const SearchField = React.forwardRef((props, ref) => {
           autoFocus={autoFocus}
           type="text"
           placeholder={placeholder}
-          size={size}
+          size={size === 'md' ? 'lg' : size}
           disabled={disabled}
           value={_value}
           onChange={onHandleChange}
@@ -86,7 +86,7 @@ SearchField.propTypes = {
   className: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
-  size: PropTypes.oneOf(['lg', 'sm']),
+  size: PropTypes.oneOf(['md', 'sm']),
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
   showClearBtn: PropTypes.bool,

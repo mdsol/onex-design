@@ -10145,10 +10145,10 @@ progress {
   outline: none;
 }
 .onex-text-field--lg .onex-text-field__clear-btn, .onex-text-field--lg .onex-text-field__toggle-pass {
-  right: 0.625rem;
+  right: 0.75rem;
 }
 .onex-text-field--sm .onex-text-field__clear-btn, .onex-text-field--sm .onex-text-field__toggle-pass {
-  right: 0.375rem;
+  right: 0.5rem;
 }
 .onex-text-field--has-clear-btn .form-control-sm {
   padding-right: 2rem;
