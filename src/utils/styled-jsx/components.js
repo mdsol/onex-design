@@ -58,7 +58,7 @@ module.exports = [
   {
     name: 'MenuItem',
     importName: 'MenuItem',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [{ className: '.onex-menuItem', classRegex: classRegexBase }],
   },
   {
     name: 'Modal',

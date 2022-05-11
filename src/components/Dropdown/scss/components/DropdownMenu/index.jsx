@@ -3,14 +3,7 @@ import PropTypes from 'prop-types';
 
 const CustomMenu = React.forwardRef(({ children, style, className }, ref) => (
   <div ref={ref} style={style} className={className}>
-    <ul className="dropdown-menu--list">
-      {children}
-      {/*       {React.Children.toArray(children).filter((child) => */}
-      {/*         !value || child.props.children.length */}
-      {/*           ? child?.props?.children[0]?.props?.title?.toLowerCase().startsWith(value) */}
-      {/*           : false, */}
-      {/*       )} */}
-    </ul>
+    <ul className="dropdown-menu--list">{children}</ul>
   </div>
 ));
 

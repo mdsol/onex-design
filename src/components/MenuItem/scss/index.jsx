@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import Badge from '../../Badge/scss';
 
 const MenuItem = ({
   className,
@@ -38,7 +39,11 @@ const MenuItem = ({
         {leadingIcon && <div className="onex-menuItem__icon__leading">{leadingIcon}</div>}
         <span>{children}</span>
         {trailingIcon && <div className="onex-menuItem__icon__trailing">{trailingIcon}</div>}
-        {badge && <div className="onex-menuItem__badge">{badge}</div>}
+        {badge && (
+          <Badge className="onex-menuItem__badge" size="sm" type={selected ? 'primary' : 'default'}>
+            {badge}
+          </Badge>
+        )}
       </a>
     </div>
   );
