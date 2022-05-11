@@ -11337,9 +11337,9 @@ textarea.form-control-lg {
 }
 
 .btn-lg {
-  padding: 0.625rem 0.75rem;
+  padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 .btn-sm {
@@ -11397,8 +11397,7 @@ textarea.form-control-lg {
 .onex-btn {
   /* primary */
   /* secondary */
-  /* link */
-  /* icon-link */
+  /* tertiary */
   /* only icon child */
 }
 .onex-btn.btn {
@@ -11408,23 +11407,30 @@ textarea.form-control-lg {
   justify-content: center;
   gap: 0.25rem;
 }
+.onex-btn.onex-btn--default.btn {
+  min-width: 5rem;
+}
 .onex-btn .onex-btn__decorator {
   display: none;
 }
 .onex-btn.btn-primary {
-  background-color: rgb(0, 95, 171);
-  border-color: rgb(0, 95, 171);
+  background-color: rgb(0, 112, 192);
+  border-color: rgb(0, 112, 192);
   color: rgb(255, 255, 255);
 }
 .onex-btn.btn-primary svg path {
   fill: rgb(255, 255, 255);
 }
+.onex-btn.btn-primary:hover {
+  background-color: rgb(0, 95, 171);
+  border-color: rgb(0, 95, 171);
+}
 .onex-btn.btn-primary:disabled, .onex-btn.btn-primary.disabled {
   opacity: 0.4;
 }
-.onex-btn.btn-primary.focus:hover, .onex-btn.btn-primary:hover {
-  background-color: rgb(0, 95, 171);
-  border-color: rgb(0, 95, 171);
+.onex-btn.btn-primary.active, .onex-btn.btn-primary:active {
+  background-color: rgb(0, 71, 134);
+  border-color: rgb(0, 71, 134);
 }
 .onex-btn.btn-secondary {
   background-color: rgba(103, 110, 122, 0.1);
@@ -11448,6 +11454,10 @@ textarea.form-control-lg {
   color: rgb(26, 28, 30);
   opacity: 0.4;
 }
+.onex-btn.btn-secondary.active, .onex-btn.btn-secondary:active {
+  background-color: rgb(192, 196, 203);
+  border-color: rgb(192, 196, 203);
+}
 .onex-btn.btn-tertiary {
   font-weight: 600;
   color: rgb(103, 110, 122);
@@ -11466,13 +11476,23 @@ textarea.form-control-lg {
 .onex-btn.btn-tertiary:hover svg path, .onex-btn.btn-tertiary.hover svg path {
   fill: rgb(103, 110, 122);
 }
-.onex-btn.btn-lg.btn-tertiary .onex-btn__decorator {
+.onex-btn.btn-tertiary.active, .onex-btn.btn-tertiary:active {
+  background-color: rgb(221, 224, 229);
+  border-color: rgb(221, 224, 229);
+}
+.onex-btn.btn-md.btn-tertiary {
+  padding: 0.625rem 0.5rem;
+}
+.onex-btn.btn-md.btn-tertiary .onex-btn__decorator {
   width: calc(100% - 0.75rem * 2);
   bottom: 0.625rem;
   right: 0.75rem;
 }
-.onex-btn.btn-lg.btn-tertiary > svg ~ .onex-btn__decorator {
+.onex-btn.btn-md.btn-tertiary > svg ~ .onex-btn__decorator {
   width: calc(100% - 0.75rem * 2 - 1.25rem - 0.25rem);
+}
+.onex-btn.btn-sm.btn-tertiary {
+  padding: 0.375rem 0.5rem;
 }
 .onex-btn.btn-sm.btn-tertiary .onex-btn__decorator {
   width: calc(100% - 0.5rem * 2);
@@ -11482,28 +11502,21 @@ textarea.form-control-lg {
 .onex-btn.btn-sm.btn-tertiary > svg ~ .onex-btn__decorator {
   width: calc(100% - 0.5rem * 2 - 1.25rem - 0.25rem);
 }
-.onex-btn.btn-icon-link svg path {
-  fill: rgb(0, 40, 85);
-}
-.onex-btn.btn-icon-link:hover, .onex-btn.btn-icon-link.hover {
-  background-color: rgb(231, 238, 245);
-  border-color: rgb(231, 238, 245);
-}
-.onex-btn.btn-icon-link:hover svg path, .onex-btn.btn-icon-link.hover svg path {
-  fill: rgb(0, 40, 85);
-}
-.onex-btn.btn-icon-link:disabled svg path, .onex-btn.btn-icon-link.disabled svg path {
-  fill: rgb(176, 184, 191);
-}
-.onex-btn.btn-lg {
+.onex-btn.btn-md {
   min-width: 2.5rem;
   height: 2.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.75rem;
 }
 .onex-btn.btn-sm {
   min-width: 2rem;
   height: 2rem;
+  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.5rem;
 }
-.onex-btn svg, .onex-btn.btn-lg svg {
+.onex-btn svg, .onex-btn.btn-md svg {
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -11517,8 +11530,8 @@ textarea.form-control-lg {
 .onex-btn.onex-btn--icon.btn-sm {
   padding: 0.375rem;
 }
-.onex-btn.onex-btn--icon.btn-lg {
-  padding: 0.625rem;
+.onex-btn.onex-btn--icon.btn-md {
+  padding: 0.5rem;
 }
 
 .onex-select {

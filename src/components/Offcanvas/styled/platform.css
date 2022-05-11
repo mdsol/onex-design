@@ -10874,6 +10874,9 @@ progress {
 .onex-btn.btn-sm {
   min-width: 2rem;
   height: 2rem;
+  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.5rem;
 }
 .onex-btn svg, .onex-btn.btn-md svg {
   width: 1.25rem;
