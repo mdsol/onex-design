@@ -10120,12 +10120,17 @@ progress {
   width: 100%;
   height: 100%;
   color: black;
+  text-decoration: none;
 }
 .onex-menuItem:hover a {
   background-color: rgb(231, 238, 245);
   border-radius: 5px;
   color: rgb(0, 40, 85);
   cursor: pointer;
+}
+.onex-menuItem:hover a .onex-menuItem__badge {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0);
 }
 .onex-menuItem__icon {
   width: 0.75rem;
@@ -10152,7 +10157,7 @@ progress {
   color: rgb(0, 112, 192);
 }
 .onex-menuItem--selected:hover a {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(231, 238, 245);
   color: rgb(0, 40, 85);
 }
 .onex-menuItem--selected__indicator {
@@ -10160,6 +10165,7 @@ progress {
   height: 100%;
   background-color: rgb(0, 112, 192);
   border-radius: 2px;
+  margin-right: 3px;
 }
 
 .onex-menuItem--disabled a {
@@ -10181,4 +10187,201 @@ progress {
 }
 .onex-menuItem--unavailable span {
   color: rgb(176, 184, 191);
+}
+
+.onex-badge {
+  height: 1.25rem;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  border-radius: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.onex-badge.badge {
+  display: inline-flex;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: rgb(0, 0, 0);
+  border-radius: 1.25rem;
+  line-height: 1rem;
+}
+.onex-badge .onex-badge__icon svg,
+.onex-badge svg {
+  width: 1rem;
+  height: 1rem;
+}
+.onex-badge .onex-badge__icon {
+  display: inline-flex;
+}
+.onex-badge.onex-badge--variant-counter.bg-default {
+  background-color: rgba(103, 110, 122, 0.1) !important;
+}
+.onex-badge.onex-badge--variant-counter.bg-default-invert {
+  background-color: rgb(88, 95, 104) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-default-invert svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-important {
+  background-color: rgb(217, 21, 34) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-important svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-primary {
+  background-color: rgb(0, 112, 192) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-primary svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-counter.bg-added {
+  background-color: rgb(224, 246, 234) !important;
+  color: rgb(47, 131, 54);
+}
+.onex-badge.onex-badge--variant-counter.bg-added svg path {
+  fill: rgb(47, 131, 54);
+}
+.onex-badge.onex-badge--variant-counter.bg-removed {
+  background-color: rgb(255, 236, 238) !important;
+  color: rgb(228, 7, 7);
+}
+.onex-badge.onex-badge--variant-counter.bg-removed svg path {
+  fill: rgb(228, 7, 7);
+}
+.onex-badge.onex-badge--variant-status {
+  border-radius: 0.25rem !important;
+  text-transform: uppercase;
+}
+.onex-badge.onex-badge--variant-status.bg-default {
+  background-color: rgba(103, 110, 122, 0.1) !important;
+  color: rgb(103, 110, 122);
+  border: 1px solid rgba(26, 28, 30, 0.1) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-default svg path {
+  fill: rgb(103, 110, 122);
+}
+.onex-badge.onex-badge--variant-status.bg-info {
+  background-color: rgb(231, 242, 254) !important;
+  color: rgb(0, 112, 192);
+  border: 1px solid rgb(198, 227, 252) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-info svg path {
+  fill: rgb(0, 112, 192);
+}
+.onex-badge.onex-badge--variant-status.bg-success {
+  background-color: rgb(224, 246, 234) !important;
+  color: rgb(0, 126, 76);
+  border: 1px solid rgb(181, 235, 212) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-success svg path {
+  fill: rgb(0, 126, 76);
+}
+.onex-badge.onex-badge--variant-status.bg-warning {
+  background-color: rgb(255, 241, 184) !important;
+  color: rgb(196, 64, 0);
+  border: 1px solid rgb(253, 222, 104) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-warning svg path {
+  fill: rgb(196, 64, 0);
+}
+.onex-badge.onex-badge--variant-status.bg-important {
+  background-color: rgb(255, 236, 238) !important;
+  color: rgb(217, 21, 34);
+  border: 1px solid rgb(253, 215, 217) !important;
+}
+.onex-badge.onex-badge--variant-status.bg-important svg path {
+  fill: rgb(217, 21, 34);
+}
+.onex-badge.onex-badge--variant-status-bold {
+  border-radius: 0.25rem !important;
+  text-transform: uppercase;
+}
+.onex-badge.onex-badge--variant-status-bold.bg-default {
+  background-color: rgb(88, 95, 104) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-default svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-info {
+  background-color: rgb(0, 112, 192) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-info svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-success {
+  background-color: rgb(0, 126, 76) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-success svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-warning {
+  background-color: rgb(252, 185, 22) !important;
+  color: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-warning svg path {
+  fill: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-important {
+  background-color: rgb(217, 21, 34) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-bold.bg-important svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem !important;
+  padding: 0.125rem 0.125rem;
+  width: 1.25rem;
+}
+.onex-badge.onex-badge--variant-status-icon.bg-default {
+  background-color: rgb(88, 95, 104) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-default svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-info {
+  background-color: rgb(0, 112, 192) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-info svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-success {
+  background-color: rgb(0, 126, 76) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-success svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-warning {
+  background-color: rgb(252, 185, 22) !important;
+  color: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-warning svg path {
+  fill: rgb(0, 0, 0);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-important {
+  background-color: rgb(217, 21, 34) !important;
+  color: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon.bg-important svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-badge.onex-badge--variant-status-icon .onex-badge__icon svg,
+.onex-badge.onex-badge--variant-status-icon svg {
+  width: 1rem;
+  height: 1rem;
 }

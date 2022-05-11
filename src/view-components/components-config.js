@@ -15,7 +15,6 @@ import {
 } from '@mui/icons-material';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import Avatar from '../components/Avatar/scss';
-import Badge from '../components/Badge/scss';
 import Button from '../components/Buttons/scss';
 import ToggleButton from '../components/ToggleButton/scss';
 
@@ -932,7 +931,7 @@ export const config = {
             onSelect: undefined,
             disabled: false,
             leadingIcon: <EditRounded />,
-            badge: <Badge type="important">100</Badge>,
+            badge: 100,
             unavailable: false,
             isSelected: true,
           },

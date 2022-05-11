@@ -17,12 +17,17 @@
         width: 100%;
         height: 100%;
         color: black;
+        text-decoration: none;
     }
     &:hover a {
         background-color: $secondary-200;
         border-radius: $onex-mi-link-border-radius;
         color: $onex-mi-link-hover-text-color;
         cursor: pointer;
+      .onex-menuItem__badge {
+        background-color: $white!important;
+        color: $black;
+      }
     }
     &__icon {
         width: $onex-mi-icon-size;
@@ -51,7 +56,8 @@
         color: $onex-mi-link-selected-text-color;
     }
     &:hover a {
-        background-color: $onex-mi-link-selected-hover-bg-color;
+        background-color: $secondary-200;
+        //background-color: $onex-mi-link-selected-hover-bg-color;
         color: $onex-mi-link-hover-text-color;
     }
     &__indicator {
@@ -59,6 +65,7 @@
         height: 100%;
         background-color: $onex-mi-indicator-selected-text-color;
         border-radius: 2px;
+        margin-right: 3px;
     }
 }
 
