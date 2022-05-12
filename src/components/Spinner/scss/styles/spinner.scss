@@ -12,6 +12,7 @@
         top: -$default-spinner-border-width;
         color: $spinner-color-primary !important;
         border-bottom-color: transparent;
+        border-top-color: transparent;
     }
 
     &--sm {

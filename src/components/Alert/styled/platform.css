@@ -10712,7 +10712,7 @@ progress {
   justify-content: center;
   gap: 0.25rem;
 }
-.onex-btn.onex-btn--default.btn {
+.onex-btn.onex-btn--default.btn:not(.btn-tertiary) {
   min-width: 5rem;
 }
 .onex-btn .onex-btn__decorator {
@@ -10817,6 +10817,9 @@ progress {
 .onex-btn.btn-sm {
   min-width: 2rem;
   height: 2rem;
+  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.5rem;
 }
 .onex-btn svg, .onex-btn.btn-md svg {
   width: 1.25rem;
