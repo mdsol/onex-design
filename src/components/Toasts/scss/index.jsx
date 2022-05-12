@@ -2,14 +2,20 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Toast, ToastContainer } from 'react-bootstrap';
-import { Error, Warning, Info, CheckCircle, Close } from '@mui/icons-material';
+import {
+  ErrorRounded,
+  WarningRounded,
+  InfoRounded,
+  CheckCircleRounded,
+  CloseRounded,
+} from '@mui/icons-material';
 import Button from '../../Buttons/scss';
 
 const IconVariants = {
-  info: <Info />,
-  success: <CheckCircle />,
-  warning: <Warning />,
-  error: <Error />,
+  info: <InfoRounded />,
+  success: <CheckCircleRounded />,
+  warning: <WarningRounded />,
+  error: <ErrorRounded />,
 };
 
 const CustomToast = React.forwardRef((props, ref) => {
@@ -34,11 +40,18 @@ const CustomToast = React.forwardRef((props, ref) => {
     [className]: className,
   });
 
+  // eslint-disable-next-line no-nested-ternary
+  const toastPosition = position.includes('left')
+    ? position.replace('left', 'start')
+    : position.includes('right')
+    ? position.replace('right', 'end')
+    : position;
+
   return (
     <ToastContainer
       ref={ref}
       className={toastClassNames}
-      position={position}
+      position={toastPosition}
       data-test-id={dataTestId}
     >
       <Toast
@@ -61,7 +74,7 @@ const CustomToast = React.forwardRef((props, ref) => {
               type="icon"
               onClick={onClose}
             >
-              <Close />
+              <CloseRounded />
             </Button>
           )}
         </Toast.Header>
@@ -80,15 +93,15 @@ CustomToast.propTypes = {
   show: PropTypes.bool,
   closeButton: PropTypes.bool,
   position: PropTypes.oneOf([
-    'top-start',
+    'top-left',
     'top-center',
-    'top-end',
-    'middle-start',
+    'top-right',
+    'middle-left',
     'middle-center',
-    'middle-end',
-    'bottom-start',
+    'middle-right',
+    'bottom-left',
     'bottom-center',
-    'bottom-end',
+    'bottom-right',
   ]),
   icon: PropTypes.node,
   showDefaultIcon: PropTypes.bool,
@@ -106,7 +119,7 @@ CustomToast.defaultProps = {
   delay: 5000,
   show: false,
   closeButton: true,
-  position: 'bottom-end',
+  position: 'bottom-right',
   icon: undefined,
   showDefaultIcon: true,
   onClose: undefined,

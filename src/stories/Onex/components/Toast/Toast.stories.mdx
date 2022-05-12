@@ -123,27 +123,7 @@ export const Template = (args) => <Toast {...args} />;
 ## Toast
 
 A toast is used for confirmations, alerts, and acknowledgments that require minimal user interaction, often displayed using a snackbar group.
-
-### Toast details
-<Canvas>
-  <Story
-    height="12rem"
-    name="Demo"
-    position="relative"
-    args={{
-      id: 'demo-toast',
-      variant: 'info',
-      className: 'c-demo-toast',
-      show: true,
-      dataTestId: 'demo-toast-id',
-      header: "Info banner header",
-      children: 'Example of an info banner message.',
-    }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo"/>
+Toasts appear at the bottom right of the screen and overlay any content.
 
 ### Toast variants
 
@@ -173,60 +153,23 @@ The component has 4 variants such as "info", "success", "warning", "error".
   <Story name="Error" story={stories.Error} height="12rem" position="relative"/>
 </Canvas>
 
-### Toast placement
-
-By default - <i>bottom-end</i>
-
-##### <i>top-start</i>
-
+### Toast details
 <Canvas>
-  <Story name="TopStart" story={stories.TopStart} height="12rem" position="relative"/>
+  <Story
+    height="12rem"
+    name="Demo"
+    position="relative"
+    args={{
+      id: 'demo-toast',
+      variant: 'info',
+      className: 'c-demo-toast',
+      show: true,
+      dataTestId: 'demo-toast-id',
+      header: "Info banner header",
+      children: 'Example of an info banner message.',
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-##### <i>top-center</i>
-
-<Canvas>
-  <Story name="TopCenter" story={stories.TopCenter} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>top-end</i>
-
-<Canvas>
-  <Story name="TopEnd" story={stories.TopEnd} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>middle-start</i>
-
-<Canvas>
-  <Story name="MiddleStart" story={stories.MiddleStart} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>middle-center</i>
-
-<Canvas>
-  <Story name="MiddleCenter" story={stories.MiddleCenter} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>middle-end</i>
-
-<Canvas>
-  <Story name="MiddleEnd" story={stories.MiddleEnd} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>bottom-start</i>
-
-<Canvas>
-  <Story name="BottomStart" story={stories.BottomStart} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>bottom-center</i>
-
-<Canvas>
-  <Story name="BottomCenter" story={stories.BottomCenter} height="12rem" position="relative"/>
-</Canvas>
-
-##### <i>bottom-end</i>
-
-<Canvas>
-  <Story name="BottomEnd" story={stories.BottomEnd} height="12rem" position="relative"/>
-</Canvas>
+<ArgsTable story="Demo"/>
