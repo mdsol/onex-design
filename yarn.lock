@@ -3531,6 +3531,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material-design-icons/font@npm:latest":
+  version: 0.10.11
+  resolution: "@material-design-icons/font@npm:0.10.11"
+  checksum: ae36d91e8c4be1e30d7f51323177ccee4a581a130bc378b0b259201c75e0eafc3a566cf3bdd8c5ca2c299441609b957cecf614309c5f0538f396541f8b8905ae
+  languageName: node
+  linkType: hard
+
 "@mdsol/onex-design@workspace:.":
   version: 0.0.0-use.local
   resolution: "@mdsol/onex-design@workspace:."
@@ -3544,6 +3551,7 @@ __metadata:
     "@babel/plugin-transform-runtime": ^7.17.0
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
+    "@material-design-icons/font": latest
     "@mdx-js/react": ^1.6.22
     "@mui/icons-material": ^5.6.2
     "@mui/material": ^5.6.2

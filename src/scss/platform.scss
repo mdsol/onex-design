@@ -4,6 +4,9 @@
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
+/* google mu icons*/
+@import '../../node_modules/@material-design-icons/font/round.css';
+
 $grid-gutter-width: 2rem;
 $grid-breakpoints: (
   xs: 0,
@@ -47,6 +50,11 @@ body {
 
 .innerZoomElementWrapper > * {
   vertical-align: top;
+}
+
+.material-icons-round {
+  font-size: $icon-size-xlg;
+  color: black;
 }
 
 @import './brand-colors';
