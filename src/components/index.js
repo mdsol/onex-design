@@ -1,7 +1,6 @@
 // react-bootstrap
 import {
   Accordion,
-  Alert,
   Breadcrumb,
   ButtonGroup,
   ButtonToolbar,
@@ -64,6 +63,7 @@ import ProgressBar from './ProgressBar/scss';
 import CustomCard from './Card/scss';
 import Spinner from './Spinner/scss';
 import Offcanvas from './Offcanvas/scss';
+import Alert from './Alert/scss';
 
 import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
@@ -141,12 +141,12 @@ export {
   ProgressBar,
   Spinner,
   Offcanvas,
+  Alert,
 };
 
 export {
   ListGroup,
   Accordion,
-  Alert,
   Breadcrumb,
   Card,
   Carousel,

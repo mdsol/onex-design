@@ -1,0 +1,55 @@
+.onex-alert {
+    border-radius: 1rem !important;
+    border: 1px solid;
+    color: $black !important;
+    padding: 1rem 1rem 1rem 2.5rem !important;
+    .alert-heading {
+        font-weight: $font-weight-600;
+        position: relative;
+        .icon {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+        }
+    }
+    .alert-body {
+        font-size: $font-size-label;
+        margin: 0;
+    }
+    &.alert-info {
+        background-color: $tertiary-500;
+        border-color: $primary;
+        .icon {
+            color: $primary !important;
+        }
+    }
+    &.alert-warning {
+        background-color: $warning-100;
+        border-color: $warning;
+        .icon {
+            color: $warning !important;
+        }
+    }
+    &.alert-error {
+        background-color: $error-100;
+        border-color: $error;
+        .icon {
+            color: $error !important;
+        }
+    }
+    &.alert-success {
+        background-color: $success-100;
+        border-color: $success;
+        .icon {
+            color: $success !important;
+        }
+    }
+    .alert-control {
+        .btn:first-child {
+            margin-right: 0.5rem;
+        }
+        .btn {
+            margin-top: 1rem;
+        }
+    }
+}

@@ -1840,6 +1840,43 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'Alert',
+        componentName: 'Alert',
+        styledComponentName: 'Alert',
+        additionalComponents: [],
+        variants: [
+          {
+            show: true,
+            variant: 'error',
+            primaryAction: () => {
+              console.log('yep');
+            },
+            primaryText: 'Primary',
+          },
+          {
+            show: true,
+            variant: 'success',
+            primaryAction: () => {
+              console.log('yep');
+            },
+            primaryText: 'Primary',
+            secondaryAction: () => {
+              console.log('yep');
+            },
+            secondaryText: 'Secondary',
+          },
+          {
+            show: true,
+            variant: 'info',
+            body: 'Body text',
+          },
+          {
+            show: true,
+            variant: 'warning',
+          },
+        ],
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',
