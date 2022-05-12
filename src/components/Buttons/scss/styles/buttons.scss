@@ -9,7 +9,7 @@
     gap: $onex-btn-size-gap;
   }
 
-  &.onex-btn--default.btn {
+  &.onex-btn--default.btn:not(.btn-tertiary) {
     min-width: $onex-btn-min-width;
   }
 

@@ -57,7 +57,6 @@ const CustomSelect = ({
   onSelect,
   options,
   groupedOptions,
-  showCheckInOption,
   dataTestId,
   isAsync,
   onLoadOptions,
@@ -103,7 +102,7 @@ const CustomSelect = ({
             MultiValueRemove,
             // eslint-disable-next-line react/prop-types
             Option: memo(({ children, ...args }) => (
-              <Option {...args} selectedOptions={selectedOptions}>
+              <Option {...args} showCheckInOption={isMulti} selectedOptions={selectedOptions}>
                 {children}
               </Option>
             )),
@@ -127,11 +126,7 @@ const CustomSelect = ({
             MultiValueRemove,
             // eslint-disable-next-line react/prop-types
             Option: memo(({ children, ...args }) => (
-              <Option
-                {...args}
-                showCheckInOption={showCheckInOption}
-                selectedOptions={selectedOptions}
-              >
+              <Option {...args} showCheckInOption={isMulti} selectedOptions={selectedOptions}>
                 {children}
               </Option>
             )),
@@ -188,7 +183,6 @@ CustomSelect.propTypes = {
   selectedValues: PropTypes.arrayOf(optionType),
   options: PropTypes.arrayOf(optionType),
   groupedOptions: PropTypes.arrayOf(groupedOptions),
-  showCheckInOption: PropTypes.bool,
   hasClearButton: PropTypes.bool,
   size: PropTypes.oneOf(['md', 'sm']),
   label: PropTypes.string,
@@ -215,7 +209,6 @@ CustomSelect.defaultProps = {
   isDisabled: false,
   isInvalid: false,
   options: [],
-  showCheckInOption: false,
   groupedOptions: [],
   onSelect: undefined,
   hasClearButton: false,

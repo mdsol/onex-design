@@ -10769,7 +10769,7 @@ progress {
   justify-content: center;
   gap: 0.25rem;
 }
-.onex-btn.onex-btn--default.btn {
+.onex-btn.onex-btn--default.btn:not(.btn-tertiary) {
   min-width: 5rem;
 }
 .onex-btn .onex-btn__decorator {
