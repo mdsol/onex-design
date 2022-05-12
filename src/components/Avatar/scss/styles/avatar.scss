@@ -55,6 +55,10 @@
     font-family: $font-family;
     color: $secondary-500;
     overflow: hidden;
+
+    .material-icons-round {
+      color: $secondary-500;
+    }
   }
 
   &--size-xs {

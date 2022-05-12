@@ -24,6 +24,9 @@
     svg path {
       fill: $onex-btn-primary-text-color;
     }
+    .material-icons-round {
+      color: $onex-btn-primary-text-color;
+    }
 
     &:hover {
       @include bg-color($onex-btn-primary-hover-bg-color);
@@ -49,12 +52,20 @@
       fill: $onex-btn-secondary-text-color;
     }
 
+    .material-icons-round {
+      color: $onex-btn-secondary-text-color;
+    }
+
     &:hover {
       @include bg-color($onex-btn-secondary-hover-bg-color);
       color: $onex-btn-secondary-hover-text-color;
 
       svg path {
         fill: $onex-btn-secondary-hover-text-color;
+      }
+
+      .material-icons-round {
+        color: $onex-btn-secondary-hover-text-color;
       }
     }
 
@@ -80,6 +91,10 @@
       fill: $onex-btn-tertiary-color;
     }
 
+    .material-icons-round {
+      color: $onex-btn-tertiary-color;
+    }
+
     &.disabled,
     &:disabled {
       opacity: 0.4;
@@ -92,6 +107,10 @@
 
       svg path {
         fill: $onex-btn-tertiary-hover-color;
+      }
+
+      .material-icons-round {
+        color: $onex-btn-tertiary-hover-color;
       }
     }
 
@@ -144,13 +163,26 @@
     @include icon-size($onex-btn-icon-size-md);
   }
 
+  & .material-icons-round,
+  &.btn-md .material-icons-round {
+    font-size: $onex-btn-icon-size-md;
+  }
+
   &.btn-sm svg {
     @include icon-size($onex-btn-icon-size-sm);
+  }
+
+  &.btn-sm .material-icons-round {
+    font-size: $onex-btn-icon-size-sm;
   }
 
 
   /* only icon child */
   & svg:only-child {
+    margin: 0.125rem 0;
+  }
+
+  & .material-icons-round:only-child {
     margin: 0.125rem 0;
   }
 

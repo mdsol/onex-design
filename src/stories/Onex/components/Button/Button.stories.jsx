@@ -1,8 +1,9 @@
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
 import { Button } from '../../../../components';
 
-const icons = { StarRoundedIcon: <StarRoundedIcon />, StarsRoundedIcon: <StarsRoundedIcon /> };
+const icons = {
+  StarRoundedIcon: <span className="material-icons-round">star</span>,
+  StarsRoundedIcon: <span className="material-icons-round">stars</span>,
+};
 
 export default {
   title: 'Onex/Components/Button',
@@ -53,14 +54,14 @@ PrimaryMiddle.args = {
 export const PrimaryWithLeadingIcon = ButtonTemplate.bind({});
 PrimaryWithLeadingIcon.args = {
   variant: 'primary',
-  leadingIcon: <StarRoundedIcon />,
+  leadingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
 export const PrimaryWithTrailingIcon = ButtonTemplate.bind({});
 PrimaryWithTrailingIcon.args = {
   variant: 'primary',
-  trailingIcon: <StarRoundedIcon />,
+  trailingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
@@ -68,8 +69,8 @@ export const PrimaryWithTwoIcons = ButtonTemplate.bind({});
 PrimaryWithTwoIcons.args = {
   variant: 'primary',
   size: 'sm',
-  leadingIcon: <StarRoundedIcon />,
-  trailingIcon: <StarRoundedIcon />,
+  leadingIcon: <span className="material-icons-round">star</span>,
+  trailingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
@@ -83,7 +84,7 @@ PrimaryDisabled.args = {
 export const PrimarySmallIcon = ButtonTemplate.bind({});
 const iconPrimarySmallCodeBody = `
 <Button onClick={() => {}}>
-     <StarRoundedIcon />
+     <span className="material-icons-round">star</span>
 </Button>
 `;
 PrimarySmallIcon.parameters = {
@@ -97,13 +98,13 @@ PrimarySmallIcon.args = {
   variant: 'primary',
   type: 'icon',
   size: 'sm',
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const PrimaryMiddleIcon = ButtonTemplate.bind({});
 const iconPrimaryMiddleCodeBody = `
 <Button onClick={() => {}}>
-     <StarRoundedIcon />
+  <span className="material-icons-round">star</span>
 </Button>
 `;
 PrimaryMiddleIcon.parameters = {
@@ -117,7 +118,7 @@ PrimaryMiddleIcon.args = {
   variant: 'primary',
   type: 'icon',
   size: 'md',
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const PrimaryMiddleIconDisabled = ButtonTemplate.bind({});
@@ -133,7 +134,7 @@ PrimaryMiddleIconDisabled.args = {
   type: 'icon',
   size: 'md',
   disabled: true,
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const SecondarySmall = ButtonTemplate.bind({});
@@ -153,11 +154,11 @@ SecondaryMiddle.args = {
 export const SecondaryWithLeadingIcon = ButtonTemplate.bind({});
 SecondaryWithLeadingIcon.args = {
   variant: 'secondary',
-  leadingIcon: <StarRoundedIcon />,
+  leadingIcon: <span className="material-icons-round">star</span>,
   children: (
     <>
       <span>Button with icon</span>
-      <StarRoundedIcon />
+      <span className="material-icons-round">star</span>
     </>
   ),
 };
@@ -165,15 +166,15 @@ SecondaryWithLeadingIcon.args = {
 export const SecondaryWithTrailingIcon = ButtonTemplate.bind({});
 SecondaryWithTrailingIcon.args = {
   variant: 'secondary',
-  trailingIcon: <StarRoundedIcon />,
+  trailingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
 export const SecondaryWithTwoIcons = ButtonTemplate.bind({});
 SecondaryWithTwoIcons.args = {
   variant: 'secondary',
-  leadingIcon: <StarRoundedIcon />,
-  trailingIcon: <StarRoundedIcon />,
+  leadingIcon: <span className="material-icons-round">star</span>,
+  trailingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
@@ -183,7 +184,7 @@ const iconSecondarySmallCodeBody = `
     onClick={() => {}}
     variant="secondary"
     >
-     <StarRoundedIcon />
+     <span className="material-icons-round">star</span>
 </Button>
 `;
 SecondaryIconSmall.parameters = {
@@ -197,7 +198,7 @@ SecondaryIconSmall.args = {
   variant: 'secondary',
   type: 'icon',
   size: 'sm',
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const SecondaryIconMiddle = ButtonTemplate.bind({});
@@ -206,7 +207,7 @@ const iconSecondaryMiddleCodeBody = `
     onClick={() => {}}
     variant="secondary"
     >
-     <StarRoundedIcon />
+     <span className="material-icons-round">star</span>
 </Button>
 `;
 SecondaryIconMiddle.parameters = {
@@ -220,7 +221,7 @@ SecondaryIconMiddle.args = {
   variant: 'secondary',
   type: 'icon',
   size: 'md',
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const SecondaryIconMiddleDisabled = ButtonTemplate.bind({});
@@ -236,7 +237,7 @@ SecondaryIconMiddleDisabled.args = {
   type: 'icon',
   size: 'md',
   disabled: true,
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const SecondaryDisabled = ButtonTemplate.bind({});
@@ -264,7 +265,7 @@ export const TertiaryWithLeadingIcon = ButtonTemplate.bind({});
 
 TertiaryWithLeadingIcon.args = {
   variant: 'tertiary',
-  leadingIcon: <StarRoundedIcon />,
+  leadingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
@@ -272,7 +273,7 @@ export const TertiaryWithTrailingIcon = ButtonTemplate.bind({});
 
 TertiaryWithTrailingIcon.args = {
   variant: 'tertiary',
-  trailingIcon: <StarRoundedIcon />,
+  trailingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
@@ -280,8 +281,8 @@ export const TertiaryWithTwoIcons = ButtonTemplate.bind({});
 
 TertiaryWithTwoIcons.args = {
   variant: 'tertiary',
-  leadingIcon: <StarRoundedIcon />,
-  trailingIcon: <StarRoundedIcon />,
+  leadingIcon: <span className="material-icons-round">star</span>,
+  trailingIcon: <span className="material-icons-round">star</span>,
   children: <span>Button with icon</span>,
 };
 
@@ -292,7 +293,7 @@ const iconTertiarySmallCodeBody = `
     variant="tertiary"
     type="icon"
     >
-     <StarRoundedIcon />
+     <span className="material-icons-round">star</span>
 </Button>
 `;
 TertiaryIconSmall.parameters = {
@@ -305,7 +306,7 @@ TertiaryIconSmall.parameters = {
 TertiaryIconSmall.args = {
   variant: 'tertiary',
   type: 'icon',
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const TertiaryIconMiddle = ButtonTemplate.bind({});
@@ -315,7 +316,7 @@ const iconTertiaryMiddleCodeBody = `
     variant="tertiary"
     type="icon"
     >
-     <StarRoundedIcon />
+     <span className="material-icons-round">star</span>
 </Button>
 `;
 TertiaryIconMiddle.parameters = {
@@ -329,7 +330,7 @@ TertiaryIconMiddle.args = {
   variant: 'tertiary',
   type: 'icon',
   size: 'md',
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const TertiaryIconMiddleDisabled = ButtonTemplate.bind({});
@@ -345,7 +346,7 @@ TertiaryIconMiddleDisabled.args = {
   type: 'icon',
   size: 'md',
   disabled: true,
-  children: <StarRoundedIcon />,
+  children: <span className="material-icons-round">star</span>,
 };
 
 export const TertiaryDisabled = ButtonTemplate.bind({});

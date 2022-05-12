@@ -4,7 +4,6 @@ import {
   MoreVertRounded,
   AddCircleRounded,
   EditRounded,
-  BugReportRounded,
   LanguageRounded,
 } from '@mui/icons-material';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
@@ -53,27 +52,27 @@ export const config = {
           },
           {
             size: 'lg',
-            children: <BugReportRounded />,
+            children: <span className="material-icons-round">bug_report</span>,
           },
           {
             size: 'md',
           },
           {
-            children: <BugReportRounded />,
+            children: <span className="material-icons-round">bug_report</span>,
             size: 'md',
           },
           {
             size: 'sm',
           },
           {
-            children: <BugReportRounded />,
+            children: <span className="material-icons-round">bug_report</span>,
             size: 'sm',
           },
           {
             size: 'xs',
           },
           {
-            children: <BugReportRounded />,
+            children: <span className="material-icons-round">bug_report</span>,
             size: 'xs',
           },
         ],
@@ -262,7 +261,7 @@ export const config = {
             variant: 'primary',
             size: 'sm',
             disabled: true,
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
             children: <span>Small disabled button</span>,
           },
           {
@@ -276,33 +275,33 @@ export const config = {
           },
           {
             variant: 'primary',
-            children: <StarRoundedIcon />,
+            children: <span className="material-icons-round">star</span>,
             type: 'icon',
             size: 'md',
           },
           {
             variant: 'primary',
-            children: <StarRoundedIcon />,
+            children: <span className="material-icons-round">star</span>,
             type: 'icon',
             size: 'sm',
           },
           {
             variant: 'primary',
-            leadingIcon: <StarRoundedIcon />,
-            trailingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
+            trailingIcon: <span className="material-icons-round">star</span>,
             children: <span>Primary button with icon</span>,
           },
           {
             variant: 'primary',
             size: 'md',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
             children: <span>Primary button with icon</span>,
           },
           {
             variant: 'secondary',
             size: 'sm',
             disabled: true,
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
             children: <span>Small disabled button</span>,
           },
           {
@@ -316,38 +315,38 @@ export const config = {
           },
           {
             variant: 'secondary',
-            children: <StarRoundedIcon />,
+            children: <span className="material-icons-round">star</span>,
             type: 'icon',
             size: 'md',
           },
           {
             variant: 'secondary',
-            children: <StarRoundedIcon />,
+            children: <span className="material-icons-round">star</span>,
             type: 'icon',
             size: 'sm',
           },
           {
             variant: 'secondary',
-            leadingIcon: <StarRoundedIcon />,
-            trailingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
+            trailingIcon: <span className="material-icons-round">star</span>,
             children: <span>Secondary button with icon</span>,
           },
           {
             variant: 'secondary',
             size: 'md',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
             children: <span>Secondary button with icon</span>,
           },
           {
             variant: 'tertiary',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
             children: <span>Link button with icon</span>,
           },
           {
             variant: 'tertiary',
             size: 'sm',
             disabled: true,
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
             children: <span>Small disabled button</span>,
           },
           {
@@ -361,20 +360,20 @@ export const config = {
           },
           {
             variant: 'tertiary',
-            children: <StarRoundedIcon />,
+            children: <span className="material-icons-round">star</span>,
             type: 'icon',
             size: 'md',
           },
           {
             variant: 'tertiary',
-            children: <StarRoundedIcon />,
+            children: <span className="material-icons-round">star</span>,
             type: 'icon',
             size: 'sm',
           },
           {
             variant: 'tertiary',
-            leadingIcon: <StarRoundedIcon />,
-            trailingIcon: <StarRoundedIcon />,
+            leadingIcon: <span className="material-icons-round">star</span>,
+            trailingIcon: <span className="material-icons-round">star</span>,
             children: <span>Tertiary button with icon</span>,
           },
           {
