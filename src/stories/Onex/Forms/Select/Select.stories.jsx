@@ -57,7 +57,6 @@ WithCheckboxes.args = {
   size: 'sm',
   className: 'select',
   dataTestId: 'select',
-  showCheckInOption: true,
   options: [
     { value: 'albania', label: 'Albania' },
     { value: 'belgium', label: 'Belgium' },
@@ -114,7 +113,6 @@ Label.args = {
   className: 'select',
   dataTestId: 'select',
   label: 'Select country',
-  showCheckInOption: true,
   options: [
     { value: 'albania', label: 'Albania' },
     { value: 'belgium', label: 'Belgium' },
@@ -175,7 +173,6 @@ HasClearButton.args = {
   size: 'md',
   className: 'select',
   dataTestId: 'select',
-  showCheckInOption: true,
   options: [
     { value: 'albania', label: 'Albania' },
     { value: 'belgium', label: 'Belgium' },
