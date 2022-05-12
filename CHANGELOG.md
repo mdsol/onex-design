@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.1
+
+DataGrid CSS variables fixed and updated, new Alert component, Button, Select and Toast styles updated/corrected. 
 ## 0.3.0
 
 SCSS variable typo fixed. Select Storybook demo fixed. Text, Select, Button and SearchField sizes fixed. MenuItem Styled component fixed. 
