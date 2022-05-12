@@ -10150,6 +10150,9 @@ progress {
   height: 0.25rem;
   width: 100%;
 }
+.onex-progressbar.progress .progress-bar {
+  border-radius: 0.25em;
+}
 .onex-progressbar .bg-danger {
   background-color: rgb(217, 21, 34) !important;
 }

@@ -1,8 +1,19 @@
 .onex-offcanvas {
 
+    .offcanvas-header {
+        position: relative;
+        & > button {
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+        }
+    }
+
     .offcanvas-title {
         h5 {
             font-weight: $font-weight-600;
+            display: flex;
+            align-items: center;
 
             .badge {
                 font-size: $font-size-sm;
@@ -14,7 +25,7 @@
     }
 
     .offcanvas-footer {
-        height: 64px;
+        height: 56px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -22,7 +33,7 @@
         padding: 0 1rem;
 
         .primary {
-            margin-left: 1rem;
+            margin-left: 0.5rem;
         }
         
         .action-link {

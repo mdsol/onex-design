@@ -36,7 +36,7 @@ const CustomOffcanvas = ({
             )}
           </h5>
         </OffcanvasTitle>
-        <Button onClick={onHide} variant="tertiary" type="icon">
+        <Button onClick={onHide} variant="tertiary" type="icon" size="md">
           <CloseRoundedIcon />
         </Button>
       </OffcanvasHeader>

@@ -10896,8 +10896,18 @@ progress {
   padding: 0.5rem;
 }
 
+.onex-offcanvas .offcanvas-header {
+  position: relative;
+}
+.onex-offcanvas .offcanvas-header > button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
 .onex-offcanvas .offcanvas-title h5 {
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 .onex-offcanvas .offcanvas-title h5 .badge {
   font-size: 0.75rem;
@@ -10906,7 +10916,7 @@ progress {
   background-color: rgba(103, 110, 122, 0.1) !important;
 }
 .onex-offcanvas .offcanvas-footer {
-  height: 64px;
+  height: 56px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10914,7 +10924,7 @@ progress {
   padding: 0 1rem;
 }
 .onex-offcanvas .offcanvas-footer .primary {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 .onex-offcanvas .offcanvas-footer .action-link {
   width: 100%;
