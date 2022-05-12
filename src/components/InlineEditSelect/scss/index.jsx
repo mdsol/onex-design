@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import CustomButton from '../../Buttons/scss';
+import Button from '../../Buttons/scss';
 import Select from '../../Select/scss';
 
 const InlineEditSelect = ({
@@ -77,20 +77,20 @@ const InlineEditSelect = ({
       />
       {isActive && !isInvalid && (
         <div className="status-buttons">
-          <CustomButton
+          <Button
             className="status-buttons__complete"
             variant="primary"
             onClick={handleComplete}
           >
             <DoneRoundedIcon />
-          </CustomButton>
-          <CustomButton
+          </Button>
+          <Button
             className="status-buttons__cancel"
             variant="secondary"
             onClick={handleCancel}
           >
             <CloseRoundedIcon />
-          </CustomButton>
+          </Button>
         </div>
       )}
       {isInvalid && !disabled && (
