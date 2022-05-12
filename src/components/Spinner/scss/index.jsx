@@ -15,8 +15,8 @@ const DefaultSpinner = ({ className, ...props }) => {
 };
 
 DefaultSpinner.propTypes = {
-  animation: PropTypes.oneOf('border', 'grow'),
-  size: PropTypes.oneOf('sm', 'md', 'lg'),
+  animation: PropTypes.oneOf(['border', 'grow']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   className: PropTypes.string,
 };
 

@@ -1,52 +1,80 @@
 <!-- Alert.mdx -->
 import {Meta, ArgsTable, Canvas, Story} from '@storybook/addon-docs';
-import {Alert} from '../../../components';
+import {Alert} from '../../../../components';
 import * as stories from './Alert.stories.jsx';
 
 <Meta
-  title="Bootstrap/Components/Alert"
+  title="Onex/Components/Alert"
   argTypes={{
-    children: {
-      description: 'The content of the component',
-      control: 'text',
-    },
-    closeLabel: {
-      description: 'Sets the text for alert close button.',
-      control: 'text',
+    title: {
+      description: `Text for Title`,
+      control: 'string',
       table: {
         defaultValue: {
-          summary: 'Close alert',
+          summary: 'Title',
         },
         type: {
           summary: 'string',
         },
       },
     },
-    closeVariant: {
-      description: 'Sets the text for alert close button.',
-      control: 'text',
+    body: {
+      description: `Text for element inside alert's body`,
+      control: 'string',
       table: {
+        defaultValue: {
+          summary: '',
+        },
         type: {
-          summary: 'white',
+          summary: 'string | element',
         },
       },
     },
-    dismissible: {
-      description:
-        'Renders a properly aligned dismiss button, as well as adding extra horizontal padding to the Alert.',
-      control: 'boolean',
+    primaryAction: {
+      description: 'A callback fired when the user click on Primary Btn',
+      action: 'primaryAction',
       table: {
-        type: {
-          summary: 'boolean',
+        defaultValue: {
+          summary: null,
         },
-      },
-    },
-    onClose: {
-      description: 'Callback fired when alert is closed.',
-      action: 'close',
-      table: {
         type: {
           summary: 'func',
+        },
+      },
+    },
+    primaryText: {
+      description: `Text for Primary Btn`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    secondaryAction: {
+      description: 'A callback fired when the user click on Secondary Btn',
+      action: 'secondaryAction',
+      table: {
+        defaultValue: {
+          summary: null,
+        },
+        type: {
+          summary: 'func',
+        },
+      },
+    },
+    secondaryText: {
+      description: `Text for Secondary Btn`,
+      control: 'string',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
         },
       },
     },
@@ -77,14 +105,14 @@ import * as stories from './Alert.stories.jsx';
     },
     variant: {
       description: 'The Alert visual variant',
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'],
-      control: {type: 'select'},
+      options: ['success', 'error', 'warning', 'info'],
+      control: { type: 'select' },
       table: {
         defaultValue: {
-          summary: 'primary',
+          summary: 'info',
         },
         type: {
-          summary: 'primary | secondary | success | danger | warning | info | dark | light',
+          summary: 'success | error | warning | info',
         },
       },
     },
@@ -105,35 +133,21 @@ Alerts are available for any length of text, as well as an optional dismiss butt
   <Story name="Examples" story={stories.Examples}/>
 </Canvas>
 
-## Links
+## Actions
 
-For links, use the```<Alert.Link>``` component to provide matching colored links within any alert.
+For Actions, use the```primaryAction``` and```secondaryAction``` props to provide matching colored Actions within any alert.
 
 <Canvas>
-  <Story name="Links" story={stories.Links}/>
+  <Story name="Actions" story={stories.Actions}/>
 </Canvas>
 
 ## Additional content
 
-Alerts can contain whatever content you like.Headers, paragraphs, dividers, go crazy.
+Alerts can contain whatever content you like.Headers, paragraphs, dividers, go crazy. Use ```body``` prop for that.
 
 <Canvas>
   <Story name="AdditionalContent" story={stories.AdditionalContent}/>
 </Canvas>
-
-## Dismissing
-Add the```dismissible``` prop to add a functioning dismiss button to the Alert.
-
-<Canvas>
-  <Story name="DismissingError" story={stories.DismissingError}/>
-</Canvas>
-
-You can also control the visual state directly which is great if you want to build more complicated alerts.
-
-<Canvas>
-  <Story name="DismissingSuccess" story={stories.DismissingSuccess}/>
-</Canvas>
-
 
 ## Demo
 
@@ -141,11 +155,11 @@ You can also control the visual state directly which is great if you want to bui
   <Story
     name="Demo"
     args={{
-      children: "This is a demo warning alert!",
-      closeLabel: 'Close',
+      title: "This is a demo warning alert!",
       variant: 'warning',
-      dismissible: false,
       show: true,
+      primaryAction: null,
+      secondaryAction: null,
     }}>
     {AlertTemplate.bind({})}
   </Story>
