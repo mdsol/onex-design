@@ -9,6 +9,11 @@
         width: $svg-size;
         height: $svg-size;
     }
+
+    & .onex-badge__icon .material-icons-round,
+    .material-icons-round {
+      font-size: $svg-size;
+    }
 }
 
 @mixin bg-text-color($bg-color, $text-color: false, $border-color: false) {
@@ -18,6 +23,9 @@
         color: $text-color;
         svg path {
           fill: $text-color;
+        }
+        .material-icons-round {
+          color: $text-color;
         }
     }
 
@@ -73,7 +81,7 @@
 
 @mixin default-badge-styles() {
     &.badge {
-      display: inline-flex;
+        display: inline-flex;
         padding: $onex-badge-padding-y $onex-badge-padding-x;
         font-size: $onex-badge-font-size;
         font-weight: $onex-badge-font-weight;

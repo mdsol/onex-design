@@ -38,7 +38,7 @@
     }
 
     &.onex-badge--variant-status-icon {
-      @include badge-status-bold-type-color();
+      @include badge-status-type-color();
 
       display: inline-flex;
       align-items: center;
@@ -52,6 +52,11 @@
       svg {
         width: $component-height-small-sm;
         height: $component-height-small-sm;
+      }
+
+      & .onex-badge__icon .material-icons-round,
+      .material-icons-round {
+        font-size: $component-height-small-sm;
       }
     }
 }

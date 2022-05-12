@@ -30,3 +30,8 @@ $spacers: (
   9: $spacer * 6.5,
   10: $spacer * 10.5,
 );
+
+.material-icons-round {
+  font-size: $icon-size-xlg;
+  color: black;
+}
