@@ -30,7 +30,11 @@ Info.args = {
     <>
       Info toast message.
       <div style={{ paddingTop: '1rem' }}>
-        <Button variant="secondary" onClick={() => console.log('Resend')}>
+        <Button
+          style={{ marginRight: '0.5rem' }}
+          variant="secondary"
+          onClick={() => console.log('Resend')}
+        >
           Resend
         </Button>
         <Button variant="tertiary" onClick={() => console.log('Discard')}>
@@ -53,7 +57,11 @@ Success.args = {
     <>
       Success toast message.
       <div style={{ paddingTop: '1rem' }}>
-        <Button variant="secondary" onClick={() => console.log('Resend')}>
+        <Button
+          style={{ marginRight: '0.5rem' }}
+          variant="secondary"
+          onClick={() => console.log('Resend')}
+        >
           Resend
         </Button>
         <Button variant="tertiary" onClick={() => console.log('Discard')}>
@@ -76,7 +84,11 @@ Warning.args = {
     <>
       Warning toast message.
       <div style={{ paddingTop: '1rem' }}>
-        <Button variant="secondary" onClick={() => console.log('Resend')}>
+        <Button
+          style={{ marginRight: '0.5rem' }}
+          variant="secondary"
+          onClick={() => console.log('Resend')}
+        >
           Resend
         </Button>
         <Button variant="tertiary" onClick={() => console.log('Discard')}>
@@ -99,7 +111,11 @@ Error.args = {
     <>
       Error toast message.
       <div style={{ paddingTop: '1rem' }}>
-        <Button variant="secondary" onClick={() => console.log('Resend')}>
+        <Button
+          style={{ marginRight: '0.5rem' }}
+          variant="secondary"
+          onClick={() => console.log('Resend')}
+        >
           Resend
         </Button>
         <Button variant="tertiary" onClick={() => console.log('Discard')}>
@@ -110,103 +126,4 @@ Error.args = {
   ),
   show: true,
   position: 'top-start',
-};
-
-export const TopStart = Template.bind({});
-
-TopStart.args = {
-  id: 'top-start-toast',
-  variant: 'info',
-  header: 'Example of an info banner message.',
-  children: 'Info banner message.',
-  show: true,
-  position: 'top-start',
-};
-
-export const TopCenter = Template.bind({});
-
-TopCenter.args = {
-  id: 'top-center-toast',
-  variant: 'success',
-  header: 'Example of a success banner message.',
-  children: 'Success banner message.',
-  show: true,
-  position: 'top-center',
-};
-
-export const TopEnd = Template.bind({});
-
-TopEnd.args = {
-  id: 'top-end-toast',
-  variant: 'warning',
-  header: 'Example of an warning banner message.',
-  children: 'Warning banner message.',
-  show: true,
-  position: 'top-end',
-};
-
-export const MiddleStart = Template.bind({});
-
-MiddleStart.args = {
-  id: 'middle-start-toast',
-  variant: 'info',
-  header: 'Example of an info banner message.',
-  children: 'Info banner message.',
-  show: true,
-  position: 'middle-start',
-};
-
-export const MiddleCenter = Template.bind({});
-
-MiddleCenter.args = {
-  id: 'middle-center-toast',
-  variant: 'success',
-  header: 'Example of a success banner message.',
-  children: 'Success banner message.',
-  show: true,
-  position: 'middle-center',
-};
-
-export const MiddleEnd = Template.bind({});
-
-MiddleEnd.args = {
-  id: 'middle-end-toast',
-  variant: 'warning',
-  header: 'Example of an warning banner message.',
-  children: 'Warning banner message.',
-  show: true,
-  position: 'middle-end',
-};
-
-export const BottomStart = Template.bind({});
-
-BottomStart.args = {
-  id: 'bottom-start-toast',
-  variant: 'info',
-  header: 'Example of an info banner message.',
-  children: 'Info banner message.',
-  show: true,
-  position: 'bottom-start',
-};
-
-export const BottomCenter = Template.bind({});
-
-BottomCenter.args = {
-  id: 'bottom-center-toast',
-  variant: 'success',
-  header: 'Example of a success banner message.',
-  children: 'Success banner message.',
-  show: true,
-  position: 'bottom-center',
-};
-
-export const BottomEnd = Template.bind({});
-
-BottomEnd.args = {
-  id: 'bottom-end-toast',
-  variant: 'warning',
-  header: 'Example of an warning banner message.',
-  children: 'Warning banner message.',
-  show: true,
-  position: 'bottom-end',
 };
