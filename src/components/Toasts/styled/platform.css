@@ -10762,8 +10762,8 @@ progress {
   fill: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:hover {
-  background-color: rgb(221, 224, 229);
-  border-color: rgb(221, 224, 229);
+  background-color: rgba(103, 110, 122, 0.25);
+  border-color: rgba(103, 110, 122, 0.25);
   color: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:hover svg path {
