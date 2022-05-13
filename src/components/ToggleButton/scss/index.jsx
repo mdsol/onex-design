@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ToggleButton } from 'react-bootstrap';
+import { ToggleButton as ReactToggleButton } from 'react-bootstrap';
 
-const CustomToggleButton = React.forwardRef((props, ref) => {
+const ToggleButton = React.forwardRef((props, ref) => {
   const { children, className, disabled, value, id, name, dataTestId, ...accProps } = props;
   const buttonClassNames = classNames('onex-toggle-btn-wrapper', {
     [className]: className,
@@ -11,7 +11,7 @@ const CustomToggleButton = React.forwardRef((props, ref) => {
 
   return (
     <div className={buttonClassNames}>
-      <ToggleButton
+      <ReactToggleButton
         id={id}
         ref={ref}
         className="onex-toggle__btn"
@@ -23,12 +23,12 @@ const CustomToggleButton = React.forwardRef((props, ref) => {
         {...accProps}
       >
         {children}
-      </ToggleButton>
+      </ReactToggleButton>
     </div>
   );
 });
 
-CustomToggleButton.propTypes = {
+ToggleButton.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
@@ -38,7 +38,7 @@ CustomToggleButton.propTypes = {
   dataTestId: PropTypes.string,
 };
 
-CustomToggleButton.defaultProps = {
+ToggleButton.defaultProps = {
   className: undefined,
   disabled: false,
   children: undefined,
@@ -46,4 +46,4 @@ CustomToggleButton.defaultProps = {
   dataTestId: undefined,
 };
 
-export default CustomToggleButton;
+export default ToggleButton;

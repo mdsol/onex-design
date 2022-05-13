@@ -1,13 +1,13 @@
 import PropTypes, { oneOfType } from 'prop-types';
 import classNames from 'classnames';
-import { Alert } from 'react-bootstrap';
+import { Alert as ReactAlert } from 'react-bootstrap';
 import InfoIcon from '@mui/icons-material/Info';
 import WarningIcon from '@mui/icons-material/Warning';
 import ErrorIcon from '@mui/icons-material/Error';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Button from '../../Buttons/scss';
 
-const CustomAlert = ({
+const Alert = ({
   className,
   variant,
   title,
@@ -30,11 +30,11 @@ const CustomAlert = ({
   }[variant];
 
   return (
-    <Alert show={show} transition={transition} variant={variant} className={classes}>
-      <Alert.Heading>
+    <ReactAlert show={show} transition={transition} variant={variant} className={classes}>
+      <ReactAlert.Heading>
         <span className="icon">{Icon}</span>
         {title}
-      </Alert.Heading>
+      </ReactAlert.Heading>
       <div className="alert-body">{body}</div>
       <div className="alert-control">
         {primaryAction && (
@@ -48,11 +48,11 @@ const CustomAlert = ({
           </Button>
         )}
       </div>
-    </Alert>
+    </ReactAlert>
   );
 };
 
-CustomAlert.propTypes = {
+Alert.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
   title: PropTypes.string,
@@ -65,7 +65,7 @@ CustomAlert.propTypes = {
   transition: oneOfType([PropTypes.bool, PropTypes.elementType]),
 };
 
-CustomAlert.defaultProps = {
+Alert.defaultProps = {
   className: '',
   variant: 'info',
   title: 'Title',
@@ -78,4 +78,4 @@ CustomAlert.defaultProps = {
   transition: false,
 };
 
-export default CustomAlert;
+export default Alert;

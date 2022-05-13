@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Table } from 'react-bootstrap';
+import { Table as ReactTable } from 'react-bootstrap';
 
-const CustomTable = (props) => {
+const Table = (props) => {
   const {
     children,
     className,
@@ -26,7 +26,7 @@ const CustomTable = (props) => {
   return (
     <div className={tableWrapClasses}>
       {tableControlComponent}
-      <Table
+      <ReactTable
         className={tableClasses}
         striped={striped}
         bordered={bordered}
@@ -34,12 +34,12 @@ const CustomTable = (props) => {
         data-test-id={dataTestId}
       >
         {children}
-      </Table>
+      </ReactTable>
     </div>
   );
 };
 
-CustomTable.propTypes = {
+Table.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   tableStyle: PropTypes.oneOf(['filled', 'default']),
@@ -50,7 +50,7 @@ CustomTable.propTypes = {
   dataTestId: PropTypes.string,
 };
 
-CustomTable.defaultProps = {
+Table.defaultProps = {
   className: undefined,
   children: undefined,
   striped: false,
@@ -61,4 +61,4 @@ CustomTable.defaultProps = {
   dataTestId: undefined,
 };
 
-export default CustomTable;
+export default Table;

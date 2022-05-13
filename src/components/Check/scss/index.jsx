@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form as ReactForm } from 'react-bootstrap';
 
 const Check = React.forwardRef((props, ref) => {
   const {
@@ -27,9 +27,14 @@ const Check = React.forwardRef((props, ref) => {
   }, [indeterminate]);
 
   return (
-    <Form.Group controlId={id} className={formGroupClassNames} ref={ref} data-test-id={dataTestId}>
-      <Form.Check.Label onChange={onChange} className="onex-check__wrapper">
-        <Form.Check.Input
+    <ReactForm.Group
+      controlId={id}
+      className={formGroupClassNames}
+      ref={ref}
+      data-test-id={dataTestId}
+    >
+      <ReactForm.Check.Label onChange={onChange} className="onex-check__wrapper">
+        <ReactForm.Check.Input
           ref={checkboxRef}
           type={type}
           id={id}
@@ -40,9 +45,9 @@ const Check = React.forwardRef((props, ref) => {
           className={classNames({ indeterminate })}
         />
         <span className="onex-check__custom" />
-        {children && <Form.Check.Label>{children}</Form.Check.Label>}
-      </Form.Check.Label>
-    </Form.Group>
+        {children && <ReactForm.Check.Label>{children}</ReactForm.Check.Label>}
+      </ReactForm.Check.Label>
+    </ReactForm.Group>
   );
 });
 

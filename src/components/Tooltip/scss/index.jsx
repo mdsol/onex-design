@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip as ReactTooltip } from 'react-bootstrap';
 
-const CustomTooltip = (props) => {
+const Tooltip = (props) => {
   const {
     children,
     className,
@@ -31,9 +31,9 @@ const CustomTooltip = (props) => {
       trigger={trigger}
       data-test-id={dataTestId}
       overlay={
-        <Tooltip id={id} className={toggleClassNames}>
+        <ReactTooltip id={id} className={toggleClassNames}>
           {tooltipChildren}
-        </Tooltip>
+        </ReactTooltip>
       }
     >
       <div className="onex-tooltip__child-wrap">{children}</div>
@@ -41,7 +41,7 @@ const CustomTooltip = (props) => {
   );
 };
 
-CustomTooltip.propTypes = {
+Tooltip.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
@@ -77,7 +77,7 @@ CustomTooltip.propTypes = {
   dataTestId: PropTypes.string,
 };
 
-CustomTooltip.defaultProps = {
+Tooltip.defaultProps = {
   className: undefined,
   children: undefined,
   delay: { show: 250, hide: 300 },
@@ -90,4 +90,4 @@ CustomTooltip.defaultProps = {
   tooltipChildren: undefined,
 };
 
-export default CustomTooltip;
+export default Tooltip;
