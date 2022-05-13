@@ -1,50 +1,55 @@
-.onex-alert {
-    border-radius: 1rem !important;
+.alert.onex-alert {
+    border-radius: 1rem;
     border: 1px solid;
-    color: $black !important;
-    padding: 1rem 1rem 1rem 2.5rem !important;
+    color: $black;
+    padding: 1rem 1rem 1rem 3.25rem;
     .alert-heading {
         font-weight: $font-weight-600;
         position: relative;
-        .icon {
+        .onex-alert__icon {
             position: absolute;
-            left: -2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            left: -2.3rem;
             top: 0;
         }
     }
-    .alert-body {
+    .onex-alert__body {
         font-size: $font-size-label;
         margin: 0;
     }
     &.alert-info {
         background-color: $tertiary-500;
         border-color: $primary;
-        .icon {
-            color: $primary !important;
+        .onex-alert__icon {
+            color: $primary;
         }
     }
     &.alert-warning {
         background-color: $warning-100;
         border-color: $warning;
-        .icon {
-            color: $warning !important;
+        .onex-alert__icon {
+            color: $warning;
         }
     }
     &.alert-error {
         background-color: $error-100;
         border-color: $error;
-        .icon {
-            color: $error !important;
+        .onex-alert__icon {
+            color: $error;
         }
     }
     &.alert-success {
         background-color: $success-100;
         border-color: $success;
-        .icon {
-            color: $success !important;
+        .onex-alert__icon {
+            color: $success;
         }
     }
-    .alert-control {
+    .onex-alert__control {
         .btn:first-child {
             margin-right: 0.5rem;
         }
