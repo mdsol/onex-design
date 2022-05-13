@@ -2,7 +2,7 @@ import { useEffect, useState, memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
-import Select, { components } from 'react-select';
+import ReactSelect, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
@@ -44,7 +44,7 @@ const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
  * Select component
  */
 
-const CustomSelect = ({
+const Select = ({
   className,
   isMulti,
   isDisabled,
@@ -117,7 +117,7 @@ const CustomSelect = ({
           {...props}
         />
       ) : (
-        <Select
+        <ReactSelect
           classNamePrefix="onex-select"
           isMulti={isMulti}
           options={groupedOptions.length ? groupedOptions : options}
@@ -177,7 +177,7 @@ Option.defaultProps = {
   children: undefined,
 };
 
-CustomSelect.propTypes = {
+Select.propTypes = {
   className: PropTypes.string,
   errorMessage: PropTypes.string,
   selectedValues: PropTypes.arrayOf(optionType),
@@ -198,7 +198,7 @@ CustomSelect.propTypes = {
   getOptionLabel: PropTypes.func,
 };
 
-CustomSelect.defaultProps = {
+Select.defaultProps = {
   className: undefined,
   errorMessage: undefined,
   selectedValues: [],
@@ -219,4 +219,4 @@ CustomSelect.defaultProps = {
   getOptionLabel: undefined,
 };
 
-export default CustomSelect;
+export default Select;

@@ -293,7 +293,7 @@ TertiaryDefaultDisabledIcon.args = {
 
 export const SecondaryCustomIcon = DropdownTemplate.bind({});
 const secondaryCustomIconCodeBody = `
- <CustomDropdown
+ <Dropdown
     variant="secondary",
     id="secondary-custom-icon-dropdown-lg",
     items={[
@@ -337,7 +337,7 @@ SecondaryCustomIcon.args = {
 
 export const SecondaryCustomDisabledIcon = DropdownTemplate.bind({});
 const secondaryCustomDisabledIconCodeBody = `
- <CustomDropdown
+ <Dropdown
     variant="secondary",
     id="secondary-custom-icon-dropdown-lg",
     items={[
@@ -383,7 +383,7 @@ SecondaryCustomDisabledIcon.args = {
 
 export const TertiaryCustomIcon = DropdownTemplate.bind({});
 const tertiaryCustomIconCodeBody = `
- <CustomDropdown
+ <Dropdown
     buttonStyle="icon"
     id="tertiary-custom-icon-dropdown-lg"
     items={[
@@ -428,7 +428,7 @@ TertiaryCustomIcon.args = {
 
 export const TertiaryCustomDisabledIcon = DropdownTemplate.bind({});
 const tertiaryCustomDisabledIconCodeBody = `
- <CustomDropdown
+ <Dropdown
     buttonStyle="icon"
     id="tertiary-custom-icon-dropdown-lg"
     items={[

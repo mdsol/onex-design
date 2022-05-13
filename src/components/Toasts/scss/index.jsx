@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Toast, ToastContainer } from 'react-bootstrap';
+import { Toast as ReactToast, ToastContainer } from 'react-bootstrap';
 import {
   ErrorRounded,
   WarningRounded,
@@ -18,7 +18,7 @@ const IconVariants = {
   error: <ErrorRounded />,
 };
 
-const CustomToast = React.forwardRef((props, ref) => {
+const Toast = React.forwardRef((props, ref) => {
   const {
     className,
     animation,
@@ -54,7 +54,7 @@ const CustomToast = React.forwardRef((props, ref) => {
       position={toastPosition}
       data-test-id={dataTestId}
     >
-      <Toast
+      <ReactToast
         className="onex-toast__block"
         show={show}
         delay={delay}
@@ -62,7 +62,7 @@ const CustomToast = React.forwardRef((props, ref) => {
         autohide={autohide}
         bg={variant}
       >
-        <Toast.Header className="onex-toast__header" closeButton={false}>
+        <ReactToast.Header className="onex-toast__header" closeButton={false}>
           {(showDefaultIcon || icon) && (
             <div className="onex-toast__icon">{icon || IconVariants[variant]}</div>
           )}
@@ -77,14 +77,14 @@ const CustomToast = React.forwardRef((props, ref) => {
               <CloseRounded />
             </Button>
           )}
-        </Toast.Header>
-        {children && <Toast.Body className="onex-toast__body"> {children} </Toast.Body>}
-      </Toast>
+        </ReactToast.Header>
+        {children && <ReactToast.Body className="onex-toast__body"> {children} </ReactToast.Body>}
+      </ReactToast>
     </ToastContainer>
   );
 });
 
-CustomToast.propTypes = {
+Toast.propTypes = {
   className: PropTypes.string,
   animation: PropTypes.bool,
   autohide: PropTypes.bool,
@@ -111,7 +111,7 @@ CustomToast.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
-CustomToast.defaultProps = {
+Toast.defaultProps = {
   className: undefined,
   animation: true,
   autohide: true,
@@ -128,4 +128,4 @@ CustomToast.defaultProps = {
   children: undefined,
 };
 
-export default CustomToast;
+export default Toast;

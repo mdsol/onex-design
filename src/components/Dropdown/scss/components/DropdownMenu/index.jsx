@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CustomMenu = React.forwardRef(({ children, style, className }, ref) => (
+const DropdownMenu = React.forwardRef(({ children, style, className }, ref) => (
   <div ref={ref} style={style} className={className}>
     <ul className="dropdown-menu--list">{children}</ul>
   </div>
 ));
 
-CustomMenu.propTypes = {
+DropdownMenu.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -17,10 +17,10 @@ CustomMenu.propTypes = {
   className: PropTypes.string,
 };
 
-CustomMenu.defaultProps = {
+DropdownMenu.defaultProps = {
   children: undefined,
   style: undefined,
   className: undefined,
 };
 
-export default CustomMenu;
+export default DropdownMenu;

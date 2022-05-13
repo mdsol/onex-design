@@ -82,9 +82,9 @@ PrimaryDisabled.args = {
 
 export const PrimarySmallIcon = ButtonTemplate.bind({});
 const iconPrimarySmallCodeBody = `
-<CustomButton onClick={() => {}}>
+<Button onClick={() => {}}>
      <StarRoundedIcon />
-</CustomButton>
+</Button>
 `;
 PrimarySmallIcon.parameters = {
   docs: {
@@ -102,9 +102,9 @@ PrimarySmallIcon.args = {
 
 export const PrimaryMiddleIcon = ButtonTemplate.bind({});
 const iconPrimaryMiddleCodeBody = `
-<CustomButton onClick={() => {}}>
+<Button onClick={() => {}}>
      <StarRoundedIcon />
-</CustomButton>
+</Button>
 `;
 PrimaryMiddleIcon.parameters = {
   docs: {
@@ -179,12 +179,12 @@ SecondaryWithTwoIcons.args = {
 
 export const SecondaryIconSmall = ButtonTemplate.bind({});
 const iconSecondarySmallCodeBody = `
-<CustomButton
+<Button
     onClick={() => {}}
     variant="secondary"
     >
      <StarRoundedIcon />
-</CustomButton>
+</Button>
 `;
 SecondaryIconSmall.parameters = {
   docs: {
@@ -202,12 +202,12 @@ SecondaryIconSmall.args = {
 
 export const SecondaryIconMiddle = ButtonTemplate.bind({});
 const iconSecondaryMiddleCodeBody = `
-<CustomButton
+<Button
     onClick={() => {}}
     variant="secondary"
     >
      <StarRoundedIcon />
-</CustomButton>
+</Button>
 `;
 SecondaryIconMiddle.parameters = {
   docs: {
@@ -287,13 +287,13 @@ TertiaryWithTwoIcons.args = {
 
 export const TertiaryIconSmall = ButtonTemplate.bind({});
 const iconTertiarySmallCodeBody = `
-<CustomButton
+<Button
     onClick={() => {}}
     variant="tertiary"
     type="icon"
     >
      <StarRoundedIcon />
-</CustomButton>
+</Button>
 `;
 TertiaryIconSmall.parameters = {
   docs: {
@@ -310,13 +310,13 @@ TertiaryIconSmall.args = {
 
 export const TertiaryIconMiddle = ButtonTemplate.bind({});
 const iconTertiaryMiddleCodeBody = `
-<CustomButton
+<Button
     onClick={() => {}}
     variant="tertiary"
     type="icon"
     >
      <StarRoundedIcon />
-</CustomButton>
+</Button>
 `;
 TertiaryIconMiddle.parameters = {
   docs: {

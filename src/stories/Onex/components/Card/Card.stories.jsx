@@ -1,8 +1,8 @@
-import CustomCard from '../../../../components/Card/scss/index';
+import { Card } from '../../../../components';
 
 export default {
-  title: 'Onex/Components/CustomCard',
-  component: CustomCard,
+  title: 'Onex/Components/Card',
+  component: Card,
   argTypes: {
     dropdownItems: {
       description: `Array of menu items. Each item contain:
@@ -44,7 +44,7 @@ export default {
   },
 };
 
-const Template = (props) => <CustomCard {...props} />;
+const Template = (props) => <Card {...props} />;
 
 export const Default = Template.bind({});
 
