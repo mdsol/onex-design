@@ -49,7 +49,7 @@ Default.args = {
 
 export const WithIcon = ToggleButtonTemplate.bind({});
 const withIconCodeBody = `
-<CustomToggleButton
+<ToggleButton
 id="id-toggle-button-with-icon"
 name="toggle-button-with-icon"
 value={1}
@@ -58,7 +58,7 @@ value={1}
 <CheckCircleFill />
 <span> Caption</span>
 <>
-</CustomToggleButton>
+</ToggleButton>
 `;
 WithIcon.parameters = {
   docs: {
@@ -81,13 +81,13 @@ WithIcon.args = {
 
 export const Icon = ToggleButtonTemplate.bind({});
 const iconCodeBody = `
-<CustomToggleButton
+<ToggleButton
 id="id-toggle-button-with-icon"
 name="toggle-button-with-icon"
 value={1}
 >
 <Dice4Fill />
-</CustomToggleButton>
+</ToggleButton>
 `;
 Icon.parameters = {
   docs: {
