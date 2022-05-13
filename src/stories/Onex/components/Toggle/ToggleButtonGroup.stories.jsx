@@ -105,13 +105,13 @@ export const Checkbox = (args) => (
   </ToggleButtonGroup>
 );
 const checkboxCodeBody = `
-<CustomToggleButtonGroup
+<ToggleButtonGroup
   defaultValue={[1, 3 ]}
   name="toggle-btn-group-checkbox"
   onChange={() => {}}
   type="checkbox"
 >
-  <CustomToggleButton
+  <ToggleButton
     id="toggle-btn-group-checkbox-capt-1"
     name="capt-1"
     value={1}
@@ -122,8 +122,8 @@ const checkboxCodeBody = `
         Caption 1
       </span>
     </>
-  </CustomToggleButton>
-  <CustomToggleButton
+  </ToggleButton>
+  <ToggleButton
     id="toggle-btn-group-checkbox-capt-2"
     name="capt-1"
     value={2}
@@ -134,8 +134,8 @@ const checkboxCodeBody = `
         Caption 2
       </span>
     </>
-  </CustomToggleButton>
-  <CustomToggleButton
+  </ToggleButton>
+  <ToggleButton
     id="toggle-btn-group-checkbox-capt-3"
     name="capt-3"
     value={3}
@@ -146,8 +146,8 @@ const checkboxCodeBody = `
         Caption 3
       </span>
     </>
-  </CustomToggleButton>
-</CustomToggleButtonGroup>
+  </ToggleButton>
+</ToggleButtonGroup>
 `;
 Checkbox.parameters = {
   docs: {
@@ -181,12 +181,12 @@ export const Radio = (args) => (
   </ToggleButtonGroup>
 );
 const radioCodeBody = `
-<CustomToggleButtonGroup
+<ToggleButtonGroup
   defaultValue={1}
   name="toggle-btn-group-radio"
   onChange={() => {}}
 >
-  <CustomToggleButton
+  <ToggleButton
     id="toggle-btn-group-radio-capt-1"
     name="capt-1"
     value={1}
@@ -197,8 +197,8 @@ const radioCodeBody = `
         Caption 1
       </span>
     </>
-  </CustomToggleButton>
-  <CustomToggleButton
+  </ToggleButton>
+  <ToggleButton
     id="toggle-btn-group-radio-capt-2"
     name="capt-1"
     value={2}
@@ -209,8 +209,8 @@ const radioCodeBody = `
         Caption 2
       </span>
     </>
-  </CustomToggleButton>
-  <CustomToggleButton
+  </ToggleButton>
+  <ToggleButton
     id="toggle-btn-group-radio-capt-3"
     name="capt-3"
     value={3}
@@ -221,8 +221,8 @@ const radioCodeBody = `
         Caption 3
       </span>
     </>
-  </CustomToggleButton>
-</CustomToggleButtonGroup>
+  </ToggleButton>
+</ToggleButtonGroup>
 `;
 Radio.parameters = {
   docs: {
@@ -283,34 +283,34 @@ export const Vertical = (args) => (
   </ToggleButtonGroup>
 );
 const verticalCodeBody = `
-<CustomToggleButtonGroup
+<ToggleButtonGroup
   defaultValue={1}
   name="toggle-btn-group-vertical"
   onChange={() => {}}
   vertical
 >
-  <CustomToggleButton
+  <ToggleButton
     id="toggle-btn-group-vertical-capt-1"
     name="capt-1"
     value={1}
   >
     <Dice4Fill />
-  </CustomToggleButton>
-  <CustomToggleButton
+  </ToggleButton>
+  <ToggleButton
     id="toggle-btn-group-vertical-capt-2"
     name="capt-1"
     value={2}
   >
     <Dice4Fill />
-  </CustomToggleButton>
-  <CustomToggleButton
+  </ToggleButton>
+  <ToggleButton
     id="toggle-btn-group-vertical-capt-3"
     name="capt-3"
     value={3}
   >
     <Dice4Fill />
-  </CustomToggleButton>
-</CustomToggleButtonGroup>
+  </ToggleButton>
+</ToggleButtonGroup>
 `;
 Vertical.parameters = {
   docs: {

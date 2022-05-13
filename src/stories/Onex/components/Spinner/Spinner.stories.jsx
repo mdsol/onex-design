@@ -29,7 +29,6 @@ export default {
           summary: 'sm | md | lg',
         },
       },
-      
     },
   },
 };
