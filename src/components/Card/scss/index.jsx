@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 import classNames from 'classnames';
-import { MoreVertRounded, BarChart } from '@mui/icons-material';
+import { MoreVertRounded, Star } from '@mui/icons-material';
 
 import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
@@ -15,33 +15,38 @@ const CustomCard = ({
   showTitleBar,
   className,
   dropdownItems,
+  variant,
 }) => {
-  const classes = classNames('onex-card', { [className]: className });
+  const classes = classNames('onex-card', `onex-card--${variant}`, {
+    [className]: className,
+  });
 
   return (
     <Card className={classes}>
       {showTitleBar && (
         <Card.Header closeButton>
           <Typography variant="h4">Card heading</Typography>
-          <Dropdown
-            variant="tertiary"
-            id="tertiary-icon-dropdown-sm"
-            items={dropdownItems}
-            size="sm"
-            buttonStyle="icon"
-            title={<MoreVertRounded />}
-          />
+          {variant === 'default' && (
+            <Dropdown
+              variant="tertiary"
+              id="tertiary-icon-dropdown-sm"
+              items={dropdownItems}
+              size="sm"
+              buttonStyle="icon"
+              title={<MoreVertRounded />}
+            />
+          )}
         </Card.Header>
       )}
       <Card.Body>{children}</Card.Body>
-      {showActionBar && (
-        <Card.Footer>
+      <Card.Footer>
+        {showActionBar && (
           <Button variant="tertiary" onClick={onActionButton} size="sm">
-            <BarChart />
+            <Star />
             {actionName}
           </Button>
-        </Card.Footer>
-      )}
+        )}
+      </Card.Footer>
     </Card>
   );
 };
@@ -64,6 +69,7 @@ CustomCard.propTypes = {
       href: PropTypes.string,
     }),
   ),
+  variant: PropTypes.string,
 };
 
 CustomCard.defaultProps = {
@@ -74,6 +80,7 @@ CustomCard.defaultProps = {
   showActionBar: false,
   showTitleBar: false,
   dropdownItems: [],
+  variant: 'default',
 };
 
 export default CustomCard;

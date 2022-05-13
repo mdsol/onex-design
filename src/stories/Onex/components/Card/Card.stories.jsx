@@ -1,8 +1,8 @@
-import CustomCard from '../../../../components/Card/scss/index';
+import Card from '../../../../components/Card/scss/index';
 
 export default {
-  title: 'Onex/Components/CustomCard',
-  component: CustomCard,
+  title: 'Onex/Components/Card',
+  component: Card,
   argTypes: {
     dropdownItems: {
       description: `Array of menu items. Each item contain:
@@ -41,10 +41,14 @@ export default {
         type: 'boolean',
       },
     },
+    variant: {
+      description: 'card variation',
+      control: 'text',
+    },
   },
 };
 
-const Template = (props) => <CustomCard {...props} />;
+const Template = (props) => <Card {...props} />;
 
 export const Default = Template.bind({});
 
@@ -64,5 +68,28 @@ Default.args = {
   actionName: 'Tertiary Button',
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
-  id: 'onex-components-customcard--default',
+  id: 'onex-components-card--default',
+  variant: 'default',
+};
+
+export const Info = Template.bind({});
+
+Info.args = {
+  showActionBar: true,
+  showTitleBar: true,
+  dropdownItems: [
+    { eventKey: 'one', title: 'item one', badge: 100, active: true },
+    { eventKey: 'two', title: 'item two', badge: 100 },
+    { eventKey: 'three', title: 'item three' },
+    { eventKey: 'four', title: 'item four', badge: 100 },
+    { eventKey: 'five', title: 'item five', badge: 100 },
+    { eventKey: 'six', title: 'item six', badge: 100 },
+    { eventKey: 'seven', title: 'item seven', badge: 100 },
+    { eventKey: 'eight', title: 'item eight', badge: 100 },
+  ],
+  actionName: 'Tertiary Button',
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  id: 'onex-components-card--info',
+  variant: 'info',
 };

@@ -1,4 +1,12 @@
-.card {
+.onex-card {
+    &.onex-card--info {
+        .card-header {
+            background: $tertiary-200;
+        }
+        .card-footer {
+            background: $tertiary-200;
+        }
+    }
     display: inline-block!important;
     border-radius: 1rem;
     .card-body {
