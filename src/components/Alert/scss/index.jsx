@@ -1,11 +1,18 @@
 import PropTypes, { oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { Alert } from 'react-bootstrap';
-import InfoIcon from '@mui/icons-material/Info';
-import WarningIcon from '@mui/icons-material/Warning';
-import ErrorIcon from '@mui/icons-material/Error';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
+import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import Button from '../../Buttons/scss';
+
+const Icon = {
+  info: <InfoRoundedIcon />,
+  warning: <WarningRoundedIcon />,
+  error: <ErrorRoundedIcon />,
+  success: <CheckCircleRoundedIcon />,
+};
 
 const CustomAlert = ({
   className,
@@ -22,21 +29,15 @@ const CustomAlert = ({
   const classes = classNames('onex-alert', {
     [className]: className,
   });
-  const Icon = {
-    info: <InfoIcon />,
-    warning: <WarningIcon />,
-    error: <ErrorIcon />,
-    success: <CheckCircleIcon />,
-  }[variant];
 
   return (
     <Alert show={show} transition={transition} variant={variant} className={classes}>
       <Alert.Heading>
-        <span className="icon">{Icon}</span>
+        <span className="onex-alert__icon">{Icon[variant]}</span>
         {title}
       </Alert.Heading>
-      <div className="alert-body">{body}</div>
-      <div className="alert-control">
+      <div className="onex-alert__alert-body">{body}</div>
+      <div className="onex-alert__alert-control">
         {primaryAction && (
           <Button onClick={primaryAction} variant="secondary">
             {primaryText}

@@ -10839,56 +10839,61 @@ progress {
   padding: 0.5rem;
 }
 
-.onex-alert {
-  border-radius: 1rem !important;
+.alert.onex-alert {
+  border-radius: 1rem;
   border: 1px solid;
-  color: rgb(0, 0, 0) !important;
-  padding: 1rem 1rem 1rem 2.5rem !important;
+  color: rgb(0, 0, 0);
+  padding: 1rem 1rem 1rem 3.25rem;
 }
-.onex-alert .alert-heading {
+.alert.onex-alert .alert-heading {
   font-weight: 600;
   position: relative;
 }
-.onex-alert .alert-heading .icon {
+.alert.onex-alert .alert-heading .onex-alert__icon {
   position: absolute;
-  left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  left: -2.3rem;
   top: 0;
 }
-.onex-alert .alert-body {
+.alert.onex-alert .onex-alert__alert-body {
   font-size: 0.875rem;
   margin: 0;
 }
-.onex-alert.alert-info {
+.alert.onex-alert.alert-info {
   background-color: rgb(198, 227, 252);
   border-color: rgb(0, 112, 192);
 }
-.onex-alert.alert-info .icon {
-  color: rgb(0, 112, 192) !important;
+.alert.onex-alert.alert-info .onex-alert__icon {
+  color: rgb(0, 112, 192);
 }
-.onex-alert.alert-warning {
+.alert.onex-alert.alert-warning {
   background-color: rgb(255, 241, 184);
   border-color: rgb(252, 185, 22);
 }
-.onex-alert.alert-warning .icon {
-  color: rgb(252, 185, 22) !important;
+.alert.onex-alert.alert-warning .onex-alert__icon {
+  color: rgb(252, 185, 22);
 }
-.onex-alert.alert-error {
+.alert.onex-alert.alert-error {
   background-color: rgb(255, 236, 238);
   border-color: rgb(217, 21, 34);
 }
-.onex-alert.alert-error .icon {
-  color: rgb(217, 21, 34) !important;
+.alert.onex-alert.alert-error .onex-alert__icon {
+  color: rgb(217, 21, 34);
 }
-.onex-alert.alert-success {
+.alert.onex-alert.alert-success {
   background-color: rgb(224, 246, 234);
   border-color: rgb(0, 126, 76);
 }
-.onex-alert.alert-success .icon {
-  color: rgb(0, 126, 76) !important;
+.alert.onex-alert.alert-success .onex-alert__icon {
+  color: rgb(0, 126, 76);
 }
-.onex-alert .alert-control .btn:first-child {
+.alert.onex-alert .onex-alert__alert-control .btn:first-child {
   margin-right: 0.5rem;
 }
-.onex-alert .alert-control .btn {
+.alert.onex-alert .onex-alert__alert-control .btn {
   margin-top: 1rem;
 }
