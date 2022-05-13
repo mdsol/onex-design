@@ -17,7 +17,7 @@
             top: 0;
         }
     }
-    .onex-alert__alert-body {
+    .onex-alert__body {
         font-size: $font-size-label;
         margin: 0;
     }
@@ -49,7 +49,7 @@
             color: $success;
         }
     }
-    .onex-alert__alert-control {
+    .onex-alert__control {
         .btn:first-child {
             margin-right: 0.5rem;
         }

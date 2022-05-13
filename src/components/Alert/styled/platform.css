@@ -10859,7 +10859,7 @@ progress {
   left: -2.3rem;
   top: 0;
 }
-.alert.onex-alert .onex-alert__alert-body {
+.alert.onex-alert .onex-alert__body {
   font-size: 0.875rem;
   margin: 0;
 }
@@ -10891,9 +10891,9 @@ progress {
 .alert.onex-alert.alert-success .onex-alert__icon {
   color: rgb(0, 126, 76);
 }
-.alert.onex-alert .onex-alert__alert-control .btn:first-child {
+.alert.onex-alert .onex-alert__control .btn:first-child {
   margin-right: 0.5rem;
 }
-.alert.onex-alert .onex-alert__alert-control .btn {
+.alert.onex-alert .onex-alert__control .btn {
   margin-top: 1rem;
 }

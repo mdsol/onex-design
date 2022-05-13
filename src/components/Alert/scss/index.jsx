@@ -36,8 +36,8 @@ const CustomAlert = ({
         <span className="onex-alert__icon">{Icon[variant]}</span>
         {title}
       </Alert.Heading>
-      <div className="onex-alert__alert-body">{body}</div>
-      <div className="onex-alert__alert-control">
+      <div className="onex-alert__body">{body}</div>
+      <div className="onex-alert__control">
         {primaryAction && (
           <Button onClick={primaryAction} variant="secondary">
             {primaryText}
