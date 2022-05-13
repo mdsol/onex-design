@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card as ReactCard } from 'react-bootstrap';
 import classNames from 'classnames';
 import { MoreVertRounded, BarChart } from '@mui/icons-material';
 
@@ -7,7 +7,7 @@ import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
 import Dropdown from '../../Dropdown/scss';
 
-const CustomCard = ({
+const Card = ({
   children,
   onActionButton,
   actionName,
@@ -19,9 +19,9 @@ const CustomCard = ({
   const classes = classNames('onex-card', { [className]: className });
 
   return (
-    <Card className={classes}>
+    <ReactCard className={classes}>
       {showTitleBar && (
-        <Card.Header closeButton>
+        <ReactCard.Header closeButton>
           <Typography variant="h4">Card heading</Typography>
           <Dropdown
             variant="tertiary"
@@ -31,22 +31,22 @@ const CustomCard = ({
             buttonStyle="icon"
             title={<MoreVertRounded />}
           />
-        </Card.Header>
+        </ReactCard.Header>
       )}
-      <Card.Body>{children}</Card.Body>
+      <ReactCard.Body>{children}</ReactCard.Body>
       {showActionBar && (
-        <Card.Footer>
+        <ReactCard.Footer>
           <Button variant="tertiary" onClick={onActionButton} size="sm">
             <BarChart />
             {actionName}
           </Button>
-        </Card.Footer>
+        </ReactCard.Footer>
       )}
-    </Card>
+    </ReactCard>
   );
 };
 
-CustomCard.propTypes = {
+Card.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   onActionButton: PropTypes.func,
@@ -66,7 +66,7 @@ CustomCard.propTypes = {
   ),
 };
 
-CustomCard.defaultProps = {
+Card.defaultProps = {
   className: undefined,
   children: '',
   onActionButton: undefined,
@@ -76,4 +76,4 @@ CustomCard.defaultProps = {
   dropdownItems: [],
 };
 
-export default CustomCard;
+export default Card;

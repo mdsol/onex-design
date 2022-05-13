@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Pagination } from 'react-bootstrap';
+import { Pagination as ReactPagination } from 'react-bootstrap';
 import classNames from 'classnames';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 
-const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => {
+const Pagination = ({ size, className, onSetPage, dataTestId, items }) => {
   const [active, setActive] = useState(1);
 
   const paginationClassNames = classNames('onex-pagination', {
@@ -28,7 +28,7 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
 
   return (
     <div>
-      <Pagination data-test-id={dataTestId} className={paginationClassNames}>
+      <ReactPagination data-test-id={dataTestId} className={paginationClassNames}>
         <button
           type="button"
           className={`${active === 1 ? `disabled` : ''}`}
@@ -38,9 +38,13 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
           <ArrowBackIosNewRoundedIcon />
         </button>
         {items.map((item) => (
-          <Pagination.Item onClick={() => handleClick(item)} key={item} active={item === active}>
+          <ReactPagination.Item
+            onClick={() => handleClick(item)}
+            key={item}
+            active={item === active}
+          >
             {item}
-          </Pagination.Item>
+          </ReactPagination.Item>
         ))}
         <button
           type="button"
@@ -50,12 +54,12 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
         >
           <ArrowBackIosNewRoundedIcon />
         </button>
-      </Pagination>
+      </ReactPagination>
     </div>
   );
 };
 
-CustomPagination.propTypes = {
+Pagination.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(['lg', 'sm']),
   onSetPage: PropTypes.func,
@@ -63,7 +67,7 @@ CustomPagination.propTypes = {
   items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
-CustomPagination.defaultProps = {
+Pagination.defaultProps = {
   className: undefined,
   size: 'sm',
   onSetPage: undefined,
@@ -71,4 +75,4 @@ CustomPagination.defaultProps = {
   items: [],
 };
 
-export default CustomPagination;
+export default Pagination;

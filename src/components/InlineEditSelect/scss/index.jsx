@@ -77,18 +77,10 @@ const InlineEditSelect = ({
       />
       {isActive && !isInvalid && (
         <div className="status-buttons">
-          <Button
-            className="status-buttons__complete"
-            variant="primary"
-            onClick={handleComplete}
-          >
+          <Button className="status-buttons__complete" variant="primary" onClick={handleComplete}>
             <DoneRoundedIcon />
           </Button>
-          <Button
-            className="status-buttons__cancel"
-            variant="secondary"
-            onClick={handleCancel}
-          >
+          <Button className="status-buttons__cancel" variant="secondary" onClick={handleCancel}>
             <CloseRoundedIcon />
           </Button>
         </div>
