@@ -304,7 +304,9 @@ const OffcanvasBackdropTemplate = (args) => {
         {name}
       </Button>
       <Offcanvas {...args} show={show} onHide={handleClose}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consectetur.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero,
+        deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat
+        voluptatem veritatis. Laborum qui dicta voluptates consectetur.
       </Offcanvas>
     </>
   );
@@ -354,7 +356,7 @@ PrimaryAndSecondaryBtns.args = {
   name: 'PrimaryAndSecondaryBtns',
   title: 'Title',
   secondaryActionFc: () => {},
-  secondaryActionText: 'Secondary'
+  secondaryActionText: 'Secondary',
 };
 
 export const LinkBtn = OffcanvasBackdropTemplate.bind({});

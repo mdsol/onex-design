@@ -119,7 +119,7 @@ export const Default = (args) => (
 );
 
 const tableSourceBody = `
- <CustomTable
+ <Table
         {...args}
         hover
         tableControlComponent={
@@ -193,7 +193,7 @@ const tableSourceBody = `
                 </TableCell>
             </TableRow>
         </TableBody>
-    </CustomTable>
+    </Table>
 `;
 Default.parameters = {
   docs: {
