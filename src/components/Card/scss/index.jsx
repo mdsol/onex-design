@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Card as ReactCard } from 'react-bootstrap';
 import classNames from 'classnames';
-import { MoreVertRounded } from '@mui/icons-material';
+import Icon from '../../Icon/Icon';
 
 import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
@@ -49,7 +49,7 @@ const Card = ({
                     items={dropdownItems}
                     size="sm"
                     buttonStyle="icon"
-                    title={<MoreVertRounded />}
+                    title={<Icon>more_vert</Icon>}
                   />
                 )}
                 {titleActionVariant === 'button' && (

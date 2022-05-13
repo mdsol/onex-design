@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { getInitials } from './utils';
+import Icon from '../../Icon/Icon';
 
 const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
   const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {
@@ -22,12 +23,10 @@ const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, 
       {!src && (name || childComponent) && (
         <div className="onex-avatar__children">{childComponent || getInitials(name)}</div>
       )}
-      {!(name || src || childComponent) && (
-        <span className="material-icons-round onex-avatar__person-icon">person</span>
-      )}
+      {!(name || src || childComponent) && <Icon className="onex-avatar__person-icon">person</Icon>}
       {!hoverDisabled && size === 'lg' && (
         <div className="onex-avatar__hover">
-          <span className="material-icons-round onex-avatar__hover-avatar">photo_camera</span>
+          <Icon className="onex-avatar__hover-avatar">photo_camera</Icon>
         </div>
       )}
     </div>
