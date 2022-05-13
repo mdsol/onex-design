@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { ProgressBar } from 'react-bootstrap';
+import { ProgressBar as ReactProgressBar } from 'react-bootstrap';
 import classNames from 'classnames';
 
-const CustomProgressBar = ({ className, ...props }) => {
+const ProgressBar = ({ className, ...props }) => {
   const classes = classNames('onex-progressbar', {
     [className]: className,
   });
 
-  return <ProgressBar {...props} className={classes} />;
+  return <ReactProgressBar {...props} className={classes} />;
 };
 
-CustomProgressBar.propTypes = {
+ProgressBar.propTypes = {
   now: PropTypes.number,
   variant: PropTypes.oneOf(['info', 'danger', 'success', 'warning']),
   min: PropTypes.number,
@@ -20,7 +20,7 @@ CustomProgressBar.propTypes = {
   className: PropTypes.string,
 };
 
-CustomProgressBar.defaultProps = {
+ProgressBar.defaultProps = {
   now: 0,
   variant: 'info',
   min: 0,
@@ -30,4 +30,4 @@ CustomProgressBar.defaultProps = {
   className: '',
 };
 
-export default CustomProgressBar;
+export default ProgressBar;

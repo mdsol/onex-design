@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-const CustomSwitch = React.forwardRef((props, ref) => {
+const Switch = React.forwardRef((props, ref) => {
   const { className, disabled, checked, label, id, onChange, dataTestId } = props;
   const switchClassNames = classNames('onex-switch', {
     [className]: className,
@@ -23,7 +23,7 @@ const CustomSwitch = React.forwardRef((props, ref) => {
   );
 });
 
-CustomSwitch.propTypes = {
+Switch.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
@@ -33,7 +33,7 @@ CustomSwitch.propTypes = {
   dataTestId: PropTypes.string,
 };
 
-CustomSwitch.defaultProps = {
+Switch.defaultProps = {
   className: undefined,
   disabled: false,
   checked: false,
@@ -42,4 +42,4 @@ CustomSwitch.defaultProps = {
   dataTestId: undefined,
 };
 
-export default CustomSwitch;
+export default Switch;
