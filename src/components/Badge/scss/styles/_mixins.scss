@@ -10,8 +10,8 @@
         height: $svg-size;
     }
 
-    & .onex-badge__icon .material-icons-round,
-    .material-icons-round {
+    & .onex-badge__icon .onex-material-icon,
+    .onex-material-icon {
       font-size: $svg-size;
     }
 }
@@ -24,7 +24,7 @@
         svg path {
           fill: $text-color;
         }
-        .material-icons-round {
+        .onex-material-icon {
           color: $text-color;
         }
     }

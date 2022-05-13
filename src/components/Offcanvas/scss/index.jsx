@@ -7,8 +7,8 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Button from '../../Buttons/scss';
+import Icon from '../../Icon/scss';
 
 const Offcanvas = ({
   link,
@@ -43,7 +43,7 @@ const Offcanvas = ({
           </h5>
         </OffcanvasTitle>
         <Button onClick={onHide} variant="tertiary" type="icon" size="md">
-          <CloseRoundedIcon />
+          <Icon>close</Icon>
         </Button>
       </OffcanvasHeader>
 

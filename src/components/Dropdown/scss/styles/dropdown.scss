@@ -19,6 +19,10 @@
       @include icon-size($btn-icon-type-icon-size-sm);
     }
 
+    & > .onex-material-icon {
+      font-size: $btn-icon-type-icon-size-sm;
+    }
+
     & > .onex-dropdown__chevron-icon {
       @include icon-size($btn-icon-type-icon-size-sm);
       margin-right: 0;
@@ -166,6 +170,11 @@
           @include icon-size($btn-icon-type-icon-size-md);
           margin-right: 0;
         }
+
+        & > .onex-material-icon {
+          font-size: $btn-icon-type-icon-size-md;
+          margin-right: 0;
+        }
       }
 
       &.btn-sm {
@@ -174,6 +183,11 @@
 
         & > svg {
           @include icon-size($btn-icon-type-icon-size-sm);
+          margin-right: 0;
+        }
+
+        & > .onex-material-icon {
+          font-size: $btn-icon-type-icon-size-sm;
           margin-right: 0;
         }
       }

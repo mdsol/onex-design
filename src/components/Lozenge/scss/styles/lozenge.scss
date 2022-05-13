@@ -14,6 +14,10 @@
         & svg {
             fill: $onex-lozenge-icon-color;
         }
+
+        & .onex-material-icon {
+          color: $onex-lozenge-icon-color;
+        }
     }
 
     &__text {

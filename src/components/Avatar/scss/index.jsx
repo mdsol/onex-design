@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { getInitials } from './utils';
-import Icon from '../../Icon/Icon';
+import Icon from '../../Icon/scss';
 
 const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
   const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {

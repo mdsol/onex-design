@@ -5,13 +5,20 @@
     line-height: $line-height;
     border-radius: $border-radius;
 
-    .onex-lozenge__icon svg {
+    .onex-lozenge__icon {
+      & svg {
         width: $icon-size;
         height: $icon-size;
 
         path {
-            fill: $icon-color;
+          fill: $icon-color;
         }
+      }
+
+      & .onex-material-icon {
+        font-size: $icon-size;
+        color: $icon-color;
+      }
     }
 }
 
@@ -43,8 +50,14 @@
                 #{$border-color}
             );
 
-            .onex-lozenge__icon svg path {
+            .onex-lozenge__icon {
+              svg path {
                 fill: $border-color;
+              }
+
+              .onex-material-icon {
+                color: $border-color;
+              }
             }
         }
     }

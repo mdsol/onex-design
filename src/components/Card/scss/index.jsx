@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Card as ReactCard } from 'react-bootstrap';
 import classNames from 'classnames';
-import Icon from '../../Icon/Icon';
+import Icon from '../../Icon/scss';
 
 import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';

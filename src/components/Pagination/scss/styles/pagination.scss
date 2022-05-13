@@ -12,9 +12,18 @@
       & > svg path {
         fill: $pagination-arrow-color;
       }
+
+      & .onex-material-icon {
+        font-size: $pagination-next-width;
+        color: $pagination-arrow-color;
+      }
+
       &:hover {
         svg path {
           fill: $pagination-next-color-hover;
+        }
+        & .onex-material-icon {
+          color: $pagination-next-color-hover;
         }
       }
     }

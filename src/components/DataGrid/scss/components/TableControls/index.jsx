@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { FilterIcon } from '../../../../../icons';
 
 import Typography from '../../../../Typography/scss';
 import Badge from '../../../../Badge/scss';
@@ -16,7 +15,7 @@ const TableControls = ({ title, rowsQuantity }) => (
     </div>
     {/* <div className="onex-dataGrid__tableControls__controls">
       <div className="onex-dataGrid__tableControls__controls__filter">
-        <FilterIcon />
+        // TODO: check filter icon
       </div>
       <TextField size="sm" placeholder="Search" showDefaultIcon />
       <span className="onex-dataGrid__tableControls__controls__divider" />

@@ -2,8 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import Icon from '../../Icon/scss';
 import Button from '../../Buttons/scss';
 import Select from '../../Select/scss';
 
@@ -77,11 +76,23 @@ const InlineEditSelect = ({
       />
       {isActive && !isInvalid && (
         <div className="status-buttons">
-          <Button className="status-buttons__complete" variant="primary" onClick={handleComplete}>
-            <DoneRoundedIcon />
+          <Button
+            className="status-buttons__complete"
+            variant="primary"
+            type="icon"
+            size="sm"
+            onClick={handleComplete}
+          >
+            <Icon>done</Icon>
           </Button>
-          <Button className="status-buttons__cancel" variant="secondary" onClick={handleCancel}>
-            <CloseRoundedIcon />
+          <Button
+            className="status-buttons__cancel"
+            variant="secondary"
+            type="icon"
+            size="sm"
+            onClick={handleCancel}
+          >
+            <Icon>close</Icon>
           </Button>
         </div>
       )}

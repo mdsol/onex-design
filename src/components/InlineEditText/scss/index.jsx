@@ -2,9 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import Icon from '../../Icon/scss';
 import Button from '../../Buttons/scss';
 
 const InlineEditText = React.forwardRef((props, ref) => {
@@ -97,17 +95,27 @@ const InlineEditText = React.forwardRef((props, ref) => {
         />
         {!isActive && (
           <div className="onex-edit-text__icon">
-            <EditRoundedIcon />
+            <Icon>edit</Icon>
           </div>
         )}
       </div>
       {isActive && !isInvalid && (
         <div className="status-buttons">
-          <Button className="status-buttons__complete" variant="primary" onClick={handleComplete}>
-            <DoneRoundedIcon className="status-buttons__complete-svg" />
+          <Button
+            className="status-buttons__complete"
+            variant="primary"
+            size="sm"
+            type="icon"
+            onClick={handleComplete}
+          >
+            <Icon>done</Icon>
           </Button>
-          <Button className="status-buttons__cancel" variant="secondary" onClick={handleCancel}>
-            <CloseRoundedIcon />
+          <Button className="status-buttons__cancel"
+            variant="secondary"
+            size="sm"
+            type="icon"
+            onClick={handleCancel}>
+            <Icon>close</Icon>
           </Button>
         </div>
       )}
