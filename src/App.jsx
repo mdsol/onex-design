@@ -107,9 +107,13 @@ const DevExamples = () => {
         <CustomCard
           showActionBar
           showTitleBar
-          actionName="Tertiary Button"
+          actionLinkName="Link"
+          actionHeaderName="Button"
           dropdownItems={dropdownItems}
-          variant="info"
+          variant="default"
+          titleAction="button"
+          link="#"
+          badgeContent="100"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum
           corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur
@@ -126,7 +130,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('testMode');
+  const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
     if (currentTab === 'devMode') {
