@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.2
+
+StyledArea (experimental) added - this is not final. Separated out devDependencies, updated package.json so that the dist folder is explicitly set. 
 ## 0.3.1
 
 DataGrid CSS variables fixed and updated, new Alert component, Button, Select and Toast styles updated/corrected. 
