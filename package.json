@@ -9,13 +9,8 @@
     "type": "git",
     "url": "https://github.com/mdsol/onex-design.git"
   },
-  "main": "index.js",
-  "module": "index.umd.js",
-  "modules.root": "dist",
-  "exports": {
-    ".": "./dist/index.umd.js",
-    "./dist/*": "./dist/*"
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.umd.js",
   "publishConfig": {
     "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
   },
