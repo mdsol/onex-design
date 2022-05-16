@@ -18,9 +18,11 @@ const CustomCard = ({
   className,
   dropdownItems,
   variant,
-  titleAction,
+  titleActionVariant,
   link,
   badgeContent,
+  title,
+  subtitle,
 }) => {
   const classes = classNames('onex-card', `onex-card--${variant}`, {
     [className]: className,
@@ -33,14 +35,14 @@ const CustomCard = ({
           <>
             <div className="title-block">
               <div>
-                <Typography variant="h4">Card heading</Typography>
-                {variant === 'default' && <Typography variant="caption">Subtitle</Typography>}
+                <Typography variant="h4">{title}</Typography>
+                {variant === 'default' && <Typography variant="caption">{subtitle}</Typography>}
               </div>
               {variant === 'default' && <Badge type="default">{badgeContent}</Badge>}
             </div>
             {variant === 'default' && (
               <>
-                {titleAction === 'more' && (
+                {titleActionVariant === 'more' && (
                   <Dropdown
                     variant="tertiary"
                     id="tertiary-icon-dropdown-sm"
@@ -50,8 +52,8 @@ const CustomCard = ({
                     title={<MoreVertRounded />}
                   />
                 )}
-                {titleAction === 'button' && (
-                  <Button variant="tertiary" onClick={onHeaderAction} size="sm">
+                {titleActionVariant === 'button' && (
+                  <Button variant="tertiary" onClick={onHeaderAction} size="md">
                     {actionHeaderName}
                   </Button>
                 )}
@@ -92,9 +94,11 @@ CustomCard.propTypes = {
     }),
   ),
   variant: PropTypes.string,
-  titleAction: PropTypes.string,
+  titleActionVariant: PropTypes.string,
   link: PropTypes.string,
   badgeContent: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
 };
 
 CustomCard.defaultProps = {
@@ -107,9 +111,11 @@ CustomCard.defaultProps = {
   showTitleBar: false,
   dropdownItems: [],
   variant: 'default',
-  titleAction: 'more',
+  titleActionVariant: 'more',
   link: '#',
   badgeContent: '',
+  title: '',
+  subtitle: '',
 };
 
 export default CustomCard;

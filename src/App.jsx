@@ -110,10 +110,12 @@ const DevExamples = () => {
           actionLinkName="Link"
           actionHeaderName="Button"
           dropdownItems={dropdownItems}
-          variant="default"
+          variant="info"
           titleAction="button"
           link="#"
           badgeContent="100"
+          title="Card Heading"
+          subtitle="Subtitle"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum
           corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur
