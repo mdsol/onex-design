@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10149,7 +10155,7 @@ progress {
   background-color: initial;
   color: rgb(103, 110, 122);
 }
-.onex-tag__close > svg {
+.onex-tag__close > svg, .onex-tag__close > .onex-material-icon {
   font-size: 1.25rem;
 }
 .onex-tag__img {

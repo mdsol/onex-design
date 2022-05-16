@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10940,14 +10946,23 @@ progress {
   align-items: center;
 }
 .onex-table-pagination .pageArrows button > svg {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.onex-table-pagination .pageArrows button > .onex-material-icon {
+  size: 0.875rem;
 }
 .onex-table-pagination .pageArrows button:hover svg path {
   fill: rgb(0, 112, 192);
 }
+.onex-table-pagination .pageArrows button:hover .onex-material-icon {
+  size: rgb(0, 112, 192);
+}
 .onex-table-pagination .pageArrows .disabled:hover svg path {
   fill: rgb(176, 184, 191);
+}
+.onex-table-pagination .pageArrows .disabled:hover .onex-material-icon {
+  size: rgb(176, 184, 191);
 }
 .onex-table-pagination .pageArrows_button_next {
   transform: rotate(180deg);

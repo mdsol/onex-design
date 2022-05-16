@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -11460,6 +11466,11 @@ textarea.form-control-lg {
   width: 0.75rem;
   height: 0.75rem;
 }
+.btn-group.btn-group-sm .onex-toggle-btn.btn .onex-material-icon,
+.onex-toggle__btn.btn.btn-sm .onex-material-icon,
+.btn-group-sm > .onex-toggle__btn.btn .onex-material-icon {
+  font-size: 0.75rem;
+}
 
 .btn-group.btn-group-lg .onex-toggle__btn.btn,
 .onex-toggle__btn.btn.btn-lg,
@@ -11476,6 +11487,11 @@ textarea.form-control-lg {
 .btn-group-lg > .onex-toggle__btn.btn svg {
   width: 0.875rem;
   height: 0.875rem;
+}
+.btn-group.btn-group-lg .onex-toggle__btn.btn .onex-material-icon,
+.onex-toggle__btn.btn.btn-lg .onex-material-icon,
+.btn-group-lg > .onex-toggle__btn.btn .onex-material-icon {
+  font-size: 0.875rem;
 }
 
 .btn-group.btn-group-sm .onex-toggle-btn-wrapper {

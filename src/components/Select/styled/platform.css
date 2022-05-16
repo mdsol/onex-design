@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10125,6 +10131,9 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
+.onex-select__clear-btn svg > .onex-material-icon {
+  font-size: 1.25rem;
+}
 .onex-select__clear-btn svg:focus {
   outline: none;
 }
@@ -10191,6 +10200,10 @@ progress {
 }
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator svg > path {
   fill: rgb(103, 110, 122);
+}
+.onex-select__control .onex-select__indicator.onex-select__dropdown-indicator .onex-material-icon {
+  font-size: 1.25rem;
+  color: rgb(103, 110, 122);
 }
 .onex-select--invalid .onex-select__control {
   border-color: rgb(217, 21, 34) !important;
@@ -10331,6 +10344,10 @@ progress {
 }
 .onex-select .onex-select__multi-value .onex-select__multi-value__remove svg path {
   fill: rgb(103, 110, 122);
+}
+.onex-select .onex-select__multi-value .onex-select__multi-value__remove .onex-material-icon {
+  font-size: 1.25rem;
+  color: rgb(103, 110, 122);
 }
 
 .onex-select--md .onex-select__control {

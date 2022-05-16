@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10627,6 +10633,9 @@ progress {
 .onex-btn.btn-primary svg path {
   fill: rgb(255, 255, 255);
 }
+.onex-btn.btn-primary .onex-material-icon {
+  color: rgb(255, 255, 255);
+}
 .onex-btn.btn-primary:hover {
   background-color: rgb(0, 95, 171);
   border-color: rgb(0, 95, 171);
@@ -10646,6 +10655,9 @@ progress {
 .onex-btn.btn-secondary svg path {
   fill: rgb(26, 28, 30);
 }
+.onex-btn.btn-secondary .onex-material-icon {
+  color: rgb(26, 28, 30);
+}
 .onex-btn.btn-secondary:hover {
   background-color: rgba(103, 110, 122, 0.25);
   border-color: rgba(103, 110, 122, 0.25);
@@ -10653,6 +10665,9 @@ progress {
 }
 .onex-btn.btn-secondary:hover svg path {
   fill: rgb(26, 28, 30);
+}
+.onex-btn.btn-secondary:hover .onex-material-icon {
+  color: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:disabled, .onex-btn.btn-secondary.disabled {
   background-color: rgba(103, 110, 122, 0.1);
@@ -10671,6 +10686,9 @@ progress {
 .onex-btn.btn-tertiary svg path {
   fill: rgb(103, 110, 122);
 }
+.onex-btn.btn-tertiary .onex-material-icon {
+  color: rgb(103, 110, 122);
+}
 .onex-btn.btn-tertiary.disabled, .onex-btn.btn-tertiary:disabled {
   opacity: 0.4;
 }
@@ -10681,6 +10699,9 @@ progress {
 }
 .onex-btn.btn-tertiary:hover svg path, .onex-btn.btn-tertiary.hover svg path {
   fill: rgb(103, 110, 122);
+}
+.onex-btn.btn-tertiary:hover .onex-material-icon, .onex-btn.btn-tertiary.hover .onex-material-icon {
+  color: rgb(103, 110, 122);
 }
 .onex-btn.btn-tertiary.active, .onex-btn.btn-tertiary:active {
   background-color: rgb(221, 224, 229);
@@ -10697,6 +10718,9 @@ progress {
 .onex-btn.btn-md.btn-tertiary > svg ~ .onex-btn__decorator {
   width: calc(100% - 0.75rem * 2 - 1.25rem - 0.25rem);
 }
+.onex-btn.btn-md.btn-tertiary > .onex-material-icon ~ .onex-btn__decorator {
+  width: calc(100% - 0.75rem * 2 - 1.25rem - 0.25rem);
+}
 .onex-btn.btn-sm.btn-tertiary {
   padding: 0.375rem 0.5rem;
 }
@@ -10706,6 +10730,9 @@ progress {
   right: 0.5rem;
 }
 .onex-btn.btn-sm.btn-tertiary > svg ~ .onex-btn__decorator {
+  width: calc(100% - 0.5rem * 2 - 1.25rem - 0.25rem);
+}
+.onex-btn.btn-sm.btn-tertiary > .onex-material-icon ~ .onex-btn__decorator {
   width: calc(100% - 0.5rem * 2 - 1.25rem - 0.25rem);
 }
 .onex-btn.btn-md {
@@ -10726,11 +10753,20 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
+.onex-btn .onex-material-icon, .onex-btn.btn-md .onex-material-icon {
+  font-size: 1.25rem;
+}
 .onex-btn.btn-sm svg {
   width: 1.25rem;
   height: 1.25rem;
 }
+.onex-btn.btn-sm .onex-material-icon {
+  font-size: 1.25rem;
+}
 .onex-btn svg:only-child {
+  margin: 0.125rem 0;
+}
+.onex-btn .onex-material-icon:only-child {
   margin: 0.125rem 0;
 }
 .onex-btn.onex-btn--icon.btn-sm {

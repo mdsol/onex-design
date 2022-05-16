@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10138,6 +10144,9 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
+.onex-search-field__icon > .onex-material-icon {
+  font-size: 1.25rem;
+}
 .onex-search-field--lg .onex-search-field__icon {
   left: 0.75rem;
 }
@@ -10164,6 +10173,9 @@ progress {
 .onex-search-field__clear-btn > svg {
   width: 1.25rem;
   height: 1.25rem;
+}
+.onex-search-field__clear-btn > .onex-material-icon {
+  font-size: 1.25rem;
 }
 .onex-search-field__clear-btn:focus {
   outline: none;

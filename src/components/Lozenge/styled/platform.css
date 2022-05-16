@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import 'node_modules/@material-design-icons/font/outlined.css';
+.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10115,6 +10121,9 @@ progress {
 .onex-lozenge__icon svg {
   fill: rgb(255, 255, 255);
 }
+.onex-lozenge__icon .onex-material-icon {
+  color: rgb(255, 255, 255);
+}
 .onex-lozenge__text {
   padding: 0 0.125rem;
 }
@@ -10132,6 +10141,10 @@ progress {
 .onex-lozenge--size-lg .onex-lozenge__icon svg path {
   fill: rgb(255, 255, 255);
 }
+.onex-lozenge--size-lg .onex-lozenge__icon .onex-material-icon {
+  font-size: 0.75rem;
+  color: rgb(255, 255, 255);
+}
 .onex-lozenge--size-lg .onex-lozenge__icon + .onex-lozenge__text {
   margin-left: 0.25rem;
 }
@@ -10148,6 +10161,10 @@ progress {
 }
 .onex-lozenge--size-sm .onex-lozenge__icon svg path {
   fill: rgb(255, 255, 255);
+}
+.onex-lozenge--size-sm .onex-lozenge__icon .onex-material-icon {
+  font-size: 0.5rem;
+  color: rgb(255, 255, 255);
 }
 .onex-lozenge--size-sm .onex-lozenge__icon + .onex-lozenge__text {
   margin-left: 0.125rem;
@@ -10180,6 +10197,9 @@ progress {
 .onex-lozenge--variant-subtle.onex-lozenge--type-default .onex-lozenge__icon svg path {
   fill: rgb(209, 216, 224);
 }
+.onex-lozenge--variant-subtle.onex-lozenge--type-default .onex-lozenge__icon .onex-material-icon {
+  color: rgb(209, 216, 224);
+}
 .onex-lozenge--variant-subtle.onex-lozenge--type-success {
   background-color: rgb(224, 246, 234);
   color: rgb(0, 0, 0);
@@ -10187,6 +10207,9 @@ progress {
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-success .onex-lozenge__icon svg path {
   fill: rgb(0, 126, 76);
+}
+.onex-lozenge--variant-subtle.onex-lozenge--type-success .onex-lozenge__icon .onex-material-icon {
+  color: rgb(0, 126, 76);
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-warning {
   background-color: rgb(255, 241, 184);
@@ -10196,6 +10219,9 @@ progress {
 .onex-lozenge--variant-subtle.onex-lozenge--type-warning .onex-lozenge__icon svg path {
   fill: rgb(252, 185, 22);
 }
+.onex-lozenge--variant-subtle.onex-lozenge--type-warning .onex-lozenge__icon .onex-material-icon {
+  color: rgb(252, 185, 22);
+}
 .onex-lozenge--variant-subtle.onex-lozenge--type-error {
   background-color: rgb(255, 236, 238);
   color: rgb(0, 0, 0);
@@ -10204,6 +10230,9 @@ progress {
 .onex-lozenge--variant-subtle.onex-lozenge--type-error .onex-lozenge__icon svg path {
   fill: rgb(217, 21, 34);
 }
+.onex-lozenge--variant-subtle.onex-lozenge--type-error .onex-lozenge__icon .onex-material-icon {
+  color: rgb(217, 21, 34);
+}
 .onex-lozenge--variant-subtle.onex-lozenge--type-info {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -10211,6 +10240,9 @@ progress {
 }
 .onex-lozenge--variant-subtle.onex-lozenge--type-info .onex-lozenge__icon svg path {
   fill: rgb(0, 112, 192);
+}
+.onex-lozenge--variant-subtle.onex-lozenge--type-info .onex-lozenge__icon .onex-material-icon {
+  color: rgb(0, 112, 192);
 }
 .onex-lozenge--variant-icon {
   border-radius: 100%;
