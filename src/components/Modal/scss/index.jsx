@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { Modal } from 'react-bootstrap';
+import { Modal as ReactModal } from 'react-bootstrap';
 import classNames from 'classnames';
 
 import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
 
-const CustomModal = ({
+const Modal = ({
   handleClose,
   show,
   children,
@@ -21,7 +21,7 @@ const CustomModal = ({
   const classes = classNames('onex-modal', { [className]: className });
 
   return (
-    <Modal
+    <ReactModal
       scrollable
       show={show}
       onHide={handleClose}
@@ -29,25 +29,25 @@ const CustomModal = ({
       dialogClassName={widthClassName}
       className={classes}
     >
-      <Modal.Header closeButton>
+      <ReactModal.Header closeButton>
         <Typography variant="h4">Modal heading</Typography>
-      </Modal.Header>
-      <Modal.Body>{children}</Modal.Body>
+      </ReactModal.Header>
+      <ReactModal.Body>{children}</ReactModal.Body>
       {showFooter && (
-        <Modal.Footer>
+        <ReactModal.Footer>
           <Button variant="secondary" onClick={onSecondaryClick}>
             {secondaryActionName}
           </Button>
           <Button variant="primary" onClick={onPrimaryClick}>
             {primaryActionName}
           </Button>
-        </Modal.Footer>
+        </ReactModal.Footer>
       )}
-    </Modal>
+    </ReactModal>
   );
 };
 
-CustomModal.propTypes = {
+Modal.propTypes = {
   className: PropTypes.string,
   handleClose: PropTypes.func,
   show: PropTypes.bool,
@@ -61,7 +61,7 @@ CustomModal.propTypes = {
   showFooter: PropTypes.bool,
 };
 
-CustomModal.defaultProps = {
+Modal.defaultProps = {
   className: undefined,
   handleClose: undefined,
   show: false,
@@ -75,4 +75,4 @@ CustomModal.defaultProps = {
   showFooter: false,
 };
 
-export default CustomModal;
+export default Modal;

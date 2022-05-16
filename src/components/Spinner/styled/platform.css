@@ -10157,7 +10157,7 @@ progress {
 .onex-spinner {
   width: 2rem;
   height: 2rem;
-  border: 0.25em solid rgb(141, 202, 249);
+  border: 0.25em solid rgb(231, 242, 254);
   border-radius: 50%;
   position: relative;
   box-sizing: border-box;
@@ -10168,6 +10168,7 @@ progress {
   top: -0.25em;
   color: rgb(0, 112, 192) !important;
   border-bottom-color: transparent;
+  border-top-color: transparent;
 }
 .onex-spinner--sm {
   width: 1rem;
@@ -10179,14 +10180,14 @@ progress {
   top: -0.2em;
 }
 .onex-spinner--lg {
-  width: 3rem;
-  height: 3rem;
-  border-width: 0.3em;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 0.25em;
 }
 .onex-spinner--lg > div {
-  width: 3rem;
-  height: 3rem;
-  left: -0.3em;
-  top: -0.3em;
-  border-width: 0.3em;
+  width: 2.5rem;
+  height: 2.5rem;
+  left: -0.25em;
+  top: -0.25em;
+  border-width: 0.25em;
 }

@@ -1,24 +1,24 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge as ReactBadge } from 'react-bootstrap';
 
-const CustomBadge = React.forwardRef((props, ref) => {
+const Badge = React.forwardRef((props, ref) => {
   const { className, type, iconEnd, children, dataTestId, variant, iconStart } = props;
   const badgeClassNames = classNames('onex-badge', `onex-badge--variant-${variant}`, {
     [className]: className,
   });
 
   return (
-    <Badge ref={ref} className={badgeClassNames} bg={type} pill data-test-id={dataTestId}>
+    <ReactBadge ref={ref} className={badgeClassNames} bg={type} pill data-test-id={dataTestId}>
       {iconStart && <span className="onex-badge__icon onex-badge__icon--start">{iconStart}</span>}
       {children}
       {iconEnd && <span className="onex-badge__icon onex-badge__icon--end">{iconEnd}</span>}
-    </Badge>
+    </ReactBadge>
   );
 });
 
-CustomBadge.propTypes = {
+Badge.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf([
     'primary',
@@ -38,7 +38,7 @@ CustomBadge.propTypes = {
   dataTestId: PropTypes.string,
 };
 
-CustomBadge.defaultProps = {
+Badge.defaultProps = {
   className: undefined,
   type: 'default-invert',
   variant: 'counter',
@@ -48,4 +48,4 @@ CustomBadge.defaultProps = {
   dataTestId: undefined,
 };
 
-export default CustomBadge;
+export default Badge;

@@ -10803,8 +10803,8 @@ progress {
   fill: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:hover {
-  background-color: rgb(221, 224, 229);
-  border-color: rgb(221, 224, 229);
+  background-color: rgba(103, 110, 122, 0.25);
+  border-color: rgba(103, 110, 122, 0.25);
   color: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:hover svg path {
@@ -10874,7 +10874,7 @@ progress {
 .onex-btn.btn-sm {
   min-width: 2rem;
   height: 2rem;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   border-radius: 0.375rem;
   padding: 0.375rem 0.5rem;
 }
@@ -10896,8 +10896,18 @@ progress {
   padding: 0.5rem;
 }
 
+.onex-offcanvas .offcanvas-header {
+  position: relative;
+}
+.onex-offcanvas .offcanvas-header > button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
 .onex-offcanvas .offcanvas-title h5 {
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 .onex-offcanvas .offcanvas-title h5 .badge {
   font-size: 0.75rem;
@@ -10906,7 +10916,7 @@ progress {
   background-color: rgba(103, 110, 122, 0.1) !important;
 }
 .onex-offcanvas .offcanvas-footer {
-  height: 64px;
+  height: 56px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10914,7 +10924,7 @@ progress {
   padding: 0 1rem;
 }
 .onex-offcanvas .offcanvas-footer .primary {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 .onex-offcanvas .offcanvas-footer .action-link {
   width: 100%;

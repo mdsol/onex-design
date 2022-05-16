@@ -33,7 +33,7 @@ Default.args = {
 // Position start
 export const Top = Template.bind({});
 
-const tooltipeTopCode = `<CustomTooltip
+const tooltipeTopCode = `<Tooltip
   id="top-tooltip"
   onToggle={() => {}}
   placement="top"
@@ -45,7 +45,7 @@ const tooltipeTopCode = `<CustomTooltip
   >
     Tooltip on top
   </Lozenge>
-</CustomTooltip>`;
+</Tooltip>`;
 
 Top.args = {
   id: 'top-tooltip',
@@ -76,7 +76,7 @@ Top.parameters = {
 
 export const Left = Template.bind({});
 
-const tooltipLeftCode = `<CustomTooltip
+const tooltipLeftCode = `<Tooltip
   id="left-tooltip"
   onToggle={() => {}}
   placement="left"
@@ -88,7 +88,7 @@ const tooltipLeftCode = `<CustomTooltip
   >
     Tooltip on left
   </Lozenge>
-</CustomTooltip>`;
+</Tooltip>`;
 
 Left.args = {
   id: 'left-tooltip',

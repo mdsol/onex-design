@@ -1,10 +1,16 @@
-import { Offcanvas, OffcanvasBody, OffcanvasHeader, OffcanvasTitle, Badge } from 'react-bootstrap';
+import {
+  Offcanvas as ReactOffcanvas,
+  OffcanvasBody,
+  OffcanvasHeader,
+  OffcanvasTitle,
+  Badge,
+} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Button from '../../Buttons/scss';
 
-const CustomOffcanvas = ({
+const Offcanvas = ({
   link,
   linkText,
   primaryActionFc,
@@ -24,7 +30,7 @@ const CustomOffcanvas = ({
   });
 
   return (
-    <Offcanvas {...props} className={classes} show={show} placement="end">
+    <ReactOffcanvas {...props} className={classes} show={show} placement="end">
       <OffcanvasHeader>
         <OffcanvasTitle>
           <h5>
@@ -36,7 +42,7 @@ const CustomOffcanvas = ({
             )}
           </h5>
         </OffcanvasTitle>
-        <Button onClick={onHide} variant="tertiary" type="icon">
+        <Button onClick={onHide} variant="tertiary" type="icon" size="md">
           <CloseRoundedIcon />
         </Button>
       </OffcanvasHeader>
@@ -61,11 +67,11 @@ const CustomOffcanvas = ({
           </>
         )}
       </div>
-    </Offcanvas>
+    </ReactOffcanvas>
   );
 };
 
-CustomOffcanvas.propTypes = {
+Offcanvas.propTypes = {
   link: PropTypes.string,
   linkText: PropTypes.string,
   primaryActionFc: PropTypes.func,
@@ -94,7 +100,7 @@ CustomOffcanvas.propTypes = {
   onShow: PropTypes.func,
 };
 
-CustomOffcanvas.defaultProps = {
+Offcanvas.defaultProps = {
   link: '',
   linkText: '',
   primaryActionFc: null,
@@ -123,4 +129,4 @@ CustomOffcanvas.defaultProps = {
   onShow: undefined,
 };
 
-export default CustomOffcanvas;
+export default Offcanvas;

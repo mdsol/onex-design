@@ -1,13 +1,20 @@
 import PropTypes, { oneOfType } from 'prop-types';
 import classNames from 'classnames';
-import { Alert } from 'react-bootstrap';
-import InfoIcon from '@mui/icons-material/Info';
-import WarningIcon from '@mui/icons-material/Warning';
-import ErrorIcon from '@mui/icons-material/Error';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Alert as ReactAlert } from 'react-bootstrap';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
+import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import Button from '../../Buttons/scss';
 
-const CustomAlert = ({
+const Icon = {
+  info: <InfoRoundedIcon />,
+  warning: <WarningRoundedIcon />,
+  error: <ErrorRoundedIcon />,
+  success: <CheckCircleRoundedIcon />,
+};
+
+const Alert = ({
   className,
   variant,
   title,
@@ -22,21 +29,15 @@ const CustomAlert = ({
   const classes = classNames('onex-alert', {
     [className]: className,
   });
-  const Icon = {
-    info: <InfoIcon />,
-    warning: <WarningIcon />,
-    error: <ErrorIcon />,
-    success: <CheckCircleIcon />,
-  }[variant];
 
   return (
-    <Alert show={show} transition={transition} variant={variant} className={classes}>
-      <Alert.Heading>
-        <span className="icon">{Icon}</span>
+    <ReactAlert show={show} transition={transition} variant={variant} className={classes}>
+      <ReactAlert.Heading>
+        <span className="onex-alert__icon">{Icon[variant]}</span>
         {title}
-      </Alert.Heading>
-      <div className="alert-body">{body}</div>
-      <div className="alert-control">
+      </ReactAlert.Heading>
+      <div className="onex-alert__body">{body}</div>
+      <div className="onex-alert__control">
         {primaryAction && (
           <Button onClick={primaryAction} variant="secondary">
             {primaryText}
@@ -48,11 +49,11 @@ const CustomAlert = ({
           </Button>
         )}
       </div>
-    </Alert>
+    </ReactAlert>
   );
 };
 
-CustomAlert.propTypes = {
+Alert.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
   title: PropTypes.string,
@@ -65,7 +66,7 @@ CustomAlert.propTypes = {
   transition: oneOfType([PropTypes.bool, PropTypes.elementType]),
 };
 
-CustomAlert.defaultProps = {
+Alert.defaultProps = {
   className: '',
   variant: 'info',
   title: 'Title',
@@ -78,4 +79,4 @@ CustomAlert.defaultProps = {
   transition: false,
 };
 
-export default CustomAlert;
+export default Alert;

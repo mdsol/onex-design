@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ToggleButtonGroup } from 'react-bootstrap';
+import { ToggleButtonGroup as ReactToggleButtonGroup } from 'react-bootstrap';
 
-const CustomToggleButtonGroup = (props) => {
+const ToggleButtonGroup = (props) => {
   const {
     children,
     className,
@@ -26,7 +26,7 @@ const CustomToggleButtonGroup = (props) => {
   );
 
   return (
-    <ToggleButtonGroup
+    <ReactToggleButtonGroup
       className={buttonClassNames}
       vertical={vertical}
       size={size}
@@ -38,11 +38,11 @@ const CustomToggleButtonGroup = (props) => {
       data-test-id={dataTestId}
     >
       {children}
-    </ToggleButtonGroup>
+    </ReactToggleButtonGroup>
   );
 };
 
-CustomToggleButtonGroup.propTypes = {
+ToggleButtonGroup.propTypes = {
   className: PropTypes.string,
   vertical: PropTypes.bool,
   size: PropTypes.oneOf(['lg', 'sm']),
@@ -64,7 +64,7 @@ CustomToggleButtonGroup.propTypes = {
   dataTestId: PropTypes.string,
 };
 
-CustomToggleButtonGroup.defaultProps = {
+ToggleButtonGroup.defaultProps = {
   className: undefined,
   vertical: false,
   size: 'sm',
@@ -77,4 +77,4 @@ CustomToggleButtonGroup.defaultProps = {
   dataTestId: undefined,
 };
 
-export default CustomToggleButtonGroup;
+export default ToggleButtonGroup;

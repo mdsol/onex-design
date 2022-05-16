@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown as ReactDropdown } from 'react-bootstrap';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import Badge from '../../Badge/scss';
 import DropdownMenu from './components/DropdownMenu';
 
-const CustomDropdown = (props) => {
+const Dropdown = (props) => {
   const {
     className,
     disabled,
@@ -28,8 +28,8 @@ const CustomDropdown = (props) => {
   });
 
   return (
-    <Dropdown onSelect={onSelect} className={buttonClassNames} data-test-id={dataTestId}>
-      <Dropdown.Toggle
+    <ReactDropdown onSelect={onSelect} className={buttonClassNames} data-test-id={dataTestId}>
+      <ReactDropdown.Toggle
         as={as}
         id={id}
         disabled={disabled}
@@ -40,8 +40,8 @@ const CustomDropdown = (props) => {
         {buttonStyle !== 'icon' && leadingIcon && leadingIcon}
         {title}
         <ExpandMoreRoundedIcon className="onex-dropdown__chevron-icon" />
-      </Dropdown.Toggle>
-      <Dropdown.Menu as={DropdownMenu}>
+      </ReactDropdown.Toggle>
+      <ReactDropdown.Menu as={DropdownMenu}>
         {!!items?.length &&
           items.map((item) => {
             const {
@@ -56,7 +56,7 @@ const CustomDropdown = (props) => {
 
             return (
               <Fragment key={eventKey}>
-                <Dropdown.Item
+                <ReactDropdown.Item
                   key={eventKey}
                   href={href}
                   active={active}
@@ -70,17 +70,17 @@ const CustomDropdown = (props) => {
                       {badge}
                     </Badge>
                   )}
-                </Dropdown.Item>
-                {hasDividerAfter && <Dropdown.Divider />}
+                </ReactDropdown.Item>
+                {hasDividerAfter && <ReactDropdown.Divider />}
               </Fragment>
             );
           })}
-      </Dropdown.Menu>
-    </Dropdown>
+      </ReactDropdown.Menu>
+    </ReactDropdown>
   );
 };
 
-CustomDropdown.propTypes = {
+Dropdown.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]),
@@ -106,7 +106,7 @@ CustomDropdown.propTypes = {
   as: PropTypes.node,
 };
 
-CustomDropdown.defaultProps = {
+Dropdown.defaultProps = {
   className: undefined,
   disabled: false,
   title: undefined,
@@ -121,4 +121,4 @@ CustomDropdown.defaultProps = {
   as: undefined,
 };
 
-export default CustomDropdown;
+export default Dropdown;
