@@ -79,11 +79,11 @@
 
     &.onex-select__control--is-focused,
     &.onex-select__control--is-focused.onex-select__control--menu-is-open {
-      border: $onex-select-control-border solid $primary !important;
-      box-shadow: $primary 0px 0px 1px, $primary 0px 0px 0px 1px;
+      border: $onex-select-control-border solid $primary-500 !important;
+      box-shadow: $primary-500 0px 0px 1px, $primary-500 0px 0px 0px 1px;
 
       &:hover {
-        border-color: $primary !important;
+        border-color: $primary-500 !important;
       }
     }
   }

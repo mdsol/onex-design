@@ -61,8 +61,8 @@
       &:checked,
       &:indeterminate {
         & ~ .onex-check__custom {
-          border-color: $primary-400;
-          background-color: $primary-400;
+          border-color: $primary-600;
+          background-color: $primary-600;
         }
       }
     }

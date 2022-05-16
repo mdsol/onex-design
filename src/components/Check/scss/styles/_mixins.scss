@@ -55,7 +55,7 @@
 
     &:focus {
       & ~ .onex-check__custom {
-        box-shadow: 0px 0px 0px 2px $tertiary-300;
+        box-shadow: 0px 0px 0px 2px $primary-200;
       }
     }
   }
@@ -70,7 +70,7 @@
 
       &:checked {
         & ~ .onex-check__custom {
-          border-color: $primary-400;
+          border-color: $primary-600;
         }
       }
 

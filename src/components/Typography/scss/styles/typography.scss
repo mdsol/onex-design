@@ -11,10 +11,10 @@
     cursor: pointer;
     @include text-link();
     &:hover {
-      color: $primary-600;
+      color: $primary-700;
     }
     &:active {
-      color: $primary-650;
+      color: $primary-800;
     }
   }
 

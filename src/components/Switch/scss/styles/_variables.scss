@@ -4,8 +4,8 @@ $form-switch-input-bg: $white;
 $form-switch-input-border: $interactive-border-default;
 $form-switch-border-radius: 1.25rem;
 $form-switch-height: $component-height-middle-sm;
-$form-switch-focus-box-shadow: 0px 0px 0px 2px $tertiary-300;
-$form-switch-checked-input-bg: $primary;
+$form-switch-focus-box-shadow: 0px 0px 0px 2px $primary-200;
+$form-switch-checked-input-bg: $primary-500;
 
 $onex-form-switch-width: 2.25rem;
 $onex-form-switch-disabled-opacity: 0.4;
@@ -14,7 +14,7 @@ $onex-form-switch-color: $secondary-400;
 $onex-form-switch-checked-color: $white;
 //hover
 $onex-form-switch-hover-color: $secondary-900;
-$onex-form-switch-hover-checked-input-bg: $primary-400;
+$onex-form-switch-hover-checked-input-bg: $primary-600;
 $onex-form-switch-hover-border: $interactive-border-hover;
 $onex-form-switch-checked-hover-color: $white;
 

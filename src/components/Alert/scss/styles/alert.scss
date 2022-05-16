@@ -4,7 +4,7 @@
     color: $black;
     padding: 1rem 1rem 1rem 3.25rem;
     .alert-heading {
-        font-weight: $font-weight-600;
+        font-weight: $onex-alert-heading-font-weight;
         position: relative;
         .onex-alert__icon {
             position: absolute;
@@ -18,35 +18,35 @@
         }
     }
     .onex-alert__body {
-        font-size: $font-size-label;
+        font-size: $onex-alert-body-font-size;
         margin: 0;
     }
     &.alert-info {
-        background-color: $tertiary-500;
-        border-color: $primary;
+        background-color: $onex-alert-info-background-color;
+        border-color: $onex-alert-info-color;
         .onex-alert__icon {
-            color: $primary;
+            color: $onex-alert-info-color;
         }
     }
     &.alert-warning {
-        background-color: $warning-100;
-        border-color: $warning;
+        background-color: $onex-alert-warning-background-color;
+        border-color: $onex-alert-warning-color;
         .onex-alert__icon {
-            color: $warning;
+            color: $onex-alert-warning-color;
         }
     }
     &.alert-error {
-        background-color: $error-100;
-        border-color: $error;
+        background-color: $onex-alert-error-background-color;
+        border-color: $onex-alert-error-color;
         .onex-alert__icon {
-            color: $error;
+            color: $onex-alert-error-color;
         }
     }
     &.alert-success {
-        background-color: $success-100;
-        border-color: $success;
+        background-color: $onex-alert-success-background-color;
+        border-color: $onex-alert-success-color;
         .onex-alert__icon {
-            color: $success;
+            color: $onex-alert-success-color;
         }
     }
     .onex-alert__control {

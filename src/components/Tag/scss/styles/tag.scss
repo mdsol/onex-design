@@ -81,13 +81,13 @@
 }
 
 .onex-tag--selected {
-  background-color: $tertiary-500;
+  background-color: $primary-100;
 
   .onex-tag__close {
-    color: $primary-400;
+    color: $primary-600;
   }
 
   &:hover {
-    background-color: $tertiary-300;
+    background-color: $primary-200;
   }
 }
