@@ -134,7 +134,7 @@
   &.btn-sm {
     @include btn-size($onex-btn-height-sm);
 
-    font-size: $onex-btn-font-size-sm;
+    font-size: $onex-btn-font-size-md;
     border-radius: $onex-btn-border-radius-sm;
     padding: $onex-btn-padding-y-sm $onex-btn-padding-x-sm;
   }
