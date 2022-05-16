@@ -11,10 +11,14 @@
             width: 1.5rem;
             height: 1.5rem;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
             left: -2.3rem;
             top: 0;
+
+            .onex-material-icon {
+              font-size: $icon-size-xlg;
+            }
         }
     }
     .onex-alert__body {

@@ -1,17 +1,15 @@
 import PropTypes, { oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { Alert as ReactAlert } from 'react-bootstrap';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
-import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import React from 'react';
 import Button from '../../Buttons/scss';
+import Icon from '../../Icon/scss';
 
-const Icon = {
-  info: <InfoRoundedIcon />,
-  warning: <WarningRoundedIcon />,
-  error: <ErrorRoundedIcon />,
-  success: <CheckCircleRoundedIcon />,
+const iconVariants = {
+  info: 'info',
+  success: 'check_circle',
+  warning: 'warning',
+  error: 'error',
 };
 
 const Alert = ({
@@ -33,7 +31,9 @@ const Alert = ({
   return (
     <ReactAlert show={show} transition={transition} variant={variant} className={classes}>
       <ReactAlert.Heading>
-        <span className="onex-alert__icon">{Icon[variant]}</span>
+        <span className="onex-alert__icon">
+          <Icon>{iconVariants[variant]}</Icon>
+        </span>
         {title}
       </ReactAlert.Heading>
       <div className="onex-alert__body">{body}</div>
