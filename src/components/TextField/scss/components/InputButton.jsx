@@ -1,8 +1,6 @@
 import { memo } from 'react';
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
-import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
-import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import PropTypes from 'prop-types';
+import Icon from '../../../Icon/scss';
 
 const InputButton = memo(({ type, showClearBtn, value, disabled, handleClick, showPassword }) => {
   if (type === 'password') {
@@ -13,7 +11,7 @@ const InputButton = memo(({ type, showClearBtn, value, disabled, handleClick, sh
         onClick={handleClick}
         disabled={disabled}
       >
-        {showPassword ? <VisibilityOffRoundedIcon /> : <VisibilityRoundedIcon />}
+        <Icon>{showPassword ? 'visibility' : 'visibility_off'}</Icon>
       </button>
     );
   }
@@ -26,7 +24,7 @@ const InputButton = memo(({ type, showClearBtn, value, disabled, handleClick, sh
         onClick={handleClick}
         disabled={disabled}
       >
-        <HighlightOffRoundedIcon />
+        <Icon>highlight_off</Icon>
       </button>
     );
   }

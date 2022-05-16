@@ -22,6 +22,11 @@
                 fill: $onex-table-cell-body-icon-color;
             }
         }
+
+        .onex-material-icon {
+            font-size: $onex-table-cell-icon-action-size-sm;
+            color: $onex-table-cell-body-icon-color;
+        }
     }
 
     &--variant-header {

@@ -104,6 +104,11 @@
     svg > path {
       fill: $secondary-500;
     }
+
+    .onex-material-icon {
+      font-size: $icon-size-xlg;
+      color: $secondary-400
+    }
   }
 
   &--invalid {
@@ -273,6 +278,11 @@
           & path {
             fill: $secondary-500;
           }
+        }
+
+        .onex-material-icon {
+          font-size: $component-height-middle-sm;
+          color: $secondary-400
         }
       }
     }

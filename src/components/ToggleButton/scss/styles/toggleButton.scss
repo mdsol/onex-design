@@ -14,6 +14,10 @@
     & svg {
         @include icon-size($toggle-font-size-sm);
     }
+
+    & .onex-material-icon {
+        font-size: $toggle-font-size-sm;
+    }
 }
 
 .btn-group.btn-group-lg .onex-toggle__btn.btn,
@@ -29,6 +33,10 @@
 
     & svg {
         @include icon-size($toggle-font-size-lg);
+    }
+
+    & .onex-material-icon {
+      font-size: $toggle-font-size-lg;
     }
 }
 

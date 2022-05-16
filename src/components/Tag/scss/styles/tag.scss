@@ -53,14 +53,10 @@
     background-color: initial;
     color: $secondary-500;
 
-    & > svg {
+    & > svg,
+    & > .onex-material-icon {
       font-size: 1.25rem;
     }
-
-    //&__icon {
-    //  height: $onex-tag-close-icon-size;
-    //  width: $onex-tag-close-icon-size;
-    //}
   }
 
   &__img {

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import Icon from '../../Icon/scss';
 
 const TablePagination = ({
   size,
@@ -68,7 +68,7 @@ const TablePagination = ({
           disabled={!canPreviousPage}
           onClick={handlePrevActiveRow}
         >
-          <ArrowBackIosNewRoundedIcon />
+          <Icon>arrow_back_ios</Icon>
         </button>
         <button
           type="button"
@@ -76,7 +76,7 @@ const TablePagination = ({
           disabled={!canNextPage}
           onClick={handleNextActiveRow}
         >
-          <ArrowBackIosNewRoundedIcon />
+          <Icon>arrow_back_ios</Icon>
         </button>
       </div>
     </div>

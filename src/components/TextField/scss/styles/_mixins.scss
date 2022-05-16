@@ -3,6 +3,10 @@
     width: $size;
     height: $size;
   }
+
+  & > .onex-material-icon {
+    font-size: $size;
+  }
 }
 
 @mixin pass-help-style () {
