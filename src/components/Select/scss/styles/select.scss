@@ -42,7 +42,7 @@
     min-height: $line-height-sm;
     padding: 0 4px;
     display: inline-block;
-    color: $secondary-400;
+    color: $secondary-500;
     font-size: $font-size-sm;
     line-height: $line-height-sm;
   }
@@ -70,11 +70,11 @@
     max-height: 100%;
     align-items: stretch;
     box-sizing: border-box;
-    border: $onex-select-control-border solid $secondary-opacity-20;
+    border: $onex-select-control-border solid $secondary-900-opacity-20;
     border-radius: $onex-select-control-border-radius!important;
 
     &:hover {
-      border-color: $secondary-opacity-50;
+      border-color: $secondary-900-opacity-50;
     }
 
     &.onex-select__control--is-focused,
@@ -102,7 +102,7 @@
     }
 
     svg > path {
-      fill: $secondary-400;
+      fill: $secondary-500;
     }
   }
 
@@ -116,7 +116,7 @@
     font-size: $font-size-label;
     line-height: $line-height-label;
     font-weight: 400;
-    color: $secondary-400;
+    color: $secondary-500;
   }
 
   &--is-disabled {
@@ -124,7 +124,7 @@
 
     .onex-select__control--is-disabled {
       background-color: $white;
-      border-color: $secondary-opacity-20;
+      border-color: $secondary-900-opacity-20;
     }
   }
 
@@ -226,7 +226,7 @@
     margin: 0;
     font-size: $font-size-caption;
     line-height: $line-height-caption;
-    color: $secondary-400;
+    color: $secondary-500;
     font-weight: 600;
   }
 
@@ -243,7 +243,7 @@
   }
 
     .onex-select__multi-value {
-      background-color: $secondary-400-opacity-01;
+      background-color: $secondary-500-opacity-01;
       border-radius: $onex-select-multi-value-border-radius;
       align-items: center;
       padding: 2px 2px 2px 8px;
@@ -264,14 +264,14 @@
         height: $component-height-middle-sm;
         padding: 0;
         background-color: transparent;
-        color: $secondary-400;
+        color: $secondary-500;
 
         svg {
           width: $component-height-middle-sm;
           height: $component-height-middle-sm;
 
           & path {
-            fill: $secondary-400;
+            fill: $secondary-500;
           }
         }
       }

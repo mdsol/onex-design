@@ -21,7 +21,7 @@ $menu-font-size: $font-size-lg;
 $menu-line-height: $line-height-lg;
 $menu-padding-x: 0;
 $menu-padding-y: 0.25rem;
-$menu-box-shadow-color: rgba(0, 28, 59, 0.12);
+$menu-box-shadow-color: $primary-900-opacity-12;
 $menu-search-padding-x: 0.75rem;
 $menu-search-padding-y: 0.5rem;
 $menu-search-min-width: 13.5rem;
@@ -33,9 +33,9 @@ $menu-item-min-width: 12.5rem;
 
 $divider-color: $secondary-900-opacity-10;
 
-$menu-item-hover-background-color: $secondary-400-opacity-01;
-$menu-item-active-background-color: $secondary-350;
-$menu-item-active-hover-background-color: $secondary-350;
+$menu-item-hover-background-color: $secondary-500-opacity-01;
+$menu-item-active-background-color: $secondary-100;
+$menu-item-active-hover-background-color: $secondary-100;
 
 $menu-font-size-sm: $font-size-sm;
 $menu-border-radius-sm: $component-border-radius-sm;
@@ -45,22 +45,22 @@ $menu-min-width-sm: $dropdown-menu-min-width-sm;
 
 $menu-item-text-color: $black;
 $menu-dropdown-border-color: $secondary;
-$menu-dropdown-disabled-text-color: $secondary-500;
-$menu-dropdown-hover-bg-color: $secondary-200;
+$menu-dropdown-disabled-text-color: $secondary-250;
+$menu-dropdown-hover-bg-color: $secondary-80;
 
 $btn-primary-hover-bg-color: $primary-600;
 $btn-primary-active-bg-color: $primary-700;
 
-$btn-secondary-text-color: $secondary-400;
-$btn-secondary-border-color: $interactive-border-default;
+$btn-secondary-text-color: $secondary-500;
+$btn-secondary-border-color: $secondary-900-opacity-20;
 $btn-secondary-bg-color: $white;
-$btn-secondary-hover-bg-color: $secondary-400-opacity-01;
-$btn-secondary-hover-border-color: $interactive-border-hover;
+$btn-secondary-hover-bg-color: $secondary-500-opacity-01;
+$btn-secondary-hover-border-color: $secondary-900-opacity-50;
 $btn-secondary-hover-text-color: $white;
 $btn-secondary-active-text-color: $tertiary-600;
-$btn-secondary-active-bg-color: $secondary-350;
-$btn-secondary-active-border-color: $interactive-border-hover;
-$btn-secondary-disabled-bg-color: $secondary-200;
+$btn-secondary-active-bg-color: $secondary-100;
+$btn-secondary-active-border-color: $secondary-900-opacity-50;
+$btn-secondary-disabled-bg-color: $secondary-80;
 $btn-secondary-disabled-text-color: $tertiary-600;
 
 $btn-dropdown-toggle-icon-size: 1.25rem;
@@ -68,7 +68,7 @@ $btn-dropdown-toggle-icon-margin-y: 0.25rem;
 $btn-dropdown-disabled-opacity: 0.4;
 $btn-dropdown-border-color: $secondary;
 $btn-dropdown-text-color: $primary-720;
-$btn-dropdown-hover-color: $secondary-200;
+$btn-dropdown-hover-color: $secondary-80;
 $btn-dropdown-focus-color: $primary-500;
 
 $onex-dropdown-link-active-color: $primary-500;

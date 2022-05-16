@@ -4,10 +4,10 @@
   @include avatar-layout();
   position: relative;
   border-radius: $onex-avatar-border-radius;
-  color: rgba(103, 110, 122, 1);
+  color: $secondary-500;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
-  background-color: rgba(103, 110, 122, 0.1);
+  box-shadow: inset 0 0 0 1px $secondary-900-opacity-10;
+  background-color: $secondary-500-opacity-01;
 
   &__img {
     object-fit: cover;

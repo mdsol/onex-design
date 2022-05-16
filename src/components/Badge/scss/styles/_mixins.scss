@@ -42,7 +42,7 @@
 }
 
 @mixin badge-status-type-color() {
-  $types: 'default' $onex-badge-default-status-bg-color $secondary-400 $onex-badge-default-status-border-color,
+  $types: 'default' $onex-badge-default-status-bg-color $secondary-500 $onex-badge-default-status-border-color,
   'info' $primary-50 $primary-500 $primary-100,
   'success' $success-100 $success $success-200,
   'warning' $warning-100 $warning-900 $warning-200,
@@ -57,7 +57,7 @@
 }
 
 @mixin badge-status-bold-type-color() {
-  $types: 'default' $secondary-700 $white,
+  $types: 'default' $secondary-600 $white,
   'info' $primary-500 $white,
   'success' $success $white,
   'warning' $warning $black,

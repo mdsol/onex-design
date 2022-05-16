@@ -14,12 +14,12 @@ $onex-btn-primary-active-bg-color: $primary-700;
 $onex-btn-primary-hover-bg-color: $primary-600;
 
 // secondary variables
-$onex-btn-bg-color: $secondary-400-opacity-01;
+$onex-btn-bg-color: $secondary-500-opacity-01;
 $onex-btn-secondary-text-color: $secondary-900;
-$onex-btn-secondary-hover-bg-color: $secondary-400-opacity-25;
+$onex-btn-secondary-hover-bg-color: $secondary-500-opacity-25;
 $onex-btn-secondary-hover-text-color: $secondary-900;
-$onex-btn-secondary-active-bg-color: $secondary-550;
-$onex-btn-secondary-disabled-bg-color: $secondary-400-opacity-01;
+$onex-btn-secondary-active-bg-color: $secondary-200;
+$onex-btn-secondary-disabled-bg-color: $secondary-500-opacity-01;
 $onex-btn-secondary-disabled-text-color: $secondary-900;
 
 // sm
@@ -35,11 +35,11 @@ $onex-btn-font-size-md: $font-size-lg;
 $onex-btn-border-radius-md: $component-border-radius-lg;
 
 // tertiary btn
-$onex-btn-tertiary-color: $secondary-400;
-$onex-btn-tertiary-hover-bg-color: $secondary-400-opacity-01;
-$onex-btn-tertiary-hover-color: $secondary-400;
-$onex-btn-tertiary-disabled-color: $secondary-400;
-$onex-btn-tertiary-active-bg-color: $secondary-350;
+$onex-btn-tertiary-color: $secondary-500;
+$onex-btn-tertiary-hover-bg-color: $secondary-500-opacity-01;
+$onex-btn-tertiary-hover-color: $secondary-500;
+$onex-btn-tertiary-disabled-color: $secondary-500;
+$onex-btn-tertiary-active-bg-color: $secondary-100;
 $onex-btn-tertiary-padding-y-md: 0.625rem;
 $onex-btn-tertiary-padding-x-md: 0.5rem;
 $onex-btn-tertiary-padding-y-sm: 0.375rem;

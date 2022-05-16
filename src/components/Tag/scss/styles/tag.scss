@@ -3,7 +3,7 @@
   padding: 0.375rem 0.5rem;
   display: flex;
   align-items: center;
-  background-color: $secondary-400-opacity-01;
+  background-color: $secondary-500-opacity-01;
   border: none;
   height: $onex-tag-height-md;
   border-radius: $onex-tag-border-radius;
@@ -18,7 +18,7 @@
   &--variant-selection {
     cursor: pointer;
     &:hover {
-      background-color: $secondary-350;
+      background-color: $secondary-100;
     }
   }
 
@@ -51,7 +51,7 @@
     padding: 0; //0.281rem;
     border: 0;
     background-color: initial;
-    color: $secondary-400;
+    color: $secondary-500;
 
     & > svg {
       font-size: 1.25rem;
