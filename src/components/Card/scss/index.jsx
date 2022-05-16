@@ -30,7 +30,7 @@ const Card = ({
 
   return (
     <ReactCard className={classes}>
-      <Card.Header closeButton>
+      <ReactCard.Header closeButton>
         {showTitleBar && (
           <>
             <div className="title-block">
@@ -61,15 +61,15 @@ const Card = ({
             )}
           </>
         )}
-      </Card.Header>
-      <Card.Body>{children}</Card.Body>
-      <Card.Footer>
+      </ReactCard.Header>
+      <ReactCard.Body>{children}</ReactCard.Body>
+      <ReactCard.Footer>
         {showActionBar && (
           <Typography variant="label" href={link}>
             {actionLinkName}
           </Typography>
         )}
-      </Card.Footer>
+      </ReactCard.Footer>
     </ReactCard>
   );
 };
