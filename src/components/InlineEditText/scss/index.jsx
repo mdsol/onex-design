@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import CustomButton from '../../Buttons/scss';
+import Button from '../../Buttons/scss';
 
 const InlineEditText = React.forwardRef((props, ref) => {
   const {
@@ -103,20 +103,12 @@ const InlineEditText = React.forwardRef((props, ref) => {
       </div>
       {isActive && !isInvalid && (
         <div className="status-buttons">
-          <CustomButton
-            className="status-buttons__complete"
-            variant="primary"
-            onClick={handleComplete}
-          >
+          <Button className="status-buttons__complete" variant="primary" onClick={handleComplete}>
             <DoneRoundedIcon className="status-buttons__complete-svg" />
-          </CustomButton>
-          <CustomButton
-            className="status-buttons__cancel"
-            variant="secondary"
-            onClick={handleCancel}
-          >
+          </Button>
+          <Button className="status-buttons__cancel" variant="secondary" onClick={handleCancel}>
             <CloseRoundedIcon />
-          </CustomButton>
+          </Button>
         </div>
       )}
       {isInvalid && !disabled && (

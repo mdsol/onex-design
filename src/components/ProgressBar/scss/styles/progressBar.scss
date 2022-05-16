@@ -3,6 +3,9 @@
     &.progress {
         height: $progressbar-height;
         width: 100%;
+        .progress-bar {
+            border-radius: 0.25em;
+        }
     }
     
     & .bg-danger {

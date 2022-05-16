@@ -4,7 +4,6 @@ import {
   Breadcrumb,
   ButtonGroup,
   ButtonToolbar,
-  Card,
   Carousel,
   CloseButton,
   Col,
@@ -24,6 +23,7 @@ import {
 import Avatar from './Avatar/scss';
 import Badge from './Badge/scss';
 import Button from './Buttons/scss';
+import Card from './Card/scss';
 import Check from './Check/scss';
 import Dropdown from './Dropdown/scss';
 import ExpansionPanel from './ExpansionPanel/scss';
@@ -32,7 +32,6 @@ import InlineEditText from './InlineEditText/scss';
 import Lozenge from './Lozenge/scss';
 import MenuItem from './MenuItem/scss';
 import Navigation from './Navigation/scss';
-import Overlay from './Overlay';
 import Pagination from './Pagination/scss';
 import Select from './Select/scss';
 import Switch from './Switch/scss';
@@ -60,7 +59,6 @@ import Typography from './Typography/scss';
 import DataGrid from './DataGrid/scss';
 import Modal from './Modal/scss';
 import ProgressBar from './ProgressBar/scss';
-import CustomCard from './Card/scss';
 import Spinner from './Spinner/scss';
 import Offcanvas from './Offcanvas/scss';
 import Alert from './Alert/scss';
@@ -103,12 +101,14 @@ import StyledTypography from './Typography/styled';
 import StyledDataGrid from './DataGrid/styled';
 import StyledModal from './Modal/styled';
 import StyledProgressBar from './ProgressBar/styled';
+import StyledCard from './Card/styled';
 
 export {
   Avatar,
   Badge,
   Button,
   Check,
+  Card,
   Dropdown,
   ExpansionPanel,
   InlineEditSelect,
@@ -148,7 +148,6 @@ export {
   ListGroup,
   Accordion,
   Breadcrumb,
-  Card,
   Carousel,
   Figure,
   Image,
@@ -166,9 +165,7 @@ export {
   CloseButton,
   Popover,
   OverlayTrigger,
-  Overlay,
   DataGrid,
-  CustomCard,
   StyledAvatar,
   StyledBadge,
   StyledButtons,
@@ -205,4 +202,5 @@ export {
   StyledDataGrid,
   StyledModal,
   StyledProgressBar,
+  StyledCard,
 };

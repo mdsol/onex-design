@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card as ReactCard } from 'react-bootstrap';
 import classNames from 'classnames';
 import { MoreVertRounded } from '@mui/icons-material';
 
@@ -8,7 +8,7 @@ import Typography from '../../Typography/scss';
 import Dropdown from '../../Dropdown/scss';
 import Badge from '../../Badge/scss';
 
-const CustomCard = ({
+const Card = ({
   children,
   onHeaderAction,
   actionLinkName,
@@ -29,7 +29,7 @@ const CustomCard = ({
   });
 
   return (
-    <Card className={classes}>
+    <ReactCard className={classes}>
       <Card.Header closeButton>
         {showTitleBar && (
           <>
@@ -70,11 +70,11 @@ const CustomCard = ({
           </Typography>
         )}
       </Card.Footer>
-    </Card>
+    </ReactCard>
   );
 };
 
-CustomCard.propTypes = {
+Card.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   onHeaderAction: PropTypes.func,
@@ -101,7 +101,7 @@ CustomCard.propTypes = {
   subtitle: PropTypes.string,
 };
 
-CustomCard.defaultProps = {
+Card.defaultProps = {
   className: undefined,
   children: '',
   onHeaderAction: undefined,
@@ -118,4 +118,4 @@ CustomCard.defaultProps = {
   subtitle: '',
 };
 
-export default CustomCard;
+export default Card;

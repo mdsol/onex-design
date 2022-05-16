@@ -1,4 +1,4 @@
-import Card from '../../../../components/Card/scss/index';
+import { Card } from '../../../../components';
 
 export default {
   title: 'Onex/Components/Card',

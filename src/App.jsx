@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid, Modal, Button, CustomCard } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -104,7 +104,7 @@ const DevExamples = () => {
         </Modal>
         <br />
         <br />
-        <CustomCard
+        <Card
           showActionBar
           showTitleBar
           actionLinkName="Link"
@@ -120,7 +120,7 @@ const DevExamples = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum
           corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur
           nobis eligendi, debitis quaerat, voluptatem inventore.
-        </CustomCard>
+        </Card>
       </div>
     </div>
   );
