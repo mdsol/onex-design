@@ -35,6 +35,7 @@ import Navigation from './Navigation/scss';
 import Pagination from './Pagination/scss';
 import Select from './Select/scss';
 import Switch from './Switch/scss';
+import StyledArea from './StyledArea';
 import {
   DataTableCell,
   Table,
@@ -145,6 +146,7 @@ export {
 };
 
 export {
+  StyledArea,
   ListGroup,
   Accordion,
   Breadcrumb,

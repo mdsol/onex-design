@@ -13,7 +13,10 @@ const getFiles = () => {
 
 const scssFileNames = fs
   .readdirSync(`src/components`, { withFileTypes: true })
-  .reduce((acc, item) => (item.isDirectory() ? [...acc, item.name] : acc), []);
+  .reduce(
+    (acc, item) => (item.isDirectory() && item.name !== 'StyledArea' ? [...acc, item.name] : acc),
+    [],
+  );
 
 const themeImportFiles = getFiles();
 
