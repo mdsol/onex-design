@@ -20,7 +20,7 @@
         text-decoration: none;
     }
     &:hover a {
-        background-color: $secondary-200;
+        background-color: $secondary-80;
         border-radius: $onex-mi-link-border-radius;
         color: $onex-mi-link-hover-text-color;
         cursor: pointer;
@@ -56,7 +56,7 @@
         color: $onex-mi-link-selected-text-color;
     }
     &:hover a {
-        background-color: $secondary-200;
+        background-color: $secondary-80;
         //background-color: $onex-mi-link-selected-hover-bg-color;
         color: $onex-mi-link-hover-text-color;
     }

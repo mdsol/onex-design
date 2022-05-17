@@ -51,26 +51,23 @@ body {
 
 @import './brand-colors';
 :root {
-  @each $color, $value in $main-colors {
-    --main-#{$color}: #{$value};
+  @each $color, $value in $basic-colors {
+    --basic-#{$color}: #{$value};
   }
-  @each $color, $value in $text-colors {
-    --text-#{$color}: #{$value};
+  @each $color, $value in $primary-colors {
+    --primary-#{$color}: #{$value};
   }
-  @each $color, $value in $background-colors {
-    --background-#{$color}: #{$value};
+  @each $color, $value in $secondary-colors {
+    --secondary-#{$color}: #{$value};
   }
-  @each $color, $value in $brand-bg-colors {
-    --brand-bg-#{$color}: #{$value};
+  @each $color, $value in $success-colors {
+    --success-#{$color}: #{$value};
   }
-  @each $color, $value in $status-colors {
-    --status-#{$color}: #{$value};
+  @each $color, $value in $warning-colors {
+    --warning-#{$color}: #{$value};
   }
-  @each $color, $value in $status-text-colors {
-    --status-text-#{$color}: #{$value};
-  }
-  @each $color, $value in $status-bg-colors {
-    --status-bg-#{$color}: #{$value};
+  @each $color, $value in $error-colors {
+    --error-#{$color}: #{$value};
   }
   @each $color, $value in $graph-colors {
     --graph-#{$color}: #{$value};

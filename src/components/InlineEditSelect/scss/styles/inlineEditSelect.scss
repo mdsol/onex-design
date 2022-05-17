@@ -34,18 +34,18 @@
     margin-right: 5px;
     padding: 0.375rem;
     justify-content: center;
-    background-color: rgba(0, 112, 168, 1) !important;
-    border-color: rgba(0, 112, 168, 1) !important;
+    background-color: $primary-550 !important;
+    border-color: $primary-550 !important;
   }
 
   &__cancel {
     padding: 0.375rem;
     justify-content: center;
-    background-color: rgba(209, 216, 224, 1) !important;
-    border-color: rgba(209, 216, 224, 1) !important;
+    background-color: $secondary-150 !important;
+    border-color: $secondary-150 !important;
 
     & svg path {
-      fill: $primary-800 !important;
+      fill: $primary-750 !important;
     }
   }
 }

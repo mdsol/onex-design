@@ -1,11 +1,11 @@
-$font-weight-600: $font-weight-600;
-$font-size-label: $font-size-label;
+$onex-alert-heading-font-weight: $font-weight-600;
+$onex-alert-body-font-size: $font-size-label;
 
-$tertiary-500: $tertiary-500;
-$primary: $primary;
-$warning-100: $warning-100;
-$warning: $warning;
-$error-100: $error-100;
-$error: $error;
-$success-100: $success-100;
-$success: $success;
+$onex-alert-info-background-color: $primary-100;
+$onex-alert-info-color: $primary-500;
+$onex-alert-warning-background-color: $warning-50;
+$onex-alert-warning-color: $warning-200;
+$onex-alert-error-background-color: $error-50;
+$onex-alert-error-color: $error-500;
+$onex-alert-success-background-color: $success-50;
+$onex-alert-success-color: $success-500;

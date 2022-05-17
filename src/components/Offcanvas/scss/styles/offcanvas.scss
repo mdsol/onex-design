@@ -11,15 +11,15 @@
 
     .offcanvas-title {
         h5 {
-            font-weight: $font-weight-600;
+            font-weight: $onex-offcanvas-title-font-weight;
             display: flex;
             align-items: center;
 
             .badge {
                 font-size: $font-size-sm;
-                font-weight: $font-weight-400;
+                font-weight: $onex-offcanvas-title-badge-font-weight;
                 margin-left: 0.5rem;
-                background-color: $secondary-550-opacity-01 !important;
+                background-color: $onex-offcanvas-badge-background-color!important;
             }
         }
     }
@@ -35,15 +35,15 @@
         .primary {
             margin-left: 0.5rem;
         }
-        
+
         .action-link {
             width: 100%;
-            color: $primary;
-            font-weight: $font-weight-600;
+            color: $onex-offcanvas-action-link-color;
+            font-weight: $onex-offcanvas-action-link-font-weight;
             text-decoration: none;
             text-align: center;
             &:hover {
-                color: $primary;
+                color: $onex-offcanvas-action-link-color;
                 text-decoration: underline;
             }
         }

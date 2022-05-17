@@ -4,11 +4,12 @@ export default {
   title: 'Colors',
 };
 
-const mainColors = ['medidata', 'primary', 'secondary'];
-const textColors = ['primary', 'secondary', 'disabled'];
-const backgroundColors = ['primary', 'secondary', 'tertiary', 'border'];
-const brandBgColors = ['primary', 'secondary', 'tertiary'];
-const statusColors = ['success', 'warning', 'error'];
+const basicColors = ['white', 'black', 'accent'];
+const primaryColors = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+const secondaryColors = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+const successColors = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+const warningColors = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+const errorColors = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
 const graphColors = [
   'navy-blue',
   'genoa',
@@ -53,72 +54,62 @@ export const Colors = () => (
     </Row>
     <Row>
       <Col>
-        <h4>Main</h4>
+        <h4>Basic</h4>
       </Col>
     </Row>
     <Row>
-      {mainColors.map((colorName) => (
-        <Swatch group="main" name={colorName} />
+      {basicColors.map((colorName) => (
+        <Swatch group="basic" name={colorName} />
       ))}
     </Row>
     <Row>
       <Col>
-        <h4>Text</h4>
+        <h4>Primary</h4>
       </Col>
     </Row>
     <Row>
-      {textColors.map((colorName) => (
-        <Swatch group="text" name={colorName} />
+      {primaryColors.map((colorName) => (
+        <Swatch group="primary" name={colorName} />
       ))}
     </Row>
     <Row>
       <Col>
-        <h4>Background</h4>
+        <h4>Neutral</h4>
       </Col>
     </Row>
     <Row>
-      {backgroundColors.map((colorName) => (
-        <Swatch group="background" name={colorName} />
+      {secondaryColors.map((colorName) => (
+        <Swatch group="secondary" name={colorName} />
       ))}
     </Row>
     <Row>
       <Col>
-        <h4>Brand Background</h4>
+        <h4>Positive</h4>
       </Col>
     </Row>
     <Row>
-      {brandBgColors.map((colorName) => (
-        <Swatch group="brand-bg" name={colorName} />
+      {successColors.map((colorName) => (
+        <Swatch group="success" name={colorName} />
       ))}
     </Row>
     <Row>
       <Col>
-        <h4>Status</h4>
+        <h4>Warning</h4>
       </Col>
     </Row>
     <Row>
-      {statusColors.map((colorName) => (
-        <Swatch group="status" name={colorName} />
+      {warningColors.map((colorName) => (
+        <Swatch group="warning" name={colorName} />
       ))}
     </Row>
     <Row>
       <Col>
-        <h4>Status Text</h4>
+        <h4>Error</h4>
       </Col>
     </Row>
     <Row>
-      {statusColors.map((colorName) => (
-        <Swatch group="status-text" name={colorName} />
-      ))}
-    </Row>
-    <Row>
-      <Col>
-        <h4>Status Background</h4>
-      </Col>
-    </Row>
-    <Row>
-      {statusColors.map((colorName) => (
-        <Swatch group="status-bg" name={colorName} />
+      {errorColors.map((colorName) => (
+        <Swatch group="error" name={colorName} />
       ))}
     </Row>
     <Row>

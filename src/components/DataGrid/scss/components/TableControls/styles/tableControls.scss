@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0.75rem;
-    border-bottom: 1px solid rgba(26, 28, 30, 0.1);
+    border-bottom: 1px solid $secondary-900-opacity-10;
     &__title {
         display: flex;
         flex-direction: row;
@@ -24,7 +24,7 @@
         &__divider {
             height: 1.5rem;
             width: 0.063rem;
-            background-color: rgba(26, 28, 30, 0.1);
+            background-color: $secondary-900-opacity-10;
         }
         &__filter {
             display: flex;
@@ -32,7 +32,7 @@
             justify-content: center;
             width: 2rem;
             height: 2rem;
-            border: 1px solid rgba(26, 28, 30, 0.1);
+            border: 1px solid $secondary-900-opacity-10;
             border-radius: 0.5rem;
         }
     }

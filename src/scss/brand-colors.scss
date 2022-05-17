@@ -1,55 +1,84 @@
-$main-colors: (
-  'medidata': #c8d300,
-  'primary': #0070a8,
-  'secondary': #002855,
+$basic-colors: (
+  'white': rgba(255, 255, 255, 1),
+  'black': rgba(0, 0, 0, 1),
+  'accent': rgba(200, 211, 0, 1),
 );
 
-$text-colors: (
-  'primary': #000000,
-  'secondary': #626b78,
-  'disabled': #b0b8bf,
+$primary-colors: (
+  '50': rgba(231, 242, 254, 1),
+  '100': rgba(198, 227, 252, 1),
+  '200': rgba(141, 202, 249, 1),
+  '300': rgba(87, 170, 231, 1),
+  '400': rgba(47, 146, 213, 1),
+  '500': rgba(0, 112, 192, 1),
+  '600': rgba(0, 95, 171, 1),
+  '700': rgba(0, 71, 134, 1),
+  '800': rgba(5, 48, 96, 1),
+  '900': rgba(0, 28, 59, 1),
 );
 
-$background-colors: (
-  'primary': #ffffff,
-  'secondary': #f4f8fc,
-  'tertiary': #e7eef5,
-  'border': '#D1D8E0',
+$secondary-colors: (
+  '20': rgba(244, 248, 252, 1),
+  '50': rgba(238, 241, 244, 1),
+  '100': rgba(221, 224, 229, 1),
+  '200': rgba(192, 196, 203, 1),
+  '300': rgba(158, 163, 172, 1),
+  '400': rgba(133, 140, 150, 1),
+  '500': rgba(103, 110, 122, 1),
+  '600': rgba(88, 95, 104, 1),
+  '700': rgba(66, 71, 78, 1),
+  '800': rgba(45, 49, 54, 1),
+  '900': rgba(26, 28, 30, 1),
 );
 
-$brand-bg-colors: (
-  'primary': #e6f1f6,
-  'secondary': #cce2ee,
-  'tertiary': #b3d4e5,
+$success-colors: (
+  '50': rgba(224, 246, 234, 1),
+  '100': rgba(181, 235, 212, 1),
+  '200': rgba(118, 214, 177, 1),
+  '300': rgba(41, 184, 137, 1),
+  '400': rgba(5, 159, 109, 1),
+  '500': rgba(0, 126, 76, 1),
+  '600': rgba(0, 101, 61, 1),
+  '700': rgba(0, 77, 47, 1),
+  '800': rgba(0, 54, 33, 1),
+  '900': rgba(0, 33, 20, 1),
 );
 
-$status-colors: (
-  'success': #4ebf58,
-  'warning': #ffb826,
-  'error': #f93c3c,
+$warning-colors: (
+  '50': rgba(255, 241, 184, 1),
+  '100': rgba(253, 222, 104, 1),
+  '200': rgba(252, 185, 22, 1),
+  '300': rgba(236, 142, 0, 1),
+  '400': rgba(223, 106, 5, 1),
+  '500': rgba(196, 64, 0, 1),
+  '600': rgba(170, 55, 0, 1),
+  '700': rgba(128, 42, 0, 1),
+  '800': rgba(89, 29, 0, 1),
+  '900': rgba(52, 17, 0, 1),
 );
 
-$status-text-colors: (
-  'success': #2f8336,
-  'warning': #212121,
-  'error': #e40707,
-);
-
-$status-bg-colors: (
-  'success': #f5fcf9,
-  'warning': #fefaf2,
-  'error': #fdf8f8,
+$error-colors: (
+  '50': rgba(255, 236, 238, 1),
+  '100': rgba(253, 215, 217, 1),
+  '200': rgba(253, 215, 217, 1),
+  '300': rgba(255, 121, 126, 1),
+  '400': rgba(251, 73, 85, 1),
+  '500': rgba(217, 21, 34, 1),
+  '600': rgba(191, 0, 24, 1),
+  '700': rgba(147, 0, 19, 1),
+  '800': rgba(104, 0, 13, 1),
+  '900': rgba(65, 0, 11, 1),
 );
 
 $graph-colors: (
-  'navy-blue': #002855,
-  'genoa': #186670,
-  'dodger-blue': #5663ff,
-  'lavendar': #b96ad4,
-  'apricot': #eb8181,
-  'casablanca': #f7ab3e,
-  'ripe-lemon': #f7d114,
-  'jagged-ice': #c7e1eb,
-  'border': #d1d8e0,
-  'light-border': #e2e8f7,
+  'navy-blue': rgba(0, 40, 85, 1),
+  'genoa': rgba(24, 102, 112, 1),
+  'dodger-blue': rgba(86, 99, 255, 1),
+  'lavender': rgba(185, 106, 212, 1),
+  'apricot': rgba(235, 129, 129, 1),
+  'casablanca': rgba(247, 171, 62, 1),
+  'ripe-lemon': rgba(247, 209, 20, 1),
+  'jagged-ice': rgba(199, 225, 235, 1),
+  'border': rgba(209, 216, 224, 1),
+  'light-border': rgba(226, 232, 247, 1),
 );
