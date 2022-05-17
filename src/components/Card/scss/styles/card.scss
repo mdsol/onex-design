@@ -6,7 +6,7 @@
         .card-footer {
             background: $tertiary-200;
         }
-        border: 1px solid rgba(26, 28, 30, 0.1);
+        border: 1px solid $secondary-900-opacity-10;
     }
     display: inline-block!important;
     border-radius: 1rem;
@@ -20,7 +20,7 @@
         justify-content: space-between;
         box-sizing: content-box;
         padding: 1rem;
-        color: #000;
+        color: $black;
         background: white;
         border: 0rem;
         .title-block {
@@ -33,7 +33,7 @@
     .card-footer {
         box-sizing: content-box;
         padding: 0.5rem 0.5rem;
-        color: #000;
+        color: $black;
         background: white;
         border: 0rem;
         text-align: center;
