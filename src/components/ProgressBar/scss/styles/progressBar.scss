@@ -3,9 +3,14 @@
     &.progress {
         height: $progressbar-height;
         width: 100%;
+        background-color: $onex-progressbar-bg-color;
         .progress-bar {
             border-radius: 0.25em;
         }
+    }
+
+    &__bg-danger.progress {
+        background-color: $onex-progressbar-bg-color-danger;
     }
     
     & .bg-danger {

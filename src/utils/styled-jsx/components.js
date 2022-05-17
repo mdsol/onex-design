@@ -167,7 +167,8 @@ module.exports = [
     name: 'ProgressBar',
     importName: 'ProgressBar',
     replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.onex-progressbar', classRegex: classRegexBase },
+      { className: '.onex-progressbar__bg-danger', classRegex: classRegexBase },
       { className: '.progress', classRegex: classRegexBootstrap },
     ],
   },
