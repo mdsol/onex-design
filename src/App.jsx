@@ -104,7 +104,19 @@ const DevExamples = () => {
         </Modal>
         <br />
         <br />
-        <Card showActionBar showTitleBar actionName="Tertiary Button" dropdownItems={dropdownItems}>
+        <Card
+          showActionBar
+          showTitleBar
+          actionLinkName="Link"
+          actionHeaderName="Button"
+          dropdownItems={dropdownItems}
+          variant="info"
+          titleAction="button"
+          link="#"
+          badgeContent="100"
+          title="Card Heading"
+          subtitle="Subtitle"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum
           corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur
           nobis eligendi, debitis quaerat, voluptatem inventore.
@@ -120,7 +132,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('testMode');
+  const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
     if (currentTab === 'devMode') {
