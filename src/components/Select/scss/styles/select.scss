@@ -48,7 +48,7 @@
   }
 
   &__help--error.form-text {
-    color: $error !important;
+    color: $error-500 !important;
   }
 
   .onex-select__single-value {
@@ -108,7 +108,7 @@
 
   &--invalid {
     .onex-select__control {
-      border-color: $error !important;
+      border-color: $error-500 !important;
     }
   }
 

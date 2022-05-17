@@ -44,9 +44,9 @@
 @mixin badge-status-type-color() {
   $types: 'default' $onex-badge-default-status-bg-color $secondary-500 $onex-badge-default-status-border-color,
   'info' $primary-50 $primary-500 $primary-100,
-  'success' $success-100 $success $success-200,
-  'warning' $warning-100 $warning-900 $warning-200,
-  'important' $error-100 $error $error-200;
+  'success' $success-50 $success-500 $success-100,
+  'warning' $warning-50 $warning-500 $warning-100,
+  'important' $error-50 $error-500 $error-100;
 
 
   @each $type, $bg-color, $text-color, $border-color in $types {
@@ -59,9 +59,9 @@
 @mixin badge-status-bold-type-color() {
   $types: 'default' $secondary-600 $white,
   'info' $primary-500 $white,
-  'success' $success $white,
-  'warning' $warning $black,
-  'important' $error $white;
+  'success' $success-500 $white,
+  'warning' $warning-200 $black,
+  'important' $error-500 $white;
 
 
   @each $type, $bg-color, $text-color in $types {

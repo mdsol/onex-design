@@ -43,22 +43,45 @@ $primary-900-opacity-12: rgba(0, 28, 59, 0.12);
 
 $tertiary: rgba(179, 212, 229, 1);
 $tertiary-100: rgba(204, 226, 238, 1);
-$tertiary-600: rgba(26, 28, 30, 1);
 
-$success: rgba(0, 126, 76, 1);
-$success-100: rgba(224, 246, 234, 1);
-$success-200: rgba(181, 235, 212, 1);
-$success-500: rgba(47, 131, 54, 1);
+$success-50: rgba(224, 246, 234, 1);
+$success-100: rgba(181, 235, 212, 1);
+$success-200: rgba(118, 214, 177, 1);
+$success-250: rgba(47, 131, 54, 1);
+$success-300: rgba(41, 184, 137, 1);
+$success-400: rgba(5, 159, 109, 1);
+$success-500: rgba(0, 126, 76, 1);
+$success-600: rgba(0, 101, 61, 1);
+$success-700: rgba(0, 77, 47, 1);
+$success-800: rgba(0, 54, 33, 1);
+$success-900: rgba(0, 33, 20, 1);
+$success: $success-500;
 
 $warning: rgba(252, 185, 22, 1);
-$warning-100: rgba(255, 241, 184, 1);
-$warning-200: rgba(253, 222, 104, 1);
-$warning-900: rgba(196, 64, 0, 1);
+$warning-50: rgba(255, 241, 184, 1);
+$warning-100: rgba(253, 222, 104, 1);
+$warning-200: rgba(252, 185, 22, 1);
+$warning-300: rgba(236, 142, 0, 1);
+$warning-400: rgba(223, 106, 5, 1);
+$warning-500: rgba(196, 64, 0, 1);
+$warning-600: rgba(170, 55, 0, 1);
+$warning-700: rgba(128, 42, 0, 1);
+$warning-800: rgba(89, 29, 0, 1);
+$warning-900: rgba(52, 17, 0, 1);
+$warning: $warning-200;
 
-$error: rgba(217, 21, 34, 1);
-$error-100: rgba(255, 236, 238, 1);
+$error-50: rgba(255, 236, 238, 1);
+$error-100: rgba(253, 215, 217, 1);
 $error-200: rgba(253, 215, 217, 1);
-$error-500: rgba(228, 7, 7, 1);
+$error-300: rgba(255, 121, 126, 1);
+$error-400: rgba(251, 73, 85, 1);
+$error-450: rgba(228, 7, 7, 1);
+$error-500: rgba(217, 21, 34, 1);
+$error-600: rgba(191, 0, 24, 1);
+$error-700: rgba(147, 0, 19, 1);
+$error-800: rgba(104, 0, 13, 1);
+$error-900: rgba(65, 0, 11, 1);
+$error: $error-500;
 
 $white: rgba(255, 255, 255, 1);
 
@@ -68,5 +91,3 @@ $black-opacity-75: rgba(0, 0, 0, 0.75);
 $black-opacity-01: rgba(0, 0, 0, 0.1);
 
 $transparent: rgba(255, 255, 255, 0);
-
-$warning-400: rgba(223, 106, 5, 1);
