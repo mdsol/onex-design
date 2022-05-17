@@ -1,8 +1,6 @@
-import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
-import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
-import { Badge } from '../../../../components';
+import { Badge, Icon } from '../../../../components';
 
-const icons = { ArrowUp: <ArrowUpwardRoundedIcon />, ArrowDown: <ArrowDownwardRoundedIcon /> };
+const icons = { ArrowUp: <Icon>arrow_upward</Icon>, ArrowDown: <Icon>arrow_downward</Icon> };
 
 export default {
   title: 'Onex/Components/Badge',

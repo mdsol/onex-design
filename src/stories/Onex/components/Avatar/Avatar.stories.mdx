@@ -1,8 +1,7 @@
 <!-- Avatar.mdx -->
 
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
-import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
-import { Avatar } from '../../../../components';
+import { Avatar, Icon } from '../../../../components';
 import * as stories from './Avatar.stories.jsx';
 
 <Meta
@@ -91,7 +90,7 @@ An avatar component can vary in size.
     args={{
       className: 'custom-avatar',
       size: 'lg',
-      children: <BugReportRoundedIcon />,
+      children: <Icon>face</Icon>,
       hoverDisabled: false,
       dataTestId: 'test-avatar-id',
     }}

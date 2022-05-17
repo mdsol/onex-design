@@ -6,9 +6,8 @@ import classNames from 'classnames';
 
 import Typography from '../../../../Typography/scss';
 import Check from '../../../../Check/scss';
+import Icon from '../../../../Icon/scss';
 import TablePagination from '../../../../TablePagination/scss';
-
-import { ChevronDownIcon, SettingsRoundIcon, MoreVerticalIcon } from '../../../../../icons';
 
 const RowsSection = ({ columns, data, className, rowsDividers }) => {
   // Use the state and functions returned from useTable to build your UI
@@ -68,9 +67,9 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
               </th>
             ))}
             <th>
-              <ChevronDownIcon
+              <Icon
                 className={`onex-dataGrid__showRowsIndicator ${showRows && 'isShown'}`}
-              />
+              >expand_more</Icon>
             </th>
           </tr> */}
           <tr className="onex-dataGrid__sectionHeaders" {...headerGroups[1].getHeaderGroupProps()}>
@@ -96,7 +95,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
               </th>
             ))}
             {/* <th className="onex-dataGrid__rowIcon">
-              <SettingsRoundIcon />
+              <Icon>settings</Icon>
             </th> */}
           </tr>
         </thead>
@@ -123,8 +122,8 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
                   </td>
                 ))}
                 {/* <td colSpan="2" className="onex-dataGrid__rowIcon">
-                  <MoreVerticalIcon />
-                </td> */}
+                  <Icon>more_vert</Icon>
+               </td> */}
               </tr>
             );
           })}

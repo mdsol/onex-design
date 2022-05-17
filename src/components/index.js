@@ -63,6 +63,7 @@ import ProgressBar from './ProgressBar/scss';
 import Spinner from './Spinner/scss';
 import Offcanvas from './Offcanvas/scss';
 import Alert from './Alert/scss';
+import Icon from './Icon/scss';
 
 import StyledAvatar from './Avatar/styled';
 import StyledBadge from './Badge/styled';
@@ -106,6 +107,7 @@ import StyledCard from './Card/styled';
 
 export {
   Avatar,
+  Icon,
   Badge,
   Button,
   Check,

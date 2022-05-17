@@ -1,19 +1,13 @@
-import * as MuiIcons from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import { Alert, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
-import iconSynonyms from './icons';
+import googleIconsName from './icons';
+import { Icon } from '../components';
 
 export default {
   title: 'Icons',
 };
 
-// eslint-disable-next-line react/prop-types
-const Icon = ({ iconName }) => {
-  const Dynamic = MuiIcons[iconName];
-  return <Dynamic size="40" />;
-};
-
-const allIcons = Object.keys(MuiIcons);
+const allIcons = Object.keys(googleIconsName);
 
 export const Icons = () => {
   const [displayIcons, setDisplayIcons] = useState([]);
@@ -22,9 +16,7 @@ export const Icons = () => {
   useEffect(() => {
     let matchingIcons = [];
     if (search) {
-      matchingIcons = Object.keys(MuiIcons).filter(
-        (key) => iconSynonyms[key] && iconSynonyms[key].indexOf(search) > -1,
-      );
+      matchingIcons = allIcons.filter((key) => key && key.indexOf(search) > -1);
     }
     setDisplayIcons(matchingIcons.length ? matchingIcons : allIcons);
   }, [search]);
@@ -38,7 +30,21 @@ export const Icons = () => {
             The entire icon set from Material Icons is approved for use. Icons are not provided in
             1x, you will need to install the necessary libraries:
           </p>
-          <code>yarn add @mui/material @mui/icons-material</code>
+          <code>yarn add @material-design-icons/font@latest</code>
+          <br />
+          <p>
+            In our design system we use only rounded icons. You can use 'Icon' component from our
+            design system. How to use it:
+            <br />
+            <code>&lt;Icon&gt;name of icon&lt;/Icon&gt;</code>
+            <br />
+          </p>
+          <p>
+            You can read full information on official website:{' '}
+            <a href="https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Icons">
+              google material icons
+            </a>
+          </p>
         </Col>
       </Row>
       <Row>
@@ -60,7 +66,7 @@ export const Icons = () => {
               className="p-3 py-4 mb-2 bg-light text-center rounded"
               style={{ backgroundColor: 'var(--background-secondary)' }}
             >
-              <Icon iconName={iconName} />
+              <Icon>{iconName}</Icon>
             </div>
             <small style={{ wordWrap: 'break-word' }}>{iconName}</small>
           </li>

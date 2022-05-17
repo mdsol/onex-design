@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import Badge from '../../../../Badge/scss';
+import Icon from '../../../../Icon/scss';
 
 const ExpansionPanelToggle = React.forwardRef((props, ref) => {
   const { children, avatar, badge, disabled, onClick } = props;
@@ -26,7 +26,7 @@ const ExpansionPanelToggle = React.forwardRef((props, ref) => {
           </Badge>
         )}
       </div>
-      <KeyboardArrowDownRoundedIcon className="onex-expansionPanel__toggle__icon" />
+      <Icon className="onex-expansionPanel__toggle__icon">keyboard_arrow_down</Icon>
     </Button>
   );
 });

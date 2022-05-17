@@ -30,7 +30,6 @@ scssFileNames.map((componentName) => {
         @import 'node_modules/bootstrap/scss/bootstrap-reboot';
         @import 'node_modules/bootstrap/scss/bootstrap-utilities';
         @import 'node_modules/bootstrap/scss/bootstrap-grid';
-        @import 'node_modules/@material-design-icons/font/outlined.css';
         @import 'src/components/${componentName}/scss/index.scss';`,
     });
     if (result.css) {

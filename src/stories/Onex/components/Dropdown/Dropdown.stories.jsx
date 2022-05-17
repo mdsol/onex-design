@@ -1,6 +1,5 @@
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import Dropdown from '../../../../components/Dropdown/scss';
+import Icon from '../../../../components/Icon/scss';
 
 export default {
   title: 'Onex/Components/Dropdown',
@@ -99,7 +98,7 @@ PrimarySmallLeadingIcon.args = {
   id: 'primary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
-  leadingIcon: <LanguageRoundedIcon />,
+  leadingIcon: <Icon>language</Icon>,
 };
 
 export const PrimarySmallDisabled = DropdownTemplate.bind({});
@@ -125,7 +124,7 @@ PrimaryMediumLeadingIcon.args = {
   id: 'primary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
-  leadingIcon: <LanguageRoundedIcon />,
+  leadingIcon: <Icon>language</Icon>,
 };
 
 export const PrimaryMediumDisabled = DropdownTemplate.bind({});
@@ -153,7 +152,7 @@ SecondarySmallLeadingIcon.args = {
   id: 'secondary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
-  leadingIcon: <LanguageRoundedIcon />,
+  leadingIcon: <Icon>language</Icon>,
 };
 
 export const SecondarySmallDisabled = DropdownTemplate.bind({});
@@ -182,7 +181,7 @@ SecondaryMediumLeadingIcon.args = {
   id: 'secondary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
-  leadingIcon: <LanguageRoundedIcon />,
+  leadingIcon: <Icon>language</Icon>,
 };
 
 export const SecondaryMediumDisabled = DropdownTemplate.bind({});
@@ -211,7 +210,7 @@ TertiarySmallLeadingIcon.args = {
   id: 'tertiary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
-  leadingIcon: <LanguageRoundedIcon />,
+  leadingIcon: <Icon>language</Icon>,
 };
 
 export const TertiarySmallDisabled = DropdownTemplate.bind({});
@@ -240,7 +239,7 @@ TertiaryMediumLeadingIcon.args = {
   id: 'tertiary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
-  leadingIcon: <LanguageRoundedIcon />,
+  leadingIcon: <Icon>language</Icon>,
 };
 
 export const TertiaryMediumDisabled = DropdownTemplate.bind({});
@@ -316,7 +315,7 @@ const secondaryCustomIconCodeBody = `
     ]}
     size="md",
     buttonStyle="icon",
-    title={<MoreVertIcon />}
+    title={<Icon>more_vert</Icon>}
   />
 `;
 SecondaryCustomIcon.parameters = {
@@ -332,7 +331,7 @@ SecondaryCustomIcon.args = {
   items: dropdownItems,
   size: 'md',
   buttonStyle: 'icon',
-  title: <MoreVertIcon />,
+  title: <Icon>more_vert</Icon>,
 };
 
 export const SecondaryCustomDisabledIcon = DropdownTemplate.bind({});
@@ -361,7 +360,7 @@ const secondaryCustomDisabledIconCodeBody = `
     size="md",
     buttonStyle="icon",
     disabled=true,
-    title={<MoreVertIcon />}
+    title={<Icon>more_vert</Icon>}
   />
 `;
 SecondaryCustomDisabledIcon.parameters = {
@@ -378,7 +377,7 @@ SecondaryCustomDisabledIcon.args = {
   size: 'md',
   buttonStyle: 'icon',
   disabled: true,
-  title: <MoreVertIcon />,
+  title: <Icon>more_vert</Icon>,
 };
 
 export const TertiaryCustomIcon = DropdownTemplate.bind({});
@@ -406,7 +405,7 @@ const tertiaryCustomIconCodeBody = `
     ]}
     onSelect={() => {}}
     size="md"
-    title={<MoreVertIcon />}
+    title={<Icon>more_vert</Icon>}
     variant="tertiary"
   />`;
 TertiaryCustomIcon.parameters = {
@@ -423,7 +422,7 @@ TertiaryCustomIcon.args = {
   items: dropdownItems,
   size: 'md',
   buttonStyle: 'icon',
-  title: <MoreVertIcon />,
+  title: <Icon>more_vert</Icon>,
 };
 
 export const TertiaryCustomDisabledIcon = DropdownTemplate.bind({});
@@ -451,7 +450,7 @@ const tertiaryCustomDisabledIconCodeBody = `
     ]}
     onSelect={() => {}}
     size="md"
-    title={<MoreVertIcon />}
+    title={<Icon>more_vert</Icon>}
     variant="tertiary",
     disabled=true,
   />`;
@@ -469,7 +468,7 @@ TertiaryCustomDisabledIcon.args = {
   size: 'md',
   buttonStyle: 'icon',
   disabled: true,
-  title: <MoreVertIcon />,
+  title: <Icon>more_vert</Icon>,
 };
 
 export const WithDivider = DropdownTemplate.bind({});

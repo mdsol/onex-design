@@ -1,12 +1,10 @@
 <!-- Button.mdx -->
 
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import { Button } from '../../../../components';
+import { Button, Icon } from '../../../../components';
 import * as stories from './Button.stories.jsx';
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
 
-export const icons = { StarRoundedIcon: <StarRoundedIcon />, StarsRoundedIcon: <StarsRoundedIcon />, remove: undefined };
+export const icons = { StarRoundedIcon: <Icon>star</Icon>, StarsRoundedIcon: <Icon>stars</Icon>, remove: undefined };
 
 <Meta
   title="Onex/Components/Button"
@@ -166,7 +164,7 @@ Supports two button sizes: `small` and `middle`.
           trailingIcon={args?.type === 'default' && args?.trailingIcon}
           leadingIcon={args?.type === 'default' && args?.leadingIcon}
         >
-          {icon && <StarRoundedIcon />}
+          {icon && <Icon>star</Icon>}
           {value}
         </Button>
       );
