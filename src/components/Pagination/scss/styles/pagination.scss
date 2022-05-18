@@ -13,23 +13,20 @@
         fill: $pagination-arrow-color;
       }
 
-      & .onex-material-icon {
+      & .onex-material-icon,
+      & .material-icons-round {
         font-size: $pagination-next-width;
         color: $pagination-arrow-color;
       }
 
-      &:hover {
+      &:hover:not(.disabled) {
         svg path {
           fill: $pagination-next-color-hover;
         }
-        & .onex-material-icon {
+        & .onex-material-icon,
+        & .material-icons-round {
           color: $pagination-next-color-hover;
         }
-      }
-    }
-    .disabled:hover {
-      svg path {
-        fill: $pagination-next-color-disabled;
       }
     }
     button:last-child {

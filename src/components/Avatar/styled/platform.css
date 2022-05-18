@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
-.material-icons {
-  font-family: "Material Icons";
+.material-icons-round {
+  font-family: "Material Icons Round";
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 1.25rem;
   /* Preferred icon size */
   display: inline-block;
   line-height: 1;
@@ -13,6 +13,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  color: inherit;
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
@@ -23,7 +24,8 @@
   font-feature-settings: "liga";
 }
 
-.material-icons-round {
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
   font-size: 1.25rem;
   color: inherit;
 }
@@ -10185,7 +10187,8 @@ progress {
   color: rgb(103, 110, 122);
   overflow: hidden;
 }
-.onex-avatar__children .onex-material-icon {
+.onex-avatar__children .onex-material-icon,
+.onex-avatar__children .material-icons-round {
   color: rgb(176, 184, 191);
 }
 .onex-avatar--size-xs {
@@ -10198,7 +10201,8 @@ progress {
   width: 0.938rem;
   height: 0.938rem;
 }
-.onex-avatar--size-xs .onex-material-icon {
+.onex-avatar--size-xs .onex-material-icon,
+.onex-avatar--size-xs .material-icons-round {
   font-size: 0.938rem;
 }
 .onex-avatar--size-xs .onex-avatar__children {
@@ -10214,7 +10218,7 @@ progress {
   width: 0.625rem;
   height: 0.625rem;
 }
-.onex-avatar--size-xs .onex-avatar__hover .onex-material-icon {
+.onex-avatar--size-xs .onex-avatar__hover .onex-material-icon, .onex-avatar--size-xs .onex-avatar__hover .material-icons-round {
   font-size: 0.625rem;
 }
 .onex-avatar--size-sm {
@@ -10227,7 +10231,8 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-avatar--size-sm .onex-material-icon {
+.onex-avatar--size-sm .onex-material-icon,
+.onex-avatar--size-sm .material-icons-round {
   font-size: 1.25rem;
 }
 .onex-avatar--size-sm .onex-avatar__children {
@@ -10243,7 +10248,7 @@ progress {
   width: 0.938rem;
   height: 0.938rem;
 }
-.onex-avatar--size-sm .onex-avatar__hover .onex-material-icon {
+.onex-avatar--size-sm .onex-avatar__hover .onex-material-icon, .onex-avatar--size-sm .onex-avatar__hover .material-icons-round {
   font-size: 0.938rem;
 }
 .onex-avatar--size-md {
@@ -10256,7 +10261,8 @@ progress {
   width: 1.563rem;
   height: 1.563rem;
 }
-.onex-avatar--size-md .onex-material-icon {
+.onex-avatar--size-md .onex-material-icon,
+.onex-avatar--size-md .material-icons-round {
   font-size: 1.563rem;
 }
 .onex-avatar--size-md .onex-avatar__children {
@@ -10272,7 +10278,7 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-avatar--size-md .onex-avatar__hover .onex-material-icon {
+.onex-avatar--size-md .onex-avatar__hover .onex-material-icon, .onex-avatar--size-md .onex-avatar__hover .material-icons-round {
   font-size: 1.25rem;
 }
 .onex-avatar--size-lg {
@@ -10285,7 +10291,8 @@ progress {
   width: 2.5rem;
   height: 2.5rem;
 }
-.onex-avatar--size-lg .onex-material-icon {
+.onex-avatar--size-lg .onex-material-icon,
+.onex-avatar--size-lg .material-icons-round {
   font-size: 2.5rem;
 }
 .onex-avatar--size-lg .onex-avatar__children {
@@ -10301,6 +10308,6 @@ progress {
   width: 2rem;
   height: 2rem;
 }
-.onex-avatar--size-lg .onex-avatar__hover .onex-material-icon {
+.onex-avatar--size-lg .onex-avatar__hover .onex-material-icon, .onex-avatar--size-lg .onex-avatar__hover .material-icons-round {
   font-size: 2rem;
 }

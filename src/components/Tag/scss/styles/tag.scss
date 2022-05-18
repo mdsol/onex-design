@@ -54,7 +54,8 @@
     color: $secondary-500;
 
     & > svg,
-    & > .onex-material-icon {
+    & > .onex-material-icon,
+    & > .material-icons-round {
       font-size: 1.25rem;
     }
   }

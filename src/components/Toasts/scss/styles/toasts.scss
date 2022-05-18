@@ -50,7 +50,8 @@
       height: $onex-icon-height;
     }
 
-    & > .onex-material-icon {
+    & > .onex-material-icon,
+    & > .material-icons-round {
       font-size: $onex-icon-width;
     }
   }

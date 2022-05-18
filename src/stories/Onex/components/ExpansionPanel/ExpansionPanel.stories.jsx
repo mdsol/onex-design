@@ -1,5 +1,4 @@
-import { FileEarmarkCode, Check } from 'react-bootstrap-icons';
-import { Avatar, ExpansionPanel } from '../../../../components';
+import { Avatar, ExpansionPanel, Icon } from '../../../../components';
 
 export default {
   title: 'Onex/Components/ExpansionPanel',
@@ -49,25 +48,25 @@ const expansionPanelItems = [
   {
     eventKey: 'opt1',
     title: 'Option 1',
-    trailingIcon: <Check />,
+    trailingIcon: <Icon>check</Icon>,
   },
   {
     eventKey: 'opt2',
     title: 'Option 2',
-    leadingIcon: <FileEarmarkCode />,
+    leadingIcon: <Icon>integration_instructions</Icon>,
   },
   {
     eventKey: 'opt3',
     title: 'Option 3',
-    leadingIcon: <FileEarmarkCode />,
-    trailingIcon: <Check />,
+    leadingIcon: <Icon>integration_instructions</Icon>,
+    trailingIcon: <Icon>check</Icon>,
   },
   {
     eventKey: 'opt5',
     title: 'Option 5',
     unavailable: true,
-    leadingIcon: <FileEarmarkCode />,
-    trailingIcon: <Check />,
+    leadingIcon: <Icon>integration_instructions</Icon>,
+    trailingIcon: <Icon>check</Icon>,
   },
 ];
 
@@ -76,24 +75,24 @@ const expansionPanelItemsCode = `
     {
       eventKey: 'opt1',
       title: 'Option 1',
-      trailingIcon:  <Check />,
+      trailingIcon:  <Icon>check</Icon>,
     },
     {
       eventKey: 'opt2',
        title: 'Option 2'
-      leadingIcon: <FileEarmarkCode />,
+      leadingIcon: <Icon>integration_instructions</Icon>,
     },
     {
       eventKey: 'opt3',
       title: 'Option 3',
-      leadingIcon: <FileEarmarkCode />,
-      trailingIcon: <Check />,
+      leadingIcon: <Icon>integration_instructions</Icon>,
+      trailingIcon: <Icon>check</Icon>,
     },
     {
       eventKey: 'opt5',
       title: 'Option 5',
-      leadingIcon: <FileEarmarkCode />,
-      trailingIcon: <Check />,
+      leadingIcon: <Icon>integration_instructions</Icon>,
+      trailingIcon: <Icon>check</Icon>,
       unavailable: true
     }
   ]}`;

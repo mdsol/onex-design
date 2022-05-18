@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Lozenge from '../scss';
+import Icon from '../scss';
 // eslint-disable-next-line import/no-unresolved
 import cssString from './platform.css?raw';
 
@@ -9,6 +9,9 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 // eslint-disable-next-line prefer-template
 const handleCssString = (str) => '&' + str;
 
-const StyledComponent = styled(Lozenge)`
-  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)}
+const StyledComponent = styled(Icon)`
+  ${() =>
+    cssString
+      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.material-icons-round.[^__]+?[.|\s]/g, handleCssString)}
 `;

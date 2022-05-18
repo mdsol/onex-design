@@ -19,7 +19,8 @@
       @include icon-size($btn-icon-type-icon-size-sm);
     }
 
-    & > .onex-material-icon {
+    & > .onex-material-icon,
+    & > .material-icons-round {
       font-size: $btn-icon-type-icon-size-sm;
     }
 
@@ -131,7 +132,8 @@
       margin-right: 0.25rem;
     }
 
-    & > .onex-material-icon {
+    & > .onex-material-icon,
+    & > .material-icons-round {
       margin-right: 0.25rem;
     }
   }
@@ -175,7 +177,8 @@
           margin-right: 0;
         }
 
-        & > .onex-material-icon {
+        & > .onex-material-icon,
+        & > .material-icons-round {
           font-size: $btn-icon-type-icon-size-md;
           margin-right: 0;
         }
@@ -190,7 +193,8 @@
           margin-right: 0;
         }
 
-        & > .onex-material-icon {
+        & > .onex-material-icon,
+        & > .material-icons-round {
           font-size: $btn-icon-type-icon-size-sm;
           margin-right: 0;
         }

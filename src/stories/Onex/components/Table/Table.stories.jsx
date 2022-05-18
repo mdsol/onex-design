@@ -1,6 +1,6 @@
-import { ExclamationDiamondFill } from 'react-bootstrap-icons';
 import {
   Table,
+  Icon,
   TableControl,
   TableName,
   TableHead,
@@ -67,7 +67,7 @@ export const Default = (args) => (
         <TableCell>Study short name</TableCell>
         <TableCell>Phase</TableCell>
         <TableCell align="center" width="60px">
-          <ExclamationDiamondFill />
+          <Icon>warning</Icon>
         </TableCell>
       </TableRow>
     </TableHead>
@@ -87,7 +87,7 @@ export const Default = (args) => (
           </Badge>
         </TableCell>
         <TableCell align="center">
-          <ExclamationDiamondFill />
+          <Icon>warning</Icon>
         </TableCell>
       </TableRow>
       <TableRow>
@@ -111,7 +111,7 @@ export const Default = (args) => (
           </Badge>
         </TableCell>
         <TableCell align="center">
-          <ExclamationDiamondFill />
+          <Icon>warning</Icon>
         </TableCell>
       </TableRow>
     </TableBody>
@@ -138,7 +138,7 @@ const tableSourceBody = `
                 <TableCell>Study short name</TableCell>
                 <TableCell>Phase</TableCell>
                 <TableCell align="center" width="60px">
-                    <ExclamationDiamondFill />
+                    <Icon>warning</Icon>
                 </TableCell>
             </TableRow>
         </TableHead>
@@ -162,7 +162,7 @@ const tableSourceBody = `
                     </Badge>
                 </TableCell>
                 <TableCell align="center">
-                    <ExclamationDiamondFill />
+                    <Icon>warning</Icon>
                 </TableCell>
             </TableRow>
             <TableRow>
@@ -189,7 +189,7 @@ const tableSourceBody = `
                     </Badge>
                 </TableCell>
                 <TableCell align="center">
-                    <ExclamationDiamondFill />
+                    <Icon>warning</Icon>
                 </TableCell>
             </TableRow>
         </TableBody>

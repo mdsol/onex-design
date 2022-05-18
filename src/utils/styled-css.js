@@ -14,9 +14,17 @@ const getFiles = () => {
 const scssFileNames = fs
   .readdirSync(`src/components`, { withFileTypes: true })
   .reduce(
-    (acc, item) => (item.isDirectory() && item.name !== 'StyledArea' ? [...acc, item.name] : acc),
+    (acc, item) => (item.isDirectory() && (item.name !== 'StyledArea' || item.name !== 'Icon') ? [...acc, item.name] : acc),
     [],
   );
+
+const checkFile = (filePath) => {
+  if (fs.existsSync(filePath)) {
+    return `@import '${filePath}';`;
+  }
+
+  return '';
+};
 
 const themeImportFiles = getFiles();
 
@@ -30,7 +38,7 @@ scssFileNames.map((componentName) => {
         @import 'node_modules/bootstrap/scss/bootstrap-reboot';
         @import 'node_modules/bootstrap/scss/bootstrap-utilities';
         @import 'node_modules/bootstrap/scss/bootstrap-grid';
-        @import 'src/components/${componentName}/scss/index.scss';`,
+        ${checkFile(`src/components/${componentName}/scss/index.scss`)}`,
     });
     if (result.css) {
       const folderName = `src/components/${componentName}/styled`;

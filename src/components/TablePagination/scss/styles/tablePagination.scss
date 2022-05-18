@@ -69,14 +69,16 @@
         width: $icon-size-lg;
         height: $icon-size-lg;
       }
-      & > .onex-material-icon {
+      & > .onex-material-icon,
+      & > .material-icons-round {
         size: $icon-size-lg;
       }
       &:hover {
         svg path {
           fill: $table-pagination-next-color-hover;
         }
-        .onex-material-icon {
+        .onex-material-icon,
+        .material-icons-round {
           size: $table-pagination-next-color-hover;
         }
       }
@@ -85,7 +87,8 @@
       svg path {
         fill: $table-pagination-next-color-disabled;
       }
-      .onex-material-icon {
+      .onex-material-icon,
+      .material-icons-round {
         size: $table-pagination-next-color-disabled;
       }
     }

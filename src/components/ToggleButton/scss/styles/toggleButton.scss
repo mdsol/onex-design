@@ -15,7 +15,8 @@
         @include icon-size($toggle-font-size-sm);
     }
 
-    & .onex-material-icon {
+    & .onex-material-icon,
+    & .material-icons-round {
         font-size: $toggle-font-size-sm;
     }
 }
@@ -35,7 +36,8 @@
         @include icon-size($toggle-font-size-lg);
     }
 
-    & .onex-material-icon {
+    & .onex-material-icon,
+    & .material-icons-round {
       font-size: $toggle-font-size-lg;
     }
 }

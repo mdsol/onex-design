@@ -1,4 +1,3 @@
-import { ExclamationLg } from 'react-bootstrap-icons';
 import {
   StyledAvatar,
   StyledBadge,
@@ -12,7 +11,8 @@ import {
   StyledTableBody,
   StyledDataTableCell,
   StyledTable,
-} from '../../components/styledComponents';
+  StyledIcon,
+} from '../../components';
 
 const TableStyled = () => (
   <StyledTable
@@ -34,7 +34,7 @@ const TableStyled = () => (
         <StyledTableCell>Study short name</StyledTableCell>
         <StyledTableCell>Phase</StyledTableCell>
         <StyledTableCell align="center" width="60px">
-          <ExclamationLg />
+          <StyledIcon>priority_high</StyledIcon>
         </StyledTableCell>
       </StyledTableRow>
     </StyledTableHead>
@@ -57,7 +57,7 @@ const TableStyled = () => (
           </StyledBadge>
         </StyledTableCell>
         <StyledTableCell align="center">
-          <ExclamationLg />
+          <StyledIcon>priority_high</StyledIcon>
         </StyledTableCell>
       </StyledTableRow>
       <StyledTableRow>
@@ -84,7 +84,7 @@ const TableStyled = () => (
           </StyledBadge>
         </StyledTableCell>
         <StyledTableCell align="center">
-          <ExclamationLg />
+          <StyledIcon>priority_high</StyledIcon>
         </StyledTableCell>
       </StyledTableRow>
     </StyledTableBody>

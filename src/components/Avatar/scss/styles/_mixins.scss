@@ -7,7 +7,8 @@
       width: $svgSize;
       height: $svgSize;
     }
-    .onex-material-icon {
+    .onex-material-icon,
+    .material-icons-round {
       font-size: $svgSize;
     }
     & .onex-avatar__children {
@@ -26,7 +27,8 @@
         height: $svgHoverSize;
     }
 
-    & .onex-avatar__hover .onex-material-icon {
+    & .onex-avatar__hover .onex-material-icon,
+    & .onex-avatar__hover .material-icons-round {
       font-size: $svgHoverSize;
     }
 }

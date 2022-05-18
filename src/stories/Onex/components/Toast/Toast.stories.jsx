@@ -1,7 +1,6 @@
-import { BugFill, ClockFill } from 'react-bootstrap-icons';
-import { Button, Toast } from '../../../../components';
+import { Button, Toast, Icon } from '../../../../components';
 
-const icons = { Bug: <BugFill />, ClockFill: <ClockFill /> };
+const icons = { Star: <Icon>star</Icon>, Flag: <Icon>flag</Icon> };
 
 export default {
   title: 'Onex/Components/Toast',

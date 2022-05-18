@@ -1,5 +1,4 @@
-import { ExclamationDiamondFill } from 'react-bootstrap-icons';
-import { Table, TableBody, TableRow, TableCell, Badge } from '../../../../../../components';
+import { Table, TableBody, TableRow, TableCell, Badge, Icon } from '../../../../../../components';
 
 export default {
   title: 'Onex/Components/Table/TableBody',
@@ -30,7 +29,7 @@ export const Default = (args) => (
           </Badge>
         </TableCell>
         <TableCell align="center">
-          <ExclamationDiamondFill />
+          <Icon>warning</Icon>
         </TableCell>
       </TableRow>
     </TableBody>

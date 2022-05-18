@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
-.material-icons {
-  font-family: "Material Icons";
+.material-icons-round {
+  font-family: "Material Icons Round";
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 1.25rem;
   /* Preferred icon size */
   display: inline-block;
   line-height: 1;
@@ -13,6 +13,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  color: inherit;
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
@@ -23,7 +24,8 @@
   font-feature-settings: "liga";
 }
 
-.material-icons-round {
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
   font-size: 1.25rem;
   color: inherit;
 }
@@ -11489,9 +11491,11 @@ textarea.form-control-lg {
   width: 0.75rem;
   height: 0.75rem;
 }
-.btn-group.btn-group-sm .onex-toggle-btn.btn .onex-material-icon,
+.btn-group.btn-group-sm .onex-toggle-btn.btn .onex-material-icon, .btn-group.btn-group-sm .onex-toggle-btn.btn .material-icons-round,
 .onex-toggle__btn.btn.btn-sm .onex-material-icon,
-.btn-group-sm > .onex-toggle__btn.btn .onex-material-icon {
+.btn-group-sm > .onex-toggle__btn.btn .onex-material-icon,
+.onex-toggle__btn.btn.btn-sm .material-icons-round,
+.btn-group-sm > .onex-toggle__btn.btn .material-icons-round {
   font-size: 0.75rem;
 }
 
@@ -11511,9 +11515,11 @@ textarea.form-control-lg {
   width: 0.875rem;
   height: 0.875rem;
 }
-.btn-group.btn-group-lg .onex-toggle__btn.btn .onex-material-icon,
+.btn-group.btn-group-lg .onex-toggle__btn.btn .onex-material-icon, .btn-group.btn-group-lg .onex-toggle__btn.btn .material-icons-round,
 .onex-toggle__btn.btn.btn-lg .onex-material-icon,
-.btn-group-lg > .onex-toggle__btn.btn .onex-material-icon {
+.btn-group-lg > .onex-toggle__btn.btn .onex-material-icon,
+.onex-toggle__btn.btn.btn-lg .material-icons-round,
+.btn-group-lg > .onex-toggle__btn.btn .material-icons-round {
   font-size: 0.875rem;
 }
 

@@ -29,7 +29,6 @@ import Dropdown from './Dropdown/scss';
 import ExpansionPanel from './ExpansionPanel/scss';
 import InlineEditSelect from './InlineEditSelect/scss';
 import InlineEditText from './InlineEditText/scss';
-import Lozenge from './Lozenge/scss';
 import MenuItem from './MenuItem/scss';
 import Navigation from './Navigation/scss';
 import Pagination from './Pagination/scss';
@@ -66,6 +65,7 @@ import Alert from './Alert/scss';
 import Icon from './Icon/scss';
 
 import StyledAvatar from './Avatar/styled';
+import StyledIcon from './Icon/styled';
 import StyledBadge from './Badge/styled';
 import StyledButtons from './Buttons/styled';
 import StyledCheck from './Check/styled';
@@ -73,7 +73,6 @@ import StyledDropdown from './Dropdown/styled';
 import StyledExpansionPanel from './ExpansionPanel/styled';
 import StyledInlineEditSelect from './InlineEditSelect/styled';
 import StyledInlineEditText from './InlineEditText/styled';
-import StyledLozenge from './Lozenge/styled';
 import StyledMenuItem from './MenuItem/styled';
 import StyledNavigation from './Navigation/styled';
 import StyledPagination from './Pagination/styled';
@@ -116,7 +115,6 @@ export {
   ExpansionPanel,
   InlineEditSelect,
   InlineEditText,
-  Lozenge,
   MenuItem,
   Navigation,
   Pagination,
@@ -178,7 +176,6 @@ export {
   StyledExpansionPanel,
   StyledInlineEditSelect,
   StyledInlineEditText,
-  StyledLozenge,
   StyledMenuItem,
   StyledNavigation,
   StyledPagination,
@@ -207,4 +204,5 @@ export {
   StyledModal,
   StyledProgressBar,
   StyledCard,
+  StyledIcon,
 };

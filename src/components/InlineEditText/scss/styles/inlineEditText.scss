@@ -38,7 +38,8 @@
         fill: $onex-inline-edit-icon-color;
       }
 
-      & > .onex-material-icon {
+      & > .onex-material-icon,
+      & > .material-icons-round {
         color: $onex-inline-edit-icon-color;
       }
     }

@@ -24,7 +24,8 @@
     svg path {
       fill: $onex-btn-primary-text-color;
     }
-    .onex-material-icon {
+    .onex-material-icon,
+    .material-icons-round {
       color: $onex-btn-primary-text-color;
     }
 
@@ -52,7 +53,8 @@
       fill: $onex-btn-secondary-text-color;
     }
 
-    .onex-material-icon {
+    .onex-material-icon,
+    .material-icons-round {
       color: $onex-btn-secondary-text-color;
     }
 
@@ -64,7 +66,8 @@
         fill: $onex-btn-secondary-hover-text-color;
       }
 
-      .onex-material-icon {
+      .onex-material-icon,
+      .material-icons-round {
         color: $onex-btn-secondary-hover-text-color;
       }
     }
@@ -91,7 +94,8 @@
       fill: $onex-btn-tertiary-color;
     }
 
-    .onex-material-icon {
+    .onex-material-icon,
+    .material-icons-round {
       color: $onex-btn-tertiary-color;
     }
 
@@ -109,7 +113,8 @@
         fill: $onex-btn-tertiary-hover-color;
       }
 
-      .onex-material-icon {
+      .onex-material-icon,
+      .material-icons-round {
         color: $onex-btn-tertiary-hover-color;
       }
     }
@@ -164,7 +169,9 @@
   }
 
   & .onex-material-icon,
-  &.btn-md .onex-material-icon {
+  & .material-icons-round,
+  &.btn-md .onex-material-icon,
+  &.btn-md .material-icons-round {
     font-size: $onex-btn-icon-size-md;
   }
 
@@ -172,7 +179,8 @@
     @include icon-size($onex-btn-icon-size-sm);
   }
 
-  &.btn-sm .onex-material-icon {
+  &.btn-sm .onex-material-icon,
+  &.btn-sm .material-icons-round {
     font-size: $onex-btn-icon-size-sm;
   }
 
@@ -182,7 +190,8 @@
     margin: 0.125rem 0;
   }
 
-  & .onex-material-icon:only-child {
+  & .onex-material-icon:only-child,
+  & .material-icons-round:only-child {
     margin: 0.125rem 0;
   }
 

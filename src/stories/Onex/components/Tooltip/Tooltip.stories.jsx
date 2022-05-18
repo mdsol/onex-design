@@ -1,4 +1,4 @@
-import { Tooltip, Lozenge, TextField } from '../../../../components';
+import { Tooltip, Badge,  TextField } from '../../../../components';
 
 export default {
   title: 'Onex/Components/Tooltip',
@@ -24,9 +24,9 @@ Default.args = {
   id: 'default-tooltip',
   tooltipChildren: 'Default tooltip',
   children: (
-    <Lozenge type="default" size="lg">
+    <Badge type="default" variant="status-bold">
       Hover to see
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -39,12 +39,12 @@ const tooltipeTopCode = `<Tooltip
   placement="top"
   tooltipChildren="Top tooltip"
 >
-  <Lozenge
-    size="lg"
+  <Badge
+    variant="status"
     type="success"
   >
     Tooltip on top
-  </Lozenge>
+  </Badge>
 </Tooltip>`;
 
 Top.args = {
@@ -52,9 +52,9 @@ Top.args = {
   tooltipChildren: 'Top tooltip',
   placement: 'top',
   children: (
-    <Lozenge type="success" size="lg">
+    <Badge type="success" variant="status">
       Tooltip on top
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -82,12 +82,12 @@ const tooltipLeftCode = `<Tooltip
   placement="left"
   tooltipChildren="Left tooltip"
 >
-  <Lozenge
-    size="lg"
+  <Badge
+    variant="status"
     type="warning"
   >
     Tooltip on left
-  </Lozenge>
+  </Badge>
 </Tooltip>`;
 
 Left.args = {
@@ -95,9 +95,9 @@ Left.args = {
   tooltipChildren: 'Left tooltip',
   placement: 'left',
   children: (
-    <Lozenge type="warning" size="lg">
+    <Badge type="warning" variant="status">
       Tooltip on left
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -124,9 +124,9 @@ Bottom.args = {
   tooltipChildren: 'Bottom tooltip',
   placement: 'bottom',
   children: (
-    <Lozenge type="default" size="lg">
+    <Badge type="default" variant="status">
       Tooltip on bottom
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -137,9 +137,9 @@ Right.args = {
   tooltipChildren: 'Right tooltip',
   placement: 'right',
   children: (
-    <Lozenge type="error" size="lg">
+    <Badge type="error" variant="status">
       Tooltip on right
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -152,9 +152,9 @@ Hover.args = {
   id: 'hover-tooltip',
   tooltipChildren: 'Hover tooltip',
   children: (
-    <Lozenge type="info" size="lg">
+    <Badge type="info" variant="status">
       Hover to see
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -165,9 +165,9 @@ Click.args = {
   tooltipChildren: 'Click tooltip',
   trigger: 'click',
   children: (
-    <Lozenge type="info" size="lg">
+    <Badge type="info" variant="status">
       Click to see
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -191,9 +191,9 @@ ShowDelay1000ms.args = {
     show: 1000,
   },
   children: (
-    <Lozenge type="info" size="lg">
+    <Badge type="info" variant="status">
       Show delay 1000ms
-    </Lozenge>
+    </Badge>
   ),
 };
 
@@ -206,9 +206,9 @@ HideDelay2000ms.args = {
     hide: 2000,
   },
   children: (
-    <Lozenge type="info" size="lg">
+    <Badge type="info" variant="status">
       Hide delay 2000ms
-    </Lozenge>
+    </Badge>
   ),
 };
 

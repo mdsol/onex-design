@@ -55,7 +55,9 @@
       }
 
       & .onex-badge__icon .onex-material-icon,
-      .onex-material-icon {
+      & .onex-badge__icon .material-icons-round,
+      .onex-material-icon,
+      .material-icons-round {
         font-size: $component-height-small-sm;
       }
     }

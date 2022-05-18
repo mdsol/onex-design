@@ -1,7 +1,6 @@
 <!-- ExpansionPanel.mdx -->
-import { FileEarmarkCode, Check } from 'react-bootstrap-icons';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import { Avatar, ExpansionPanel } from '../../../../components';
+import { Avatar, ExpansionPanel, Icon } from '../../../../components';
 import * as stories from './ExpansionPanel.stories.jsx';
 
 <Meta
@@ -91,18 +90,18 @@ An expansion panel is a lightweight container that displays a list of actions.
       items: [{
           eventKey: 'opt1',
           title: 'Option 1',
-          trailingIcon: <Check />,
+          trailingIcon: <Icon>check</Icon>,
         },
         {
           eventKey: 'opt2',
           title: 'Option 2',
-          leadingIcon: <FileEarmarkCode />,
+          leadingIcon: <Icon>integration_instructions</Icon>,
         },
         {
           eventKey: 'opt3',
           title: 'Option 3',
-          leadingIcon: <FileEarmarkCode />,
-          trailingIcon: <Check />,
+          leadingIcon: <Icon>integration_instructions</Icon>,
+          trailingIcon: <Icon>check</Icon>,
         }],
     onSelect: () => {},
   }}>

@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
-.material-icons {
-  font-family: "Material Icons";
+.material-icons-round {
+  font-family: "Material Icons Round";
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 1.25rem;
   /* Preferred icon size */
   display: inline-block;
   line-height: 1;
@@ -13,6 +13,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  color: inherit;
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
@@ -23,7 +24,8 @@
   font-feature-settings: "liga";
 }
 
-.material-icons-round {
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
   font-size: 1.25rem;
   color: inherit;
 }
@@ -10755,7 +10757,8 @@ progress {
 .onex-btn.btn-primary svg path {
   fill: rgb(255, 255, 255);
 }
-.onex-btn.btn-primary .onex-material-icon {
+.onex-btn.btn-primary .onex-material-icon,
+.onex-btn.btn-primary .material-icons-round {
   color: rgb(255, 255, 255);
 }
 .onex-btn.btn-primary:hover {
@@ -10777,7 +10780,8 @@ progress {
 .onex-btn.btn-secondary svg path {
   fill: rgb(26, 28, 30);
 }
-.onex-btn.btn-secondary .onex-material-icon {
+.onex-btn.btn-secondary .onex-material-icon,
+.onex-btn.btn-secondary .material-icons-round {
   color: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:hover {
@@ -10788,7 +10792,8 @@ progress {
 .onex-btn.btn-secondary:hover svg path {
   fill: rgb(26, 28, 30);
 }
-.onex-btn.btn-secondary:hover .onex-material-icon {
+.onex-btn.btn-secondary:hover .onex-material-icon,
+.onex-btn.btn-secondary:hover .material-icons-round {
   color: rgb(26, 28, 30);
 }
 .onex-btn.btn-secondary:disabled, .onex-btn.btn-secondary.disabled {
@@ -10808,7 +10813,8 @@ progress {
 .onex-btn.btn-tertiary svg path {
   fill: rgb(103, 110, 122);
 }
-.onex-btn.btn-tertiary .onex-material-icon {
+.onex-btn.btn-tertiary .onex-material-icon,
+.onex-btn.btn-tertiary .material-icons-round {
   color: rgb(103, 110, 122);
 }
 .onex-btn.btn-tertiary.disabled, .onex-btn.btn-tertiary:disabled {
@@ -10822,7 +10828,9 @@ progress {
 .onex-btn.btn-tertiary:hover svg path, .onex-btn.btn-tertiary.hover svg path {
   fill: rgb(103, 110, 122);
 }
-.onex-btn.btn-tertiary:hover .onex-material-icon, .onex-btn.btn-tertiary.hover .onex-material-icon {
+.onex-btn.btn-tertiary:hover .onex-material-icon,
+.onex-btn.btn-tertiary:hover .material-icons-round, .onex-btn.btn-tertiary.hover .onex-material-icon,
+.onex-btn.btn-tertiary.hover .material-icons-round {
   color: rgb(103, 110, 122);
 }
 .onex-btn.btn-tertiary.active, .onex-btn.btn-tertiary:active {
@@ -10840,7 +10848,7 @@ progress {
 .onex-btn.btn-md.btn-tertiary > svg ~ .onex-btn__decorator {
   width: calc(100% - 0.75rem * 2 - 1.25rem - 0.25rem);
 }
-.onex-btn.btn-md.btn-tertiary > .onex-material-icon ~ .onex-btn__decorator {
+.onex-btn.btn-md.btn-tertiary > .onex-material-icon ~ .onex-btn__decorator, .onex-btn.btn-md.btn-tertiary > .material-icons-round ~ .onex-btn__decorator {
   width: calc(100% - 0.75rem * 2 - 1.25rem - 0.25rem);
 }
 .onex-btn.btn-sm.btn-tertiary {
@@ -10854,7 +10862,7 @@ progress {
 .onex-btn.btn-sm.btn-tertiary > svg ~ .onex-btn__decorator {
   width: calc(100% - 0.5rem * 2 - 1.25rem - 0.25rem);
 }
-.onex-btn.btn-sm.btn-tertiary > .onex-material-icon ~ .onex-btn__decorator {
+.onex-btn.btn-sm.btn-tertiary > .onex-material-icon ~ .onex-btn__decorator, .onex-btn.btn-sm.btn-tertiary > .material-icons-round ~ .onex-btn__decorator {
   width: calc(100% - 0.5rem * 2 - 1.25rem - 0.25rem);
 }
 .onex-btn.btn-md {
@@ -10875,20 +10883,20 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-btn .onex-material-icon, .onex-btn.btn-md .onex-material-icon {
+.onex-btn .onex-material-icon, .onex-btn .material-icons-round, .onex-btn.btn-md .onex-material-icon, .onex-btn.btn-md .material-icons-round {
   font-size: 1.25rem;
 }
 .onex-btn.btn-sm svg {
   width: 1.25rem;
   height: 1.25rem;
 }
-.onex-btn.btn-sm .onex-material-icon {
+.onex-btn.btn-sm .onex-material-icon, .onex-btn.btn-sm .material-icons-round {
   font-size: 1.25rem;
 }
 .onex-btn svg:only-child {
   margin: 0.125rem 0;
 }
-.onex-btn .onex-material-icon:only-child {
+.onex-btn .onex-material-icon:only-child, .onex-btn .material-icons-round:only-child {
   margin: 0.125rem 0;
 }
 .onex-btn.onex-btn--icon.btn-sm {
@@ -10918,7 +10926,8 @@ progress {
   left: -2.3rem;
   top: 0;
 }
-.alert.onex-alert .alert-heading .onex-alert__icon .onex-material-icon {
+.alert.onex-alert .alert-heading .onex-alert__icon .onex-material-icon,
+.alert.onex-alert .alert-heading .onex-alert__icon .material-icons-round {
   font-size: 1.25rem;
 }
 .alert.onex-alert .onex-alert__body {

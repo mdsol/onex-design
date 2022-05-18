@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
 // eslint-disable-next-line no-unused-vars
-import { PlusCircleFill } from 'react-bootstrap-icons';
 import ErrorBoundary from '../ErrorBoundary';
 import { Select, Check } from '../components';
 import { config } from './components-config';
