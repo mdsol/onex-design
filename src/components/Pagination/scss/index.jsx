@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Pagination as ReactPagination } from 'react-bootstrap';
 import classNames from 'classnames';
-import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import Icon from '../../Icon/scss';
 
 const Pagination = ({ size, className, onSetPage, dataTestId, items }) => {
   const [active, setActive] = useState(1);
@@ -35,7 +35,7 @@ const Pagination = ({ size, className, onSetPage, dataTestId, items }) => {
           disabled={active === 1}
           onClick={handlePrev}
         >
-          <ArrowBackIosNewRoundedIcon />
+          <Icon>arrow_back_ios</Icon>
         </button>
         {items.map((item) => (
           <ReactPagination.Item
@@ -52,7 +52,7 @@ const Pagination = ({ size, className, onSetPage, dataTestId, items }) => {
           disabled={items.indexOf(active) === items.length - 1}
           onClick={handleNext}
         >
-          <ArrowBackIosNewRoundedIcon />
+          <Icon>arrow_back_ios</Icon>
         </button>
       </ReactPagination>
     </div>

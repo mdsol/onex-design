@@ -4,20 +4,19 @@ import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 import ReactSelect, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import Check from '../../Check/scss';
+import Icon from '../../Icon/scss';
 
 // eslint-disable-next-line react/prop-types
 const ClearIndicator = ({ innerProps: { ref, ...restInnerProps } }) => (
   <div className="onex-select__clear-btn" {...restInnerProps} ref={ref}>
-    <HighlightOffRoundedIcon />
+    <Icon>highlight_off</Icon>
   </div>
 );
 
 const MultiValueRemove = (props) => (
   <components.MultiValueRemove {...props}>
-    <CloseRoundedIcon />
+    <Icon>close</Icon>
   </components.MultiValueRemove>
 );
 

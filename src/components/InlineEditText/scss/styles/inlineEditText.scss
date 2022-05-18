@@ -37,6 +37,11 @@
       & > svg {
         fill: $onex-inline-edit-icon-color;
       }
+
+      & > .onex-material-icon,
+      & > .material-icons-round {
+        color: $onex-inline-edit-icon-color;
+      }
     }
   }
 

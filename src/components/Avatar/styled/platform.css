@@ -1,4 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
+.material-icons-round {
+  font-family: "Material Icons Round";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: inherit;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10112,12 +10143,12 @@ progress {
   box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
   background-color: rgba(103, 110, 122, 0.1);
 }
+.onex-avatar__person-icon {
+  color: rgb(133, 140, 150);
+}
 .onex-avatar__img {
   object-fit: cover;
   overflow: hidden;
-}
-.onex-avatar__icon-decorator {
-  display: none;
 }
 .onex-avatar.hover-disabled {
   cursor: auto;
@@ -10142,6 +10173,9 @@ progress {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.75);
 }
+.onex-avatar__hover .onex-avatar__hover-avatar {
+  color: rgb(255, 255, 255);
+}
 .onex-avatar:hover .onex-avatar__hover {
   opacity: 1;
 }
@@ -10153,6 +10187,10 @@ progress {
   color: rgb(103, 110, 122);
   overflow: hidden;
 }
+.onex-avatar__children .onex-material-icon,
+.onex-avatar__children .material-icons-round {
+  color: rgb(103, 110, 122);
+}
 .onex-avatar--size-xs {
   width: 1.5rem;
   height: 1.5rem;
@@ -10162,6 +10200,10 @@ progress {
 .onex-avatar--size-xs svg {
   width: 0.938rem;
   height: 0.938rem;
+}
+.onex-avatar--size-xs .onex-material-icon,
+.onex-avatar--size-xs .material-icons-round {
+  font-size: 0.938rem;
 }
 .onex-avatar--size-xs .onex-avatar__children {
   font-size: 0.5rem;
@@ -10176,6 +10218,9 @@ progress {
   width: 0.625rem;
   height: 0.625rem;
 }
+.onex-avatar--size-xs .onex-avatar__hover .onex-material-icon, .onex-avatar--size-xs .onex-avatar__hover .material-icons-round {
+  font-size: 0.625rem;
+}
 .onex-avatar--size-sm {
   width: 2rem;
   height: 2rem;
@@ -10185,6 +10230,10 @@ progress {
 .onex-avatar--size-sm svg {
   width: 1.25rem;
   height: 1.25rem;
+}
+.onex-avatar--size-sm .onex-material-icon,
+.onex-avatar--size-sm .material-icons-round {
+  font-size: 1.25rem;
 }
 .onex-avatar--size-sm .onex-avatar__children {
   font-size: 0.75rem;
@@ -10199,6 +10248,9 @@ progress {
   width: 0.938rem;
   height: 0.938rem;
 }
+.onex-avatar--size-sm .onex-avatar__hover .onex-material-icon, .onex-avatar--size-sm .onex-avatar__hover .material-icons-round {
+  font-size: 0.938rem;
+}
 .onex-avatar--size-md {
   width: 2.5rem;
   height: 2.5rem;
@@ -10208,6 +10260,10 @@ progress {
 .onex-avatar--size-md svg {
   width: 1.563rem;
   height: 1.563rem;
+}
+.onex-avatar--size-md .onex-material-icon,
+.onex-avatar--size-md .material-icons-round {
+  font-size: 1.563rem;
 }
 .onex-avatar--size-md .onex-avatar__children {
   font-size: 0.75rem;
@@ -10222,6 +10278,9 @@ progress {
   width: 1.25rem;
   height: 1.25rem;
 }
+.onex-avatar--size-md .onex-avatar__hover .onex-material-icon, .onex-avatar--size-md .onex-avatar__hover .material-icons-round {
+  font-size: 1.25rem;
+}
 .onex-avatar--size-lg {
   width: 4rem;
   height: 4rem;
@@ -10231,6 +10290,10 @@ progress {
 .onex-avatar--size-lg svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+.onex-avatar--size-lg .onex-material-icon,
+.onex-avatar--size-lg .material-icons-round {
+  font-size: 2.5rem;
 }
 .onex-avatar--size-lg .onex-avatar__children {
   font-size: 0.875rem;
@@ -10244,4 +10307,7 @@ progress {
 .onex-avatar--size-lg .onex-avatar__hover svg {
   width: 2rem;
   height: 2rem;
+}
+.onex-avatar--size-lg .onex-avatar__hover .onex-material-icon, .onex-avatar--size-lg .onex-avatar__hover .material-icons-round {
+  font-size: 2rem;
 }

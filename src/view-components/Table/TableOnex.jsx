@@ -1,6 +1,6 @@
-import { ExclamationLg } from 'react-bootstrap-icons';
 import {
   Avatar,
+  Icon,
   Badge,
   Check,
   TextField,
@@ -34,7 +34,7 @@ const TableOnex = () => (
         <TableCell>Study short name</TableCell>
         <TableCell>Phase</TableCell>
         <TableCell align="center" width="60px">
-          <ExclamationLg />
+          <Icon>priority_high</Icon>
         </TableCell>
       </TableRow>
     </TableHead>
@@ -54,7 +54,7 @@ const TableOnex = () => (
           </Badge>
         </TableCell>
         <TableCell align="center">
-          <ExclamationLg />
+          <Icon>priority_high</Icon>
         </TableCell>
       </TableRow>
       <TableRow>
@@ -78,7 +78,7 @@ const TableOnex = () => (
           </Badge>
         </TableCell>
         <TableCell align="center">
-          <ExclamationLg />
+          <Icon>priority_high</Icon>
         </TableCell>
       </TableRow>
     </TableBody>

@@ -66,18 +66,30 @@
       display: flex;
       align-items: center;
       & > svg {
-        width: 14px;
-        height: 14px;
+        width: $icon-size-lg;
+        height: $icon-size-lg;
+      }
+      & > .onex-material-icon,
+      & > .material-icons-round {
+        size: $icon-size-lg;
       }
       &:hover {
         svg path {
           fill: $table-pagination-next-color-hover;
+        }
+        .onex-material-icon,
+        .material-icons-round {
+          size: $table-pagination-next-color-hover;
         }
       }
     }
     .disabled:hover {
       svg path {
         fill: $table-pagination-next-color-disabled;
+      }
+      .onex-material-icon,
+      .material-icons-round {
+        size: $table-pagination-next-color-disabled;
       }
     }
     &_button_next {

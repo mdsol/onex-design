@@ -1,5 +1,4 @@
-import { CheckCircleFill, Dice4Fill } from 'react-bootstrap-icons';
-import { ToggleButton } from '../../../../components';
+import { ToggleButton, Icon } from '../../../../components';
 
 export default {
   title: 'Onex/Components/Toggle/ToggleButton',
@@ -55,8 +54,8 @@ name="toggle-button-with-icon"
 value={1}
 >
 <>
-<CheckCircleFill />
-<span> Caption</span>
+<Icon>check_circle</Icon>
+<span>Caption</span>
 <>
 </ToggleButton>
 `;
@@ -72,34 +71,34 @@ WithIcon.args = {
   name: 'toggle-button-with-icon',
   children: (
     <>
-      <CheckCircleFill />
-      <span> Caption </span>
+      <Icon>check_circle</Icon>
+      <span>Caption</span>
     </>
   ),
   value: 1,
 };
 
-export const Icon = ToggleButtonTemplate.bind({});
+export const IconToggleButton = ToggleButtonTemplate.bind({});
 const iconCodeBody = `
 <ToggleButton
 id="id-toggle-button-with-icon"
 name="toggle-button-with-icon"
 value={1}
 >
-<Dice4Fill />
+<Icon>star</Icon>
 </ToggleButton>
 `;
-Icon.parameters = {
+IconToggleButton.parameters = {
   docs: {
     source: {
       code: iconCodeBody,
     },
   },
 };
-Icon.args = {
+IconToggleButton.args = {
   id: 'id-toggle-button-icon',
   name: 'toggle-button-icon',
-  children: <Dice4Fill />,
+  children: <Icon>star</Icon>,
   value: 1,
 };
 

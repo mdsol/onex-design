@@ -1,5 +1,4 @@
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
-import { ExclamationDiamondFill, BinocularsFill } from 'react-bootstrap-icons';
 import {
   Table,
   TableControl,
@@ -13,6 +12,7 @@ import {
   Avatar,
   Badge,
   Check,
+  Icon,
 } from '../../../../components';
 import * as stories from './Table.stories.jsx';
 
@@ -76,7 +76,7 @@ Tables display information in a way that's easy to scan, so that users can look 
               <TableCell>Study short name</TableCell>
               <TableCell>Phase</TableCell>
               <TableCell align="center" width="60px">
-                <ExclamationDiamondFill />
+                <Icon>warning</Icon>
               </TableCell>
             </TableRow>
           </TableHead>
@@ -99,7 +99,7 @@ Tables display information in a way that's easy to scan, so that users can look 
                 </Badge>
               </TableCell>
               <TableCell align="center">
-                <ExclamationDiamondFill />
+                <Icon>warning</Icon>
               </TableCell>
             </TableRow>
             <TableRow>
@@ -115,7 +115,7 @@ Tables display information in a way that's easy to scan, so that users can look 
                     />
                   }
                   subTitle="Vertebrobasilar Insufficiency"
-                  icon={<BinocularsFill />}
+                  icon={<Icon>star</Icon>}
                   iconPosition="end"
                 >
                   Clinical and Radiological Evaluation of Patients With
@@ -128,7 +128,7 @@ Tables display information in a way that's easy to scan, so that users can look 
                 </Badge>
               </TableCell>
               <TableCell align="center">
-                <ExclamationDiamondFill />
+                <Icon>warning</Icon>
               </TableCell>
             </TableRow>
           </TableBody>

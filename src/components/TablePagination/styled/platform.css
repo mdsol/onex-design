@@ -1,4 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
+.material-icons-round {
+  font-family: "Material Icons Round";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: inherit;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10940,14 +10971,25 @@ progress {
   align-items: center;
 }
 .onex-table-pagination .pageArrows button > svg {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.onex-table-pagination .pageArrows button > .onex-material-icon, .onex-table-pagination .pageArrows button > .material-icons-round {
+  size: 0.875rem;
 }
 .onex-table-pagination .pageArrows button:hover svg path {
   fill: rgb(0, 112, 192);
 }
+.onex-table-pagination .pageArrows button:hover .onex-material-icon,
+.onex-table-pagination .pageArrows button:hover .material-icons-round {
+  size: rgb(0, 112, 192);
+}
 .onex-table-pagination .pageArrows .disabled:hover svg path {
   fill: rgb(176, 184, 191);
+}
+.onex-table-pagination .pageArrows .disabled:hover .onex-material-icon,
+.onex-table-pagination .pageArrows .disabled:hover .material-icons-round {
+  size: rgb(176, 184, 191);
 }
 .onex-table-pagination .pageArrows_button_next {
   transform: rotate(180deg);

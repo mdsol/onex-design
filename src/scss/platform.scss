@@ -4,6 +4,42 @@
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
+/* google mu icons*/
+//@import '../../node_modules/@material-design-icons/font/round.css';
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Round');
+
+.material-icons-round {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;  /* Preferred icon size */
+  color: inherit;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 $grid-gutter-width: 2rem;
 $grid-breakpoints: (
   xs: 0,
@@ -82,7 +118,6 @@ body {
 @import '../components/ExpansionPanel/scss/index';
 @import '../components/InlineEditSelect/scss/index';
 @import '../components/InlineEditText/scss/index';
-@import '../components/Lozenge/scss/index';
 @import '../components/MenuItem/scss/index';
 @import '../components/Navigation/scss/index';
 @import '../components/Pagination/scss/index';

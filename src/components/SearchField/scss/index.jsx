@@ -2,8 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
-import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import Icon from '../../Icon/scss';
 
 const SearchField = React.forwardRef((props, ref) => {
   const {
@@ -64,7 +63,7 @@ const SearchField = React.forwardRef((props, ref) => {
           onChange={onHandleChange}
         />
         <div className="onex-search-field__icon">
-          <SearchRoundedIcon />
+          <Icon>search</Icon>
         </div>
         {showClearBtn && !!_value && (
           <button
@@ -73,7 +72,7 @@ const SearchField = React.forwardRef((props, ref) => {
             onClick={handleClear}
             disabled={disabled}
           >
-            <HighlightOffRoundedIcon />
+            <Icon>highlight_off</Icon>
           </button>
         )}
       </div>

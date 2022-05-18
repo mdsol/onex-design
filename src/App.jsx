@@ -79,6 +79,7 @@ const DevExamples = () => {
 
   return (
     <div className="p-5">
+      <span className="material-icons-round">error</span>
       <div>
         <Check id="check-id" type="radio" checked disabled>
           Test label text
@@ -135,7 +136,7 @@ const App = () => {
   const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
-    if (currentTab === 'devMode') {
+    if (currentTab === 'testMode') {
       window.history.pushState('', '', window.location.origin);
     }
   }, [currentTab]);

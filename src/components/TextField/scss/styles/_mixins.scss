@@ -3,6 +3,11 @@
     width: $size;
     height: $size;
   }
+
+  & > .onex-material-icon,
+  & > .material-icons-round {
+    font-size: $size;
+  }
 }
 
 @mixin pass-help-style () {

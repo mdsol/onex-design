@@ -49,6 +49,11 @@
       width: $onex-icon-width;
       height: $onex-icon-height;
     }
+
+    & > .onex-material-icon,
+    & > .material-icons-round {
+      font-size: $onex-icon-width;
+    }
   }
 
   &__message {

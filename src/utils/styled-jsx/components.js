@@ -51,11 +51,6 @@ module.exports = [
     replaceUrl: [{ className: '.onex-text-field', classRegex: classRegexBase }],
   },
   {
-    name: 'Lozenge',
-    importName: 'Lozenge',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
-  },
-  {
     name: 'MenuItem',
     importName: 'MenuItem',
     replaceUrl: [{ className: '.onex-menuItem', classRegex: classRegexBase }],
@@ -205,5 +200,13 @@ module.exports = [
     name: 'Alert',
     importName: 'Alert',
     replaceUrl: [{ className: '.onex-alert', classRegex: classRegexBase }],
+  },
+  {
+    name: 'Icon',
+    importName: 'Icon',
+    replaceUrl: [
+      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.material-icons-round', classRegex: classRegexBase },
+    ],
   },
 ];

@@ -1,14 +1,6 @@
-import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
-import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
-import LockRoundedIcon from '@mui/icons-material/LockRounded';
-import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
-import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
-import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { Badge } from '../../../../components';
+import { Badge, Icon } from '../../../../components';
 
-const icons = { ArrowUp: <ArrowUpwardRoundedIcon />, ArrowDown: <ArrowDownwardRoundedIcon /> };
+const icons = { ArrowUp: <Icon>arrow_upward</Icon>, ArrowDown: <Icon>arrow_downward</Icon> };
 
 export default {
   title: 'Onex/Components/Badge',
@@ -90,7 +82,7 @@ export const CounterIconStart = Template.bind({});
 CounterIconStart.args = {
   type: 'primary',
   children: '100',
-  iconStart: <FlagRoundedIcon />,
+  iconStart: <span className="material-icons-round">flag</span>,
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
 };
@@ -101,7 +93,7 @@ CounterIconEnd.args = {
   type: 'primary',
   children: '100',
   className: 'custom-badge',
-  iconEnd: <ArrowDownwardRoundedIcon />,
+  iconEnd: <span className="material-icons-round">flag</span>,
   dataTestId: 'text-badge-id',
 };
 
@@ -209,7 +201,7 @@ export const StatusIconDefault = Template.bind({});
 
 StatusIconDefault.args = {
   type: 'default',
-  children: <LockRoundedIcon />,
+  children: <span className="material-icons-round">flag</span>,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -219,7 +211,7 @@ export const StatusIconInfo = Template.bind({});
 
 StatusIconInfo.args = {
   type: 'info',
-  children: <InfoRoundedIcon />,
+  children: <span className="material-icons-round">flag</span>,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -229,7 +221,7 @@ export const StatusIconWarning = Template.bind({});
 
 StatusIconWarning.args = {
   type: 'warning',
-  children: <WarningRoundedIcon />,
+  children: <span className="material-icons-round">flag</span>,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -239,7 +231,7 @@ export const StatusIconImportant = Template.bind({});
 
 StatusIconImportant.args = {
   type: 'important',
-  children: <ErrorRoundedIcon />,
+  children: <span className="material-icons-round">flag</span>,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',
@@ -249,7 +241,7 @@ export const StatusIconSuccess = Template.bind({});
 
 StatusIconSuccess.args = {
   type: 'success',
-  children: <CheckCircleRoundedIcon />,
+  children: <span className="material-icons-round">flag</span>,
   variant: 'status-icon',
   className: 'custom-badge',
   dataTestId: 'text-badge-id',

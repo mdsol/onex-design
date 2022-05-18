@@ -2,20 +2,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Toast as ReactToast, ToastContainer } from 'react-bootstrap';
-import {
-  ErrorRounded,
-  WarningRounded,
-  InfoRounded,
-  CheckCircleRounded,
-  CloseRounded,
-} from '@mui/icons-material';
 import Button from '../../Buttons/scss';
+import Icon from '../../Icon/scss';
 
-const IconVariants = {
-  info: <InfoRounded />,
-  success: <CheckCircleRounded />,
-  warning: <WarningRounded />,
-  error: <ErrorRounded />,
+const iconVariants = {
+  info: 'info',
+  success: 'check_circle',
+  warning: 'warning',
+  error: 'error',
 };
 
 const Toast = React.forwardRef((props, ref) => {
@@ -64,7 +58,7 @@ const Toast = React.forwardRef((props, ref) => {
       >
         <ReactToast.Header className="onex-toast__header" closeButton={false}>
           {(showDefaultIcon || icon) && (
-            <div className="onex-toast__icon">{icon || IconVariants[variant]}</div>
+            <div className="onex-toast__icon">{icon || <Icon>{iconVariants[variant]}</Icon>}</div>
           )}
           <div className="onex-toast__message">{header}</div>
           {closeButton && (
@@ -74,7 +68,7 @@ const Toast = React.forwardRef((props, ref) => {
               type="icon"
               onClick={onClose}
             >
-              <CloseRounded />
+              <Icon>close</Icon>
             </Button>
           )}
         </ReactToast.Header>

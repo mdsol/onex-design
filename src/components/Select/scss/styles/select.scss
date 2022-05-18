@@ -11,9 +11,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: $onex-select-icon-color;
   }
 
-  &__clear-btn svg {
+  &__clear-btn svg,
+  &__clear-btn .onex-material-icon {
     @include icon-size($icon-size-xlg);
 
     color: $onex-select-icon-color;
@@ -103,6 +105,12 @@
 
     svg > path {
       fill: $secondary-500;
+    }
+
+    .onex-material-icon,
+    .material-icons-round {
+      font-size: $icon-size-xlg;
+      color: $secondary-400
     }
   }
 
@@ -273,6 +281,12 @@
           & path {
             fill: $secondary-500;
           }
+        }
+
+        .onex-material-icon,
+        .material-icons-round {
+          font-size: $component-height-middle-sm;
+          color: $secondary-400
         }
       }
     }

@@ -1,22 +1,7 @@
-import {
-  LockRounded,
-  InfoRounded,
-  WarningRounded,
-  ErrorRounded,
-  CheckCircleRounded,
-  FlagRounded,
-  ArrowDownwardRounded,
-  FlutterDashRounded,
-  MoreVertRounded,
-  AddCircleRounded,
-  EditRounded,
-  BugReportRounded,
-  LanguageRounded,
-} from '@mui/icons-material';
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import Avatar from '../components/Avatar/scss';
 import Button from '../components/Buttons/scss';
 import ToggleButton from '../components/ToggleButton/scss';
+import Icon from '../components/Icon/scss';
 
 const passwordHelpText = {
   strong: 'Strong',
@@ -59,27 +44,27 @@ export const config = {
           },
           {
             size: 'lg',
-            children: <BugReportRounded />,
+            children: <Icon>bug_report</Icon>,
           },
           {
             size: 'md',
           },
           {
-            children: <BugReportRounded />,
+            children: <Icon>bug_report</Icon>,
             size: 'md',
           },
           {
             size: 'sm',
           },
           {
-            children: <BugReportRounded />,
+            children: <Icon>bug_report</Icon>,
             size: 'sm',
           },
           {
             size: 'xs',
           },
           {
-            children: <BugReportRounded />,
+            children: <Icon>bug_report</Icon>,
             size: 'xs',
           },
         ],
@@ -139,7 +124,7 @@ export const config = {
           {
             type: 'primary',
             children: '100',
-            iconStart: <FlagRounded />,
+            iconStart: <Icon>flag</Icon>,
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
@@ -147,7 +132,7 @@ export const config = {
             type: 'primary',
             children: '100',
             className: 'custom-badge',
-            iconEnd: <ArrowDownwardRounded />,
+            iconEnd: <Icon>flag</Icon>,
             dataTestId: 'text-badge-id',
           },
           {
@@ -174,6 +159,7 @@ export const config = {
           {
             type: 'important',
             children: 'alert',
+            iconStart: <Icon>flag</Icon>,
             variant: 'status',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
@@ -222,35 +208,35 @@ export const config = {
           },
           {
             type: 'default',
-            children: <LockRounded />,
+            children: <Icon>flag</Icon>,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'info',
-            children: <InfoRounded />,
+            children: <Icon>flag</Icon>,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'warning',
-            children: <WarningRounded />,
+            children: <Icon>flag</Icon>,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'important',
-            children: <ErrorRounded />,
+            children: <Icon>flag</Icon>,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
           },
           {
             type: 'success',
-            children: <CheckCircleRounded />,
+            children: <Icon>flag</Icon>,
             variant: 'status-icon',
             className: 'custom-badge',
             dataTestId: 'text-badge-id',
@@ -267,7 +253,7 @@ export const config = {
             variant: 'primary',
             size: 'sm',
             disabled: true,
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Small disabled button</span>,
           },
           {
@@ -281,33 +267,33 @@ export const config = {
           },
           {
             variant: 'primary',
-            children: <StarRoundedIcon />,
+            children: <Icon>star</Icon>,
             type: 'icon',
             size: 'md',
           },
           {
             variant: 'primary',
-            children: <StarRoundedIcon />,
+            children: <Icon>star</Icon>,
             type: 'icon',
             size: 'sm',
           },
           {
             variant: 'primary',
-            leadingIcon: <StarRoundedIcon />,
-            trailingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
+            trailingIcon: <Icon>star</Icon>,
             children: <span>Primary button with icon</span>,
           },
           {
             variant: 'primary',
             size: 'md',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Primary button with icon</span>,
           },
           {
             variant: 'secondary',
             size: 'sm',
             disabled: true,
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Small disabled button</span>,
           },
           {
@@ -321,38 +307,38 @@ export const config = {
           },
           {
             variant: 'secondary',
-            children: <StarRoundedIcon />,
+            children: <Icon>star</Icon>,
             type: 'icon',
             size: 'md',
           },
           {
             variant: 'secondary',
-            children: <StarRoundedIcon />,
+            children: <Icon>star</Icon>,
             type: 'icon',
             size: 'sm',
           },
           {
             variant: 'secondary',
-            leadingIcon: <StarRoundedIcon />,
-            trailingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
+            trailingIcon: <Icon>star</Icon>,
             children: <span>Secondary button with icon</span>,
           },
           {
             variant: 'secondary',
             size: 'md',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Secondary button with icon</span>,
           },
           {
             variant: 'tertiary',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Link button with icon</span>,
           },
           {
             variant: 'tertiary',
             size: 'sm',
             disabled: true,
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Small disabled button</span>,
           },
           {
@@ -366,26 +352,26 @@ export const config = {
           },
           {
             variant: 'tertiary',
-            children: <StarRoundedIcon />,
+            children: <Icon>star</Icon>,
             type: 'icon',
             size: 'md',
           },
           {
             variant: 'tertiary',
-            children: <StarRoundedIcon />,
+            children: <Icon>star</Icon>,
             type: 'icon',
             size: 'sm',
           },
           {
             variant: 'tertiary',
-            leadingIcon: <StarRoundedIcon />,
-            trailingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
+            trailingIcon: <Icon>star</Icon>,
             children: <span>Tertiary button with icon</span>,
           },
           {
             variant: 'tertiary',
             size: 'md',
-            leadingIcon: <StarRoundedIcon />,
+            leadingIcon: <Icon>star</Icon>,
             children: <span>Tertiary button with icon</span>,
           },
         ],
@@ -476,7 +462,7 @@ export const config = {
             id: 'small-dropdown',
             items: dropdownItems,
             size: 'sm',
-            leadingIcon: <LanguageRounded />,
+            leadingIcon: <Icon>language</Icon>,
           },
           {
             title: 'Label',
@@ -496,7 +482,7 @@ export const config = {
             id: 'large-dropdown',
             items: dropdownItems,
             size: 'md',
-            leadingIcon: <LanguageRounded />,
+            leadingIcon: <Icon>language</Icon>,
           },
           {
             title: 'Label',
@@ -518,7 +504,7 @@ export const config = {
             id: 'secondary-dropdown',
             items: dropdownItems,
             size: 'sm',
-            leadingIcon: <LanguageRounded />,
+            leadingIcon: <Icon>language</Icon>,
           },
           {
             variant: 'secondary',
@@ -541,7 +527,7 @@ export const config = {
             id: 'secondary-dropdown',
             items: dropdownItems,
             size: 'md',
-            leadingIcon: <LanguageRounded />,
+            leadingIcon: <Icon>language</Icon>,
           },
           {
             variant: 'secondary',
@@ -564,7 +550,7 @@ export const config = {
             id: 'tertiary-dropdown',
             items: dropdownItems,
             size: 'sm',
-            leadingIcon: <LanguageRounded />,
+            leadingIcon: <Icon>language</Icon>,
           },
           {
             variant: 'tertiary',
@@ -587,7 +573,7 @@ export const config = {
             id: 'tertiary-dropdown',
             items: dropdownItems,
             size: 'md',
-            leadingIcon: <LanguageRounded />,
+            leadingIcon: <Icon>language</Icon>,
           },
           {
             variant: 'tertiary',
@@ -633,7 +619,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
           },
           {
             variant: 'secondary',
@@ -641,7 +627,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
             disabled: true,
           },
           {
@@ -650,7 +636,7 @@ export const config = {
             items: dropdownItems,
             size: 'md',
             buttonStyle: 'icon',
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
           },
           {
             variant: 'secondary',
@@ -659,7 +645,7 @@ export const config = {
             size: 'md',
             buttonStyle: 'icon',
             disabled: true,
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
           },
           {
             variant: 'tertiary',
@@ -697,7 +683,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
           },
           {
             variant: 'tertiary',
@@ -705,7 +691,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
             disabled: true,
           },
           {
@@ -714,7 +700,7 @@ export const config = {
             items: dropdownItems,
             size: 'md',
             buttonStyle: 'icon',
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
           },
           {
             variant: 'tertiary',
@@ -723,7 +709,7 @@ export const config = {
             size: 'md',
             buttonStyle: 'icon',
             disabled: true,
-            title: <MoreVertRounded />,
+            title: <Icon>more_vert</Icon>,
           },
         ],
       },
@@ -805,90 +791,6 @@ export const config = {
         ],
       },
       {
-        name: 'Lozenge',
-        componentName: 'Lozenge',
-        styledComponentName: 'Lozenge',
-        additionalComponents: [],
-        variants: [
-          {
-            variant: 'subtle',
-            type: 'success',
-            size: 'lg',
-            children: 'Success',
-          },
-          {
-            variant: 'bold',
-            type: 'success',
-            size: 'lg',
-            children: 'Success',
-          },
-          {
-            variant: 'icon',
-            type: 'success',
-            icon: <AddCircleRounded />,
-            size: 'lg',
-            children: 'Success',
-          },
-          {
-            variant: 'subtle',
-            type: 'warning',
-            size: 'lg',
-            children: 'Warning',
-          },
-          {
-            variant: 'bold',
-            type: 'warning',
-            size: 'lg',
-            children: 'Warning',
-          },
-          {
-            variant: 'icon',
-            type: 'warning',
-            icon: <AddCircleRounded />,
-            size: 'lg',
-            children: 'Warning',
-          },
-          {
-            variant: 'subtle',
-            type: 'error',
-            size: 'lg',
-            children: 'Error',
-          },
-          {
-            variant: 'bold',
-            type: 'error',
-            size: 'lg',
-            children: 'Error',
-          },
-          {
-            variant: 'icon',
-            type: 'error',
-            icon: <AddCircleRounded />,
-            size: 'lg',
-            children: 'Error',
-          },
-          {
-            variant: 'subtle',
-            type: 'info',
-            size: 'lg',
-            children: 'Info',
-          },
-          {
-            variant: 'bold',
-            type: 'info',
-            size: 'lg',
-            children: 'Info',
-          },
-          {
-            variant: 'icon',
-            type: 'info',
-            icon: <AddCircleRounded />,
-            size: 'lg',
-            children: 'Info',
-          },
-        ],
-      },
-      {
         name: 'MenuItem',
         componentName: 'MenuItem',
         styledComponentName: 'MenuItem',
@@ -909,7 +811,7 @@ export const config = {
             path: '',
             onSelect: undefined,
             disabled: false,
-            leadingIcon: <EditRounded />,
+            leadingIcon: <Icon>edit</Icon>,
             trailingIcon: undefined,
             badge: undefined,
             unavailable: false,
@@ -919,8 +821,8 @@ export const config = {
             path: '',
             onSelect: undefined,
             disabled: false,
-            leadingIcon: <EditRounded />,
-            trailingIcon: <ErrorRounded />,
+            leadingIcon: <Icon>edit</Icon>,
+            trailingIcon: <Icon>error</Icon>,
             badge: undefined,
             unavailable: false,
             isSelected: true,
@@ -930,7 +832,7 @@ export const config = {
             path: '',
             onSelect: undefined,
             disabled: false,
-            leadingIcon: <EditRounded />,
+            leadingIcon: <Icon>edit</Icon>,
             badge: 100,
             unavailable: false,
             isSelected: true,
@@ -1376,13 +1278,13 @@ export const config = {
             size: 'sm',
             placeholder: 'Placeholder',
             label: 'Label',
-            icon: <FlutterDashRounded />,
+            icon: <Icon>star</Icon>,
           },
           {
             size: 'sm',
             placeholder: 'Placeholder',
             label: 'Label',
-            trailingIcon: <FlutterDashRounded />,
+            trailingIcon: <Icon>star</Icon>,
           },
           {
             size: 'sm',
@@ -1433,13 +1335,13 @@ export const config = {
             size: 'md',
             placeholder: 'Placeholder',
             label: 'Label',
-            icon: <FlutterDashRounded />,
+            icon: <Icon>star</Icon>,
           },
           {
             size: 'md',
             placeholder: 'Placeholder',
             label: 'Label',
-            trailingIcon: <FlutterDashRounded />,
+            trailingIcon: <Icon>star</Icon>,
           },
           {
             size: 'md',
@@ -1601,7 +1503,7 @@ export const config = {
             name: 'toggle-button-with-icon',
             children: (
               <>
-                <ErrorRounded />
+                <Icon>error</Icon>
                 <span> Caption </span>
               </>
             ),
@@ -1610,7 +1512,7 @@ export const config = {
           {
             id: 'id-toggle-button-icon',
             name: 'toggle-button-icon',
-            children: <AddCircleRounded />,
+            children: <Icon>add_circle</Icon>,
             value: 1,
           },
           {
@@ -1635,13 +1537,13 @@ export const config = {
             typeContent: 'title',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<EditRounded />}>
+                <ToggleButton id="one" name="one" icon={<Icon>edit</Icon>}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<EditRounded />}>
+                <ToggleButton id="two" name="two" icon={<Icon>edit</Icon>}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<EditRounded />}>
+                <ToggleButton id="three" name="three" icon={<Icon>edit</Icon>}>
                   Three
                 </ToggleButton>
               </>
@@ -1654,13 +1556,13 @@ export const config = {
             typeContent: 'title',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<EditRounded />}>
+                <ToggleButton id="one" name="one" icon={<Icon>edit</Icon>}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<EditRounded />}>
+                <ToggleButton id="two" name="two" icon={<Icon>edit</Icon>}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<EditRounded />}>
+                <ToggleButton id="three" name="three" icon={<Icon>edit</Icon>}>
                   Three
                 </ToggleButton>
               </>
@@ -1673,13 +1575,13 @@ export const config = {
             typeContent: 'icon',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<EditRounded />}>
+                <ToggleButton id="one" name="one" icon={<Icon>edit</Icon>}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<EditRounded />}>
+                <ToggleButton id="two" name="two" icon={<Icon>edit</Icon>}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<EditRounded />}>
+                <ToggleButton id="three" name="three" icon={<Icon>edit</Icon>}>
                   Three
                 </ToggleButton>
               </>
@@ -1692,13 +1594,13 @@ export const config = {
             typeContent: 'icon',
             children: (
               <>
-                <ToggleButton id="one" name="one" icon={<EditRounded />}>
+                <ToggleButton id="one" name="one" icon={<Icon>edit</Icon>}>
                   One
                 </ToggleButton>
-                <ToggleButton id="two" name="two" icon={<EditRounded />}>
+                <ToggleButton id="two" name="two" icon={<Icon>edit</Icon>}>
                   Two
                 </ToggleButton>
-                <ToggleButton id="three" name="three" icon={<EditRounded />}>
+                <ToggleButton id="three" name="three" icon={<Icon>edit</Icon>}>
                   Three
                 </ToggleButton>
               </>

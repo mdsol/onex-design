@@ -23,4 +23,9 @@
     & > svg ~ .onex-btn__decorator {
         width: calc(100% - #{$padding-left} * 2 - #{$icon-size} - #{$gap-size});
     }
+
+    & > .onex-material-icon ~ .onex-btn__decorator,
+    & > .material-icons-round ~ .onex-btn__decorator {
+      width: calc(100% - #{$padding-left} * 2 - #{$icon-size} - #{$gap-size});
+    }
 }

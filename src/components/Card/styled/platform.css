@@ -1,4 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
+.material-icons-round {
+  font-family: "Material Icons Round";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: inherit;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.onex-material-icon,
+.onex-material-icon.material-icons-round {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
 /* fonts */
 /* button */
 /* dropdown menu */
@@ -10258,27 +10289,47 @@ progress {
   }
 }
 
-.card {
+.onex-card {
   display: inline-block !important;
   border-radius: 1rem;
 }
-.card .card-body {
-  border: 0rem;
+.onex-card.onex-card--info {
+  border: 1px solid rgba(26, 28, 30, 0.1);
 }
-.card .card-header {
+.onex-card.onex-card--info .card-header {
+  background: rgb(231, 242, 254);
+}
+.onex-card.onex-card--info .card-footer {
+  background: rgb(231, 242, 254);
+}
+.onex-card .card-body {
+  border: 0rem;
+  padding: 0rem;
+}
+.onex-card .card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: content-box;
   padding: 1rem;
-  color: #000;
+  color: rgb(0, 0, 0);
   background: white;
   border: 0rem;
 }
-.card .card-footer {
+.onex-card .card-header .title-block {
+  display: inline-flex;
+}
+.onex-card .card-header .title-block .onex-badge {
+  margin-left: 0.5rem;
+}
+.onex-card .card-footer {
   box-sizing: content-box;
   padding: 0.5rem 0.5rem;
-  color: #000;
+  color: rgb(0, 0, 0);
   background: white;
   border: 0rem;
+  text-align: center;
+}
+.onex-card .card-footer a {
+  text-decoration: none;
 }

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { PersonRounded, PhotoCameraRounded } from '@mui/icons-material';
 import { getInitials } from './utils';
+import Icon from '../../Icon/scss';
 
 const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
   const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {
@@ -23,12 +23,10 @@ const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, 
       {!src && (name || childComponent) && (
         <div className="onex-avatar__children">{childComponent || getInitials(name)}</div>
       )}
-      <div className={(name || src || childComponent) && `onex-avatar__icon-decorator`}>
-        <PersonRounded />
-      </div>
+      {!(name || src || childComponent) && <Icon className="onex-avatar__person-icon">person</Icon>}
       {!hoverDisabled && size === 'lg' && (
         <div className="onex-avatar__hover">
-          <PhotoCameraRounded />
+          <Icon className="onex-avatar__hover-avatar">photo_camera</Icon>
         </div>
       )}
     </div>

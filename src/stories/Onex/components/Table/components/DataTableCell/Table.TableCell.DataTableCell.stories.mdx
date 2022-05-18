@@ -1,9 +1,8 @@
-import { BugFill, BinocularsFill } from 'react-bootstrap-icons';
 import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
-import { Avatar, Table, TableBody, TableRow, TableCell, DataTableCell } from '../../../../../../components';
+import { Avatar, Table, TableBody, TableRow, TableCell, DataTableCell, Icon } from '../../../../../../components';
 import * as stories from './Table.TableCell.DataTableCell.stories.jsx';
 
-export const icons = { Bug: <BugFill />, Binoculars: <BinocularsFill /> };
+export const icons = { Star: <Icon>star</Icon>, Flag: <Icon>flag</Icon> };
 
 <Meta
   title="Onex/Components/Table/TableCell/DataTableCell"
@@ -74,7 +73,7 @@ DataTableCell component represents content of ```TableCell```.
       children: 'Clinical and Radiological Evaluation of Patients With',
       className: 'custom-datatablecell',
       dataTestId: 'test-datatablecell-id',
-      icon: <BugFill />,
+      icon: <Icon>star</Icon>,
       iconPosition: 'end',
       img:(
         <Avatar

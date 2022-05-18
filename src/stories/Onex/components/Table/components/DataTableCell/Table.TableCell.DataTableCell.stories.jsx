@@ -1,4 +1,3 @@
-import { BugFill, BinocularsFill } from 'react-bootstrap-icons';
 import {
   DataTableCell,
   Table,
@@ -6,9 +5,10 @@ import {
   TableCell,
   TableRow,
   Avatar,
+  Icon,
 } from '../../../../../../components';
 
-const icons = { Bug: <BugFill />, Binoculars: <BinocularsFill /> };
+const icons = { Star: <Icon>star</Icon>, Flag: <Icon>flag</Icon> };
 
 export default {
   title: 'Onex/Components/Table/TableCell/DataTableCell',

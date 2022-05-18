@@ -1,4 +1,3 @@
-import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
 import { Avatar } from '../../../../components';
 
 const AvatarTemplate = (args) => <Avatar {...args} />;
@@ -62,7 +61,7 @@ Icon.parameters = {
   },
 };
 Icon.args = {
-  children: <BugReportRoundedIcon />,
+  children: <span className="material-icons-round">stars</span>,
 };
 
 export const ExtraSmall = AvatarTemplate.bind({});
