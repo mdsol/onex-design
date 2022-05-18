@@ -58,7 +58,6 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@mdx-js/react": "^1.6.22",
-    "@popperjs/core": "^2.11.5",
     "@storybook/addon-actions": "6.4.22",
     "@storybook/addon-docs": "6.4.22",
     "@storybook/addon-essentials": "6.4.22",

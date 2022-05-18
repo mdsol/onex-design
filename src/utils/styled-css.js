@@ -14,7 +14,10 @@ const getFiles = () => {
 const scssFileNames = fs
   .readdirSync(`src/components`, { withFileTypes: true })
   .reduce(
-    (acc, item) => (item.isDirectory() && (item.name !== 'StyledArea' || item.name !== 'Icon') ? [...acc, item.name] : acc),
+    (acc, item) =>
+      item.isDirectory() && item.name !== 'StyledArea' && item.name !== 'Icon'
+        ? [...acc, item.name]
+        : acc,
     [],
   );
 
