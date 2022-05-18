@@ -10230,7 +10230,7 @@ progress {
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator .onex-material-icon,
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator .material-icons-round {
   font-size: 1.25rem;
-  color: rgb(103, 110, 122);
+  color: rgb(133, 140, 150);
 }
 .onex-select--invalid .onex-select__control {
   border-color: rgb(217, 21, 34) !important;
@@ -10375,7 +10375,7 @@ progress {
 .onex-select .onex-select__multi-value .onex-select__multi-value__remove .onex-material-icon,
 .onex-select .onex-select__multi-value .onex-select__multi-value__remove .material-icons-round {
   font-size: 1.25rem;
-  color: rgb(103, 110, 122);
+  color: rgb(133, 140, 150);
 }
 
 .onex-select--md .onex-select__control {

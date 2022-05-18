@@ -11459,6 +11459,27 @@ textarea.form-control-lg {
   justify-content: flex-end;
   margin-top: 4px;
 }
+.status-buttons__complete, .status-buttons__cancel {
+  min-width: 1.75rem !important;
+  width: 1.75rem;
+  height: 1.75rem !important;
+}
+.status-buttons__complete {
+  margin-right: 5px;
+  padding: 0.375rem;
+  justify-content: center;
+  background-color: rgb(0, 112, 168) !important;
+  border-color: rgb(0, 112, 168) !important;
+}
+.status-buttons__cancel {
+  padding: 0.375rem;
+  justify-content: center;
+  background-color: rgb(209, 216, 224) !important;
+  border-color: rgb(209, 216, 224) !important;
+}
+.status-buttons__cancel svg path {
+  fill: rgb(0, 43, 92) !important;
+}
 
 .onex-btn {
   /* primary */

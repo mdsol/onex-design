@@ -136,7 +136,7 @@ const App = () => {
   const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
-    if (currentTab === 'devMode') {
+    if (currentTab === 'testMode') {
       window.history.pushState('', '', window.location.origin);
     }
   }, [currentTab]);

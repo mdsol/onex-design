@@ -10144,7 +10144,7 @@ progress {
   background-color: rgba(103, 110, 122, 0.1);
 }
 .onex-avatar__person-icon {
-  color: rgb(103, 110, 122);
+  color: rgb(133, 140, 150);
 }
 .onex-avatar__img {
   object-fit: cover;
@@ -10189,7 +10189,7 @@ progress {
 }
 .onex-avatar__children .onex-material-icon,
 .onex-avatar__children .material-icons-round {
-  color: rgb(176, 184, 191);
+  color: rgb(103, 110, 122);
 }
 .onex-avatar--size-xs {
   width: 1.5rem;

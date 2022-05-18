@@ -3573,7 +3573,6 @@ __metadata:
     puppeteer: ^13.6.0
     react: ^17.0.2
     react-bootstrap: ^2.3.0
-    react-bootstrap-icons: ^1.8.1
     react-dom: ^17.0.2
     react-hot-loader: ^4.13.0
     react-is: ^17.0.2
@@ -16351,17 +16350,6 @@ __metadata:
   peerDependencies:
     webpack: ^4.0.0 || ^5.0.0
   checksum: 51cc1b0d0e8c37c4336b5318f3b2c9c51d6998ad6f56ea09612afcfefc9c1f596341309e934a744ae907177f28efc9f1654eacd62151e82853fcc6d37450e795
-  languageName: node
-  linkType: hard
-
-"react-bootstrap-icons@npm:^1.8.1":
-  version: 1.8.1
-  resolution: "react-bootstrap-icons@npm:1.8.1"
-  dependencies:
-    prop-types: ^15.7.2
-  peerDependencies:
-    react: ^16.8.6 || ^17
-  checksum: 1f17d55fb9b58e54fe60bbedf02a77c585127b6670f63dfe67f405e8957baa8db8319ba0ba886fc53933c80092a0a8f179a3e590fc1ddaeb8a666c115256a80c
   languageName: node
   linkType: hard
 
