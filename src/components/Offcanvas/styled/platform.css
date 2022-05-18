@@ -10929,6 +10929,7 @@ progress {
 .onex-offcanvas .offcanvas-footer .action-link {
   width: 100%;
   color: rgb(0, 112, 192);
+  font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   text-align: center;

@@ -12,6 +12,7 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(ProgressBar)`
   ${() =>
     cssString
-      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.onex-progressbar.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.onex-progressbar__bg-danger.[^__]+?[.|\s]/g, handleCssString)
       .replaceAll(/\.progress[^-]+?[.|\s]/g, handleCssString)}
 `;

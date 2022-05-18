@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { ProgressBar as ReactProgressBar } from 'react-bootstrap';
 import classNames from 'classnames';
 
-const ProgressBar = ({ className, ...props }) => {
-  const classes = classNames('onex-progressbar', {
+const ProgressBar = ({ className, variant, ...props }) => {
+  const classes = classNames('onex-progressbar', `onex-progressbar__bg-${variant}`, {
     [className]: className,
   });
 
-  return <ReactProgressBar {...props} className={classes} />;
+  return <ReactProgressBar {...props} className={classes} variant={variant} />;
 };
 
 ProgressBar.propTypes = {

@@ -57,11 +57,16 @@ const Offcanvas = ({
         ) : (
           <>
             {secondaryActionFc && (
-              <Button onClick={secondaryActionFc} variant="secondary" className="secondary">
+              <Button
+                onClick={secondaryActionFc}
+                variant="secondary"
+                className="secondary"
+                size="md"
+              >
                 {secondaryActionText || 'Secondary'}
               </Button>
             )}
-            <Button onClick={primaryActionFc} className="primary">
+            <Button onClick={primaryActionFc} className="primary" size="md">
               {primaryActionText || 'Primary'}
             </Button>
           </>
