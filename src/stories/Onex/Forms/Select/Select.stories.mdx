@@ -90,14 +90,6 @@ import * as stories from './Select.stories.jsx';
               }
           }
         },
-        hasClearButton: {
-          description: 'This is determined by whether the clear button will be displayed in multi select. isMulty should to by true.',
-          table: {
-            defaultValue: {
-              summary: 'false',
-            },
-          }
-        },
         label: {
           description: 'The label content.',
           table: {
@@ -208,10 +200,4 @@ The select component allows users to choose single or multiple options from a li
 
 <Canvas>
   <Story name="Disabled" story={stories.Disabled} />
-</Canvas>
-
-### Example of MultiSelect with clear button
-
-<Canvas>
-  <Story name="HasClearButton" story={stories.HasClearButton} />
 </Canvas>
