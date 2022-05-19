@@ -33,11 +33,16 @@ export const Icons = () => {
           <code>yarn add @material-design-icons/font@latest</code>
           <br />
           <p>
-            In our design system we use only rounded icons. You can use 'Icon' component from our
-            design system. How to use it:
+            In our design system we use only rounded icons. You can use 'Icon' component for it. How
+            to use it:
             <br />
             <code>&lt;Icon&gt;name of icon&lt;/Icon&gt;</code>
             <br />
+            Or you can use original google material approach:
+            <br />
+            <code>&lt;span class="material-icons-round"&gt;name of icon&lt;/span&gt;</code>
+            <br />
+            (so that the icon has common styles, we recommend using the Icon component)
           </p>
           <p>
             You can read full information on official website:{' '}
