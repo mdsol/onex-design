@@ -1,4 +1,27 @@
 .onex-modal {
+    .modal-body {
+        padding: 0rem 1rem;
+    }
+    .modal-footer {
+        border-top: 0rem;
+        .modal-footer__content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                text-decoration: none;
+            }
+
+            .modal-footer__content__secondary {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+    .modal-header {
+        border-bottom: 0rem;
+        padding-right: 0.5rem;
+    }
     .modal-content {
         border: 0rem;
     }

@@ -10162,13 +10162,25 @@ progress {
   color: #676e7a;
 }
 .onex-dataGrid > .onex-dataGrid__rowsSection tr {
-  height: 48px;
+  height: 3rem;
   margin: 0;
   padding: 0.5rem;
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
 }
+.onex-dataGrid > .onex-dataGrid__rowsSection tr td {
+  margin-left: 0rem;
+}
+.onex-dataGrid > .onex-dataGrid__rowsSection tr td:first-child span {
+  margin-left: 1rem;
+}
+.onex-dataGrid > .onex-dataGrid__rowsSection tr th {
+  margin-left: 0rem;
+}
+.onex-dataGrid > .onex-dataGrid__rowsSection tr th:first-child span {
+  margin-left: 1rem;
+}
 .onex-dataGrid > .onex-dataGrid__rowsSection .onex-dataGrid__rowCheck {
-  margin-left: 15px;
+  margin-left: 1rem;
 }
 .onex-dataGrid > .onex-dataGrid__rowsSection .onex-dataGrid__rowIcon {
   text-align: center;

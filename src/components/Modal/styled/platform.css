@@ -10905,6 +10905,28 @@ progress {
   border-radius: 0.5rem;
 }
 
+.onex-modal .modal-body {
+  padding: 0rem 1rem;
+}
+.onex-modal .modal-footer {
+  border-top: 0rem;
+}
+.onex-modal .modal-footer .modal-footer__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.onex-modal .modal-footer .modal-footer__content a {
+  text-decoration: none;
+}
+.onex-modal .modal-footer .modal-footer__content .modal-footer__content__secondary {
+  margin-right: 0.5rem;
+}
+.onex-modal .modal-header {
+  border-bottom: 0rem;
+  padding-right: 0.5rem;
+}
 .onex-modal .modal-content {
   border: 0rem;
 }

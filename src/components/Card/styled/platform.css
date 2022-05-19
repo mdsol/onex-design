@@ -10304,7 +10304,7 @@ progress {
 }
 .onex-card .card-body {
   border: 0rem;
-  padding: 0rem;
+  padding: 0rem 1rem;
 }
 .onex-card .card-header {
   display: flex;

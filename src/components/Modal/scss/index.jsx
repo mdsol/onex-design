@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Modal as ReactModal } from 'react-bootstrap';
 import classNames from 'classnames';
 
+import Icon from '../../Icon/scss';
 import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
 
@@ -17,6 +18,9 @@ const Modal = ({
   widthClassName,
   showFooter,
   className,
+  actionLinkName,
+  link,
+  title,
 }) => {
   const classes = classNames('onex-modal', { [className]: className });
 
@@ -29,20 +33,37 @@ const Modal = ({
       dialogClassName={widthClassName}
       className={classes}
     >
-      <ReactModal.Header closeButton>
-        <Typography variant="h4">Modal heading</Typography>
+      <ReactModal.Header>
+        <Typography variant="h4">{title}</Typography>
+        <Button onClick={handleClose} variant="tertiary" type="icon" size="md">
+          <Icon>close</Icon>
+        </Button>
       </ReactModal.Header>
       <ReactModal.Body>{children}</ReactModal.Body>
-      {showFooter && (
-        <ReactModal.Footer>
-          <Button variant="secondary" onClick={onSecondaryClick}>
-            {secondaryActionName}
-          </Button>
-          <Button variant="primary" onClick={onPrimaryClick}>
-            {primaryActionName}
-          </Button>
-        </ReactModal.Footer>
-      )}
+      <ReactModal.Footer>
+        {showFooter && (
+          <div className="modal-footer__content">
+            {actionLinkName && (
+              <Typography variant="label" href={link}>
+                {actionLinkName}
+              </Typography>
+            )}
+            <div>
+              <Button
+                variant="secondary"
+                onClick={onSecondaryClick}
+                size="md"
+                className="modal-footer__content__secondary"
+              >
+                {secondaryActionName}
+              </Button>
+              <Button variant="primary" onClick={onPrimaryClick} size="md">
+                {primaryActionName}
+              </Button>
+            </div>
+          </div>
+        )}
+      </ReactModal.Footer>
     </ReactModal>
   );
 };
@@ -59,6 +80,9 @@ Modal.propTypes = {
   size: PropTypes.string,
   widthClassName: PropTypes.string,
   showFooter: PropTypes.bool,
+  actionLinkName: PropTypes.string,
+  link: PropTypes.string,
+  title: PropTypes.string,
 };
 
 Modal.defaultProps = {
@@ -73,6 +97,9 @@ Modal.defaultProps = {
   size: '',
   widthClassName: '',
   showFooter: false,
+  actionLinkName: '',
+  link: '',
+  title: '',
 };
 
 export default Modal;

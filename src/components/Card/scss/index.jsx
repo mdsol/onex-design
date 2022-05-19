@@ -30,7 +30,7 @@ const Card = ({
 
   return (
     <ReactCard className={classes}>
-      <ReactCard.Header closeButton>
+      <ReactCard.Header>
         {showTitleBar && (
           <>
             <div className="title-block">

@@ -73,7 +73,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
             </th>
           </tr> */}
           <tr className="onex-dataGrid__sectionHeaders" {...headerGroups[1].getHeaderGroupProps()}>
-            <th>
+            {/* <th>
               <Check
                 checked={
                   // eslint-disable-next-line react/prop-types
@@ -83,7 +83,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
                 className="onex-dataGrid__rowCheck"
                 onChange={handleHeaderCheck}
               />
-            </th>
+            </th> */}
             {headerGroups[1].headers.map((column, i) => (
               <th
                 key={`${column.accessor}_${i}`}
@@ -104,7 +104,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
             prepareRow(row);
             return (
               <tr key={`${row}_${i}`} {...row.getRowProps()}>
-                <td>
+                {/* <td>
                   <Check
                     className="onex-dataGrid__rowCheck"
                     checked={checkedRows[i]}
@@ -115,7 +115,7 @@ const RowsSection = ({ columns, data, className, rowsDividers }) => {
                       })
                     }
                   />
-                </td>
+                </td> */}
                 {row.cells.map((cell) => (
                   <td key={`${cell}_${i}`} {...cell.getCellProps()}>
                     <Typography variant="label">{cell.render('Cell')}</Typography>

@@ -82,6 +82,9 @@ Large.args = {
   primaryActionName: 'Save Changes',
   size: 'lg',
   showFooter: true,
+  actionLinkName: 'Link',
+  link: '#',
+  title: 'Header',
 };
 
 const SmallModal = (args) => {
@@ -115,6 +118,9 @@ Small.args = {
   primaryActionName: 'Save Changes',
   size: 'sm',
   showFooter: true,
+  actionLinkName: 'Link',
+  link: '#',
+  title: 'Header',
 };
 
 const CustomWidthModal = (args) => {
@@ -147,4 +153,7 @@ CustomWidth.args = {
   secondaryActionName: 'Secondary',
   primaryActionName: 'Save Changes',
   showFooter: true,
+  actionLinkName: 'Link',
+  link: '#',
+  title: 'Header',
 };
