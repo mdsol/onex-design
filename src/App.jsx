@@ -100,6 +100,9 @@ const DevExamples = () => {
           primaryActionName="Save Changes"
           size="lg"
           showFooter
+          title="Modal"
+          link="#"
+          actionLinkName="Link"
         >
           Woohoo, youre reading this text in a modal!
         </Modal>

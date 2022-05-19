@@ -29,14 +29,34 @@
     }
 
     tr {
-      height: 48px;
+      height: 3rem;
       margin: 0;
       padding: 0.5rem;
       border-bottom: 1px solid $secondary-900-opacity-10;
+
+      td {
+        margin-left: 0rem;
+      }
+
+      td:first-child {
+        span {
+          margin-left: 1rem;
+        }
+      }
+
+      th {
+        margin-left: 0rem;
+      }
+
+      th:first-child {
+        span {
+          margin-left: 1rem;
+        }
+      }
     }
 
     .onex-dataGrid__rowCheck {
-      margin-left: 15px;
+      margin-left: 1rem;
     }
     .onex-dataGrid__rowIcon {
       text-align: center;
