@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.3
+
+New format for exporting components in library. Icons, Select, Card, Checkboxes, ToggleButton all updated. 
 ## 0.3.2
 
 StyledArea (experimental) added - this is not final. Separated out devDependencies, updated package.json so that the dist folder is explicitly set. 
