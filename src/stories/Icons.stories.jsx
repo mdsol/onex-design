@@ -194,9 +194,9 @@ export const Icons = () => {
           </FloatingLabel>
         </Col>
       </Row>
-      <ul className="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8 list-unstyled list">
+      <div className="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8 list-unstyled list">
         {displayIcons.map((iconName) => (
-          <li key={iconName} className="col mb-4 text-center">
+          <div key={iconName} className="col mb-4 text-center">
             <div
               className="p-3 py-4 mb-2 bg-light text-center rounded"
               style={{ backgroundColor: 'var(--background-secondary)' }}
@@ -204,9 +204,9 @@ export const Icons = () => {
               <Icon>{iconName}</Icon>
             </div>
             <small style={{ wordWrap: 'break-word' }}>{iconName}</small>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       {displayIcons.length === 0 ? (
         <Alert variant="light" style={{ backgroundColor: 'var(--background-secondary)' }}>
           No icons found matching <strong>{search}</strong>
