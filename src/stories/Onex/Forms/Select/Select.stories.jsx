@@ -166,18 +166,3 @@ Disabled.args = {
     { value: 'canada', label: 'Canada' },
   ],
 };
-
-export const HasClearButton = Template.bind({});
-
-HasClearButton.args = {
-  size: 'md',
-  className: 'select',
-  dataTestId: 'select',
-  options: [
-    { value: 'albania', label: 'Albania' },
-    { value: 'belgium', label: 'Belgium' },
-    { value: 'canada', label: 'Canada' },
-  ],
-  isMulti: true,
-  hasClearButton: true,
-};

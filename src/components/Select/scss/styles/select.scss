@@ -12,6 +12,8 @@
     align-items: center;
     justify-content: center;
     color: $onex-select-icon-color;
+    height: 100%;
+    cursor: pointer;
   }
 
   &__clear-btn svg,
@@ -95,7 +97,6 @@
     align-items: center;
     justify-content: center;
     padding: 0.25rem;
-    width: auto;
     height: 100%;
 
     svg {
@@ -301,15 +302,21 @@
 
   .onex-select__value-container {
     padding-left: $onex-select-padding-x-md;
+
+    &.onex-select__value-container--is-multi {
+      padding-right: 0;
+    }
   }
 
   & .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
     padding-right: $onex-select-padding-x-md;
+    width: auto;
   }
 
   & .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
     padding-left: $onex-select-padding-x-md;
     padding-right: 0.25rem;
+    width: auto;
   }
 }
 .onex-select--sm {

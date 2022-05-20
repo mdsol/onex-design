@@ -61,7 +61,6 @@ const Select = ({
   onLoadOptions,
   getOptionValue,
   getOptionLabel,
-  hasClearButton,
   ...props
 }) => {
   const [selectedOptions, setSelectedOptions] = useState(selectedValues);
@@ -72,8 +71,8 @@ const Select = ({
 
   const selectClassNames = classNames('onex-select', {
     [className]: className,
-    'onex-select--md': size === 'md',
-    'onex-select--sm': size === 'sm',
+    'onex-select--md': isMulti || size === 'md',
+    'onex-select--sm': !isMulti && size === 'sm',
     'onex-select--invalid': isInvalid,
     'is-disabled': isDisabled,
   });
@@ -105,7 +104,7 @@ const Select = ({
                 {children}
               </Option>
             )),
-            ClearIndicator: hasClearButton && ClearIndicator,
+            ClearIndicator: isMulti && ClearIndicator,
           }}
           isMulti={isMulti}
           loadOptions={onLoadOptions}
@@ -129,7 +128,7 @@ const Select = ({
                 {children}
               </Option>
             )),
-            ClearIndicator: hasClearButton && ClearIndicator,
+            ClearIndicator: isMulti && ClearIndicator,
           }}
           onChange={handleChange}
           aria-invalid
@@ -182,7 +181,6 @@ Select.propTypes = {
   selectedValues: PropTypes.arrayOf(optionType),
   options: PropTypes.arrayOf(optionType),
   groupedOptions: PropTypes.arrayOf(groupedOptions),
-  hasClearButton: PropTypes.bool,
   size: PropTypes.oneOf(['md', 'sm']),
   label: PropTypes.string,
   helpText: PropTypes.string,
@@ -210,7 +208,6 @@ Select.defaultProps = {
   options: [],
   groupedOptions: [],
   onSelect: undefined,
-  hasClearButton: false,
   dataTestId: '',
   isAsync: false,
   onLoadOptions: undefined,

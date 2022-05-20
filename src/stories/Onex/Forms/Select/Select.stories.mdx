@@ -90,14 +90,6 @@ import * as stories from './Select.stories.jsx';
               }
           }
         },
-        hasClearButton: {
-          description: 'This is determined by whether the clear button will be displayed in multi select. isMulty should to by true.',
-          table: {
-            defaultValue: {
-              summary: 'false',
-            },
-          }
-        },
         label: {
           description: 'The label content.',
           table: {
@@ -140,6 +132,27 @@ import * as stories from './Select.stories.jsx';
 export const Template = (args) => <Select {...args} />;
 
 ## Select
+
+The entire icon set from React Select is approved for use.
+
+Start by installing <code>react-select</code>
+<code>yarn add react-select</code>
+
+Import the default export and render in your component:
+<code>import React, &#123; Component &#125; from 'react';
+<p>import Select from 'react-select';</p>
+  const options = [<br />
+  &ensp;&#123; value: 'chocolate', label: 'Chocolate' &#125;,<br />
+  &ensp;&#123; value: 'strawberry', label: 'Strawberry' &#125;,<br />
+  &ensp;&#123; value: 'vanilla', label: 'Vanilla' &#125;<br />
+  ]<br />
+
+  const MyComponent = () => (
+    &#60;Select options=&#123;options} /&#62;
+  )
+</code>
+
+Full information you can read on official documentation: <a href="https://react-select.com/home" target="_blank" rel="noreferrer">react select docs</a>
 
 The select component allows users to choose single or multiple options from a list.
 
@@ -208,10 +221,4 @@ The select component allows users to choose single or multiple options from a li
 
 <Canvas>
   <Story name="Disabled" story={stories.Disabled} />
-</Canvas>
-
-### Example of MultiSelect with clear button
-
-<Canvas>
-  <Story name="HasClearButton" story={stories.HasClearButton} />
 </Canvas>

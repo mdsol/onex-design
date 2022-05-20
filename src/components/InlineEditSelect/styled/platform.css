@@ -11615,6 +11615,8 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   color: rgb(103, 110, 122);
+  height: 100%;
+  cursor: pointer;
 }
 .onex-select__clear-btn svg, .onex-select__clear-btn .onex-material-icon {
   color: rgb(103, 110, 122);
@@ -11686,7 +11688,6 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   padding: 0.25rem;
-  width: auto;
   height: 100%;
 }
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator svg {
@@ -11869,12 +11870,17 @@ textarea.form-control-lg {
 .onex-select--md .onex-select__value-container {
   padding-left: 0.75rem;
 }
+.onex-select--md .onex-select__value-container.onex-select__value-container--is-multi {
+  padding-right: 0;
+}
 .onex-select--md .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
   padding-right: 0.75rem;
+  width: auto;
 }
 .onex-select--md .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
   padding-left: 0.75rem;
   padding-right: 0.25rem;
+  width: auto;
 }
 
 .onex-select--sm .onex-select__control {
