@@ -103,6 +103,7 @@ Offcanvas.propTypes = {
   onExiting: PropTypes.func,
   onHide: PropTypes.func,
   onShow: PropTypes.func,
+  dataTestId: PropTypes.string,
 };
 
 Offcanvas.defaultProps = {
@@ -132,6 +133,7 @@ Offcanvas.defaultProps = {
   onExiting: undefined,
   onHide: undefined,
   onShow: undefined,
+  dataTestId: undefined,
 };
 
 export default Offcanvas;

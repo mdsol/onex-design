@@ -17,11 +17,13 @@ const Spinner = ({ className, ...props }) => {
 Spinner.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   className: PropTypes.string,
+  dataTestId: PropTypes.string,
 };
 
 Spinner.defaultProps = {
   size: 'md',
   className: '',
+  dataTestId: undefined,
 };
 
 export default Spinner;

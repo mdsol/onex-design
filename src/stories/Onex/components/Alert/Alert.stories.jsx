@@ -16,7 +16,7 @@ export default {
         },
       },
     },
-    body: {
+    children: {
       description: `Text for element inside alert's body`,
       control: 'string',
       table: {
@@ -154,7 +154,9 @@ export const Actions = () =>
       primaryText="Primary"
       secondaryAction={() => console.log('yep')}
       secondaryText="Secondary"
-    />
+    >
+      Subtitle
+    </Alert>
   ));
 
 const linksCodeBody = `
@@ -175,13 +177,8 @@ Actions.parameters = {
 };
 
 export const AdditionalContent = () => (
-  <Alert
-    show
-    variant="success"
-    title="Hey, nice to see you"
-    body="
-  Aww yeah, you successfully read this important alert message. This example text is going to
-  run a bit longer so that you can see how spacing within an alert works with this kind of
-  content."
-  />
+  <Alert show variant="success" title="Hey, nice to see you">
+    Aww yeah, you successfully read this important alert message. This example text is going to run
+    a bit longer so that you can see how spacing within an alert works with this kind of content.
+  </Alert>
 );

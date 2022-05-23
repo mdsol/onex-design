@@ -18,6 +18,7 @@ ProgressBar.propTypes = {
   striped: PropTypes.bool,
   animated: PropTypes.bool,
   className: PropTypes.string,
+  dataTestId: PropTypes.string,
 };
 
 ProgressBar.defaultProps = {
@@ -28,6 +29,7 @@ ProgressBar.defaultProps = {
   striped: false,
   animated: false,
   className: '',
+  dataTestId: undefined,
 };
 
 export default ProgressBar;
