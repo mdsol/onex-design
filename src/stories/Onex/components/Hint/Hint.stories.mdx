@@ -1,0 +1,114 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { Hint, Icon } from '../../../../components';
+import * as stories from './Hint.stories.jsx';
+
+export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, default: undefined };
+
+<Meta
+  title="Onex/Components/Hint"
+  argTypes={{
+    children: {
+      description: 'The content of the Icon',
+      control: 'text',
+    },
+    className: {
+      description: 'The className to set the styles for Icon',
+      control: 'text',
+    },
+    icon: {
+      description:
+        'The icon element instead of default icon.',
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          Star: 'Star',
+          Stars: 'Star in round',
+          default: 'Set default icon'
+        },
+      },
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    variant: {
+      description: 'The variant of the component.',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    dataTestId: {
+      description: 'The it of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+  }}
+  component={Hint}
+/>
+
+export const Template = (args) => <Hint {...args} />;
+
+## Hint
+
+Hint informs the user about important information related to an action.
+
+### Hint variants
+
+The component has 4 variants such as "info", "success", "warning", "error".
+
+##### <i>info</i>
+
+Information hint helps users to understand the context of interacting with the action.
+
+<Canvas>
+  <Story name="Info" story={stories.Info}/>
+</Canvas>
+
+##### <i>success</i>
+
+Success hint gives the user local feedback about successful interaction with the system.
+
+<Canvas>
+  <Story name="Success" story={stories.Success}/>
+</Canvas>
+
+##### <i>warning</i>
+
+Warning hint informs the user of non-critical issues or blockers.
+
+<Canvas>
+  <Story name="Warning" story={stories.Warning}/>
+</Canvas>
+
+##### <i>error</i>
+
+Error hint highlights critical errors.
+
+<Canvas>
+  <Story name="Error" story={stories.Error}/>
+</Canvas>
+
+### Hint details
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      variant: 'info',
+      className: 'c-demo-Hint',
+      dataTestId: 'demo-Hint-id',
+      children: 'Last reforecast was run 01/10/2021, 2:45 PM, by John Doe.',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo"/>

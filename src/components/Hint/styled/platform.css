@@ -10135,7 +10135,8 @@ progress {
 .onex-hint {
   display: inline-flex;
   gap: 0.5rem;
-  align-items: center;
+  align-items: stretch;
+  max-width: 100%;
 }
 .onex-hint.onex-hint--variant-success .onex-hint__icon {
   color: rgb(0, 126, 76);
@@ -10163,8 +10164,9 @@ progress {
 }
 .onex-hint__icon {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  height: 100%;
 }
 .onex-hint__icon svg {
   size: 1.5rem;
@@ -10174,6 +10176,8 @@ progress {
   font-size: 1.5rem;
 }
 .onex-hint__body {
+  display: inline-flex;
+  align-items: center;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: rgb(26, 28, 30);

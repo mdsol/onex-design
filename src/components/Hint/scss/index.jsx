@@ -26,7 +26,7 @@ Hint.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
   children: PropTypes.node,
-  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  icon: PropTypes.node,
   dataTestId: PropTypes.string,
 };
 
