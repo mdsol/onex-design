@@ -1,0 +1,18 @@
+@mixin hint-icon-color-variant() {
+  $types: 'success' $onex-hint-success-icon-color,
+  'info' $onex-hint-info-icon-color,
+  'warning' $onex-hint-warning-icon-color,
+  'error' $onex-hint-error-icon-color;
+
+  @each $type, $main-color in $types {
+    &.onex-hint--variant-#{$type} {
+      .onex-hint__icon {
+        color: $main-color;
+
+        svg path {
+          fill: $main-color;
+        }
+      }
+    }
+  }
+}

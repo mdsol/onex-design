@@ -209,4 +209,9 @@ module.exports = [
       { className: '.material-icons-round', classRegex: classRegexBase },
     ],
   },
+  {
+    name: 'Hint',
+    importName: 'Hint',
+    replaceUrl: [{ className: '.onex-hint', classRegex: classRegexBase }],
+  },
 ];
