@@ -1,7 +1,6 @@
 import PropTypes, { oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { Alert as ReactAlert } from 'react-bootstrap';
-import React from 'react';
 import Button from '../../Buttons/scss';
 import Icon from '../../Icon/scss';
 
@@ -23,13 +22,20 @@ const Alert = ({
   secondaryText,
   show,
   transition,
+  dataTestId,
 }) => {
   const classes = classNames('onex-alert', {
     [className]: className,
   });
 
   return (
-    <ReactAlert show={show} transition={transition} variant={variant} className={classes}>
+    <ReactAlert
+      show={show}
+      transition={transition}
+      variant={variant}
+      className={classes}
+      data-test-id={dataTestId}
+    >
       <ReactAlert.Heading>
         <span className="onex-alert__icon">
           <Icon>{iconVariants[variant]}</Icon>
@@ -37,18 +43,20 @@ const Alert = ({
         {title}
       </ReactAlert.Heading>
       <div className="onex-alert__body">{body}</div>
-      <div className="onex-alert__control">
-        {primaryAction && (
-          <Button onClick={primaryAction} variant="secondary">
-            {primaryText}
-          </Button>
-        )}
-        {secondaryAction && (
-          <Button onClick={secondaryAction} variant="tertiary">
-            {secondaryText}
-          </Button>
-        )}
-      </div>
+      {body && (
+        <div className="onex-alert__control">
+          {primaryAction && (
+            <Button onClick={primaryAction} variant="secondary">
+              {primaryText}
+            </Button>
+          )}
+          {secondaryAction && (
+            <Button onClick={secondaryAction} variant="tertiary">
+              {secondaryText}
+            </Button>
+          )}
+        </div>
+      )}
     </ReactAlert>
   );
 };
@@ -64,6 +72,7 @@ Alert.propTypes = {
   secondaryText: PropTypes.string,
   show: PropTypes.bool,
   transition: oneOfType([PropTypes.bool, PropTypes.elementType]),
+  dataTestId: PropTypes.string,
 };
 
 Alert.defaultProps = {
@@ -77,6 +86,7 @@ Alert.defaultProps = {
   secondaryText: '',
   show: false,
   transition: false,
+  dataTestId: undefined,
 };
 
 export default Alert;
