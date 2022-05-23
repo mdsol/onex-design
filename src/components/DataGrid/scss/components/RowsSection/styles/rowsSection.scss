@@ -55,6 +55,11 @@
       }
     }
 
+    tr:hover {
+      background: rgba(103, 110, 122, 0.1);
+      cursor: pointer;
+    }
+
     .onex-dataGrid__rowCheck {
       margin-left: 1rem;
     }

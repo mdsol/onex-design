@@ -10179,6 +10179,10 @@ progress {
 .onex-dataGrid > .onex-dataGrid__rowsSection tr th:first-child span {
   margin-left: 1rem;
 }
+.onex-dataGrid > .onex-dataGrid__rowsSection tr:hover {
+  background: rgba(103, 110, 122, 0.1);
+  cursor: pointer;
+}
 .onex-dataGrid > .onex-dataGrid__rowsSection .onex-dataGrid__rowCheck {
   margin-left: 1rem;
 }
