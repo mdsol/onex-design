@@ -15,7 +15,7 @@ const Alert = ({
   className,
   variant,
   title,
-  body,
+  children,
   primaryAction,
   primaryText,
   secondaryAction,
@@ -42,8 +42,8 @@ const Alert = ({
         </span>
         {title}
       </ReactAlert.Heading>
-      <div className="onex-alert__body">{body}</div>
-      {body && (
+      <div className="onex-alert__body">{children}</div>
+      {children && (
         <div className="onex-alert__control">
           {primaryAction && (
             <Button onClick={primaryAction} variant="secondary">
@@ -65,7 +65,7 @@ Alert.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
   title: PropTypes.string,
-  body: oneOfType([PropTypes.string, PropTypes.element]),
+  children: oneOfType([PropTypes.string, PropTypes.element]),
   primaryAction: PropTypes.func,
   primaryText: PropTypes.string,
   secondaryAction: PropTypes.func,
@@ -79,7 +79,7 @@ Alert.defaultProps = {
   className: '',
   variant: 'info',
   title: 'Title',
-  body: '',
+  children: undefined,
   primaryAction: null,
   primaryText: '',
   secondaryAction: null,

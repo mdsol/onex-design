@@ -1751,7 +1751,7 @@ export const config = {
           {
             show: true,
             variant: 'error',
-            body: 'subtitle',
+            children: 'subtitle',
             primaryAction: () => {
               console.log('yep');
             },
@@ -1760,7 +1760,7 @@ export const config = {
           {
             show: true,
             variant: 'success',
-            body: 'subtitle',
+            children: 'subtitle',
             primaryAction: () => {
               console.log('yep');
             },
@@ -1773,7 +1773,7 @@ export const config = {
           {
             show: true,
             variant: 'info',
-            body: 'Body text',
+            children: 'Body text',
           },
           {
             show: true,
