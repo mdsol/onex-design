@@ -1,12 +1,11 @@
 @import 'styles/variables';
 @import '../../Navigation/scss/styles/variables';
 @import '../../Navigation/scss/components/styles/variables';
-@import '../../Navigation/scss/components/NavItemDropdown/styles/variables';
 @import '../../../../node_modules/bootstrap/scss/nav';
 @import '../../../../node_modules/bootstrap/scss/navbar';
 @import '../../../../node_modules/bootstrap/scss/dropdown';
 @import '../../Navigation/scss/styles/navigation';
 @import '../../Navigation/scss/components/styles/index';
 @import '../../Navigation/scss/components/NavItem/styles/navItem';
-@import '../../Navigation/scss/components/NavItemDropdown/styles/navItemDropdown';
+@import '../../Dropdown/scss/index';
 @import 'styles/tabs';

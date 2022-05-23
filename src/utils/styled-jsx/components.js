@@ -99,7 +99,10 @@ module.exports = [
   {
     name: 'Tabs',
     importName: 'Tabs',
-    replaceUrl: [{ className: '.onex-', classRegex: classRegexBase }],
+    replaceUrl: [
+      { className: '.onex-tab', classRegex: classRegexBase },
+      { className: '.onex-nav', classRegex: classRegexBase },
+    ],
   },
   {
     name: 'Tag',

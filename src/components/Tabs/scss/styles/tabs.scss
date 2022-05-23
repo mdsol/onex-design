@@ -1,69 +1,98 @@
-@import 'mixins';
+.onex-tab.onex-nav {
 
-.onex-tab {
-  .onex-nav__item {
-    padding-left: $onex-tab-item-padding-left;
+  .nav-link {
+    height: $onex-tab-height;
+    font-size: $onex-tab-font-size;
+    line-height: $onex-tab-line-height;
+    padding: $onex-tab-padding-y $onex-tab-padding-x;
+    margin: $onex-tab-margin;
 
-    &:first-child {
-      padding-left: 0;
+    &::before {
+      height: $onex-tab-line-hover-height;
+      border-radius: $onex-tab-line-hover-height;
     }
   }
 
-  .nav-link {
+  .dropdown-menu {
+    border-radius: $onex-tab-menu-border-radius;
+    font-size: $onex-tab-menu-font-size;
+    line-height: $onex-tab-menu-line-height;
+    padding: $onex-tab-menu-padding-y $onex-tab-menu-padding-x;
+    min-width: $onex-tab-menu-min-width;
+
+    .dropdown-item {
+      padding: $onex-tab-menu-item-padding-y $onex-tab-menu-item-padding-x;
+      border-radius: $onex-tab-menu-border-radius;
+    }
+  }
+
+  .onex-nav__item {
+    padding-left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $onex-tab-main-text-color;
-  }
 
-  &--size-sm {
-    @include tab-size(
-        $onex-tab-height-sm,
-        $onex-tab-font-size-sm,
-        $onex-tab-line-height-sm,
-        $onex-tab-padding-y-sm,
-        $onex-tab-line-hover-height-sm
-    );
+    &.dropdown {
+      position: relative;
+      padding: 0 $onex-tab-padding-x;
+      margin: $onex-tab-margin;
 
-    .dropdown-menu {
-      @include dropdown-menu(
-          $onex-tab-menu-border-radius-sm,
-          $onex-tab-menu-font-size-sm,
-          $onex-tab-menu-line-height-sm,
-          $onex-tab-menu-padding-x-sm,
-          $onex-tab-menu-padding-y-sm,
-          $onex-tab-menu-min-width-sm
-      );
+      & > .btn.btn-tertiary:hover,
+      &.haveSelectedItem > .btn.btn-tertiary,
+      &.haveSelectedItem > .btn.btn-tertiary:hover,
+      &.show > .dropdown-toggle.btn-tertiary {
+        background-color: transparent;
+        color: $onex-tab-active-text-color;
+      }
 
-      .dropdown-item {
-        padding: $onex-tab-menu-item-padding-y-sm $onex-tab-menu-item-padding-x-sm;
-        border-radius: $onex-tab-menu-border-radius-sm;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2.4rem;
+        width: 90%;
+        background-color: $onex-nav-item-divider-bg-color;
+        display: none;
+      }
+
+      &:hover::before,
+      &.haveSelectedItem:hover::before {
+        display: block;
+        background-color: $onex-tab-desactive-text-color;
+        height: 1px;
+      }
+
+      &.haveSelectedItem::before {
+        display: block;
+        top: 2.25rem;
+        height: 0.25rem;
+        background-color: $primary;
       }
     }
+
   }
 
-  &--size-lg {
-    @include tab-size(
-        $onex-tab-height-lg,
-        $onex-tab-font-size-lg,
-        $onex-tab-line-height-lg,
-        $onex-tab-padding-y-lg,
-        $onex-tab-line-hover-height-lg
-    );
-
-    .dropdown-menu {
-      @include dropdown-menu(
-          $onex-tab-menu-border-radius-lg,
-          $onex-tab-menu-font-size-lg,
-          $onex-tab-menu-line-height-lg,
-          $onex-tab-menu-padding-x-lg,
-          $onex-tab-menu-padding-y-lg,
-          $onex-tab-menu-min-width-lg
-      );
-
-      .dropdown-item {
-        padding: $onex-tab-menu-item-padding-y-lg $onex-tab-menu-item-padding-x-lg;
-        border-radius: $onex-tab-menu-border-radius-lg;
+  .nav-tabs {
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $onex-tab-main-text-color;
+  
+      &:hover,
+      &.active:hover,
+      &.active {
+        color: $onex-tab-active-text-color;
+      }
+  
+      &.active::before {
+        border-radius: 0;
+      }
+  
+      &.active:hover::before,
+      &:hover::before {
+        background-color: $onex-tab-desactive-text-color;
+        height: 1px;
       }
     }
   }

@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { Nav } from 'react-bootstrap';
 import NavItem from './components/NavItem';
-import NavItemDropdown from './components/NavItemDropdown';
+import Dropdown from '../../Dropdown/scss';
 import useAdaptiveNav from './hooks/useAdaptiveNav';
 
 const Navigation = (props) => {
@@ -28,14 +28,19 @@ const Navigation = (props) => {
   const dropdownRef = useRef(null);
 
   const [isActiveDropdownItem, setIsActiveDropdownItem] = useState(null);
+  const [activeItemKey, setActiveItemKey] = useState('');
+  const [hiddenItemsWithActiveItem, setHiddenItemsWithActiveItem] = useState([]);
   const { dropdownItems, toggleVisibleNavItems } = useAdaptiveNav(hiddenItems, visibleItems);
 
   const handleSelect = (value) => {
     const isActive = dropdownItems.some((item) => item.eventKey === value);
 
+    setActiveItemKey(value);
     setIsActiveDropdownItem(isActive);
     onSelect?.(value);
   };
+
+  useEffect(() => handleSelect(defaultActiveKey), []);
 
   // eslint-disable-next-line consistent-return
   useLayoutEffect(() => {
@@ -47,6 +52,28 @@ const Navigation = (props) => {
       return () => window.removeEventListener('resize', updateSize);
     }
   }, [isAdaptiveWidth]);
+
+  useEffect(() => {
+    if (isActiveDropdownItem) {
+      setHiddenItemsWithActiveItem(
+        hiddenItems.map((item) => {
+          if (item.eventKey === activeItemKey) {
+            item.active = true;
+          } else {
+            item.active = false;
+          }
+          return item;
+        }),
+      );
+    } else {
+      setHiddenItemsWithActiveItem(
+        hiddenItems.map((item) => {
+          item.active = false;
+          return item;
+        }),
+      );
+    }
+  }, [isActiveDropdownItem, activeItemKey]);
 
   return (
     <div className={navGroupClassNames}>
@@ -81,13 +108,16 @@ const Navigation = (props) => {
             );
           })}
         {dropdownItems.length > 0 && (
-          <NavItemDropdown
-            ref={dropdownRef}
+          <Dropdown
             title={dropdownTitle}
             eventKey="dropdown"
-            items={dropdownItems}
-            isActive={isActiveDropdownItem}
+            items={hiddenItemsWithActiveItem}
             dataTestId={dataTestIdDropdown}
+            ref={dropdownRef}
+            variant="tertiary"
+            className={`onex-nav__item nav-item${
+              (isActiveDropdownItem && ' haveSelectedItem') || ''
+            }`}
           />
         )}
       </Nav>

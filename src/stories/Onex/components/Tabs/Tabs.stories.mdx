@@ -56,9 +56,6 @@ import * as stories from './Tabs.stories.jsx';
       description: 'A callback fired when a item is selected',
       action: 'select',
     },
-    size: {
-      description: 'Size of the component',
-    },
     visibleItems: {
       description: `Array of visible menu items. Each item contain:
                            \n1.title* - content of menu item;
@@ -83,24 +80,12 @@ import * as stories from './Tabs.stories.jsx';
   component={Tabs}
 />
 
-export const TabsTemplate = (args) => <Tabs {...args} />;
+const TabsTemplate = (args) => <Tabs {...args} />;
 
 # Tabs
 
+### Tabs
 Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.
-
-## Style
-
-### Sizes
-Supports two tabs sizes: ```small``` and  ```large```.
-
-<Canvas>
-  <Story height="10rem" name="Small" story={stories.Small} />
-</Canvas>
-
-<Canvas>
-  <Story height="13rem" name="Large" story={stories.Large} />
-</Canvas>
 
 ## Demo
 
@@ -121,7 +106,6 @@ Supports two tabs sizes: ```small``` and  ```large```.
         { eventKey: 'opt7', title: 'Option 7' },
         { eventKey: 'opt8', title: 'Option 8' }
       ],
-      size:'sm',
       visibleItems: [
         { eventKey: 'opt1', title: 'Option 1' },
         { eventKey: 'opt2', title: 'Option 2' },

@@ -21,6 +21,7 @@ const Dropdown = (props) => {
     onSelect,
     dataTestId,
     as,
+    ref,
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
@@ -28,7 +29,12 @@ const Dropdown = (props) => {
   });
 
   return (
-    <ReactDropdown onSelect={onSelect} className={buttonClassNames} data-test-id={dataTestId}>
+    <ReactDropdown
+      onSelect={onSelect}
+      className={buttonClassNames}
+      data-test-id={dataTestId}
+      ref={ref}
+    >
       <ReactDropdown.Toggle
         as={as}
         id={id}
@@ -104,6 +110,9 @@ Dropdown.propTypes = {
   onSelect: PropTypes.func,
   dataTestId: PropTypes.string,
   as: PropTypes.node,
+  ref: PropTypes.shape({
+    current: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
 };
 
 Dropdown.defaultProps = {
@@ -119,6 +128,7 @@ Dropdown.defaultProps = {
   buttonStyle: 'text',
   dataTestId: undefined,
   as: undefined,
+  ref: null,
 };
 
 export default Dropdown;
