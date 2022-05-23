@@ -1779,6 +1779,18 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'Hint',
+        componentName: 'Hint',
+        styledComponentName: 'Hint',
+        additionalComponents: [],
+        variants: () =>
+          ['info', 'success', 'error', 'warning'].map((variant) => ({
+            variant,
+            children: 'Last reforecast was run 01/10/2021, 2:45 PM, by John Doe.',
+            dataTestId: 'onex-custom-hint',
+          })),
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',

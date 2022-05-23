@@ -1,0 +1,30 @@
+@import 'mixins';
+
+.onex-hint {
+  @include hint-icon-color-variant();
+
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      size: $onex-hint-icon-size;
+    }
+
+    .material-icons-round,
+    .onex-material-icon, {
+      font-size: $onex-hint-icon-size;
+    }
+  }
+
+  &__body {
+    font-size: $onex-hint-font-size;
+    line-height: $onex-hint-line-height;
+    color: $onex-hint-text-color;
+  }
+}
