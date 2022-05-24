@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid, Modal, Button, Card } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -70,16 +70,42 @@ const dropdownItems = [
   { eventKey: 'eight', title: 'item eight', badge: 100 },
 ];
 
+const optionsMultiSelect = [
+  { value: 'brazil', label: 'Brazil' },
+  { value: 'colombia', label: 'Colombia' },
+  { value: 'poland', label: 'Poland' },
+  { value: 'portugal', label: 'Portugal' },
+  { value: 'spain', label: 'Spain' },
+];
+
 const DevExamples = () => {
   const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
 
   const handleModalPrimaryAction = () => setShow(false);
   const handleModalSecondaryAction = () => setShow(false);
+  const [selectedValues, setSelectedValues] = useState();
+
+  useEffect(() => {
+    setSelectedValues([{ value: 'brazil', label: 'Brazil' }]);
+  }, []);
+
+  const handleSelect = (values) => {
+    setSelectedValues(values);
+  };
 
   return (
     <div className="p-5">
-      <span className="material-icons-round">error</span>
+      <div>
+        <Select
+          size="md"
+          className="select"
+          dataTestId="select"
+          options={optionsMultiSelect}
+          selectedValues={selectedValues}
+          onSelect={handleSelect}
+        />
+      </div>
       <div>
         <Check id="check-id" type="radio" checked disabled>
           Test label text
