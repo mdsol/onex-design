@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Dropdown as ReactDropdown } from 'react-bootstrap';
@@ -6,7 +6,7 @@ import Badge from '../../Badge/scss';
 import Icon from '../../Icon/scss';
 import DropdownMenu from './components/DropdownMenu';
 
-const Dropdown = (props) => {
+const Dropdown = React.forwardRef((props, ref) => {
   const {
     className,
     disabled,
@@ -21,7 +21,6 @@ const Dropdown = (props) => {
     onSelect,
     dataTestId,
     as,
-    ref,
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
@@ -84,7 +83,7 @@ const Dropdown = (props) => {
       </ReactDropdown.Menu>
     </ReactDropdown>
   );
-};
+});
 
 Dropdown.propTypes = {
   id: PropTypes.string.isRequired,
@@ -110,9 +109,6 @@ Dropdown.propTypes = {
   onSelect: PropTypes.func,
   dataTestId: PropTypes.string,
   as: PropTypes.node,
-  ref: PropTypes.shape({
-    current: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  }),
 };
 
 Dropdown.defaultProps = {
@@ -128,7 +124,6 @@ Dropdown.defaultProps = {
   buttonStyle: 'text',
   dataTestId: undefined,
   as: undefined,
-  ref: null,
 };
 
 export default Dropdown;

@@ -1,7 +1,6 @@
 import PropTypes, { oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { Alert as ReactAlert } from 'react-bootstrap';
-import React from 'react';
 import Button from '../../Buttons/scss';
 import Icon from '../../Icon/scss';
 

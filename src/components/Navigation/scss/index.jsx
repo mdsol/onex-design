@@ -32,6 +32,10 @@ const Navigation = (props) => {
   const [hiddenItemsWithActiveItem, setHiddenItemsWithActiveItem] = useState([]);
   const { dropdownItems, toggleVisibleNavItems } = useAdaptiveNav(hiddenItems, visibleItems);
 
+  const dropdownClasses = classNames('onex-nav__item', 'nav-item', {
+    [isActiveDropdownItem]: 'haveSelectedItem',
+  });
+
   const handleSelect = (value) => {
     const isActive = dropdownItems.some((item) => item.eventKey === value);
 
@@ -54,25 +58,11 @@ const Navigation = (props) => {
   }, [isAdaptiveWidth]);
 
   useEffect(() => {
-    if (isActiveDropdownItem) {
-      setHiddenItemsWithActiveItem(
-        hiddenItems.map((item) => {
-          if (item.eventKey === activeItemKey) {
-            item.active = true;
-          } else {
-            item.active = false;
-          }
-          return item;
-        }),
-      );
-    } else {
-      setHiddenItemsWithActiveItem(
-        hiddenItems.map((item) => {
-          item.active = false;
-          return item;
-        }),
-      );
-    }
+    const activeHiddenItems = hiddenItems.map((item) => ({
+      ...item,
+      active: isActiveDropdownItem ? item.eventKey === activeItemKey : false,
+    }));
+    setHiddenItemsWithActiveItem(activeHiddenItems);
   }, [isActiveDropdownItem, activeItemKey]);
 
   return (
@@ -115,9 +105,7 @@ const Navigation = (props) => {
             dataTestId={dataTestIdDropdown}
             ref={dropdownRef}
             variant="tertiary"
-            className={`onex-nav__item nav-item${
-              (isActiveDropdownItem && ' haveSelectedItem') || ''
-            }`}
+            className={dropdownClasses}
           />
         )}
       </Nav>
