@@ -11610,12 +11610,16 @@ textarea.form-control-lg {
   /* label */
   /* help text */
 }
+.onex-select .onex-select__indicators {
+  align-items: flex-start;
+}
 .onex-select__clear-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: rgb(103, 110, 122);
   height: 100%;
+  max-height: 2.5rem;
   cursor: pointer;
 }
 .onex-select__clear-btn svg, .onex-select__clear-btn .onex-material-icon {
@@ -11689,6 +11693,7 @@ textarea.form-control-lg {
   justify-content: center;
   padding: 0.25rem;
   height: 100%;
+  max-height: 2.5rem;
 }
 .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator svg {
   width: 1.25rem;
@@ -11849,20 +11854,18 @@ textarea.form-control-lg {
 }
 
 .onex-select--md .onex-select__control {
-  height: 2.5rem;
   min-height: 2.5rem;
 }
 .onex-select--md .onex-select__control .onex-select__value-container,
 .onex-select--md .onex-select__control .onex-select__indicators {
-  height: calc(2.5rem - 1px * 2);
   min-height: calc(2.5rem - 1px * 2);
 }
 .onex-select--md .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
   width: calc(2.5rem - 1px * 2);
-  height: calc(2.5rem - 1px * 2);
+  min-height: calc(2.5rem - 1px * 2);
 }
 .onex-select--md .onex-select__multi-value {
-  height: 1.5rem;
+  min-height: 1.5rem;
 }
 .onex-select--md .onex-select__icon {
   padding-left: 0.75rem;
@@ -11884,20 +11887,18 @@ textarea.form-control-lg {
 }
 
 .onex-select--sm .onex-select__control {
-  height: 2rem;
   min-height: 2rem;
 }
 .onex-select--sm .onex-select__control .onex-select__value-container,
 .onex-select--sm .onex-select__control .onex-select__indicators {
-  height: calc(2rem - 1px * 2);
   min-height: calc(2rem - 1px * 2);
 }
 .onex-select--sm .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
   width: calc(2rem - 1px * 2);
-  height: calc(2rem - 1px * 2);
+  min-height: calc(2rem - 1px * 2);
 }
 .onex-select--sm .onex-select__multi-value {
-  height: 1.25rem;
+  min-height: 1.25rem;
 }
 .onex-select--sm .onex-select__icon {
   padding-left: 0.5rem;

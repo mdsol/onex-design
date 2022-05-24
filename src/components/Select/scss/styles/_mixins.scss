@@ -14,23 +14,21 @@
   $content-select-height: calc(#{$height} - #{$onex-select-control-border} * 2);
 
   .onex-select__control {
-    height: $height;
     min-height: $height;
   }
 
   .onex-select__control .onex-select__value-container,
   .onex-select__control .onex-select__indicators {
-    height: $content-select-height;
     min-height: $content-select-height;
   }
 
   .onex-select__control .onex-select__indicator.onex-select__dropdown-indicator {
     width: $content-select-height;
-    height: $content-select-height;
+    min-height: $content-select-height;
   }
 
   .onex-select__multi-value {
-    height: $multi-height;
+    min-height: $multi-height;
   }
 }
 
