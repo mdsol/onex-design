@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.4
+
+New Hint component added. Select component has been fixed so that setting values will not fire onSelect. Progressbar, Alert and Spinner have been updated. MultiSelect styles updated.
 ## 0.3.3
 
 New format for exporting components in library. Icons, Select, Card, Checkboxes, ToggleButton all updated. 
