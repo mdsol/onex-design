@@ -66,8 +66,8 @@ const Select = ({
   const [selectedOptions, setSelectedOptions] = useState(selectedValues);
 
   useEffect(() => {
-    onSelect?.(selectedValues);
-  }, [selectedValues, onSelect]);
+    setSelectedOptions(selectedValues);
+  }, [selectedValues]);
 
   const selectClassNames = classNames('onex-select', {
     [className]: className,
