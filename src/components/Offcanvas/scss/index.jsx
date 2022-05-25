@@ -32,19 +32,15 @@ const Offcanvas = ({
     [className]: className,
   });
 
-  const headerClassess = classNames({
+  const headerClasses = classNames({
     scrolling: isScrolling,
   });
 
-  const scrollHendl = (event) => {
-    if (event.target.scrollTop > 0) {
-      setIsScrolling(true);
-    } else setIsScrolling(false);
-  };
+  const scrollHendle = (event) => setIsScrolling(event.target.scrollTop > 0);
 
   return (
     <ReactOffcanvas {...props} className={classes} show={show} placement="end">
-      <OffcanvasHeader className={headerClassess}>
+      <OffcanvasHeader className={headerClasses}>
         <OffcanvasTitle>
           <h5>
             {title}
@@ -60,7 +56,7 @@ const Offcanvas = ({
         </Button>
       </OffcanvasHeader>
 
-      <OffcanvasBody onScroll={scrollHendl}>{children}</OffcanvasBody>
+      <OffcanvasBody onScroll={scrollHendle}>{children}</OffcanvasBody>
 
       {(link || primaryActionFc) && (
         <div className="offcanvas-footer">
