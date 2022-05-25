@@ -1793,6 +1793,25 @@ export const config = {
             dataTestId: 'onex-custom-hint',
           })),
       },
+      {
+        name: 'Banner',
+        componentName: 'Banner',
+        styledComponentName: 'Banner',
+        additionalComponents: [],
+        variants: () =>
+          ['info', 'error', 'warning'].map((variant) => ({
+            variant,
+            children: (
+              <>
+                We’re making changes to our server and Data Center products, including the end of
+                sale for new server licenses on.
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a href="#">Learn more</a>
+              </>
+            ),
+            dataTestId: 'onex-custom-hint',
+          })),
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',

@@ -10132,54 +10132,84 @@ progress {
     display: none !important;
   }
 }
-.onex-hint {
+.onex-banner {
   display: inline-flex;
   gap: 0.5rem;
-  align-items: stretch;
-  max-width: 100%;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem 2rem;
 }
-.onex-hint.onex-hint--variant-success .onex-hint__icon {
-  color: rgb(0, 126, 76);
+.onex-banner.onex-banner--variant-info {
+  background-color: rgb(0, 112, 192);
+  color: rgb(255, 255, 255);
 }
-.onex-hint.onex-hint--variant-success .onex-hint__icon svg path {
-  fill: rgb(0, 126, 76);
+.onex-banner.onex-banner--variant-info .onex-banner__icon svg path {
+  fill: rgb(255, 255, 255);
 }
-.onex-hint.onex-hint--variant-info .onex-hint__icon {
-  color: rgb(0, 112, 192);
+.onex-banner.onex-banner--variant-info .onex-banner__body a {
+  color: rgb(255, 255, 255);
 }
-.onex-hint.onex-hint--variant-info .onex-hint__icon svg path {
-  fill: rgb(0, 112, 192);
+.onex-banner.onex-banner--variant-info .onex-banner__body a:hover {
+  color: rgb(255, 255, 255);
 }
-.onex-hint.onex-hint--variant-warning .onex-hint__icon {
-  color: rgb(223, 106, 5);
+.onex-banner.onex-banner--variant-info .onex-banner__body a:active {
+  color: rgb(255, 255, 255);
 }
-.onex-hint.onex-hint--variant-warning .onex-hint__icon svg path {
-  fill: rgb(223, 106, 5);
+.onex-banner.onex-banner--variant-warning {
+  background-color: rgb(252, 185, 22);
+  color: rgb(26, 28, 30);
 }
-.onex-hint.onex-hint--variant-error .onex-hint__icon {
-  color: rgb(217, 21, 34);
+.onex-banner.onex-banner--variant-warning .onex-banner__icon svg path {
+  fill: rgb(26, 28, 30);
 }
-.onex-hint.onex-hint--variant-error .onex-hint__icon svg path {
-  fill: rgb(217, 21, 34);
+.onex-banner.onex-banner--variant-warning .onex-banner__body a {
+  color: rgb(26, 28, 30);
 }
-.onex-hint__icon {
+.onex-banner.onex-banner--variant-warning .onex-banner__body a:hover {
+  color: rgb(26, 28, 30);
+}
+.onex-banner.onex-banner--variant-warning .onex-banner__body a:active {
+  color: rgb(26, 28, 30);
+}
+.onex-banner.onex-banner--variant-error {
+  background-color: rgb(217, 21, 34);
+  color: rgb(255, 255, 255);
+}
+.onex-banner.onex-banner--variant-error .onex-banner__icon svg path {
+  fill: rgb(255, 255, 255);
+}
+.onex-banner.onex-banner--variant-error .onex-banner__body a {
+  color: rgb(255, 255, 255);
+}
+.onex-banner.onex-banner--variant-error .onex-banner__body a:hover {
+  color: rgb(255, 255, 255);
+}
+.onex-banner.onex-banner--variant-error .onex-banner__body a:active {
+  color: rgb(255, 255, 255);
+}
+.onex-banner__icon {
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
   height: 100%;
 }
-.onex-hint__icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.onex-banner__icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
-.onex-hint__icon .material-icons-round,
-.onex-hint__icon .onex-material-icon {
-  font-size: 1.5rem;
+.onex-banner__icon .material-icons-round,
+.onex-banner__icon .onex-material-icon {
+  font-size: 1.25rem;
 }
-.onex-hint__body {
+.onex-banner__body {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: rgb(26, 28, 30);
+}
+.onex-banner__body a {
+  font-weight: 600;
+  text-decoration-line: underline;
+  cursor: pointer;
 }

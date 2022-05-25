@@ -214,4 +214,9 @@ module.exports = [
     importName: 'Hint',
     replaceUrl: [{ className: '.onex-hint', classRegex: classRegexBase }],
   },
+  {
+    name: 'Banner',
+    importName: 'Banner',
+    replaceUrl: [{ className: '.onex-banner', classRegex: classRegexBase }],
+  },
 ];
