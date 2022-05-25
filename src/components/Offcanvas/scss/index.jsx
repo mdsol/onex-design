@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useState } from 'react';
 import Button from '../../Buttons/scss';
 import Icon from '../../Icon/scss';
 
@@ -25,13 +26,25 @@ const Offcanvas = ({
   onHide,
   ...props
 }) => {
+  const [isScrolling, setIsScrolling] = useState(false);
+
   const classes = classNames('onex-offcanvas', {
     [className]: className,
   });
 
+  const headerClassess = classNames({
+    scrolling: isScrolling,
+  });
+
+  const scrollHendl = (event) => {
+    if (event.target.scrollTop > 0) {
+      setIsScrolling(true);
+    } else setIsScrolling(false);
+  };
+
   return (
     <ReactOffcanvas {...props} className={classes} show={show} placement="end">
-      <OffcanvasHeader>
+      <OffcanvasHeader className={headerClassess}>
         <OffcanvasTitle>
           <h5>
             {title}
@@ -47,31 +60,33 @@ const Offcanvas = ({
         </Button>
       </OffcanvasHeader>
 
-      <OffcanvasBody>{children}</OffcanvasBody>
+      <OffcanvasBody onScroll={scrollHendl}>{children}</OffcanvasBody>
 
-      <div className="offcanvas-footer">
-        {link && linkText ? (
-          <a href={link} className="action-link">
-            {linkText}
-          </a>
-        ) : (
-          <>
-            {secondaryActionFc && (
-              <Button
-                onClick={secondaryActionFc}
-                variant="secondary"
-                className="secondary"
-                size="md"
-              >
-                {secondaryActionText || 'Secondary'}
+      {(link || primaryActionFc) && (
+        <div className="offcanvas-footer">
+          {link && linkText ? (
+            <a href={link} className="action-link">
+              {linkText}
+            </a>
+          ) : (
+            <>
+              {secondaryActionFc && (
+                <Button
+                  onClick={secondaryActionFc}
+                  variant="secondary"
+                  className="secondary"
+                  size="md"
+                >
+                  {secondaryActionText || 'Secondary'}
+                </Button>
+              )}
+              <Button onClick={primaryActionFc} className="primary" size="md">
+                {primaryActionText || 'Primary'}
               </Button>
-            )}
-            <Button onClick={primaryActionFc} className="primary" size="md">
-              {primaryActionText || 'Primary'}
-            </Button>
-          </>
-        )}
-      </div>
+            </>
+          )}
+        </div>
+      )}
     </ReactOffcanvas>
   );
 };
