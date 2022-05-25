@@ -1,0 +1,42 @@
+@import 'mixins';
+
+.onex-banner {
+  @include banner-color-variant();
+
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem 2rem;
+
+  &__icon {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+
+    svg {
+      width: $onex-banner-icon-size;
+      height: $onex-banner-icon-size;
+    }
+
+    .material-icons-round,
+    .onex-material-icon, {
+      font-size: $onex-banner-icon-size;
+    }
+  }
+
+  &__body {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: $onex-banner-font-size;
+    line-height: $onex-banner-line-height;
+
+    a {
+      font-weight: 600;
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+  }
+}

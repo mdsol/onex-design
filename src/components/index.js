@@ -62,6 +62,7 @@ export { default as Offcanvas } from './Offcanvas/scss';
 export { default as Alert } from './Alert/scss';
 export { default as Icon } from './Icon/scss';
 export { default as Hint } from './Hint/scss';
+export { default as Banner } from './Banner/scss';
 // 1x styled components
 export { default as StyledAvatar } from './Avatar/styled';
 export { default as StyledIcon } from './Icon/styled';

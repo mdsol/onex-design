@@ -1,0 +1,28 @@
+@mixin banner-color-variant() {
+  $types: 'info' $onex-banner-info-bg-color $onex-banner-info-text-color,
+  'warning' $onex-banner-warning-bg-color $onex-banner-warning-text-color,
+  'error' $onex-banner-error-bg-color $onex-banner-error-text-color;
+
+  @each $type, $bg-color, $text-color in $types {
+    &.onex-banner--variant-#{$type} {
+      background-color: $bg-color;
+      color: $text-color;
+
+      .onex-banner__icon {
+        svg path {
+          fill: $text-color;
+        }
+      }
+
+      .onex-banner__body a {
+        color: $text-color;
+        &:hover {
+          color: $text-color;
+        }
+        &:active {
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
