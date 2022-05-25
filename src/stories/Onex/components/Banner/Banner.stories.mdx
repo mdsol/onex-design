@@ -1,0 +1,106 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+
+import { Banner, Icon } from '../../../../components';
+import * as stories from './Banner.stories.jsx';
+
+export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, default: undefined };
+
+<Meta
+  title="Onex/Components/Banner"
+  argTypes={{
+    children: {
+      description: 'The content of the Icon',
+      control: 'text',
+    },
+    className: {
+      description: 'The className to set the styles for Icon',
+      control: 'text',
+    },
+    icon: {
+      description:
+        'The icon element instead of default icon.',
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          Star: 'Star',
+          Stars: 'Star in round',
+          default: 'Set default icon'
+        },
+      },
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    variant: {
+      description: 'The variant of the component.',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    dataTestId: {
+      description: 'The it of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+  }}
+  component={Banner}
+/>
+
+export const Template = (args) => <Banner {...args} />;
+
+## Banner
+
+A banner is a prominent message with related actions.
+
+### Banner variants
+
+The component has 3 variants such as "info", "warning", "error".
+
+##### <i>information</i>
+
+Use <b>information</b> banner to show general product announcements, e.g., significant updates or releases.
+
+<Canvas>
+  <Story name="Info" story={stories.Info}/>
+</Canvas>
+
+##### <i>warning</i>
+
+Use <b>warning</b> banners to provide info that some issue might happen in the nearest future or when a specific action is required from the user.
+
+<Canvas>
+  <Story name="Warning" story={stories.Warning}/>
+</Canvas>
+
+##### <i>error</i>
+
+Use <b>error</b> banner to inform the user about critical issues.
+
+<Canvas>
+  <Story name="Error" story={stories.Error}/>
+</Canvas>
+
+### Banner details
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      variant: 'info',
+      className: 'c-demo-banner',
+      dataTestId: 'demo-banner-id',
+      children: 'We’re making changes to our server and Data Center products, including the end of sale for new',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo"/>

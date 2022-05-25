@@ -23,7 +23,7 @@ const Banner = ({ className, variant, children, icon, dataTestId }) => {
 
 Banner.propTypes = {
   className: PropTypes.string,
-  variant: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
+  variant: PropTypes.oneOf(['info', 'warning', 'error']),
   children: PropTypes.node,
   icon: PropTypes.node,
   dataTestId: PropTypes.string,
