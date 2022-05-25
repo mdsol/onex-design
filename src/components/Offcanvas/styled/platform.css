@@ -10965,6 +10965,7 @@ progress {
 
 .onex-offcanvas .offcanvas-header {
   position: relative;
+  border-bottom: 1px solid rgba(26, 28, 30, 0.1);
 }
 .onex-offcanvas .offcanvas-header > button {
   position: absolute;
@@ -10972,7 +10973,6 @@ progress {
   top: 0.5rem;
 }
 .onex-offcanvas .offcanvas-header.scrolling {
-  border-bottom: 1px solid rgba(26, 28, 30, 0.1);
   box-shadow: 0px 2px 10px rgba(0, 28, 59, 0.12);
 }
 .onex-offcanvas .offcanvas-title h5 {
