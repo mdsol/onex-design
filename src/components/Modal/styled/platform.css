@@ -10907,9 +10907,11 @@ progress {
 
 .onex-modal .modal-body {
   padding: 0rem 1rem;
+  min-height: 1.5rem;
 }
 .onex-modal .modal-footer {
   border-top: 0rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 .onex-modal .modal-footer .modal-footer__content {
   width: 100%;
@@ -10925,7 +10927,7 @@ progress {
 }
 .onex-modal .modal-header {
   border-bottom: 0rem;
-  padding-right: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 .onex-modal .modal-content {
   border: 0rem;

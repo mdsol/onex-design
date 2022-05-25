@@ -69,9 +69,7 @@ const LargeModal = (args) => {
         handleClose={() => setShow(false)}
         onSecondaryClick={handleClose}
         onPrimaryClick={handleClose}
-      >
-        Large Modal
-      </Modal>
+      />
     </>
   );
 };
@@ -85,6 +83,7 @@ Large.args = {
   actionLinkName: 'Link',
   link: '#',
   title: 'Header',
+  children: 'Large Modal',
 };
 
 const SmallModal = (args) => {
@@ -105,9 +104,7 @@ const SmallModal = (args) => {
         handleClose={handleClose}
         onSecondaryClick={handleClose}
         onPrimaryClick={handleClose}
-      >
-        Small Modal
-      </Modal>
+      />
     </>
   );
 };
@@ -121,6 +118,7 @@ Small.args = {
   actionLinkName: 'Link',
   link: '#',
   title: 'Header',
+  children: 'Small Modal',
 };
 
 const CustomWidthModal = (args) => {
@@ -136,14 +134,12 @@ const CustomWidthModal = (args) => {
       </Button>
 
       <Modal
+        {...args}
         show={show}
         handleClose={handleClose}
         onSecondaryClick={handleClose}
         onPrimaryClick={handleClose}
-        {...args}
-      >
-        Custom Modal
-      </Modal>
+      />
     </>
   );
 };
@@ -156,4 +152,5 @@ CustomWidth.args = {
   actionLinkName: 'Link',
   link: '#',
   title: 'Header',
+  children: 'Custom Modal',
 };

@@ -140,7 +140,7 @@ const DevExamples = () => {
           actionLinkName="Link"
           actionHeaderName="Button"
           dropdownItems={dropdownItems}
-          variant="info"
+          variant="default"
           titleAction="button"
           link="#"
           badgeContent="100"
