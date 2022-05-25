@@ -6,6 +6,10 @@
             right: 0.5rem;
             top: 0.5rem;
         }
+        &.scrolling {
+            border-bottom: 1px solid $onex-offcanavas-controll-border-color;
+            box-shadow: 0px 2px 10px $onex-offcanavas-controll-shadow-color;
+        }
     }
 
     .offcanvas-title {
@@ -13,6 +17,7 @@
             font-weight: $onex-offcanvas-title-font-weight;
             display: flex;
             align-items: center;
+            margin-bottom: 0;
 
             .badge {
                 font-size: $font-size-sm;
@@ -24,12 +29,12 @@
     }
 
     .offcanvas-footer {
-        height: 56px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: end;
-        padding: 0 1rem;
+        padding: 0.5rem 1rem;
+        border-top: 1px solid $onex-offcanavas-controll-border-color;
 
         .primary {
             margin-left: 0.5rem;

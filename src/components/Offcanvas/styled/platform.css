@@ -10971,10 +10971,15 @@ progress {
   right: 0.5rem;
   top: 0.5rem;
 }
+.onex-offcanvas .offcanvas-header.scrolling {
+  border-bottom: 1px solid rgba(26, 28, 30, 0.1);
+  box-shadow: 0px 2px 10px rgba(0, 28, 59, 0.12);
+}
 .onex-offcanvas .offcanvas-title h5 {
   font-weight: 600;
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 .onex-offcanvas .offcanvas-title h5 .badge {
   font-size: 0.75rem;
@@ -10983,12 +10988,12 @@ progress {
   background-color: rgba(103, 110, 122, 0.1) !important;
 }
 .onex-offcanvas .offcanvas-footer {
-  height: 56px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(26, 28, 30, 0.1);
 }
 .onex-offcanvas .offcanvas-footer .primary {
   margin-left: 0.5rem;

@@ -32,6 +32,42 @@ const tabsHiddenItems = [
   { eventKey: 'six', title: 'item six' },
 ];
 
+const testText = `
+sdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvs
+dvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfv
+sdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvs
+dvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvds
+vsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdv
+sdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvs
+fvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsd
+vsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdv
+dsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvs
+dvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsd
+vsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsv
+sdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvs
+dvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsf
+vsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdv
+sdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvd
+
+svsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsd
+vsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvs
+fvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvs
+dvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdv
+dsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfv
+sdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsd
+vsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvds
+vsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvs
+dvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvs
+fvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdv
+sdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdv
+dsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvs
+dvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsd
+vsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvs
+dvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvs
+dvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvs
+dvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdv
+sdvsfvsdvsdvdsvsdv`;
+
 // eslint-disable-next-line import/prefer-default-export
 export const config = {
   data: {
@@ -1734,8 +1770,15 @@ export const config = {
           {
             show: true,
             title: 'Title',
-            secondaryActionFc: '',
+            primaryActionFc: () => {
+              console.log('yep');
+            },
+            prymaryActionText: 'Prymary',
+            secondaryActionFc: () => {
+              console.log('yep');
+            },
             secondaryActionText: 'Secondary',
+            children: testText,
           },
         ],
       },
