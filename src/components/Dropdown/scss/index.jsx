@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Dropdown as ReactDropdown } from 'react-bootstrap';
@@ -6,7 +6,7 @@ import Badge from '../../Badge/scss';
 import Icon from '../../Icon/scss';
 import DropdownMenu from './components/DropdownMenu';
 
-const Dropdown = (props) => {
+const Dropdown = React.forwardRef((props, ref) => {
   const {
     className,
     disabled,
@@ -28,7 +28,12 @@ const Dropdown = (props) => {
   });
 
   return (
-    <ReactDropdown onSelect={onSelect} className={buttonClassNames} data-test-id={dataTestId}>
+    <ReactDropdown
+      onSelect={onSelect}
+      className={buttonClassNames}
+      data-test-id={dataTestId}
+      ref={ref}
+    >
       <ReactDropdown.Toggle
         as={as}
         id={id}
@@ -78,7 +83,7 @@ const Dropdown = (props) => {
       </ReactDropdown.Menu>
     </ReactDropdown>
   );
-};
+});
 
 Dropdown.propTypes = {
   id: PropTypes.string.isRequired,

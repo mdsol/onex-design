@@ -12,12 +12,11 @@ const Tabs = (props) => {
     hiddenItems,
     dropdownTitle,
     isAdaptiveWidth,
-    size,
     dataTestIdDropdown,
     dataTestId,
   } = props;
 
-  const tabsGroupClassNames = classNames('onex-tab', `onex-tab--size-${size}`, {
+  const tabsGroupClassNames = classNames('onex-tab', {
     [className]: className,
   });
 
@@ -51,7 +50,6 @@ Tabs.propTypes = {
   className: PropTypes.string,
   activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  size: PropTypes.oneOf(['sm', 'lg']),
   onSelect: Function,
   visibleItems: propItemType,
   hiddenItems: propItemType,
@@ -66,7 +64,6 @@ Tabs.defaultProps = {
   activeKey: undefined,
   defaultActiveKey: undefined,
   onSelect: undefined,
-  size: 'sm',
   visibleItems: [],
   hiddenItems: [],
   dropdownTitle: 'More',

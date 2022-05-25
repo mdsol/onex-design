@@ -10,5 +10,8 @@ export default ({ children, ...props }) => <StyledComponent {...props}>{children
 const handleCssString = (str) => '&' + str;
 
 const StyledComponent = styled(Tabs)`
-  ${() => cssString.replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)}
+  ${() =>
+    cssString
+      .replaceAll(/\.onex-tab.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.onex-nav.[^__]+?[.|\s]/g, handleCssString)}
 `;

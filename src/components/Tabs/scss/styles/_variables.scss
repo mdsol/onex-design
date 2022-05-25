@@ -1,32 +1,21 @@
-$onex-tab-height-sm: $component-height-sm;
-$onex-tab-font-size-sm: $font-size-sm;
-$onex-tab-line-height-sm: $line-height-sm;
-$onex-tab-padding-y-sm: 0.5rem;
-$onex-tab-line-hover-height-sm: 0.125rem;
+$onex-tab-height: $component-height-lg;
+$onex-tab-font-size: $font-size-lg;
+$onex-tab-line-height: $line-height-lg;
+$onex-tab-padding-y: 0.375rem;
+$onex-tab-padding-x: 0.8rem;
+$onex-tab-margin: 0 0.2rem;
+$onex-tab-line-hover-height: 0.25rem;
 
-$onex-tab-height-lg: $component-height-lg;
-$onex-tab-font-size-lg: $font-size-lg;
-$onex-tab-line-height-lg: $line-height-lg;
-$onex-tab-padding-y-lg: 0.375rem;
-$onex-tab-line-hover-height-lg: 0.25rem;
-
-$onex-tab-main-text-color: $primary-720;
+$onex-tab-main-text-color: $secondary-500;
+$onex-tab-active-text-color: $secondary-900;
+$onex-tab-desactive-text-color: $secondary-900-opacity-50;
 $onex-tab-item-padding-left: 1.5rem;
 
-$onex-tab-menu-border-radius-lg: $component-border-radius-lg;
-$onex-tab-menu-font-size-lg: $font-size-lg;
-$onex-tab-menu-line-height-lg: $line-height-lg;
-$onex-tab-menu-padding-x-lg: $dropdown-menu-padding-x-lg;
-$onex-tab-menu-padding-y-lg: $dropdown-menu-padding-y-lg;
-$onex-tab-menu-min-width-lg: $dropdown-menu-min-width-lg;
-$onex-tab-menu-item-padding-x-lg: $dropdown-menu-item-padding-x-lg;
-$onex-tab-menu-item-padding-y-lg: $dropdown-menu-item-padding-y-lg;
-
-$onex-tab-menu-font-size-sm: $font-size-sm;
-$onex-tab-menu-border-radius-sm: $component-border-radius-sm;
-$onex-tab-menu-line-height-sm: $line-height-sm;
-$onex-tab-menu-padding-x-sm: $dropdown-menu-padding-x-sm;
-$onex-tab-menu-padding-y-sm: $dropdown-menu-padding-y-sm;
-$onex-tab-menu-min-width-sm: $dropdown-menu-min-width-sm;
-$onex-tab-menu-item-padding-x-sm: $dropdown-menu-item-padding-x-sm;
-$onex-tab-menu-item-padding-y-sm: $dropdown-menu-item-padding-y-sm;
+$onex-tab-menu-border-radius: $component-border-radius-lg;
+$onex-tab-menu-font-size: $font-size-lg;
+$onex-tab-menu-line-height: $line-height-lg;
+$onex-tab-menu-padding-x: $dropdown-menu-padding-x-lg;
+$onex-tab-menu-padding-y: $dropdown-menu-padding-y-lg;
+$onex-tab-menu-min-width: $dropdown-menu-min-width-lg;
+$onex-tab-menu-item-padding-x: $dropdown-menu-item-padding-x-lg;
+$onex-tab-menu-item-padding-y: $dropdown-menu-item-padding-y-lg;

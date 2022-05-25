@@ -55,9 +55,6 @@ export default {
       description: 'A callback fired when a item is selected',
       action: 'select',
     },
-    size: {
-      description: 'Size of the component',
-    },
     visibleItems: {
       description: `Array of visible menu items. Each item contain:
                            \n1.title* - content of menu item;
@@ -97,16 +94,8 @@ const tabsHiddenItems = [
 
 const TabsTemplate = (args) => <Tabs {...args} />;
 
-export const Small = TabsTemplate.bind({});
-Small.args = {
+export const UsingTabs = TabsTemplate.bind({});
+UsingTabs.args = {
   visibleItems: tabsVisibleItems,
   hiddenItems: tabsHiddenItems,
-  size: 'sm',
-};
-
-export const Large = TabsTemplate.bind({});
-Large.args = {
-  visibleItems: tabsVisibleItems,
-  hiddenItems: tabsHiddenItems,
-  size: 'lg',
 };

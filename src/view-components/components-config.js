@@ -27,7 +27,10 @@ const tabsVisibleItems = [
   { eventKey: 'four', title: 'item four' },
 ];
 
-const tabsHiddenItems = [{ eventKey: 'five', title: 'item five' }];
+const tabsHiddenItems = [
+  { eventKey: 'five', title: 'item five' },
+  { eventKey: 'six', title: 'item six' },
+];
 
 // eslint-disable-next-line import/prefer-default-export
 export const config = {
@@ -1034,12 +1037,6 @@ export const config = {
           {
             visibleItems: tabsVisibleItems,
             hiddenItems: tabsHiddenItems,
-            size: 'sm',
-          },
-          {
-            visibleItems: tabsVisibleItems,
-            hiddenItems: tabsHiddenItems,
-            size: 'lg',
           },
         ],
       },
