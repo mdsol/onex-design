@@ -1,0 +1,64 @@
+$calendar-min-width: 19.5rem;
+$calendar-background-color: $white;
+$calendar-border-color: $secondary-900-opacity-10;
+$calendar-box-shadow-color: $primary-900-opacity-12;
+$calendar-border-radius: 1rem;
+$calendar-padding: 1rem;
+
+$calendar-month-year-wrapper-height: 2rem;
+$calendar-month-year-wrapper-margin-bottom: 0.5rem;
+$calendar-month-year-next-prev-btn-background-color: $white;
+
+$calendar-month-year-select-height: 2rem;
+$calendar-month-year-select-border-color: $secondary-900-opacity-20;
+$calendar-month-year-select-border-radius: 0.5rem;
+$calendar-month-year-select-padding-x: 0.313rem;
+$calendar-month-year-select-padding-y: 0.5rem;
+$calendar-month-year-select-font-weight: 400;
+$calendar-month-year-select-font-size: $font-size-label;
+$calendar-month-year-select-line-height: $line-height-label;
+$calendar-month-year-select-color: $secondary-900;
+$calendar-month-year-select-margin-y: 0.25rem;
+
+$calendar-month-select-min-width: 8rem;
+$calendar-year-select-min-width: 5rem;
+
+$calendar-day-number-hover-border-color: $secondary-900-opacity-50;
+
+$calendar-day-number-today-color: $primary-500;
+$calendar-day-number-today-font-weight: 600;
+$calendar-day-number-today-background-color: $primary-500;
+$calendar-day-number-today-selected-color: $white;
+$calendar-day-number-today-selected-background-color: $white;
+$calendar-day-number-today-border-color: $secondary-900-opacity-20;
+$calendar-day-number-today-hover-border-color: $secondary-900-opacity-50;
+
+$calendar-month-width: 17.5rem;
+
+$calendar-week-days-height: 2.5rem;
+$calendar-week-day-font-style: normal;
+$calendar-week-day-font-weight: 600;
+$calendar-week-day-font-size: $font-size-caption;
+$calendar-week-day-line-height: $line-height-caption;
+$calendar-week-day-color: $secondary-900;
+$calendar-week-day-flex-basis: 2.5rem;
+
+$calendar-day-width: 2.5rem;
+$calendar-day-height: 2.5rem;
+$calendar-day-line-height: $line-height-lg;
+
+$calendar-day-number-font-size: $font-size-label;
+$calendar-day-number-line-height: $line-height-label;
+$calendar-day-number-color: $secondary-500;
+$calendar-day-number-border-radius: 0.5rem;
+$calendar-day-number-selected-color: $white;
+$calendar-day-number-disabled-background-color: $white;
+
+$calendar-divider-border-color: $secondary-500-opacity-01;
+$calendar-divider-color: $secondary-500-opacity-01;
+$calendar-divider-background-color: $secondary-500-opacity-01;
+$calendar-divider-width: 17.5rem;
+
+$calendar-today-btn-width: 17.5rem;
+$calendar-today-btn-margin-x: 0.5rem;
+

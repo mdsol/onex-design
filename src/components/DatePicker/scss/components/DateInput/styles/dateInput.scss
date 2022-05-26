@@ -1,0 +1,116 @@
+@import 'mixins';
+
+.onex-date-picker {
+  min-width: $onex-date-picker-min-width;
+  max-width: $onex-date-picker-max-width;
+  width: $onex-date-picker-min-width;
+  font-family: $font-family;
+
+  &__input {
+    position: relative;
+  }
+
+  &--disabled {
+    opacity: 0.4;
+  }
+
+  .form-label {
+    color: $onex-date-picker-label-color;
+    font-size: $onex-date-picker-label-font-size;
+    line-height: $line-height-label;
+    font-weight: $onex-date-picker-label-font-weight;
+    padding: 0 0.25rem;
+  }
+
+  &__toggle-calendar {
+    @include icon-size($onex-date-picker-calendar-icon);
+
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $onex-date-picker-calendar-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--lg &__toggle-calendar {
+    right: $onex-date-picker-padding-trailing-icon-lg;
+  }
+
+  &--sm &__toggle-calendar {
+    right: $onex-date-picker-padding-trailing-icon-sm;
+  }
+
+  .form-control {
+    line-height: $onex-date-picker-line-height;
+
+    &.form-control-sm {
+      height: $onex-date-picker-height-sm;
+    }
+
+    &.form-control-lg {
+      height: $onex-date-picker-height-lg;
+    }
+
+    &:invalid,
+    &.is-invalid,
+    &[required] {
+      border-color: $onex-date-picker-invalid-border-color !important;
+      background-image: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &:disabled,
+    &.disabled,
+    &:disabled.is-invalid,
+    &.disabled.is-invalid,
+    &:disabled:invalid,
+    &.disabled:invalid {
+      background-color: transparent;
+    }
+
+    &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
+      border-color: $onex-date-picker-border-hover-color;
+    }
+
+    &:focus {
+      border-color: $onex-date-picker-border-focus-color;
+      box-shadow: $onex-date-picker-border-focus-color 0 0 1px, $onex-date-picker-border-focus-color 0 0 0 1px;
+    }
+  }
+
+  &.onex-date-picker--focused {
+    .form-control {
+      border-color: $onex-date-picker-border-focus-color;
+      box-shadow: $onex-date-picker-border-focus-color 0 0 1px, $onex-date-picker-border-focus-color 0 0 0 1px;
+
+      &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
+        border-color: $onex-date-picker-border-focus-color;
+      }
+    }
+  }
+
+  &__help.form-text {
+    min-width: $onex-date-picker-help-text-min-width;
+    min-height: $onex-date-picker-help-text-min-height;
+    padding: 0 0.25rem;
+    display: inline-block;
+    color: $onex-date-picker-help-text-color;
+    font-size: $onex-date-picker-font-size;
+    line-height: $onex-date-picker-line-height;
+  }
+
+  &__help--error.form-text {
+    color: $onex-date-picker-invalid-border-color;
+  }
+}
