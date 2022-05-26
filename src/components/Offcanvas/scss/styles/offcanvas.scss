@@ -1,13 +1,13 @@
 .onex-offcanvas {
     .offcanvas-header {
         position: relative;
+        border-bottom: 1px solid $onex-offcanavas-controll-border-color;
         & > button {
             position: absolute;
             right: 0.5rem;
             top: 0.5rem;
         }
         &.scrolling {
-            border-bottom: 1px solid $onex-offcanavas-controll-border-color;
             box-shadow: 0px 2px 10px $onex-offcanavas-controll-shadow-color;
         }
     }
