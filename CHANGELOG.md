@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.6
+
+Fix publishing to artifactory. 
 ## 0.3.5
 
 Move React from dependencies list to devDependency. 
