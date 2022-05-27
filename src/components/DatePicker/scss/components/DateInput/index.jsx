@@ -7,7 +7,6 @@ import Icon from '../../../../Icon/scss';
 const DateInput = React.forwardRef((props, ref) => {
   const {
     autoFocus,
-    className,
     label,
     errorMessage,
     placeholder,
@@ -27,7 +26,6 @@ const DateInput = React.forwardRef((props, ref) => {
   } = props;
 
   const dateInputClassNames = classNames('onex-date-picker', {
-    [className]: className,
     'onex-date-picker--lg': size === 'lg' || size === 'md',
     'onex-date-picker--sm': size === 'sm',
     'onex-date-picker--disabled': disabled,

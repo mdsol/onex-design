@@ -1,8 +1,12 @@
-@import 'styles/variables';
 @import 'components/DateInput/styles/variables';
 @import 'components/Calendar/styles/variables';
-@import '../../../../node_modules/react-date-range/dist/styles'; // main style file
-@import '../../../../node_modules/react-date-range/dist/theme/default'; // theme css file
+@import '../../Buttons/scss/styles/variables';
+@import '../../../../node_modules/bootstrap/scss/forms';
+@import '../../../../node_modules/bootstrap/scss/buttons';
+@import '../../../../node_modules/bootstrap/scss/transitions';
+@import '../../../../node_modules/react-date-range/src/styles';
 @import 'components/DateInput/styles/dateInput';
 @import 'components/Calendar/styles/calendar';
 @import 'styles/datePicker';
+@import '../../Buttons/scss/styles/buttons';
+

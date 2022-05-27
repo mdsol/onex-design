@@ -17,13 +17,22 @@
     background: $calendar-background-color;
     padding: $calendar-padding $calendar-padding 0.5rem $calendar-padding;
     border-radius: $calendar-border-radius;
+    color: $calendar-color;
+    font-size: $calendar-font-size;
 
     .rdrMonthAndYearWrapper {
       height: $calendar-month-year-wrapper-height;
       padding-top: 0;
       margin-bottom: $calendar-month-year-wrapper-margin-bottom;
+      align-items: center;
+
 
       .rdrNextPrevButton {
+        display: block;
+        width: $calendar-month-year-next-prev-btn-size;
+        height: $calendar-month-year-next-prev-btn-size;
+        padding: 0;
+        border: 0;
         background: $calendar-month-year-next-prev-btn-background-color;
         margin: 0;
         border: none;
@@ -50,17 +59,25 @@
 
       .rdrMonthAndYearPickers {
         select {
+          appearance: none;
+          -webkit-appearance: none;
           height: $calendar-month-year-select-height;
           border: 1px solid $calendar-month-year-select-border-color;
           border-radius: $calendar-month-year-select-border-radius;
           padding: $calendar-month-year-select-padding-x $calendar-month-year-select-padding-y;
           text-align: start;
+          outline: 0;
+          cursor: pointer;
           font-weight: $calendar-month-year-select-font-weight;
           font-size: $calendar-month-year-select-font-size;
           line-height: $calendar-month-year-select-line-height;
           color: $calendar-month-year-select-color;
           background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 0 24 24' width='20px' fill='%23676E7A'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E") no-repeat;
           background-position: right 0.5rem center;
+
+          &:hover {
+            border-color: $calendar-month-year-select-hover-border-color;
+          }
         }
 
         .rdrMonthPicker {
@@ -84,10 +101,15 @@
     &:not(.rdrDateRangeWrapper) {
       .rdrDayHovered {
         .rdrDayNumber::after {
+          content: "";
           border: 1px solid $calendar-day-number-hover-border-color;
           border-radius: $calendar-day-number-border-radius;
+          position: absolute;
           top: 0;
           bottom: 0;
+          left: 0;
+          right: 0;
+          background: transparent;
         }
 
         .rdrSelected ~ .rdrDayNumber {
@@ -131,6 +153,10 @@
     }
 
     .rdrMonths {
+      .rdrMonthsVertical .rdrMonth:first-child .rdrMonthName {
+        display: none;
+      }
+
       .rdrMonth {
         width: $calendar-month-width;
         padding: 0;
@@ -157,14 +183,30 @@
             width: $calendar-day-width;
             height: $calendar-day-height;
             line-height: $calendar-day-line-height;
+            background: transparent;
+            user-select: none;
+            border: 0;
+            padding: 0;
+            text-align: center;
+
+            &:focus {
+              outline: 0;
+            }
 
             .rdrDayNumber {
+              outline: 0;
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              top: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               font-style: $calendar-week-day-font-style;
               font-weight: $calendar-week-day-font-weight;
               font-size: $calendar-day-number-font-size;
               line-height: $calendar-day-number-line-height;
-              top: 0;
-              bottom: 0;
 
               & > span {
                 color: $calendar-day-number-color;
@@ -182,6 +224,8 @@
             }
 
             .rdrSelected {
+              background: currentColor;
+              position: absolute;
               top: 0;
               left: 0;
               bottom: 0;
@@ -209,7 +253,14 @@
                 font-weight: $calendar-day-number-today-font-weight;
 
                 &::after {
+                  content: '';
+                  position: absolute;
                   bottom: 0.438rem;
+                  left: 50%;
+                  transform: translate(-50%, 0);
+                  width: $calendar-day-number-today-width;
+                  height: $calendar-day-number-today-height;
+                  border-radius: $calendar-day-number-today-border-radius;
                   background: $calendar-day-number-today-background-color;
                 }
               }

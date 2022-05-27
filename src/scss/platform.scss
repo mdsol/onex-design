@@ -68,8 +68,7 @@ $spacers: (
   10: $spacer * 10.5,
 );
 
-@import '../../node_modules/react-date-range/dist/styles.css';
-@import '../../node_modules/react-date-range/dist/theme/default.css';
+@import '../../node_modules/react-date-range/src/styles';
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../themes/base/colors';
 @import '../themes/base/sizes';

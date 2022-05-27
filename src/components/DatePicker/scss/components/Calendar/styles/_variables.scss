@@ -1,5 +1,7 @@
 $calendar-min-width: 19.5rem;
+$calendar-color: $black;
 $calendar-background-color: $white;
+$calendar-font-size: $font-size-caption;
 $calendar-border-color: $secondary-900-opacity-10;
 $calendar-box-shadow-color: $primary-900-opacity-12;
 $calendar-border-radius: 1rem;
@@ -8,9 +10,11 @@ $calendar-padding: 1rem;
 $calendar-month-year-wrapper-height: 2rem;
 $calendar-month-year-wrapper-margin-bottom: 0.5rem;
 $calendar-month-year-next-prev-btn-background-color: $white;
+$calendar-month-year-next-prev-btn-size: 1.5rem;
 
 $calendar-month-year-select-height: 2rem;
 $calendar-month-year-select-border-color: $secondary-900-opacity-20;
+$calendar-month-year-select-hover-border-color: $secondary-900-opacity-50;
 $calendar-month-year-select-border-radius: 0.5rem;
 $calendar-month-year-select-padding-x: 0.313rem;
 $calendar-month-year-select-padding-y: 0.5rem;
@@ -27,6 +31,9 @@ $calendar-day-number-hover-border-color: $secondary-900-opacity-50;
 
 $calendar-day-number-today-color: $primary-500;
 $calendar-day-number-today-font-weight: 600;
+$calendar-day-number-today-width: 1.125rem;
+$calendar-day-number-today-height: 0.125rem;
+$calendar-day-number-today-border-radius: 0.125rem;
 $calendar-day-number-today-background-color: $primary-500;
 $calendar-day-number-today-selected-color: $white;
 $calendar-day-number-today-selected-background-color: $white;

@@ -22,6 +22,7 @@ const Calendar = React.forwardRef((props, ref) => {
     weekStartsOn,
     setValue,
     formatDate,
+    setShowCalendar,
   } = props;
 
   const calendarClassNames = classNames('onex-date-picker-calendar', {
@@ -31,11 +32,13 @@ const Calendar = React.forwardRef((props, ref) => {
   const handleToday = () => {
     setDate(new Date());
     setValue(formatDate(new Date(), dateDisplayFormat, dateOptions));
+    setShowCalendar(false);
   };
 
   const onChange = (item) => {
     setDate(item);
     setValue(formatDate(item, dateDisplayFormat, dateOptions));
+    setShowCalendar(false);
   };
 
   return (
@@ -86,6 +89,7 @@ Calendar.propTypes = {
   weekStartsOn: PropTypes.number,
   setValue: PropTypes.func,
   formatDate: PropTypes.func,
+  setShowCalendar: PropTypes.func,
 };
 /* eslint-enable */
 
@@ -106,6 +110,7 @@ Calendar.defaultProps = {
   weekStartsOn: undefined,
   setValue: undefined,
   formatDate: undefined,
+  setShowCalendar: undefined,
 };
 
 export default Calendar;

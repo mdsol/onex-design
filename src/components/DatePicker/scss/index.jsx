@@ -32,6 +32,7 @@ const DatePicker = (props) => {
     minDate,
     maxDate,
     weekStartsOn,
+    showCalendar,
     dataTestId,
   } = props;
 
@@ -52,7 +53,7 @@ const DatePicker = (props) => {
   };
 
   const target = useRef(null);
-  const [showCalendar, setShowCalendar] = useState(false);
+  const [_showCalendar, _setShowCalendar] = useState(showCalendar);
   const [date, setDate] = useState(null);
   const [_value, _setValue] = useState(formatDate(value, dateDisplayFormat, dateOptions));
   const [isError, setIsError] = useState(isInvalid);
@@ -96,7 +97,7 @@ const DatePicker = (props) => {
   const handleToggleCalendar = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setShowCalendar(!showCalendar);
+    _setShowCalendar(!_showCalendar);
   };
 
   return (
@@ -104,7 +105,7 @@ const DatePicker = (props) => {
       <DateInput
         autoFocus={autoFocus}
         label={label}
-        placeholder={placeholder}
+        placeholder={placeholder || dateDisplayFormat}
         errorMessage={errorMessage}
         size={size === 'md' ? 'lg' : size}
         disabled={disabled}
@@ -114,7 +115,7 @@ const DatePicker = (props) => {
         helpText={helpText}
         value={_value}
         target={target}
-        showCalendar={showCalendar}
+        showCalendar={_showCalendar}
         handleToggleCalendar={handleToggleCalendar}
         handleChange={handleChange}
         onKeyDown={onKeyDown}
@@ -122,10 +123,10 @@ const DatePicker = (props) => {
       />
       <Overlay
         rootClose
-        onHide={() => setShowCalendar(false)}
+        onHide={() => _setShowCalendar(false)}
         container={target.current}
         target={target.current}
-        show={showCalendar}
+        show={_showCalendar}
         placement="bottom-start"
       >
         {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
@@ -146,6 +147,7 @@ const DatePicker = (props) => {
             weekStartsOn={weekStartsOn}
             setValue={_setValue}
             formatDate={formatDate}
+            setShowCalendar={_setShowCalendar}
           />
         )}
       </Overlay>
@@ -178,6 +180,7 @@ DatePicker.propTypes = {
   minDate: PropTypes.object,
   maxDate: PropTypes.object,
   weekStartsOn: PropTypes.number,
+  showCalendar: PropTypes.bool,
   dataTestId: PropTypes.string,
 };
 /* eslint-enable */
@@ -206,6 +209,7 @@ DatePicker.defaultProps = {
   maxDate: addYears(new Date(), 20),
   minDate: addYears(new Date(), -100),
   weekStartsOn: undefined,
+  showCalendar: false,
   dataTestId: undefined,
 };
 
