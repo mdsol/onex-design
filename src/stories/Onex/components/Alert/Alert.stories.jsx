@@ -6,7 +6,7 @@ export default {
   argTypes: {
     title: {
       description: `Text for Title`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: 'Title',
@@ -18,7 +18,7 @@ export default {
     },
     children: {
       description: `Text for element inside alert's body`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -42,7 +42,7 @@ export default {
     },
     primaryText: {
       description: `Text for Primary Btn`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -66,7 +66,7 @@ export default {
     },
     secondaryText: {
       description: `Text for Secondary Btn`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
