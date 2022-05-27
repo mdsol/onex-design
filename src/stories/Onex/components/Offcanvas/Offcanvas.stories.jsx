@@ -348,14 +348,13 @@ export const OnlyPrimaryBtn = OffcanvasBackdropTemplate.bind({});
 OnlyPrimaryBtn.args = {
   name: 'OnlyPrimaryBtn(default)',
   title: 'Title',
-  secondaryActionFc: null,
 };
 
 export const PrimaryAndSecondaryBtns = OffcanvasBackdropTemplate.bind({});
 PrimaryAndSecondaryBtns.args = {
   name: 'PrimaryAndSecondaryBtns',
   title: 'Title',
-  secondaryActionFc: () => {},
+  hasSecondaryAction: true,
   secondaryActionText: 'Secondary',
 };
 
@@ -363,6 +362,7 @@ export const LinkBtn = OffcanvasBackdropTemplate.bind({});
 LinkBtn.args = {
   name: 'LinkBtn',
   title: 'Title',
+  hasLinkAction: true,
   link: 'frfefe',
   linkText: 'Link',
 };

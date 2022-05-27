@@ -63,27 +63,29 @@ const Offcanvas = ({
 
       {hasActionsBlock && (
         <div className="offcanvas-footer">
-          {hasLinkAction ? (
-            <a href={link} className="action-link">
-              {linkText || 'Link'}
-            </a>
-          ) : (
-            <>
-              {hasSecondaryAction && (
-                <Button
-                  onClick={secondaryActionFc}
-                  variant="secondary"
-                  className="secondary"
-                  size="md"
-                >
-                  {secondaryActionText || 'Secondary'}
+          <div>
+            {hasLinkAction ? (
+              <a href={link} className="action-link">
+                {linkText || 'Link'}
+              </a>
+            ) : (
+              <>
+                {hasSecondaryAction && (
+                  <Button
+                    onClick={secondaryActionFc}
+                    variant="secondary"
+                    className="secondary"
+                    size="md"
+                  >
+                    {secondaryActionText || 'Secondary'}
+                  </Button>
+                )}
+                <Button onClick={primaryActionFc} className="primary" size="md">
+                  {primaryActionText || 'Primary'}
                 </Button>
-              )}
-              <Button onClick={primaryActionFc} className="primary" size="md">
-                {primaryActionText || 'Primary'}
-              </Button>
-            </>
-          )}
+              </>
+            )}
+          </div>
         </div>
       )}
     </ReactOffcanvas>
