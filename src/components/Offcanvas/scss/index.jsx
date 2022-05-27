@@ -25,8 +25,8 @@ const Offcanvas = ({
   className,
   onHide,
   hasActionsBlock,
-  isSecondaryActionActive,
-  isLinkActionActive,
+  hasSecondaryAction,
+  hasLinkAction,
   ...props
 }) => {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -63,13 +63,13 @@ const Offcanvas = ({
 
       {hasActionsBlock && (
         <div className="offcanvas-footer">
-          {isLinkActionActive ? (
+          {hasLinkAction ? (
             <a href={link} className="action-link">
               {linkText || 'Link'}
             </a>
           ) : (
             <>
-              {isSecondaryActionActive && (
+              {hasSecondaryAction && (
                 <Button
                   onClick={secondaryActionFc}
                   variant="secondary"
@@ -109,8 +109,8 @@ Offcanvas.propTypes = {
   restoreFocusOptions: PropTypes.string,
   scroll: PropTypes.bool,
   hasActionsBlock: PropTypes.bool,
-  isSecondaryActionActive: PropTypes.bool,
-  isLinkActionActive: PropTypes.bool,
+  hasSecondaryAction: PropTypes.bool,
+  hasLinkAction: PropTypes.bool,
   onEnter: PropTypes.func,
   onEntered: PropTypes.func,
   onEntering: PropTypes.func,
@@ -142,8 +142,8 @@ Offcanvas.defaultProps = {
   restoreFocusOptions: undefined,
   scroll: false,
   hasActionsBlock: true,
-  isSecondaryActionActive: false,
-  isLinkActionActive: false,
+  hasSecondaryAction: false,
+  hasLinkAction: false,
   onEnter: undefined,
   onEntered: undefined,
   onEntering: undefined,
