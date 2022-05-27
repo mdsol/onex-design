@@ -8,7 +8,7 @@ import * as stories from './Offcanvas.stories.jsx';
     argTypes={{
       link: {
       description: `Link for solo link btn in footar`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -20,7 +20,7 @@ import * as stories from './Offcanvas.stories.jsx';
     },
         linkText: {
       description: `Text for solo link btn in footar`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -41,7 +41,7 @@ import * as stories from './Offcanvas.stories.jsx';
     },
     primaryActionText: {
       description: `Text for Primary Btn`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -62,7 +62,7 @@ import * as stories from './Offcanvas.stories.jsx';
     },
     secondaryActionText: {
       description: `Text for Secondary Btn`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -74,7 +74,7 @@ import * as stories from './Offcanvas.stories.jsx';
     },
     title: {
       description: `Text for title`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -320,6 +320,7 @@ Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``
            args={{
                scroll: true,
                secondaryActionFc: null,
+               title: 'Title',
            }}>
         {({children, ...args}) => {
             const [show, setShow] = React.useState(false);
@@ -328,7 +329,7 @@ Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``
                     <Button variant="primary" onClick={() => setShow(true)}>
                         Launch
                     </Button>
-                    <Offcanvas {...args} show={show} onHide={() => setShow(false)} title="title">
+                    <Offcanvas {...args} show={show} onHide={() => setShow(false)}>
                     {children || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni aliquam libero, deleniti exercitationem, labore ratione quia asperiores ex est quos maxime, fugiat voluptatem veritatis. Laborum qui dicta voluptates consectetur.'}
                     </Offcanvas>
                 </>

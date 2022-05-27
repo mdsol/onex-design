@@ -7,7 +7,7 @@ export default {
   argTypes: {
     link: {
       description: `Link for solo link btn in footar`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -19,7 +19,7 @@ export default {
     },
     linkText: {
       description: `Text for solo link btn in footar`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -40,7 +40,7 @@ export default {
     },
     primaryActionText: {
       description: `Text for Primary Btn`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -61,7 +61,7 @@ export default {
     },
     secondaryActionText: {
       description: `Text for Secondary Btn`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
@@ -73,7 +73,7 @@ export default {
     },
     title: {
       description: `Text for title`,
-      control: 'string',
+      control: 'text',
       table: {
         defaultValue: {
           summary: '',
