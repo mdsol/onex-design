@@ -1,3 +1,26 @@
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Navbar from 'react-bootstrap/Navbar';
+import Placeholder from 'react-bootstrap/Placeholder';
+
+const ReactNavDropdown = Object.assign(NavDropdown, {
+  Item: NavDropdown.Item,
+  ItemText: NavDropdown.ItemText,
+  Divider: NavDropdown.Divider,
+  Header: NavDropdown.Header,
+});
+
+const ReactNavbar = Object.assign(Navbar, {
+  Brand: Navbar.Brand,
+  Collapse: Navbar.Collapse,
+  Offcanvas: Navbar.Offcanvas,
+  Text: Navbar.Text,
+  Toggle: Navbar.Toggle,
+});
+
+const ReactPlaceholder = Object.assign(Placeholder, {
+  Button: Placeholder.Button,
+});
+
 // react-bootstrap components
 export { default as Accordion } from 'react-bootstrap/Accordion';
 export { default as Breadcrumb } from 'react-bootstrap/Breadcrumb';
@@ -11,11 +34,14 @@ export { default as Figure } from 'react-bootstrap/Figure';
 export { default as Image } from 'react-bootstrap/Image';
 export { default as ListGroup } from 'react-bootstrap/ListGroup';
 export { default as Nav } from 'react-bootstrap/Nav';
-export { default as Navbar } from 'react-bootstrap/Navbar';
-export { default as NavDropdown } from 'react-bootstrap/NavDropdown';
+// export { default as Navbar } from 'react-bootstrap/Navbar';
+// export { default as NavDropdown } from 'react-bootstrap/NavDropdown';
+export { ReactNavbar as Navbar };
+export { ReactNavDropdown as NavDropdown };
 export { default as Overlay } from 'react-bootstrap/Overlay';
 export { default as OverlayTrigger } from 'react-bootstrap/OverlayTrigger';
-export { default as Placeholder } from 'react-bootstrap/Placeholder';
+// export { default as Placeholder } from 'react-bootstrap/Placeholder';
+export { ReactPlaceholder as Placeholder };
 export { default as Popover } from 'react-bootstrap/Popover';
 export { default as Row } from 'react-bootstrap/Row';
 export { default as Stack } from 'react-bootstrap/Stack';

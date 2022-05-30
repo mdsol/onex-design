@@ -5,7 +5,7 @@ export default {
   component: Overlay,
   argTypes: {
     transition: {
-      description: `Animate the entering and exiting of the Overlay. true will use the <Fade> transition, or a custom react-transition-group <Transition> component can be provided.`,
+      description: `Animate the entering and exiting of the Overlay. true will use the &lt;Fade&gt; transition, or a custom react-transition-group &lt;Transition&gt; component can be provided.`,
       control: 'boolean',
       table: {
         type: {
