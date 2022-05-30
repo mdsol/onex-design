@@ -53,10 +53,18 @@ const DatePicker = (props) => {
     return '';
   };
 
+  const formatCalendarDate = (newValue) => {
+    const val = Date.parse(newValue);
+    if (val && isValid(val)) {
+      return val;
+    }
+    return null;
+  };
+
   const target = useRef(null);
   const [_showCalendar, _setShowCalendar] = useState(showCalendar);
-  const [date, setDate] = useState(null);
   const [_value, _setValue] = useState(formatDate(value, dateDisplayFormat, dateOptions));
+  const [date, setDate] = useState(formatCalendarDate(value));
   const [isError, setIsError] = useState(isInvalid);
   const [isChanged, setIsChanged] = useState(false);
 
