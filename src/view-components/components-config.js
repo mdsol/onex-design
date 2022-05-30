@@ -592,6 +592,20 @@ export const config = {
             isInvalid: true,
             errorMessage: 'Error message',
           },
+          {
+            label: 'Label',
+            size: 'sm',
+            helpText: 'Optional help text',
+            value: '2022/04/04',
+            disabled: true,
+          },
+          {
+            label: 'Label',
+            size: 'md',
+            helpText: 'Optional help text',
+            value: '2022/04/04',
+            disabled: true,
+          },
         ],
       },
       {
