@@ -63,6 +63,7 @@ export { default as Alert } from './Alert/scss';
 export { default as Icon } from './Icon/scss';
 export { default as Hint } from './Hint/scss';
 export { default as Banner } from './Banner/scss';
+export { default as DatePicker } from './DatePicker/scss';
 // 1x styled components
 export { default as StyledAvatar } from './Avatar/styled';
 export { default as StyledIcon } from './Icon/styled';
@@ -101,3 +102,4 @@ export { default as StyledModal } from './Modal/styled';
 export { default as StyledProgressBar } from './ProgressBar/styled';
 export { default as StyledCard } from './Card/styled';
 export { default as StyledHint } from './Hint/styled';
+export { default as StyledDatePicker } from './DatePicker/styled';
