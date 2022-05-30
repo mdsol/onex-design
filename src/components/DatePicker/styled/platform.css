@@ -10145,15 +10145,15 @@ progress {
 }
 
 .col-form-label-lg {
-  padding-top: calc(0.5rem + 1px);
-  padding-bottom: calc(0.5rem + 1px);
+  padding-top: calc(0.625rem + 1px);
+  padding-bottom: calc(0.625rem + 1px);
   font-size: 0.875rem;
 }
 
 .col-form-label-sm {
-  padding-top: calc(0.25rem + 1px);
-  padding-bottom: calc(0.25rem + 1px);
-  font-size: 0.75rem;
+  padding-top: calc(0.375rem + 1px);
+  padding-bottom: calc(0.375rem + 1px);
+  font-size: 0.875rem;
 }
 
 .form-text {
@@ -10165,8 +10165,9 @@ progress {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  padding: 0.375rem 0.5rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -10174,7 +10175,7 @@ progress {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   appearance: none;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10199,7 +10200,7 @@ progress {
   height: 1.5em;
 }
 .form-control::placeholder {
-  color: #6c757d;
+  color: rgb(103, 110, 122);
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
@@ -10207,9 +10208,9 @@ progress {
   opacity: 1;
 }
 .form-control::file-selector-button {
-  padding: 0.375rem 0.75rem;
-  margin: -0.375rem -0.75rem;
-  margin-inline-end: 0.75rem;
+  padding: 0.375rem 0.5rem;
+  margin: -0.375rem -0.5rem;
+  margin-inline-end: 0.5rem;
   color: #212529;
   background-color: #e9ecef;
   pointer-events: none;
@@ -10229,9 +10230,9 @@ progress {
   background-color: #dde0e3;
 }
 .form-control::-webkit-file-upload-button {
-  padding: 0.375rem 0.75rem;
-  margin: -0.375rem -0.75rem;
-  margin-inline-end: 0.75rem;
+  padding: 0.375rem 0.5rem;
+  margin: -0.375rem -0.5rem;
+  margin-inline-end: 0.5rem;
   color: #212529;
   background-color: #e9ecef;
   pointer-events: none;
@@ -10268,47 +10269,47 @@ progress {
 }
 
 .form-control-sm {
-  min-height: calc(1.5em + 0.5rem + 2px);
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  border-radius: 0.2rem;
+  min-height: 2rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
 }
 .form-control-sm::file-selector-button {
-  padding: 0.25rem 0.5rem;
-  margin: -0.25rem -0.5rem;
+  padding: 0.375rem 0.5rem;
+  margin: -0.375rem -0.5rem;
   margin-inline-end: 0.5rem;
 }
 .form-control-sm::-webkit-file-upload-button {
-  padding: 0.25rem 0.5rem;
-  margin: -0.25rem -0.5rem;
+  padding: 0.375rem 0.5rem;
+  margin: -0.375rem -0.5rem;
   margin-inline-end: 0.5rem;
 }
 
 .form-control-lg {
-  min-height: calc(1.5em + 1rem + 2px);
-  padding: 0.5rem 1rem;
+  min-height: 2.5rem;
+  padding: 0.625rem 0.75rem;
   font-size: 0.875rem;
-  border-radius: 0.3rem;
+  border-radius: 0.375rem;
 }
 .form-control-lg::file-selector-button {
-  padding: 0.5rem 1rem;
-  margin: -0.5rem -1rem;
-  margin-inline-end: 1rem;
+  padding: 0.625rem 0.75rem;
+  margin: -0.625rem -0.75rem;
+  margin-inline-end: 0.75rem;
 }
 .form-control-lg::-webkit-file-upload-button {
-  padding: 0.5rem 1rem;
-  margin: -0.5rem -1rem;
-  margin-inline-end: 1rem;
+  padding: 0.625rem 0.75rem;
+  margin: -0.625rem -0.75rem;
+  margin-inline-end: 0.75rem;
 }
 
 textarea.form-control {
-  min-height: calc(1.5em + 0.75rem + 2px);
+  min-height: 2rem;
 }
 textarea.form-control-sm {
-  min-height: calc(1.5em + 0.5rem + 2px);
+  min-height: 2rem;
 }
 textarea.form-control-lg {
-  min-height: calc(1.5em + 1rem + 2px);
+  min-height: 2.5rem;
 }
 
 .form-control-color {
@@ -10321,11 +10322,11 @@ textarea.form-control-lg {
 }
 .form-control-color::-moz-color-swatch {
   height: 1.5em;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 .form-control-color::-webkit-color-swatch {
   height: 1.5em;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .form-select {
@@ -10652,7 +10653,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -10660,25 +10661,25 @@ textarea.form-control-lg {
   white-space: nowrap;
   background-color: #e9ecef;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .input-group-lg > .form-control,
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 0.75rem;
   font-size: 0.875rem;
-  border-radius: 0.3rem;
+  border-radius: 0.375rem;
 }
 
 .input-group-sm > .form-control,
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  border-radius: 0.2rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
 }
 
 .input-group-lg > .form-select,
@@ -11588,6 +11589,7 @@ textarea.form-control-lg {
   line-height: 1.25rem;
   font-weight: 400;
   padding: 0 0.25rem;
+  margin-bottom: 0.25rem;
 }
 .onex-date-picker__toggle-calendar {
   position: absolute;
@@ -11669,6 +11671,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 1000;
   min-width: 19.5rem;
   background: rgb(255, 255, 255);
   border: 1px solid rgba(26, 28, 30, 0.1);
@@ -11919,6 +11922,7 @@ textarea.form-control-lg {
   line-height: 1.25rem;
   font-weight: 400;
   padding: 0 0.25rem;
+  margin-bottom: 0.25rem;
 }
 .onex-date-picker__toggle-calendar {
   position: absolute;
@@ -12000,6 +12004,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 1000;
   min-width: 19.5rem;
   background: rgb(255, 255, 255);
   border: 1px solid rgba(26, 28, 30, 0.1);

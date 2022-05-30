@@ -46,8 +46,9 @@ const DatePicker = (props) => {
   });
 
   const formatDate = (newValue, _dateDisplayFormat, _dateOptions) => {
-    if (newValue && isValid(newValue)) {
-      return format(newValue, _dateDisplayFormat, _dateOptions);
+    const val = Date.parse(newValue);
+    if (val && isValid(val)) {
+      return format(val, _dateDisplayFormat, _dateOptions);
     }
     return '';
   };
@@ -90,7 +91,6 @@ const DatePicker = (props) => {
   };
 
   const onBlur = () => {
-    console.log();
     update(_value);
   };
 
@@ -127,6 +127,7 @@ const DatePicker = (props) => {
         container={target.current}
         target={target.current}
         show={_showCalendar}
+        offset={[0, 4]}
         placement="bottom-start"
       >
         {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
