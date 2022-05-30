@@ -1,0 +1,35 @@
+@import 'mixins';
+
+.onex-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $onex-link-size-gap;
+  font-size: $onex-link-font-size-md;
+  line-height: $onex-link-border-radius-md;
+  font-weight: 600;
+  text-decoration: none;
+
+  svg {
+    width: $onex-link-icon-size-md;
+    height: $onex-link-icon-size-md;
+  }
+
+  .onex-material-icon,
+  .material-icons-round {
+    font-size: $onex-link-icon-size-md;
+  }
+
+  &--primary {
+    @include link-variant($onex-link-primary-color, $onex-link-primary-hover-color, $onex-link-primary-active-color);
+  }
+
+  &--secondary {
+    @include link-variant($onex-link-secondary-color, $onex-link-secondary-hover-color, $onex-link-secondary-active-color);
+  }
+
+  &.onex-link--disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+  }
+}
