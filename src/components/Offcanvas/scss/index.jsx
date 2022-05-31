@@ -158,8 +158,9 @@ Offcanvas.defaultProps = {
   dataTestId: undefined,
 };
 
-export default Object.assign(Offcanvas, {
+export default {
+  ...Offcanvas,
   Header: OffcanvasHeader,
   Body: OffcanvasBody,
   Title: OffcanvasTitle,
-});
+};

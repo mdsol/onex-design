@@ -1,4 +1,4 @@
-import { Placeholder, Card, Button } from '../../../components';
+import { Placeholder, Card } from '../../../components';
 
 export default {
   title: 'Bootstrap/Components/Placeholder',
