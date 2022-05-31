@@ -53,4 +53,3 @@ Warning.args = {
   ),
   dataTestId: 'banner-warning',
 };
-

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 import { Alert, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
 import googleIconsName from './icons';
@@ -43,7 +44,7 @@ export const Icons = () => {
                         import js: <code>import '@material-design-icons/font'</code>
                       </li>
                       <li>
-                        import css: <code>@import '@material-design-icons/font''</code>
+                        import css: <code>@import '@material-design-icons/font'</code>
                       </li>
                       <li>
                         import html:{' '}
