@@ -235,21 +235,21 @@ Using this component requires installation packages : ```react-date-range``` and
 ### Date Picker with error message
 
 <Canvas>
-    <Story
-      name="Error"
-      height="28rem"
-      args={{
-        className: 'error-date-picker',
-        label: 'Label',
-        size: 'sm',
-        isInvalid: true,
-        errorMessage: 'Error message',
-        onChange: () => {},
-        dataTestId: 'test-error-date-picker-id',
-      }}>
-      {Template.bind({})}
-    </Story>
-  </Canvas>
+  <Story
+    name="Error"
+    height="28rem"
+    args={{
+      className: 'error-date-picker',
+      label: 'Label',
+      size: 'sm',
+      isInvalid: true,
+      errorMessage: 'Error message',
+      onChange: () => {},
+      dataTestId: 'test-error-date-picker-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ### Date Picker disabled
 
