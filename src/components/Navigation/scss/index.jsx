@@ -33,7 +33,7 @@ const Navigation = (props) => {
   const { dropdownItems, toggleVisibleNavItems } = useAdaptiveNav(hiddenItems, visibleItems);
 
   const dropdownClasses = classNames('onex-nav__item', 'nav-item', {
-    [isActiveDropdownItem]: 'haveSelectedItem',
+    haveSelectedItem: isActiveDropdownItem,
   });
 
   const handleSelect = (value) => {
