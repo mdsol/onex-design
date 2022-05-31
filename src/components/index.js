@@ -2,24 +2,22 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Placeholder from 'react-bootstrap/Placeholder';
 
-const ReactNavDropdown = {
-  ...NavDropdown,
+const ReactNavDropdown = Object.assign(NavDropdown, {
   Item: NavDropdown.Item,
   ItemText: NavDropdown.ItemText,
   Divider: NavDropdown.Divider,
   Header: NavDropdown.Header,
-};
+});
 
-const ReactNavbar = {
-  ...Navbar,
+const ReactNavbar = Object.assign(Navbar, {
   Brand: Navbar.Brand,
   Collapse: Navbar.Collapse,
   Offcanvas: Navbar.Offcanvas,
   Text: Navbar.Text,
   Toggle: Navbar.Toggle,
-};
+});
 
-const ReactPlaceholder = { ...Placeholder, Button: Placeholder.Button };
+const ReactPlaceholder = Object.assign(Placeholder, { Button: Placeholder.Button });
 
 // react-bootstrap components
 export { default as Accordion } from 'react-bootstrap/Accordion';

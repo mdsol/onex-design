@@ -118,8 +118,7 @@ Card.defaultProps = {
   subtitle: '',
 };
 
-export default {
-  ...Card,
+export default Object.assign(Card, {
   Img: ReactCard.Img,
   Title: ReactCard.Title,
   Subtitle: ReactCard.Subtitle,
@@ -129,4 +128,4 @@ export default {
   Header: ReactCard.Header,
   Footer: ReactCard.Footer,
   Overlay: ReactCard.Overlay,
-};
+});
