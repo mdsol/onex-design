@@ -1,0 +1,116 @@
+<!-- Link.mdx -->
+
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Link, Icon } from '../../../../components';
+import * as stories from './Link.stories.jsx';
+
+export const icons = { StarRoundedIcon: <Icon>star</Icon>, StarsRoundedIcon: <Icon>stars</Icon>, remove: undefined };
+
+<Meta
+  title="Onex/Components/Link"
+  argTypes={{
+    children: {
+      description: 'The content of the link',
+      control: 'text',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+    leadingIcon: {
+      description: 'Element placed before the children.',
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          StarRoundedIcon: 'Star',
+          StarsRoundedIcon: 'Star in round',
+          remove: 'Remove icon'
+        },
+      },
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    trailingIcon: {
+      description: 'Element placed after the children.',
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          StarRoundedIcon: 'Star',
+          StarsRoundedIcon: 'Star in round',
+          remove: 'Remove icon'
+        },
+      },
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    disabled: {
+      description: 'Disables the link, preventing mouse events',
+      control: 'boolean',
+    },
+    variant: {
+      description: 'Link variation',
+    },
+    href: {
+      description: 'Link href',
+    }
+  }}
+  component={Link}
+/>
+
+export const LinkTemplate = (args) => <Link {...args} />;
+
+# Link
+
+The Link component is built on <a /> tag, meaning that you can use its props.
+
+### Demo
+
+<Canvas>
+  <Story name="Demo"
+    args={{
+      className: 'custom-link',
+      variant: 'primary',
+      children: 'Link',
+      dataTestId: 'test-link-id',
+    }}>
+      {LinkTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+## Style
+
+#### Primary
+
+<Canvas>
+  <Story name="Primary" story={stories.Primary} />
+  <Story name="PrimaryWithTrailingIcon" story={stories.PrimaryWithTrailingIcon} />
+  <Story name="PrimaryWithLeadingIcon" story={stories.PrimaryWithLeadingIcon} />
+  <Story name="PrimaryWithTwoIcons" story={stories.PrimaryWithTwoIcons} />
+  <Story name="PrimaryDisabled" story={stories.PrimaryDisabled} />
+</Canvas>
+
+#### Secondary
+
+<Canvas>
+  <Story name="Secondary" story={stories.Secondary} />
+  <Story name="SecondaryWithTrailingIcon" story={stories.SecondaryWithTrailingIcon} />
+  <Story name="SecondaryWithLeadingIcon" story={stories.SecondaryWithLeadingIcon} />
+  <Story name="SecondaryWithTwoIcons" story={stories.SecondaryWithTwoIcons} />
+  <Story name="SecondaryDisabled" story={stories.SecondaryDisabled} />
+</Canvas>
