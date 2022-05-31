@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const sass = require('sass');
 const fs = require('fs');
 
