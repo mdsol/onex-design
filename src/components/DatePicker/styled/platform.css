@@ -11634,11 +11634,11 @@ textarea.form-control-lg {
 .onex-date-picker .form-control:invalid:focus, .onex-date-picker .form-control.is-invalid:focus, .onex-date-picker .form-control[required]:focus {
   box-shadow: none;
 }
-.onex-date-picker .form-control:disabled, .onex-date-picker .form-control.disabled, .onex-date-picker .form-control:disabled.is-invalid, .onex-date-picker .form-control.disabled.is-invalid, .onex-date-picker .form-control:disabled:invalid, .onex-date-picker .form-control.disabled:invalid {
-  background-color: transparent;
-}
 .onex-date-picker .form-control:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
   border-color: rgba(26, 28, 30, 0.5);
+}
+.onex-date-picker .form-control:disabled, .onex-date-picker .form-control.disabled, .onex-date-picker .form-control:disabled.is-invalid, .onex-date-picker .form-control.disabled.is-invalid, .onex-date-picker .form-control:disabled:invalid, .onex-date-picker .form-control.disabled:invalid {
+  background-color: transparent;
 }
 .onex-date-picker .form-control:focus {
   border-color: rgb(0, 112, 192);
@@ -11648,8 +11648,17 @@ textarea.form-control-lg {
   border-color: rgb(0, 112, 192);
   box-shadow: rgb(0, 112, 192) 0 0 1px, rgb(0, 112, 192) 0 0 0 1px;
 }
+.onex-date-picker.onex-date-picker--focused .form-control:invalid, .onex-date-picker.onex-date-picker--focused .form-control.is-invalid, .onex-date-picker.onex-date-picker--focused .form-control[required] {
+  border-color: rgb(217, 21, 34) !important;
+  background-image: none;
+  box-shadow: none;
+}
+.onex-date-picker.onex-date-picker--focused .form-control:invalid:focus, .onex-date-picker.onex-date-picker--focused .form-control.is-invalid:focus, .onex-date-picker.onex-date-picker--focused .form-control[required]:focus {
+  box-shadow: none;
+}
 .onex-date-picker.onex-date-picker--focused .form-control:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
-  border-color: rgb(0, 112, 192);
+  border-color: rgba(26, 28, 30, 0.5);
+  box-shadow: none;
 }
 .onex-date-picker__help.form-text {
   min-width: 1rem;
@@ -11966,11 +11975,11 @@ textarea.form-control-lg {
 .onex-date-picker .form-control:invalid:focus, .onex-date-picker .form-control.is-invalid:focus, .onex-date-picker .form-control[required]:focus {
   box-shadow: none;
 }
-.onex-date-picker .form-control:disabled, .onex-date-picker .form-control.disabled, .onex-date-picker .form-control:disabled.is-invalid, .onex-date-picker .form-control.disabled.is-invalid, .onex-date-picker .form-control:disabled:invalid, .onex-date-picker .form-control.disabled:invalid {
-  background-color: transparent;
-}
 .onex-date-picker .form-control:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
   border-color: rgba(26, 28, 30, 0.5);
+}
+.onex-date-picker .form-control:disabled, .onex-date-picker .form-control.disabled, .onex-date-picker .form-control:disabled.is-invalid, .onex-date-picker .form-control.disabled.is-invalid, .onex-date-picker .form-control:disabled:invalid, .onex-date-picker .form-control.disabled:invalid {
+  background-color: transparent;
 }
 .onex-date-picker .form-control:focus {
   border-color: rgb(0, 112, 192);
@@ -11980,8 +11989,17 @@ textarea.form-control-lg {
   border-color: rgb(0, 112, 192);
   box-shadow: rgb(0, 112, 192) 0 0 1px, rgb(0, 112, 192) 0 0 0 1px;
 }
+.onex-date-picker.onex-date-picker--focused .form-control:invalid, .onex-date-picker.onex-date-picker--focused .form-control.is-invalid, .onex-date-picker.onex-date-picker--focused .form-control[required] {
+  border-color: rgb(217, 21, 34) !important;
+  background-image: none;
+  box-shadow: none;
+}
+.onex-date-picker.onex-date-picker--focused .form-control:invalid:focus, .onex-date-picker.onex-date-picker--focused .form-control.is-invalid:focus, .onex-date-picker.onex-date-picker--focused .form-control[required]:focus {
+  box-shadow: none;
+}
 .onex-date-picker.onex-date-picker--focused .form-control:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
-  border-color: rgb(0, 112, 192);
+  border-color: rgba(26, 28, 30, 0.5);
+  box-shadow: none;
 }
 .onex-date-picker__help.form-text {
   min-width: 1rem;

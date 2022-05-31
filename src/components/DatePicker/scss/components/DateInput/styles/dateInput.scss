@@ -71,6 +71,11 @@
       }
     }
 
+    &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
+      border-color: $onex-date-picker-border-hover-color;
+
+    }
+
     &:disabled,
     &.disabled,
     &:disabled.is-invalid,
@@ -78,10 +83,6 @@
     &:disabled:invalid,
     &.disabled:invalid {
       background-color: transparent;
-    }
-
-    &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
-      border-color: $onex-date-picker-border-hover-color;
     }
 
     &:focus {
@@ -95,8 +96,22 @@
       border-color: $onex-date-picker-border-focus-color;
       box-shadow: $onex-date-picker-border-focus-color 0 0 1px, $onex-date-picker-border-focus-color 0 0 0 1px;
 
+
+      &:invalid,
+      &.is-invalid,
+      &[required] {
+        border-color: $onex-date-picker-invalid-border-color !important;
+        background-image: none;
+        box-shadow: none;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
       &:not(:focus):not(:disabled):not(:invalid):not(.is-invalid):hover {
-        border-color: $onex-date-picker-border-focus-color;
+        border-color: $onex-date-picker-border-hover-color;
+        box-shadow: none;
       }
     }
   }

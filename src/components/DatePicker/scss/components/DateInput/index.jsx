@@ -74,7 +74,6 @@ const DateInput = React.forwardRef((props, ref) => {
 /* eslint-disable */
 DateInput.propTypes = {
   autoFocus: PropTypes.bool,
-  className: PropTypes.string,
   label: PropTypes.string,
   errorMessage: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -99,7 +98,6 @@ DateInput.propTypes = {
 
 DateInput.defaultProps = {
   autoFocus: false,
-  className: undefined,
   label: undefined,
   errorMessage: undefined,
   value: '',

@@ -1,0 +1,351 @@
+import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { fr } from 'date-fns/locale';
+import { DatePicker } from '../../../../components';
+
+
+<Meta
+  title="Onex/Forms/DatePicker"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      }
+    },
+    autoFocus: {
+      description: 'Boolean attribute indicating that an element should be focused on page load.',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      }
+    },
+    label: {
+      description: 'The label content.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      }
+    },
+    errorMessage: {
+      description: 'The text of error message.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      }
+    },
+    value: {
+      description: 'The value of the text field element, required for a controlled component.',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary: 'string'
+        }
+      }
+    },
+    placeholder: {
+      description: 'The short hint displayed in the text field before the user enters a value. By default equal to ```dateDisplayFormat```',
+      table: {
+        defaultValue: {
+          summary: 'yyyy/MM/dd',
+        },
+      }
+    },
+    size: {
+      description: 'The size of the component.',
+      table: {
+        defaultValue: {
+          summary: 'sm',
+        },
+      }
+    },
+    readOnly: {
+      description: 'If true, the component is only for reading.',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      }
+    },
+    disabled: {
+      description: 'If true, the component is disabled.',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      }
+    },
+    isInvalid: {
+      description: 'If true, the component has red border and show error message.',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      }
+    },
+    required: {
+      description: 'If true, the component is required.',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      }
+    },
+    helpText: {
+      description: 'The text with helpful information.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      }
+    },
+    onChange: {
+      description: 'Callback fired when the value is changed.'
+    },
+    calendarClassName: {
+      description: 'Override or extend the styles applied to the calendar.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      }
+    },
+    disabledDates: {
+      description: 'Array of dates that are disabled in calendar.',
+      table: {
+        type: {
+          summary: 'Date[]',
+        },
+      }
+    },
+    disabledDay: {
+      description: 'Predicate function that disable day fn(date: Date).',
+    },
+    locale: {
+      description: 'You can view full list from https://github.com/hypeserver/react-date-range/blob/next/src/locale/index.js. Locales directly exported from date-fns/locales.',
+      table: {
+        defaultValue: {
+          summary: 'enUS from locale',
+        },
+      }
+    },
+    dateDisplayFormat: {
+      description: `Date format. Check out date-fns's format option: https://date-fns.org/docs/format`,
+    },
+    weekdayDisplayFormat: {
+      description: `Week day name format. Check out date-fns's format option: https://date-fns.org/docs/format`,
+    },
+    dayDisplayFormat: {
+      description: `Day calendar format. Check out date-fns's format option: https://date-fns.org/docs/format`,
+    },
+    maxDate: {
+      description: `Defines maximum date. Disabled later dates.`,
+    },
+    minDate: {
+      description: `Defines minimum date. Disabled earlier dates.`,
+    },
+    weekStartsOn: {
+      description: `Whether the week start day that comes from the locale will be overriden. Default value comes from your locale, if no local is specified, note that default locale is enUS.`,
+    },
+    dataTestId: {
+      description: 'The it of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+  }}
+  component={DatePicker}
+  decorators={[(Story) => <div style={{ marginLeft: '1rem', width: '25rem' }}>{Story()}</div>]}
+  />
+
+export const Template = (args) => <DatePicker {...args} />;
+
+## Date Picker
+### Installation
+Using this component requires installation packages : ```react-date-range``` and ```date-fns```
+
+### Date Picker details
+<Canvas>
+  <Story
+    name="Demo"
+    height="28rem"
+    args={{
+      className: 'custom-date-picker',
+      autoFocus: false,
+      label: 'Label',
+      errorMessage: '',
+      value: '2022/06/22',
+      placeholder: 'yyyy/MM/dd',
+      size: 'sm',
+      readOnly: false,
+      disabled: false,
+      isInvalid: false,
+      required: false,
+      helpText: '',
+      onChange: () => {},
+      calendarClassName: 'calendar-custom',
+      disabledDates:[new Date('2022-06-28')],
+      dataTestId: 'test-date-picker-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Date Picker sizes
+
+<Canvas>
+  <Story
+    name="Small"
+    height="28rem"
+    args={{
+      className: 'small-date-picker',
+      label: 'Label',
+      size: 'sm',
+      onChange: () => {},
+      dataTestId: 'test-small-date-picker-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    height="28rem"
+    args={{
+      className: 'medium-date-picker',
+      label: 'Label',
+      size: 'md',
+      onChange: () => {},
+      dataTestId: 'test-small-date-picker-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Date Picker with error message
+
+  <Canvas>
+    <Story
+      name="Error"
+      height="28rem"
+      args={{
+        className: 'error-date-picker',
+        label: 'Label',
+        size: 'sm',
+        isInvalid: true,
+        errorMessage: 'Error message',
+        onChange: () => {},
+        dataTestId: 'test-error-date-picker-id',
+      }}>
+      {Template.bind({})}
+    </Story>
+  </Canvas>
+
+### Date Picker disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      className: 'disabled-date-picker',
+      label: 'Label',
+      size: 'sm',
+      disabled: true,
+      onChange: () => {},
+      dataTestId: 'test-disabled-date-picker-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Calendar
+### Disabled dates
+For disabling dates in calendar you can use property ```disabledDates```, which requires array with disabled dates.
+Or you can use function - ```disabledDay```, predicate function that disable day fn(date: Date).
+
+<Canvas>
+  <Story
+    name="DisabledDatesCalendar"
+    height="28rem"
+    args={{
+      className: 'disabled-dates-calendar',
+      label: 'Label',
+      size: 'sm',
+      disabledDates:[new Date('2022-06-28'), new Date('2022-06-29')],
+      onChange: () => {},
+      dataTestId: 'test-disabled-dates-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Internationalization
+For localization you can use parameter - ```locale```.
+Full list - https://github.com/hypeserver/react-date-range/blob/next/src/locale/index.js.
+Locales directly exported from date-fns/locales.
+Whether the week start day that comes from the locale will be overriden.
+Default value comes from your locale, if no local is specified, note that default locale is enUS.
+For this you can use -```weekStartsOn```.
+
+<Canvas>
+  <Story
+    name="LocalizationCalendar"
+    height="28rem"
+    args={{
+      className: 'localization-calendar',
+      label: 'Label',
+      size: 'sm',
+      locale: fr,
+      onChange: () => {},
+      dataTestId: 'test-localization-calendar-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="WeekStartsOnCalendar"
+    height="28rem"
+    args={{
+      className: 'week-starts-calendar',
+      label: 'Label',
+      size: 'sm',
+      weekStartsOn: 1,
+      onChange: () => {},
+      dataTestId: 'test-week-starts-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Minimum and maximum date in calendar
+To limit calendar dates use - ```minDate``` and ```maxDate```
+<Canvas>
+  <Story
+    name="MinMaxDatesCalendar"
+    height="28rem"
+    args={{
+      className: 'min-max-dates-calendar',
+      label: 'Label',
+      size: 'sm',
+      minDate: new Date('2000-01-01'),
+      maxDate: new Date('2030-01-01'),
+      onChange: () => {},
+      dataTestId: 'test-min-max-dates-id',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+
+
+
