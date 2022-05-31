@@ -28,7 +28,7 @@ const Navigation = (props) => {
   const dropdownRef = useRef(null);
 
   const [isActiveDropdownItem, setIsActiveDropdownItem] = useState(null);
-  const [activeItemKey, setActiveItemKey] = useState('');
+  const [activeItemKey, setActiveItemKey] = useState(defaultActiveKey || activeKey || '');
   const [hiddenItemsWithActiveItem, setHiddenItemsWithActiveItem] = useState([]);
   const { dropdownItems, toggleVisibleNavItems } = useAdaptiveNav(hiddenItems, visibleItems);
 
@@ -44,7 +44,7 @@ const Navigation = (props) => {
     onSelect?.(value);
   };
 
-  useEffect(() => handleSelect(defaultActiveKey), []);
+  useEffect(() => handleSelect(defaultActiveKey || activeKey), []);
 
   // eslint-disable-next-line consistent-return
   useLayoutEffect(() => {

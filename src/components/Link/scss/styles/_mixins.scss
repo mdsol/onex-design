@@ -1,0 +1,33 @@
+@mixin icon-color($color) {
+  svg path {
+    fill: $color;
+  }
+  .onex-material-icon,
+  .material-icons-round {
+    color: $color;
+  }
+}
+
+@mixin link-variant($color, $hover-color, $active-color) {
+  @include icon-color($color);
+  color: $color;
+
+  &:hover {
+    @include icon-color($hover-color);
+    color: $hover-color;
+    cursor: pointer;
+
+    .onex-link__text {
+      text-decoration: underline;
+    }
+  }
+
+  &:active {
+    @include icon-color($active-color);
+    color: $active-color;
+
+    .onex-link__text {
+      text-decoration: underline;
+    }
+  }
+}
