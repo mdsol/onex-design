@@ -10943,10 +10943,10 @@ progress {
 }
 .alert.onex-alert.alert-warning {
   background-color: rgb(255, 241, 184);
-  border-color: rgb(252, 185, 22);
+  border-color: rgb(223, 106, 5);
 }
 .alert.onex-alert.alert-warning .onex-alert__icon {
-  color: rgb(252, 185, 22);
+  color: rgb(223, 106, 5);
 }
 .alert.onex-alert.alert-error {
   background-color: rgb(255, 236, 238);

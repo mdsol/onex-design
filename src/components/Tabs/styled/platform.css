@@ -12282,12 +12282,12 @@ progress {
   height: 2.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  padding: 0.375rem 0.8rem;
-  margin: 0 0.2rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0 0.1rem;
 }
 .onex-tab.onex-nav .nav-link::before {
-  height: 0.25rem;
-  border-radius: 0.25rem;
+  height: 0.125rem;
+  border-radius: 0;
 }
 .onex-tab.onex-nav .dropdown-menu {
   border-radius: 0.5rem;
@@ -12308,8 +12308,8 @@ progress {
 }
 .onex-tab.onex-nav .onex-nav__item.dropdown {
   position: relative;
-  padding: 0 0.8rem;
-  margin: 0 0.2rem;
+  padding: 0 0.75rem;
+  margin: 0 0.1rem;
 }
 .onex-tab.onex-nav .onex-nav__item.dropdown > .btn.btn-tertiary:hover, .onex-tab.onex-nav .onex-nav__item.dropdown.haveSelectedItem > .btn.btn-tertiary, .onex-tab.onex-nav .onex-nav__item.dropdown.haveSelectedItem > .btn.btn-tertiary:hover, .onex-tab.onex-nav .onex-nav__item.dropdown.show > .dropdown-toggle.btn-tertiary {
   background-color: transparent;
@@ -12319,21 +12319,24 @@ progress {
   content: "";
   position: absolute;
   left: 0;
-  top: 2.4rem;
+  top: 2.37rem;
   width: 90%;
+  height: 0.125rem;
   background-color: rgb(209, 216, 224);
   display: none;
 }
 .onex-tab.onex-nav .onex-nav__item.dropdown:hover::before, .onex-tab.onex-nav .onex-nav__item.dropdown.haveSelectedItem:hover::before {
   display: block;
   background-color: rgba(26, 28, 30, 0.5);
-  height: 1px;
+  height: 0.125rem;
 }
 .onex-tab.onex-nav .onex-nav__item.dropdown.haveSelectedItem::before {
   display: block;
-  top: 2.25rem;
-  height: 0.25rem;
+  height: 0.125rem;
   background-color: rgb(0, 112, 192);
+}
+.onex-tab.onex-nav .onex-nav__item.dropdown > .dropdown-menu {
+  transform: translate3d(0, 2.75rem, 0) !important;
 }
 .onex-tab.onex-nav .nav-tabs .nav-link {
   display: flex;
@@ -12346,8 +12349,9 @@ progress {
 }
 .onex-tab.onex-nav .nav-tabs .nav-link.active::before {
   border-radius: 0;
+  height: 0.125rem;
 }
 .onex-tab.onex-nav .nav-tabs .nav-link.active:hover::before, .onex-tab.onex-nav .nav-tabs .nav-link:hover::before {
   background-color: rgba(26, 28, 30, 0.5);
-  height: 1px;
+  height: 0.125rem;
 }
