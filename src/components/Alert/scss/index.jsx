@@ -46,12 +46,12 @@ const Alert = ({
       {children && (
         <div className="onex-alert__control">
           {primaryAction && (
-            <Button onClick={primaryAction} variant="secondary">
+            <Button onClick={primaryAction} size="md" variant="secondary">
               {primaryText}
             </Button>
           )}
           {secondaryAction && (
-            <Button onClick={secondaryAction} variant="tertiary">
+            <Button onClick={secondaryAction} size="md" variant="tertiary">
               {secondaryText}
             </Button>
           )}

@@ -223,6 +223,11 @@ module.exports = [
     replaceUrl: [{ className: '.onex-banner', classRegex: classRegexBase }],
   },
   {
+    name: 'Link',
+    importName: 'Link',
+    replaceUrl: [{ className: '.onex-link', classRegex: classRegexBase }],
+  },
+  {
     name: 'DatePicker',
     importName: 'DatePicker',
     replaceUrl: [{ className: '.onex-date-picker-wrapper', classRegex: classRegexBase }],

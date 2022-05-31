@@ -1976,6 +1976,56 @@ export const config = {
             dataTestId: 'onex-custom-hint',
           })),
       },
+      {
+        name: 'Link',
+        componentName: 'Link',
+        styledComponentName: 'Link',
+        additionalComponents: [],
+        variants: [
+          {
+            variant: 'primary',
+            disabled: true,
+            leadingIcon: <Icon>star</Icon>,
+            children: 'Link',
+          },
+          {
+            variant: 'primary',
+            children: 'Link',
+          },
+          {
+            variant: 'primary',
+            leadingIcon: <Icon>star</Icon>,
+            trailingIcon: <Icon>star</Icon>,
+            children: 'Link',
+          },
+          {
+            variant: 'primary',
+            leadingIcon: <Icon>star</Icon>,
+            children: 'Link',
+          },
+          {
+            variant: 'secondary',
+            disabled: true,
+            leadingIcon: <Icon>star</Icon>,
+            children: 'Link',
+          },
+          {
+            variant: 'secondary',
+            children: 'Link',
+          },
+          {
+            variant: 'secondary',
+            leadingIcon: <Icon>star</Icon>,
+            trailingIcon: <Icon>star</Icon>,
+            children: 'Link',
+          },
+          {
+            variant: 'secondary',
+            leadingIcon: <Icon>star</Icon>,
+            children: 'Link',
+          },
+        ],
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',

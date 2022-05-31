@@ -1,4 +1,4 @@
-import { Hint, Icon } from '../../../../components';
+import { Hint } from '../../../../components';
 
 export default {
   title: 'Onex/Components/Hint',
