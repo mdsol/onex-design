@@ -57,6 +57,7 @@ const Card = ({
                     {actionHeaderName}
                   </Button>
                 )}
+                {titleActionVariant === 'none' && null}
               </>
             )}
           </>

@@ -53,7 +53,7 @@ export default {
     titleActionVariant: {
       description: 'variant of tiltle action, could be "button" or "more" - only for default card',
       control: 'radio',
-      options: ['more', 'button'],
+      options: ['more', 'button', 'none'],
     },
     link: {
       description: 'href path for the link',
@@ -75,6 +75,34 @@ export default {
 };
 
 const Template = (props) => <Card {...props} />;
+
+export const Demo = Template.bind({});
+
+Demo.args = {
+  showActionBar: true,
+  showTitleBar: true,
+  dropdownItems: [
+    { eventKey: 'one', title: 'item one', badge: 100, active: true },
+    { eventKey: 'two', title: 'item two', badge: 100 },
+    { eventKey: 'three', title: 'item three' },
+    { eventKey: 'four', title: 'item four', badge: 100 },
+    { eventKey: 'five', title: 'item five', badge: 100 },
+    { eventKey: 'six', title: 'item six', badge: 100 },
+    { eventKey: 'seven', title: 'item seven', badge: 100 },
+    { eventKey: 'eight', title: 'item eight', badge: 100 },
+  ],
+  actionLinkName: 'Link',
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  id: 'onex-components-card--default',
+  variant: 'default',
+  actionHeaderName: 'Action',
+  titleActionVariant: 'button',
+  link: '#',
+  badgeContent: '100',
+  title: 'Card Heading',
+  subtitle: 'Subtitle',
+};
 
 export const Default = Template.bind({});
 
