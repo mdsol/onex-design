@@ -1,6 +1,7 @@
 <!-- Alert.mdx -->
-import {Meta, ArgsTable, Canvas, Story} from '@storybook/addon-docs';
-import {Alert} from '../../../../components';
+
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Alert } from '../../../../components';
 import * as stories from './Alert.stories.jsx';
 
 <Meta
@@ -127,26 +128,27 @@ export const AlertTemplate = (args) => <Alert {...args} />;
 Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
 
 ## Examples
+
 Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight variants.
 
 <Canvas>
-  <Story name="Examples" story={stories.Examples}/>
+  <Story name="Examples" story={stories.Examples} />
 </Canvas>
 
 ## Actions
 
-For Actions, use the```primaryAction``` and```secondaryAction``` props to provide matching colored Actions within any alert. It's requered using ```body``` prop before, in other case it not will be visible.
+For Actions, use the`primaryAction` and`secondaryAction` props to provide matching colored Actions within any alert. It's requered using `body` prop before, in other case it not will be visible.
 
 <Canvas>
-  <Story name="Actions" story={stories.Actions}/>
+  <Story name="Actions" story={stories.Actions} />
 </Canvas>
 
 ## Additional content
 
-Alerts can contain whatever content you like.Headers, paragraphs, dividers, go crazy. Use ```body``` prop for that.
+Alerts can contain whatever content you like. Headers, paragraphs, dividers, go crazy. Use `body` prop for that.
 
 <Canvas>
-  <Story name="AdditionalContent" story={stories.AdditionalContent}/>
+  <Story name="AdditionalContent" story={stories.AdditionalContent} />
 </Canvas>
 
 ## Demo
@@ -155,15 +157,15 @@ Alerts can contain whatever content you like.Headers, paragraphs, dividers, go c
   <Story
     name="Demo"
     args={{
-      title: "This is a demo warning alert!",
+      title: 'This is a demo warning alert!',
       variant: 'warning',
       show: true,
       primaryAction: null,
       secondaryAction: null,
-    }}>
+    }}
+  >
     {AlertTemplate.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Demo"/>
-
+<ArgsTable story="Demo" />

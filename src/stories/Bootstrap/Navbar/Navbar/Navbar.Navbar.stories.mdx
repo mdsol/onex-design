@@ -25,171 +25,171 @@ export const variantsBg = {
 };
 
 <Meta
-    title="Bootstrap/Components/Navbar/Navbar"
-    argTypes={{
-      as: {
-        control: 'object',
-        description: 'You can use a custom element type for this component.',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'elementType',
-          },
+  title="Bootstrap/Components/Navbar/Navbar"
+  argTypes={{
+    as: {
+      control: 'object',
+      description: 'You can use a custom element type for this component.',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'elementType',
         },
       },
-      bg: {
-        options: Object.keys(variantsBg),
-        control: {
-          type: 'select',
-          label: variantsBg,
+    },
+    bg: {
+      options: Object.keys(variantsBg),
+      control: {
+        type: 'select',
+        label: variantsBg,
+      },
+      description:
+        'A convenience prop for adding `bg-*` utility classes since they are so commonly used here. `light` and `dark` are common choices but any `bg-*` class is supported, including any custom ones you might define.\n' +
+        'Pairs nicely with the `variant` prop.',
+      table: {
+        defaultValue: {
+          summary: undefined,
         },
-        description:
-          'A convenience prop for adding `bg-*` utility classes since they are so commonly used here. `light` and `dark` are common choices but any `bg-*` class is supported, including any custom ones you might define.\n' +
-          'Pairs nicely with the `variant` prop.',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'string',
-          },
+        type: {
+          summary: 'string',
         },
       },
-      collapseOnSelect: {
-        control: 'boolean',
-        description:
-          'Toggles expanded to false after the onSelect event of a descendant of a child `<Nav>` fires. Does nothing if no `<Nav>` or `<Nav>` descendants exist.',
-        table: {
-          defaultValue: {
-            summary: false,
-          },
-          type: {
-            summary: 'boolean',
-          },
+    },
+    collapseOnSelect: {
+      control: 'boolean',
+      description:
+        'Toggles expanded to false after the onSelect event of a descendant of a child `<Nav>` fires. Does nothing if no `<Nav>` or `<Nav>` descendants exist.',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+        type: {
+          summary: 'boolean',
         },
       },
-      expand: {
-        options: Object.keys(expands),
-        control: { type: 'select', label: expands },
-        description:
-          'The breakpoint, below which, the Navbar will collapse. When `true` the Navbar will always be expanded regardless of screen size.',
-        table: {
-          defaultValue: {
-            summary: true,
-          },
-          type: {
-            summary: "false | true | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' ",
-          },
+    },
+    expand: {
+      options: Object.keys(expands),
+      control: { type: 'select', label: expands },
+      description:
+        'The breakpoint, below which, the Navbar will collapse. When `true` the Navbar will always be expanded regardless of screen size.',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+        type: {
+          summary: "false | true | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' ",
         },
       },
-      expanded: {
-        control: 'boolean',
-        description:
-          'controlled by: onToggle, initial prop: defaultExpanded\n' +
-          'Controls the visiblity of the navbar body',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'boolean',
-          },
+    },
+    expanded: {
+      control: 'boolean',
+      description:
+        'controlled by: onToggle, initial prop: defaultExpanded\n' +
+        'Controls the visiblity of the navbar body',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'boolean',
         },
       },
-      fixed: {
-        control: 'radio',
-        options: ['top', 'bottom'],
-        description:
-          'Create a fixed navbar along the top or bottom of the screen, that scrolls with the page. A convenience prop for the `fixed-*` positioning classes.',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: "'top' | 'bottom'",
-          },
+    },
+    fixed: {
+      control: 'radio',
+      options: ['top', 'bottom'],
+      description:
+        'Create a fixed navbar along the top or bottom of the screen, that scrolls with the page. A convenience prop for the `fixed-*` positioning classes.',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: "'top' | 'bottom'",
         },
       },
-      role: {
-        control: 'text',
-        description:
-          'The ARIA role for the navbar, will default to `navigation` for Navbars whose as is something other than `<nav>`.',
-        table: {
-          defaultValue: {
-            summary: 'navigation',
-          },
-          type: {
-            summary: 'string',
-          },
+    },
+    role: {
+      control: 'text',
+      description:
+        'The ARIA role for the navbar, will default to `navigation` for Navbars whose as is something other than `<nav>`.',
+      table: {
+        defaultValue: {
+          summary: 'navigation',
+        },
+        type: {
+          summary: 'string',
         },
       },
-      sticky: {
-        options: ['top'],
-        control: 'check',
-        description:
-          'Position the navbar at the top of the viewport, but only after scrolling past it. A convenience prop for the `sticky-top` positioning class.\n' +
-          '\n' +
-          'Not supported in <= IE11 and other older browsers without a polyfill',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'top | undefined',
-          },
+    },
+    sticky: {
+      options: ['top'],
+      control: 'check',
+      description:
+        'Position the navbar at the top of the viewport, but only after scrolling past it. A convenience prop for the `sticky-top` positioning class.\n' +
+        '\n' +
+        'Not supported in <= IE11 and other older browsers without a polyfill',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'top | undefined',
         },
       },
-      variant: {
-        control: 'radio',
-        options: ['light', 'dark'],
-        description:
-          'The general visual variant a the Navbar. Use in combination with the `bg` prop, `background-color` utilities, or your own background styles.',
-        table: {
-          defaultValue: {
-            summary: 'light',
-          },
-          type: {
-            summary: "'light' | 'dark'",
-          },
+    },
+    variant: {
+      control: 'radio',
+      options: ['light', 'dark'],
+      description:
+        'The general visual variant a the Navbar. Use in combination with the `bg` prop, `background-color` utilities, or your own background styles.',
+      table: {
+        defaultValue: {
+          summary: 'light',
+        },
+        type: {
+          summary: "'light' | 'dark'",
         },
       },
-      onToggle: {
-        description:
-          'The general visual variant a the Navbar. Use in combination with the `bg` prop, `background-color` utilities, or your own background styles.',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'func',
-          },
+    },
+    onToggle: {
+      description:
+        'The general visual variant a the Navbar. Use in combination with the `bg` prop, `background-color` utilities, or your own background styles.',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'func',
         },
       },
-      onSelect: {
-        description:
-          'A callback fired when a descendant of a child `<Nav>` is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of `<Nav>`. Does nothing if no `<Nav>` or `<Nav>` descendants exist. The callback is called with an eventKey, which is a prop from the selected `<Nav>` descendant, and an event.',
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'func',
-          },
+    },
+    onSelect: {
+      description:
+        'A callback fired when a descendant of a child `<Nav>` is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of `<Nav>`. Does nothing if no `<Nav>` or `<Nav>` descendants exist. The callback is called with an eventKey, which is a prop from the selected `<Nav>` descendant, and an event.',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'func',
         },
       },
-      children: {
-        control: 'object',
-        description: 'The content of the component.',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
+    },
+    children: {
+      control: 'object',
+      description: 'The content of the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
       },
-    }}
-    component={Navbar}
+    },
+  }}
+  component={Navbar}
 />
 
 export const Template = (args) => <Navbar {...args} />;
@@ -209,27 +209,29 @@ Here’s what you need to know before getting started with the Navbar:
 A responsive navigation header, including support for branding, navigation, and more. Here’s an example of all the sub-components included in a responsive light-themed navbar that automatically collapses at the lg (large) breakpoint.
 
 ### Basic Example
+
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-            bg: 'primary',
-            as: 'div',
-            collapseOnSelect: false,
-            expand: true,
-            expanded: undefined,
-            fixed: undefined,
-            role: 'navigation',
-            sticky: undefined,
-            variant: 'dark',
-            children: (
-                <Container>
-                    <Navbar.Brand href="#home">Brand link</Navbar.Brand>
-                </Container>
-            )
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    args={{
+      bg: 'primary',
+      as: 'div',
+      collapseOnSelect: false,
+      expand: true,
+      expanded: undefined,
+      fixed: undefined,
+      role: 'navigation',
+      sticky: undefined,
+      variant: 'dark',
+      children: (
+        <Container>
+          <Navbar.Brand href="#home">Brand link</Navbar.Brand>
+        </Container>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
@@ -239,7 +241,7 @@ A responsive navigation header, including support for branding, navigation, and 
 A simple flexible branding component. Images are supported but will likely require custom styling to work well.
 
 <Canvas>
-    <Story name="Brand" story={stories.Brand} />
+  <Story name="Brand" story={stories.Brand} />
 </Canvas>
 
 #### Responsive behaviors
@@ -249,7 +251,7 @@ Use the <b>expand</b> prop as well as the <b>Navbar.Toggle</b> and <b>Navbar.Col
 Set the <b>defaultExpanded</b> prop to make the Navbar start expanded. Set <b>collapseOnSelect</b> to make the Navbar collapse automatically when the user selects an item. You can also finely control the collapsing behavior by using the <b>expanded</b> and <b>onToggle</b> props.
 
 <Canvas>
-    <Story name="ResponsiveBehaviors" story={stories.ResponsiveBehaviors} />
+  <Story name="ResponsiveBehaviors" story={stories.ResponsiveBehaviors} />
 </Canvas>
 
 #### Offcanvas
@@ -259,7 +261,7 @@ Transform your expanding and collapsing navbar into an offcanvas drawer with the
 In the example below, to create an offcanvas navbar that is always collapsed across all breakpoints, set the <b>expand</b> prop to <b>false</b>.
 
 <Canvas>
-    <Story name="NavbarOffcanvas" story={stories.NavbarOffcanvas} />
+  <Story name="NavbarOffcanvas" story={stories.NavbarOffcanvas} />
 </Canvas>
 
 #### Scrolling
@@ -287,4 +289,3 @@ Theming the navbar has never been easier thanks to the combination of theming cl
 While not required, you can wrap the Navbar in a <b><Container\></b> component to center it on a page, or add one within to only center the contents of a fixed or static top navbar.
 
 When the container is within your navbar, its horizontal padding is removed at breakpoints lower than your specified <b>expand={'sm' | 'md' | 'lg' | 'xl' | 'xxl'}</b> prop. This ensures we’re not doubling up on padding unnecessarily on lower viewports when your navbar is collapsed.
-

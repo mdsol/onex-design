@@ -1,4 +1,4 @@
-import { Placeholder, Card, Button } from '../../../components';
+import { Placeholder, Card } from '../../../components';
 
 export default {
   title: 'Bootstrap/Components/Placeholder',
@@ -52,18 +52,7 @@ export default {
 
 export const Example = () => (
   <div className="d-flex justify-content-around">
-    <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of the card
-          content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-
-    <Card style={{ width: '18rem' }}>
+    <Card className="w-100">
       <Card.Body>
         <Placeholder as={Card.Title} animation="glow">
           <Placeholder xs={6} />

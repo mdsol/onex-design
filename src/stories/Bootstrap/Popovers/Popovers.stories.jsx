@@ -120,7 +120,7 @@ const popover = (
 
 export const Example = () => (
   <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-    <Button variant="success">Click me to see</Button>
+    <Button variant="primary">Click me to see</Button>
   </OverlayTrigger>
 );
 
