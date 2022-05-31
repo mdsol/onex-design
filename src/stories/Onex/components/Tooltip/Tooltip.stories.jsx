@@ -1,4 +1,4 @@
-import { Tooltip, Badge,  TextField } from '../../../../components';
+import { Tooltip, Badge, TextField } from '../../../../components';
 
 export default {
   title: 'Onex/Components/Tooltip',
@@ -137,7 +137,7 @@ Right.args = {
   tooltipChildren: 'Right tooltip',
   placement: 'right',
   children: (
-    <Badge type="error" variant="status">
+    <Badge type="important" variant="status">
       Tooltip on right
     </Badge>
   ),

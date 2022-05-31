@@ -58,8 +58,8 @@ Horizontal.args = {
 
 export const VerticalExample = (args) => (
   <Stack {...args} gap={2} className="col-md-5 mx-auto">
-    <Button variant="secondary">Save changes</Button>
-    <Button variant="outline-secondary">Cancel</Button>
+    <Button variant="primary">Save changes</Button>
+    <Button variant="secondary">Cancel</Button>
   </Stack>
 );
 
@@ -69,8 +69,8 @@ VerticalExample.args = {
 
 export const HorizontalExample = (args) => (
   <Stack {...args} gap={2} className="col-md-5 mx-auto">
-    <Button variant="secondary">Save changes</Button>
-    <Button variant="outline-secondary">Cancel</Button>
+    <Button variant="primary">Save changes</Button>
+    <Button variant="secondary">Cancel</Button>
   </Stack>
 );
 

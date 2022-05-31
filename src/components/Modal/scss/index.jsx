@@ -102,4 +102,12 @@ Modal.defaultProps = {
   title: '',
 };
 
-export default Modal;
+export default Object.assign(Modal, {
+  Body: ReactModal.Body,
+  Header: ReactModal.Header,
+  Title: ReactModal.Title,
+  Footer: ReactModal.Footer,
+  Dialog: ReactModal.Dialog,
+  TRANSITION_DURATION: 300,
+  BACKDROP_TRANSITION_DURATION: 150,
+});
