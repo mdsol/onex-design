@@ -56,7 +56,7 @@ const DateInput = React.forwardRef((props, ref) => {
           onClick={handleToggleCalendar}
           disabled={disabled}
         >
-          <Icon> calendar_today </Icon>
+          <Icon>calendar_today</Icon>
         </button>
       </div>
       {!disabled && isInvalid && errorMessage && (

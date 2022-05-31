@@ -26,22 +26,21 @@ const Calendar = React.forwardRef((props, ref) => {
     setIsError,
   } = props;
 
+  const calendarColor = 'rgba(0, 112, 192, 1)';
+
   const calendarClassNames = classNames('onex-date-picker-calendar', {
     [className]: className,
   });
-
-  const handleToday = () => {
-    setDate(new Date());
-    setValue(formatDate(new Date(), dateDisplayFormat, dateOptions));
-    setShowCalendar(false);
-    setIsError(false);
-  };
 
   const onChange = (item) => {
     setDate(item);
     setValue(formatDate(item, dateDisplayFormat, dateOptions));
     setShowCalendar(false);
     setIsError(false);
+  };
+
+  const handleToday = () => {
+    onChange(new Date());
   };
 
   return (
@@ -60,7 +59,7 @@ const Calendar = React.forwardRef((props, ref) => {
         maxDate={maxDate}
         weekStartsOn={weekStartsOn}
         onChange={onChange}
-        color="rgba(0, 112, 192, 1)"
+        color={calendarColor}
       />
       <hr className="onex-date-picker-calendar__divider" />
       <Button
