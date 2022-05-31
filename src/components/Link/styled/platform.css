@@ -10140,6 +10140,7 @@ progress {
   line-height: 1.25rem;
   font-weight: 600;
   text-decoration: none;
+  vertical-align: middle;
 }
 .onex-link svg {
   width: 1.25rem;

@@ -1,8 +1,7 @@
 // size variables
-$onex-link-icon-size-md: $icon-size-xlg;
-$onex-link-height-md: $component-height-lg;
+$onex-link-icon-size: $icon-size-xlg;
+$onex-link-height: $component-height-lg;
 $onex-link-size-gap: 0.25rem;
-
 
 // primary variables
 $onex-link-primary-color: $primary-500;
@@ -13,9 +12,7 @@ $onex-link-primary-active-color: $primary-800;
 $onex-link-secondary-color: $secondary-500;
 $onex-link-secondary-hover-color: $primary-700;
 $onex-link-secondary-active-color: $primary-800;
-
-// md
-$onex-link-padding-y-md: 0.625rem;
-$onex-link-padding-x-md: 0.75rem;
-$onex-link-font-size-md: $font-size-label;
-$onex-link-border-radius-md: $line-height-label;
+$onex-link-padding-y: 0.625rem;
+$onex-link-padding-x: 0.75rem;
+$onex-link-font-size: $font-size-label;
+$onex-link-border-radius: $line-height-label;

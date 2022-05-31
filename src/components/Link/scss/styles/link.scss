@@ -4,19 +4,20 @@
   display: inline-flex;
   align-items: center;
   gap: $onex-link-size-gap;
-  font-size: $onex-link-font-size-md;
-  line-height: $onex-link-border-radius-md;
+  font-size: $onex-link-font-size;
+  line-height: $onex-link-border-radius;
   font-weight: 600;
   text-decoration: none;
+  vertical-align: middle;
 
   svg {
-    width: $onex-link-icon-size-md;
-    height: $onex-link-icon-size-md;
+    width: $onex-link-icon-size;
+    height: $onex-link-icon-size;
   }
 
   .onex-material-icon,
   .material-icons-round {
-    font-size: $onex-link-icon-size-md;
+    font-size: $onex-link-icon-size;
   }
 
   &--primary {

@@ -10,6 +10,7 @@ const Link = ({
   trailingIcon,
   disabled,
   variant,
+  targetBlank,
   ...props
 }) => {
   const buttonClassNames = classNames('onex-link', {
@@ -20,7 +21,14 @@ const Link = ({
   });
 
   return (
-    <a href={href} className={buttonClassNames} data-test-id={dataTestId} {...props}>
+    <a
+      href={href}
+      className={buttonClassNames}
+      data-test-id={dataTestId}
+      target={targetBlank && '_blank'}
+      rel={targetBlank && 'noopener'}
+      {...props}
+    >
       {leadingIcon && leadingIcon}
       <span className="onex-link__text">{children}</span>
       {trailingIcon && trailingIcon}
@@ -36,6 +44,7 @@ Link.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   leadingIcon: PropTypes.node,
   trailingIcon: PropTypes.node,
+  targetBlank: PropTypes.bool,
   dataTestId: PropTypes.string,
 };
 
@@ -43,10 +52,11 @@ Link.defaultProps = {
   className: undefined,
   disabled: false,
   variant: 'primary',
-  href: '#',
+  href: undefined,
   children: undefined,
   trailingIcon: undefined,
   leadingIcon: undefined,
+  targetBlank: false,
   dataTestId: undefined,
 };
 
