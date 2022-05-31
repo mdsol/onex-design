@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Button from '../../../../Buttons/scss';
 
+const calendarColor = 'rgba(0, 112, 192, 1)';
+
 const Calendar = React.forwardRef((props, ref) => {
   const {
     className,
@@ -25,8 +27,6 @@ const Calendar = React.forwardRef((props, ref) => {
     setShowCalendar,
     setIsError,
   } = props;
-
-  const calendarColor = 'rgba(0, 112, 192, 1)';
 
   const calendarClassNames = classNames('onex-date-picker-calendar', {
     [className]: className,
