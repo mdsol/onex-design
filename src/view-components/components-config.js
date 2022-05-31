@@ -485,6 +485,130 @@ export const config = {
         ],
       },
       {
+        name: 'DatePicker',
+        componentName: 'DatePicker',
+        styledComponentName: 'DatePicker',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+          },
+          {
+            size: 'md',
+          },
+          {
+            size: 'sm',
+            isInvalid: true,
+          },
+          {
+            size: 'md',
+            isInvalid: true,
+          },
+          {
+            size: 'sm',
+            disabled: true,
+          },
+          {
+            size: 'md',
+            disabled: true,
+          },
+          {
+            label: 'Label',
+            size: 'sm',
+          },
+          {
+            label: 'Label',
+            size: 'md',
+          },
+          {
+            label: 'Label',
+            size: 'sm',
+            isInvalid: true,
+          },
+          {
+            label: 'Label',
+            size: 'md',
+            isInvalid: true,
+          },
+          {
+            label: 'Label',
+            size: 'sm',
+            disabled: true,
+          },
+          {
+            label: 'Label',
+            size: 'md',
+            disabled: true,
+          },
+          {
+            size: 'sm',
+            helpText: 'Optional help text',
+          },
+          {
+            size: 'md',
+            helpText: 'Optional help text',
+          },
+          {
+            size: 'sm',
+            isInvalid: true,
+            errorMessage: 'Error message',
+          },
+          {
+            size: 'md',
+            isInvalid: true,
+            errorMessage: 'Error message',
+          },
+          {
+            size: 'sm',
+            helpText: 'Optional help text',
+            disabled: true,
+          },
+          {
+            size: 'md',
+            helpText: 'Optional help text',
+            disabled: true,
+          },
+          {
+            label: 'Label',
+            size: 'sm',
+            helpText: 'Optional help text',
+            value: '2022/04/04',
+          },
+          {
+            label: 'Label',
+            size: 'md',
+            helpText: 'Optional help text',
+            value: '2022/04/04',
+          },
+          {
+            label: 'Label',
+            size: 'sm',
+            isInvalid: true,
+            errorMessage: 'Error message',
+          },
+          {
+            label: 'Label',
+            size: 'md',
+            isInvalid: true,
+            errorMessage: 'Error message',
+          },
+          {
+            label: 'Label',
+            size: 'sm',
+            helpText: 'Optional help text',
+            value: '2022/04/04',
+            disabled: true,
+          },
+          {
+            label: 'Label',
+            size: 'md',
+            helpText: 'Optional help text',
+            value: '2022/04/04',
+            disabled: true,
+          },
+        ],
+      },
+      {
         name: 'Dropdown',
         componentName: 'Dropdown',
         styledComponentName: 'Dropdown',

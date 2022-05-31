@@ -1,0 +1,302 @@
+.onex-date-picker-calendar {
+  transition: opacity 0.15s linear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1000;
+  min-width: $onex-calendar-min-width;
+  background: $onex-calendar-background-color;
+  border: 1px solid $onex-calendar-border-color;
+  box-shadow: 0 0.25rem 0.75rem $onex-calendar-box-shadow-color;
+  border-radius: $onex-calendar-border-radius;
+
+  .rdrCalendarWrapper {
+    min-width: $onex-calendar-min-width;
+    background: $onex-calendar-background-color;
+    padding: $onex-calendar-padding $onex-calendar-padding 0.5rem $onex-calendar-padding;
+    border-radius: $onex-calendar-border-radius;
+    color: $onex-calendar-color;
+    font-size: $onex-calendar-font-size;
+
+    .rdrMonthAndYearWrapper {
+      height: $onex-calendar-month-year-wrapper-height;
+      padding-top: 0;
+      margin-bottom: $onex-calendar-month-year-wrapper-margin-bottom;
+      align-items: center;
+
+      .rdrNextPrevButton {
+        display: block;
+        width: $onex-calendar-month-year-next-prev-btn-size;
+        height: $onex-calendar-month-year-next-prev-btn-size;
+        padding: 0;
+        border: 0;
+        background: $onex-calendar-month-year-next-prev-btn-background-color;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      .rdrPprevButton {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23676E7A'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M14.71 6.71c-.39-.39-1.02-.39-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z'/%3E%3C/svg%3E") no-repeat;
+        background-size: contain;
+
+        i {
+          display: none;
+        }
+      }
+
+      .rdrNextButton {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23676E7A'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z'/%3E%3C/svg%3E") no-repeat;
+        background-size: contain;
+
+        i {
+          display: none;
+        }
+      }
+
+      .rdrMonthAndYearPickers {
+        select {
+          appearance: none;
+          -webkit-appearance: none;
+          height: $onex-calendar-month-year-select-height;
+          border: 1px solid $onex-calendar-month-year-select-border-color;
+          border-radius: $onex-calendar-month-year-select-border-radius;
+          padding: $onex-calendar-month-year-select-padding-x $onex-calendar-month-year-select-padding-y;
+          text-align: start;
+          outline: 0;
+          cursor: pointer;
+          font-weight: $onex-calendar-month-year-select-font-weight;
+          font-size: $onex-calendar-month-year-select-font-size;
+          line-height: $onex-calendar-month-year-select-line-height;
+          color: $onex-calendar-month-year-select-color;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 0 24 24' width='20px' fill='%23676E7A'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E") no-repeat;
+          background-position: right 0.5rem center;
+
+          &:hover {
+            border-color: $onex-calendar-month-year-select-hover-border-color;
+          }
+        }
+
+        .rdrMonthPicker {
+          margin: 0 $onex-calendar-month-year-select-margin-y;
+
+          select {
+            min-width: $onex-calendar-month-select-min-width;
+          }
+        }
+
+        .rdrYearPicker {
+          margin: 0 $onex-calendar-month-year-select-margin-y;
+
+          select {
+            min-width: $onex-calendar-year-select-min-width;
+          }
+        }
+      }
+    }
+
+    &:not(.rdrDateRangeWrapper) {
+      .rdrDayHovered {
+        .rdrDayNumber::after {
+          content: "";
+          border: 1px solid $onex-calendar-day-number-hover-border-color;
+          border-radius: $onex-calendar-day-number-border-radius;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: transparent;
+        }
+
+        .rdrSelected ~ .rdrDayNumber {
+          &::after {
+            border: none;
+            border-radius: $onex-calendar-day-number-border-radius;
+            top: 0;
+            bottom: 0;
+            background-color: inherit;
+          }
+        }
+      }
+
+      .rdrDayToday {
+        .rdrDayNumber::after {
+          content: "";
+          border: 1px solid $onex-calendar-day-number-today-border-color;
+          border-radius: $onex-calendar-day-number-border-radius;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: transparent;
+        }
+
+        .rdrSelected ~ .rdrDayNumber::after {
+          border: none;
+        }
+      }
+
+      .rdrDayHovered.rdrDayToday {
+        .rdrDayNumber::after {
+          border: 1px solid $onex-calendar-day-number-today-hover-border-color;
+        }
+
+        .rdrSelected ~ .rdrDayNumber::after {
+          border: none;
+        }
+      }
+    }
+
+    .rdrMonths {
+      .rdrMonthsVertical .rdrMonth:first-child .rdrMonthName {
+        display: none;
+      }
+
+      .rdrMonth {
+        width: $onex-calendar-month-width;
+        padding: 0;
+
+        .rdrWeekDays {
+          height: $onex-calendar-week-days-height;
+          justify-content: center;
+          align-items: center;
+
+          .rdrWeekDay {
+            font-style: $onex-calendar-week-day-font-style;
+            font-weight: $onex-calendar-week-day-font-weight;
+            font-size: $onex-calendar-week-day-font-size;
+            line-height: $onex-calendar-week-day-line-height;
+            text-transform: uppercase;
+            color: $onex-calendar-week-day-color;
+            flex-basis: $onex-calendar-week-day-flex-basis;
+          }
+        }
+
+        .rdrDays {
+          .rdrDay {
+            box-sizing: border-box;
+            width: $onex-calendar-day-width;
+            height: $onex-calendar-day-height;
+            line-height: $onex-calendar-day-line-height;
+            background: transparent;
+            user-select: none;
+            border: 0;
+            padding: 0;
+            text-align: center;
+
+            &:focus {
+              outline: 0;
+            }
+
+            .rdrDayNumber {
+              outline: 0;
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              top: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-style: $onex-calendar-week-day-font-style;
+              font-weight: $onex-calendar-week-day-font-weight;
+              font-size: $onex-calendar-day-number-font-size;
+              line-height: $onex-calendar-day-number-line-height;
+
+              & > span {
+                color: $onex-calendar-day-number-color;
+              }
+            }
+
+            .rdrDayEndPreview,
+            .rdrDayStartPreview {
+              background: inherit;
+              border: none;
+              color: inherit;
+              border-radius: $onex-calendar-day-number-border-radius;
+              top: 0;
+              bottom: 0;
+            }
+
+            .rdrSelected {
+              background: currentColor;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              border-radius: $onex-calendar-day-number-border-radius;
+            }
+
+            &:not(.rdrDayPassive) {
+              .rdrSelected ~ .rdrDayNumber {
+                span {
+                  color: $onex-calendar-day-number-selected-color;
+                }
+              }
+            }
+          }
+
+          .rdrDayPassive {
+            opacity: 0.4;
+          }
+
+          .rdrDayToday {
+            .rdrDayNumber {
+              span {
+                color: $onex-calendar-day-number-today-color;
+                font-weight: $onex-calendar-day-number-today-font-weight;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: 0.438rem;
+                  left: 50%;
+                  transform: translate(-50%, 0);
+                  width: $onex-calendar-day-number-today-width;
+                  height: $onex-calendar-day-number-today-height;
+                  border-radius: $onex-calendar-day-number-today-border-radius;
+                  background: $onex-calendar-day-number-today-background-color;
+                }
+              }
+            }
+
+            .rdrSelected ~ .rdrDayNumber {
+              span {
+                color: $onex-calendar-day-number-today-selected-color;
+
+                &::after {
+                  background: $onex-calendar-day-number-today-selected-background-color;
+                }
+              }
+            }
+          }
+
+          .rdrDayDisabled {
+            background-color: $onex-calendar-day-number-disabled-background-color;
+            opacity: 0.4;
+            cursor: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &__divider {
+    margin: 0;
+    border-top: 1px solid $onex-calendar-divider-border-color;
+    color: $secondary-500-opacity-01;
+    background-color: $secondary-500-opacity-01;
+    opacity: 1;
+    width: $onex-calendar-divider-width;
+  }
+
+  &__today-btn {
+    width: $onex-calendar-today-btn-width;
+    margin: $onex-calendar-today-btn-margin-x 0;
+  }
+}

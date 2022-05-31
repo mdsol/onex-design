@@ -3550,6 +3550,7 @@ __metadata:
     clean-webpack-plugin: ^4.0.0
     core-js: ^3.22.2
     css-loader: ^6.7.1
+    date-fns: ^2.28.0
     eslint: ^8.13.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-prettier: ^8.5.0
@@ -3573,6 +3574,7 @@ __metadata:
     puppeteer: ^13.6.0
     react: ^17.0.2
     react-bootstrap: ^2.3.0
+    react-date-range: ^1.4.0
     react-dom: ^17.0.2
     react-hot-loader: ^4.13.0
     react-is: ^17.0.2
@@ -8067,7 +8069,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.3.1":
+"classnames@npm:^2.2.6, classnames@npm:^2.3.1":
   version: 2.3.1
   resolution: "classnames@npm:2.3.1"
   checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
@@ -8891,6 +8893,13 @@ __metadata:
     whatwg-mimetype: ^3.0.0
     whatwg-url: ^10.0.0
   checksum: 00c71280d5d8146a2f19f3fce3ce59c3b860c66cd584f4e7db8764477a9c97966fa06543c9d9d28b762784f50e21c2e2ccb2d0be24b392ec82eb21daf7804b3e
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.28.0":
+  version: 2.28.0
+  resolution: "date-fns@npm:2.28.0"
+  checksum: a0516b2e4f99b8bffc6cc5193349f185f195398385bdcaf07f17c2c4a24473c99d933eb0018be4142a86a6d46cb0b06be6440ad874f15e795acbedd6fd727a1f
   languageName: node
   linkType: hard
 
@@ -16059,6 +16068,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prop-types@npm:15, prop-types@npm:^15.8.1":
+  version: 15.8.1
+  resolution: "prop-types@npm:15.8.1"
+  dependencies:
+    loose-envify: ^1.4.0
+    object-assign: ^4.1.1
+    react-is: ^16.13.1
+  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
+  languageName: node
+  linkType: hard
+
 "prop-types@npm:^15.0.0, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
@@ -16067,17 +16087,6 @@ __metadata:
     object-assign: ^4.1.1
     react-is: ^16.8.1
   checksum: 5eef82fdda64252c7e75aa5c8cc28a24bbdece0f540adb60ce67c205cf978a5bd56b83e4f269f91c6e4dcfd80b36f2a2dec24d362e278913db2086ca9c6f9430
-  languageName: node
-  linkType: hard
-
-"prop-types@npm:^15.8.1":
-  version: 15.8.1
-  resolution: "prop-types@npm:15.8.1"
-  dependencies:
-    loose-envify: ^1.4.0
-    object-assign: ^4.1.1
-    react-is: ^16.13.1
-  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
   languageName: node
   linkType: hard
 
@@ -16390,6 +16399,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-date-range@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "react-date-range@npm:1.4.0"
+  dependencies:
+    classnames: ^2.2.6
+    prop-types: ^15.7.2
+    react-list: ^0.8.13
+    shallow-equal: ^1.2.1
+  peerDependencies:
+    date-fns: 2.0.0-alpha.7 || >=2.0.0
+    react: ^0.14 || ^15.0.0-rc || >=15.0
+  checksum: ea26bcc268aef2045fc89c1f15148d2578a83712aedcced401da91e8bb613d929264ee71e6c5b4783147c07a175b14a0264c3cea01749a8414f7d9eb09a43b5a
+  languageName: node
+  linkType: hard
+
 "react-docgen-typescript@npm:^2.0.0":
   version: 2.2.1
   resolution: "react-docgen-typescript@npm:2.2.1"
@@ -16536,6 +16560,17 @@ __metadata:
   version: 3.0.4
   resolution: "react-lifecycles-compat@npm:3.0.4"
   checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
+  languageName: node
+  linkType: hard
+
+"react-list@npm:^0.8.13":
+  version: 0.8.17
+  resolution: "react-list@npm:0.8.17"
+  dependencies:
+    prop-types: 15
+  peerDependencies:
+    react: 0.14 || 15 - 18
+  checksum: ab73693e36e33046e0fbf4aa8046433bc5dd146f06ec9ee273c78149f8f9c093d85f65705c42779d927fc8b5b8826eb3ddb21171830d34197c4f690313eb89d7
   languageName: node
   linkType: hard
 
@@ -17660,6 +17695,13 @@ __metadata:
   dependencies:
     kind-of: ^6.0.2
   checksum: 39b3dd9630a774aba288a680e7d2901f5c0eae7b8387fc5c8ea559918b29b3da144b7bdb990d7ccd9e11be05508ac9e459ce51d01fd65e583282f6ffafcba2e7
+  languageName: node
+  linkType: hard
+
+"shallow-equal@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "shallow-equal@npm:1.2.1"
+  checksum: 4f1645cc516e7754c4438db687e1da439a5f29a7dba2ba90c5f88e5708aeb17bc4355ba45cad805b0e95dc898e37d8bf6d77d854919c7512f89939986cff8cd1
   languageName: node
   linkType: hard
 

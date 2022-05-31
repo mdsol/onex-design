@@ -68,6 +68,7 @@ $spacers: (
   10: $spacer * 10.5,
 );
 
+@import '../../node_modules/react-date-range/src/styles';
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../themes/base/colors';
 @import '../themes/base/sizes';
@@ -144,6 +145,7 @@ body {
 @import '../components/Hint/scss/index';
 @import '../components/Banner/scss/index';
 @import '../components/Link/scss/index';
+@import '../components/DatePicker/scss/index';
 
 /* Bootstrap */
 @import '../../node_modules/bootstrap/scss/mixins';
