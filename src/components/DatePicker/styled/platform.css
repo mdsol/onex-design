@@ -11730,12 +11730,12 @@ textarea.form-control-lg {
   appearance: none;
   -webkit-appearance: none;
   height: 2rem;
-  border: 1px solid rgba(26, 28, 30, 0.2);
-  border-radius: 0.5rem;
-  padding: 0.313rem 0.5rem;
+  border: none;
+  padding: 0.375rem 0.5rem;
   text-align: start;
   outline: 0;
   cursor: pointer;
+  border-radius: 0.5rem;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -11744,16 +11744,16 @@ textarea.form-control-lg {
   background-position: right 0.5rem center;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers select:hover {
-  border-color: rgba(26, 28, 30, 0.5);
+  background-color: rgba(103, 110, 122, 0.1);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrMonthPicker {
-  margin: 0 0.25rem;
+  margin: 0 0.125rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrMonthPicker select {
-  min-width: 8rem;
+  min-width: 7.25rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrYearPicker {
-  margin: 0 0.25rem;
+  margin: 0 0.125rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrYearPicker select {
   min-width: 5rem;
@@ -11761,25 +11761,24 @@ textarea.form-control-lg {
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered .rdrDayNumber::after {
   content: "";
   border: 1px solid rgba(26, 28, 30, 0.5);
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: transparent;
+  background: rgba(103, 110, 122, 0.1);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered .rdrSelected ~ .rdrDayNumber::after {
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
   top: 0;
   bottom: 0;
   background-color: inherit;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayToday .rdrDayNumber::after {
   content: "";
-  border: 1px solid rgba(26, 28, 30, 0.2);
-  border-radius: 0.5rem;
+  border: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -11791,7 +11790,7 @@ textarea.form-control-lg {
   border: none;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered.rdrDayToday .rdrDayNumber::after {
-  border: 1px solid rgba(26, 28, 30, 0.5);
+  border: 1px solid rgba(26, 28, 30, 0.2);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered.rdrDayToday .rdrSelected ~ .rdrDayNumber::after {
   border: none;
@@ -11847,14 +11846,14 @@ textarea.form-control-lg {
   line-height: 1.25rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay .rdrDayNumber > span {
-  color: rgb(103, 110, 122);
+  color: rgb(26, 28, 30);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay .rdrDayEndPreview,
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay .rdrDayStartPreview {
   background: inherit;
   border: none;
   color: inherit;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
   top: 0;
   bottom: 0;
 }
@@ -11865,7 +11864,7 @@ textarea.form-control-lg {
   left: 0;
   bottom: 0;
   right: 0;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
   color: rgb(255, 255, 255);
@@ -11880,12 +11879,12 @@ textarea.form-control-lg {
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayToday .rdrDayNumber span::after {
   content: "";
   position: absolute;
-  bottom: 0.438rem;
+  bottom: 0.313rem;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 1.125rem;
-  height: 0.125rem;
-  border-radius: 0.125rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
   background: rgb(0, 112, 192);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayToday .rdrSelected ~ .rdrDayNumber span {
@@ -12071,12 +12070,12 @@ textarea.form-control-lg {
   appearance: none;
   -webkit-appearance: none;
   height: 2rem;
-  border: 1px solid rgba(26, 28, 30, 0.2);
-  border-radius: 0.5rem;
-  padding: 0.313rem 0.5rem;
+  border: none;
+  padding: 0.375rem 0.5rem;
   text-align: start;
   outline: 0;
   cursor: pointer;
+  border-radius: 0.5rem;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -12085,16 +12084,16 @@ textarea.form-control-lg {
   background-position: right 0.5rem center;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers select:hover {
-  border-color: rgba(26, 28, 30, 0.5);
+  background-color: rgba(103, 110, 122, 0.1);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrMonthPicker {
-  margin: 0 0.25rem;
+  margin: 0 0.125rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrMonthPicker select {
-  min-width: 8rem;
+  min-width: 7.25rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrYearPicker {
-  margin: 0 0.25rem;
+  margin: 0 0.125rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonthAndYearWrapper .rdrMonthAndYearPickers .rdrYearPicker select {
   min-width: 5rem;
@@ -12102,25 +12101,24 @@ textarea.form-control-lg {
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered .rdrDayNumber::after {
   content: "";
   border: 1px solid rgba(26, 28, 30, 0.5);
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: transparent;
+  background: rgba(103, 110, 122, 0.1);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered .rdrSelected ~ .rdrDayNumber::after {
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
   top: 0;
   bottom: 0;
   background-color: inherit;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayToday .rdrDayNumber::after {
   content: "";
-  border: 1px solid rgba(26, 28, 30, 0.2);
-  border-radius: 0.5rem;
+  border: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -12132,7 +12130,7 @@ textarea.form-control-lg {
   border: none;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered.rdrDayToday .rdrDayNumber::after {
-  border: 1px solid rgba(26, 28, 30, 0.5);
+  border: 1px solid rgba(26, 28, 30, 0.2);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered.rdrDayToday .rdrSelected ~ .rdrDayNumber::after {
   border: none;
@@ -12188,14 +12186,14 @@ textarea.form-control-lg {
   line-height: 1.25rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay .rdrDayNumber > span {
-  color: rgb(103, 110, 122);
+  color: rgb(26, 28, 30);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay .rdrDayEndPreview,
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay .rdrDayStartPreview {
   background: inherit;
   border: none;
   color: inherit;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
   top: 0;
   bottom: 0;
 }
@@ -12206,7 +12204,7 @@ textarea.form-control-lg {
   left: 0;
   bottom: 0;
   right: 0;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
   color: rgb(255, 255, 255);
@@ -12221,12 +12219,12 @@ textarea.form-control-lg {
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayToday .rdrDayNumber span::after {
   content: "";
   position: absolute;
-  bottom: 0.438rem;
+  bottom: 0.313rem;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 1.125rem;
-  height: 0.125rem;
-  border-radius: 0.125rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
   background: rgb(0, 112, 192);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayToday .rdrSelected ~ .rdrDayNumber span {

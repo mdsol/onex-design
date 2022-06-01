@@ -15,30 +15,31 @@ $onex-calendar-month-year-next-prev-btn-size: 1.5rem;
 $onex-calendar-month-year-select-height: 2rem;
 $onex-calendar-month-year-select-border-color: $secondary-900-opacity-20;
 $onex-calendar-month-year-select-hover-border-color: $secondary-900-opacity-50;
+$onex-calendar-month-year-select-hover-background-color: $secondary-500-opacity-01;
 $onex-calendar-month-year-select-border-radius: 0.5rem;
-$onex-calendar-month-year-select-padding-x: 0.313rem;
+$onex-calendar-month-year-select-padding-x: 0.375rem;
 $onex-calendar-month-year-select-padding-y: 0.5rem;
 $onex-calendar-month-year-select-font-weight: 400;
 $onex-calendar-month-year-select-font-size: $font-size-label;
 $onex-calendar-month-year-select-line-height: $line-height-label;
 $onex-calendar-month-year-select-color: $secondary-900;
-$onex-calendar-month-year-select-margin-y: 0.25rem;
+$onex-calendar-month-year-select-margin-y: 0.125rem;
 
-$onex-calendar-month-select-min-width: 8rem;
+$onex-calendar-month-select-min-width: 7.25rem;
 $onex-calendar-year-select-min-width: 5rem;
 
 $onex-calendar-day-number-hover-border-color: $secondary-900-opacity-50;
+$onex-calendar-day-number-hover-background-color: $secondary-500-opacity-01;
 
 $onex-calendar-day-number-today-color: $primary-500;
 $onex-calendar-day-number-today-font-weight: 600;
-$onex-calendar-day-number-today-width: 1.125rem;
-$onex-calendar-day-number-today-height: 0.125rem;
-$onex-calendar-day-number-today-border-radius: 0.125rem;
+$onex-calendar-day-number-today-width: 0.25rem;
+$onex-calendar-day-number-today-height: 0.25rem;
+$onex-calendar-day-number-today-border-radius: 50%;
 $onex-calendar-day-number-today-background-color: $primary-500;
 $onex-calendar-day-number-today-selected-color: $white;
 $onex-calendar-day-number-today-selected-background-color: $white;
-$onex-calendar-day-number-today-border-color: $secondary-900-opacity-20;
-$onex-calendar-day-number-today-hover-border-color: $secondary-900-opacity-50;
+$onex-calendar-day-number-today-hover-border-color: $secondary-900-opacity-20;
 
 $onex-calendar-month-width: 17.5rem;
 
@@ -56,8 +57,8 @@ $onex-calendar-day-line-height: $line-height-lg;
 
 $onex-calendar-day-number-font-size: $font-size-label;
 $onex-calendar-day-number-line-height: $line-height-label;
-$onex-calendar-day-number-color: $secondary-500;
-$onex-calendar-day-number-border-radius: 0.5rem;
+$onex-calendar-day-number-color: $secondary-900;
+$onex-calendar-day-number-border-radius: 2.5rem;
 $onex-calendar-day-number-selected-color: $white;
 $onex-calendar-day-number-disabled-background-color: $white;
 
