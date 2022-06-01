@@ -14,7 +14,8 @@
         }
       }
 
-      .onex-banner__body a {
+      .onex-banner__body a,
+      .onex-banner__body > .onex-banner__link {
         color: $text-color;
         &:hover {
           color: $text-color;
