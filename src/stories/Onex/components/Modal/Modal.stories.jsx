@@ -52,6 +52,40 @@ export default {
   },
 };
 
+const DemoModal = (args) => {
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch modal
+      </Button>
+
+      <Modal
+        {...args}
+        show={show}
+        handleClose={() => setShow(false)}
+        onSecondaryClick={handleClose}
+        onPrimaryClick={handleClose}
+      />
+    </>
+  );
+};
+
+export const Demo = DemoModal.bind({});
+Demo.args = {
+  secondaryActionName: 'Secondary',
+  primaryActionName: 'Save Changes',
+  size: 'lg',
+  showFooter: true,
+  actionLinkName: 'Link',
+  link: '#',
+  title: 'Header',
+  children: 'Large Modal',
+};
+
 const LargeModal = (args) => {
   const [show, setShow] = React.useState(false);
 
