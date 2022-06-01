@@ -12,14 +12,29 @@ export const icons = { StarRoundedIcon: <Icon>star</Icon>, StarsRoundedIcon: <Ic
     children: {
       description: 'The content of the link',
       control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
     },
     className: {
       description: 'Name of the CSS class',
       control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
     },
     dataTestId: {
       description: 'Id of the component for testing',
       control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
     },
     leadingIcon: {
       description: 'Element placed before the children.',
@@ -60,13 +75,37 @@ export const icons = { StarRoundedIcon: <Icon>star</Icon>, StarsRoundedIcon: <Ic
     disabled: {
       description: 'Disables the link, preventing mouse events',
       control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     variant: {
       description: 'Link variation',
+      table: {
+        defaultValue: {
+          summary: 'primary',
+        },
+      },
     },
     href: {
       description: 'Link href',
-    }
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    targetBlank: {
+      description: 'Set the target="_blank" for link',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
   }}
   component={Link}
 />

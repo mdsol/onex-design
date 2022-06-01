@@ -11,10 +11,20 @@ export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, defau
     children: {
       description: 'The content of the Icon',
       control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
     },
     className: {
       description: 'The className to set the styles for Icon',
       control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
     },
     icon: {
       description:
@@ -43,6 +53,37 @@ export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, defau
         },
       },
     },
+    linkDisabled: {
+      description: 'Disables the link, preventing mouse events',
+      control: 'boolean',
+    },
+    linkHref: {
+      description: 'Link href',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    linkChildren: {
+      description: 'The content of the link',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    linkTargetBlank: {
+      description: 'Set the target="_blank" for link',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
     dataTestId: {
       description: 'The it of the component for test',
       table: {
@@ -60,6 +101,24 @@ export const Template = (args) => <Banner {...args} />;
 ## Banner
 
 A banner is a prominent message with related actions.
+
+### Banner details
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      variant: 'info',
+      className: 'c-demo-banner',
+      dataTestId: 'demo-banner-id',
+      children: 'We’re making changes to our server and Data Center products, including the end of sale for new.',
+      linkHref: '#',
+      linkChildren: 'Learn more'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo"/>
 
 ### Banner variants
 
@@ -88,19 +147,3 @@ Use <b>error</b> banner to inform the user about critical issues.
 <Canvas>
   <Story name="Error" story={stories.Error}/>
 </Canvas>
-
-### Banner details
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      variant: 'info',
-      className: 'c-demo-banner',
-      dataTestId: 'demo-banner-id',
-      children: 'We’re making changes to our server and Data Center products, including the end of sale for new',
-    }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo"/>

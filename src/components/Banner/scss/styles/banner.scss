@@ -35,8 +35,15 @@
 
     a {
       font-weight: 600;
-      text-decoration-line: underline;
+      text-decoration-line: none;
       cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        text-decoration: underline;
+      }
     }
   }
 }
