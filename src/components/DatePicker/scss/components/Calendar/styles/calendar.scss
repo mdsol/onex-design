@@ -61,12 +61,12 @@
           appearance: none;
           -webkit-appearance: none;
           height: $onex-calendar-month-year-select-height;
-          border: 1px solid $onex-calendar-month-year-select-border-color;
-          border-radius: $onex-calendar-month-year-select-border-radius;
+          border: none;
           padding: $onex-calendar-month-year-select-padding-x $onex-calendar-month-year-select-padding-y;
           text-align: start;
           outline: 0;
           cursor: pointer;
+          border-radius: $onex-calendar-month-year-select-border-radius;
           font-weight: $onex-calendar-month-year-select-font-weight;
           font-size: $onex-calendar-month-year-select-font-size;
           line-height: $onex-calendar-month-year-select-line-height;
@@ -75,7 +75,7 @@
           background-position: right 0.5rem center;
 
           &:hover {
-            border-color: $onex-calendar-month-year-select-hover-border-color;
+            background-color: $onex-calendar-month-year-select-hover-background-color;
           }
         }
 
@@ -108,7 +108,7 @@
           bottom: 0;
           left: 0;
           right: 0;
-          background: transparent;
+          background: $onex-calendar-day-number-hover-background-color;
         }
 
         .rdrSelected ~ .rdrDayNumber {
@@ -125,8 +125,7 @@
       .rdrDayToday {
         .rdrDayNumber::after {
           content: "";
-          border: 1px solid $onex-calendar-day-number-today-border-color;
-          border-radius: $onex-calendar-day-number-border-radius;
+          border: none;
           position: absolute;
           top: 0;
           bottom: 0;
@@ -254,7 +253,7 @@
                 &::after {
                   content: '';
                   position: absolute;
-                  bottom: 0.438rem;
+                  bottom: 0.313rem;
                   left: 50%;
                   transform: translate(-50%, 0);
                   width: $onex-calendar-day-number-today-width;
