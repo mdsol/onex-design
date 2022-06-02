@@ -23,6 +23,8 @@ const Alert = ({
   show,
   transition,
   dataTestId,
+  hasPrymaryAction,
+  hasSecondaryAction,
 }) => {
   const classes = classNames('onex-alert', {
     [className]: className,
@@ -42,20 +44,22 @@ const Alert = ({
         </span>
         {title}
       </ReactAlert.Heading>
-      <div className="onex-alert__body">{children}</div>
       {children && (
-        <div className="onex-alert__control">
-          {primaryAction && (
-            <Button onClick={primaryAction} size="md" variant="secondary">
-              {primaryText}
-            </Button>
-          )}
-          {secondaryAction && (
-            <Button onClick={secondaryAction} size="md" variant="tertiary">
-              {secondaryText}
-            </Button>
-          )}
-        </div>
+        <>
+          <div className="onex-alert__body">{children}</div>
+          <div className="onex-alert__control">
+            {hasPrymaryAction && (
+              <Button onClick={primaryAction} size="md" variant="secondary">
+                {primaryText}
+              </Button>
+            )}
+            {hasSecondaryAction && (
+              <Button onClick={secondaryAction} size="md" variant="tertiary">
+                {secondaryText}
+              </Button>
+            )}
+          </div>
+        </>
       )}
     </ReactAlert>
   );
@@ -73,6 +77,8 @@ Alert.propTypes = {
   show: PropTypes.bool,
   transition: oneOfType([PropTypes.bool, PropTypes.elementType]),
   dataTestId: PropTypes.string,
+  hasPrymaryAction: PropTypes.bool,
+  hasSecondaryAction: PropTypes.bool,
 };
 
 Alert.defaultProps = {
@@ -87,6 +93,8 @@ Alert.defaultProps = {
   show: false,
   transition: false,
   dataTestId: undefined,
+  hasPrymaryAction: false,
+  hasSecondaryAction: false,
 };
 
 export default Alert;

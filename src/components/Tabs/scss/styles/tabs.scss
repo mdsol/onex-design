@@ -13,19 +13,6 @@
     }
   }
 
-  .dropdown-menu {
-    border-radius: $onex-tab-menu-border-radius;
-    font-size: $onex-tab-menu-font-size;
-    line-height: $onex-tab-menu-line-height;
-    padding: $onex-tab-menu-padding-y $onex-tab-menu-padding-x;
-    min-width: $onex-tab-menu-min-width;
-
-    .dropdown-item {
-      padding: $onex-tab-menu-item-padding-y $onex-tab-menu-item-padding-x;
-      border-radius: $onex-tab-menu-border-radius;
-    }
-  }
-
   .onex-nav__item {
     padding-left: 0;
     display: flex;
