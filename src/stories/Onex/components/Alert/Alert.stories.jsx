@@ -150,9 +150,9 @@ export const Actions = () =>
       key={variant}
       show
       variant={variant}
-      primaryAction={() => console.log('yep')}
+      hasPrymaryAction
       primaryText="Primary"
-      secondaryAction={() => console.log('yep')}
+      hasSecondaryAction
       secondaryText="Secondary"
     >
       Subtitle

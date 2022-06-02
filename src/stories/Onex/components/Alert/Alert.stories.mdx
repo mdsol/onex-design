@@ -19,7 +19,7 @@ import * as stories from './Alert.stories.jsx';
         },
       },
     },
-    body: {
+    children: {
       description: `Text for element inside alert's body`,
       control: 'text',
       table: {
@@ -137,7 +137,7 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 
 ## Actions
 
-For Actions, use the`primaryAction` and`secondaryAction` props to provide matching colored Actions within any alert. It's requered using `body` prop before, in other case it not will be visible.
+For Actions, use the`primaryAction` and`secondaryAction` props to provide matching colored Actions within any alert. It's requered using `children` prop before, in other case it not will be visible.
 
 <Canvas>
   <Story name="Actions" story={stories.Actions} />
@@ -145,7 +145,7 @@ For Actions, use the`primaryAction` and`secondaryAction` props to provide matchi
 
 ## Additional content
 
-Alerts can contain whatever content you like. Headers, paragraphs, dividers, go crazy. Use `body` prop for that.
+Alerts can contain whatever content you like. Headers, paragraphs, dividers, go crazy. Use `children` prop for that.
 
 <Canvas>
   <Story name="AdditionalContent" story={stories.AdditionalContent} />
@@ -160,8 +160,6 @@ Alerts can contain whatever content you like. Headers, paragraphs, dividers, go 
       title: 'This is a demo warning alert!',
       variant: 'warning',
       show: true,
-      primaryAction: null,
-      secondaryAction: null,
     }}
   >
     {AlertTemplate.bind({})}

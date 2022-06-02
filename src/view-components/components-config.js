@@ -1897,7 +1897,7 @@ export const config = {
             primaryActionFc: () => {
               console.log('yep');
             },
-            prymaryActionText: 'Prymary',
+            primaryActionText: 'Primary',
             secondaryActionFc: () => {
               console.log('yep');
             },

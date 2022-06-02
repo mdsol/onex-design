@@ -12289,17 +12289,6 @@ progress {
   height: 0.125rem;
   border-radius: 0;
 }
-.onex-tab.onex-nav .dropdown-menu {
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  padding: 0.75rem 0.625rem;
-  min-width: 10rem;
-}
-.onex-tab.onex-nav .dropdown-menu .dropdown-item {
-  padding: 0.375rem 0.625rem;
-  border-radius: 0.5rem;
-}
 .onex-tab.onex-nav .onex-nav__item {
   padding-left: 0;
   display: flex;
