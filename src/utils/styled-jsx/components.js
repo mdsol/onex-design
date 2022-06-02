@@ -232,4 +232,13 @@ module.exports = [
     importName: 'DatePicker',
     replaceUrl: [{ className: '.onex-date-picker-wrapper', classRegex: classRegexBase }],
   },
+  {
+    name: 'SegmentedToggle',
+    importName: 'SegmentedToggle',
+    replaceUrl: [
+      { className: '.onex-segmentedToggle', classRegex: classRegexBase },
+      { className: '.btn', classRegex: classRegexBase },
+      { className: '.material-icons-round', classRegex: classRegexBase },
+    ],
+  },
 ];
