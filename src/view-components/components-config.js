@@ -1897,7 +1897,7 @@ export const config = {
             primaryActionFc: () => {
               console.log('yep');
             },
-            prymaryActionText: 'Prymary',
+            primaryActionText: 'Primary',
             secondaryActionFc: () => {
               console.log('yep');
             },
@@ -1969,10 +1969,10 @@ export const config = {
               <>
                 We’re making changes to our server and Data Center products, including the end of
                 sale for new server licenses on.
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a href="#">Learn more</a>
               </>
             ),
+            linkHref: '#',
+            linkChildren: 'Learn more',
             dataTestId: 'onex-custom-hint',
           })),
       },

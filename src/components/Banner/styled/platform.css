@@ -10146,13 +10146,16 @@ progress {
 .onex-banner.onex-banner--variant-info .onex-banner__icon svg path {
   fill: rgb(255, 255, 255);
 }
-.onex-banner.onex-banner--variant-info .onex-banner__body a {
+.onex-banner.onex-banner--variant-info .onex-banner__body a,
+.onex-banner.onex-banner--variant-info .onex-banner__body > .onex-banner__link {
   color: rgb(255, 255, 255);
 }
-.onex-banner.onex-banner--variant-info .onex-banner__body a:hover {
+.onex-banner.onex-banner--variant-info .onex-banner__body a:hover,
+.onex-banner.onex-banner--variant-info .onex-banner__body > .onex-banner__link:hover {
   color: rgb(255, 255, 255);
 }
-.onex-banner.onex-banner--variant-info .onex-banner__body a:active {
+.onex-banner.onex-banner--variant-info .onex-banner__body a:active,
+.onex-banner.onex-banner--variant-info .onex-banner__body > .onex-banner__link:active {
   color: rgb(255, 255, 255);
 }
 .onex-banner.onex-banner--variant-warning {
@@ -10162,13 +10165,16 @@ progress {
 .onex-banner.onex-banner--variant-warning .onex-banner__icon svg path {
   fill: rgb(26, 28, 30);
 }
-.onex-banner.onex-banner--variant-warning .onex-banner__body a {
+.onex-banner.onex-banner--variant-warning .onex-banner__body a,
+.onex-banner.onex-banner--variant-warning .onex-banner__body > .onex-banner__link {
   color: rgb(26, 28, 30);
 }
-.onex-banner.onex-banner--variant-warning .onex-banner__body a:hover {
+.onex-banner.onex-banner--variant-warning .onex-banner__body a:hover,
+.onex-banner.onex-banner--variant-warning .onex-banner__body > .onex-banner__link:hover {
   color: rgb(26, 28, 30);
 }
-.onex-banner.onex-banner--variant-warning .onex-banner__body a:active {
+.onex-banner.onex-banner--variant-warning .onex-banner__body a:active,
+.onex-banner.onex-banner--variant-warning .onex-banner__body > .onex-banner__link:active {
   color: rgb(26, 28, 30);
 }
 .onex-banner.onex-banner--variant-error {
@@ -10178,13 +10184,16 @@ progress {
 .onex-banner.onex-banner--variant-error .onex-banner__icon svg path {
   fill: rgb(255, 255, 255);
 }
-.onex-banner.onex-banner--variant-error .onex-banner__body a {
+.onex-banner.onex-banner--variant-error .onex-banner__body a,
+.onex-banner.onex-banner--variant-error .onex-banner__body > .onex-banner__link {
   color: rgb(255, 255, 255);
 }
-.onex-banner.onex-banner--variant-error .onex-banner__body a:hover {
+.onex-banner.onex-banner--variant-error .onex-banner__body a:hover,
+.onex-banner.onex-banner--variant-error .onex-banner__body > .onex-banner__link:hover {
   color: rgb(255, 255, 255);
 }
-.onex-banner.onex-banner--variant-error .onex-banner__body a:active {
+.onex-banner.onex-banner--variant-error .onex-banner__body a:active,
+.onex-banner.onex-banner--variant-error .onex-banner__body > .onex-banner__link:active {
   color: rgb(255, 255, 255);
 }
 .onex-banner__icon {
@@ -10210,6 +10219,12 @@ progress {
 }
 .onex-banner__body a {
   font-weight: 600;
-  text-decoration-line: underline;
+  text-decoration-line: none;
   cursor: pointer;
+}
+.onex-banner__body a:hover {
+  text-decoration: underline;
+}
+.onex-banner__body a:active {
+  text-decoration: underline;
 }
