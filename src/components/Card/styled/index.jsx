@@ -12,6 +12,6 @@ const handleCssString = (str) => '&' + str;
 const StyledComponent = styled(Card)`
   ${() =>
     cssString
-      .replaceAll(/\.onex-.[^__]+?[.|\s]/g, handleCssString)
+      .replaceAll(/\.onex-card.[^__]+?[.|\s]/g, handleCssString)
       .replaceAll(/\.card[^-]+?[.|\s]/g, handleCssString)}
 `;

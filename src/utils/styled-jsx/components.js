@@ -174,7 +174,7 @@ module.exports = [
     name: 'Card',
     importName: 'Card',
     replaceUrl: [
-      { className: '.onex-', classRegex: classRegexBase },
+      { className: '.onex-card', classRegex: classRegexBase },
       { className: '.card', classRegex: classRegexBootstrap },
     ],
   },

@@ -1,47 +1,83 @@
-.onex-card {
-    &.onex-card--info {
-        .card-header {
-            background: $primary-50;
-        }
-        .card-footer {
-            background: $primary-50;
-        }
-        .card-body {
-            background: $primary-50;
-        }
-        border: 1px solid $secondary-900-opacity-10;
+.onex-card.card {
+  display: inline-block!important;
+  border-radius: $onex-card-border-radius;
+  border: 1px solid $secondary-900-opacity-10;
+  background-color: $onex-card-default-bg-color;
+
+  .onex-card__subtitle {
+    color: $secondary-500;
+  }
+
+  .onex-card__title-block {
+    width: 100%;
+    min-height: $onex-card-min-action-height;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .onex-card__title-row {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .onex-card__title-col {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .onex-card__select {
+    max-width: 40%;
+    min-width: 12.5rem;
+  }
+
+  &.onex-card--info {
+    background-color: $onex-card-support-bg-color;
+  }
+
+  .card-body {
+    border: 0rem;
+    background-color: inherit;
+    padding: 0 1rem;
+  }
+  .card-header {
+    min-height: $onex-card-min-action-height;
+    box-sizing: content-box;
+    background-color: inherit;
+    padding: 0;
+    color: $black;
+    border: 0rem;
+    border-radius: $onex-card-border-radius $onex-card-border-radius 0 0;
+
+    .title-block {
+      display: inline-flex;
+      .onex-badge {
+        margin-left: 0.5rem;
+      }
     }
-    display: inline-block!important;
-    border-radius: 1rem;
-    .card-body {
-        border: 0rem;
-        padding: 0rem 1rem;
+  }
+  .card-footer {
+    box-sizing: content-box;
+    padding: 0;
+    background-color: inherit;
+    color: $black;
+    border: 0rem;
+    min-height: $onex-card-min-action-height;
+    border-radius: 0 0 $onex-card-border-radius $onex-card-border-radius;
+  }
+
+  .onex-card__action-block {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    a {
+      text-decoration: none;
     }
-    .card-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: content-box;
-        padding: 1rem;
-        color: $black;
-        background: white;
-        border: 0rem;
-        .title-block {
-            display: inline-flex;
-            .onex-badge {
-                margin-left: 0.5rem;
-            }
-        }
-    }
-    .card-footer {
-        box-sizing: content-box;
-        padding: 1rem 1rem;
-        color: $black;
-        background: white;
-        border: 0rem;
-        text-align: center;
-        a {
-            text-decoration: none;
-        }
-    }
+  }
 }

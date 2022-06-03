@@ -1916,14 +1916,14 @@ export const config = {
             show: true,
             variant: 'error',
             children: 'subtitle',
-            hasPrymaryAction: true,
+            hasPrimaryAction: true,
             primaryText: 'Primary',
           },
           {
             show: true,
             variant: 'success',
             children: 'subtitle',
-            hasPrymaryAction: true,
+            hasPrimaryAction: true,
             primaryText: 'Primary',
             hasSecondaryAction: true,
             secondaryText: 'Secondary',
@@ -2098,6 +2098,125 @@ export const config = {
                 label: 'error',
               },
             ],
+          },
+        ],
+      },
+      {
+        name: 'Card',
+        componentName: 'Card',
+        styledComponentName: 'Card',
+        additionalComponents: [],
+        variants: [
+          {
+            showActionBar: true,
+            showTitleBar: true,
+            actionLinkName: 'Link',
+            actionHeaderName: 'Button',
+            dropdownItems,
+            variant: 'default',
+            link: '#',
+            badgeContent: '100',
+            title: 'Card Heading',
+            subtitle: 'Subtitle',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: true,
+            showTitleBar: true,
+            actionLinkName: 'Link',
+            actionHeaderName: 'Button',
+            dropdownItems,
+            variant: 'info',
+            link: '#',
+            badgeContent: '100',
+            title: 'Card Heading',
+            subtitle: 'Subtitle',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: false,
+            showTitleBar: false,
+            dropdownItems,
+            variant: 'info',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: false,
+            showTitleBar: false,
+            dropdownItems,
+            variant: 'default',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: true,
+            showTitleBar: false,
+            actionLinkName: 'Link',
+            dropdownItems,
+            variant: 'default',
+            link: '#',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: false,
+            showTitleBar: true,
+            actionHeaderName: 'Button',
+            dropdownItems,
+            variant: 'info',
+            badgeContent: '100',
+            title: 'Card Heading',
+            subtitle: 'Subtitle',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: true,
+            showTitleBar: true,
+            actionLinkName: 'Link',
+            actionHeaderName: 'Button',
+            titleActionVariant: 'button',
+            variant: 'info',
+            link: '#',
+            title: 'Card Heading',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
+          },
+          {
+            showActionBar: true,
+            showTitleBar: true,
+            actionLinkName: 'Link',
+            titleActionVariant: 'select',
+            optionsSelect: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+            variant: 'default',
+            link: '#',
+            badgeContent: '100',
+            title: 'Card Heading',
+            children:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
+              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
+              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
           },
         ],
       },

@@ -13,6 +13,20 @@ export default {
                              \n5.eventKey - value passed to the onSelect handler, useful for identifying the selected menu item;
                              \n6.href - HTML href attribute corresponding to a.href.`,
     },
+    selectedValues: {
+      description: `Array of select options. Each item contain:
+                             \n1.label - select option's label;
+                             \n2.value* - select option's value`,
+    },
+    optionsSelect: {
+      description: `Array of select options. Each item contain:
+                             \n1.label - select option's label;
+                             \n2.value* - select option's value`,
+    },
+    onHandleSelect: {
+      action: 'select',
+      description: 'callback to select on the header action select',
+    },
     children: {
       description: 'The content of the Card Body, fully custom',
       control: 'text',
@@ -53,7 +67,7 @@ export default {
     titleActionVariant: {
       description: 'variant of tiltle action, could be "button" or "more" - only for default card',
       control: 'radio',
-      options: ['more', 'button', 'none'],
+      options: ['more', 'button', 'select', 'none'],
     },
     link: {
       description: 'href path for the link',
@@ -71,6 +85,9 @@ export default {
       description: 'Card subtitle - only for default card',
       control: 'text',
     },
+    dataTestId: {
+      description: 'Id of the component for testing',
+    },
   },
 };
 
@@ -81,16 +98,6 @@ export const Demo = Template.bind({});
 Demo.args = {
   showActionBar: true,
   showTitleBar: true,
-  dropdownItems: [
-    { eventKey: 'one', title: 'item one', badge: 100, active: true },
-    { eventKey: 'two', title: 'item two', badge: 100 },
-    { eventKey: 'three', title: 'item three' },
-    { eventKey: 'four', title: 'item four', badge: 100 },
-    { eventKey: 'five', title: 'item five', badge: 100 },
-    { eventKey: 'six', title: 'item six', badge: 100 },
-    { eventKey: 'seven', title: 'item seven', badge: 100 },
-    { eventKey: 'eight', title: 'item eight', badge: 100 },
-  ],
   actionLinkName: 'Link',
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
@@ -102,13 +109,6 @@ Demo.args = {
   badgeContent: '100',
   title: 'Card Heading',
   subtitle: 'Subtitle',
-};
-
-export const Default = Template.bind({});
-
-Default.args = {
-  showActionBar: true,
-  showTitleBar: true,
   dropdownItems: [
     { eventKey: 'one', title: 'item one', badge: 100, active: true },
     { eventKey: 'two', title: 'item two', badge: 100 },
@@ -119,13 +119,26 @@ Default.args = {
     { eventKey: 'seven', title: 'item seven', badge: 100 },
     { eventKey: 'eight', title: 'item eight', badge: 100 },
   ],
+  optionsSelect: [
+    { value: 'brazil', label: 'Brazil' },
+    { value: 'colombia', label: 'Colombia' },
+    { value: 'poland', label: 'Poland' },
+    { value: 'portugal', label: 'Portugal' },
+    { value: 'spain', label: 'Spain' },
+  ],
+};
+
+export const Default = Template.bind({});
+
+Default.args = {
+  showActionBar: true,
+  showTitleBar: true,
   actionLinkName: 'Link',
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
-  id: 'onex-components-card--default',
+  dataTestId: 'onex-components-card--default',
   variant: 'default',
-  actionHeaderName: 'Action',
-  titleActionVariant: 'button',
+  titleActionVariant: 'none',
   link: '#',
   badgeContent: '100',
   title: 'Card Heading',
@@ -137,6 +150,63 @@ export const Info = Template.bind({});
 Info.args = {
   showActionBar: true,
   showTitleBar: true,
+  actionLinkName: 'Link',
+  titleActionVariant: 'none',
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  dataTestId: 'onex-components-card--info',
+  variant: 'info',
+  link: '#',
+  title: 'Card Heading',
+};
+
+export const DefaultOnlyBody = Template.bind({});
+
+DefaultOnlyBody.args = {
+  showActionBar: false,
+  showTitleBar: false,
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  dataTestId: 'onex-components-card--info',
+  variant: 'default',
+};
+
+export const InfoOnlyBody = Template.bind({});
+
+InfoOnlyBody.args = {
+  showActionBar: false,
+  showTitleBar: false,
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  dataTestId: 'onex-components-card--info',
+  variant: 'info',
+};
+
+export const ButtonActionType = Template.bind({});
+
+ButtonActionType.args = {
+  showActionBar: true,
+  showTitleBar: true,
+  actionLinkName: 'Link',
+  titleActionVariant: 'button',
+  actionHeaderName: 'Action',
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  dataTestId: 'onex-components-card--info',
+  badgeContent: '100',
+  subtitle: 'Subtitle',
+  variant: 'default',
+  link: '#',
+  title: 'Card Heading',
+};
+
+export const DropdownActionType = Template.bind({});
+
+DropdownActionType.args = {
+  showActionBar: true,
+  showTitleBar: true,
+  actionLinkName: 'Link',
+  titleActionVariant: 'more',
   dropdownItems: [
     { eventKey: 'one', title: 'item one', badge: 100, active: true },
     { eventKey: 'two', title: 'item two', badge: 100 },
@@ -147,11 +217,36 @@ Info.args = {
     { eventKey: 'seven', title: 'item seven', badge: 100 },
     { eventKey: 'eight', title: 'item eight', badge: 100 },
   ],
-  actionLinkName: 'Link',
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
-  id: 'onex-components-card--info',
-  variant: 'info',
+  dataTestId: 'onex-components-card--info',
+  badgeContent: '100',
+  subtitle: 'Subtitle',
+  variant: 'default',
+  link: '#',
+  title: 'Card Heading',
+};
+
+export const SelectActionType = Template.bind({});
+
+SelectActionType.args = {
+  showActionBar: true,
+  showTitleBar: true,
+  actionLinkName: 'Link',
+  titleActionVariant: 'select',
+  optionsSelect: [
+    { value: 'brazil', label: 'Brazil' },
+    { value: 'colombia', label: 'Colombia' },
+    { value: 'poland', label: 'Poland' },
+    { value: 'portugal', label: 'Portugal' },
+    { value: 'spain', label: 'Spain' },
+  ],
+  children:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
+  dataTestId: 'onex-components-card--info',
+  badgeContent: '100',
+  subtitle: 'Subtitle',
+  variant: 'default',
   link: '#',
   title: 'Card Heading',
 };

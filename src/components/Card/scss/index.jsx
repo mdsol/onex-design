@@ -7,6 +7,54 @@ import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
 import Dropdown from '../../Dropdown/scss';
 import Badge from '../../Badge/scss';
+import Select from '../../Select/scss';
+
+const CardAction = ({
+  titleActionVariant,
+  dropdownItems,
+  actionHeaderName,
+  onHeaderAction,
+  optionsSelect,
+  selectedValues,
+  onHandleSelect,
+}) => {
+  switch (titleActionVariant) {
+    case 'more': {
+      return (
+        <Dropdown
+          variant="tertiary"
+          id="tertiary-icon-dropdown-sm"
+          items={dropdownItems}
+          size="sm"
+          buttonStyle="icon"
+          title={<Icon>more_vert</Icon>}
+        />
+      );
+    }
+    case 'button': {
+      return (
+        <Button variant="tertiary" onClick={onHeaderAction} size="md">
+          {actionHeaderName}
+        </Button>
+      );
+    }
+    case 'select': {
+      return (
+        <Select
+          size="sm"
+          className="onex-card__select"
+          dataTestId="onex-card-select"
+          options={optionsSelect}
+          selectedValues={selectedValues}
+          onSelect={onHandleSelect}
+        />
+      );
+    }
+    default: {
+      return null;
+    }
+  }
+};
 
 const Card = ({
   children,
@@ -17,63 +65,77 @@ const Card = ({
   showTitleBar,
   className,
   dropdownItems,
+  optionsSelect,
+  selectedValues,
+  onHandleSelect,
   variant,
   titleActionVariant,
   link,
   badgeContent,
   title,
   subtitle,
+  dataTestId,
 }) => {
   const classes = classNames('onex-card', `onex-card--${variant}`, {
     [className]: className,
   });
 
   return (
-    <ReactCard className={classes}>
+    <ReactCard className={classes} data-test-id={dataTestId}>
       <ReactCard.Header>
         {showTitleBar && (
-          <>
-            <div className="title-block">
-              <div>
-                <Typography variant="h4">{title}</Typography>
-                {variant === 'default' && <Typography variant="caption">{subtitle}</Typography>}
+          <div className="onex-card__title-block">
+            <div className="onex-card__title-row">
+              <div className="onex-card__title-col">
+                {title && <Typography variant="h4">{title}</Typography>}
+                {badgeContent && <Badge type="default">{badgeContent}</Badge>}
               </div>
-              {variant === 'default' && <Badge type="default">{badgeContent}</Badge>}
+              <CardAction
+                titleActionVariant={titleActionVariant}
+                dropdownItems={dropdownItems}
+                actionHeaderName={actionHeaderName}
+                onHeaderAction={onHeaderAction}
+                optionsSelect={optionsSelect}
+                selectedValues={selectedValues}
+                onHandleSelect={onHandleSelect}
+              />
             </div>
-            {variant === 'default' && (
-              <>
-                {titleActionVariant === 'more' && (
-                  <Dropdown
-                    variant="tertiary"
-                    id="tertiary-icon-dropdown-sm"
-                    items={dropdownItems}
-                    size="sm"
-                    buttonStyle="icon"
-                    title={<Icon>more_vert</Icon>}
-                  />
-                )}
-                {titleActionVariant === 'button' && (
-                  <Button variant="tertiary" onClick={onHeaderAction} size="md">
-                    {actionHeaderName}
-                  </Button>
-                )}
-                {titleActionVariant === 'none' && null}
-              </>
+            {subtitle && (
+              <Typography className="onex-card__subtitle" variant="label">
+                {subtitle}
+              </Typography>
             )}
-          </>
+          </div>
         )}
       </ReactCard.Header>
       <ReactCard.Body>{children}</ReactCard.Body>
       <ReactCard.Footer>
         {showActionBar && (
-          <Typography variant="label" href={link}>
-            {actionLinkName}
-          </Typography>
+          <div className="onex-card__action-block">
+            <Typography variant="label" href={link}>
+              {actionLinkName}
+            </Typography>
+          </div>
         )}
       </ReactCard.Footer>
     </ReactCard>
   );
 };
+
+const optionType = PropTypes.shape({
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+});
+
+const dropdownItems = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  badge: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  hasDividerAfter: PropTypes.bool,
+  active: PropTypes.bool,
+  disabled: PropTypes.bool,
+  eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  href: PropTypes.string,
+});
 
 Card.propTypes = {
   className: PropTypes.string,
@@ -83,23 +145,17 @@ Card.propTypes = {
   actionHeaderName: PropTypes.string,
   showActionBar: PropTypes.bool,
   showTitleBar: PropTypes.bool,
-  dropdownItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      badge: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      hasDividerAfter: PropTypes.bool,
-      active: PropTypes.bool,
-      disabled: PropTypes.bool,
-      eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      href: PropTypes.string,
-    }),
-  ),
-  variant: PropTypes.string,
-  titleActionVariant: PropTypes.string,
+  dropdownItems: PropTypes.arrayOf(dropdownItems),
+  variant: PropTypes.oneOf(['default', 'info']),
+  titleActionVariant: PropTypes.oneOf(['more', 'button', 'select', 'none']),
+  selectedValues: PropTypes.arrayOf(optionType),
+  optionsSelect: PropTypes.arrayOf(optionType),
+  onHandleSelect: PropTypes.func,
   link: PropTypes.string,
   badgeContent: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  dataTestId: PropTypes.string,
 };
 
 Card.defaultProps = {
@@ -111,12 +167,36 @@ Card.defaultProps = {
   showActionBar: false,
   showTitleBar: false,
   dropdownItems: [],
+  selectedValues: [],
+  optionsSelect: [],
+  onHandleSelect: undefined,
   variant: 'default',
   titleActionVariant: 'more',
   link: '#',
   badgeContent: '',
   title: '',
   subtitle: '',
+  dataTestId: undefined,
+};
+
+CardAction.propTypes = {
+  titleActionVariant: PropTypes.oneOf(['more', 'button', 'select', 'none']),
+  dropdownItems: PropTypes.arrayOf(dropdownItems),
+  actionHeaderName: PropTypes.string,
+  onHeaderAction: PropTypes.func,
+  selectedValues: PropTypes.arrayOf(optionType),
+  optionsSelect: PropTypes.arrayOf(optionType),
+  onHandleSelect: PropTypes.func,
+};
+
+CardAction.defaultProps = {
+  titleActionVariant: 'more',
+  dropdownItems: [],
+  actionHeaderName: '',
+  onHeaderAction: undefined,
+  selectedValues: [],
+  optionsSelect: [],
+  onHandleSelect: undefined,
 };
 
 export default Object.assign(Card, {

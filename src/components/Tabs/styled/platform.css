@@ -11822,13 +11822,14 @@ progress {
 }
 .onex-dropdown > .btn.btn-secondary {
   border: 1px solid rgba(26, 28, 30, 0.2);
+  background-color: rgb(255, 255, 255);
 }
 .onex-dropdown > .btn.btn-tertiary {
   border: none;
+  background-color: transparent;
 }
 .onex-dropdown > .btn.btn-secondary, .onex-dropdown > .btn.btn-tertiary {
   color: rgb(103, 110, 122);
-  background-color: rgb(255, 255, 255);
 }
 .onex-dropdown > .btn.btn-secondary > .onex-dropdown__chevron-icon, .onex-dropdown > .btn.btn-tertiary > .onex-dropdown__chevron-icon {
   color: rgb(103, 110, 122);
