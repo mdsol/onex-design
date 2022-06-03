@@ -11870,7 +11870,7 @@ textarea.form-control-lg {
   color: rgb(255, 255, 255);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayPassive {
-  opacity: 0.4;
+  display: none;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayToday .rdrDayNumber span {
   color: rgb(0, 112, 192);
@@ -12210,7 +12210,7 @@ textarea.form-control-lg {
   color: rgb(255, 255, 255);
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayPassive {
-  opacity: 0.4;
+  display: none;
 }
 .onex-date-picker-calendar .rdrCalendarWrapper .rdrMonths .rdrMonth .rdrDays .rdrDayToday .rdrDayNumber span {
   color: rgb(0, 112, 192);

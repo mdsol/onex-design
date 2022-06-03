@@ -10918,6 +10918,7 @@ progress {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0rem;
 }
 .onex-modal .modal-footer .modal-footer__content a {
   text-decoration: none;
