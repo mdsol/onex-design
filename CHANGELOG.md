@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.7
+New: segmented Toggle, Datepicker. Fixes: Card, Alert, Tab, Banner, Modal.
+ 
 ## 0.3.6
 
 Fix publishing to artifactory. 
