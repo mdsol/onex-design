@@ -106,7 +106,7 @@ export default {
         },
       },
     },
-    chooseItem: {
+    onChange: {
       control: 'text',
       description: 'Func for ger choosed value',
       table: {

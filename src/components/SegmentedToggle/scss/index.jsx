@@ -9,7 +9,7 @@ const SegmentedToggle = ({
   size,
   items,
   defaultValue,
-  chooseItem,
+  onChange,
   groupName,
   className,
   dataTestId,
@@ -28,7 +28,7 @@ const SegmentedToggle = ({
   };
   return (
     <ReactToggleButtonGroup
-      onChange={chooseItem}
+      onChange={onChange}
       type="radio"
       name={groupName}
       defaultValue={defaultValue}
@@ -57,7 +57,7 @@ SegmentedToggle.propTypes = {
   ),
   defaultValue: PropTypes.string,
   groupName: PropTypes.string.isRequired,
-  chooseItem: PropTypes.func,
+  onChange: PropTypes.func,
   className: PropTypes.string,
   dataTestId: PropTypes.string,
 };
@@ -67,7 +67,7 @@ SegmentedToggle.defaultProps = {
   size: 'md',
   items: [],
   defaultValue: '',
-  chooseItem: null,
+  onChange: null,
   className: '',
   dataTestId: '',
 };
