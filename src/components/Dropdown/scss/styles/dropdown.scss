@@ -62,16 +62,17 @@
     /* secondary, tertiary */
     &.btn-secondary {
       border: 1px solid $btn-secondary-border-color;
+      background-color: $btn-secondary-bg-color;
     }
 
     &.btn-tertiary {
       border: none;
+      background-color: transparent;
     }
 
     &.btn-secondary,
     &.btn-tertiary {
       color: $btn-secondary-text-color;
-      background-color: $btn-secondary-bg-color;
 
       & > .onex-dropdown__chevron-icon {
         color: $btn-secondary-text-color;
