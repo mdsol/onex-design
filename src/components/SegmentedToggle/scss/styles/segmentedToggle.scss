@@ -56,7 +56,7 @@
         }
     }
 
-    &.small {
+    &-size-sm {
         & > div.onex-toggle-btn-wrapper {
             height: $onex-segmented-toggle-btn-height-sm;
         }

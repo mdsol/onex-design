@@ -123,12 +123,19 @@ export default {
 
 const Template = (props) => <SegmentedToggle {...props} />;
 
-export const Size = Template.bind({});
+export const SizeSm = Template.bind({});
 
-Size.args = {
-  groupName: 'default',
+SizeSm.args = {
+  groupName: 'sizeSm',
   items: textItems,
   size: 'sm',
+};
+
+export const SizeMd = Template.bind({});
+
+SizeMd.args = {
+  groupName: 'sizeMd',
+  items: textItems,
 };
 
 export const Icons = Template.bind({});

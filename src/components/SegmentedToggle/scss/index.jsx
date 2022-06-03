@@ -14,10 +14,9 @@ const SegmentedToggle = ({
   className,
   dataTestId,
 }) => {
-  const classes = classNames('onex-segmentedToggle', {
+  const classes = classNames('onex-segmentedToggle', `onex-segmentedToggle-size-${size}`, {
     [className]: className,
     icons: variant !== 'text',
-    small: size === 'sm',
   });
   const getItemLabel = (variantName, item) => {
     const label = {

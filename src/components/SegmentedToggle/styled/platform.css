@@ -10774,13 +10774,13 @@ progress {
 .onex-segmentedToggle > div.onex-toggle-btn-wrapper:first-child {
   border-left: none;
 }
-.onex-segmentedToggle.small > div.onex-toggle-btn-wrapper {
+.onex-segmentedToggle-size-sm > div.onex-toggle-btn-wrapper {
   height: 1.625rem;
 }
-.onex-segmentedToggle.small.icons > div.onex-toggle-btn-wrapper label {
+.onex-segmentedToggle-size-sm.icons > div.onex-toggle-btn-wrapper label {
   width: 1.5rem;
 }
-.onex-segmentedToggle.small.icons .onex-material-icon,
-.onex-segmentedToggle.small.icons .material-icons-round {
+.onex-segmentedToggle-size-sm.icons .onex-material-icon,
+.onex-segmentedToggle-size-sm.icons .material-icons-round {
   font-size: 1rem;
 }
