@@ -1,0 +1,77 @@
+.onex-segmentedToggle {
+    width: 100%;
+    border: 1px $onex-segmented-toggle-border-color solid;
+    border-radius: $onex-segmented-toggle-border-radius;
+    padding: $onex-segmented-toggle-padding;
+
+    &.icons {
+        width: min-content;
+
+        & > div.onex-toggle-btn-wrapper {
+            label {
+                width: $onex-segmented-toggle-icon-width-md;
+            }
+        }
+
+        .onex-material-icon,
+        .material-icons-round {
+            font-size: $icon-size-xlg;
+        }
+    }
+
+    & > div.onex-toggle-btn-wrapper {
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        border: none;
+        height: $onex-segmented-toggle-btn-height-md;
+
+        label {
+            width: 100%;
+            max-height: 100%;
+            display: flex;
+            justify-content: center;
+            color: $onex-segmented-toggle-color;
+
+            &:hover {
+                color: $onex-segmented-toggle-hover-color;
+                background-color: $onex-segmented-toggle-hover-bg-color;
+            }
+        }
+
+        .btn-check:checked + .onex-toggle__btn.btn {
+            color: $onex-segmented-toggle-active-color;
+            background-color: $onex-segmented-toggle-active-bg-color;
+            &:hover {
+                color: $onex-segmented-toggle-active-hover-color;
+                background-color: $onex-segmented-toggle-active-hover-bg-color;
+            }
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+        &:first-child {
+            border-left: none;
+        }
+    }
+
+    &-size-sm {
+        & > div.onex-toggle-btn-wrapper {
+            height: $onex-segmented-toggle-btn-height-sm;
+        }
+
+        &.icons {
+            & > div.onex-toggle-btn-wrapper {
+                label {
+                    width: $onex-segmented-toggle-icon-width-sm;
+                }
+            }
+
+            .onex-material-icon,
+            .material-icons-round {
+                font-size: $icon-size-xlg-sm;
+            }
+        }
+    }
+}

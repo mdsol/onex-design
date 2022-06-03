@@ -86,6 +86,7 @@ export { default as Hint } from './Hint/scss';
 export { default as Banner } from './Banner/scss';
 export { default as Link } from './Link/scss';
 export { default as DatePicker } from './DatePicker/scss';
+export { default as SegmentedToggle } from './SegmentedToggle/scss';
 // 1x styled components
 export { default as StyledAvatar } from './Avatar/styled';
 export { default as StyledIcon } from './Icon/styled';
@@ -127,3 +128,4 @@ export { default as StyledHint } from './Hint/styled';
 export { default as StyledBanner } from './Banner/styled';
 export { default as StyledLink } from './Link/styled';
 export { default as StyledDatePicker } from './DatePicker/styled';
+export { default as StyledSegmentedToggle } from './SegmentedToggle/styled';

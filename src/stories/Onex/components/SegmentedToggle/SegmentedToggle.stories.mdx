@@ -1,0 +1,139 @@
+import { Story, Canvas, ArgsTable, Meta, Stories } from '@storybook/addon-docs';
+
+import { SegmentedToggle } from '../../../../components';
+import * as stories from './SegmentedToggle.stories.jsx';
+
+export const variants = ['text', 'icons', 'customIcons'];
+
+<Meta
+    title="Onex/Components/SegmentedToggle"
+    argTypes={{
+      className: {
+      description: 'The className to set the styles for card',
+      control: 'text',
+    },
+    variant: {
+      options: variants,
+      control: 'radio',
+      description: 'Sets the variant of toggle btns.',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: variants.join(' | '),
+        },
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: 'radio',
+      description: 'Set the size of segmented toggle',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'sm | md',
+        },
+      },
+    },
+    items: {
+      control: '',
+      description: 'Array of items for components',
+    },
+    defaultValue: {
+      control: 'text',
+      description: 'Default value choosed on the start',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: '',
+        },
+      },
+    },
+    groupName: {
+      control: 'text',
+      description: 'Group name for child toggles, is requared',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: '',
+        },
+      },
+    },
+    onChange: {
+      control: 'func',
+      description: 'Func for ger choosed value',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: '',
+        },
+      },
+    },
+    }}
+    component={SegmentedToggle}
+/>
+
+export const Template = (args) => <SegmentedToggle {...args} />;
+
+## SegmentedToggle
+
+### Demo
+
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            groupName: 'demo',
+            items: [
+                {
+                    value: 'item1',
+                    id: '1',
+                    name: 'textLabels',
+                    label: 'info',
+                },
+                {
+                    value: 'item2',
+                    id: '2',
+                    name: 'textLabels',
+                    label: 'info',
+                },
+                {
+                    value: 'item3',
+                    id: '3',
+                    name: 'textLabels',
+                    label: 'info',
+                },
+            ],
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+### Size
+
+You can use 2 variants of size: small and medium.
+
+<Canvas>
+    <Story name="SizeSm" story={stories.SizeSm} />
+    <br/>
+    <Story name="SizeMd" story={stories.SizeMd} />
+</Canvas>
+
+### Icons
+
+You can use ```variant``` prop for choose material icon or asign your icons like react element with ```customIcons``` variant.
+
+<Canvas>
+    <Story name="Icons" story={stories.Icons} />
+</Canvas>

@@ -1916,22 +1916,16 @@ export const config = {
             show: true,
             variant: 'error',
             children: 'subtitle',
-            primaryAction: () => {
-              console.log('yep');
-            },
+            hasPrymaryAction: true,
             primaryText: 'Primary',
           },
           {
             show: true,
             variant: 'success',
             children: 'subtitle',
-            primaryAction: () => {
-              console.log('yep');
-            },
+            hasPrymaryAction: true,
             primaryText: 'Primary',
-            secondaryAction: () => {
-              console.log('yep');
-            },
+            hasSecondaryAction: true,
             secondaryText: 'Secondary',
           },
           {
@@ -2023,6 +2017,87 @@ export const config = {
             variant: 'secondary',
             leadingIcon: <Icon>star</Icon>,
             children: 'Link',
+          },
+        ],
+      },
+      {
+        name: 'SegmentedToggle',
+        componentName: 'SegmentedToggle',
+        styledComponentName: 'SegmentedToggle',
+        additionalComponents: [],
+        variants: [
+          {
+            variant: 'text',
+            groupName: 'textLabels',
+            items: [
+              {
+                value: 'item1',
+                id: '1',
+                name: 'textLabels',
+                label: 'Item1',
+              },
+              {
+                value: 'item2',
+                id: '2',
+                name: 'textLabels',
+                label: 'Item2',
+              },
+              {
+                value: 'item3',
+                id: '3',
+                name: 'textLabels',
+                label: 'Item3',
+              },
+            ],
+          },
+          {
+            variant: 'text',
+            size: 'sm',
+            groupName: 'textLabelsSm',
+            items: [
+              {
+                value: 'item4',
+                id: '4',
+                name: 'textLabelsSm',
+                label: 'Item4',
+              },
+              {
+                value: 'item5',
+                id: '5',
+                name: 'textLabelsSm',
+                label: 'Item5',
+              },
+              {
+                value: 'item6',
+                id: '6',
+                name: 'textLabelsSm',
+                label: 'Item6',
+              },
+            ],
+          },
+          {
+            variant: 'icons',
+            groupName: 'icons',
+            items: [
+              {
+                value: 'item7',
+                id: '7',
+                name: 'icons',
+                label: 'info',
+              },
+              {
+                value: 'item8',
+                id: '8',
+                name: 'icons',
+                label: 'warning',
+              },
+              {
+                value: 'item9',
+                id: '9',
+                name: 'icons',
+                label: 'error',
+              },
+            ],
           },
         ],
       },
