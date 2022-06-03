@@ -18,14 +18,6 @@ const SegmentedToggle = ({
     [className]: className,
     icons: variant !== 'text',
   });
-  const getItemLabel = (variantName, item) => {
-    const label = {
-      icons: <Icon>{item.label}</Icon>,
-      customIcons: item.label,
-      text: item.label,
-    };
-    return label[variantName];
-  };
   return (
     <ReactToggleButtonGroup
       onChange={onChange}
@@ -37,7 +29,7 @@ const SegmentedToggle = ({
     >
       {items.map((item) => (
         <ToggleButton value={item.value} id={item.id} name={item.name} key={item.id}>
-          {getItemLabel(variant, item)}
+          {variant === 'icons' ? <Icon>{item.label}</Icon> : item.label}
         </ToggleButton>
       ))}
     </ReactToggleButtonGroup>
