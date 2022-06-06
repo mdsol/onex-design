@@ -10542,7 +10542,7 @@ progress {
   position: relative;
   padding: 0;
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-size: 0.75rem;
   line-height: 1rem;
 }
@@ -10554,7 +10554,7 @@ progress {
   color: rgb(103, 110, 122);
 }
 .onex-data-grid__table-body tr {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border-top: 1px solid rgba(26, 28, 30, 0.1);
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
   margin: 0;

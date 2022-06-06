@@ -24,13 +24,7 @@ const dataGridColumns = [
   },
 ];
 
-const range = (len) => {
-  const arr = [];
-  for (let i = 0; i < len; i += 1) {
-    arr.push(i);
-  }
-  return arr;
-};
+const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
   id: 'M123',

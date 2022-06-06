@@ -16,15 +16,13 @@ const DataGridTable = ({ columns, data, className }) => {
     [className]: className,
   });
 
-  console.log('headerGroup', headerGroups);
-
   return (
     <ReactTable className={tableClasses} {...getTableProps()}>
       <thead className="onex-data-grid__table-headers">
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>
+        {headerGroups.map((headerGroup, i) => (
+          <tr key={`header_row_${i}`} {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column, ind) => (
+              <th key={`header_cell_row_${ind}`} {...column.getHeaderProps()}>
                 <Typography variant="caption" uppercase>
                   {column.render('Header')}
                 </Typography>
