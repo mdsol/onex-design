@@ -9,6 +9,8 @@
       padding: 0;
       border-bottom: 1px solid $onex-data-grid-table-header-border-bottom-color;
       border-radius: 8px;
+      font-size: $onex-data-grid-table-header-font-size;
+      line-height: $onex-data-grid-table-header-line-height;
     }
 
     th {
@@ -28,7 +30,8 @@
       border-bottom: 1px solid $onex-data-grid-table-body-tr-border-color;
       margin: 0;
       padding: 0;
-
+      font-size: $onex-data-grid-table-body-td-font-size;
+      line-height: $line-height-label;
     }
 
     td {

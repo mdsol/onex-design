@@ -4,8 +4,12 @@ $onex-data-grid-table-header-border-bottom-color: $secondary-900-opacity-10;
 $onex-data-grid-table-header-th-padding-x: 1rem;
 $onex-data-grid-table-header-th-padding-y: 0.75rem;
 $onex-data-grid-table-header-th-color: $secondary-500;
+$onex-data-grid-table-header-font-size: $font-size-caption;
+$onex-data-grid-table-header-line-height: $line-height-caption;
 
 $onex-data-grid-table-body-tr-border-color: rgba(26, 28, 30, 0.1);
 $onex-data-grid-table-body-td-padding-x: 0.875rem;
 $onex-data-grid-table-body-td-padding-y: 0.75rem;
+$onex-data-grid-table-body-td-font-size: $font-size-label;
+$onex-data-grid-table-body-td-line-height: $line-height-label;
 

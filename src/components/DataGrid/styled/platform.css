@@ -10542,6 +10542,8 @@ progress {
   padding: 0;
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
   border-radius: 8px;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .onex-data-grid__table-headers th {
   margin: 0;
@@ -10556,6 +10558,8 @@ progress {
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
   margin: 0;
   padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .onex-data-grid__table-body td {
   padding: 0.875rem 0.75rem;
