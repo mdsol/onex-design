@@ -1,7 +1,6 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { DataGrid } from '../../../../components';
-import * as stories from './DataGrid.stories.jsx';
 
 <Meta
     title="Onex/Components/DataGrid"
@@ -13,14 +12,6 @@ import * as stories from './DataGrid.stories.jsx';
                     summary: 'undefined',
                 },
             }
-        },
-        rowsDividers: {
-          description: 'The array of quantities of rows per page',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-          }
         },
         columns: {
             description: 'The array of table columns',
@@ -49,16 +40,16 @@ export const Template = (args) => <DataGrid {...args} />;
 
 A DataGrid is a table-presented data.
 
-### DataGrid
+### Installation
+Using this component requires installation packages : ```react-table v7``` - https://www.npmjs.com/package/react-table/v/7.8.0
+
+### Demo
 <Canvas>
     <Story
         name="Demo"
         args={{
             className: { control: 'text' },
             columns: [
-            {
-                Header: 'Hospital',
-                columns: [
                     {
                         Header: 'ID',
                         accessor: 'id',
@@ -80,7 +71,6 @@ A DataGrid is a table-presented data.
                         accessor: 'created',
                     },
                 ],
-            }],
             data: [
                 {
                     id: 'M12345',
@@ -89,17 +79,10 @@ A DataGrid is a table-presented data.
                     category: 'Manegement',
                     created: '26 Aug 20100',
                 }
-            ],
-            rowsDividers: [5, 10, 15, 20]
+            ]
             }}>
         {Template.bind({})}
     </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
-
-### DataGrid default
-
-<Canvas>
-    <Story name="Default" story={stories.Default} />
-</Canvas>

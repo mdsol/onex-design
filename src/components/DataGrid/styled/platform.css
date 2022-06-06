@@ -10425,6 +10425,7 @@ progress {
 }
 
 .onex-typography {
+  display: inline-block;
   font-family: "Noto Sans", sans-serif;
   font-style: normal;
   margin: 0;

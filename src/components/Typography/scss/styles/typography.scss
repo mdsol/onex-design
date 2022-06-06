@@ -1,6 +1,7 @@
 @import 'mixins';
 
 .onex-typography {
+  display: inline-block;
   font-family: $font-family;
   font-style: normal;
   margin: 0;
