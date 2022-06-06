@@ -1,0 +1,6 @@
+.onex-data-grid-control {
+    display: flex;
+    justify-content: space-between;
+    padding: $onex-data-grid-control-padding-x $onex-data-grid-control-padding-y;
+    border-bottom: 1px solid $onex-data-grid-control-border-color;
+}

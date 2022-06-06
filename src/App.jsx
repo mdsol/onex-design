@@ -1,43 +1,44 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
+import {
+  Tabs,
+  Check,
+  DataGrid,
+  DataGridControl,
+  DataGridName,
+  Modal,
+  Button,
+  Card,
+  Select,
+  Link,
+  Icon,
+} from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
 const dataGridColumns = [
   {
-    Header: 'Hospital',
-    columns: [
-      {
-        Header: 'ID',
-        accessor: 'id',
-      },
-      {
-        Header: 'Study',
-        accessor: 'study',
-      },
-      {
-        Header: 'Country',
-        accessor: 'country',
-      },
-      {
-        Header: 'Category',
-        accessor: 'category',
-      },
-      {
-        Header: 'Created',
-        accessor: 'created',
-      },
-    ],
+    Header: 'ID',
+    accessor: 'id',
+  },
+  {
+    Header: 'Study',
+    accessor: 'study',
+  },
+  {
+    Header: 'Country',
+    accessor: 'country',
+  },
+  {
+    Header: 'Category',
+    accessor: 'category',
+  },
+  {
+    Header: 'Created',
+    accessor: 'created',
   },
 ];
 
-const range = (len) => {
-  const arr = [];
-  for (let i = 0; i < len; i += 1) {
-    arr.push(i);
-  }
-  return arr;
-};
+const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
   id: 'M123',
@@ -122,7 +123,16 @@ const DevExamples = () => {
         </Check>
         <br />
         <br />
-        <DataGrid columns={dataGridColumns} data={dataGridData} rowsDividers={[10, 20, 30]} />
+        <DataGrid
+          columns={dataGridColumns}
+          data={dataGridData}
+          rowsDividers={[10, 20, 30]}
+          dataGridControlComponent={
+            <DataGridControl>
+              <DataGridName badgeNumber="100">Test table</DataGridName>
+            </DataGridControl>
+          }
+        />
         <br />
         <Button variant="primary" onClick={() => setShow(true)}>
           Launch demo modal

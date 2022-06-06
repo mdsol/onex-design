@@ -1,0 +1,42 @@
+.onex-data-grid__table {
+  width: 100%;
+
+  &-headers {
+    background: $onex-data-grid-table-header-background-color;
+
+    tr {
+      position: relative;
+      padding: 0;
+      border-bottom: 1px solid $onex-data-grid-table-header-border-bottom-color;
+      border-radius: $onex-data-grid-table-header-border-radius;
+      font-size: $onex-data-grid-table-header-font-size;
+      line-height: $onex-data-grid-table-header-line-height;
+    }
+
+    th {
+      margin: 0;
+      padding: $onex-data-grid-table-header-th-padding-x $onex-data-grid-table-header-th-padding-y;
+
+      span {
+        color: $onex-data-grid-table-header-th-color;
+      }
+    }
+  }
+
+  &-body {
+    tr {
+      border-radius: $onex-data-grid-table-body-border-radius;
+      border-top: 1px solid $onex-data-grid-table-body-tr-border-color;
+      border-bottom: 1px solid $onex-data-grid-table-body-tr-border-color;
+      margin: 0;
+      padding: 0;
+      font-size: $onex-data-grid-table-body-td-font-size;
+      line-height: $line-height-label;
+    }
+
+    td {
+      padding: $onex-data-grid-table-body-td-padding-x $onex-data-grid-table-body-td-padding-y;
+      margin: 0;
+    }
+  }
+}

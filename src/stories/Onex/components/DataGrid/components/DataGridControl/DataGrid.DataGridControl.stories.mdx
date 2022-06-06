@@ -1,0 +1,45 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+
+import { DataGridName, DataGridControl } from '../../../../../../components';
+
+<Meta
+  title="Onex/Components/DataGrid/DataGridControl"
+  argTypes={{
+    children: {
+      description: 'The content of the component, normally ```DataGridName```',
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+  }}
+  component={DataGridControl}
+/>
+
+export const DataGridControlTemplate = (args) => <DataGridControl {...args} />;
+
+# DataGridControl
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      children: (
+          <DataGridName badgeNumber="200">Title</DataGridName>
+      ),
+      className: 'custom-data-grid-control',
+      dataTestId: 'test-data-grid-id'
+    }}
+  >
+    {DataGridControlTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+

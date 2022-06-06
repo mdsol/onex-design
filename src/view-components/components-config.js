@@ -485,6 +485,13 @@ export const config = {
         ],
       },
       {
+        name: 'DataGrid',
+        componentName: 'DataGridOnex',
+        styledComponentName: 'DataGridStyled',
+        additionalComponents: [],
+        variants: [],
+      },
+      {
         name: 'DatePicker',
         componentName: 'DatePicker',
         styledComponentName: 'DatePicker',
