@@ -33,7 +33,7 @@ const CardAction = ({
     }
     case 'button': {
       return (
-        <Button variant="tertiary" onClick={onHeaderAction} size="md">
+        <Button variant="tertiary" onClick={onHeaderAction} size="sm">
           {actionHeaderName}
         </Button>
       );
