@@ -36,6 +36,7 @@ const ViewComponents = () => {
   const [wrap, setWrap] = useState(null);
   const [isTable, setIsTable] = useState(null);
   const [isTooltip, setIsTooltip] = useState(null);
+  const [isDataGrid, setIsDataGrid] = useState(null);
   useEffect(() => {
     if (selectedOptions.length) {
       const newUrl = updateQueryStringParameter(
@@ -68,8 +69,22 @@ const ViewComponents = () => {
         const Component = React.lazy(() => import(`./${currentComponent.componentName}/index.jsx`));
         return setDynamicComponent(Component);
       }
+      if (componentName === 'DataGrid') {
+        setIsDataGrid(true);
+        if (styled) {
+          const Component = React.lazy(() =>
+            import(`./DataGrid/${currentComponent.styledComponentName}.jsx`),
+          );
+          return setDynamicComponent(Component);
+        }
+        const Component = React.lazy(() =>
+          import(`./DataGrid/${currentComponent.componentName}.jsx`),
+        );
+        return setDynamicComponent(Component);
+      }
       setIsTable(false);
       setIsTooltip(false);
+      setIsDataGrid(false);
       const { additionalComponents } = currentComponent;
       const { wrapper } = currentComponent;
       if (currentComponent) setData(currentComponent.variants);
@@ -118,7 +133,7 @@ const ViewComponents = () => {
             Styled
           </Check>
         </div>
-        {!isTable && !isTooltip && DynamicComponent && (
+        {!isTable && !isTooltip && !isDataGrid && DynamicComponent && (
           <div className="wrapper">
             <div className="header">{componentName}</div>
             <div className="component-block">
@@ -145,6 +160,14 @@ const ViewComponents = () => {
           </div>
         )}
         {isTooltip && DynamicComponent && (
+          <div className="wrapper">
+            <div className="header">{componentName}</div>
+            <div className="component-block">
+              <DynamicComponent styled={isStyled} />
+            </div>
+          </div>
+        )}
+        {isDataGrid && DynamicComponent && (
           <div className="wrapper">
             <div className="header">{componentName}</div>
             <div className="component-block">
