@@ -1,127 +1,151 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { TextField } from '../../../../components';
 import * as stories from './TextField.stories.jsx';
 
 <Meta
-    title="Onex/Forms/TextField"
-    argTypes={{
-      className: {
-        description: 'Override or extend the styles applied to the component.',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-        }
+  title="Onex/Forms/TextField"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
       },
-      label: {
-        description: 'The label content.',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-        }
+    },
+    label: {
+      description: 'The label content.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
       },
-      type: {
-        description: 'Input\'s type',
-        control: { type: 'select' },
-        table: {
-          defaultValue: {
-            summary: 'text',
-          },
-        }
+    },
+    type: {
+      description: "Input's type",
+      control: { type: 'select' },
+      table: {
+        defaultValue: {
+          summary: 'text',
+        },
       },
-      passwordVariant: {
-        description: 'The password variant that indicates how strong the password is',
-        options: ['strong', 'medium', 'weak'],
-        control: { type: 'select' },
-        table: {
-          defaultValue: {
-            summary: undefined,
-          },
-          type: {
-            summary: 'strong | medium | weak',
-          },
-        }
+    },
+    passwordVariant: {
+      description: 'The password variant that indicates how strong the password is',
+      options: ['strong', 'medium', 'weak'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'strong | medium | weak',
+        },
       },
-      passwordHelpText: {
-        description: 'The password help text for different variant of password',
-        table: {
-          defaultValue: {
-            summary: { strong: 'Strong'},
-          },
-          type: {
-            summary: 'object[key: strong | medium | weak, value: string]',
-          },
-        }
+    },
+    passwordHelpText: {
+      description: 'The password help text for different variant of password',
+      table: {
+        defaultValue: {
+          summary: { strong: 'Strong' },
+        },
+        type: {
+          summary: 'object[key: strong | medium | weak, value: string]',
+        },
       },
-      helpText: {
-        description: 'The text with helpful information.',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-        }
+    },
+    helpText: {
+      description: 'The text with helpful information.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
       },
-      errorMessage: {
-        description: 'The text of error message.',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-        }
+    },
+    errorMessage: {
+      description: 'The text of error message.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
       },
-      size: {
-        description: 'The size of the component. small is equivalent to the dense button styling.',
+    },
+    size: {
+      description: 'The size of the component. small is equivalent to the dense button styling.',
+    },
+    value: {
+      description: 'The value of the textarea element, required for a controlled component.',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary: 'string',
+        },
       },
-      value: {
-        description: 'The value of the textarea element, required for a controlled component.',
-        control: 'text',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-          type: {
-            summary: 'string'
-          }
-        }
+    },
+    placeholder: {
+      description: 'The short hint displayed in the textarea before the user enters a value.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
       },
-      placeholder: {
-        description: 'The short hint displayed in the textarea before the user enters a value.',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-        }
+    },
+    readOnly: {
+      description: 'If true, the component is only for reading.',
+    },
+    disabled: {
+      description: 'If true, the component is disabled.',
+    },
+    isInvalid: {
+      description: 'If true, the component has red border and show error message.',
+    },
+    required: {
+      description: 'If true, the component is required.',
+    },
+    showClearBtn: {
+      description: 'If true, the input has clear button in the end. ',
+    },
+    onChange: {
+      description: 'Callback fired when the value is changed.',
+    },
+    dataTestId: {
+      description: 'The it of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
       },
-      readOnly: {
-        description: 'If true, the component is only for reading.'
+    },
+    maxLength: {
+      control: 'number',
+      description: 'Maximum length value can reach',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'number',
+        },
       },
-      disabled: {
-        description: 'If true, the component is disabled.'
+    },
+    minLength: {
+      control: 'number',
+      description: 'Minimum length value can reach',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+        type: {
+          summary: 'number',
+        },
       },
-      isInvalid: {
-        description: 'If true, the component has red border and show error message.'
-      },
-      required: {
-        description: 'If true, the component is required.'
-      },
-      showClearBtn: {
-        description: 'If true, the input has clear button in the end. '
-      },
-      onChange: {
-        description: 'Callback fired when the value is changed.'
-      },
-      dataTestId: {
-        description: 'The it of the component for test',
-        table: {
-          defaultValue: {
-            summary: 'undefined',
-          },
-        }
-      },
-    }}
-    component={TextField}
+    },
+  }}
+  component={TextField}
 />
 
 export const Template = (args) => <TextField {...args} />;
@@ -131,19 +155,21 @@ export const Template = (args) => <TextField {...args} />;
 The TextField component based on input DOM element.
 
 ### TextField details
+
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-            size: 'md',
-            placeholder: 'Placeholder',
-            label: 'Label',
-            showClearBtn: true,
-            className: 'custom-textfield',
-            dataTestId: 'text-textfield-id',
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    args={{
+      size: 'md',
+      placeholder: 'Placeholder',
+      label: 'Label',
+      showClearBtn: true,
+      className: 'custom-textfield',
+      dataTestId: 'text-textfield-id',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
@@ -151,28 +177,27 @@ The TextField component based on input DOM element.
 ### TextField sizes
 
 <Canvas>
-    <Story name="Small" story={stories.Small} />
-    <Story name="Middle" story={stories.Middle} />
+  <Story name="Small" story={stories.Small} />
+  <Story name="Middle" story={stories.Middle} />
 </Canvas>
 
 ### TextField has clear button
 
 <Canvas>
-    <Story name="ClearButton" story={stories.ClearButton} />
+  <Story name="ClearButton" story={stories.ClearButton} />
 </Canvas>
-
 
 ### TextField with error message and required
 
 <Canvas>
-    <Story name="ErrorMessage" story={stories.ErrorMessage} />
-    <Story name="Required" story={stories.Required} />
+  <Story name="ErrorMessage" story={stories.ErrorMessage} />
+  <Story name="Required" story={stories.Required} />
 </Canvas>
 
 ### Disabled TextField
 
 <Canvas>
-    <Story name="Disabled" story={stories.Disabled} />
+  <Story name="Disabled" story={stories.Disabled} />
 </Canvas>
 
 ### PasswordField
@@ -193,19 +218,23 @@ The TextField component based on input DOM element.
 ### Example of password field
 
 You can check password validation based on simple verification rules.
- - length < 8 and length > 30 is error;
- - length less 12 is weak;
- - length between 12 and 20 is medium;
- - length bigger than 20 is strong;
+
+- length < 8 and length > 30 is error;
+- length less 12 is weak;
+- length between 12 and 20 is medium;
+- length bigger than 20 is strong;
 
 <Canvas>
   <Story name="Password example">
     {() => {
-      const passwordHelpText = React.useMemo(() => ({
-        weak: 'Weak',
-        medium: 'Medium',
-        strong: 'Strong',
-      }), []);
+      const passwordHelpText = React.useMemo(
+        () => ({
+          weak: 'Weak',
+          medium: 'Medium',
+          strong: 'Strong',
+        }),
+        [],
+      );
       const [password, setPassword] = React.useState();
       const [isInvalid, setIsInvalid] = React.useState(false);
       const [passwordVariant, setPasswordVariant] = React.useState('');
@@ -237,8 +266,9 @@ You can check password validation based on simple verification rules.
           onChange={setPassword}
           isInvalid={isInvalid}
           passwordVariant={passwordVariant}
-          errorMessage='Your password needs to be between 8 and 30 characters long'
-          passwordHelpText={passwordHelpText} />
+          errorMessage="Your password needs to be between 8 and 30 characters long"
+          passwordHelpText={passwordHelpText}
+        />
       );
     }}
   </Story>
