@@ -5,6 +5,7 @@
     padding: 1rem 1rem 1rem 2.75rem;
     .alert-heading {
         font-weight: $onex-alert-heading-font-weight;
+        line-height: $onex-alert-text-line-height;
         position: relative;
         .onex-alert__icon {
             position: absolute;
@@ -14,7 +15,7 @@
             align-items: center;
             justify-content: center;
             left: -1.8rem;
-            top: 0;
+            top: -0.15rem;
 
             .onex-material-icon,
             .material-icons-round {
@@ -24,6 +25,7 @@
     }
     .onex-alert__body {
         font-size: $onex-alert-body-font-size;
+        line-height: $onex-alert-text-line-height;
         margin: 0;
         margin-top: 0.5rem;
     }

@@ -1,8 +1,14 @@
 .onex-segmentedToggle {
     width: 100%;
     border: 1px $onex-segmented-toggle-border-color solid;
-    border-radius: $onex-segmented-toggle-border-radius;
+    border-radius: $onex-segmented-toggle-wrapper-border-radius;
     padding: $onex-segmented-toggle-padding;
+
+    .onex-toggle-btn-wrapper {
+        .btn-toggle {
+            border-radius: $onex-segmented-toggle-segments-border-radius;
+        }
+    }
 
     &.icons {
         width: min-content;

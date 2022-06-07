@@ -10914,6 +10914,7 @@ progress {
 }
 .alert.onex-alert .alert-heading {
   font-weight: 600;
+  line-height: 1.25rem;
   position: relative;
 }
 .alert.onex-alert .alert-heading .onex-alert__icon {
@@ -10924,7 +10925,7 @@ progress {
   align-items: center;
   justify-content: center;
   left: -1.8rem;
-  top: 0;
+  top: -0.15rem;
 }
 .alert.onex-alert .alert-heading .onex-alert__icon .onex-material-icon,
 .alert.onex-alert .alert-heading .onex-alert__icon .material-icons-round {
@@ -10932,6 +10933,7 @@ progress {
 }
 .alert.onex-alert .onex-alert__body {
   font-size: 0.875rem;
+  line-height: 1.25rem;
   margin: 0;
   margin-top: 0.5rem;
 }
