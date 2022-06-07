@@ -195,11 +195,6 @@ module.exports = [
     ],
   },
   {
-    name: 'DataGrid',
-    importName: 'DataGrid',
-    replaceUrl: [{ className: '.onex-dataGrid', classRegex: classRegexBase }],
-  },
-  {
     name: 'Alert',
     importName: 'Alert',
     replaceUrl: [{ className: '.onex-alert', classRegex: classRegexBase }],
