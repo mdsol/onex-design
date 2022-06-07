@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import { Modal as ReactModal } from 'react-bootstrap';
 import classNames from 'classnames';
 
+import { useEffect, useState } from 'react';
 import Icon from '../../Icon/scss';
 import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
+import Link from '../../Link/scss';
 
 const Modal = ({
   handleClose,
@@ -23,19 +25,29 @@ const Modal = ({
   title,
 }) => {
   const classes = classNames('onex-modal', { [className]: className });
+  const [_show, setShow] = useState(show);
+
+  useEffect(() => {
+    setShow(show);
+  }, [show]);
+
+  const onClose = () => {
+    setShow(false);
+    handleClose?.();
+  };
 
   return (
     <ReactModal
       scrollable
-      show={show}
-      onHide={handleClose}
+      show={_show}
+      onHide={onClose}
       size={size}
       dialogClassName={widthClassName}
       className={classes}
     >
       <ReactModal.Header>
         <Typography variant="h4">{title}</Typography>
-        <Button onClick={handleClose} variant="tertiary" type="icon" size="md">
+        <Button onClick={onClose} variant="tertiary" type="icon" size="md">
           <Icon>close</Icon>
         </Button>
       </ReactModal.Header>
@@ -43,11 +55,7 @@ const Modal = ({
       <ReactModal.Footer>
         {showFooter && (
           <div className="modal-footer__content">
-            {actionLinkName && (
-              <Typography variant="label" href={link}>
-                {actionLinkName}
-              </Typography>
-            )}
+            {actionLinkName && <Link href={link}>{actionLinkName}</Link>}
             <div>
               <Button
                 variant="secondary"

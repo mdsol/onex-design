@@ -1959,6 +1959,26 @@ export const config = {
           })),
       },
       {
+        name: 'Modal',
+        componentName: 'Modal',
+        styledComponentName: 'Modal',
+        additionalComponents: [],
+        variants: [
+          {
+            show: true,
+            onSecondaryClick: () => {},
+            onPrimaryClick: () => {},
+            secondaryActionName: 'Secondary Action',
+            primaryActionName: 'Save Changes',
+            showFooter: true,
+            title: 'Modal',
+            link: '#',
+            actionLinkName: 'Link',
+            children: 'Woohoo, youre reading this text in a modal!',
+          },
+        ],
+      },
+      {
         name: 'Banner',
         componentName: 'Banner',
         styledComponentName: 'Banner',

@@ -1,6 +1,6 @@
 .onex-modal {
     .modal-body {
-        padding: 0rem 1rem;
+        padding: 0.5rem 1rem;
         min-height: 1.5rem;
     }
     .modal-footer {
@@ -23,10 +23,19 @@
     }
     .modal-header {
         border-bottom: 0rem;
-        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        padding: 0.25rem 0.5rem 0.25rem 1rem;
+        min-height: $onex-modal-min-height-actions;
+
+        .onex-typography {
+          max-width: 100%;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
     }
-    .modal-content {
-        border: 0rem;
+    .modal-dialog-scrollable .modal-content {
+      border: 0rem;
+      max-height: $onex-modal-max-height;
     }
     .modal-header .btn-close {
         box-sizing: content-box;
