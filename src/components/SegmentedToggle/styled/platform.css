@@ -10732,6 +10732,9 @@ progress {
   border-radius: 0.5rem;
   padding: 0.13rem;
 }
+.onex-segmentedToggle .onex-toggle-btn-wrapper .btn-toggle {
+  border-radius: 0.25rem;
+}
 .onex-segmentedToggle.icons {
   width: min-content;
 }

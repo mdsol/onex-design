@@ -12327,6 +12327,7 @@ progress {
 }
 .onex-tab.onex-nav .onex-nav__item.dropdown > .dropdown-menu {
   transform: translate3d(0, 2.75rem, 0) !important;
+  border-radius: 0.5rem;
 }
 .onex-tab.onex-nav .nav-tabs .nav-link {
   display: flex;
