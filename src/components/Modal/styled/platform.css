@@ -10132,6 +10132,7 @@ progress {
     display: none !important;
   }
 }
+/* bootstrap variables */
 .fade {
   transition: opacity 0.15s linear;
 }
@@ -10906,7 +10907,7 @@ progress {
 }
 
 .onex-modal .modal-body {
-  padding: 0rem 1rem;
+  padding: 0.5rem 1rem;
   min-height: 1.5rem;
 }
 .onex-modal .modal-footer {
@@ -10928,10 +10929,18 @@ progress {
 }
 .onex-modal .modal-header {
   border-bottom: 0rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  padding: 0.25rem 0.5rem 0.25rem 1rem;
+  min-height: 3.5rem;
 }
-.onex-modal .modal-content {
+.onex-modal .modal-header .onex-typography {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.onex-modal .modal-dialog-scrollable .modal-content {
   border: 0rem;
+  max-height: 90vh;
 }
 .onex-modal .modal-header .btn-close {
   box-sizing: content-box;
@@ -11206,4 +11215,102 @@ progress {
 }
 .onex-btn.onex-btn--icon.btn-md {
   padding: 0.5rem;
+}
+
+.onex-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.onex-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.onex-link .onex-material-icon,
+.onex-link .material-icons-round {
+  font-size: 1.25rem;
+}
+.onex-link--primary {
+  color: rgb(0, 112, 192);
+}
+.onex-link--primary svg path {
+  fill: rgb(0, 112, 192);
+}
+.onex-link--primary .onex-material-icon,
+.onex-link--primary .material-icons-round {
+  color: rgb(0, 112, 192);
+}
+.onex-link--primary:hover {
+  color: rgb(0, 71, 134);
+  cursor: pointer;
+}
+.onex-link--primary:hover svg path {
+  fill: rgb(0, 71, 134);
+}
+.onex-link--primary:hover .onex-material-icon,
+.onex-link--primary:hover .material-icons-round {
+  color: rgb(0, 71, 134);
+}
+.onex-link--primary:hover .onex-link__text {
+  text-decoration: underline;
+}
+.onex-link--primary:active {
+  color: rgb(5, 48, 96);
+}
+.onex-link--primary:active svg path {
+  fill: rgb(5, 48, 96);
+}
+.onex-link--primary:active .onex-material-icon,
+.onex-link--primary:active .material-icons-round {
+  color: rgb(5, 48, 96);
+}
+.onex-link--primary:active .onex-link__text {
+  text-decoration: underline;
+}
+.onex-link--secondary {
+  color: rgb(103, 110, 122);
+}
+.onex-link--secondary svg path {
+  fill: rgb(103, 110, 122);
+}
+.onex-link--secondary .onex-material-icon,
+.onex-link--secondary .material-icons-round {
+  color: rgb(103, 110, 122);
+}
+.onex-link--secondary:hover {
+  color: rgb(0, 71, 134);
+  cursor: pointer;
+}
+.onex-link--secondary:hover svg path {
+  fill: rgb(0, 71, 134);
+}
+.onex-link--secondary:hover .onex-material-icon,
+.onex-link--secondary:hover .material-icons-round {
+  color: rgb(0, 71, 134);
+}
+.onex-link--secondary:hover .onex-link__text {
+  text-decoration: underline;
+}
+.onex-link--secondary:active {
+  color: rgb(5, 48, 96);
+}
+.onex-link--secondary:active svg path {
+  fill: rgb(5, 48, 96);
+}
+.onex-link--secondary:active .onex-material-icon,
+.onex-link--secondary:active .material-icons-round {
+  color: rgb(5, 48, 96);
+}
+.onex-link--secondary:active .onex-link__text {
+  text-decoration: underline;
+}
+.onex-link.onex-link--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
 }

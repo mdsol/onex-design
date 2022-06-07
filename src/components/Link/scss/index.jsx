@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { useMemo } from 'react';
 
 const Link = ({
   children,
@@ -20,15 +21,20 @@ const Link = ({
     'onex-link--secondary': variant === 'secondary',
   });
 
+  const LinkProps = useMemo(
+    () =>
+      targetBlank
+        ? {
+            target: '_blank',
+            rel: 'noopener',
+            ...props,
+          }
+        : { ...props },
+    [props, targetBlank],
+  );
+
   return (
-    <a
-      href={href}
-      className={buttonClassNames}
-      data-test-id={dataTestId}
-      target={targetBlank && '_blank'}
-      rel={targetBlank && 'noopener'}
-      {...props}
-    >
+    <a href={href} className={buttonClassNames} data-test-id={dataTestId} {...LinkProps}>
       {leadingIcon && leadingIcon}
       <span className="onex-link__text">{children}</span>
       {trailingIcon && trailingIcon}
