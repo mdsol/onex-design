@@ -10,6 +10,7 @@
         $toggle-font-size-sm,
         $toggle-line-height-sm
     );
+    font-family: $font-family;
 
     & svg {
         @include icon-size($toggle-font-size-sm);
@@ -31,6 +32,8 @@
         $toggle-font-size-lg,
         $toggle-line-height-lg
     );
+
+    font-family: $font-family;
 
     & svg {
         @include icon-size($toggle-font-size-lg);
@@ -58,6 +61,7 @@
     padding: 1px;
     border-top: 1px solid $toggle-border-color;
     border-bottom: 1px solid $toggle-border-color;
+    font-family: $font-family;
 
     &:first-child {
         border-left: 1px solid $toggle-border-color;

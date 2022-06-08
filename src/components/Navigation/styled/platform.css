@@ -10917,6 +10917,7 @@ progress {
 
 .onex-nav {
   border-bottom: none;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-nav__item, .onex-nav__item-dropdown {
   padding-left: 1rem;

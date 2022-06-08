@@ -10906,13 +10906,16 @@ progress {
   border-radius: 0.5rem;
 }
 
+.onex-modal {
+  font-family: "Noto Sans", sans-serif;
+}
 .onex-modal .modal-body {
   padding: 0.5rem 1rem;
   min-height: 1.5rem;
 }
 .onex-modal .modal-footer {
   border-top: 0rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .onex-modal .modal-footer .modal-footer__content {
   width: 100%;
@@ -10932,11 +10935,12 @@ progress {
   padding: 0.25rem 0.5rem 0.25rem 1rem;
   min-height: 3.5rem;
 }
-.onex-modal .modal-header .onex-typography {
+.onex-modal .modal-header .onex-typography.onex-typography--h4 {
   max-width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-bottom: 0;
 }
 .onex-modal .modal-dialog-scrollable .modal-content {
   border: 0rem;
@@ -11226,6 +11230,7 @@ progress {
   font-weight: 600;
   text-decoration: none;
   vertical-align: middle;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-link svg {
   width: 1.25rem;

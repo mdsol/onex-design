@@ -10137,6 +10137,7 @@ progress {
   gap: 0.5rem;
   align-items: stretch;
   max-width: 100%;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-hint.onex-hint--variant-success .onex-hint__icon {
   color: rgb(0, 126, 76);
