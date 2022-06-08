@@ -7,11 +7,13 @@
     height: 100%;
     justify-content: center;
     gap: 2px;
+    font-family: $font-family;
 }
 
 .onex-table__cell {
     @include text-align();
     vertical-align: middle;
+    font-family: $font-family;
 
     &:last-child {
         svg {

@@ -32,6 +32,7 @@ const Dropdown = React.forwardRef((props, ref) => {
       onSelect={onSelect}
       className={buttonClassNames}
       data-test-id={dataTestId}
+      align={align}
       ref={ref}
     >
       <ReactDropdown.Toggle

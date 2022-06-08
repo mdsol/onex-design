@@ -10926,6 +10926,7 @@ progress {
 
 .onex-dropdown {
   position: relative;
+  font-family: "Noto Sans", sans-serif;
   /* buttonStyle (text, icon) */
 }
 .onex-dropdown > .btn {

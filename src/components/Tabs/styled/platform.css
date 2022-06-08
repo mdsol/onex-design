@@ -10917,6 +10917,7 @@ progress {
 
 .onex-nav {
   border-bottom: none;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-nav__item, .onex-nav__item-dropdown {
   padding-left: 1rem;
@@ -11773,6 +11774,7 @@ progress {
 
 .onex-dropdown {
   position: relative;
+  font-family: "Noto Sans", sans-serif;
   /* buttonStyle (text, icon) */
 }
 .onex-dropdown > .btn {
@@ -12279,6 +12281,9 @@ progress {
   font-size: 1rem;
 }
 
+.onex-tab.onex-nav {
+  font-family: "Noto Sans", sans-serif;
+}
 .onex-tab.onex-nav .nav-link {
   height: 2.5rem;
   font-size: 0.875rem;

@@ -22,20 +22,24 @@
     display: inline-flex;
     align-items: center;
     height: 100%;
+    font-family: $font-family;
 }
 
 .onex-data-table__text {
     display: inline-flex;
     flex-direction: column;
+    font-family: $font-family;
 }
 
 .onex-data-table__subTitle {
     font-size: $onex-table-body-subtitle-font-size;
     line-height: $onex-table-body-subtitle-line-height;
     color: $onex-table-body-subtitle-text-color;
+    font-family: $font-family;
 }
 
 .onex-table__cell--variant-header {
+    font-family: $font-family;
     .onex-data-table__icon--start {
         @include icon-style($onex-table-header-icon-size-lg, $onex-table-header-icon-color);
         margin-right: 0.5rem;
@@ -51,6 +55,7 @@
 }
 
 .onex-table__cell--variant-body {
+    font-family: $font-family;
     .onex-data-table__icon {
         @include icon-style($onex-table-body-icon-size-sm, $onex-table-body-icon-color);
 

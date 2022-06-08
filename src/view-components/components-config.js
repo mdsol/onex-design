@@ -2217,25 +2217,6 @@ export const config = {
               '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
               '          nobis eligendi, debitis quaerat, voluptatem inventore.',
           },
-          {
-            showActionBar: true,
-            showTitleBar: true,
-            actionLinkName: 'Link',
-            titleActionVariant: 'select',
-            optionsSelect: [
-              { value: 'chocolate', label: 'Chocolate' },
-              { value: 'strawberry', label: 'Strawberry' },
-              { value: 'vanilla', label: 'Vanilla' },
-            ],
-            variant: 'default',
-            link: '#',
-            badgeContent: '100',
-            title: 'Card Heading',
-            children:
-              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem rerum\n' +
-              '          corrupti ab aliquam assumenda ratione. Temporibus saepe eaque dolore ipsam ab tenetur\n' +
-              '          nobis eligendi, debitis quaerat, voluptatem inventore.',
-          },
         ],
       },
       // {

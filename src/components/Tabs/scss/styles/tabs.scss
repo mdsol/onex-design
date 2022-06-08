@@ -1,4 +1,5 @@
 .onex-tab.onex-nav {
+  font-family: $font-family;
 
   .nav-link {
     height: $onex-tab-height;
@@ -70,18 +71,18 @@
       align-items: center;
       justify-content: center;
       color: $onex-tab-main-text-color;
-  
+
       &:hover,
       &.active:hover,
       &.active {
         color: $onex-tab-active-text-color;
       }
-  
+
       &.active::before {
         border-radius: 0;
         height: $onex-tab-underline-height;
       }
-  
+
       &.active:hover::before,
       &:hover::before {
         background-color: $onex-tab-desactive-text-color;
