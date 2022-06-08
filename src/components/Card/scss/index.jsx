@@ -18,6 +18,7 @@ const CardAction = ({ titleActionVariant, dropdownItems, actionHeaderName, onHea
           items={dropdownItems}
           size="sm"
           buttonStyle="icon"
+          align="end"
           title={<Icon>more_vert</Icon>}
         />
       );
