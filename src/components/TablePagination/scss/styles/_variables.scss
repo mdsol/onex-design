@@ -1,14 +1,12 @@
-$table-pagination-lg-font-size: $font-size-lg;
-$table-pagination-sm-font-size: $font-size-sm;
-$table-pagination-width: 31.25rem;
-$table-pagination-dropdown-padding: 1rem;
-$table-pagination-dropdown-color: $primary-500;
-$table-pagination-divider-left: 0.5rem;
-$table-pagination-divider-top: 0.25rem;
-$table-pagination-divider-height: 0.875rem;
-$table-pagination-divider-width: 0.063rem;
-$table-pagination-divider-bg: $secondary;
+$table-pagination-width: 23rem;
+$table-pagination-font-family: $font-family;
+$table-pagination-rows-text-font-size: $font-size-label;
+$table-pagination-rows-text-line-height: $line-height-label;
+$table-pagination-rows-color: $secondary-900;
+$table-pagination-rows-select-min-width: 4.5rem;
+$table-pagination-rows-select-margin-left: 0.5rem;
+
 $table-pagination-text-color: $primary-720;
 $table-pagination-next-color-hover: $primary-500;
 $table-pagination-next-color-disabled: $secondary-250;
-$table-pagination-next-margin-left: 2.188rem;
+$table-pagination-next-margin-left: 0.5rem;

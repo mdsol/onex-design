@@ -71,7 +71,7 @@ Typography.defaultProps = {
   semiBold: false,
   marginBottom: false,
   noWrap: false,
-  href: '',
+  href: undefined,
   paragraph: false,
   uppercase: false,
   dataTestId: '',

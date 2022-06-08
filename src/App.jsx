@@ -126,7 +126,7 @@ const DevExamples = () => {
         <DataGrid
           columns={dataGridColumns}
           data={dataGridData}
-          rowsDividers={[10, 20, 30]}
+          rowsPerPageOptions={[10, 20, 30]}
           dataGridControlComponent={
             <DataGridControl>
               <DataGridName badgeNumber="100">Test table</DataGridName>

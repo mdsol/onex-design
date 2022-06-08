@@ -1178,18 +1178,9 @@ export const config = {
         additionalComponents: [],
         variants: [
           {
-            size: 'sm',
-            className: 'tablePagination',
-            dataTestId: 'tablePagination-id',
-            rowsDividers: [5, 10, 20, 25, 50],
-            defaultRowsPerPage: 10,
-            rows: 100,
-          },
-          {
-            size: 'lg',
             className: 'tablePagination',
             dataTestId: 'tablePagination',
-            rowsDividers: [5, 10, 20, 25, 50],
+            rowsPerPageOptions: [5, 10, 20, 25, 50],
             defaultRowsPerPage: 10,
             rows: 100,
           },
