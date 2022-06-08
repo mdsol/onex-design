@@ -13,20 +13,6 @@ export default {
                              \n5.eventKey - value passed to the onSelect handler, useful for identifying the selected menu item;
                              \n6.href - HTML href attribute corresponding to a.href.`,
     },
-    selectedValues: {
-      description: `Array of select options. Each item contain:
-                             \n1.label - select option's label;
-                             \n2.value* - select option's value`,
-    },
-    optionsSelect: {
-      description: `Array of select options. Each item contain:
-                             \n1.label - select option's label;
-                             \n2.value* - select option's value`,
-    },
-    onHandleSelect: {
-      action: 'select',
-      description: 'callback to select on the header action select',
-    },
     children: {
       description: 'The content of the Card Body, fully custom',
       control: 'text',
@@ -119,13 +105,6 @@ Demo.args = {
     { eventKey: 'seven', title: 'item seven', badge: 100 },
     { eventKey: 'eight', title: 'item eight', badge: 100 },
   ],
-  optionsSelect: [
-    { value: 'brazil', label: 'Brazil' },
-    { value: 'colombia', label: 'Colombia' },
-    { value: 'poland', label: 'Poland' },
-    { value: 'portugal', label: 'Portugal' },
-    { value: 'spain', label: 'Spain' },
-  ],
 };
 
 export const Default = Template.bind({});
@@ -216,30 +195,6 @@ DropdownActionType.args = {
     { eventKey: 'six', title: 'item six', badge: 100 },
     { eventKey: 'seven', title: 'item seven', badge: 100 },
     { eventKey: 'eight', title: 'item eight', badge: 100 },
-  ],
-  children:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',
-  dataTestId: 'onex-components-card--info',
-  badgeContent: '100',
-  subtitle: 'Subtitle',
-  variant: 'default',
-  link: '#',
-  title: 'Card Heading',
-};
-
-export const SelectActionType = Template.bind({});
-
-SelectActionType.args = {
-  showActionBar: true,
-  showTitleBar: true,
-  actionLinkName: 'Link',
-  titleActionVariant: 'select',
-  optionsSelect: [
-    { value: 'brazil', label: 'Brazil' },
-    { value: 'colombia', label: 'Colombia' },
-    { value: 'poland', label: 'Poland' },
-    { value: 'portugal', label: 'Portugal' },
-    { value: 'spain', label: 'Spain' },
   ],
   children:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam nisi sapiente, modi repudiandae impedit',

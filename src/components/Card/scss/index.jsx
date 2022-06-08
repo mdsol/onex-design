@@ -7,17 +7,8 @@ import Button from '../../Buttons/scss';
 import Typography from '../../Typography/scss';
 import Dropdown from '../../Dropdown/scss';
 import Badge from '../../Badge/scss';
-import Select from '../../Select/scss';
 
-const CardAction = ({
-  titleActionVariant,
-  dropdownItems,
-  actionHeaderName,
-  onHeaderAction,
-  optionsSelect,
-  selectedValues,
-  onHandleSelect,
-}) => {
+const CardAction = ({ titleActionVariant, dropdownItems, actionHeaderName, onHeaderAction }) => {
   switch (titleActionVariant) {
     case 'more': {
       return (
@@ -38,18 +29,6 @@ const CardAction = ({
         </Button>
       );
     }
-    case 'select': {
-      return (
-        <Select
-          size="sm"
-          className="onex-card__select"
-          dataTestId="onex-card-select"
-          options={optionsSelect}
-          selectedValues={selectedValues}
-          onSelect={onHandleSelect}
-        />
-      );
-    }
     default: {
       return null;
     }
@@ -65,9 +44,6 @@ const Card = ({
   showTitleBar,
   className,
   dropdownItems,
-  optionsSelect,
-  selectedValues,
-  onHandleSelect,
   variant,
   titleActionVariant,
   link,
@@ -95,9 +71,6 @@ const Card = ({
                 dropdownItems={dropdownItems}
                 actionHeaderName={actionHeaderName}
                 onHeaderAction={onHeaderAction}
-                optionsSelect={optionsSelect}
-                selectedValues={selectedValues}
-                onHandleSelect={onHandleSelect}
               />
             </div>
             {subtitle && (
@@ -148,9 +121,6 @@ Card.propTypes = {
   dropdownItems: PropTypes.arrayOf(dropdownItems),
   variant: PropTypes.oneOf(['default', 'info']),
   titleActionVariant: PropTypes.oneOf(['more', 'button', 'select', 'none']),
-  selectedValues: PropTypes.arrayOf(optionType),
-  optionsSelect: PropTypes.arrayOf(optionType),
-  onHandleSelect: PropTypes.func,
   link: PropTypes.string,
   badgeContent: PropTypes.string,
   title: PropTypes.string,
@@ -167,9 +137,6 @@ Card.defaultProps = {
   showActionBar: false,
   showTitleBar: false,
   dropdownItems: [],
-  selectedValues: [],
-  optionsSelect: [],
-  onHandleSelect: undefined,
   variant: 'default',
   titleActionVariant: 'more',
   link: '#',
@@ -184,9 +151,6 @@ CardAction.propTypes = {
   dropdownItems: PropTypes.arrayOf(dropdownItems),
   actionHeaderName: PropTypes.string,
   onHeaderAction: PropTypes.func,
-  selectedValues: PropTypes.arrayOf(optionType),
-  optionsSelect: PropTypes.arrayOf(optionType),
-  onHandleSelect: PropTypes.func,
 };
 
 CardAction.defaultProps = {
@@ -194,9 +158,6 @@ CardAction.defaultProps = {
   dropdownItems: [],
   actionHeaderName: '',
   onHeaderAction: undefined,
-  selectedValues: [],
-  optionsSelect: [],
-  onHandleSelect: undefined,
 };
 
 export default Object.assign(Card, {
