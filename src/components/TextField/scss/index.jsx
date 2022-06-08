@@ -27,6 +27,8 @@ const TextField = React.forwardRef((props, ref) => {
     dataTestId,
     passwordHelpText,
     passwordVariant,
+    maxLength,
+    minLength,
   } = props;
 
   const [_value, _setValue] = useState(value);
@@ -92,6 +94,8 @@ const TextField = React.forwardRef((props, ref) => {
           required={required}
           value={_value}
           onChange={onHandleChange}
+          maxLength={maxLength}
+          minLength={minLength}
         />
         <InputButton
           disabled={disabled}
@@ -135,6 +139,8 @@ TextField.propTypes = {
   showClearBtn: PropTypes.bool,
   helpText: PropTypes.string,
   dataTestId: PropTypes.string,
+  maxLength: PropTypes.number,
+  minLength: PropTypes.number,
 };
 
 TextField.defaultProps = {
@@ -156,6 +162,8 @@ TextField.defaultProps = {
   helpText: undefined,
   onChange: undefined,
   dataTestId: undefined,
+  maxLength: undefined,
+  minLength: undefined,
 };
 
 export default TextField;
