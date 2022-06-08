@@ -1,6 +1,6 @@
 .onex-data-grid__table {
   width: 100%;
-  font-family: $font-family;
+  margin-bottom: $onex-data-grid-table-margin-bottom;
 
   &-headers {
     background: $onex-data-grid-table-header-background-color;
@@ -40,4 +40,10 @@
       margin: 0;
     }
   }
+}
+
+.onex-data-grid__pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 $onex-data-grid-pagination-padding-y $onex-data-grid-pagination-padding-x $onex-data-grid-pagination-padding-y;
 }

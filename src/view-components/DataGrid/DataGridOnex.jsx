@@ -53,7 +53,7 @@ const DataGridOnex = () => {
     <DataGrid
       columns={dataGridColumns}
       data={dataGridData}
-      rowsDividers={[10, 20, 30]}
+      rowsPerPageOptions={[5, 10]}
       dataGridControlComponent={
         <DataGridControl>
           <DataGridName badgeNumber="100">Test table</DataGridName>

@@ -1,7 +1,6 @@
 import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
 
 import { TablePagination } from '../../../../components';
-import * as stories from './TablePagination.stories.jsx';
 
 <Meta
     title="Onex/Components/TablePagination"
@@ -14,9 +13,6 @@ import * as stories from './TablePagination.stories.jsx';
                 },
             }
         },
-        size: {
-            description: 'The size of the component',
-        },
         dataTestId: {
             description: 'The id of the component for test',
             table: {
@@ -25,13 +21,8 @@ import * as stories from './TablePagination.stories.jsx';
                 },
             }
         },
-        rowsDividers: {
+      rowsPerPageOptions: {
           description: 'The array of quantities of rows per page',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-          }
         },
         defaultRowsPerPage: {
           description: 'The default quantity of rows per page',
@@ -48,7 +39,50 @@ import * as stories from './TablePagination.stories.jsx';
                   summary: 'undefined',
               },
           }
+        },
+        previousPage: {
+          description: 'Number of previous page',
+          table: {
+            defaultValue: {
+              summary: 'undefined',
+            },
+          }
+        },
+        nextPage: {
+          description: 'Number of next page',
+          table: {
+            defaultValue: {
+              summary: 'undefined',
+            },
+          }
+        },
+        canPreviousPage: {
+          description: 'If true, prev button is active',
+          table: {
+            defaultValue: {
+              summary: false,
+            },
+          }
+        },
+      canNextPage: {
+        description: 'If true, next button is active',
+        table: {
+          defaultValue: {
+            summary: false,
+          },
         }
+      },
+      lastRow: {
+        description: 'Number of last row',
+        table: {
+          defaultValue: {
+            summary: 'undefined',
+          },
+        }
+      },
+      setPageSize: {
+        description: 'Callback fired when change quantity of rows per page',
+      },
     }}
     component={TablePagination}
 />
@@ -57,7 +91,8 @@ export const Template = (args) => <TablePagination {...args} />;
 
 ## TablePagination
 
-A TablePagination is a pagination for tables.
+Table Pagination is a simple navigation method that lets you split a huge amount of content within your tables into smaller parts.
+Works as part of DataGrid.
 
 ### TablePagination
 <Canvas>
@@ -65,22 +100,15 @@ A TablePagination is a pagination for tables.
         height="12rem"
         name="Demo"
         args={{
-            size: 'lg',
-            className: 'tablePagination',
-            dataTestId: 'tablePagination',
-            rowsDividers: [5, 10, 20, 25, 50],
+            className: 'table-pagination',
+            dataTestId: 'table-pagination-id',
+            rowsPerPageOptions: [5, 10, 20],
             defaultRowsPerPage: 10,
             rows: 100,
+            lastRow: 10,
         }}>
         {Template.bind({})}
     </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
-
-### TablePagination sizes
-
-<Canvas>
-    <Story height="12rem" name="Small" story={stories.Small} />
-    <Story height="12rem" name="Large" story={stories.Large} />
-</Canvas>
