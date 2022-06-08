@@ -1,4 +1,5 @@
 .onex-modal {
+    font-family: $font-family;
     .modal-body {
         padding: 0.5rem 1rem;
         min-height: 1.5rem;
@@ -26,11 +27,12 @@
         padding: 0.25rem 0.5rem 0.25rem 1rem;
         min-height: $onex-modal-min-height-actions;
 
-        .onex-typography {
+        .onex-typography.onex-typography--h4 {
           max-width: 100%;
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
+          margin-bottom: 0;
         }
     }
     .modal-dialog-scrollable .modal-content {

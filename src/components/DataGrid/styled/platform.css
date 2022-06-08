@@ -10534,6 +10534,7 @@ progress {
 
 .onex-data-grid__table {
   width: 100%;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-data-grid__table-headers {
   background: rgb(244, 248, 252);
@@ -10572,11 +10573,13 @@ progress {
   justify-content: space-between;
   padding: 0.719rem 0.75rem;
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-data-grid-name {
   display: flex;
   align-items: center;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-data-grid-name h4 {
   margin-right: 0.375rem;
@@ -10588,4 +10591,5 @@ progress {
   background-color: rgb(255, 255, 255);
   padding: 1rem;
   width: 100%;
+  font-family: "Noto Sans", sans-serif;
 }

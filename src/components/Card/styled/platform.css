@@ -10294,6 +10294,7 @@ progress {
   border-radius: 1rem;
   border: 1px solid rgba(26, 28, 30, 0.1);
   background-color: rgb(255, 255, 255);
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-card.card .onex-card__subtitle {
   color: rgb(103, 110, 122);
@@ -11833,6 +11834,7 @@ progress {
 
 .onex-dropdown {
   position: relative;
+  font-family: "Noto Sans", sans-serif;
   /* buttonStyle (text, icon) */
 }
 .onex-dropdown > .btn {

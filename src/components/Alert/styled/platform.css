@@ -10907,6 +10907,7 @@ progress {
 }
 
 .alert.onex-alert {
+  font-family: "Noto Sans", sans-serif;
   border-radius: 1rem;
   border: 1px solid;
   color: rgb(0, 0, 0);

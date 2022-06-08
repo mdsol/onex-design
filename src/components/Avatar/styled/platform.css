@@ -10142,6 +10142,7 @@ progress {
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(26, 28, 30, 0.1);
   background-color: rgba(103, 110, 122, 0.1);
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-avatar__person-icon {
   color: rgb(133, 140, 150);
