@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../../Icon/scss';
@@ -24,12 +24,11 @@ const TablePagination = ({
       label: defaultRowsPerPage,
     },
   ]);
-  const [_rowsPerPageOptions, _setRowsPerPageOptions] = useState([]);
 
-  useEffect(() => {
-    const newRowsPerPage = rowsPerPageOptions.map((item) => ({ value: item, label: item }));
-    _setRowsPerPageOptions(newRowsPerPage);
-  }, []);
+  const rowsPerPageOpts = useMemo(
+    () => rowsPerPageOptions.map((item) => ({ value: item, label: item })),
+    [rowsPerPageOptions],
+  );
 
   const tablePaginationClassNames = classNames('onex-table-pagination', {
     [className]: className,
@@ -38,10 +37,9 @@ const TablePagination = ({
   const handleRowsPerPageSelect = (option) => {
     if (option.length) {
       const row = Number(option[0]?.value);
-      setRowsPerPage(row);
-      setPageSize(row);
+      setRowsPerPage(option);
+      setPageSize?.(row);
     }
-    setRowsPerPage(option);
   };
 
   const handleNextActiveRow = () => {
@@ -59,9 +57,11 @@ const TablePagination = ({
         <Select
           className="onex-table-pagination__rows-select"
           size="sm"
-          options={_rowsPerPageOptions}
+          options={rowsPerPageOpts}
           onSelect={handleRowsPerPageSelect}
           selectedValues={rowsPerPage}
+          hideSelectedOptions
+          isSearchable
         />
       </div>
       <span className="onex-table-pagination__rows-text-info">

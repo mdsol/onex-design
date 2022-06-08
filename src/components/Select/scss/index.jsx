@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from 'react';
+import { useEffect, useState, memo, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
@@ -21,7 +21,7 @@ const MultiValueRemove = (props) => (
 );
 
 const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
-  const checkedValue = selectedOptions.some((elem) => elem.value === props.value);
+  const checkedValue = selectedOptions?.some((elem) => elem.value === props.value);
 
   return (
     <components.Option
@@ -61,13 +61,20 @@ const Select = ({
   onLoadOptions,
   getOptionValue,
   getOptionLabel,
+  hideSelectedOptions,
+  isSearchable,
   ...props
 }) => {
-  const [selectedOptions, setSelectedOptions] = useState(selectedValues);
+  const locSelectedValues = useMemo(
+    () => (Array.isArray(selectedValues) ? selectedValues : [selectedValues]),
+    [selectedValues],
+  );
+
+  const [selectedOptions, setSelectedOptions] = useState(locSelectedValues);
 
   useEffect(() => {
-    setSelectedOptions(selectedValues);
-  }, [selectedValues]);
+    setSelectedOptions(locSelectedValues);
+  }, [locSelectedValues]);
 
   const selectClassNames = classNames('onex-select', {
     [className]: className,
@@ -110,7 +117,8 @@ const Select = ({
           loadOptions={onLoadOptions}
           getOptionLabel={getOptionLabel}
           getOptionValue={getOptionValue}
-          hideSelectedOptions={false}
+          hideSelectedOptions={hideSelectedOptions}
+          isSearchable={isSearchable}
           closeMenuOnSelect={false}
           {...props}
         />
@@ -134,7 +142,8 @@ const Select = ({
           aria-invalid
           value={selectedOptions}
           data-test-id={dataTestId}
-          hideSelectedOptions={false}
+          hideSelectedOptions={hideSelectedOptions}
+          isSearchable={isSearchable}
           closeMenuOnSelect={false}
           {...props}
         />
@@ -193,6 +202,8 @@ Select.propTypes = {
   onLoadOptions: PropTypes.func,
   getOptionValue: PropTypes.func,
   getOptionLabel: PropTypes.func,
+  hideSelectedOptions: PropTypes.bool,
+  isSearchable: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -213,6 +224,8 @@ Select.defaultProps = {
   onLoadOptions: undefined,
   getOptionValue: undefined,
   getOptionLabel: undefined,
+  hideSelectedOptions: false,
+  isSearchable: true,
 };
 
 export default Select;

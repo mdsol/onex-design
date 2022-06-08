@@ -55,6 +55,22 @@ import * as stories from './Select.stories.jsx';
               },
           }
         },
+        hideSelectedOptions: {
+          description: 'Hide the selected option from the menu',
+          table: {
+            defaultValue: {
+              summary: false,
+            },
+          }
+        },
+        isSearchable: {
+          description: 'Whether to enable search functionality',
+          table: {
+            defaultValue: {
+              summary: true,
+            },
+          }
+        },
         isDisabled: {
           description: 'The component is disabled if the value is true',
           table: {

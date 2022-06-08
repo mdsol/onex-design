@@ -67,7 +67,7 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions }) => {
           })}
         </tbody>
       </ReactTable>
-      {rowsPerPageOptions.length > 0 && (
+      {!!rowsPerPageOptions.length && (
         <div className="onex-data-grid__pagination">
           <TablePagination
             defaultRowsPerPage={pageSize}
