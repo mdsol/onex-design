@@ -629,13 +629,6 @@ export const config = {
           },
           {
             title: 'Label',
-            id: 'small-dropdown',
-            items: dropdownItems,
-            size: 'sm',
-            leadingIcon: <Icon>language</Icon>,
-          },
-          {
-            title: 'Label',
             id: 'small-dropdown-disabled',
             items: dropdownItems,
             size: 'sm',
@@ -646,13 +639,6 @@ export const config = {
             id: 'large-dropdown',
             items: dropdownItems,
             size: 'md',
-          },
-          {
-            title: 'Label',
-            id: 'large-dropdown',
-            items: dropdownItems,
-            size: 'md',
-            leadingIcon: <Icon>language</Icon>,
           },
           {
             title: 'Label',
@@ -671,14 +657,6 @@ export const config = {
           {
             variant: 'secondary',
             title: 'Label',
-            id: 'secondary-dropdown',
-            items: dropdownItems,
-            size: 'sm',
-            leadingIcon: <Icon>language</Icon>,
-          },
-          {
-            variant: 'secondary',
-            title: 'Label',
             id: 'secondary-dropdown-disabled',
             items: dropdownItems,
             size: 'sm',
@@ -694,14 +672,6 @@ export const config = {
           {
             variant: 'secondary',
             title: 'Label',
-            id: 'secondary-dropdown',
-            items: dropdownItems,
-            size: 'md',
-            leadingIcon: <Icon>language</Icon>,
-          },
-          {
-            variant: 'secondary',
-            title: 'Label',
             id: 'secondary-dropdown-disabled',
             items: dropdownItems,
             size: 'md',
@@ -713,14 +683,6 @@ export const config = {
             id: 'tertiary-dropdown',
             items: dropdownItems,
             size: 'sm',
-          },
-          {
-            variant: 'tertiary',
-            title: 'Label',
-            id: 'tertiary-dropdown',
-            items: dropdownItems,
-            size: 'sm',
-            leadingIcon: <Icon>language</Icon>,
           },
           {
             variant: 'tertiary',
@@ -736,14 +698,6 @@ export const config = {
             id: 'tertiary-dropdown',
             items: dropdownItems,
             size: 'md',
-          },
-          {
-            variant: 'tertiary',
-            title: 'Label',
-            id: 'tertiary-dropdown',
-            items: dropdownItems,
-            size: 'md',
-            leadingIcon: <Icon>language</Icon>,
           },
           {
             variant: 'tertiary',
@@ -789,7 +743,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
           },
           {
             variant: 'secondary',
@@ -797,7 +751,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
             disabled: true,
           },
           {
@@ -806,7 +760,7 @@ export const config = {
             items: dropdownItems,
             size: 'md',
             buttonStyle: 'icon',
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
           },
           {
             variant: 'secondary',
@@ -815,7 +769,7 @@ export const config = {
             size: 'md',
             buttonStyle: 'icon',
             disabled: true,
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
           },
           {
             variant: 'tertiary',
@@ -853,7 +807,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
           },
           {
             variant: 'tertiary',
@@ -861,7 +815,7 @@ export const config = {
             items: dropdownItems,
             size: 'sm',
             buttonStyle: 'icon',
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
             disabled: true,
           },
           {
@@ -870,7 +824,7 @@ export const config = {
             items: dropdownItems,
             size: 'md',
             buttonStyle: 'icon',
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
           },
           {
             variant: 'tertiary',
@@ -879,7 +833,7 @@ export const config = {
             size: 'md',
             buttonStyle: 'icon',
             disabled: true,
-            title: <Icon>more_vert</Icon>,
+            title: 'more_vert',
           },
         ],
       },

@@ -41,7 +41,7 @@ import * as stories from './Dropdown.stories.jsx';
       description: 'Specifies a medium or small dropdown',
     },
     title: {
-      description: 'The content of the non-toggle Button',
+      description: 'The content of the non-toggle Button, can be text or icon label',
       control: 'text',
     },
     variant: {
@@ -49,7 +49,7 @@ import * as stories from './Dropdown.stories.jsx';
     },
   }}
   component={Dropdown}
-  decorators={[(Story) => <div style={{ width: '15rem' }}>{Story()}</div>]}
+  decorators={[(Story) => <div style={{ width: '15rem', display: 'flex', justifyContent: 'center' }}><span>{Story()}</span></div>]}
 />
 
 export const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -131,7 +131,7 @@ Disabled
 </Canvas>
 
 ##### Custom icon
-If ```buttonStyle``` is ```icon``` in ```title``` is specified custom icon(svg).
+If ```buttonStyle``` is ```icon``` in ```title``` you can use icon descriptor from material UI.
 <Canvas>
   <Story height="15rem" name="SecondaryCustomIcon" story={stories.SecondaryCustomIcon} />
   <Story height="15rem" name="TertiaryCustomIcon" story={stories.TertiaryCustomIcon} />
