@@ -63,6 +63,7 @@ const Select = ({
   getOptionLabel,
   hideSelectedOptions,
   isSearchable,
+  closeMenuOnSelect,
   ...props
 }) => {
   const locSelectedValues = useMemo(
@@ -119,7 +120,7 @@ const Select = ({
           getOptionValue={getOptionValue}
           hideSelectedOptions={hideSelectedOptions}
           isSearchable={isSearchable}
-          closeMenuOnSelect={false}
+          closeMenuOnSelect={closeMenuOnSelect}
           {...props}
         />
       ) : (
@@ -144,7 +145,7 @@ const Select = ({
           data-test-id={dataTestId}
           hideSelectedOptions={hideSelectedOptions}
           isSearchable={isSearchable}
-          closeMenuOnSelect={false}
+          closeMenuOnSelect={closeMenuOnSelect}
           {...props}
         />
       )}
@@ -204,6 +205,7 @@ Select.propTypes = {
   getOptionLabel: PropTypes.func,
   hideSelectedOptions: PropTypes.bool,
   isSearchable: PropTypes.bool,
+  closeMenuOnSelect: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -226,6 +228,7 @@ Select.defaultProps = {
   getOptionLabel: undefined,
   hideSelectedOptions: false,
   isSearchable: true,
+  closeMenuOnSelect: false,
 };
 
 export default Select;

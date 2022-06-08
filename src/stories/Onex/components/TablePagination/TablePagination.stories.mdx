@@ -23,11 +23,6 @@ import { TablePagination } from '../../../../components';
         },
       rowsPerPageOptions: {
           description: 'The array of quantities of rows per page',
-          table: {
-              defaultValue: {
-                  summary: [],
-              },
-          }
         },
         defaultRowsPerPage: {
           description: 'The default quantity of rows per page',
@@ -96,7 +91,8 @@ export const Template = (args) => <TablePagination {...args} />;
 
 ## TablePagination
 
-A TablePagination is a pagination for tables.
+Table Pagination is a simple navigation method that lets you split a huge amount of content within your tables into smaller parts.
+Works as part of DataGrid.
 
 ### TablePagination
 <Canvas>
@@ -109,6 +105,7 @@ A TablePagination is a pagination for tables.
             rowsPerPageOptions: [5, 10, 20],
             defaultRowsPerPage: 10,
             rows: 100,
+            lastRow: 10,
         }}>
         {Template.bind({})}
     </Story>

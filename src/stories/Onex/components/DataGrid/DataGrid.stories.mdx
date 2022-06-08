@@ -1,36 +1,39 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
 
-import { DataGrid, DataGridName, DataGridControl } from '../../../../components';
+import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
 
 <Meta
-    title="Onex/Components/DataGrid"
-    argTypes={{
-        className: {
-            description: 'The className',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+  title="Onex/Components/DataGrid"
+  argTypes={{
+    className: {
+      description: 'The className',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        columns: {
-            description: 'The array of table columns',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      }
+    },
+    columns: {
+      description: 'The array of table columns',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        data: {
-            description: 'The array of data of each row, where key is equal for one of columns',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        }
-    }}
-    component={DataGrid}
+      }
+    },
+    data: {
+      description: 'The array of data of each row, where key is equal for one of columns',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      }
+    },
+    rowsPerPageOptions: {
+      description: 'The array of quantities of rows per page',
+    },
+  }}
+  component={DataGrid}
 />
 
 
@@ -45,49 +48,119 @@ Using this component requires installation packages : ```react-table v7``` - htt
 
 ### Demo
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-          dataGridControlComponent: (
-            <DataGridControl>
-              <DataGridName badgeNumber="100">Test table</DataGridName>
-            </DataGridControl>
-          ),
-            className: { control: 'text' },
-            columns: [
-                    {
-                        Header: 'ID',
-                        accessor: 'id',
-                    },
-                    {
-                        Header: 'Study',
-                        accessor: 'study',
-                    },
-                    {
-                        Header: 'Country',
-                        accessor: 'country',
-                    },
-                    {
-                        Header: 'Category',
-                        accessor: 'category',
-                    },
-                    {
-                        Header: 'Created',
-                        accessor: 'created',
-                    },
-                ],
-            data: [
-                {
-                    id: 'M12345',
-                    study: 'United States30',
-                    country: 'United States10',
-                    category: 'Manegement',
-                    created: '26 Aug 20100',
-                }
-            ]
-            }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    height="35rem"
+    name="Demo"
+    args={{
+      rowsPerPageOptions: [5, 10],
+      dataGridControlComponent: (
+        <DataGridControl>
+          <DataGridName badgeNumber="100">Test table</DataGridName>
+        </DataGridControl>
+      ),
+      className: {control: 'text'},
+      columns: [
+        {
+          Header: 'ID',
+          accessor: 'id',
+        },
+        {
+          Header: 'Study',
+          accessor: 'study',
+        },
+        {
+          Header: 'Country',
+          accessor: 'country',
+        },
+        {
+          Header: 'Category',
+          accessor: 'category',
+        },
+        {
+          Header: 'Created',
+          accessor: 'created',
+        },
+      ],
+      data: [
+        {
+          id: 'M12345',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M12346',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M12347',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M12348',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M12349',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M123455',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M123477',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M123416',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M123414',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        },
+        {
+          id: 'M123415',
+          study: 'United States30',
+          country: 'United States10',
+          category: 'Manegement',
+          created: '26 Aug 20100',
+        }
+      ]
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-<ArgsTable story="Demo" />
+<ArgsTable story="Demo"/>
+
+### Pagination
+For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.
+First value in array this is a default rows per page.
+

@@ -60,7 +60,7 @@ const TablePagination = ({
           options={rowsPerPageOpts}
           onSelect={handleRowsPerPageSelect}
           selectedValues={rowsPerPage}
-          hideSelectedOptions
+          closeMenuOnSelect
           isSearchable
         />
       </div>
