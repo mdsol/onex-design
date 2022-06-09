@@ -42,7 +42,7 @@ const Dropdown = React.forwardRef((props, ref) => {
           </>
         ) : (
           <Icon className={title ? '' : 'onex-dropdown__chevron-icon'}>
-            {!title ? 'expand_more' : title}
+            {title || 'expand_more'}
           </Icon>
         )}
       </ReactDropdown.Toggle>
