@@ -40,6 +40,13 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
     rowsPerPageOptions: {
       description: 'The array of quantities of rows per page',
     },
+    dataGridControlProps: {
+      description: 'Object with dataGridControl props, if you not use this prop - hrid Control not will be visiable, for more detail props go to the DataGrodControl component',
+    },
+    customGridControl: {
+      description: 'Element which replace standart dataGridControl component with your custom component',
+      control: 'string'
+    },
   }}
   component={DataGrid}
 />
@@ -62,11 +69,12 @@ Using this component requires installation packages : [react-table v7](https://w
     args={{
       dataTestId: 'data-grid-test-id',
       className: 'data-grid-custom',
-      dataGridControlComponent: (
-        <DataGridControl>
-          <DataGridName badgeNumber="100">Test table</DataGridName>
-        </DataGridControl>
-      ),
+      rowsPerPageOptions: [5, 10],
+      dataGridControlProps: {
+        title: 'Title',
+        badge: '23',
+      },
+      className: {control: 'text'},
       columns: [
         {
           Header: 'ID',
@@ -202,4 +210,7 @@ it will be assumed to be ascending. This information is stored in state since th
 Must be memoized.
 
 Other parameters are also supported, for more information please check - [Sort table options](https://react-table-v7.tanstack.com/docs/api/useSortBy#table-options)
+
+### Table Header
+For add header you must use prop ```dataGridControlProps``` for standart table controll element or ```customGridControl``` prop for your custom table controll, if you not use all of them header not will be add by default.
 

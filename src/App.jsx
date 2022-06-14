@@ -1,17 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import {
-  Tabs,
-  Check,
-  DataGrid,
-  DataGridControl,
-  DataGridName,
-  Modal,
-  Button,
-  Card,
-  Select,
-  Link,
-  Icon,
-} from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -107,6 +95,8 @@ const DevExamples = () => {
     setSelectedValues(values);
   };
 
+  const GridControl = { title: 'Title' };
+
   return (
     <div className="p-5">
       <div>
@@ -140,11 +130,7 @@ const DevExamples = () => {
           data={dataGridData}
           sortBy={dataGridSortByUpd}
           rowsPerPageOptions={[10, 20, 30]}
-          dataGridControlComponent={
-            <DataGridControl>
-              <DataGridName badgeNumber="100">Test table</DataGridName>
-            </DataGridControl>
-          }
+          dataGridControlProps={GridControl}
         />
         <br />
         <Button variant="primary" onClick={() => setShow(true)}>
