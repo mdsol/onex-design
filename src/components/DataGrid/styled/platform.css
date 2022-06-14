@@ -10709,6 +10709,8 @@ progress {
 .onex-table-pagination__rows-text-info {
   display: inline-block;
   font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .onex-table-pagination .onex-table-pagination__rows-select {
   min-width: 4.5rem;
@@ -11244,7 +11246,7 @@ progress {
 
 .onex-data-grid__table {
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 .onex-data-grid__table-headers {
   background: rgb(244, 248, 252);
@@ -11273,6 +11275,9 @@ progress {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.onex-data-grid__table-body tr:hover {
+  background-color: rgba(103, 110, 122, 0.1);
+}
 .onex-data-grid__table-body td {
   padding: 0.875rem 0.75rem;
   margin: 0;
@@ -11281,7 +11286,7 @@ progress {
 .onex-data-grid__pagination {
   display: flex;
   justify-content: flex-end;
-  padding: 0 0.75rem 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
 }
 
 .onex-data-grid-control {

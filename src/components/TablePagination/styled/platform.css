@@ -10924,6 +10924,8 @@ progress {
 .onex-table-pagination__rows-text-info {
   display: inline-block;
   font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .onex-table-pagination .onex-table-pagination__rows-select {
   min-width: 4.5rem;
