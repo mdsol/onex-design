@@ -32,6 +32,13 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
     rowsPerPageOptions: {
       description: 'The array of quantities of rows per page',
     },
+    dataGridControlProps: {
+      description: 'Object with dataGridControl props, if you not use this prop - hrid Control not will be visiable, for more detail props go to the DataGrodControl component',
+    },
+    customGridControl: {
+      description: 'Element which replace standart dataGridControl component with your custom component',
+      control: 'string'
+    },
   }}
   component={DataGrid}
 />
@@ -53,11 +60,10 @@ Using this component requires installation packages : ```react-table v7``` - htt
     name="Demo"
     args={{
       rowsPerPageOptions: [5, 10],
-      dataGridControlComponent: (
-        <DataGridControl>
-          <DataGridName badgeNumber="100">Test table</DataGridName>
-        </DataGridControl>
-      ),
+      dataGridControlProps: {
+        title: 'Title',
+        badge: '23',
+      },
       className: {control: 'text'},
       columns: [
         {
@@ -163,4 +169,7 @@ Using this component requires installation packages : ```react-table v7``` - htt
 ### Pagination
 For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.
 First value in array this is a default rows per page.
+
+### Table Header
+For add header you must use prop ```dataGridControlProps``` for standart table controll element or ```customGridControl``` prop for your custom table controll, if you not use all of them header not will be add by default.
 

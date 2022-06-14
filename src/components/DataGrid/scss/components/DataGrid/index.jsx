@@ -1,15 +1,24 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DataGridTable from '../DataGridTable';
+import DataGridControl from '../DataGridControl';
+import DataGridControlTypes from '../../utils/dataGridTypes';
 
-const DataGrid = ({ className, data, columns, rowsPerPageOptions, dataGridControlComponent }) => {
+const DataGrid = ({
+  className,
+  data,
+  columns,
+  rowsPerPageOptions,
+  dataGridControlProps,
+  customGridControl,
+}) => {
   const dataGridClasses = classNames('onex-data-grid', {
     [className]: className,
   });
 
   return (
     <div className={dataGridClasses}>
-      {dataGridControlComponent}
+      {customGridControl || (dataGridControlProps && <DataGridControl {...dataGridControlProps} />)}
       <DataGridTable columns={columns} data={data} rowsPerPageOptions={rowsPerPageOptions} />
     </div>
   );
@@ -31,10 +40,8 @@ DataGrid.propTypes = {
   ),
   data: PropTypes.array,
   rowsPerPageOptions: PropTypes.arrayOf(PropTypes.number),
-  dataGridControlComponent: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  dataGridControlProps: DataGridControlTypes,
+  customGridControl: PropTypes.element,
 };
 /* eslint-enable */
 
@@ -43,7 +50,8 @@ DataGrid.defaultProps = {
   data: [{}],
   columns: [],
   rowsPerPageOptions: [],
-  dataGridControlComponent: undefined,
+  dataGridControlProps: null,
+  customGridControl: null,
 };
 
 export default DataGrid;
