@@ -56,17 +56,13 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, .
                   <Typography variant="caption" uppercase>
                     {column.render('Header')}
                   </Typography>
-                  <span className="onex-data-grid__table-headers-sort-by-icons">
-                    {column.isSorted ? (
-                      column.isSortedDesc ? (
-                        <Icon className="sort-by-icon">arrow_downward</Icon>
-                      ) : (
-                        <Icon className="sort-by-icon">arrow_upward</Icon>
-                      )
-                    ) : (
-                      ''
-                    )}
-                  </span>
+                  {column.isSorted && (
+                    <span className="onex-data-grid__table-headers-sort-by-icons">
+                      <Icon className="sort-by-icon">
+                        {column.isSortedDesc ? 'arrow_downward' : 'arrow_upward'}
+                      </Icon>
+                    </span>
+                  )}
                 </th>
               ))}
             </tr>
@@ -99,7 +95,7 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, .
             pageSize={page.length}
             canNextPage={canNextPage}
             canPreviousPage={canPreviousPage}
-            lastRow={Number((pageIndex + 1) * pageSize)}
+            lastRow={(pageIndex + 1) * pageSize}
           />
         </div>
       )}
