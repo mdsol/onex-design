@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import ViewComponents from './view-components';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon, DropZone, } from './components';
 import ThemeProvider from './components/ThemeProvider';
 
 // import './scss/platform.scss';
@@ -132,15 +132,8 @@ const DevExamples = () => {
 
   return (
     <div className="p-5">
-      <div>
-        <Link
-          href="Link"
-          leadingIcon={<Icon>star</Icon>}
-          trailingIcon={<Icon>star</Icon>}
-          variant="secondary"
-        >
-          Link
-        </Link>
+      <div style={{ padding: '20px', minHeight: '300px' }}>
+        <DropZone />
       </div>
       <div>
         <Select
