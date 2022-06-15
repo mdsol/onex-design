@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../Buttons/scss';
 import Icon from '../../Icon/scss';
 
@@ -30,6 +30,16 @@ const Offcanvas = ({
   ...props
 }) => {
   const [isScrolling, setIsScrolling] = useState(false);
+  const [_show, setShow] = useState(show);
+
+  useEffect(() => {
+    setShow(show);
+  }, [show]);
+
+  const onClose = () => {
+    setShow(false);
+    onHide?.();
+  };
 
   const classes = classNames('onex-offcanvas', {
     [className]: className,
@@ -42,7 +52,7 @@ const Offcanvas = ({
   const scrollHendle = (event) => setIsScrolling(event.target.scrollTop > 0);
 
   return (
-    <ReactOffcanvas {...props} className={classes} show={show} placement="end">
+    <ReactOffcanvas {...props} className={classes} show={_show} placement="end">
       <OffcanvasHeader className={headerClasses}>
         <OffcanvasTitle>
           <h5>
@@ -54,7 +64,7 @@ const Offcanvas = ({
             )}
           </h5>
         </OffcanvasTitle>
-        <Button onClick={onHide} variant="tertiary" type="icon" size="md">
+        <Button onClick={onClose} variant="tertiary" type="icon" size="md">
           <Icon>close</Icon>
         </Button>
       </OffcanvasHeader>
