@@ -34,6 +34,9 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
         },
       }
     },
+    sortBy: {
+      description: 'An array of sorting objects. Must be memoized. If there is more than one object in the array, multi-sorting will be enabled. Each sorting object should contain an id key with the corresponding column ID to sort by.',
+    },
     rowsPerPageOptions: {
       description: 'The array of quantities of rows per page',
     },
@@ -89,73 +92,79 @@ Using this component requires installation packages : [react-table v7](https://w
       data: [
         {
           id: 'M12345',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 10',
+          country: 'United States 10',
+          category: 'Management 10',
+          created: '26 Aug 2010',
         },
         {
           id: 'M12346',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 20',
+          country: 'United States 20',
+          category: 'Management 20',
+          created: '25 Aug 2010',
         },
         {
           id: 'M12347',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 30',
+          country: 'United States 30',
+          category: 'Management 30',
+          created: '24 Aug 2010',
         },
         {
           id: 'M12348',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 40',
+          country: 'United States 40',
+          category: 'Management 40',
+          created: '23 Aug 2010',
         },
         {
           id: 'M12349',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 50',
+          country: 'United States 50',
+          category: 'Management 50',
+          created: '22 Aug 2010',
         },
         {
           id: 'M123455',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 60',
+          country: 'United States 60',
+          category: 'Management 60',
+          created: '21 Aug 2010',
         },
         {
           id: 'M123477',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 70',
+          country: 'United States 70',
+          category: 'Management 70',
+          created: '19 Aug 2010',
         },
         {
           id: 'M123416',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 80',
+          country: 'United States 80',
+          category: 'Management 80',
+          created: '18 Aug 2010',
         },
         {
           id: 'M123414',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 90',
+          country: 'United States 90',
+          category: 'Management 90',
+          created: '17 Aug 2010',
         },
         {
           id: 'M123415',
-          study: 'United States30',
-          country: 'United States10',
-          category: 'Manegement',
-          created: '26 Aug 20100',
+          study: 'United States 100',
+          country: 'United States 100',
+          category: 'Management 100',
+          created: '27 Aug 2010',
+        }
+      ],
+      sortBy: [
+        {
+          id: 'id',
+          desc: true,
         }
       ],
       rowsPerPageOptions: [5, 10],
@@ -176,7 +185,21 @@ For more information [Columns option](https://react-table-v7.tanstack.com/docs/a
 | columns  | Array[Column]                                  | A nested array of columns.                                                                                                                         |          |
 | Header   | String, Function, React.Component => JSX       | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                |          |
 
+
+Also, for configure sorting supports - column sorting option. For more information, please check - [Sort column options](https://react-table-v7.tanstack.com/docs/api/useSortBy#column-options)
+
 ### Pagination
 For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.
 First value in array this is a default rows per page.
+
+### Sorting
+Multi-sort is enabled by default.
+To configure sorting you can use ```sortBy``` property.
+There are an array of sorting objects. If there is more than one object in the array, multi-sorting will be enabled.
+Each sorting object should contain an ```id``` key with the corresponding column ID to sort by. An optional ```desc``` key
+(which defaults to ```false```) may be set to ```true``` to indicate a descending sorting directionfor that column, otherwise,
+it will be assumed to be ascending. This information is stored in state since the table is allowed to manipulate the filter through user interaction.
+Must be memoized.
+
+Other parameters are also supported, for more information please check - [Sort table options](https://react-table-v7.tanstack.com/docs/api/useSortBy#table-options)
 
