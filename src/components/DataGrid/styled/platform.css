@@ -11307,7 +11307,7 @@ progress {
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
   font-family: "Noto Sans", sans-serif;
 }
-.onex-data-grid-control-title {
+.onex-data-grid-control__title {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -11317,23 +11317,27 @@ progress {
   font-weight: 600;
   margin: 0;
 }
-.onex-data-grid-control-actions {
+.onex-data-grid-control__actions {
   display: flex;
   align-items: center;
   justify-content: end;
-  max-width: 60%;
 }
-.onex-data-grid-control-actions-action {
+.onex-data-grid-control__actions-elem {
   margin: 0 0.5rem;
 }
-.onex-data-grid-control-actions-search {
+.onex-data-grid-control__actions-search {
   display: flex;
   align-items: center;
+  position: relative;
+  padding-right: 0.5rem;
 }
-.onex-data-grid-control-actions-search .separator {
+.onex-data-grid-control__actions-search::after {
+  content: "";
+  display: block;
   height: 1.5rem;
   width: 2px;
-  margin-left: 0.5rem;
+  position: absolute;
+  right: 0;
   background-color: rgba(26, 28, 30, 0.1);
 }
 

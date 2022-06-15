@@ -5,7 +5,7 @@
   border-bottom: 1px solid $onex-data-grid-control-border-color;
   font-family: $font-family;
 
-  &-title {
+  &__title {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
@@ -16,24 +16,28 @@
     margin: 0;
   }
 
-  &-actions {
+  &__actions {
     display: flex;
     align-items: center;
     justify-content: end;
-    max-width: 60%;
 
-    &-action {
+    &-elem {
       margin: 0 0.5rem;
     }
 
     &-search {
       display: flex;
       align-items: center;
+      position: relative;
+      padding-right: 0.5rem;
 
-      .separator {
+      &::after {
+        content: '';
+        display: block;
         height: 1.5rem;
         width: 2px;
-        margin-left: 0.5rem;
+        position: absolute;
+        right: 0;
         background-color: $onex-data-grid-control-border-color;
       }
     }
