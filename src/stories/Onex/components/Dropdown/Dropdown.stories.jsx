@@ -1,5 +1,4 @@
 import Dropdown from '../../../../components/Dropdown/scss';
-import Icon from '../../../../components/Icon/scss';
 
 export default {
   title: 'Onex/Components/Dropdown',
@@ -98,7 +97,6 @@ PrimarySmallLeadingIcon.args = {
   id: 'primary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
-  leadingIcon: <Icon>language</Icon>,
 };
 
 export const PrimarySmallDisabled = DropdownTemplate.bind({});
@@ -124,7 +122,6 @@ PrimaryMediumLeadingIcon.args = {
   id: 'primary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
-  leadingIcon: <Icon>language</Icon>,
 };
 
 export const PrimaryMediumDisabled = DropdownTemplate.bind({});
@@ -152,7 +149,6 @@ SecondarySmallLeadingIcon.args = {
   id: 'secondary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
-  leadingIcon: <Icon>language</Icon>,
 };
 
 export const SecondarySmallDisabled = DropdownTemplate.bind({});
@@ -181,7 +177,6 @@ SecondaryMediumLeadingIcon.args = {
   id: 'secondary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
-  leadingIcon: <Icon>language</Icon>,
 };
 
 export const SecondaryMediumDisabled = DropdownTemplate.bind({});
@@ -210,7 +205,6 @@ TertiarySmallLeadingIcon.args = {
   id: 'tertiary-small-dropdown',
   items: dropdownItems,
   size: 'sm',
-  leadingIcon: <Icon>language</Icon>,
 };
 
 export const TertiarySmallDisabled = DropdownTemplate.bind({});
@@ -239,7 +233,6 @@ TertiaryMediumLeadingIcon.args = {
   id: 'tertiary-medium-dropdown',
   items: dropdownItems,
   size: 'md',
-  leadingIcon: <Icon>language</Icon>,
 };
 
 export const TertiaryMediumDisabled = DropdownTemplate.bind({});
@@ -331,7 +324,6 @@ SecondaryCustomIcon.args = {
   items: dropdownItems,
   size: 'md',
   buttonStyle: 'icon',
-  title: <Icon>more_vert</Icon>,
 };
 
 export const SecondaryCustomDisabledIcon = DropdownTemplate.bind({});
@@ -377,7 +369,6 @@ SecondaryCustomDisabledIcon.args = {
   size: 'md',
   buttonStyle: 'icon',
   disabled: true,
-  title: <Icon>more_vert</Icon>,
 };
 
 export const TertiaryCustomIcon = DropdownTemplate.bind({});
@@ -422,7 +413,6 @@ TertiaryCustomIcon.args = {
   items: dropdownItems,
   size: 'md',
   buttonStyle: 'icon',
-  title: <Icon>more_vert</Icon>,
 };
 
 export const TertiaryCustomDisabledIcon = DropdownTemplate.bind({});
@@ -468,7 +458,6 @@ TertiaryCustomDisabledIcon.args = {
   size: 'md',
   buttonStyle: 'icon',
   disabled: true,
-  title: <Icon>more_vert</Icon>,
 };
 
 export const WithDivider = DropdownTemplate.bind({});
