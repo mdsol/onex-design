@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DataGridTable from '../DataGridTable';
 import DataGridControl from '../DataGridControl';
-import DataGridControlTypes from '../../utils/dataGridTypes';
+import DataGridControlTypes from '../../types/dataGridTypes';
 
 const DataGrid = ({
   className,

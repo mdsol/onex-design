@@ -5,7 +5,7 @@ import Button from '../../../../Buttons/scss';
 import Icon from '../../../../Icon/scss';
 import Dropdown from '../../../../Dropdown/scss';
 import Badge from '../../../../Badge/scss';
-import DataGridControlTypes from '../../utils/dataGridTypes';
+import DataGridControlTypes from '../../types/dataGridTypes';
 
 const ViewTableIcons = [
   {
@@ -50,11 +50,11 @@ const DataGridControl = (props) => {
 
   return (
     <div className={dataGridControlsClasses} data-test-id={dataTestId}>
-      <h4 className="onex-data-grid-control-title">
+      <h4 className="onex-data-grid-control__title">
         {title}
         {badge && <Badge type="default">{badge}</Badge>}
       </h4>
-      <div className="onex-data-grid-control-actions">
+      <div className="onex-data-grid-control__actions">
         {hasCustomControls && customControls}
         {hasViewOptions && (
           <SegmentedToggle
@@ -64,7 +64,7 @@ const DataGridControl = (props) => {
             defaultValue="table"
             groupName="viewTable"
             size="sm"
-            className="onex-data-grid-control-actions-action"
+            className="onex-data-grid-control__actions-elem"
           />
         )}
         {/* TO DO: replace mock component to filters component when it will be ready */}
@@ -74,7 +74,7 @@ const DataGridControl = (props) => {
               type="icon"
               size="sm"
               variant="tertiary"
-              className="onex-data-grid-control-actions-action"
+              className="onex-data-grid-control__actions-elem"
               onClick={getActiveFilters}
             >
               <Icon>filter_alt</Icon>
@@ -83,16 +83,15 @@ const DataGridControl = (props) => {
           </>
         )}
         {hasSearch && (
-          <span className="onex-data-grid-control-actions-search">
+          <span className="onex-data-grid-control__actions-search">
             <SearchField onChange={getSearchQuery} placeholder="Search" size="sm" />
-            <span className="separator" />
           </span>
         )}
         {hasActionBtn && (
           <Button
             size="sm"
             onClick={prymaryAction}
-            className="onex-data-grid-control-actions-action"
+            className="onex-data-grid-control__actions-elem"
           >
             {prymaryActionText}
           </Button>
