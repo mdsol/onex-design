@@ -103,7 +103,6 @@ const DataGridControl = (props) => {
             items={secondaryActions}
             size="sm"
             buttonStyle="icon"
-            title="more_vert"
             align="end"
           />
         )}
