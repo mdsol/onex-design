@@ -21,7 +21,7 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, .
     setPageSize,
     canNextPage,
     canPreviousPage,
-    state: { pageSize },
+    state: { pageSize, pageIndex },
   } = useTable(
     {
       columns,
@@ -99,7 +99,7 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, .
             pageSize={page.length}
             canNextPage={canNextPage}
             canPreviousPage={canPreviousPage}
-            lastRow={Number(page[page.length - 1].id) + 1}
+            lastRow={Number((pageIndex + 1) * pageSize)}
           />
         </div>
       )}
