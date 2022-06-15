@@ -11251,6 +11251,17 @@ progress {
 .onex-data-grid__table-headers {
   background: rgb(244, 248, 252);
 }
+.onex-data-grid__table-headers-sort-by-icons {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1rem;
+  height: 1rem;
+  padding-left: 0.25rem;
+  vertical-align: bottom;
+}
+.onex-data-grid__table-headers-sort-by-icons .sort-by-icon {
+  font-size: 1rem;
+}
 .onex-data-grid__table-headers tr {
   position: relative;
   padding: 0;

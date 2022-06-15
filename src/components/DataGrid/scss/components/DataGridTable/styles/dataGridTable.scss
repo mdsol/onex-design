@@ -4,6 +4,17 @@
 
   &-headers {
     background: $onex-data-grid-table-header-background-color;
+    &-sort-by-icons {
+      display: inline-block;
+      font-size: $onex-data-grid-table-header-sort-by-icon-font-size;
+      line-height: $onex-data-grid-table-header-sort-by-icon-line-height;
+      height: $onex-data-grid-table-header-sort-by-icon-height;
+      padding-left: $onex-data-grid-table-header-sort-by-icon-padding-x;
+      vertical-align: bottom;
+      .sort-by-icon {
+        font-size: $onex-data-grid-table-header-sort-by-icon-font-size;
+      }
+    }
 
     tr {
       position: relative;

@@ -38,10 +38,21 @@ const dataGridColumns = [
   },
 ];
 
+const dataGridSortBy = [
+  {
+    id: 'id',
+    desc: true,
+  },
+  {
+    id: 'study',
+    desc: false,
+  },
+];
+
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
-  id: 'M123',
+  id: `M123${Math.floor(Math.random() * 50)}`,
   study: `United States${Math.floor(Math.random() * 30)}`,
   country: `United States${Math.floor(Math.random() * 1000)}`,
   category: 'Management',
@@ -82,6 +93,7 @@ const optionsMultiSelect = [
 const DevExamples = () => {
   const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
+  const dataGridSortByUpd = useMemo(() => dataGridSortBy, []);
 
   const handleModalPrimaryAction = () => setShow(false);
   const handleModalSecondaryAction = () => setShow(false);
@@ -126,6 +138,7 @@ const DevExamples = () => {
         <DataGrid
           columns={dataGridColumns}
           data={dataGridData}
+          sortBy={dataGridSortByUpd}
           rowsPerPageOptions={[10, 20, 30]}
           dataGridControlComponent={
             <DataGridControl>
