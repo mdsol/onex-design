@@ -5,6 +5,9 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
 <Meta
   title="Onex/Components/DataGrid"
   argTypes={{
+    dataTestId: {
+      description: 'Id of the component for testing',
+    },
     className: {
       description: 'The className',
       table: {
@@ -14,7 +17,8 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
       }
     },
     columns: {
-      description: 'The array of table columns',
+      description: 'The array of table columns. Must be memoized.Supports nested columns arrays',
+      type: { required: true },
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -22,7 +26,8 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
       }
     },
     data: {
-      description: 'The array of data of each row, where key is equal for one of columns',
+      description: 'The data array that you want to display on the table. Must be memoized',
+      type: { required: true },
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -44,7 +49,7 @@ export const Template = (args) => <DataGrid {...args} />;
 A DataGrid is a table-presented data.
 
 ### Installation
-Using this component requires installation packages : ```react-table v7``` - https://www.npmjs.com/package/react-table/v/7.8.0
+Using this component requires installation packages : [react-table v7](https://www.npmjs.com/package/react-table/v/7.8.0)
 
 ### Demo
 <Canvas>
@@ -52,13 +57,13 @@ Using this component requires installation packages : ```react-table v7``` - htt
     height="35rem"
     name="Demo"
     args={{
-      rowsPerPageOptions: [5, 10],
+      dataTestId: 'data-grid-test-id',
+      className: 'data-grid-custom',
       dataGridControlComponent: (
         <DataGridControl>
           <DataGridName badgeNumber="100">Test table</DataGridName>
         </DataGridControl>
       ),
-      className: {control: 'text'},
       columns: [
         {
           Header: 'ID',
@@ -152,13 +157,24 @@ Using this component requires installation packages : ```react-table v7``` - htt
           category: 'Manegement',
           created: '26 Aug 20100',
         }
-      ]
+      ],
+      rowsPerPageOptions: [5, 10],
     }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Demo"/>
+
+### Column Options
+For more information [Columns option](https://react-table-v7.tanstack.com/docs/api/useTable#column-options)
+
+| Name     | Type                                           | Description                                                                                                                                        | Required |
+|----------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| accessor | String, Function(originalRow, rowIndex) => any | This string/function is used to build the data model for your column.                                                                              | [x]      |
+| id       | String                                         | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function | [x]      |
+| columns  | Array[Column]                                  | A nested array of columns.                                                                                                                         |          |
+| Header   | String, Function, React.Component => JSX       | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                |          |
 
 ### Pagination
 For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.

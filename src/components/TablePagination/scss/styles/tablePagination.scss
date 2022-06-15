@@ -19,6 +19,8 @@
     &-info {
       display: inline-block;
       font-weight: 600;
+      font-size: $table-pagination-rows-text-font-size;
+      line-height: $table-pagination-rows-text-line-height;
     }
   }
 
