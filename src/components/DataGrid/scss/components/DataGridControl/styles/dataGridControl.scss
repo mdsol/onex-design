@@ -4,4 +4,42 @@
   padding: $onex-data-grid-control-padding-x $onex-data-grid-control-padding-y;
   border-bottom: 1px solid $onex-data-grid-control-border-color;
   font-family: $font-family;
+
+  &__title {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 0.4rem;
+    font-size: $font-size-h4;
+    line-height: $line-height-h4;
+    font-weight: $font-weight-600;
+    margin: 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    &-elem {
+      margin: 0 0.5rem;
+    }
+
+    &-search {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-right: 0.5rem;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 1.5rem;
+        width: 2px;
+        position: absolute;
+        right: 0;
+        background-color: $onex-data-grid-control-border-color;
+      }
+    }
+  }
 }
