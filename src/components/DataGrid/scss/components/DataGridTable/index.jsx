@@ -1,13 +1,15 @@
 /* eslint-disable react/no-array-index-key */
-import { useTable, usePagination } from 'react-table';
+/* eslint-disable no-nested-ternary */
+import { useTable, usePagination, useSortBy } from 'react-table';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Table as ReactTable } from 'react-bootstrap';
 
+import Icon from '../../../../Icon/scss';
 import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
 
-const DataGridTable = ({ columns, data, className, rowsPerPageOptions }) => {
+const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, ...accProps }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -27,8 +29,11 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions }) => {
       initialState: {
         pageIndex: 0,
         pageSize: rowsPerPageOptions.length ? rowsPerPageOptions[0] : data.length,
+        sortBy,
       },
+      ...accProps,
     },
+    useSortBy,
     usePagination,
   );
 
@@ -43,10 +48,25 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions }) => {
           {headerGroups.map((headerGroup, i) => (
             <tr key={`header_row_${i}`} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, ind) => (
-                <th key={`header_cell_row_${ind}`} {...column.getHeaderProps()}>
+                <th
+                  key={`header_cell_row_${ind}`}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  onClick={() => column.toggleSortBy(undefined, true)}
+                >
                   <Typography variant="caption" uppercase>
                     {column.render('Header')}
                   </Typography>
+                  <span className="onex-data-grid__table-headers-sort-by-icons">
+                    {column.isSorted ? (
+                      column.isSortedDesc ? (
+                        <Icon className="sort-by-icon">arrow_downward</Icon>
+                      ) : (
+                        <Icon className="sort-by-icon">arrow_upward</Icon>
+                      )
+                    ) : (
+                      ''
+                    )}
+                  </span>
                 </th>
               ))}
             </tr>
@@ -102,6 +122,12 @@ DataGridTable.propTypes = {
     }),
   ),
   data: PropTypes.array,
+  sortBy: PropTypes.arrayOf(
+              PropTypes.shape({
+                id: PropTypes.string,
+                desc: PropTypes.bool,
+              }),
+            ),
   rowsPerPageOptions: PropTypes.arrayOf(PropTypes.number),
 };
 /* eslint-enable */
@@ -110,6 +136,7 @@ DataGridTable.defaultProps = {
   className: undefined,
   columns: [],
   data: [],
+  sortBy: [],
   rowsPerPageOptions: [],
 };
 

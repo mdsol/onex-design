@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DataGridTable from '../DataGridTable';
 
-const DataGrid = ({ className, data, columns, rowsPerPageOptions, dataGridControlComponent }) => {
+const DataGrid = ({
+  className,
+  data,
+  columns,
+  rowsPerPageOptions,
+  dataGridControlComponent,
+  sortBy,
+  ...accProps
+}) => {
   const dataGridClasses = classNames('onex-data-grid', {
     [className]: className,
   });
@@ -10,7 +18,13 @@ const DataGrid = ({ className, data, columns, rowsPerPageOptions, dataGridContro
   return (
     <div className={dataGridClasses}>
       {dataGridControlComponent}
-      <DataGridTable columns={columns} data={data} rowsPerPageOptions={rowsPerPageOptions} />
+      <DataGridTable
+        columns={columns}
+        data={data}
+        rowsPerPageOptions={rowsPerPageOptions}
+        sortBy={sortBy}
+        {...accProps}
+      />
     </div>
   );
 };
@@ -35,6 +49,12 @@ DataGrid.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
+  sortBy: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      desc: PropTypes.bool,
+    }),
+  ),
 };
 /* eslint-enable */
 
@@ -44,6 +64,7 @@ DataGrid.defaultProps = {
   columns: [],
   rowsPerPageOptions: [],
   dataGridControlComponent: undefined,
+  sortBy: [],
 };
 
 export default DataGrid;
