@@ -200,6 +200,11 @@ module.exports = [
     replaceUrl: [{ className: '.onex-alert', classRegex: classRegexBase }],
   },
   {
+    name: 'InlineAlert',
+    importName: 'InlineAlert',
+    replaceUrl: [{ className: '.onex-inline-alert', classRegex: classRegexBase }],
+  },
+  {
     name: 'Icon',
     importName: 'Icon',
     replaceUrl: [

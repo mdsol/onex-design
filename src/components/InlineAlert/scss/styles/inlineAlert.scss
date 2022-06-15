@@ -1,0 +1,9 @@
+.onex-inline-alert {
+    &.alert.onex-alert.alert-success,
+    &.alert.onex-alert.alert-warning,
+    &.alert.onex-alert.alert-info,
+    &.alert.onex-alert.alert-error {
+        margin-bottom: 0;
+        border: transparent;
+    }
+}

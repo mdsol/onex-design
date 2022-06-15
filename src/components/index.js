@@ -89,6 +89,7 @@ export { default as Banner } from './Banner/scss';
 export { default as Link } from './Link/scss';
 export { default as DatePicker } from './DatePicker/scss';
 export { default as SegmentedToggle } from './SegmentedToggle/scss';
+export { default as InlineAlert } from './InlineAlert/scss';
 // 1x styled components
 export { default as StyledAvatar } from './Avatar/styled';
 export { default as StyledIcon } from './Icon/styled';
@@ -134,3 +135,4 @@ export { default as StyledSegmentedToggle } from './SegmentedToggle/styled';
 export { default as StyledDataGrid } from './DataGrid/styled/components/dataGrid';
 export { default as StyledDataGridControl } from './DataGrid/styled/components/dataGridControl';
 export { default as StyledDataGridName } from './DataGrid/styled/components/dataGridName';
+export { default as StyledInlineAlert } from './InlineAlert/styled';

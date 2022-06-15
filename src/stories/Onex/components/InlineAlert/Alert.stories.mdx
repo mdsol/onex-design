@@ -1,0 +1,75 @@
+<!-- InlineAlert.mdx -->
+
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { InlineAlert } from '../../../../components';
+import * as stories from './InlineAlert.stories.jsx';
+
+<Meta
+  title="Onex/Components/InlineAlert"
+  argTypes={{
+    title: {
+      description: `Text for Title`,
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'Title',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    show: {
+      description: 'Controls the visual state of the InlineAlert.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
+    variant: {
+      description: 'The InlineAlert visual variant',
+      options: ['success', 'error', 'warning', 'info'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: {
+          summary: 'info',
+        },
+        type: {
+          summary: 'success | error | warning | info',
+        },
+      },
+    },
+  }}
+  component={InlineAlert}
+/>
+
+export const InlineAlertTemplate = (args) => <InlineAlert {...args} />;
+
+# InlineAlert
+Inline alerts are non-obtrusive messages that address the issues inside the content area. These messages can be placed inside cards, dialog boxes, etc and provide additional guidance to the user.
+
+<Canvas>
+  <Story name="Examples" story={stories.Examples} />
+</Canvas>
+
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      title: 'This is a demo warning InlineAlert!',
+      variant: 'warning',
+      show: true,
+    }}
+  >
+    {InlineAlertTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
