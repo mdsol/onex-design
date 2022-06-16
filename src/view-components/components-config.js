@@ -2105,6 +2105,34 @@ export const config = {
           },
         ],
       },
+      {
+        name: 'InlineAlert',
+        componentName: 'InlineAlert',
+        styledComponentName: 'InlineAlert',
+        additionalComponents: [],
+        variants: [
+          {
+            show: true,
+            variant: 'error',
+            title: 'title',
+          },
+          {
+            show: true,
+            variant: 'warning',
+            title: 'title',
+          },
+          {
+            show: true,
+            variant: 'info',
+            title: 'title',
+          },
+          {
+            show: true,
+            variant: 'success',
+            title: 'title',
+          },
+        ],
+      },
       // {
       //   name: 'DataGrid',
       //   componentName: 'DataGrid',
