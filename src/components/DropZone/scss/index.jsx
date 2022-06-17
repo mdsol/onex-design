@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../../Icon/scss';
 import Button from '../../Buttons/scss';
+import FileComponent from './components/FileItem';
 
 const Dropzone = ({ className, isInvalid, title, info, titleBtn, errorText }) => {
   const classes = classNames('onex-dropzone', {
@@ -19,12 +20,6 @@ const Dropzone = ({ className, isInvalid, title, info, titleBtn, errorText }) =>
     noKeyboard: true,
     disabled: true,
   });
-
-  const files = acceptedFiles.map((file) => (
-    <li key={file.name}>
-      {file.name} - {file.size} bytes
-    </li>
-  ));
 
   return (
     <div className={classes}>
@@ -43,10 +38,12 @@ const Dropzone = ({ className, isInvalid, title, info, titleBtn, errorText }) =>
         )}
         {!isInvalid && info && <span className="onex-dropzone__info">{info}</span>}
       </div>
-      <aside>
-        <h4>Files</h4>
-        <ul>{files}</ul>
-      </aside>
+      <div className="onex-dropzone__files-area">
+        <FileComponent fileTitle="File name" fileSize="350KB" isSuccess />
+        {acceptedFiles.map((file) => (
+          <FileComponent fileTitle={file.name} fileSize={file.size} />
+        ))}
+      </div>
     </div>
   );
 };
