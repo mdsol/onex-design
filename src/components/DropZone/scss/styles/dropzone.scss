@@ -75,6 +75,9 @@
 
 .onex-dropzone {
   &__files-area {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-top: 0.5rem;
 
     .onex-dropzone {
