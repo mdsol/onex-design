@@ -4,7 +4,7 @@ import { Pagination as ReactPagination } from 'react-bootstrap';
 import classNames from 'classnames';
 import Icon from '../../Icon/scss';
 
-const Pagination = ({ size, className, onSetPage, dataTestId, items }) => {
+const Pagination = ({ size, className, onSetPage, dataTestId, items, ...accProps }) => {
   const [active, setActive] = useState(1);
 
   const paginationClassNames = classNames('onex-pagination', {
@@ -28,7 +28,7 @@ const Pagination = ({ size, className, onSetPage, dataTestId, items }) => {
 
   return (
     <div>
-      <ReactPagination data-test-id={dataTestId} className={paginationClassNames}>
+      <ReactPagination {...accProps} data-test-id={dataTestId} className={paginationClassNames}>
         <button
           type="button"
           className={`${active === 1 ? `disabled` : ''}`}

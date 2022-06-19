@@ -6,14 +6,20 @@ import ExpansionPanelItem from './components/ExpansionPanelItem';
 import ExpansionPanelToggle from './components/ExpansionPanelToggle';
 
 const ExpansionPanel = (props) => {
-  const { className, id, children, onSelect, dataTestId, disabled, toggle, items } = props;
+  const { className, id, children, onSelect, dataTestId, disabled, toggle, items, ...accProps } =
+    props;
 
   const expansionPanelClassNames = classNames('onex-expansionPanel', {
     [className]: className,
   });
 
   return (
-    <Dropdown onSelect={onSelect} className={expansionPanelClassNames} data-test-id={dataTestId}>
+    <Dropdown
+      {...accProps}
+      onSelect={onSelect}
+      className={expansionPanelClassNames}
+      data-test-id={dataTestId}
+    >
       <Dropdown.Toggle
         id={id}
         as={ExpansionPanelToggle}

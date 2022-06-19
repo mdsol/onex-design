@@ -23,6 +23,7 @@ const DateInput = React.forwardRef((props, ref) => {
     onBlur,
     target,
     showCalendar,
+    ...accProps
   } = props;
 
   const dateInputClassNames = classNames('onex-date-picker', {
@@ -33,7 +34,7 @@ const DateInput = React.forwardRef((props, ref) => {
   });
 
   return (
-    <Form.Group ref={target} className={dateInputClassNames}>
+    <Form.Group ref={target} {...accProps} className={dateInputClassNames}>
       {label && <Form.Label>{label}</Form.Label>}
       <div className="onex-date-picker__input">
         <Form.Control

@@ -12,6 +12,7 @@ const Table = (props) => {
     tableStyle,
     tableControlComponent,
     dataTestId,
+    ...accProps
   } = props;
 
   const tableClasses = classNames('onex-table', {
@@ -24,7 +25,7 @@ const Table = (props) => {
   });
 
   return (
-    <div className={tableWrapClasses}>
+    <div {...accProps} className={tableWrapClasses}>
       {tableControlComponent}
       <ReactTable
         className={tableClasses}

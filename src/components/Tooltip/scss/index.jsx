@@ -15,6 +15,7 @@ const Tooltip = (props) => {
     trigger,
     tooltipChildren,
     dataTestId,
+    ...accProps
   } = props;
 
   const toggleClassNames = classNames('onex-tooltip', `onex-tooltip--default`, {
@@ -23,6 +24,7 @@ const Tooltip = (props) => {
 
   return (
     <OverlayTrigger
+      {...accProps}
       placement={placement}
       delay={delay}
       show={show}

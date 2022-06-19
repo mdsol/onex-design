@@ -13,6 +13,7 @@ const SegmentedToggle = ({
   groupName,
   className,
   dataTestId,
+  ...accProps
 }) => {
   const classes = classNames('onex-segmentedToggle', `onex-segmentedToggle-size-${size}`, {
     [className]: className,
@@ -20,6 +21,7 @@ const SegmentedToggle = ({
   });
   return (
     <ReactToggleButtonGroup
+      {...accProps}
       onChange={onChange}
       type="radio"
       name={groupName}

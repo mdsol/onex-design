@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const TableHead = (props) => {
-  const { children, className, dataTestId } = props;
+  const { children, className, dataTestId, ...accProps } = props;
 
   const tableClasses = classNames('onex-table__head', {
     [className]: className,
@@ -16,7 +16,7 @@ const TableHead = (props) => {
   );
 
   return (
-    <thead className={tableClasses} data-test-id={dataTestId}>
+    <thead {...accProps} className={tableClasses} data-test-id={dataTestId}>
       {headChildren}
     </thead>
   );

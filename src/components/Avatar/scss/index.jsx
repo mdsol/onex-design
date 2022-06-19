@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import { getInitials } from './utils';
 import Icon from '../../Icon/scss';
 
-const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, dataTestId }) => {
+const Avatar = ({
+  className,
+  size,
+  name,
+  children,
+  src,
+  onClick,
+  hoverDisabled,
+  dataTestId,
+  ...props
+}) => {
   const avatarClassNames = classNames('onex-avatar', `onex-avatar--size-${size}`, {
     [className]: className,
     'hover-disabled': hoverDisabled || size !== 'lg',
@@ -12,6 +22,7 @@ const Avatar = ({ className, size, name, children, src, onClick, hoverDisabled, 
 
   return (
     <div
+      {...props}
       role="button"
       tabIndex={0}
       aria-hidden="true"

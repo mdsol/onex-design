@@ -15,6 +15,7 @@ const Check = React.forwardRef((props, ref) => {
     children,
     value,
     onChange,
+    ...accProps
   } = props;
   const checkboxRef = useRef();
   const formGroupClassNames = classNames('onex-check', {
@@ -28,6 +29,7 @@ const Check = React.forwardRef((props, ref) => {
 
   return (
     <ReactForm.Group
+      {...accProps}
       controlId={id}
       className={formGroupClassNames}
       ref={ref}

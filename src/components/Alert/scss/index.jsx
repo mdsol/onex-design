@@ -25,6 +25,7 @@ const Alert = ({
   dataTestId,
   hasPrimaryAction,
   hasSecondaryAction,
+  ...props
 }) => {
   const classes = classNames('onex-alert', {
     [className]: className,
@@ -32,6 +33,7 @@ const Alert = ({
 
   return (
     <ReactAlert
+      {...props}
       show={show}
       transition={transition}
       variant={variant}

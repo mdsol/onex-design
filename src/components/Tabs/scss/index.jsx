@@ -14,6 +14,7 @@ const Tabs = (props) => {
     isAdaptiveWidth,
     dataTestIdDropdown,
     dataTestId,
+    ...accProps
   } = props;
 
   const tabsGroupClassNames = classNames('onex-tab', {
@@ -22,6 +23,7 @@ const Tabs = (props) => {
 
   return (
     <Navigation
+      {...accProps}
       className={tabsGroupClassNames}
       activeKey={activeKey}
       defaultActiveKey={defaultActiveKey}

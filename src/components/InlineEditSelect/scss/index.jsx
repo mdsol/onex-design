@@ -19,6 +19,7 @@ const InlineEditSelect = ({
   selectOptions,
   isMulti,
   onActive,
+  ...accProps
 }) => {
   const [_selectedOptions, setSelectedOptions] = useState([]);
   const [isActive, setIsActive] = useState(onActive);
@@ -60,6 +61,7 @@ const InlineEditSelect = ({
 
   return (
     <Form.Group
+      {...accProps}
       className={inlineEditSelectClassNames}
       controlId={controlId}
       onFocus={onFocus}

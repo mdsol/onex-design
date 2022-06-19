@@ -42,6 +42,7 @@ const DataGridControl = (props) => {
     secondaryActions,
     className,
     dataTestId,
+    ...accProps
   } = props;
 
   const dataGridControlsClasses = classNames('onex-data-grid-control', {
@@ -49,7 +50,7 @@ const DataGridControl = (props) => {
   });
 
   return (
-    <div className={dataGridControlsClasses} data-test-id={dataTestId}>
+    <div {...accProps} className={dataGridControlsClasses} data-test-id={dataTestId}>
       <h4 className="onex-data-grid-control__title">
         {title}
         {badge && <Badge type="default">{badge}</Badge>}

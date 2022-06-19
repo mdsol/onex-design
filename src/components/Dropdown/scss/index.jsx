@@ -20,6 +20,7 @@ const Dropdown = React.forwardRef((props, ref) => {
     onSelect,
     dataTestId,
     as,
+    ...accProps
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
@@ -28,6 +29,7 @@ const Dropdown = React.forwardRef((props, ref) => {
 
   return (
     <ReactDropdown
+      {...accProps}
       onSelect={onSelect}
       className={buttonClassNames}
       data-test-id={dataTestId}
