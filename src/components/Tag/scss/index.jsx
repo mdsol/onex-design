@@ -14,6 +14,7 @@ const Tag = ({
   disabled,
   children,
   variant,
+  ...accProps
 }) => {
   const [selected, setSelected] = useState(false);
   const tagClassNames = classNames('onex-tag', `onex-tag--variant-${variant}`, {
@@ -35,6 +36,7 @@ const Tag = ({
 
   return (
     <button
+      {...accProps}
       type="button"
       className={tagClassNames}
       onClick={handleSelect}

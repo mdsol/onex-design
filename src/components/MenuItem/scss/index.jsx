@@ -16,6 +16,7 @@ const MenuItem = ({
   dataTestId,
   children,
   isSelected,
+  ...accProps
 }) => {
   const [selected, setSelected] = useState(isSelected);
   const menuItemClassNames = classNames('onex-menuItem', {
@@ -33,7 +34,7 @@ const MenuItem = ({
     }
   };
   return (
-    <div className={menuItemClassNames} data-test-id={dataTestId}>
+    <div {...accProps} className={menuItemClassNames} data-test-id={dataTestId}>
       {selected && <span className="onex-menuItem--selected__indicator" />}
       <a href={path} onClick={handleSelect}>
         {leadingIcon && <div className="onex-menuItem__icon__leading">{leadingIcon}</div>}

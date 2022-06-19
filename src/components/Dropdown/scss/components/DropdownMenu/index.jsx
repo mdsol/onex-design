@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownMenu = React.forwardRef(({ children, style, className }, ref) => (
-  <div ref={ref} style={style} className={className}>
+const DropdownMenu = React.forwardRef(({ children, style, className, ...accProps }, ref) => (
+  <div ref={ref} {...accProps} style={style} className={className}>
     <ul className="dropdown-menu--list">{children}</ul>
   </div>
 ));

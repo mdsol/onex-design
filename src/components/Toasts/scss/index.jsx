@@ -28,6 +28,7 @@ const Toast = React.forwardRef((props, ref) => {
     children,
     onClose,
     dataTestId,
+    ...accProps
   } = props;
 
   const toastClassNames = classNames('onex-toast', `onex-toast--variant-${variant}`, {
@@ -43,6 +44,7 @@ const Toast = React.forwardRef((props, ref) => {
 
   return (
     <ToastContainer
+      {...accProps}
       ref={ref}
       className={toastClassNames}
       position={toastPosition}

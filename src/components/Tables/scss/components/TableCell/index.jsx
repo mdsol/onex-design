@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const TableCell = (props) => {
-  const { children, className, component, variant, align, width, dataTestId } = props;
+  const { children, className, component, variant, align, width, dataTestId, ...accProps } = props;
 
   const tableClasses = classNames(
     'onex-table__cell',
@@ -15,7 +15,7 @@ const TableCell = (props) => {
 
   if (component === 'th' || (component === undefined && variant === 'header')) {
     return (
-      <th className={tableClasses} style={{ width }} data-test-id={dataTestId}>
+      <th {...accProps} className={tableClasses} style={{ width }} data-test-id={dataTestId}>
         {children}
       </th>
     );

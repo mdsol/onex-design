@@ -23,6 +23,7 @@ const Modal = ({
   actionLinkName,
   link,
   title,
+  ...accProps
 }) => {
   const classes = classNames('onex-modal', { [className]: className });
   const [_show, setShow] = useState(show);
@@ -38,6 +39,7 @@ const Modal = ({
 
   return (
     <ReactModal
+      {...accProps}
       scrollable
       show={_show}
       onHide={onClose}

@@ -20,6 +20,7 @@ const TextArea = React.forwardRef((props, ref) => {
     setError,
     rows,
     dataTestId,
+    ...accProps
   } = props;
 
   const inputClassNames = classNames('onex-text-area', {
@@ -62,7 +63,7 @@ const TextArea = React.forwardRef((props, ref) => {
   }, [maxNumLength, value]);
 
   return (
-    <Form.Group className={inputClassNames} data-test-id={dataTestId}>
+    <Form.Group {...accProps} className={inputClassNames} data-test-id={dataTestId}>
       <div className="onex-text-area__header">
         {label && <Form.Label>{label}</Form.Label>}
         {maxNumLength && (

@@ -17,6 +17,7 @@ const TablePagination = ({
   canPreviousPage,
   canNextPage,
   lastRow,
+  ...accProps
 }) => {
   const [rowsPerPage, setRowsPerPage] = useState([
     {
@@ -51,7 +52,7 @@ const TablePagination = ({
   };
 
   return (
-    <div className={tablePaginationClassNames} data-test-id={dataTestId}>
+    <div {...accProps} className={tablePaginationClassNames} data-test-id={dataTestId}>
       <div className="onex-table-pagination__rows-per-page">
         <span className="onex-table-pagination__rows-text">Rows per page</span>
         <Select

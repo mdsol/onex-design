@@ -21,6 +21,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
     required,
     dataTestId,
     onActive,
+    ...accProps
   } = props;
 
   const [_value, setValue] = useState(value);
@@ -69,6 +70,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
   return (
     <Form.Group
       ref={ref}
+      {...accProps}
       className={inputClassNames}
       controlId={controlId}
       onFocus={onFocus}
@@ -110,11 +112,13 @@ const InlineEditText = React.forwardRef((props, ref) => {
           >
             <Icon>done</Icon>
           </Button>
-          <Button className="status-buttons__cancel"
+          <Button
+            className="status-buttons__cancel"
             variant="secondary"
             size="sm"
             type="icon"
-            onClick={handleCancel}>
+            onClick={handleCancel}
+          >
             <Icon>close</Icon>
           </Button>
         </div>

@@ -4,13 +4,20 @@ import React from 'react';
 import { Badge as ReactBadge } from 'react-bootstrap';
 
 const Badge = React.forwardRef((props, ref) => {
-  const { className, type, iconEnd, children, dataTestId, variant, iconStart } = props;
+  const { className, type, iconEnd, children, dataTestId, variant, iconStart, ...accProps } = props;
   const badgeClassNames = classNames('onex-badge', `onex-badge--variant-${variant}`, {
     [className]: className,
   });
 
   return (
-    <ReactBadge ref={ref} className={badgeClassNames} bg={type} pill data-test-id={dataTestId}>
+    <ReactBadge
+      {...accProps}
+      ref={ref}
+      className={badgeClassNames}
+      bg={type}
+      pill
+      data-test-id={dataTestId}
+    >
       {iconStart && <span className="onex-badge__icon onex-badge__icon--start">{iconStart}</span>}
       {children}
       {iconEnd && <span className="onex-badge__icon onex-badge__icon--end">{iconEnd}</span>}
