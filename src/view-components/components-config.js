@@ -2131,6 +2131,30 @@ export const config = {
             variant: 'success',
             title: 'title',
           },
+          {
+            show: true,
+            variant: 'error',
+            size: 'sm',
+            title: 'title',
+          },
+          {
+            show: true,
+            variant: 'warning',
+            size: 'sm',
+            title: 'title',
+          },
+          {
+            show: true,
+            variant: 'info',
+            size: 'sm',
+            title: 'title',
+          },
+          {
+            show: true,
+            variant: 'success',
+            size: 'sm',
+            title: 'title',
+          },
         ],
       },
       // {
