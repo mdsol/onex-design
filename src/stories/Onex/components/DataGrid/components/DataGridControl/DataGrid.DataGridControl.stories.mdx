@@ -31,7 +31,7 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
     },
     hasCustomControls: {
       description: 'Trigger for add custom controls element in panel',
-      control: 'bool',
+      control: 'boolean',
       table: {
         defaultValue: {
           summary: false,
@@ -40,10 +40,11 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
     },
     customControls: {
       description: 'Custom element, which add in Control panel',
+      control: 'text',
     },
     hasViewOptions: {
       description: 'Trigger for add view table Control element in panel',
-      control: 'bool',
+      control: 'boolean',
       table: {
         defaultValue: {
           summary: true,
@@ -52,7 +53,7 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
     },
     hasSearch: {
       description: 'Trigger for add search bar element in panel',
-      control: 'bool',
+      control: 'boolean',
       table: {
         defaultValue: {
           summary: true,
@@ -60,8 +61,8 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
       },
     },
     hasActionBtn: {
-      description: 'Trigger for add prymary action button element in panel',
-      control: 'bool',
+      description: 'Trigger for add primary action button element in panel',
+      control: 'boolean',
       table: {
         defaultValue: {
           summary: true,
@@ -70,7 +71,7 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
     },
     hasFilters: {
       description: 'Trigger for add filters element in panel',
-      control: 'bool',
+      control: 'boolean',
       table: {
         defaultValue: {
           summary: false,
@@ -79,7 +80,7 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
     },
     hasSecondaryActions: {
       description: 'Trigger for add dropdown element with secondary actions list in panel',
-      control: 'bool',
+      control: 'boolean',
       table: {
         defaultValue: {
           summary: true,
@@ -99,10 +100,10 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
       description: 'Function for get current value of search bar',
     },
     prymaryAction: {
-      description: 'Function which use for prymary action btn',
+      description: 'Function which use for primary action btn',
     },
     prymaryActionText: {
-      description: 'Text for prymary action btn',
+      description: 'Text for primary action btn',
       control: 'text',
     },
     secondaryActions: {

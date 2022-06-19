@@ -128,7 +128,7 @@ DataGridControl.defaultProps = {
   getActiveFilters: undefined,
   getSearchQuery: undefined,
   prymaryAction: undefined,
-  prymaryActionText: 'Prymary',
+  prymaryActionText: 'Primary',
   secondaryActions: [],
   className: undefined,
   dataTestId: undefined,
