@@ -89,6 +89,7 @@ export { default as Banner } from './Banner/scss';
 export { default as Link } from './Link/scss';
 export { default as DatePicker } from './DatePicker/scss';
 export { default as SegmentedToggle } from './SegmentedToggle/scss';
+export { default as ThemeProvider } from './ThemeProvider';
 // 1x styled components
 export { default as StyledAvatar } from './Avatar/styled';
 export { default as StyledIcon } from './Icon/styled';
