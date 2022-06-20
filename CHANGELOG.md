@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.8
+New: ThemeProvider component will replace the need to use StyledComponents. Please wrap the area you will be using 1x components with <ThemeProvider /> and rename all of your styled components to their normal component names. 
+Fixed: All attributes passed to the component will be spread to their respective internal components now. Inline alerts have been updated, Data Grid has been updated, native close has been added to drodowns and offcanvas.
 ## 0.3.7
 New: segmented Toggle, Datepicker. Fixes: Card, Alert, Tab, Banner, Modal.
  
