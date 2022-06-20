@@ -4,8 +4,8 @@ import ProgressBar from '../../../ProgressBar/scss';
 import Button from '../../../Buttons/scss';
 
 const FileComponent = ({
-  fileTitle,
-  fileSize,
+  name,
+  size,
   progressNumber,
   isSuccess,
   isInvalid,
@@ -23,9 +23,9 @@ const FileComponent = ({
       <Icon>attach_file</Icon>
     </div>
     <div className="onex-dropzone__file-body">
-      {fileTitle && <span className="onex-dropzone__file-title">{fileTitle}</span>}
+      {name && <span className="onex-dropzone__file-title">{name}</span>}
       <div className="onex-dropzone__file-process-block">
-        {fileSize && <span className="onex-dropzone__file-size">{fileSize}</span>}
+        {size && <span className="onex-dropzone__file-size">{size}</span>}
         {isSuccess && !isLoading && (
           <Icon className="onex-dropzone__file--success">check_circle</Icon>
         )}
@@ -67,9 +67,9 @@ const FileComponent = ({
   </div>
 );
 
-FileComponent.propTypes = {
-  fileTitle: PropTypes.string,
-  fileSize: PropTypes.string,
+export const FileComponentTypes = {
+  name: PropTypes.string,
+  size: PropTypes.string,
   progressNumber: PropTypes.number,
   isSuccess: PropTypes.bool,
   isInvalid: PropTypes.bool,
@@ -85,9 +85,11 @@ FileComponent.propTypes = {
   onHandleClick: PropTypes.func,
 };
 
+FileComponent.propTypes = FileComponentTypes;
+
 FileComponent.defaultProps = {
-  fileTitle: '',
-  fileSize: undefined,
+  name: '',
+  size: undefined,
   progressNumber: 0,
   isSuccess: false,
   isInvalid: false,
