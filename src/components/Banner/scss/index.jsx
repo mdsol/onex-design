@@ -19,13 +19,14 @@ const Banner = ({
   linkHref,
   linkChildren,
   linkTargetBlank,
+  ...props
 }) => {
   const classes = classNames('onex-banner', `onex-banner--variant-${variant}`, {
     [className]: className,
   });
 
   return (
-    <div className={classes} data-test-id={dataTestId}>
+    <div {...props} className={classes} data-test-id={dataTestId}>
       <div className="onex-banner__icon">{icon || <Icon>{iconVariants[variant]}</Icon>}</div>
       <span className="onex-banner__body">
         {children}{' '}

@@ -10147,6 +10147,7 @@ progress {
   line-height: 1.25rem;
   color: rgb(26, 28, 30);
   cursor: pointer;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-tag--variant-selection {
   cursor: pointer;

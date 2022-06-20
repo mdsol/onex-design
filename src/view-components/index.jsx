@@ -52,7 +52,6 @@ const ViewComponents = () => {
   useEffect(() => {
     if (componentName) {
       const currentComponent = config.data.components.find((item) => item.name === componentName);
-      console.log('componentName', componentName);
       if (componentName === 'Table') {
         setIsTable(true);
         if (styled) {

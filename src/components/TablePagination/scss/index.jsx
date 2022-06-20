@@ -1,36 +1,46 @@
+import { useState, useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
 import Icon from '../../Icon/scss';
+import Select from '../../Select/scss';
+import Button from '../../Buttons/scss';
 
 const TablePagination = ({
-  size,
   rows,
   className,
-  rowsDividers,
+  rowsPerPageOptions,
   defaultRowsPerPage,
   dataTestId,
   previousPage,
   nextPage,
   setPageSize,
-  pageSize,
   canPreviousPage,
   canNextPage,
   lastRow,
+  ...accProps
 }) => {
-  const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
+  const [rowsPerPage, setRowsPerPage] = useState([
+    {
+      value: defaultRowsPerPage,
+      label: defaultRowsPerPage,
+    },
+  ]);
+
+  const rowsPerPageOpts = useMemo(
+    () => rowsPerPageOptions.map((item) => ({ value: item, label: item })),
+    [rowsPerPageOptions],
+  );
 
   const tablePaginationClassNames = classNames('onex-table-pagination', {
     [className]: className,
-    'onex-table-pagination--lg': size === 'lg',
-    'onex-table-pagination--sm': size === 'sm',
   });
 
-  const handleRowsPerPageSelect = (e) => {
-    const row = Number(e);
-    setRowsPerPage(row);
-    setPageSize(row);
+  const handleRowsPerPageSelect = (option) => {
+    if (option.length) {
+      const row = Number(option[0]?.value);
+      setRowsPerPage(option);
+      setPageSize?.(row);
+    }
   };
 
   const handleNextActiveRow = () => {
@@ -42,42 +52,41 @@ const TablePagination = ({
   };
 
   return (
-    <div className={tablePaginationClassNames} data-test-id={dataTestId}>
-      <div className="rowsPerPage">
-        <span className="rows-text">Rows per page</span>
-        <DropdownButton
+    <div {...accProps} className={tablePaginationClassNames} data-test-id={dataTestId}>
+      <div className="onex-table-pagination__rows-per-page">
+        <span className="onex-table-pagination__rows-text">Rows per page</span>
+        <Select
+          className="onex-table-pagination__rows-select"
+          size="sm"
+          options={rowsPerPageOpts}
           onSelect={handleRowsPerPageSelect}
-          variant="page"
-          id="dropdown-basic"
-          title={rowsPerPage}
-        >
-          {rowsDividers?.map((item) => (
-            <Dropdown.Item key={item} eventKey={item}>
-              {item}
-            </Dropdown.Item>
-          ))}
-        </DropdownButton>
+          selectedValues={rowsPerPage}
+          closeMenuOnSelect
+          isSearchable
+        />
       </div>
-      <span className="rows-text">
-        {lastRow - pageSize + 1}-{lastRow} of {rows}
+      <span className="onex-table-pagination__rows-text-info">
+        {lastRow} of {rows}
       </span>
-      <div className="pageArrows">
-        <button
-          type="button"
+      <div className="page-arrows">
+        <Button
+          variant="tertiary"
+          size="sm"
           className={`${!canPreviousPage ? `disabled` : ''}`}
           disabled={!canPreviousPage}
           onClick={handlePrevActiveRow}
         >
-          <Icon>arrow_back_ios</Icon>
-        </button>
-        <button
-          type="button"
-          className={`pageArrows_button_next ${!canNextPage ? `disabled` : ''}`}
+          <Icon>chevron_left</Icon>
+        </Button>
+        <Button
+          variant="tertiary"
+          size="sm"
+          className={`page-arrows__button-next ${!canNextPage ? `disabled` : ''}`}
           disabled={!canNextPage}
           onClick={handleNextActiveRow}
         >
-          <Icon>arrow_back_ios</Icon>
-        </button>
+          <Icon>chevron_right</Icon>
+        </Button>
       </div>
     </div>
   );
@@ -85,15 +94,13 @@ const TablePagination = ({
 
 TablePagination.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(['lg', 'sm']),
   previousPage: PropTypes.func,
   dataTestId: PropTypes.string,
-  rowsDividers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])),
+  rowsPerPageOptions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])),
   rows: PropTypes.number,
   nextPage: PropTypes.func,
   defaultRowsPerPage: PropTypes.number,
   setPageSize: PropTypes.func,
-  pageSize: PropTypes.number,
   canPreviousPage: PropTypes.bool,
   canNextPage: PropTypes.bool,
   lastRow: PropTypes.number,
@@ -101,15 +108,13 @@ TablePagination.propTypes = {
 
 TablePagination.defaultProps = {
   className: undefined,
-  size: 'sm',
   previousPage: undefined,
   dataTestId: undefined,
-  rowsDividers: [],
+  rowsPerPageOptions: [],
   rows: 0,
   nextPage: undefined,
   defaultRowsPerPage: 0,
   setPageSize: undefined,
-  pageSize: 0,
   canPreviousPage: false,
   canNextPage: false,
   lastRow: 0,

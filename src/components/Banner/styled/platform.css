@@ -10216,6 +10216,7 @@ progress {
   gap: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-banner__body a {
   font-weight: 600;

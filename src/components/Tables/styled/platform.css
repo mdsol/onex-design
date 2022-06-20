@@ -10347,10 +10347,12 @@ progress {
   height: 100%;
   justify-content: center;
   gap: 2px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-table__cell {
   vertical-align: middle;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-table__cell.onex-table__cell--align-center {
   text-align: center;
@@ -10403,6 +10405,7 @@ progress {
 
 .onex-table > .onex-table__body {
   border-top: none;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-table-wrap--filled {
@@ -10462,19 +10465,25 @@ progress {
   display: inline-flex;
   align-items: center;
   height: 100%;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-data-table__text {
   display: inline-flex;
   flex-direction: column;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-data-table__subTitle {
   font-size: 0.75rem;
   line-height: 1rem;
   color: rgb(98, 107, 120);
+  font-family: "Noto Sans", sans-serif;
 }
 
+.onex-table__cell--variant-header {
+  font-family: "Noto Sans", sans-serif;
+}
 .onex-table__cell--variant-header .onex-data-table__icon--start {
   display: flex;
   align-items: center;
@@ -10534,6 +10543,9 @@ progress {
   color: rgb(0, 0, 0);
 }
 
+.onex-table__cell--variant-body {
+  font-family: "Noto Sans", sans-serif;
+}
 .onex-table__cell--variant-body .onex-data-table__icon {
   display: flex;
   align-items: center;
@@ -10591,6 +10603,7 @@ progress {
   align-items: center;
   justify-content: space-between;
   padding: 0 0.5rem 1rem 0;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-table-wrap--filled .onex-table-control {
@@ -10603,6 +10616,7 @@ progress {
   width: max-content;
   gap: 0.5rem;
   padding-left: 0.75rem;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-table-name__h2 {
@@ -10611,6 +10625,7 @@ progress {
   line-height: 2rem;
   color: rgb(0, 0, 0);
   font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .onex-table-wrap--filled .onex-table-name {

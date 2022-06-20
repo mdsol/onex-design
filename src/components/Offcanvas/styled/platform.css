@@ -10963,6 +10963,9 @@ progress {
   padding: 0.5rem;
 }
 
+.onex-offcanvas {
+  font-family: "Noto Sans", sans-serif;
+}
 .onex-offcanvas .offcanvas-header {
   height: 3.5rem;
   position: relative;

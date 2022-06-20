@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Badge from '../../../../Badge/scss';
 
 const TableName = (props) => {
-  const { children, className, badgeNumber, dataTestId } = props;
+  const { children, className, badgeNumber, dataTestId, ...accProps } = props;
 
   const tableNameClasses = classNames('onex-table-name', {
     [className]: className,
   });
 
   return (
-    <div className={tableNameClasses} data-test-id={dataTestId}>
+    <div {...accProps} className={tableNameClasses} data-test-id={dataTestId}>
       {children && <h2 className="onex-table-name__h2">{children}</h2>}
       {badgeNumber && (
         <Badge size="sm" type="primary">

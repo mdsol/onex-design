@@ -12,7 +12,6 @@ const Dropdown = React.forwardRef((props, ref) => {
     disabled,
     id,
     title,
-    leadingIcon,
     items,
     variant,
     size,
@@ -21,6 +20,7 @@ const Dropdown = React.forwardRef((props, ref) => {
     onSelect,
     dataTestId,
     as,
+    ...accProps
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
     [className]: className,
@@ -29,24 +29,24 @@ const Dropdown = React.forwardRef((props, ref) => {
 
   return (
     <ReactDropdown
+      {...accProps}
       onSelect={onSelect}
       className={buttonClassNames}
       data-test-id={dataTestId}
+      align={align}
       ref={ref}
     >
-      <ReactDropdown.Toggle
-        as={as}
-        id={id}
-        disabled={disabled}
-        variant={variant}
-        size={size}
-        align={align}
-      >
-        {buttonStyle !== 'icon' && leadingIcon && leadingIcon}
-        {title}
-        <Icon className="onex-dropdown__chevron-icon">expand_more</Icon>
+      <ReactDropdown.Toggle as={as} id={id} disabled={disabled} variant={variant} size={size}>
+        {buttonStyle !== 'icon' ? (
+          <>
+            {title}
+            <Icon className="onex-dropdown__chevron-icon">expand_more</Icon>
+          </>
+        ) : (
+          <Icon>more_vert</Icon>
+        )}
       </ReactDropdown.Toggle>
-      <ReactDropdown.Menu as={DropdownMenu}>
+      <ReactDropdown.Menu as={DropdownMenu} align={align}>
         {!!items?.length &&
           items.map((item) => {
             const {
@@ -88,13 +88,12 @@ const Dropdown = React.forwardRef((props, ref) => {
 Dropdown.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]),
+  title: PropTypes.string,
   variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
   align: PropTypes.oneOf(['start', 'end']),
   buttonStyle: PropTypes.oneOf(['text', 'icon']),
   size: PropTypes.oneOf(['md', 'sm']),
   disabled: PropTypes.bool,
-  leadingIcon: PropTypes.node,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -115,7 +114,6 @@ Dropdown.defaultProps = {
   className: undefined,
   disabled: false,
   title: undefined,
-  leadingIcon: undefined,
   items: null,
   variant: 'primary',
   size: 'sm',

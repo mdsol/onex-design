@@ -41,7 +41,7 @@ import * as stories from './Dropdown.stories.jsx';
       description: 'Specifies a medium or small dropdown',
     },
     title: {
-      description: 'The content of the non-toggle Button',
+      description: 'The content of the non-toggle Button, can be text or icon label',
       control: 'text',
     },
     variant: {
@@ -49,7 +49,7 @@ import * as stories from './Dropdown.stories.jsx';
     },
   }}
   component={Dropdown}
-  decorators={[(Story) => <div style={{ width: '15rem' }}>{Story()}</div>]}
+  decorators={[(Story) => <div style={{ width: '15rem', display: 'flex', justifyContent: 'center' }}><span>{Story()}</span></div>]}
 />
 
 export const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -118,7 +118,7 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
 
 #### With icon
 ##### Default icon
-If no ```title``` is specified and ```buttonStyle``` is ```icon``` , the Chevron icon is the default.
+If ```buttonStyle``` is ```icon``` , the 'more_vert' icon use for that.
 <Canvas>
   <Story height="15rem" name="SecondaryDefaultIcon" story={stories.SecondaryDefaultIcon} />
   <Story height="15rem" name="TertiaryDefaultIcon" story={stories.TertiaryDefaultIcon} />
@@ -130,18 +130,6 @@ Disabled
   <Story height="15rem" name="TertiaryDefaultDisabledIcon" story={stories.TertiaryDefaultDisabledIcon} />
 </Canvas>
 
-##### Custom icon
-If ```buttonStyle``` is ```icon``` in ```title``` is specified custom icon(svg).
-<Canvas>
-  <Story height="15rem" name="SecondaryCustomIcon" story={stories.SecondaryCustomIcon} />
-  <Story height="15rem" name="TertiaryCustomIcon" story={stories.TertiaryCustomIcon} />
-</Canvas>
-
-Disabled
-<Canvas>
-  <Story height="15rem" name="SecondaryCustomDisabledIcon" story={stories.SecondaryCustomDisabledIcon} />
-  <Story height="15rem" name="TertiaryCustomDisabledIcon" story={stories.TertiaryCustomDisabledIcon} />
-</Canvas>
 
 ### Menu dividers
 Separate groups of related menu items with a divider.

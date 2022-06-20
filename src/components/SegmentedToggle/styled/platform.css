@@ -10731,6 +10731,7 @@ progress {
   border: 1px rgba(26, 28, 30, 0.2) solid;
   border-radius: 0.5rem;
   padding: 0.13rem;
+  font-family: "Noto Sans", sans-serif;
 }
 .onex-segmentedToggle .onex-toggle-btn-wrapper .btn-toggle {
   border-radius: 0.25rem;

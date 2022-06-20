@@ -29,6 +29,7 @@ const TextField = React.forwardRef((props, ref) => {
     passwordVariant,
     maxLength,
     minLength,
+    ...accProps
   } = props;
 
   const [_value, _setValue] = useState(value);
@@ -79,7 +80,7 @@ const TextField = React.forwardRef((props, ref) => {
   }, [value]);
 
   return (
-    <Form.Group className={inputClassNames} data-test-id={dataTestId}>
+    <Form.Group {...accProps} className={inputClassNames} data-test-id={dataTestId}>
       {label && <Form.Label>{label}</Form.Label>}
       <div className="onex-text-field__input">
         <Form.Control

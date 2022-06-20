@@ -1,17 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import {
-  Tabs,
-  Check,
-  DataGrid,
-  DataGridControl,
-  DataGridName,
-  Modal,
-  Button,
-  Card,
-  Select,
-  Link,
-  Icon,
-} from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -38,10 +26,21 @@ const dataGridColumns = [
   },
 ];
 
+const dataGridSortBy = [
+  {
+    id: 'id',
+    desc: true,
+  },
+  {
+    id: 'study',
+    desc: false,
+  },
+];
+
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
-  id: 'M123',
+  id: `M123${Math.floor(Math.random() * 50)}`,
   study: `United States${Math.floor(Math.random() * 30)}`,
   country: `United States${Math.floor(Math.random() * 1000)}`,
   category: 'Management',
@@ -82,6 +81,7 @@ const optionsMultiSelect = [
 const DevExamples = () => {
   const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
+  const dataGridSortByUpd = useMemo(() => dataGridSortBy, []);
 
   const handleModalPrimaryAction = () => setShow(false);
   const handleModalSecondaryAction = () => setShow(false);
@@ -94,6 +94,8 @@ const DevExamples = () => {
   const handleSelect = (values) => {
     setSelectedValues(values);
   };
+
+  const GridControl = { title: 'Title' };
 
   return (
     <div className="p-5">
@@ -126,12 +128,9 @@ const DevExamples = () => {
         <DataGrid
           columns={dataGridColumns}
           data={dataGridData}
-          rowsDividers={[10, 20, 30]}
-          dataGridControlComponent={
-            <DataGridControl>
-              <DataGridName badgeNumber="100">Test table</DataGridName>
-            </DataGridControl>
-          }
+          sortBy={dataGridSortByUpd}
+          rowsPerPageOptions={[10, 20, 30]}
+          dataGridControlProps={GridControl}
         />
         <br />
         <Button variant="primary" onClick={() => setShow(true)}>

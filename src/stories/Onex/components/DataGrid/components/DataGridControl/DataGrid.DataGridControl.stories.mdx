@@ -5,8 +5,109 @@ import { DataGridName, DataGridControl } from '../../../../../../components';
 <Meta
   title="Onex/Components/DataGrid/DataGridControl"
   argTypes={{
-    children: {
-      description: 'The content of the component, normally ```DataGridName```',
+    title: {
+      description: 'Title for data grid table',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    badge: {
+      description: 'Badge with number for title',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '',
+        },
+        type: {
+          summary: 'number',
+        },
+      },
+    },
+    hasCustomControls: {
+      description: 'Trigger for add custom controls element in panel',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    customControls: {
+      description: 'Custom element, which add in Control panel',
+      control: 'text',
+    },
+    hasViewOptions: {
+      description: 'Trigger for add view table Control element in panel',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+      },
+    },
+    hasSearch: {
+      description: 'Trigger for add search bar element in panel',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+      },
+    },
+    hasActionBtn: {
+      description: 'Trigger for add primary action button element in panel',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+      },
+    },
+    hasFilters: {
+      description: 'Trigger for add filters element in panel',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    hasSecondaryActions: {
+      description: 'Trigger for add dropdown element with secondary actions list in panel',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: true,
+        },
+      },
+    },
+    getTableView: {
+      description: 'Function for get current value of view table',
+    },
+    filters: {
+      description: 'Array with filters items',
+    },
+    getActiveFilters: {
+      description: 'Function for get current value of selected filters',
+    },
+    getSearchQuery: {
+      description: 'Function for get current value of search bar',
+    },
+    prymaryAction: {
+      description: 'Function which use for primary action btn',
+    },
+    prymaryActionText: {
+      description: 'Text for primary action btn',
+      control: 'text',
+    },
+    secondaryActions: {
+      description: 'Array with secondary actions items which add to dropdown menu',
     },
     className: {
       description: 'Name of the CSS class',
@@ -29,9 +130,8 @@ export const DataGridControlTemplate = (args) => <DataGridControl {...args} />;
   <Story
     name="Demo"
     args={{
-      children: (
-          <DataGridName badgeNumber="200">Title</DataGridName>
-      ),
+      title: 'Title',
+      badge: 33,
       className: 'custom-data-grid-control',
       dataTestId: 'test-data-grid-id'
     }}

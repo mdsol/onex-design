@@ -10926,6 +10926,7 @@ progress {
 
 .onex-dropdown {
   position: relative;
+  font-family: "Noto Sans", sans-serif;
   /* buttonStyle (text, icon) */
 }
 .onex-dropdown > .btn {
@@ -11094,6 +11095,9 @@ progress {
 .onex-dropdown.show > .dropdown-toggle.btn-secondary > .onex-dropdown__chevron-icon, .onex-dropdown.show > .dropdown-toggle.btn-tertiary > .onex-dropdown__chevron-icon {
   color: rgb(26, 28, 30);
 }
+.onex-dropdown > .btn-sm + .dropdown-menu {
+  top: 36px !important;
+}
 .onex-dropdown .dropdown-menu {
   font-family: "Noto Sans", sans-serif;
   border-radius: 0.5rem;
@@ -11102,6 +11106,16 @@ progress {
   padding: 0.25rem 0;
   border-color: rgba(26, 28, 30, 0.1);
   box-shadow: 0 0.25rem 1.5rem rgba(0, 28, 59, 0.12);
+  transform: translate3d(0px, 0px, 0px) !important;
+  inset: unset !important;
+  position: absolute !important;
+  top: 44px !important;
+  min-width: 8rem;
+  width: fit-content;
+}
+.onex-dropdown .dropdown-menu.dropdown-menu-end {
+  left: auto !important;
+  right: 0 !important;
 }
 .onex-dropdown .dropdown-menu--list {
   padding-left: 0;
@@ -11112,7 +11126,8 @@ progress {
   padding: 0.625rem 0.75rem;
   text-decoration: none;
   color: rgb(26, 28, 30);
-  min-width: 12.5rem;
+  min-width: fit-content;
+  max-width: 100%;
 }
 .onex-dropdown .dropdown-menu .dropdown-item > span {
   padding-right: 0.5rem;

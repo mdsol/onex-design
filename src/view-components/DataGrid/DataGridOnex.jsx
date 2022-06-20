@@ -24,6 +24,17 @@ const dataGridColumns = [
   },
 ];
 
+const dataGridSortBy = [
+  {
+    id: 'id',
+    desc: true,
+  },
+  {
+    id: 'study',
+    desc: false,
+  },
+];
+
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
@@ -48,12 +59,15 @@ const makeData = (...lens) => {
 
 const DataGridOnex = () => {
   const dataGridData = useMemo(() => makeData(10), []);
+  const dataGridColumnsProc = useMemo(() => dataGridColumns, []);
+  const dataGridSortByProc = useMemo(() => dataGridSortBy, []);
 
   return (
     <DataGrid
-      columns={dataGridColumns}
+      columns={dataGridColumnsProc}
       data={dataGridData}
-      rowsDividers={[10, 20, 30]}
+      sortBy={dataGridSortByProc}
+      rowsPerPageOptions={[5, 10]}
       dataGridControlComponent={
         <DataGridControl>
           <DataGridName badgeNumber="100">Test table</DataGridName>
