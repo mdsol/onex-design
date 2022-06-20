@@ -12,7 +12,7 @@ const ThemeProvider = React.forwardRef((props, ref) => {
   const { children, className, dataTestId, id, ...accProps } = props;
 
   return (
-    <Styled ref={ref} className={className} data-test-id={dataTestId} id={id} {...accProps}>
+    <Styled {...accProps} ref={ref} className={className} data-test-id={dataTestId} id={id}>
       {children}
     </Styled>
   );
@@ -20,14 +20,14 @@ const ThemeProvider = React.forwardRef((props, ref) => {
 
 ThemeProvider.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes.node,
   dataTestId: PropTypes.string,
   id: PropTypes.string,
 };
 
 ThemeProvider.defaultProps = {
   className: undefined,
-  children: undefined,
+  children: null,
   dataTestId: undefined,
   id: undefined,
 };
