@@ -9,13 +9,13 @@ const iconVariants = {
   error: 'error',
 };
 
-const Hint = ({ className, variant, children, icon, dataTestId }) => {
+const Hint = ({ className, variant, children, icon, dataTestId, ...accProps }) => {
   const classes = classNames('onex-hint', `onex-hint--variant-${variant}`, {
     [className]: className,
   });
 
   return (
-    <div className={classes} data-test-id={dataTestId}>
+    <div {...accProps} className={classes} data-test-id={dataTestId}>
       <div className="onex-hint__icon">{icon || <Icon>{iconVariants[variant]}</Icon>}</div>
       <span className="onex-hint__body">{children}</span>
     </div>

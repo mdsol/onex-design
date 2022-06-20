@@ -52,13 +52,14 @@ const Card = ({
   title,
   subtitle,
   dataTestId,
+  ...props
 }) => {
   const classes = classNames('onex-card', `onex-card--${variant}`, {
     [className]: className,
   });
 
   return (
-    <ReactCard className={classes} data-test-id={dataTestId}>
+    <ReactCard {...props} className={classes} data-test-id={dataTestId}>
       <ReactCard.Header>
         {showTitleBar && (
           <div className="onex-card__title-block">

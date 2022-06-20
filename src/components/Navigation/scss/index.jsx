@@ -18,6 +18,7 @@ const Navigation = (props) => {
     isAdaptiveWidth,
     dataTestId,
     dataTestIdDropdown,
+    ...accProps
   } = props;
 
   const navGroupClassNames = classNames('onex-nav', {
@@ -66,7 +67,7 @@ const Navigation = (props) => {
   }, [isActiveDropdownItem, activeItemKey]);
 
   return (
-    <div className={navGroupClassNames}>
+    <div {...accProps} className={navGroupClassNames}>
       <Nav
         ref={navRef}
         variant="tabs"

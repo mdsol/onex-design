@@ -26,6 +26,7 @@ const Calendar = React.forwardRef((props, ref) => {
     formatDate,
     setShowCalendar,
     setIsError,
+    ...accProps
   } = props;
 
   const calendarClassNames = classNames('onex-date-picker-calendar', {
@@ -44,7 +45,7 @@ const Calendar = React.forwardRef((props, ref) => {
   };
 
   return (
-    <div ref={ref} {...overlayProps} className={calendarClassNames}>
+    <div ref={ref} {...accProps} {...overlayProps} className={calendarClassNames}>
       <ReactCalendar
         showMonthArrow
         showMonthAndYearPickers

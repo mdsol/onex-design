@@ -15,6 +15,7 @@ const ToggleButtonGroup = (props) => {
     name,
     variant,
     dataTestId,
+    ...accProps
   } = props;
 
   const buttonClassNames = classNames(
@@ -27,6 +28,7 @@ const ToggleButtonGroup = (props) => {
 
   return (
     <ReactToggleButtonGroup
+      {...accProps}
       className={buttonClassNames}
       vertical={vertical}
       size={size}

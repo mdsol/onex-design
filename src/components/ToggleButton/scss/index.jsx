@@ -12,6 +12,7 @@ const ToggleButton = React.forwardRef((props, ref) => {
   return (
     <div className={buttonClassNames}>
       <ReactToggleButton
+        {...accProps}
         id={id}
         ref={ref}
         className="onex-toggle__btn"
@@ -20,7 +21,6 @@ const ToggleButton = React.forwardRef((props, ref) => {
         name={name}
         variant="toggle"
         data-test-id={dataTestId}
-        {...accProps}
       >
         {children}
       </ReactToggleButton>
