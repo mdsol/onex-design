@@ -1,10 +1,14 @@
 import { useMemo } from 'react';
-import { DataGrid, DataGridControl, DataGridName } from '../../components';
+import { DataGrid, Icon, Avatar, Badge, Tag } from '../../components';
 
 const dataGridColumns = [
   {
     Header: 'ID',
     accessor: 'id',
+  },
+  {
+    Header: 'Avatar',
+    accessor: 'avatar',
   },
   {
     Header: 'Study',
@@ -17,6 +21,14 @@ const dataGridColumns = [
   {
     Header: 'Category',
     accessor: 'category',
+  },
+  {
+    Header: 'Stage',
+    accessor: 'stage',
+  },
+  {
+    Header: 'Status',
+    accessor: 'status',
   },
   {
     Header: 'Created',
@@ -35,14 +47,35 @@ const dataGridSortBy = [
   },
 ];
 
+const GridControl = { title: 'Title' };
+
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
   id: 'M123',
-  study: 'United States 15',
-  country: 'United States 15',
-  category: 'Management',
-  created: '26 Aug 2020',
+  avatar: { component: <Avatar /> },
+  study: {
+    value: 'United States 15',
+    leadingIcon: <Icon>check_circle</Icon>,
+    trailingIcon: <Icon>info</Icon>,
+  },
+  country: { value: 'United States 15', leadingIcon: <Avatar /> },
+  category: {
+    value: 'Management',
+    leadingIcon: (
+      <Badge variant="status-icon" type="default">
+        <Icon>flag</Icon>
+      </Badge>
+    ),
+  },
+  stage: {
+    component: (
+      <Badge variant="status" type="default">
+        default
+      </Badge>
+    ),
+  },
+  created: { value: '26 Aug 2020', trailingIcon: <Badge type="default">100</Badge> },
 });
 
 const makeData = (...lens) => {
@@ -68,11 +101,7 @@ const DataGridOnex = () => {
       data={dataGridData}
       sortBy={dataGridSortByProc}
       rowsPerPageOptions={[5, 10]}
-      dataGridControlComponent={
-        <DataGridControl>
-          <DataGridName badgeNumber="100">Test table</DataGridName>
-        </DataGridControl>
-      }
+      dataGridControlProps={GridControl}
     />
   );
 };

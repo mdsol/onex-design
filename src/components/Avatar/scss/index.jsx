@@ -46,7 +46,7 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
   className: undefined,
-  size: 'md',
+  size: 'sm',
   name: undefined,
   children: undefined,
   src: undefined,

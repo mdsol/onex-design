@@ -1,0 +1,40 @@
+.onex-data-grid-cell {
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__leading-icon {
+      display: inline-flex;
+      max-width: $onex-data-grid-cell-leading-element-max-size;
+      max-height: $onex-data-grid-cell-leading-element-max-size;
+      overflow: hidden;
+    }
+
+    &__trailing-icon {
+      display: inline-flex;
+      color: $onex-data-grid-cell-trailing-element-color;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.25rem 0 0.5rem;
+
+      .onex-data-grid-cell-content__caption {
+        color: $onex-data-grid-cell-caption-color;
+      }
+    }
+  }
+
+  &--caption {
+    .onex-data-grid-cell-content {
+      align-items: flex-start;
+    }
+  }
+}

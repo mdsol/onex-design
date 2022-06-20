@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { StyledDataGrid, StyledDataGridControl, StyledDataGridName } from '../../components';
+import { StyledDataGrid } from '../../components';
 
 const dataGridColumns = [
   {
@@ -35,11 +35,13 @@ const dataGridSortBy = [
   },
 ];
 
+const GridControl = { title: 'Title' };
+
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
   id: 'M123',
-  study: 'United States 15',
+  study: { value: 'United States 15', leadingIcon: <Icon /> },
   country: 'United States 15',
   category: 'Management',
   created: '26 Aug 2020',
@@ -68,11 +70,7 @@ const DataGridOnex = () => {
       data={dataGridData}
       sortBy={dataGridSortByProc}
       rowsPerPageOptions={[5, 10]}
-      dataGridControlComponent={
-        <StyledDataGridControl>
-          <StyledDataGridName badgeNumber="100">Test table</StyledDataGridName>
-        </StyledDataGridControl>
-      }
+      dataGridControlProps={GridControl}
     />
   );
 };

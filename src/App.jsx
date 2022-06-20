@@ -1,5 +1,16 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
+import {
+  Tabs,
+  Check,
+  DataGrid,
+  Modal,
+  Button,
+  Card,
+  Select,
+  Link,
+  Icon,
+  Avatar,
+} from './components';
 import './scss/platform.scss';
 import ViewComponents from './view-components';
 
@@ -44,7 +55,11 @@ const newPerson = () => ({
   study: `United States${Math.floor(Math.random() * 30)}`,
   country: `United States${Math.floor(Math.random() * 1000)}`,
   category: 'Management',
-  created: '26 Aug 2020',
+  created: {
+    value: '26 Aug 2020',
+    leadingIcon: <Avatar />,
+    trailingIcon: <Icon>info</Icon>,
+  },
 });
 
 const makeData = (...lens) => {

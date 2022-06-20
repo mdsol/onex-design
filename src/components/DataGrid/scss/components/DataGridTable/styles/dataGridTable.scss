@@ -32,11 +32,18 @@
       span {
         color: $onex-data-grid-table-header-th-color;
       }
+
+      &:hover {
+        span {
+          color: $onex-data-grid-table-header-th-hover-color;
+        }
+      }
     }
   }
 
   &-body {
     tr {
+      background-color: $onex-data-grid-table-body-tr-background-color;
       border-radius: $onex-data-grid-table-body-border-radius;
       border-top: 1px solid $onex-data-grid-table-body-tr-border-color;
       border-bottom: 1px solid $onex-data-grid-table-body-tr-border-color;

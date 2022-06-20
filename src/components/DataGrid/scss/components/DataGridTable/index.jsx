@@ -8,6 +8,7 @@ import { Table as ReactTable } from 'react-bootstrap';
 import Icon from '../../../../Icon/scss';
 import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
+import DataGridCell from './components/DataGridCell';
 
 const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, ...accProps }) => {
   const {
@@ -73,11 +74,13 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, .
             prepareRow(row);
             return (
               <tr key={`${row}_${i}`} {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <td key={`${cell}_${i}`} {...cell.getCellProps()}>
-                    <Typography variant="label">{cell.render('Cell')}</Typography>
-                  </td>
-                ))}
+                {row.cells.map((cell) => {
+                  console.log('Cell', cell);
+                  return <DataGridCell cell={cell} cellIndex={i} />;
+                  // <td key={`${cell}_${i}`} {...cell.getCellProps()}>
+                  //   <Typography variant="label">{cell.render('Cell')}</Typography>
+                  // </td>
+                })}
               </tr>
             );
           })}
