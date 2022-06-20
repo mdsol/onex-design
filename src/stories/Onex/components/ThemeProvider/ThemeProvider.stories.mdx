@@ -1,0 +1,69 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+
+import { ThemeProvider, Button, TextField } from '../../../../components';
+
+<Meta
+  title="Onex/Components/ThemeProvider"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    id: {
+      description: 'An html id attribute, necessary for accessibility ',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    children: {
+      description: 'Nodes that can be passed in props.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    dataTestId: {
+      description: 'The id of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+  }}
+  component={ThemeProvider}
+/>
+
+export const Template = (args) => <ThemeProvider {...args} />;
+
+# ThemeProvider
+
+ThemeProvider scopes the platform.css file to a container, preventing 1x styles from leaking.
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      id: 'demo-themeprovider',
+      className: 'onex-demo-themeprovider',
+      dataTestId: 'demo-themeprovider-id',
+      children: (
+        <>
+          <TextField showClearBtn />
+          <Button>Search</Button>
+        </>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

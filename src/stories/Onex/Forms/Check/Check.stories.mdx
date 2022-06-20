@@ -1,83 +1,85 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 import { Check } from '../../../../components';
 import * as stories from './Check.stories.jsx';
 
 <Meta
-    title="Onex/Forms/Check"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            control: 'text',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+  title="Onex/Forms/Check"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        children: {
-            description: 'The content of the component.',
-            control: 'text',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    children: {
+      description: 'The content of the component.',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        checked: {
-            description: 'If true, the component is checked.',
-            table: {
-                defaultValue: {
-                    summary: 'false',
-                },
-            }
+      },
+    },
+    checked: {
+      description: 'If true, the component is checked.',
+      table: {
+        defaultValue: {
+          summary: 'false',
         },
-        disabled: {
-            description: 'If true, the component is disabled.',
-            table: {
-                defaultValue: {
-                    summary: 'false',
-                },
-            }
+      },
+    },
+    disabled: {
+      description: 'If true, the component is disabled.',
+      table: {
+        defaultValue: {
+          summary: 'false',
         },
-        indeterminate: {
-            description: 'If true, the component appears indeterminate. This does not set the native input element to indeterminate due to inconsistent behavior across browsers. However, we set a data-indeterminate attribute on the input.',
-            table: {
-                defaultValue: {
-                    summary: 'false',
-                },
-            }
+      },
+    },
+    indeterminate: {
+      description:
+        'If true, the component appears indeterminate. This does not set the native input element to indeterminate due to inconsistent behavior across browsers. However, we set a data-indeterminate attribute on the input.',
+      table: {
+        defaultValue: {
+          summary: 'false',
         },
-        type: {
-            description: 'The type of the component checkbox or radio. '
+      },
+    },
+    type: {
+      description: 'The type of the component checkbox or radio. ',
+    },
+    dataTestId: {
+      description: 'The id of the component for test.',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        dataTestId: {
-            description: 'The it of the component for test.',
-            control: 'text',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    id: {
+      description: 'The id of the input element. This property is required. ',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        id: {
-            description: 'The id of the input element. This property is required. ',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    onChange: {
+      description:
+        'Callback fired when the state is changed. You can pull out the new checked state by accessing event.target.checked (boolean). ',
+      action: 'checked',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        onChange: {
-            description: 'Callback fired when the state is changed. You can pull out the new checked state by accessing event.target.checked (boolean). ',
-            action: 'checked',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        }
-    }}
-    component={Check}
+      },
+    },
+  }}
+  component={Check}
 />
 
 export const Template = (args) => <Check {...args} />;
@@ -87,18 +89,20 @@ export const Template = (args) => <Check {...args} />;
 The name Check can be used when providing `default props` or `style` overrides in the theme.
 
 ### Check details
+
 <Canvas>
-    <Story
-        name="Demo"
-        args={{
-            size: 'sm',
-            type: 'checkbox',
-            children: 'Label text',
-            className: 'custom-badge',
-            dataTestId: 'text-badge-id',
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    args={{
+      size: 'sm',
+      type: 'checkbox',
+      children: 'Label text',
+      className: 'custom-badge',
+      dataTestId: 'text-badge-id',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
@@ -106,35 +110,36 @@ The name Check can be used when providing `default props` or `style` overrides i
 ### CheckBox
 
 <Canvas>
-    <Story name="Checkbox" story={stories.Checkbox} />
-    <Story name="CheckboxWithLabel" story={stories.CheckboxWithLabel} />
+  <Story name="Checkbox" story={stories.Checkbox} />
+  <Story name="CheckboxWithLabel" story={stories.CheckboxWithLabel} />
 </Canvas>
 
 ### Radio
 
 <Canvas>
-    <Story name="Radio" story={stories.Radio} />
-    <Story name="RadioWithLabel" story={stories.RadioWithLabel} />
+  <Story name="Radio" story={stories.Radio} />
+  <Story name="RadioWithLabel" story={stories.RadioWithLabel} />
 </Canvas>
 
 ### CheckBox and Radio disabled
 
 <Canvas>
-    <Story name="CheckboxCheckedDisabled" story={stories.CheckboxCheckedDisabled} />
-    <Story name="CheckboxDisabledWithLabel" story={stories.CheckboxDisabledWithLabel} />
-    <Story name="RadioCheckedDisabled" story={stories.RadioCheckedDisabled} />
-    <Story name="RadioDisabledWithLabel" story={stories.RadioDisabledWithLabel} />
+  <Story name="CheckboxCheckedDisabled" story={stories.CheckboxCheckedDisabled} />
+  <Story name="CheckboxDisabledWithLabel" story={stories.CheckboxDisabledWithLabel} />
+  <Story name="RadioCheckedDisabled" story={stories.RadioCheckedDisabled} />
+  <Story name="RadioDisabledWithLabel" story={stories.RadioDisabledWithLabel} />
 </Canvas>
 
 ### CheckBox indeterminate
 
 <Canvas>
-    <Story name="CheckboxIndeterminate" story={stories.CheckboxIndeterminate} />
-    <Story name="CheckboxIndeterminateDisabled" story={stories.CheckboxIndeterminateDisabled} />
+  <Story name="CheckboxIndeterminate" story={stories.CheckboxIndeterminate} />
+  <Story name="CheckboxIndeterminateDisabled" story={stories.CheckboxIndeterminateDisabled} />
 </Canvas>
 
 ## Controlled
-You can control the checkbox with ```checked``` and ```onChange``` props.
+
+You can control the checkbox with `checked` and `onChange` props.
 
 export const CustomCheck = ({ id, label }) => {
   const [checkedCheck, setCheckedCheck] = React.useState(false);
@@ -147,43 +152,40 @@ export const CustomCheck = ({ id, label }) => {
     >
       {label}
     </Check>
-  )
-}
+  );
+};
 
 export const Checkboxes = () => {
-  const checkboxData = React.useMemo(() => [
-    {
-      label: 'Apple',
-      id: 'apple'
-    },
-    {
-      label: 'Banana',
-      id: 'banana'
-    },
-    {
-      label: 'Strawberry',
-      id: 'strawberry'
-    }
-  ], []);
+  const checkboxData = React.useMemo(
+    () => [
+      {
+        label: 'Apple',
+        id: 'apple',
+      },
+      {
+        label: 'Banana',
+        id: 'banana',
+      },
+      {
+        label: 'Strawberry',
+        id: 'strawberry',
+      },
+    ],
+    [],
+  );
   return (
-      <div>
-        {checkboxData.map((checkboxItem) => (
-            <div style={{ display: 'flex', marginBottom: '12px'}}>
-              <CustomCheck
-                id={checkboxItem.id}
-                label={checkboxItem.label}
-              />
-            </div>
-          )
-        )}
-      </div>
-  )
-}
+    <div>
+      {checkboxData.map((checkboxItem) => (
+        <div style={{ display: 'flex', marginBottom: '12px' }}>
+          <CustomCheck id={checkboxItem.id} label={checkboxItem.label} />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 <Canvas>
-  <Story name="Controlled checkbox">
-    {Checkboxes.bind({})}
-  </Story>
+  <Story name="Controlled checkbox">{Checkboxes.bind({})}</Story>
 </Canvas>
 
 Example with indeterminate checkbox
@@ -192,36 +194,43 @@ export const CheckboxesIndeterminate = () => {
   const ids = { DS: 'ds', JS: 'js', CF: 'cf' };
   const [checkAll, setCheckAll] = React.useState(false);
   const [isIndeterminate, setIsIndeterminate] = React.useState(false);
-  const [checkItems, setCheckItems] = React.useState({[ids.DS]: false, [ids.JS]: false, [ids.CF]: false});
-  const checkboxData = React.useMemo(() => [
-    {
-      label: 'Clinical Trial Management system',
-      id: [ids.DS]
-    },
-    {
-      label: 'Risk-Based Quality Management',
-      id: [ids.JS]
-    },
-    {
-      label: 'Patient management',
-      id: [ids.CF]
-    }
-  ], []);
+  const [checkItems, setCheckItems] = React.useState({
+    [ids.DS]: false,
+    [ids.JS]: false,
+    [ids.CF]: false,
+  });
+  const checkboxData = React.useMemo(
+    () => [
+      {
+        label: 'Clinical Trial Management system',
+        id: [ids.DS],
+      },
+      {
+        label: 'Risk-Based Quality Management',
+        id: [ids.JS],
+      },
+      {
+        label: 'Patient management',
+        id: [ids.CF],
+      },
+    ],
+    [],
+  );
   const handleCheckItem = (id) => {
-    setCheckItems({...checkItems, [id]: !checkItems[id]});
-  }
+    setCheckItems({ ...checkItems, [id]: !checkItems[id] });
+  };
   const handleCheckAll = () => {
     const checked = !checkAll;
     const checkedItems = checkboxData.reduce((acc, elem) => {
-      return {...acc, [elem.id]: checked};
+      return { ...acc, [elem.id]: checked };
     }, {});
     setCheckItems(checkedItems);
     setCheckAll(checked);
-  }
+  };
   React.useEffect(() => {
     const checkedItems = Object.values(checkItems);
-    const everyChecked = checkedItems.every(elem => elem);
-    const everyUnChecked = checkedItems.every(elem => !elem);
+    const everyChecked = checkedItems.every((elem) => elem);
+    const everyUnChecked = checkedItems.every((elem) => !elem);
     if (everyChecked) {
       setCheckAll(true);
       setIsIndeterminate(false);
@@ -233,7 +242,7 @@ export const CheckboxesIndeterminate = () => {
     if (!everyChecked && !everyUnChecked) {
       setIsIndeterminate(true);
     }
-  }, [checkItems])
+  }, [checkItems]);
   return (
     <div>
       <Check
@@ -246,56 +255,56 @@ export const CheckboxesIndeterminate = () => {
         All projects
       </Check>
       {checkboxData.map((checkboxItem) => (
-          <div style={{ display: 'flex', margin: '10px 15px 15px 15px'}}>
-            <Check
-              type="checkbox"
-              id={checkboxItem.id}
-              checked={checkItems[checkboxItem.id]}
-              onChange={() => handleCheckItem(checkboxItem.id)}
-            >
-              {checkboxItem.label}
-            </Check>
-          </div>
-        )
-      )}
+        <div style={{ display: 'flex', margin: '10px 15px 15px 15px' }}>
+          <Check
+            type="checkbox"
+            id={checkboxItem.id}
+            checked={checkItems[checkboxItem.id]}
+            onChange={() => handleCheckItem(checkboxItem.id)}
+          >
+            {checkboxItem.label}
+          </Check>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
 <Canvas>
-  <Story name="Controlled checkbox indeterminate">
-    {CheckboxesIndeterminate.bind({})}
-  </Story>
+  <Story name="Controlled checkbox indeterminate">{CheckboxesIndeterminate.bind({})}</Story>
 </Canvas>
 
-You can control the radio with ```value``` and ```onChange``` props.
+You can control the radio with `value` and `onChange` props.
 
 <Canvas>
   <Story name="Controlled radio">
     {() => {
-      const radioData = React.useMemo(() => [
-        {
-          value: 'hidden',
-          label: 'Hidden',
-          id: 'hidden'
-        },
-        {
-          value: 'optional',
-          label: 'Optional',
-          id: 'optional'
-        },
-        {
-          value: 'required',
-          label: 'Required',
-          id: 'required'
-        }
-      ], []);
+      const radioData = React.useMemo(
+        () => [
+          {
+            value: 'hidden',
+            label: 'Hidden',
+            id: 'hidden',
+          },
+          {
+            value: 'optional',
+            label: 'Optional',
+            id: 'optional',
+          },
+          {
+            value: 'required',
+            label: 'Required',
+            id: 'required',
+          },
+        ],
+        [],
+      );
       const [checkedRadio, setCheckedRadio] = React.useState();
       return (
         <>
           <div>
-            {radioData.map((radioItem) =>
-              <div style={{ display: 'flex', marginBottom: '12px'}}>
+            {radioData.map((radioItem) => (
+              <div style={{ display: 'flex', marginBottom: '12px' }}>
                 <Check
                   type="radio"
                   value={radioItem.value}
@@ -305,7 +314,8 @@ You can control the radio with ```value``` and ```onChange``` props.
                 >
                   {radioItem.label}
                 </Check>
-              </div>)}
+              </div>
+            ))}
           </div>
         </>
       );
