@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import ViewComponents from './view-components';
 import {
   ThemeProvider,
   Tabs,
@@ -207,9 +208,7 @@ const App = () => {
     <ThemeProvider style={{ padding: '50px' }}>
       <Tabs size="lg" visibleItems={TabItems} onSelect={setCurrentTab} activeKey={currentTab} />
       {currentTab === 'devMode' && <DevExamples />}
-      {
-        // currentTab === 'testMode' && <ViewComponents />
-      }
+      {currentTab === 'testMode' && <ViewComponents />}
     </ThemeProvider>
   );
 };
