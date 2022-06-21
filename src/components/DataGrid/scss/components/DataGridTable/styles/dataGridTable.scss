@@ -35,7 +35,7 @@
       }
 
       span {
-        color: $onex-data-grid-table-header-color-hover;
+        color: $onex-data-grid-table-header-th-color;
 
         &::selection {
           background: transparent;
@@ -47,7 +47,7 @@
       }
 
       &:hover span{
-        color: $onex-data-grid-table-header-background-color-hover;
+        color: $onex-data-grid-table-header-color-hover;
       }
     }
   }

@@ -9766,7 +9766,7 @@ progress {
   color: rgb(26, 28, 30);
 }
 .onex-data-grid__table-headers th span {
-  color: rgb(26, 28, 30);
+  color: rgb(103, 110, 122);
 }
 .onex-data-grid__table-headers th span::selection {
   background: transparent;
@@ -9775,7 +9775,7 @@ progress {
   background: transparent;
 }
 .onex-data-grid__table-headers th:hover span {
-  color: rgba(103, 110, 122, 0.1);
+  color: rgb(26, 28, 30);
 }
 .onex-data-grid__table-body tr {
   border-radius: 0.5rem;
