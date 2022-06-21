@@ -9761,14 +9761,21 @@ progress {
   margin: 0;
   padding: 1rem 0.75rem;
 }
+.onex-data-grid__table-headers th:hover {
+  background-color: rgba(103, 110, 122, 0.1);
+  color: rgb(26, 28, 30);
+}
 .onex-data-grid__table-headers th span {
-  color: rgb(103, 110, 122);
+  color: rgb(26, 28, 30);
 }
 .onex-data-grid__table-headers th span::selection {
   background: transparent;
 }
 .onex-data-grid__table-headers th span::-moz-selection {
   background: transparent;
+}
+.onex-data-grid__table-headers th:hover span {
+  color: rgba(103, 110, 122, 0.1);
 }
 .onex-data-grid__table-body tr {
   border-radius: 0.5rem;

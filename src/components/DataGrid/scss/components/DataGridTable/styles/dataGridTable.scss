@@ -3,7 +3,7 @@
   margin-bottom: 0;
 
   &-headers {
-    background: $white;//$onex-data-grid-table-header-background-color;
+    background: $onex-data-grid-table-header-background-color;
     &-sort-by-icons {
       display: inline-block;
       font-size: $onex-data-grid-table-header-sort-by-icon-font-size;
@@ -30,12 +30,12 @@
       padding: $onex-data-grid-table-header-th-padding-x $onex-data-grid-table-header-th-padding-y;
 
       &:hover {
-        background-color: rgba(103, 110, 122, 0.1);
-        color:rgba(26, 28, 30, 1);
+        background-color: $onex-data-grid-table-header-background-color-hover;
+        color: $onex-data-grid-table-header-color-hover;
       }
 
       span {
-        color: $onex-data-grid-table-header-th-color;
+        color: $onex-data-grid-table-header-color-hover;
 
         &::selection {
           background: transparent;
@@ -47,7 +47,7 @@
       }
 
       &:hover span{
-        color:rgba(26, 28, 30, 1);
+        color: $onex-data-grid-table-header-background-color-hover;
       }
     }
   }
