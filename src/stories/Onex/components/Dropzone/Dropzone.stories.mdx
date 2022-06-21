@@ -1,0 +1,45 @@
+<!-- Dropzone.mdx -->
+
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Dropzone } from '../../../../components';
+import * as stories from './Dropzone.stories.jsx';
+
+<Meta
+  title="Onex/Components/Dropzone"
+  argTypes={{
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+  }}
+  component={Dropzone}
+/>
+
+export const DropzoneTemplate = (args) => <Dropzone {...args} />;
+
+# Dropzone
+
+An avatar is a graphical representation of a user and typically appears in list and card views,
+along side a user's information and/or content that they have created.
+
+## Usage
+
+
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      className: 'custom-avatar',
+      size: 'lg',
+      children: <Icon>face</Icon>,
+      hoverDisabled: false,
+      dataTestId: 'test-avatar-id',
+    }}
+  >
+    {DropzoneTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

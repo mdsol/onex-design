@@ -1,11 +1,11 @@
-import Dropzone from 'react-dropzone';
+import ReactDropzone from 'react-dropzone';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/named
 import { FileComponentTypes } from './components/FileItem';
 import DropZoneAria from './components/DropZoneAria';
 
-const MyDropzone = React.forwardRef(
+const Dropzone = React.forwardRef(
   (
     {
       className,
@@ -41,7 +41,7 @@ const MyDropzone = React.forwardRef(
     },
     ref,
   ) => (
-    <Dropzone
+    <ReactDropzone
       ref={ref}
       noClick={noClick}
       noKeyboard={noKeyboard}
@@ -89,11 +89,11 @@ const MyDropzone = React.forwardRef(
           />
         );
       }}
-    </Dropzone>
+    </ReactDropzone>
   ),
 );
 
-MyDropzone.propTypes = {
+Dropzone.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   info: PropTypes.string,
@@ -126,7 +126,7 @@ MyDropzone.propTypes = {
   validator: PropTypes.func,
 };
 
-MyDropzone.defaultProps = {
+Dropzone.defaultProps = {
   className: undefined,
   title: 'Select files or drop them here',
   info: 'CSV, JSON, XLS up to 1 mb',
@@ -159,4 +159,4 @@ MyDropzone.defaultProps = {
   validator: null,
 };
 
-export default MyDropzone;
+export default Dropzone;
