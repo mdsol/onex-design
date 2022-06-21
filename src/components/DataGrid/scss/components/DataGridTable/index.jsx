@@ -9,7 +9,7 @@ import Icon from '../../../../Icon/scss';
 import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
 
-const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, ...accProps }) => {
+const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, multiSort, ...accProps }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -51,7 +51,7 @@ const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, .
                 <th
                   key={`header_cell_row_${ind}`}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
-                  onClick={() => column.toggleSortBy(undefined, true)}
+                  onClick={() => column.toggleSortBy(undefined, multiSort)}
                 >
                   <Typography variant="caption" uppercase>
                     {column.render('Header')}
@@ -124,6 +124,7 @@ DataGridTable.propTypes = {
                 desc: PropTypes.bool,
               }),
             ),
+  multiSort: PropTypes.bool,
   rowsPerPageOptions: PropTypes.arrayOf(PropTypes.number),
 };
 /* eslint-enable */
@@ -133,6 +134,7 @@ DataGridTable.defaultProps = {
   columns: [],
   data: [],
   sortBy: [],
+  multiSort: undefined,
   rowsPerPageOptions: [],
 };
 

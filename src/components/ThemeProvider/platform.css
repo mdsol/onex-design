@@ -14177,6 +14177,14 @@
 .onex-themeprovider .onex-select .onex-select__option--text.onex-select__option--is-selected:hover {
   background-color: rgb(141, 202, 249);
 }
+.onex-themeprovider .onex-select .onex-select__option--subLabel {
+  display: flex;
+}
+.onex-themeprovider .onex-select .onex-select__option--subLabel .sub-label-text {
+  display: flex;
+  color: rgb(133, 140, 150);
+  font-size: 0.75rem;
+}
 .onex-themeprovider .onex-select .onex-select__group {
   padding: 0.25rem 0 0;
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
@@ -17430,6 +17438,14 @@
 }
 .onex-themeprovider .onex-select .onex-select__option--text.onex-select__option--is-selected:hover {
   background-color: rgb(141, 202, 249);
+}
+.onex-themeprovider .onex-select .onex-select__option--subLabel {
+  display: flex;
+}
+.onex-themeprovider .onex-select .onex-select__option--subLabel .sub-label-text {
+  display: flex;
+  color: rgb(133, 140, 150);
+  font-size: 0.75rem;
 }
 .onex-themeprovider .onex-select .onex-select__group {
   padding: 0.25rem 0 0;
@@ -28165,7 +28181,7 @@
   margin-bottom: 0;
 }
 .onex-themeprovider .onex-data-grid__table-headers {
-  background: rgb(244, 248, 252);
+  background: rgb(255, 255, 255);
 }
 .onex-themeprovider .onex-data-grid__table-headers-sort-by-icons {
   display: inline-block;
@@ -28190,8 +28206,21 @@
   margin: 0;
   padding: 1rem 0.75rem;
 }
+.onex-themeprovider .onex-data-grid__table-headers th:hover {
+  background-color: rgba(103, 110, 122, 0.1);
+  color: rgb(26, 28, 30);
+}
 .onex-themeprovider .onex-data-grid__table-headers th span {
   color: rgb(103, 110, 122);
+}
+.onex-themeprovider .onex-data-grid__table-headers th span::selection {
+  background: transparent;
+}
+.onex-themeprovider .onex-data-grid__table-headers th span::-moz-selection {
+  background: transparent;
+}
+.onex-themeprovider .onex-data-grid__table-headers th:hover span {
+  color: rgb(26, 28, 30);
 }
 .onex-themeprovider .onex-data-grid__table-body tr {
   border-radius: 0.5rem;
