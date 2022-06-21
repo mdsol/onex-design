@@ -1,7 +1,18 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
-import './scss/platform.scss';
 import ViewComponents from './view-components';
+import {
+  ThemeProvider,
+  Tabs,
+  Check,
+  DataGrid,
+  Modal,
+  Button,
+  Card,
+  Select,
+  Link,
+  Icon,
+} from './components';
+// import './scss/platform.scss';
 
 const dataGridColumns = [
   {
@@ -185,7 +196,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('testMode');
+  const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
     if (currentTab === 'testMode') {
@@ -194,11 +205,11 @@ const App = () => {
   }, [currentTab]);
 
   return (
-    <div style={{ padding: '50px' }}>
+    <ThemeProvider style={{ padding: '50px' }}>
       <Tabs size="lg" visibleItems={TabItems} onSelect={setCurrentTab} activeKey={currentTab} />
       {currentTab === 'devMode' && <DevExamples />}
       {currentTab === 'testMode' && <ViewComponents />}
-    </div>
+    </ThemeProvider>
   );
 };
 

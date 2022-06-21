@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
-import { StyledDataGrid, StyledDataGridControl, StyledDataGridName } from '../../components';
+import StyledDataGrid from '../../components/DataGrid/styled/components/dataGrid';
+import StyledDataGridControl from '../../components/DataGrid/styled/components/dataGridControl';
+import StyledDataGridName from '../../components/DataGrid/styled/components/dataGridName';
 
 const dataGridColumns = [
   {

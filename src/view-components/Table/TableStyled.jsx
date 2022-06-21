@@ -1,18 +1,16 @@
-import {
-  StyledAvatar,
-  StyledBadge,
-  StyledCheck,
-  StyledTextField,
-  StyledTableControl,
-  StyledTableName,
-  StyledTableHead,
-  StyledTableRow,
-  StyledTableCell,
-  StyledTableBody,
-  StyledDataTableCell,
-  StyledTable,
-  StyledIcon,
-} from '../../components';
+import StyledAvatar from '../../components/Avatar/styled';
+import StyledBadge from '../../components/Badge/styled';
+import StyledCheck from '../../components/Check/styled';
+import StyledTextField from '../../components/TextField/styled';
+import StyledTableControl from '../../components/Tables/styled/components/tableControl';
+import StyledTableName from '../../components/Tables/styled/components/tableName';
+import StyledTableHead from '../../components/Tables/styled/components/tableHead';
+import StyledTableRow from '../../components/Tables/styled/components/tableRow';
+import StyledTableCell from '../../components/Tables/styled/components/tableCell';
+import StyledTableBody from '../../components/Tables/styled/components/tableBody';
+import StyledDataTableCell from '../../components/Tables/styled/components/dataTableCell';
+import StyledTable from '../../components/Tables/styled/components/table';
+import StyledIcon from '../../components/Icon/styled';
 
 const TableStyled = () => (
   <StyledTable

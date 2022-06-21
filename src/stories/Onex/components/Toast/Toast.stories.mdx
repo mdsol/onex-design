@@ -1,7 +1,7 @@
-import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
-import {styled} from '@storybook/theming';
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+import { styled } from '@storybook/theming';
 
-import {Toast} from '../../../../components';
+import { Toast } from '../../../../components';
 import * as stories from './Toast.stories.jsx';
 
 <Meta
@@ -13,7 +13,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     id: {
       description: 'An html id attribute, necessary for accessibility ',
@@ -21,7 +21,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     header: {
       description: 'The react component or DOM element displayed as Toast.Header. ',
@@ -29,7 +29,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     children: {
       description: 'The react component or DOM element displayed as Toast.Body. ',
@@ -37,7 +37,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     delay: {
       description: 'Delay hiding the toast (ms)',
@@ -45,7 +45,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     animation: {
       description: 'Apply a CSS fade transition to the toast.',
@@ -53,7 +53,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'true',
         },
-      }
+      },
     },
     autohide: {
       description: 'Auto hide the toast',
@@ -61,7 +61,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'true',
         },
-      }
+      },
     },
     closeButton: {
       description: 'Specify whether the Component should contain a close button',
@@ -69,7 +69,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'true',
         },
-      }
+      },
     },
     showDefaultIcon: {
       description: 'If it true the default icon is showed',
@@ -77,15 +77,16 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'true',
         },
-      }
+      },
     },
     icon: {
-      description: 'The icon element instead of default icon. Should set <b>showDefaultIcon</b> - false. ',
+      description:
+        'The icon element instead of default icon. Should set <b>showDefaultIcon</b> - false. ',
       table: {
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     variant: {
       description: 'The variant of the component.',
@@ -93,7 +94,7 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'false',
         },
-      }
+      },
     },
     show: {
       description: 'show or hide the element',
@@ -101,18 +102,18 @@ import * as stories from './Toast.stories.jsx';
         defaultValue: {
           summary: 'false',
         },
-      }
+      },
     },
     position: {
-      description: 'Where the toasts will be placed within the container.'
+      description: 'Where the toasts will be placed within the container.',
     },
     dataTestId: {
-      description: 'The it of the component for test',
+      description: 'The id of the component for test',
       table: {
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
   }}
   component={Toast}
@@ -132,28 +133,29 @@ The component has 4 variants such as "info", "success", "warning", "error".
 ##### <i>info</i>
 
 <Canvas>
-  <Story name="Info" story={stories.Info} position="relative" height="12rem"/>
+  <Story name="Info" story={stories.Info} position="relative" height="12rem" />
 </Canvas>
 
 ##### <i>success</i>
 
 <Canvas>
-  <Story name="Success" story={stories.Success} height="12rem" position="relative"/>
+  <Story name="Success" story={stories.Success} height="12rem" position="relative" />
 </Canvas>
 
 ##### <i>warning</i>
 
 <Canvas>
-  <Story name="Warning" story={stories.Warning} height="12rem" position="relative"/>
+  <Story name="Warning" story={stories.Warning} height="12rem" position="relative" />
 </Canvas>
 
 ##### <i>error</i>
 
 <Canvas>
-  <Story name="Error" story={stories.Error} height="12rem" position="relative"/>
+  <Story name="Error" story={stories.Error} height="12rem" position="relative" />
 </Canvas>
 
 ### Toast details
+
 <Canvas>
   <Story
     height="12rem"
@@ -165,11 +167,12 @@ The component has 4 variants such as "info", "success", "warning", "error".
       className: 'c-demo-toast',
       show: true,
       dataTestId: 'demo-toast-id',
-      header: "Info banner header",
+      header: 'Info banner header',
       children: 'Example of an info banner message.',
-    }}>
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Demo"/>
+<ArgsTable story="Demo" />

@@ -7,3 +7,4 @@ storybook-static
 .eslintcache
 .idea
 .yarn/install-state.gz
+stats.json
