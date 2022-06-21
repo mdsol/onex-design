@@ -33,5 +33,5 @@ jobs:
     - stage: test
       name: unit_tests
       script:
-          - yarn dev
+          - yarn dev&
           - yarn test
