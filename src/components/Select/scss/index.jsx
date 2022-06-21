@@ -35,11 +35,14 @@ const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
       {showCheckInOption ? (
         <Check id={props.children} checked={checkedValue} className="multiselect-check">
           {props.children}
+          {props.data.subLabel ? <div className="sub-label-text">{props.data.subLabel}</div> : null}
         </Check>
       ) : (
-        props.children
+        <>
+          {props.children}
+          {props.data.subLabel ? <div className="sub-label-text">{props.data.subLabel}</div> : null}
+        </>
       )}
-      <div className="sub-label-text">{props.data.subLabel}</div>
     </components.Option>
   );
 };

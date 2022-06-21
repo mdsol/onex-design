@@ -224,10 +224,10 @@
   }
 
   .onex-select__option--subLabel {
-    display: block;
+    display: flex;
 
     .sub-label-text {
-      display: block;
+      display: flex;
       color: $onex-select-option-sub-label-color;
       font-size: $onex-select-option-sub-label-size;
     }

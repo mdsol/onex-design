@@ -106,6 +106,34 @@ GroupOption.args = {
   hasClearButton: true,
 };
 
+export const SubLabel = Template.bind({});
+
+SubLabel.args = {
+  size: 'md',
+  className: 'select',
+  dataTestId: 'select',
+  groupedOptions: [
+    {
+      label: 'Europe',
+      options: [
+        { value: 'poland', label: 'Poland', subLabel: 'Warsaw' },
+        { value: 'portugal', label: 'Portugal', subLabel: 'Lisbon' },
+        { value: 'spain', label: 'Spain', subLabel: 'Madrid' },
+      ],
+    },
+    {
+      label: 'South America',
+      options: [
+        { value: 'brazil', label: 'Brazil', subLabel: 'Brasília' },
+        { value: 'colombia', label: 'Colombia', subLabel: 'Bogotá' },
+        { value: 'peru', label: 'Peru', subLabel: 'Lima' },
+      ],
+    },
+  ],
+  isMulti: true,
+  hasClearButton: true,
+};
+
 export const Label = Template.bind({});
 
 Label.args = {
