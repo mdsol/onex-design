@@ -1,5 +1,5 @@
 # Changelog
-## 0.3.9
+## 0.4.0
 ThemeProvider component optimization, styled components removed from export, bundle size reduced and new Storybook page on how to use. Select has a new subLabel option that can be used.
 ## 0.3.8
 New: ThemeProvider component will replace the need to use StyledComponents. Please wrap the area you will be using 1x components with <ThemeProvider /> and rename all of your styled components to their normal component names. 
