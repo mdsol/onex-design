@@ -1,4 +1,5 @@
-import { ThemeProvider, Button, TextField } from '../../../../components';
+import { Button, TextField } from '../../../../components';
+import ThemeProvider from '../../../../components/ThemeProvider';
 
 export default {
   title: 'Onex/Components/ThemeProvider',

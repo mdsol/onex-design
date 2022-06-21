@@ -9,8 +9,10 @@ install:
 stages:
   - name: fossa
     if: (branch = main) || (branch = develop && type = cron)
+  - name: test
   - name: publish
     if: tag =~ /^v\d+\.\d+\.\d+$/ # release on tags that look like v1.2.3
+
 jobs:
   include:
     - stage: fossa
@@ -23,3 +25,11 @@ jobs:
         - yarn run build:css
         - yarn run build:css:tp
         - npm publish
+    - stage: test
+      name:
+      script:
+        - yarn run lint
+    # - stage: test
+    #   name: unit_tests
+    #   script:
+    #       - yarn test

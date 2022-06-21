@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/mdsol/onex-design.git"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.compat.js",
   "module": "./dist/index.umd.js",
   "publishConfig": {
     "registry": "https://mdsol.jfrog.io/artifactory/api/npm/onex_design-npm-prod-local/"
@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "storybook": "start-storybook -p 6006",
-    "build": "webpack --config webpack.config.pkg.js --mode production --json > stats.json && babel dist/index.umd.js > dist/index.js",
+    "build": "webpack --config webpack.config.pkg.js --mode production --json > stats.json && babel dist/*.umd.js -d dist --out-file-extension .compat.js",
     "build:size": "webpack-bundle-analyzer stats.json",
     "build:css": "sass --style=compressed ./src/scss/platform.scss dist/platform.css",
     "build:css:tp": "node src/utils/themeprovider-css.js",
