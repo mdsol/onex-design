@@ -1,6 +1,9 @@
 language: node_js
+addons:
+  chrome: stable
 before_install:
   - bash ./script/create_npmrc.sh
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 install:
   - yarn --immutable
   - |-
@@ -27,7 +30,8 @@ jobs:
       name:
       script:
         - yarn run lint
-    # - stage: test
-    #   name: unit_tests
-    #   script:
-    #       - yarn test
+    - stage: test
+      name: unit_tests
+      script:
+          - yarn dev
+          - yarn test
