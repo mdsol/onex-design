@@ -1,17 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import ViewComponents from './view-components';
-import {
-  Tabs,
-  Check,
-  DataGrid,
-  Modal,
-  Button,
-  Card,
-  Select,
-  Link,
-  Icon,
-} from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
 import ThemeProvider from './components/ThemeProvider';
+
 // import './scss/platform.scss';
 
 const dataGridColumns = [
