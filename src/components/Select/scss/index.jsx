@@ -22,18 +22,26 @@ const MultiValueRemove = (props) => (
 
 const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
   const checkedValue = selectedOptions?.some((elem) => elem.value === props.value);
+  const hasSubLabel = !!props.data.subLabel;
 
   return (
     <components.Option
       {...props}
-      className={classNames({ 'onex-select__option--text': !showCheckInOption })}
+      className={classNames({
+        'onex-select__option--text': !showCheckInOption,
+        'onex-select__option--subLabel': hasSubLabel,
+      })}
     >
       {showCheckInOption ? (
         <Check id={props.children} checked={checkedValue} className="multiselect-check">
           {props.children}
+          {props.data.subLabel ? <div className="sub-label-text">{props.data.subLabel}</div> : null}
         </Check>
       ) : (
-        props.children
+        <>
+          {props.children}
+          {props.data.subLabel ? <div className="sub-label-text">{props.data.subLabel}</div> : null}
+        </>
       )}
     </components.Option>
   );
@@ -164,6 +172,7 @@ const Select = ({
 const optionType = PropTypes.shape({
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  subLabel: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 });
 
 const groupedOptions = PropTypes.shape({
@@ -176,6 +185,7 @@ Option.propTypes = {
   showCheckInOption: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  data: PropTypes.objectOf(optionType),
 };
 
 Option.defaultProps = {
@@ -183,6 +193,7 @@ Option.defaultProps = {
   showCheckInOption: false,
   value: [],
   children: undefined,
+  data: undefined,
 };
 
 Select.propTypes = {

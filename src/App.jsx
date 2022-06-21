@@ -1,17 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import ViewComponents from './view-components';
-import {
-  Tabs,
-  Check,
-  DataGrid,
-  Modal,
-  Button,
-  Card,
-  Select,
-  Link,
-  Icon,
-} from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
 import ThemeProvider from './components/ThemeProvider';
+
 // import './scss/platform.scss';
 
 const dataGridColumns = [
@@ -89,6 +80,37 @@ const optionsMultiSelect = [
   { value: 'spain', label: 'Spain' },
 ];
 
+const optionsMultiSelectSub = [
+  { value: 'brazil', label: 'Brazil', subLabel: 'Sao Paolo' },
+  { value: 'colombia', label: 'Colombia', subLabel: 'Bogota' },
+  { value: 'poland', label: 'Poland', subLabel: 'Warsaw' },
+  { value: 'portugal', label: 'Portugal', subLabel: 'Lisbon' },
+  { value: 'spain', label: 'Spain', subLabel: 'Madrid' },
+];
+
+const groupedOptionsMultiSelect = [
+  {
+    label: 'Countries',
+    options: [
+      { value: 'brazil', label: 'Brazil', subLabel: 'Sao Paolo' },
+      { value: 'colombia', label: 'Colombia', subLabel: 'Bogota' },
+      { value: 'poland', label: 'Poland', subLabel: 'Warsaw' },
+      { value: 'portugal', label: 'Portugal', subLabel: 'Lisbon' },
+      { value: 'spain', label: 'Spain', subLabel: 'Madrid' },
+    ],
+  },
+  {
+    label: 'Cars',
+    options: [
+      { value: 'bmw', label: 'BMW', subLabel: 'M2' },
+      { value: 'mercedes', label: 'Mercedes', subLabel: 'AMG GT' },
+      { value: 'ford', label: 'Ford', subLabel: 'GT' },
+      { value: 'tesla', label: 'Tesla', subLabel: 'Model S Plaid' },
+      { value: 'porshe', label: 'Porshe', subLabel: '911 GT3' },
+    ],
+  },
+];
+
 const DevExamples = () => {
   const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
@@ -99,7 +121,7 @@ const DevExamples = () => {
   const [selectedValues, setSelectedValues] = useState();
 
   useEffect(() => {
-    setSelectedValues([{ value: 'brazil', label: 'Brazil' }]);
+    setSelectedValues([{ value: 'brazil', label: 'Brazil', subLabel: 'Sao Paolo' }]);
   }, []);
 
   const handleSelect = (values) => {
@@ -126,6 +148,26 @@ const DevExamples = () => {
           className="select"
           dataTestId="select"
           options={optionsMultiSelect}
+          selectedValues={selectedValues}
+          onSelect={handleSelect}
+        />
+      </div>
+      <div>
+        <Select
+          size="md"
+          className="select"
+          dataTestId="select"
+          options={optionsMultiSelectSub}
+          selectedValues={selectedValues}
+          onSelect={handleSelect}
+        />
+      </div>
+      <div>
+        <Select
+          size="md"
+          className="select"
+          dataTestId="select"
+          groupedOptions={groupedOptionsMultiSelect}
           selectedValues={selectedValues}
           onSelect={handleSelect}
         />
