@@ -25,6 +25,7 @@
     "build": "webpack --config webpack.config.pkg.js --mode production --json > stats.json && babel dist/index.umd.js > dist/index.js",
     "build:size": "webpack-bundle-analyzer stats.json",
     "build:css": "sass --style=compressed ./src/scss/platform.scss dist/platform.css",
+    "build:css:tp": "node src/utils/themeprovider-css.js",
     "build:sb": "build-storybook",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
     "lint:fix": "eslint ./src --fix",
