@@ -75,6 +75,9 @@ const newPerson = () => ({
       </Badge>
     ),
   },
+  status: {
+    component: <Tag isRemovable={false}>Tag</Tag>,
+  },
   created: { value: '26 Aug 2020', trailingIcon: <Badge type="default">100</Badge> },
 });
 
