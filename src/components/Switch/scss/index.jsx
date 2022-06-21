@@ -4,13 +4,14 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 
 const Switch = React.forwardRef((props, ref) => {
-  const { className, disabled, checked, label, id, onChange, dataTestId } = props;
+  const { className, disabled, checked, label, id, onChange, dataTestId, ...accProps } = props;
   const switchClassNames = classNames('onex-switch', {
     [className]: className,
   });
 
   return (
     <Form.Switch
+      {...accProps}
       ref={ref}
       className={switchClassNames}
       disabled={disabled}

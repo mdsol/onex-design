@@ -2,14 +2,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const TableControl = (props) => {
-  const { children, className, dataTestId } = props;
+  const { children, className, dataTestId, ...accProps } = props;
 
   const tableControlsClasses = classNames('onex-table-control', {
     [className]: className,
   });
 
   return (
-    <div className={tableControlsClasses} data-test-id={dataTestId}>
+    <div {...accProps} className={tableControlsClasses} data-test-id={dataTestId}>
       {children}
     </div>
   );

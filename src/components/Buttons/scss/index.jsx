@@ -12,7 +12,7 @@ const Button = React.forwardRef((props, ref) => {
   });
 
   return (
-    <ReactButton ref={ref} className={buttonClassNames} data-test-id={dataTestId} {...accProps}>
+    <ReactButton {...accProps} ref={ref} className={buttonClassNames} data-test-id={dataTestId}>
       {leadingIcon && leadingIcon}
       {children}
       {trailingIcon && trailingIcon}

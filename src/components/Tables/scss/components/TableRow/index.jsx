@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const TableRow = (props) => {
-  const { children, className, hover, selected, variant, dataTestId } = props;
+  const { children, className, hover, selected, variant, dataTestId, ...accProps } = props;
 
   const tableClasses = classNames('onex-table__row', `onex-table__cell--variant-${variant}`, {
     [className]: className,
@@ -18,7 +18,7 @@ const TableRow = (props) => {
   );
 
   return (
-    <tr className={tableClasses} data-test-id={dataTestId}>
+    <tr {...accProps} className={tableClasses} data-test-id={dataTestId}>
       {rowChildren}
     </tr>
   );

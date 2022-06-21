@@ -22,6 +22,7 @@ const Typography = ({
   paragraph,
   uppercase,
   dataTestId,
+  ...accProps
 }) => {
   const typographyClassNames = classNames(
     'onex-typography',
@@ -43,7 +44,12 @@ const Typography = ({
     href && variant.search(/h[1-5]/g) === -1 ? 'a' : DefaultTypographyComponent;
 
   return (
-    <TypographyComponent data-test-id={dataTestId} className={typographyClassNames} href>
+    <TypographyComponent
+      {...accProps}
+      data-test-id={dataTestId}
+      className={typographyClassNames}
+      href
+    >
       {children}
     </TypographyComponent>
   );

@@ -15,6 +15,7 @@ const SearchField = React.forwardRef((props, ref) => {
     onChange,
     showClearBtn,
     dataTestId,
+    ...accProps
   } = props;
 
   const [_value, _setValue] = useState(value);
@@ -50,7 +51,7 @@ const SearchField = React.forwardRef((props, ref) => {
   }, [value]);
 
   return (
-    <Form.Group className={inputClassNames} data-test-id={dataTestId}>
+    <Form.Group {...accProps} className={inputClassNames} data-test-id={dataTestId}>
       <div className="onex-search-field__input">
         <Form.Control
           ref={ref}
