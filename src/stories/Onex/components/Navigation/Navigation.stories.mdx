@@ -1,103 +1,103 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { Navigation } from '../../../../components';
 import * as stories from './Navigation.stories.jsx';
 
 <Meta
-    title="Onex/Components/Navigation"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+  title="Onex/Components/Navigation"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        activeKey: {
-            description: 'Marks the item with a matching eventKey as active.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    activeKey: {
+      description: 'Marks the item with a matching eventKey as active.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        defaultActiveKey: {
-            description: 'Active key by default',
+      },
+    },
+    defaultActiveKey: {
+      description: 'Active key by default',
+    },
+    dropdownTitle: {
+      description: 'Title of the toggle button',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        dropdownTitle: {
-            description: 'Title of the toggle button',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        hiddenItems: {
-            description: `Array of menu items for toggle button. Each item contain:
+      },
+    },
+    hiddenItems: {
+      description: `Array of menu items for toggle button. Each item contain:
                            \n1.title* - content of menu item;
                            \n2.disabled - if true, the item is disabled;
                            \n3.eventKey - value passed to the onSelect handler, useful for identifying the selected menu item;
                            \n4.href - HTML href attribute corresponding to a.href;
                            \n5.dataTestId - Id of the item for testing;`,
-            table: {
-                type: {
-                    summary: `object`,
-                    detail: `[{
+      table: {
+        type: {
+          summary: `object`,
+          detail: `[{
                     title: string,
                     disabled: bool,
                     eventKey: string | number,
                     href: string,
                     dataTestId: string
                     }]`,
-                },
-            },
         },
-        visibleItems: {
-            description: `Array of visible menu items. Each item contain:
+      },
+    },
+    visibleItems: {
+      description: `Array of visible menu items. Each item contain:
                            \n1.title* - content of menu item;
                            \n2.disabled - if true, the item is disabled;
                            \n3.eventKey - value passed to the onSelect handler, useful for identifying the selected menu item;
                            \n4.href - HTML href attribute corresponding to a.href;
                            \n5.dataTestId - Id of the item for testing;`,
-            table: {
-                type: {
-                    summary: `object`,
-                    detail: `[{
+      table: {
+        type: {
+          summary: `object`,
+          detail: `[{
                     title: string,
                     disabled: bool,
                     eventKey: string | number,
                     href: string,
                     dataTestId: string
                     }]`,
-                },
-            },
         },
-        isAdaptiveWidth: {
-            description: 'Determines if visible items should be rendered as dropdown menu',
+      },
+    },
+    isAdaptiveWidth: {
+      description: 'Determines if visible items should be rendered as dropdown menu',
+    },
+    onSelect: {
+      description: 'A callback fired when a item is selected',
+      action: 'select',
+    },
+    dataTestId: {
+      description: 'The id of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        onSelect: {
-            description: 'A callback fired when a item is selected',
-            action: 'select',
+      },
+    },
+    dataTestIdDropdown: {
+      description: 'The id of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        dataTestId: {
-            description: 'The it of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        dataTestIdDropdown: {
-            description: 'The it of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-    }}
-    component={Navigation}
+      },
+    },
+  }}
+  component={Navigation}
 />
 
 export const Template = (args) => <Navigation {...args} />;
@@ -105,32 +105,32 @@ export const Template = (args) => <Navigation {...args} />;
 ## Navigation
 
 <Canvas>
-    <Story
-        name="Demo"
-        height="15rem"
-        args={{
-            className: 'custom-nav',
-            dataTestId: 'test-nav-id',
-            dataTestIdDropdown: 'test-nav-dropdown-id',
-            defaultActiveKey: 'two',
-            dropdownTitle: 'More',
-            isAdaptiveWidth: false,
-            hiddenItems: [
-                { eventKey: 'five', title: 'item five' },
-                { eventKey: 'six', title: 'item six' },
-                { eventKey: 'seven', title: 'item seven' },
-                { eventKey: 'eight', title: 'item eight' },
-            ],
-            visibleItems: [
-                { eventKey: 'one', title: 'item one' },
-                { eventKey: 'two', title: 'item two' },
-                { eventKey: 'three', title: 'item three' },
-                { eventKey: 'four', title: 'item four' },
-            ],
-        }}>>
-        >
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Demo"
+    height="15rem"
+    args={{
+      className: 'custom-nav',
+      dataTestId: 'test-nav-id',
+      dataTestIdDropdown: 'test-nav-dropdown-id',
+      defaultActiveKey: 'two',
+      dropdownTitle: 'More',
+      isAdaptiveWidth: false,
+      hiddenItems: [
+        { eventKey: 'five', title: 'item five' },
+        { eventKey: 'six', title: 'item six' },
+        { eventKey: 'seven', title: 'item seven' },
+        { eventKey: 'eight', title: 'item eight' },
+      ],
+      visibleItems: [
+        { eventKey: 'one', title: 'item one' },
+        { eventKey: 'two', title: 'item two' },
+        { eventKey: 'three', title: 'item three' },
+        { eventKey: 'four', title: 'item four' },
+      ],
+    }}
+  >
+    > >{Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
@@ -138,17 +138,17 @@ export const Template = (args) => <Navigation {...args} />;
 ### Default
 
 <Canvas>
-    <Story name="Default" story={stories.Default} height="15rem" />
+  <Story name="Default" story={stories.Default} height="15rem" />
 </Canvas>
 
 ### With <b>More</b> button
 
 <Canvas>
-    <Story name="WithMoreDropdown" story={stories.WithMoreDropdown} height="15rem" />
+  <Story name="WithMoreDropdown" story={stories.WithMoreDropdown} height="15rem" />
 </Canvas>
 
 ### Has disabled items
 
 <Canvas>
-    <Story name="DisabledItems" story={stories.DisabledItems} height="15rem" />
+  <Story name="DisabledItems" story={stories.DisabledItems} height="15rem" />
 </Canvas>

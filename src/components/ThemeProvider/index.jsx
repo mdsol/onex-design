@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
-// eslint-disable-next-line import/no-unresolved
-import cssString from '../../scss/platform.scss';
-
-const Styled = styled.div`
-  ${cssString}
-`;
+import classNames from 'classnames';
+import './platform.css';
 
 const ThemeProvider = React.forwardRef((props, ref) => {
   const { children, className, dataTestId, id, ...accProps } = props;
 
+  const classes = classNames('onex-themeprovider', {
+    [className]: className,
+  });
+
   return (
-    <Styled {...accProps} ref={ref} className={className} data-test-id={dataTestId} id={id}>
+    <div {...accProps} ref={ref} className={classes} data-test-id={dataTestId} id={id}>
       {children}
-    </Styled>
+    </div>
   );
 });
 

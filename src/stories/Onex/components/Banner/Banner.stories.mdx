@@ -1,4 +1,4 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { Banner, Icon } from '../../../../components';
 import * as stories from './Banner.stories.jsx';
@@ -27,8 +27,7 @@ export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, defau
       },
     },
     icon: {
-      description:
-        'The icon element instead of default icon.',
+      description: 'The icon element instead of default icon.',
       options: Object.keys(icons),
       mapping: icons,
       control: {
@@ -36,7 +35,7 @@ export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, defau
         labels: {
           Star: 'Star',
           Stars: 'Star in round',
-          default: 'Set default icon'
+          default: 'Set default icon',
         },
       },
       table: {
@@ -85,7 +84,7 @@ export const icons = { Star: <Icon>star</Icon>, Stars: <Icon>stars</Icon>, defau
       },
     },
     dataTestId: {
-      description: 'The it of the component for test',
+      description: 'The id of the component for test',
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -103,6 +102,7 @@ export const Template = (args) => <Banner {...args} />;
 A banner is a prominent message with related actions.
 
 ### Banner details
+
 <Canvas>
   <Story
     name="Demo"
@@ -110,15 +110,17 @@ A banner is a prominent message with related actions.
       variant: 'info',
       className: 'c-demo-banner',
       dataTestId: 'demo-banner-id',
-      children: 'We’re making changes to our server and Data Center products, including the end of sale for new.',
+      children:
+        'We’re making changes to our server and Data Center products, including the end of sale for new.',
       linkHref: '#',
-      linkChildren: 'Learn more'
-    }}>
+      linkChildren: 'Learn more',
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Demo"/>
+<ArgsTable story="Demo" />
 
 ### Banner variants
 
@@ -129,7 +131,7 @@ The component has 3 variants such as "info", "warning", "error".
 Use <b>information</b> banner to show general product announcements, e.g., significant updates or releases.
 
 <Canvas>
-  <Story name="Info" story={stories.Info}/>
+  <Story name="Info" story={stories.Info} />
 </Canvas>
 
 ##### <i>warning</i>
@@ -137,7 +139,7 @@ Use <b>information</b> banner to show general product announcements, e.g., signi
 Use <b>warning</b> banners to provide info that some issue might happen in the nearest future or when a specific action is required from the user.
 
 <Canvas>
-  <Story name="Warning" story={stories.Warning}/>
+  <Story name="Warning" story={stories.Warning} />
 </Canvas>
 
 ##### <i>error</i>
@@ -145,5 +147,5 @@ Use <b>warning</b> banners to provide info that some issue might happen in the n
 Use <b>error</b> banner to inform the user about critical issues.
 
 <Canvas>
-  <Story name="Error" story={stories.Error}/>
+  <Story name="Error" story={stories.Error} />
 </Canvas>

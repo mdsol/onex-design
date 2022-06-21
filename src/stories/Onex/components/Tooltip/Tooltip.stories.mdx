@@ -1,6 +1,6 @@
-import {Story, Canvas, ArgsTable, Meta} from '@storybook/addon-docs';
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
-import {Tooltip, Badge} from '../../../../components';
+import { Tooltip, Badge } from '../../../../components';
 import * as stories from './Tooltip.stories.jsx';
 
 <Meta
@@ -86,7 +86,7 @@ import * as stories from './Tooltip.stories.jsx';
       },
     },
     dataTestId: {
-      description: 'The it of the component for test',
+      description: 'The id of the component for test',
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -113,7 +113,7 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
       variant: 'default',
       tooltipChildren: 'demo tooltip',
       className: 'onex-demo-tooltip',
-      delay: {show: 100, hide: 1000},
+      delay: { show: 100, hide: 1000 },
       defaultShow: false,
       dataTestId: 'demo-tooltip-id',
       trigger: 'hover',
@@ -128,34 +128,34 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
   </Story>
 </Canvas>
 
-<ArgsTable story="Demo"/>
+<ArgsTable story="Demo" />
 
 ### Tooltip variants
 
 <Canvas>
-  <Story name="Default" story={stories.Default}/>
+  <Story name="Default" story={stories.Default} />
 </Canvas>
 
 ### Tooltip placement
 
 <Canvas>
-  <Story name="Left" story={stories.Left}/>
-  <Story name="Top" story={stories.Top}/>
-  <Story name="Right" story={stories.Right}/>
-  <Story name="Bottom" story={stories.Bottom}/>
+  <Story name="Left" story={stories.Left} />
+  <Story name="Top" story={stories.Top} />
+  <Story name="Right" story={stories.Right} />
+  <Story name="Bottom" story={stories.Bottom} />
 </Canvas>
 
 ### Tooltip trigger
 
 <Canvas>
-  <Story name="Hover" story={stories.Hover}/>
-  <Story name="Focus" story={stories.Focus}/>
-  <Story name="Click" story={stories.Click}/>
+  <Story name="Hover" story={stories.Hover} />
+  <Story name="Focus" story={stories.Focus} />
+  <Story name="Click" story={stories.Click} />
 </Canvas>
 
 ### Tooltip delay
 
 <Canvas>
-  <Story name="ShowDelay1000ms" story={stories.ShowDelay1000ms}/>
-  <Story name="HideDelay2000ms" story={stories.HideDelay2000ms}/>
+  <Story name="ShowDelay1000ms" story={stories.ShowDelay1000ms} />
+  <Story name="HideDelay2000ms" story={stories.HideDelay2000ms} />
 </Canvas>

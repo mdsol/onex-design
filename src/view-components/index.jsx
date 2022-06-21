@@ -25,10 +25,12 @@ const updateQueryStringParameter = (uri, key, value) => {
 const ViewComponents = () => {
   const params = new URLSearchParams(window.location.search);
   const component = params.get('component');
-  const isStyled = params.get('styled');
+  // const isStyled = params.get('styled');
+  const isStyled = false;
+  const styled = false;
   const currentSelectOptions = selectOptions.filter((item) => item.value === component);
 
-  const [styled, setStyled] = useState(isStyled === 'true');
+  // const [styled, setStyled] = useState(isStyled === 'true');
   const [data, setData] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState(currentSelectOptions);
   const [componentName, setComponentName] = useState('');
@@ -106,11 +108,11 @@ const ViewComponents = () => {
     return setDynamicComponent(null);
   }, [componentName, styled]);
 
-  const handleSetStyledComponent = () => {
-    const newUrl = updateQueryStringParameter(window.location.href, 'styled', !styled);
-    window.history.pushState('', '', newUrl);
-    setStyled(!styled);
-  };
+  // const handleSetStyledComponent = () => {
+  //   const newUrl = updateQueryStringParameter(window.location.href, 'styled', !styled);
+  //   window.history.pushState('', '', newUrl);
+  //   setStyled(!styled);
+  // };
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ErrorBoundary>
@@ -122,7 +124,7 @@ const ViewComponents = () => {
             onSelect={(options) => setSelectedOptions(options)}
             options={selectOptions}
           />
-          <Check
+          {/* <Check
             id="check-isStyled"
             checked={styled}
             size="lg"
@@ -130,7 +132,7 @@ const ViewComponents = () => {
             onChange={handleSetStyledComponent}
           >
             Styled
-          </Check>
+          </Check> */}
         </div>
         {!isTable && !isTooltip && !isDataGrid && DynamicComponent && (
           <div className="wrapper">

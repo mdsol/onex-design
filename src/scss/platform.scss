@@ -2,11 +2,7 @@
 @use 'sass:math';
 @use 'sass:map';
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-
-/* google mu icons*/
-//@import '../../node_modules/@material-design-icons/font/round.css';
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Round');
+@import './fonts';
 
 .material-icons-round {
   font-family: 'Material Icons Round';
