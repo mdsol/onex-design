@@ -4,10 +4,13 @@ const pkg = require('./package.json');
 
 module.exports = {
   mode: 'production',
-  entry: ['./src/components/index.js'],
+  entry: {
+    index: './src/components/index.js',
+    themeProvider: './src/components/ThemeProvider/index.jsx'
+  },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'index.umd.js',
+    filename: '[name].umd.js',
     library: {
       name: pkg.name,
       type: 'umd',
