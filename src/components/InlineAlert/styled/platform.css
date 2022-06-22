@@ -9467,7 +9467,7 @@ progress {
 }
 .onex-inline-alert.alert.onex-alert.alert-success .alert-heading, .onex-inline-alert.alert.onex-alert.alert-warning .alert-heading, .onex-inline-alert.alert.onex-alert.alert-info .alert-heading, .onex-inline-alert.alert.onex-alert.alert-error .alert-heading {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .onex-inline-alert__size-sm.alert.onex-alert {
   padding: 0.75rem 1rem 0.75rem 2.75rem;
