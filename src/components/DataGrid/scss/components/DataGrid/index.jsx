@@ -54,6 +54,7 @@ DataGrid.propTypes = {
       desc: PropTypes.bool,
     }),
   ),
+  multiSort: PropTypes.bool,
   dataGridControlProps: DataGridControlTypes,
   customGridControl: PropTypes.element,
 };
@@ -65,6 +66,7 @@ DataGrid.defaultProps = {
   columns: [],
   rowsPerPageOptions: [],
   sortBy: [],
+  multiSort: false,
   dataGridControlProps: null,
   customGridControl: null,
 };

@@ -30,8 +30,25 @@
       margin: 0;
       padding: $onex-data-grid-table-header-th-padding-x $onex-data-grid-table-header-th-padding-y;
 
+      &:hover {
+        background-color: $onex-data-grid-table-header-background-color-hover;
+        color: $onex-data-grid-table-header-color-hover;
+      }
+
       span {
         color: $onex-data-grid-table-header-th-color;
+
+        &::selection {
+          background: transparent;
+        }
+
+        &::-moz-selection {
+          background: transparent;
+        }
+      }
+
+      &:hover span{
+        color: $onex-data-grid-table-header-color-hover;
       }
 
       &:hover {

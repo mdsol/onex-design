@@ -41,10 +41,6 @@ const dataGridSortBy = [
     id: 'id',
     desc: true,
   },
-  {
-    id: 'study',
-    desc: false,
-  },
 ];
 
 const GridControl = { title: 'Title' };
