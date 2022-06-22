@@ -75,6 +75,8 @@ const Dropzone = React.forwardRef(
               ...ref.current,
               ...dropzoneProps,
             };
+
+            console.log('LOOK IT HERE>>>>', ref.current);
           }
         }, [dropzoneProps]);
 

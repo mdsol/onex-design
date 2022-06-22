@@ -58,7 +58,7 @@ const FileComponent = ({
           <Icon>delete_outline</Icon>
         </Button>
       )}
-      {!isLoading && isInvalid && (
+      {!isLoading && isInvalid && buttonTitle && (
         <Button variant="secondary" size="sm" onClick={onHandleClick} {...buttonProps}>
           {buttonTitle}
         </Button>
@@ -88,14 +88,14 @@ export const FileComponentTypes = {
 FileComponent.propTypes = FileComponentTypes;
 
 FileComponent.defaultProps = {
-  name: '',
+  name: undefined,
   size: undefined,
   progressNumber: 0,
   isSuccess: false,
   isInvalid: false,
   errorMessage: undefined,
   isLoading: false,
-  buttonTitle: 'Button',
+  buttonTitle: undefined,
   buttonProps: {},
   progressProps: {},
   onCancel: () => {},

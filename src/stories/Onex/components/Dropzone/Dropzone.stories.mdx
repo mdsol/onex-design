@@ -77,7 +77,7 @@ import { Dropzone } from '../../../../components';
       },
     },
     getFilesFromEvent: {
-      description: 'Use this to provide a custom file aggregator. Argumentsevent: (DragEvent | Event) — A drag event or input change event (if files were selected via the file dialog)',
+      description: 'Use this to provide a custom file aggregator. Arguments event: (DragEvent | Event) — A drag event or input change event (if files were selected via the file dialog)',
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -273,24 +273,132 @@ export const Template = (args) => <Dropzone {...args} />;
 
 # Dropzone
 
-Dropzone component base on react-dropzone component. Full documentation of react-dropzone you can read on official resources.
+Dropzone base on <code>react-dropzone</code> component. Full documentation of react-dropzone you can read on official resources.
 
 Simple React hook to create a HTML5-compliant drag'n'drop zone for files.
 Documentation and examples at https://react-dropzone.js.org. Source code at https://github.com/react-dropzone/react-dropzone/.
 
-## Installation
-
+## Installation react-dropzone
 Install it from npm and include it in your React build process (using Webpack, Browserify, etc).
+
+<code>npm install --save react-dropzone</code><br/>
+or:<br/>
+<code>yarn add react-dropzone</code>
+
+## Usage
+
+Dropzone component has all react-dropzone's property. You can use every property which you need.
+To obtain the states of the component, you can use <code>ref</code> of Dropzone component. <code>ref.current</code> is object which has all this states.
+
+<b>react-dropzone states</b>
+<ul>
+  <li><b>acceptedFiles</b> - <code>Array&lt;File&gt;</code> success uploaded files</li>
+  <li><b>fileRejections</b> - <code>Array&lt;File&gt;</code> files uploaded with error</li>
+  <li><b>inputRef</b> - <code>ref</code> ref of react-dropzone input</li>
+  <li><b>isDragAccept</b> - <code>boolean</code> state when drag is accept</li>
+  <li><b>isDragActive</b> - <code>boolean</code> state when drag is active</li>
+  <li><b>isDragReject</b> - <code>boolean</code> state when drag is reject</li>
+  <li><b>isFileDialogActive</b> - <code>boolean</code> state when file dialog is active</li>
+  <li><b>isFocused</b> - <code>boolean</code> state when dropzone is focused</li>
+</ul>
+
+A file is a separate component that has its own properties. Therefore, if you need to transfer properties to a file component - pass them as object fields for each item in the array's files.
+
+<b>File's properties</b>
+<ul>
+  <li><b>name</b> - <code>type: string, default: undefined</code> file name</li>
+  <li><b>size</b> - <code>type: string, default: undefined</code> file size</li>
+  <li><b>progressNumber</b> - <code>type: number, default: 0</code> current percent of progress bar</li>
+  <li><b>isSuccess</b> - <code>type: boolean, default: false</code> if the file was successfully upload</li>
+  <li><b>isInvalid</b> - <code>type: boolean, default: false</code> if the file was rejected during uploading</li>
+  <li><b>errorMessage</b> - <code>type: string, default: undefined</code> text of error message (if you need for validation)</li>
+  <li><b>isLoading</b> - <code>type: boolean, default: false</code> state of uploading process file</li>
+  <li><b>buttonTitle</b> - <code>type: string, default: undefined</code> this button is displayed if the file was uploading with an error. If you do not need a button, do not pass the value in the property</li>
+  <li><b>buttonProps</b> - <code>type: object, default: {}</code> button property object. List of properties you can see in Button component docs</li>
+  <li><b>progressProps</b> - <code>type: object, default: {}</code> progressProps property object. List of properties you can see in ProgressBar component docs</li>
+  <li><b>onCancel</b> - <code>type: () => void, default: () => {}</code> function call back to cancel upload process (function doesn't have code for it you should write your own)</li>
+  <li><b>onDelete</b> - <code>type: () => void, default: () => {}</code> function call back to delete file from list (function doesn't have code for it you should write your own)</li>
+  <li><b>onHandleClick</b> - <code>type: () => void, default: () => {}</code> function call back to click button which is visible if the file was loaded with an error (function doesn't have code for it you should write your own)</li>
+</ul>
 
 ## Demo
 
 <Canvas>
-  <Story name="Demo">
+  <Story
+    name="Demo"
+       args={{
+         title: 'Select files or drop them here',
+         info: 'CSV, JSON, XLS up to 1 mb',
+         titleBtn: 'Upload files',
+         errorText: 'File type is not valid',
+         files: [{
+           name: 'loading.json',
+           size: '100MB',
+           isLoading: true,
+           progressNumber: 10,
+         }, {
+           name: 'success.csv',
+           size: '100MB',
+           isLoading: false,
+           isSuccess: true,
+         }, {
+           name: 'error.js',
+           size: '100MB',
+           isLoading: false,
+           isInvalid: true,
+           errorMessage: 'format not supported',
+           buttonTitle: 'Upload'
+         }]
+       }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
+
+## With upload files
+
+<Canvas>
+  <Story
+    name="Upload file"
+    args={{
+      files: [{
+        name: 'loading.json',
+        size: '100MB',
+        isLoading: true,
+        progressNumber: 10,
+      }, {
+        name: 'success.csv',
+        size: '100MB',
+        isLoading: false,
+        isSuccess: true,
+      }, {
+        name: 'error.js',
+        size: '100MB',
+        isLoading: false,
+        isInvalid: true,
+        errorMessage: 'format not supported',
+        buttonTitle: 'Upload'
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Dropzone error
+
+<Canvas>
+  <Story
+    name="Error uploading files"
+    args={{
+      isInvalid: true,
+      errorText: 'Something went wrong'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## interactive example
 
 <Canvas>
   <Story name="Dropzone example with files">
