@@ -35,7 +35,11 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
       }
     },
     sortBy: {
-      description: 'An array of sorting objects. Must be memoized. If there is more than one object in the array, multi-sorting will be enabled. Each sorting object should contain an id key with the corresponding column ID to sort by.',
+      description: 'An array of sorting objects. Must be memoized. If there is more than one object in the array, multi-sorting by default disabled. Each sorting object should contain an id key with the corresponding column ID to sort by.',
+    },
+    multiSort: {
+      description: 'By default multi-sorting ```disabled```',
+      control: 'boolean',
     },
     rowsPerPageOptions: {
       description: 'The array of quantities of rows per page',
@@ -99,70 +103,70 @@ Using this component requires installation packages : [react-table v7](https://w
       ],
       data: [
         {
-          id: 'M12345',
+          id: 'M121',
           study: 'United States 10',
           country: 'United States 10',
           category: 'Management 10',
           created: '26 Aug 2010',
         },
         {
-          id: 'M12346',
+          id: 'M122',
           study: 'United States 20',
           country: 'United States 20',
           category: 'Management 20',
           created: '25 Aug 2010',
         },
         {
-          id: 'M12347',
+          id: 'M123',
           study: 'United States 30',
           country: 'United States 30',
           category: 'Management 30',
           created: '24 Aug 2010',
         },
         {
-          id: 'M12348',
+          id: 'M124',
           study: 'United States 40',
           country: 'United States 40',
           category: 'Management 40',
           created: '23 Aug 2010',
         },
         {
-          id: 'M12349',
+          id: 'M125',
           study: 'United States 50',
           country: 'United States 50',
           category: 'Management 50',
           created: '22 Aug 2010',
         },
         {
-          id: 'M123455',
+          id: 'M126',
           study: 'United States 60',
           country: 'United States 60',
           category: 'Management 60',
           created: '21 Aug 2010',
         },
         {
-          id: 'M123477',
+          id: 'M127',
           study: 'United States 70',
           country: 'United States 70',
           category: 'Management 70',
           created: '19 Aug 2010',
         },
         {
-          id: 'M123416',
+          id: 'M128',
           study: 'United States 80',
           country: 'United States 80',
           category: 'Management 80',
           created: '18 Aug 2010',
         },
         {
-          id: 'M123414',
+          id: 'M129',
           study: 'United States 90',
           country: 'United States 90',
           category: 'Management 90',
           created: '17 Aug 2010',
         },
         {
-          id: 'M123415',
+          id: 'M130',
           study: 'United States 100',
           country: 'United States 100',
           category: 'Management 100',
@@ -172,7 +176,6 @@ Using this component requires installation packages : [react-table v7](https://w
       sortBy: [
         {
           id: 'id',
-          desc: true,
         }
       ],
       rowsPerPageOptions: [5, 10],

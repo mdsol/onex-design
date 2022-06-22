@@ -29,10 +29,6 @@ const dataGridSortBy = [
     id: 'id',
     desc: true,
   },
-  {
-    id: 'study',
-    desc: false,
-  },
 ];
 
 const range = (len) => Array.from({ length: len }, (v, i) => i);
