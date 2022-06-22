@@ -14177,6 +14177,14 @@
 .onex-themeprovider .onex-select .onex-select__option--text.onex-select__option--is-selected:hover {
   background-color: rgb(141, 202, 249);
 }
+.onex-themeprovider .onex-select .onex-select__option--subLabel {
+  display: flex;
+}
+.onex-themeprovider .onex-select .onex-select__option--subLabel .sub-label-text {
+  display: flex;
+  color: rgb(133, 140, 150);
+  font-size: 0.75rem;
+}
 .onex-themeprovider .onex-select .onex-select__group {
   padding: 0.25rem 0 0;
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
@@ -17430,6 +17438,14 @@
 }
 .onex-themeprovider .onex-select .onex-select__option--text.onex-select__option--is-selected:hover {
   background-color: rgb(141, 202, 249);
+}
+.onex-themeprovider .onex-select .onex-select__option--subLabel {
+  display: flex;
+}
+.onex-themeprovider .onex-select .onex-select__option--subLabel .sub-label-text {
+  display: flex;
+  color: rgb(133, 140, 150);
+  font-size: 0.75rem;
 }
 .onex-themeprovider .onex-select .onex-select__group {
   padding: 0.25rem 0 0;
@@ -28174,6 +28190,7 @@
   height: 1rem;
   padding-left: 0.25rem;
   vertical-align: bottom;
+  width: 0.75rem;
 }
 .onex-themeprovider .onex-data-grid__table-headers-sort-by-icons .sort-by-icon {
   font-size: 1rem;
@@ -28193,7 +28210,11 @@
 .onex-themeprovider .onex-data-grid__table-headers th span {
   color: rgb(103, 110, 122);
 }
+.onex-themeprovider .onex-data-grid__table-headers th:hover span {
+  color: rgb(26, 28, 30);
+}
 .onex-themeprovider .onex-data-grid__table-body tr {
+  background-color: rgb(255, 255, 255);
   border-radius: 0.5rem;
   border-top: 1px solid rgba(26, 28, 30, 0.1);
   border-bottom: 1px solid rgba(26, 28, 30, 0.1);
@@ -28268,6 +28289,35 @@
   background-color: rgb(255, 255, 255);
   width: 100%;
   font-family: "Noto Sans", sans-serif;
+}
+.onex-themeprovider .onex-data-grid-cell--bold {
+  font-weight: 600;
+}
+.onex-themeprovider .onex-data-grid-cell-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.onex-themeprovider .onex-data-grid-cell-content__leading-icon {
+  display: inline-flex;
+  max-width: 2rem;
+  max-height: 2rem;
+  overflow: hidden;
+}
+.onex-themeprovider .onex-data-grid-cell-content__trailing-icon {
+  display: inline-flex;
+  color: rgb(133, 140, 150);
+}
+.onex-themeprovider .onex-data-grid-cell-content__text {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.25rem 0 0.5rem;
+}
+.onex-themeprovider .onex-data-grid-cell-content__text .onex-data-grid-cell-content__caption {
+  color: rgb(103, 110, 122);
+}
+.onex-themeprovider .onex-data-grid-cell--caption .onex-data-grid-cell-content {
+  align-items: flex-start;
 }
 .onex-themeprovider .fade {
   transition: opacity 0.15s linear;
