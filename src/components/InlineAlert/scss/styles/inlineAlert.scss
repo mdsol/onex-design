@@ -8,8 +8,8 @@
         border-radius: 0.5rem;
 
         .alert-heading {
-            font-weight: 400;
-            font-size: 14px;
+            font-weight: $onex-inline-alert-head-font-weight;
+            font-size: $onex-inline-alert-head-font-size;
         }
     }
     &__size-sm.alert.onex-alert {

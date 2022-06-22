@@ -12,14 +12,14 @@
 
   &__input.form-control {
     border: none;
-    font-weight: 600;
-    line-height: 1rem;
+    font-weight: $onex-inline-edit-font-weight-600;
+    line-height: $onex-inline-edit-line-height-sm;
 
     &::placeholder {
       color: $secondary-550 !important;
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 1.25rem;
+      font-size: $onex-inline-edit-font-size-lg;
+      font-weight: $onex-inline-edit-font-weight-400;
+      line-height: $onex-inline-edit-line-height-lg;
     }
 
     &:focus {
@@ -46,13 +46,13 @@
   }
 
   &__input.form-control.form-control-sm {
-    font-size: 0.75rem;
-    line-height: 1rem;
+    font-size: $onex-inline-edit-font-size-sm;
+    line-height: $onex-inline-edit-line-height-sm;
   }
 
   &__input.form-control.form-control-lg {
-    font-size: 0.875rem;
-    line-height: 1rem;
+    font-size: $onex-inline-edit-font-size-lg;
+    line-height: $onex-inline-edit-line-height-sm;
   }
 
   &__input {
@@ -78,8 +78,8 @@
   position: relative;
 
   &--complete {
-    font-weight: 600;
-    line-height: 14px;
+    font-weight: $onex-inline-edit-font-weight-600;
+    line-height: $onex-inline-edit-line-height-field;
   }
 }
 

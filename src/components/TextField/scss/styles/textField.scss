@@ -7,9 +7,9 @@
 
   .form-label {
     color: $secondary-900;
-    font-size: $font-size-label;
-    line-height: $line-height-label;
-    font-weight: 400;
+    font-size: $tf-font-size-lg;
+    line-height: $tf-line-height-lg;
+    font-weight: $tf-font-weight-400;
     padding: 0 4px;
   }
 
@@ -72,8 +72,8 @@
     padding: 0 4px;
     display: inline-block;
     color: $secondary-500;
-    font-size: $font-size-sm;
-    line-height: $line-height-sm;
+    font-size: $tf-font-size-sm;
+    line-height: $tf-line-height-sm;
   }
 
   &__help--password.form-text {
