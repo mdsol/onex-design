@@ -1,7 +1,71 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Source } from '@storybook/addon-docs';
 
 <Meta title="1x" />
 
 # Welcome to 1x
 
-#
+## Installation
+
+The 1x package is hosted on Artifactory and scoped to the @mdsol organization; please see the [installation section](https://github.com/mdsol/onex-design#installing-the-package) on the GitHub repo page.
+
+# Required Software Stack
+
+React > 17.02 and it is listed as a peer dependency to avoid unecessary page weight.
+
+## Useage
+
+### Exiting Repos
+
+1. Ensure that [Sandman](https://github.com/mdsol/sandman) has been updated to version: 2.0.0-rc1
+2. You will need to isolate the CSS scoping than Sandman uses so that there will be no conflicts with the 1x css by adding the 'mcc-sandman' class(Name) to the areas that will not have any 1x components.
+3. Wrap the areas that will be using 1x components with the &lt;ThemeProvider /&gt; component, this will keeps 1x styling from leaking out.
+
+Here is an example of a simple application that uses both Sandman and 1x; you will more than likely need to fine tune and possibly duplicate some styles externally in order to get things perfect. Please reach out the the [#1x-design-system](https://mdsol.slack.com/messages/1x-design-system/) Slack channel for help.
+
+<Source
+  language="jsx"
+  format
+  code={`import { Button } from '@mdsol/onex-design';
+import ThemeProvider from '@mdsol/onex-design/themeProvider';
+export default () => {
+  return (
+    <>
+      <div className="mcc-sandman">
+        <Header>
+      </div>
+      <ThemeProvider>
+         <Button>Click Me</Button>
+      </ThemeProvider>
+      <div className="mcc-sandman">
+        <Footer>
+      </div>
+    </>
+  );
+};`}
+/>
+
+### New Repos
+
+Make sure to import the main css file globally (App.js(x) or index.js(x)):
+
+<Source language="jsx" format code={`import @mdsol/onex-design/platform.css;`} />
+
+You can then import the components that you need from @mdsol/onex-design. For layout, use the Container, Row and Cols from [React Bootstrap](https://react-bootstrap.github.io/layout/breakpoints/) - as well as any of the [Bootstrap utility classes](https://getbootstrap.com/docs/5.2/utilities/api/).
+
+<Source
+  language="jsx"
+  format
+  code={`import { Col, Container, Row } from 'react-bootstrap';
+import { Button } from '@mdsol/onex-design';
+export default () => {
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Button>Click Me</Button>
+        </Col>
+      </Row>
+    </Container>
+  );
+};`}
+/>

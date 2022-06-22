@@ -1,104 +1,103 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { TextArea } from '../../../../components';
 import * as stories from './TextArea.stories.jsx';
 
-
 <Meta
-    title="Onex/Forms/Textarea"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+  title="Onex/Forms/Textarea"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        label: {
-            description: 'The label content.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    label: {
+      description: 'The label content.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        errorMessage: {
-            description: 'The text of error message.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    errorMessage: {
+      description: 'The text of error message.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        helpText: {
-            description: 'The text with helpful information.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    helpText: {
+      description: 'The text with helpful information.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        value: {
-            description: 'The value of the textarea element, required for a controlled component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    value: {
+      description: 'The value of the textarea element, required for a controlled component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        placeholder: {
-            description: 'The short hint displayed in the textarea before the user enters a value.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    placeholder: {
+      description: 'The short hint displayed in the textarea before the user enters a value.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        readOnly: {
-            description: 'If true, the component is only for reading.'
+      },
+    },
+    readOnly: {
+      description: 'If true, the component is only for reading.',
+    },
+    disabled: {
+      description: 'If true, the component is disabled.',
+    },
+    isError: {
+      description: 'If true, the component has red border and show error message.',
+    },
+    required: {
+      description: 'If true, the component is required.',
+    },
+    maxNumLength: {
+      description: 'The maximum of symbols number.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        disabled: {
-            description: 'If true, the component is disabled.'
+      },
+    },
+    rows: {
+      description: 'The number of textarea rows.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        isError: {
-            description: 'If true, the component has red border and show error message.'
+      },
+    },
+    onChange: {
+      description: 'Callback fired when the value is changed.',
+    },
+    setError: {
+      description: 'Callback fired when the isError is changed.',
+    },
+    dataTestId: {
+      description: 'The id of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        required: {
-            description: 'If true, the component is required.'
-        },
-        maxNumLength: {
-            description: 'The maximum of symbols number.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        rows: {
-            description: 'The number of textarea rows.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-        onChange: {
-            description: 'Callback fired when the value is changed.'
-        },
-        setError: {
-            description: 'Callback fired when the isError is changed.'
-        },
-        dataTestId: {
-            description: 'The it of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
-        },
-    }}
-    component={TextArea}
+      },
+    },
+  }}
+  component={TextArea}
 />
 
 export const Template = (args) => <TextArea {...args} />;
@@ -110,17 +109,17 @@ The Textarea is a multi-line plain-text editing control, useful when you want to
 ### Textarea
 
 <Canvas>
-    <Story name="Default" story={stories.Default} />
-    <Story name="DefaultDisabled" story={stories.DefaultDisabled} />
-    <Story name="DefaultError" story={stories.DefaultError} />
+  <Story name="Default" story={stories.Default} />
+  <Story name="DefaultDisabled" story={stories.DefaultDisabled} />
+  <Story name="DefaultError" story={stories.DefaultError} />
 </Canvas>
 
 ### Textarea with label text
 
 <Canvas>
-    <Story name="Label" story={stories.Label} />
-    <Story name="LabelDisabled" story={stories.LabelDisabled} />
-    <Story name="LabelError" story={stories.LabelError} />
+  <Story name="Label" story={stories.Label} />
+  <Story name="LabelDisabled" story={stories.LabelDisabled} />
+  <Story name="LabelError" story={stories.LabelError} />
 </Canvas>
 
 ### Textarea with label and character counter
@@ -134,24 +133,25 @@ The Textarea is a multi-line plain-text editing control, useful when you want to
 ### Textarea with help text and label
 
 <Canvas>
-    <Story name="LabelHelpText" story={stories.LabelHelpText} />
-    <Story name="LabelHelpTextDisabled" story={stories.LabelHelpTextDisabled} />
-    <Story name="LabelHelpTextError" story={stories.LabelHelpTextError} />
+  <Story name="LabelHelpText" story={stories.LabelHelpText} />
+  <Story name="LabelHelpTextDisabled" story={stories.LabelHelpTextDisabled} />
+  <Story name="LabelHelpTextError" story={stories.LabelHelpTextError} />
 </Canvas>
 
 ### Read only textarea
 
 <Canvas>
-    <Story name="ReadOnly" story={stories.ReadOnly} />
+  <Story name="ReadOnly" story={stories.ReadOnly} />
 </Canvas>
 
 ### Textarea has 10 rows
 
 <Canvas>
-    <Story name="Rows" story={stories.Rows} />
+  <Story name="Rows" story={stories.Rows} />
 </Canvas>
 
 ### Demo
+
 <Canvas>
   <Story
     name="Demo"
@@ -162,10 +162,10 @@ The Textarea is a multi-line plain-text editing control, useful when you want to
       className: 'custom-textarea',
       dataTestId: 'text-textarea-id',
       value: 'Filled',
-    }}>
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
-

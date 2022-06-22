@@ -80,7 +80,7 @@
     align-items: stretch;
     box-sizing: border-box;
     border: $onex-select-control-border solid $secondary-900-opacity-20;
-    border-radius: $onex-select-control-border-radius!important;
+    border-radius: $onex-select-control-border-radius !important;
 
     &:hover {
       border-color: $secondary-900-opacity-50;
@@ -117,7 +117,7 @@
     .onex-material-icon,
     .material-icons-round {
       font-size: $icon-size-xlg;
-      color: $secondary-400
+      color: $secondary-400;
     }
   }
 
@@ -223,6 +223,16 @@
     }
   }
 
+  .onex-select__option--subLabel {
+    display: flex;
+
+    .sub-label-text {
+      display: flex;
+      color: $onex-select-option-sub-label-color;
+      font-size: $onex-select-option-sub-label-size;
+    }
+  }
+
   .onex-select__group {
     padding: 0.25rem 0 0;
     border-bottom: 1px solid $onex-select-menu-border-color;
@@ -245,58 +255,58 @@
     font-weight: 600;
   }
 
-    .onex-select__indicator-separator {
-        display: none;
-    }
+  .onex-select__indicator-separator {
+    display: none;
+  }
 
-    .onex-select__clear-indicator {
-        display: none;
-    }
+  .onex-select__clear-indicator {
+    display: none;
+  }
 
   .onex-select__control--menu-is-open .onex-select__indicator {
     transform: rotate(180deg);
   }
 
-    .onex-select__multi-value {
-      background-color: $secondary-500-opacity-01;
-      border-radius: $onex-select-multi-value-border-radius;
+  .onex-select__multi-value {
+    background-color: $secondary-500-opacity-01;
+    border-radius: $onex-select-multi-value-border-radius;
+    align-items: center;
+    padding: 2px 2px 2px 8px;
+
+    .onex-select__multi-value__label {
+      padding: 0;
+      margin-right: 4px;
+      font-size: $font-size-lg;
+      line-height: $line-height-lg;
+      color: $secondary-900;
+    }
+
+    .onex-select__multi-value__remove {
+      display: flex;
       align-items: center;
-      padding: 2px 2px 2px 8px;
+      justify-content: center;
+      width: $component-height-middle-sm;
+      height: $component-height-middle-sm;
+      padding: 0;
+      background-color: transparent;
+      color: $secondary-500;
 
-      .onex-select__multi-value__label {
-        padding: 0;
-        margin-right: 4px;
-        font-size: $font-size-lg;
-        line-height: $line-height-lg;
-        color: $secondary-900;
-      }
-
-      .onex-select__multi-value__remove {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      svg {
         width: $component-height-middle-sm;
         height: $component-height-middle-sm;
-        padding: 0;
-        background-color: transparent;
-        color: $secondary-500;
 
-        svg {
-          width: $component-height-middle-sm;
-          height: $component-height-middle-sm;
-
-          & path {
-            fill: $secondary-500;
-          }
-        }
-
-        .onex-material-icon,
-        .material-icons-round {
-          font-size: $component-height-middle-sm;
-          color: $secondary-400
+        & path {
+          fill: $secondary-500;
         }
       }
+
+      .onex-material-icon,
+      .material-icons-round {
+        font-size: $component-height-middle-sm;
+        color: $secondary-400;
+      }
     }
+  }
 }
 
 .onex-select--md {
@@ -320,7 +330,9 @@
     width: auto;
   }
 
-  & .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
+  &
+    .onex-select__control.onex-select__control--menu-is-open
+    .onex-select__indicator.onex-select__dropdown-indicator {
     padding-left: $onex-select-padding-x-md;
     padding-right: 0.25rem;
     width: auto;
@@ -361,7 +373,9 @@
     padding-right: $onex-select-padding-x-sm;
   }
 
-  & .onex-select__control.onex-select__control--menu-is-open .onex-select__indicator.onex-select__dropdown-indicator {
+  &
+    .onex-select__control.onex-select__control--menu-is-open
+    .onex-select__indicator.onex-select__dropdown-indicator {
     padding-left: $onex-select-padding-x-sm;
     padding-right: 0.25rem;
   }

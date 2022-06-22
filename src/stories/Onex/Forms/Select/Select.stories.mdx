@@ -1,156 +1,164 @@
-import { Story, Canvas, ArgsTable, Meta } from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
 import { Select } from '../../../../components';
 import * as stories from './Select.stories.jsx';
 
 <Meta
-    title="Onex/Forms/Select"
-    argTypes={{
-        className: {
-            description: 'Override or extend the styles applied to the component.',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+  title="Onex/Forms/Select"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        size: {
-            description: 'The size of the component',
+      },
+    },
+    size: {
+      description: 'The size of the component',
+    },
+    dataTestId: {
+      description: 'The id of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        dataTestId: {
-            description: 'The id of the component for test',
-            table: {
-                defaultValue: {
-                    summary: 'undefined',
-                },
-            }
+      },
+    },
+    options: {
+      description: "The array of select's options.",
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        options: {
-          description: 'The array of select\'s options.',
-          table: {
-            defaultValue: {
-                summary: 'undefined',
-            },
-            type: {
-              summary: 'Array({ value: string | number, label: string | number })'
-            }
-          }
+        type: {
+          summary:
+            'Array({ value: string | number, label: string | number, subLabel: string | number })',
         },
-        groupedOptions: {
-          description: 'The array of select\'s options with group.',
-          table: {
-            defaultValue: {
-              summary: 'undefined',
-            },
-            type: {
-              summary: 'Array({ label: string, options: Array({ value: string | number, label: string | number })})'
-            }
-          }
+      },
+    },
+    groupedOptions: {
+      description: "The array of select's options with group.",
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        isMulti: {
-          description: 'The option to select several values',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-          }
+        type: {
+          summary:
+            'Array({ label: string, options: Array({ value: string | number, label: string | number, subLabel: string | number })})',
         },
-        hideSelectedOptions: {
-          description: 'Hide the selected option from the menu',
-          table: {
-            defaultValue: {
-              summary: false,
-            },
-          }
+      },
+    },
+    isMulti: {
+      description: 'The option to select several values',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        isSearchable: {
-          description: 'Whether to enable search functionality',
-          table: {
-            defaultValue: {
-              summary: true,
-            },
-          }
+      },
+    },
+    hideSelectedOptions: {
+      description: 'Hide the selected option from the menu',
+      table: {
+        defaultValue: {
+          summary: false,
         },
-        closeMenuOnSelect: {
-          description: 'Close the select menu when the user selects an option',
-          table: {
-            defaultValue: {
-              summary: false,
-            },
-          }
+      },
+    },
+    isSearchable: {
+      description: 'Whether to enable search functionality',
+      table: {
+        defaultValue: {
+          summary: true,
         },
-        isDisabled: {
-          description: 'The component is disabled if the value is true',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-          }
+      },
+    },
+    closeMenuOnSelect: {
+      description: 'Close the select menu when the user selects an option',
+      table: {
+        defaultValue: {
+          summary: false,
         },
-        isInvalid: {
-          description: 'The component is red if the value is true',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-          }
+      },
+    },
+    isDisabled: {
+      description: 'The component is disabled if the value is true',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        errorMessage: {
-          description: 'The text for error case',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-          }
+      },
+    },
+    isInvalid: {
+      description: 'The component is red if the value is true',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        selectedValues: {
-          description: 'The array of selected values',
-          table: {
-              defaultValue: {
-                  summary: 'undefined',
-              },
-              type: {
-                summary: 'Array({ value: string | number, label: string | number })'
-              }
-          }
+      },
+    },
+    errorMessage: {
+      description: 'The text for error case',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        label: {
-          description: 'The label content.',
-          table: {
-            defaultValue: {
-              summary: 'undefined',
-            },
-          }
+      },
+    },
+    selectedValues: {
+      description: 'The array of selected values',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        helpText: {
-          description: 'The text with helpful information.',
-          table: {
-            defaultValue: {
-              summary: 'undefined',
-            },
-          }
+        type: {
+          summary: 'Array({ value: string | number, label: string | number })',
         },
-        isAsync: {
-            description: 'If the value is true the async search select is shown',
-            table: {
-                defaultValue: {
-                    summary: 'false',
-                },
-            }
+      },
+    },
+    label: {
+      description: 'The label content.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        onSelect: {
-          description: 'Callback fired when the option is select.',
+      },
+    },
+    helpText: {
+      description: 'The text with helpful information.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
         },
-        onLoadOptions: { description: 'async function which returns array of options' },
-        getOptionValue: { description: 'function returns the value of selected option in async Select' },
-        getOptionLabel: { description: 'function returns the label of selected option in async Select' },
-    }}
-    decorators={[(Story) => (
+      },
+    },
+    isAsync: {
+      description: 'If the value is true the async search select is shown',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    onSelect: {
+      description: 'Callback fired when the option is select.',
+    },
+    onLoadOptions: { description: 'async function which returns array of options' },
+    getOptionValue: {
+      description: 'function returns the value of selected option in async Select',
+    },
+    getOptionLabel: {
+      description: 'function returns the label of selected option in async Select',
+    },
+  }}
+  decorators={[
+    (Story) => (
       <div className="left-wrap" style={{ padding: '20px', height: '300px' }}>
         <Story />
       </div>
-    )]}
-    component={Select}
+    ),
+  ]}
+  component={Select}
 />
 
 export const Template = (args) => <Select {...args} />;
@@ -160,9 +168,11 @@ export const Template = (args) => <Select {...args} />;
 The entire icon set from React Select is approved for use.
 
 Start by installing <code>react-select</code>
+
 <code>yarn add react-select</code>
 
 Import the default export and render in your component:
+
 <code>import React, &#123; Component &#125; from 'react';
 <p>import Select from 'react-select';</p>
   const options = [<br />
@@ -171,9 +181,10 @@ Import the default export and render in your component:
   &ensp;&#123; value: 'vanilla', label: 'Vanilla' &#125;<br />
   ]<br />
 
-  const MyComponent = () => (
-    &#60;Select options=&#123;options} /&#62;
-  )
+const MyComponent = () => (
+&#60;Select options=&#123;options} /&#62;
+)
+
 </code>
 
 Full information you can read on official documentation: <a href="https://react-select.com/home" target="_blank" rel="noreferrer">react select docs</a>
@@ -200,19 +211,19 @@ The select component allows users to choose single or multiple options from a li
       ],
       isMulti: true,
       selectedValues: [],
-    }}>
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
-
 
 <ArgsTable story="Demo" />
 
 ### Select sizes
 
 <Canvas>
-    <Story name="Small" story={stories.Small} />
-    <Story name="Medium" story={stories.Medium} />
+  <Story name="Small" story={stories.Small} />
+  <Story name="Medium" story={stories.Medium} />
 </Canvas>
 
 ### MultiSelect
@@ -225,6 +236,12 @@ The select component allows users to choose single or multiple options from a li
 
 <Canvas>
   <Story height="450px" name="GroupOption" story={stories.GroupOption} />
+</Canvas>
+
+### Select with subLabels.
+
+<Canvas>
+  <Story height="450px" name="SubLabel" story={stories.SubLabel} />
 </Canvas>
 
 #### Select with checkbox in items
