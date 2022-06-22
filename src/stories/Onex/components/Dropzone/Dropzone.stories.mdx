@@ -1,8 +1,5 @@
-<!-- Dropzone.mdx -->
-
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import { Dropzone } from '../../../../components';
-import * as stories from './Dropzone.stories.jsx';
 
 <Meta
   title="Onex/Components/Dropzone"
@@ -10,17 +7,280 @@ import * as stories from './Dropzone.stories.jsx';
     className: {
       description: 'Name of the CSS class',
       control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
     },
+    title: {
+      description: 'Title of dropzone aria',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'Select files or drop them here',
+        },
+      },
+    },
+    info: {
+      description: 'Information about types files and size',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'CSV, JSON, XLS up to 1 mb',
+        },
+      },
+    },
+    titleBtn: {
+      description: 'Button title in dropzone aria',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'Upload files',
+        },
+      },
+    },
+    errorText: {
+      description: 'Error message for dropzone',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'File type is not valid',
+        },
+      },
+    },
+    isInvalid: {
+      description: 'Set to true to show error message in dropzone aria',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    autoFocus: {
+      description: 'Set to true to focus the root element on render',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    disabled: {
+      description: 'Enable/disable the dropzone',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    getFilesFromEvent: {
+      description: 'Use this to provide a custom file aggregator. Argumentsevent: (DragEvent | Event) — A drag event or input change event (if files were selected via the file dialog)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    maxFiles: {
+      description: 'Maximum accepted number of files The default value is 0 which means there is no limitation to how many files are accepted.',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '0',
+        },
+      },
+    },
+    maxSize: {
+      description: 'Maximum file size (in bytes)',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: 'Infinity',
+        },
+      },
+    },
+    minSize: {
+      description: 'Minimum file size (in bytes)',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '0',
+        },
+      },
+    },
+    multiple: {
+      description: 'Allow drag \'n\' drop (or selection from the file dialog) of multiple files',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    files: {
+      description: 'List of files uploaded to dropzone',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary: 'Array({ name: string, size: string, progressNumber: number, isSuccess: boolean, isInvalid: boolean, errorMessage: string, isLoading: boolean, buttonTitle: string, buttonProps: object, progressProps: object, onCancel: func, onDelete: func, onHandleClick: func })'
+        }
+      }
+    },
+    noClick: {
+      description: 'If true, disables click to open the native file selection dialog',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    noDrag: {
+      description: 'If true, disables drag \'n\' drop',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    noDragEventsBubbling: {
+      description: 'If true, stops drag event propagation to parents',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    noKeyboard: {
+      description: 'If true, disables SPACE/ENTER to open the native file selection dialog. Note that it also stops tracking the focus state.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    onDragEnter: {
+      description: 'Cb for when the dragenter event occurs. Arguments event: DragEvent',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDragLeave: {
+      description: 'Cb for when the dragleave event occurs. Arguments event: DragEvent',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDragOver: {
+      description: 'Cb for when the dragover event occurs. Arguments event: DragEvent',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDropRejected: {
+      description: 'Cb for when the drop event occurs. Note that if no files are rejected, this callback is not invoked. Arguments fileRejections: Array.&lt;FileRejection&gt;event: (DragEvent | Event)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDropAccepted: {
+      description: 'Cb for when the drop event occurs. Note that if no files are accepted, this callback is not invoked. Arguments files: Array.&lt;File&gt;event: (DragEvent | Event)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onError: {
+      description: 'Cb for when there\'s some error from any of the promises. Arguments error: Error',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDrop: {
+      description: 'Cb for when the drop event occurs. Note that this callback is invoked after the getFilesFromEvent callback is done. Arguments acceptedFiles: Array.&lt;File&gt;fileRejections: Array.&lt;FileRejection&gt;event: (DragEvent | Event) — A drag event or input change event (if files were selected via the file dialog)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onFileDialogCancel: {
+      description: 'Cb for when closing the file dialog with no selection',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onFileDialogOpen: {
+      description: 'Cb for when opening the file dialog',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    preventDropOnDocument: {
+      description: 'If false, allow dropped items to take over the current browser window',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    useFsAccessApi: {
+      description: 'Set to true to use the https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API to open the file picker instead of using an &lt;input type="file"&gt; click event.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    validator: {
+      description: 'Custom validation function. It must return null if there\'s no errors. Arguments file: File Returns (FileError | Array.&lt;FileError&gt; | null)',
+      table: {
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+    }
   }}
   component={Dropzone}
 />
 
-export const DropzoneTemplate = (args) => <Dropzone {...args} />;
+export const Template = (args) => <Dropzone {...args} />;
 
 # Dropzone
 
-An avatar is a graphical representation of a user and typically appears in list and card views,
-along side a user's information and/or content that they have created.
+Dropzone component base on react-dropzone component. Full documentation of react-dropzone you can read on official resources.
+
+Simple React hook to create a HTML5-compliant drag'n'drop zone for files.
+Documentation and examples at https://react-dropzone.js.org. Source code at https://github.com/react-dropzone/react-dropzone/.
+
+## Installation
+
+Install it from npm and include it in your React build process (using Webpack, Browserify, etc).
 
 ## Usage
 
@@ -28,18 +288,36 @@ along side a user's information and/or content that they have created.
 ## Demo
 
 <Canvas>
-  <Story
-    name="Demo"
-    args={{
-      className: 'custom-avatar',
-      size: 'lg',
-      children: <Icon>face</Icon>,
-      hoverDisabled: false,
-      dataTestId: 'test-avatar-id',
-    }}
-  >
-    {DropzoneTemplate.bind({})}
+  <Story name="Demo">
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Demo" />
+
+<Canvas>
+  <Story name="Default">
+    {() => {
+      const dropZoneRef = React.useRef(null);
+      const [attachedFiles, setAttachedFiles] = React.useState([]);
+
+      const handleOnDrop = (files) => {
+        setAttachedFiles(
+          files.map((file) => ({
+            name: file.name,
+            size: file.size,
+            isSuccess: true,
+          })),
+        );
+      };
+
+      return (
+        <>
+          <div>
+            <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
