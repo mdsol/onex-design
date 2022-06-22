@@ -69,11 +69,13 @@ const Dropzone = React.forwardRef(
     >
       {(dropzoneProps) => {
         useEffect(() => {
-          // eslint-disable-next-line no-param-reassign
-          ref.current = {
-            ...ref.current,
-            ...dropzoneProps,
-          };
+          if (ref?.current) {
+            // eslint-disable-next-line no-param-reassign
+            ref.current = {
+              ...ref.current,
+              ...dropzoneProps,
+            };
+          }
         }, [dropzoneProps]);
 
         return (

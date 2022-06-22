@@ -282,9 +282,6 @@ Documentation and examples at https://react-dropzone.js.org. Source code at http
 
 Install it from npm and include it in your React build process (using Webpack, Browserify, etc).
 
-## Usage
-
-
 ## Demo
 
 <Canvas>
@@ -296,21 +293,23 @@ Install it from npm and include it in your React build process (using Webpack, B
 <ArgsTable story="Demo" />
 
 <Canvas>
-  <Story name="Default">
+  <Story name="Dropzone example with files">
     {() => {
       const dropZoneRef = React.useRef(null);
       const [attachedFiles, setAttachedFiles] = React.useState([]);
-
-      const handleOnDrop = (files) => {
-        setAttachedFiles(
-          files.map((file) => ({
-            name: file.name,
-            size: file.size,
-            isSuccess: true,
-          })),
-        );
+      const onDeleteFile = (fileInfo, files) => {
+        const filteredFiles = files.filter(file => file.name !== fileInfo.name && file.size !== fileInfo.size)
+        setAttachedFiles(getFileList(filteredFiles));
       };
-
+      const getFileList = (files) => files.map((file) => ({
+        name: file.name,
+        size: file.size,
+        isSuccess: true,
+        onDelete: () => onDeleteFile(file, files),
+      }));
+      const handleOnDrop = (files) => {
+        setAttachedFiles(getFileList(files));
+      };
       return (
         <>
           <div>
