@@ -1,5 +1,12 @@
 {
-  "presets": ["@babel/preset-env", ["@babel/preset-react", { "runtime": "automatic" }]],
+  "presets": [
+    ["@babel/preset-env", {
+      "include": [
+        "transform-spread",
+        "proposal-object-rest-spread"
+      ]
+    }],
+    ["@babel/preset-react", { "runtime": "automatic" }]],
   "plugins": [
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     ["@babel/plugin-proposal-private-methods", { "loose": true }],
