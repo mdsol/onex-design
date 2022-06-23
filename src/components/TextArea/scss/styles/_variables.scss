@@ -19,8 +19,8 @@ $text-area-max-width: 31.25rem;
 $text-area-opacity: 0.4;
 
 $text-area-font-family: $font-family;
-$text-area-font-size: 0.875rem;
-$text-area-line-height: 1.25rem;
+$text-area-font-size: $font-size-label;
+$text-area-line-height: $line-height-label;
 $text-area-border-radius: $component-border-radius-lg;
 
 $text-area-font-size-form-text: 0.75rem;

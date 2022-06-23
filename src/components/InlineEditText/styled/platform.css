@@ -8646,7 +8646,7 @@ progress {
 .col-form-label-sm {
   padding-top: calc(0.375rem + 1px);
   padding-bottom: calc(0.375rem + 1px);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .form-text {
@@ -8660,7 +8660,7 @@ progress {
   width: 100%;
   padding: 0.375rem 0.5rem;
   font-family: "Noto Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
   color: rgb(26, 28, 30);
@@ -8765,7 +8765,7 @@ progress {
 .form-control-sm {
   min-height: 2rem;
   padding: 0.375rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   border-radius: 0.375rem;
 }
 .form-control-sm::file-selector-button {
@@ -9147,7 +9147,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   padding: 0.375rem 0.75rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -9172,7 +9172,7 @@ textarea.form-control-lg {
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn {
   padding: 0.375rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   border-radius: 0.375rem;
 }
 
@@ -9938,7 +9938,7 @@ textarea.form-control-lg {
 }
 .onex-text-field--complete {
   font-weight: 600;
-  line-height: 14px;
+  line-height: 1.25rem;
 }
 
 .status-buttons {
@@ -10233,7 +10233,7 @@ textarea.form-control-lg {
 }
 .onex-text-field .form-control.form-control-sm {
   height: 2rem;
-  line-height: 1.25rem;
+  line-height: 1rem;
 }
 .onex-text-field .form-control.form-control-sm:invalid, .onex-text-field .form-control.form-control-sm.is-invalid {
   padding-right: 0.5rem;
