@@ -1,0 +1,154 @@
+.onex-dropzone {
+  display: inline-flex;
+  flex-direction: column;
+
+  &__area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: $onex-dropzone-width;
+    height: $onex-dropzone-height;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px dashed $onex-dropzone-border-color;
+    background-color: $onex-dropzone-bg-color;
+
+    &:hover {
+      border-color: $onex-dropzone-border-hover-color;
+      background-color: $onex-dropzone-bg-hover-color;
+    }
+  }
+
+  .onex-dropzone__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $onex-dropzone-icon-width;
+    height: $onex-dropzone-icon-height;
+    border-radius: 100%;
+    background-color: $onex-dropzone-icon-bg-color;
+
+    .onex-dropzone__icon-elem {
+      font-size: $onex-dropzone-icon-size;
+      color: $onex-dropzone-icon-color;
+    }
+  }
+
+  .onex-dropzone__title,
+  .onex-dropzone__info {
+    font-size: $font-size-h5;
+    line-height: $line-height-h5;
+    text-align: center;
+  }
+
+  .onex-dropzone__title {
+    color: $onex-dropzone-title-color;
+  }
+
+  .onex-dropzone__info {
+    color: $onex-dropzone-info-color;
+  }
+
+  &__area--error {
+    border-color: $onex-dropzone-border-error-color;
+    background-color: $onex-dropzone-bg-error-color;
+
+    .onex-dropzone__title {
+      color: $onex-dropzone-title-error-color;
+    }
+
+    .onex-dropzone__icon {
+      background-color: transparent;
+      width: auto;
+      height: auto;
+
+      .onex-dropzone__icon-elem {
+        color: $onex-dropzone-error-icon-color;
+      }
+    }
+  }
+}
+
+// file's styles
+
+.onex-dropzone {
+  &__files-area {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+
+    .onex-dropzone {
+      &__file {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: $onex-dropzone-file-width;
+        height: $onex-dropzone-file-height;
+        border: 1px solid $onex-dropzone-file-border-color;
+        background-color: $white;
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.75rem;
+      }
+
+      &__file-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: $onex-dropzone-file-icon-color;
+      }
+
+      &__file-body {
+        width: 100%;
+      }
+
+      &__file-title {
+        font-size: $font-size-label;
+        line-height: $line-height-label;
+        font-weight: $font-weight-600;
+        color: $onex-dropzone-file-title-color;
+      }
+
+      &__file-size {
+        font-size: $font-size-caption;
+        line-height: $line-height-caption;
+        color: $onex-dropzone-file-subtitle-color;
+      }
+
+      &__file-process-block {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.25rem;
+      }
+
+      &__file--error {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+        color: $onex-dropzone-file-error-color
+      }
+
+      &__file-error-icon,
+      &__file--success {
+        font-size: $onex-dropzone-file-icon-size;
+      }
+
+      &__file-error-message {
+        font-size: $font-size-caption;
+        line-height: $line-height-caption;
+      }
+
+      &__file--success {
+        color: $onex-dropzone-file-success-color;
+      }
+
+      &__file-action {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+}

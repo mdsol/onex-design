@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 /* google mu icons*/
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Round");
-.onex-themeprovider { /* fonts */
+.onex-themeprovider {
+  /* fonts */
   /* fonts */
   @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap");
   /* google mu icons*/
@@ -68,7 +69,8 @@
   font-family: "Material Icons Round";
   font-weight: normal;
   font-style: normal;
-  font-size: 1.25rem; /* Preferred icon size */
+  font-size: 1.25rem;
+  /* Preferred icon size */
   color: inherit;
   display: inline-block;
   line-height: 1;
@@ -37689,6 +37691,130 @@
 }
 .onex-themeprovider .onex-inline-alert__size-sm.alert.onex-alert {
   padding: 0.75rem 1rem 0.75rem 2.75rem;
+}
+.onex-themeprovider .onex-dropzone {
+  display: inline-flex;
+  flex-direction: column;
+}
+.onex-themeprovider .onex-dropzone__area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 30rem;
+  height: 15rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px dashed rgba(26, 28, 30, 0.2);
+  background-color: rgba(103, 110, 122, 0.1);
+}
+.onex-themeprovider .onex-dropzone__area:hover {
+  border-color: rgba(26, 28, 30, 0.5);
+  background-color: rgba(103, 110, 122, 0.25);
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  background-color: rgba(103, 110, 122, 0.1);
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__icon .onex-dropzone__icon-elem {
+  font-size: 2rem;
+  color: rgb(133, 140, 150);
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__title,
+.onex-themeprovider .onex-dropzone .onex-dropzone__info {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__title {
+  color: rgb(26, 28, 30);
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__info {
+  color: rgb(103, 110, 122);
+}
+.onex-themeprovider .onex-dropzone__area--error {
+  border-color: rgb(217, 21, 34);
+  background-color: rgb(255, 236, 238);
+}
+.onex-themeprovider .onex-dropzone__area--error .onex-dropzone__title {
+  color: rgb(217, 21, 34);
+}
+.onex-themeprovider .onex-dropzone__area--error .onex-dropzone__icon {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+}
+.onex-themeprovider .onex-dropzone__area--error .onex-dropzone__icon .onex-dropzone__icon-elem {
+  color: rgb(217, 21, 34);
+}
+.onex-themeprovider .onex-dropzone__files-area {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30rem;
+  height: 3.5rem;
+  border: 1px solid rgba(26, 28, 30, 0.2);
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  color: rgb(103, 110, 122);
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-body {
+  width: 100%;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-title {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: rgb(26, 28, 30);
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-size {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(103, 110, 122);
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-process-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--error {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: rgb(217, 21, 34);
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-error-icon, .onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--success {
+  font-size: 1rem;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-error-message {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--success {
+  color: rgb(0, 126, 76);
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-action {
+  margin-left: 0.75rem;
 }
 .onex-themeprovider .accordion-button {
   position: relative;
