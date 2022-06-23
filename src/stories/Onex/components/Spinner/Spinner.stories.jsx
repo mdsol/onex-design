@@ -22,7 +22,7 @@ export default {
 
 const Template = (args) => <Spinner {...args} />;
 
-export const BorderAnimation = Template.bind({});
+export const Demo = Template.bind({});
 
 export const Small = Template.bind({});
 
