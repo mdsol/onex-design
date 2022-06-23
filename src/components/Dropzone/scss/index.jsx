@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/named
 import { FileComponentTypes } from './components/FileItem';
-import DropZoneAria from './components/DropZoneAria';
+import DropzoneAria from './components/DropzoneAria';
 
 const Dropzone = React.forwardRef(
   (
@@ -81,7 +81,7 @@ const Dropzone = React.forwardRef(
         }, [dropzoneProps]);
 
         return (
-          <DropZoneAria
+          <DropzoneAria
             className={className}
             isInvalid={isInvalid}
             title={title}

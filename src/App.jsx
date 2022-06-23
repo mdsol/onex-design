@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import ViewComponents from './view-components';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon, DropZone, } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone } from './components';
 import ThemeProvider from './components/ThemeProvider';
 
 // import './scss/platform.scss';
@@ -145,7 +145,7 @@ const DevExamples = () => {
   return (
     <div className="p-5">
       <div style={{ padding: '20px', minHeight: '300px' }}>
-        <DropZone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
+        <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
       </div>
       <div>
         <Select
@@ -243,7 +243,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('devMode');
+  const [currentTab, setCurrentTab] = useState('testMode');
 
   useEffect(() => {
     if (currentTab === 'testMode') {

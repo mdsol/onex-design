@@ -4,7 +4,7 @@ import Icon from '../../../Icon/scss';
 import Button from '../../../Buttons/scss';
 import FileComponent, { FileComponentTypes } from './FileItem';
 
-const DropZoneAria = ({
+const DropzoneAria = ({
   className,
   isInvalid,
   title,
@@ -50,7 +50,7 @@ const DropZoneAria = ({
   );
 };
 
-DropZoneAria.propTypes = {
+DropzoneAria.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   info: PropTypes.string,
@@ -63,7 +63,7 @@ DropZoneAria.propTypes = {
   open: PropTypes.func,
 };
 
-DropZoneAria.defaultProps = {
+DropzoneAria.defaultProps = {
   className: undefined,
   title: undefined,
   info: undefined,
@@ -76,4 +76,4 @@ DropZoneAria.defaultProps = {
   open: undefined,
 };
 
-export default DropZoneAria;
+export default DropzoneAria;
