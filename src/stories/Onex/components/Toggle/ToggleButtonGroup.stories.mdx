@@ -60,6 +60,39 @@ export const ToggleButtonGroupTemplate = (args) => <ToggleButtonGroup {...args}/
 To emphasize groups of related Toggle buttons, a group should share a common container.
 The ```ToggleButtonGroup``` controls the selected state of its child buttons when given its own ```value``` prop.
 
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      dataTestId: 'test-toggle-button-group-id',
+      defaultValue: 1,
+      children: (
+        toggleButtonItems.map(({ id, name, children, value }) => (
+            <ToggleButton
+              key={`togglebuttongroup-demo-${id}`}
+              id={`toggle-btn-group-demo-${id}`}
+              name={name}
+              value={value}
+            >
+              {children}
+            </ToggleButton>
+          ))
+      ),
+      className: 'custom-toggle-button-group',
+      name: 'toggle-button-group-demo',
+      size: 'sm',
+      type: 'checkbox',
+      variant: 'tab',
+      vertical: false,
+    }}
+  >
+    {ToggleButtonGroupTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Style
 
 ### Sizes
@@ -93,38 +126,3 @@ The buttons can be stacked vertically.
 <Canvas>
   <Story name="Vertical" story={stories.Vertical} />
 </Canvas>
-
-
-
-### Demo
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      dataTestId: 'test-toggle-button-group-id',
-      defaultValue: 1,
-      children: (
-        toggleButtonItems.map(({ id, name, children, value }) => (
-            <ToggleButton
-              key={`togglebuttongroup-demo-${id}`}
-              id={`toggle-btn-group-demo-${id}`}
-              name={name}
-              value={value}
-            >
-              {children}
-            </ToggleButton>
-          ))
-      ),
-      className: 'custom-toggle-button-group',
-      name: 'toggle-button-group-demo',
-      size: 'sm',
-      type: 'checkbox',
-      variant: 'tab',
-      vertical: false,
-    }}
-  >
-    {ToggleButtonGroupTemplate.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

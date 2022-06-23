@@ -88,15 +88,6 @@ export default {
   },
 };
 
-const Template = (props) => <ProgressBar {...props} />;
-
-export const Label = Template.bind({});
-
-Label.args = {
-  ...defaultProps,
-  now: 60,
-};
-
 const variantProgressBars = (args) => {
   const now = 10;
   const props = {

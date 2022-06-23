@@ -286,33 +286,6 @@ export const OffcanvasTemplate = (args) => <Offcanvas {...args} />;
 # Offcanvas
 Build hidden sidebars into your project for navigation, shopping carts, and more.
 
-### Different Actions Buttons
-You can have different btns in your offcanvas footer, if you use link props - its have high priority and will be onli link btn, if not, by default you have only Primary Action Btn, but if you need, you can use secondaryActionFc and secondaryActionText props for add secondary btn.
-
-<Canvas>
-  <Story name="OnlyPrimaryBtn(default)" story={stories.OnlyPrimaryBtn} />
-  <Story name="PrimaryAndSecondaryBtns" story={stories.PrimaryAndSecondaryBtns} />
-  <Story name="LinkBtn" story={stories.LinkBtn} />
-</Canvas>
-
-### Badge for title
-Also you can add badge for title in offcanvas window, just use badge prop.
-
-<Canvas>
-  <Story name="Variant with badge" story={stories.BadgeVariant} />
-</Canvas>
-
-### Backdrop
-Scrolling the ```<body>``` element is disabled when an offcanvas and its backdrop are visible.
-Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``` prop to toggle the backdrop.
-
-<Canvas>
-    <Story name="EnableBackdrop" story={stories.EnableBackdrop} />
-    <Story name="DisableBackdrop" story={stories.DisableBackdrop} />
-    <Story name="EnableScrolling" story={stories.EnableScrolling} />
-    <Story name="EnableScrollingBackdrop" story={stories.EnableScrollingBackdrop} />
-</Canvas>
-
 ## Demo
 
 <Canvas>
@@ -339,3 +312,30 @@ Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``
 </Canvas>
 
 <ArgsTable story="Demo" />
+
+### Different Actions Buttons
+You can have different btns in your offcanvas footer, if you use link props - its have high priority and will be onli link btn, if not, by default you have only Primary Action Btn, but if you need, you can use secondaryActionFc and secondaryActionText props for add secondary btn.
+
+<Canvas>
+  <Story name="OnlyPrimaryBtn(default)" story={stories.OnlyPrimaryBtn} />
+  <Story name="PrimaryAndSecondaryBtns" story={stories.PrimaryAndSecondaryBtns} />
+  <Story name="LinkBtn" story={stories.LinkBtn} />
+</Canvas>
+
+### Badge for title
+Also you can add badge for title in offcanvas window, just use badge prop.
+
+<Canvas>
+  <Story name="Variant with badge" story={stories.BadgeVariant} />
+</Canvas>
+
+### Backdrop
+Scrolling the ```<body>``` element is disabled when an offcanvas and its backdrop are visible.
+Use the ```scroll``` prop to toggle ```<body>``` scrolling and the ```backdrop``` prop to toggle the backdrop.
+
+<Canvas>
+    <Story name="EnableBackdrop" story={stories.EnableBackdrop} />
+    <Story name="DisableBackdrop" story={stories.DisableBackdrop} />
+    <Story name="EnableScrolling" story={stories.EnableScrolling} />
+    <Story name="EnableScrollingBackdrop" story={stories.EnableScrollingBackdrop} />
+</Canvas>

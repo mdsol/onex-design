@@ -121,10 +121,33 @@ import * as stories from './Toast.stories.jsx';
 
 export const Template = (args) => <Toast {...args} />;
 
-## Toast
+# Toast
 
 A toast is used for confirmations, alerts, and acknowledgments that require minimal user interaction, often displayed using a snackbar group.
 Toasts appear at the bottom right of the screen and overlay any content.
+
+## Demo
+
+<Canvas>
+  <Story
+    height="12rem"
+    name="Demo"
+    position="relative"
+    args={{
+      id: 'demo-toast',
+      variant: 'info',
+      className: 'c-demo-toast',
+      show: true,
+      dataTestId: 'demo-toast-id',
+      header: 'Info banner header',
+      children: 'Example of an info banner message.',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
 
 ### Toast variants
 
@@ -153,26 +176,3 @@ The component has 4 variants such as "info", "success", "warning", "error".
 <Canvas>
   <Story name="Error" story={stories.Error} height="12rem" position="relative" />
 </Canvas>
-
-### Toast details
-
-<Canvas>
-  <Story
-    height="12rem"
-    name="Demo"
-    position="relative"
-    args={{
-      id: 'demo-toast',
-      variant: 'info',
-      className: 'c-demo-toast',
-      show: true,
-      dataTestId: 'demo-toast-id',
-      header: 'Info banner header',
-      children: 'Example of an info banner message.',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

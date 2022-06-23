@@ -127,6 +127,23 @@ export const AlertTemplate = (args) => <Alert {...args} />;
 
 Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
 
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      title: 'This is a demo warning alert!',
+      variant: 'warning',
+      show: true,
+    }}
+  >
+    {AlertTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Examples
 
 Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight variants.
@@ -150,20 +167,3 @@ Alerts can contain whatever content you like. Headers, paragraphs, dividers, go 
 <Canvas>
   <Story name="AdditionalContent" story={stories.AdditionalContent} />
 </Canvas>
-
-## Demo
-
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      title: 'This is a demo warning alert!',
-      variant: 'warning',
-      show: true,
-    }}
-  >
-    {AlertTemplate.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

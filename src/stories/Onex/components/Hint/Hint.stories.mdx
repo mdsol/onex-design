@@ -60,6 +60,25 @@ export const Template = (args) => <Hint {...args} />;
 
 Hint informs the user about important information related to an action.
 
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      variant: 'info',
+      className: 'c-demo-Hint',
+      dataTestId: 'demo-Hint-id',
+      children: 'Last reforecast was run 01/10/2021, 2:45 PM, by John Doe.',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+
 ### Hint variants
 
 The component has 4 variants such as "info", "success", "warning", "error".
@@ -95,21 +114,3 @@ Error hint highlights critical errors.
 <Canvas>
   <Story name="Error" story={stories.Error} />
 </Canvas>
-
-### Hint details
-
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      variant: 'info',
-      className: 'c-demo-Hint',
-      dataTestId: 'demo-Hint-id',
-      children: 'Last reforecast was run 01/10/2021, 2:45 PM, by John Doe.',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />
