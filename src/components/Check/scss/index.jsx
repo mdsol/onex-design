@@ -41,7 +41,7 @@ const Check = React.forwardRef((props, ref) => {
           type={type}
           id={id}
           disabled={disabled}
-          checked={checked}
+          defaultChecked={checked}
           value={value}
           data-indeterminate={indeterminate}
           className={classNames({ indeterminate })}
