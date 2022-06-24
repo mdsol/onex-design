@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Icon from '../../../Icon/scss';
 import ProgressBar from '../../../ProgressBar/scss';
 import Button from '../../../Buttons/scss';
@@ -10,13 +11,13 @@ const FileComponent = ({
   isSuccess,
   isInvalid,
   errorMessage,
+  successMessage,
   isLoading,
-  buttonTitle,
   buttonProps,
   progressProps,
   onCancel,
   onDelete,
-  onHandleClick,
+  onReload,
 }) => (
   <div className="onex-dropzone__file">
     <div className="onex-dropzone__file-icon">
@@ -24,31 +25,47 @@ const FileComponent = ({
     </div>
     <div className="onex-dropzone__file-body">
       {name && <span className="onex-dropzone__file-title">{name}</span>}
-      <div className="onex-dropzone__file-process-block">
+      <div className="onex-dropzone__file-status-block">
         {size && <span className="onex-dropzone__file-size">{size}</span>}
-        {isSuccess && !isLoading && (
-          <Icon className="onex-dropzone__file--success">check_circle</Icon>
-        )}
-        {isInvalid && !isLoading && (
-          <span className="onex-dropzone__file--error">
-            <Icon className="onex-dropzone__file-error-icon">warning</Icon>
-            {errorMessage && (
-              <span className="onex-dropzone__file-error-message">{errorMessage}</span>
+        {!isLoading && (isInvalid || isSuccess) && (
+          <span
+            className={classNames('onex-dropzone__file-status', {
+              'onex-dropzone__file-status--error': isInvalid,
+              'onex-dropzone__file-status--success': isSuccess,
+            })}
+          >
+            <Icon className="onex-dropzone__file-status-icon">
+              {isSuccess ? 'check_circle' : 'warning'}
+            </Icon>
+            {(errorMessage || successMessage) && (
+              <span className="onex-dropzone__file-status-message">
+                {errorMessage || successMessage}
+              </span>
             )}
           </span>
         )}
         {!!progressNumber && isLoading && (
-          <ProgressBar
-            className="onex-dropzone__file--progress"
-            variant="info"
-            now={progressNumber}
-            {...progressProps}
-          />
+          <div className="onex-dropzone__file-progress-block">
+            <div className="onex-dropzone__file-progress-info">{`${progressNumber}%`}</div>
+            <div className="onex-dropzone__file-progress-bar">
+              <ProgressBar
+                className="onex-dropzone__file-progress"
+                variant="info"
+                now={progressNumber}
+                {...progressProps}
+              />
+            </div>
+          </div>
         )}
       </div>
     </div>
     <div className="onex-dropzone__file-action">
-      {isLoading && (
+      {!isLoading && isInvalid && (
+        <Button type="icon" variant="tertiary" size="sm" onClick={onReload} {...buttonProps}>
+          <Icon>refresh</Icon>
+        </Button>
+      )}
+      {!isSuccess && (
         <Button type="icon" variant="tertiary" size="sm" onClick={onCancel} {...buttonProps}>
           <Icon>close</Icon>
         </Button>
@@ -56,11 +73,6 @@ const FileComponent = ({
       {!isLoading && isSuccess && (
         <Button type="icon" variant="tertiary" size="sm" onClick={onDelete} {...buttonProps}>
           <Icon>delete_outline</Icon>
-        </Button>
-      )}
-      {!isLoading && isInvalid && buttonTitle && (
-        <Button variant="secondary" size="sm" onClick={onHandleClick} {...buttonProps}>
-          {buttonTitle}
         </Button>
       )}
     </div>
@@ -74,6 +86,7 @@ export const FileComponentTypes = {
   isSuccess: PropTypes.bool,
   isInvalid: PropTypes.bool,
   errorMessage: PropTypes.string,
+  successMessage: PropTypes.string,
   isLoading: PropTypes.bool,
   buttonTitle: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
@@ -82,7 +95,7 @@ export const FileComponentTypes = {
   progressProps: PropTypes.object,
   onCancel: PropTypes.func,
   onDelete: PropTypes.func,
-  onHandleClick: PropTypes.func,
+  onReload: PropTypes.func,
 };
 
 FileComponent.propTypes = FileComponentTypes;
@@ -93,14 +106,15 @@ FileComponent.defaultProps = {
   progressNumber: 0,
   isSuccess: false,
   isInvalid: false,
-  errorMessage: undefined,
+  errorMessage: 'Upload failed',
+  successMessage: 'Upload successful',
   isLoading: false,
   buttonTitle: undefined,
   buttonProps: {},
   progressProps: {},
   onCancel: () => {},
   onDelete: () => {},
-  onHandleClick: () => {},
+  onReload: () => {},
 };
 
 export default FileComponent;

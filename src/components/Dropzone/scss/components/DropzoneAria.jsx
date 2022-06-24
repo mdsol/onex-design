@@ -28,17 +28,8 @@ const DropzoneAria = ({
     <div className={classes}>
       <div {...getRootProps({ className: classesDropArea })}>
         <input {...getInputProps()} />
-        <div className="onex-dropzone__icon">
-          <Icon className="onex-dropzone__icon-elem">
-            {isInvalid ? 'error_outline' : 'cloud_upload'}
-          </Icon>
-        </div>
+        <Icon className="onex-dropzone__icon">{isInvalid ? 'error_outline' : 'cloud_upload'}</Icon>
         <span className="onex-dropzone__title">{isInvalid ? errorText : title}</span>
-        {!isInvalid && titleBtn && (
-          <Button className="onex-dropzone__btn" size="sm" onClick={open}>
-            {titleBtn}
-          </Button>
-        )}
         {!isInvalid && info && <span className="onex-dropzone__info">{info}</span>}
       </div>
       <div className="onex-dropzone__files-area">

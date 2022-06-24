@@ -136,7 +136,7 @@ import { Dropzone } from '../../../../components';
       control: 'boolean',
       table: {
         defaultValue: {
-          summary: 'true',
+          summary: 'false',
         },
       },
     },
@@ -312,13 +312,14 @@ A file is a separate component that has its own properties. Therefore, if you ne
   <li><b>isSuccess</b> - <code>type: boolean, default: false</code> if the file was successfully upload</li>
   <li><b>isInvalid</b> - <code>type: boolean, default: false</code> if the file was rejected during uploading</li>
   <li><b>errorMessage</b> - <code>type: string, default: undefined</code> text of error message (if you need for validation)</li>
+  <li><b>successMessage</b> - <code>type: string, default: undefined</code> text of success message (if you need for validation)</li>
   <li><b>isLoading</b> - <code>type: boolean, default: false</code> state of uploading process file</li>
   <li><b>buttonTitle</b> - <code>type: string, default: undefined</code> this button is displayed if the file was uploading with an error. If you do not need a button, do not pass the value in the property</li>
   <li><b>buttonProps</b> - <code>type: object, default: {}</code> button property object. List of properties you can see in Button component docs</li>
   <li><b>progressProps</b> - <code>type: object, default: {}</code> progressProps property object. List of properties you can see in ProgressBar component docs</li>
   <li><b>onCancel</b> - <code>type: () => void, default: () => {}</code> function call back to cancel upload process (function doesn't have code for it you should write your own)</li>
   <li><b>onDelete</b> - <code>type: () => void, default: () => {}</code> function call back to delete file from list (function doesn't have code for it you should write your own)</li>
-  <li><b>onHandleClick</b> - <code>type: () => void, default: () => {}</code> function call back to click button which is visible if the file was loaded with an error (function doesn't have code for it you should write your own)</li>
+  <li><b>onReload</b> - <code>type: () => void, default: () => {}</code> function call back to reload file (function doesn't have code for it you should write your own)</li>
 </ul>
 
 ## Demo
@@ -370,6 +371,7 @@ A file is a separate component that has its own properties. Therefore, if you ne
       }, {
         name: 'success.csv',
         size: '100MB',
+        successMessage: 'Upload successful',
         isLoading: false,
         isSuccess: true,
       }, {
@@ -377,7 +379,7 @@ A file is a separate component that has its own properties. Therefore, if you ne
         size: '100MB',
         isLoading: false,
         isInvalid: true,
-        errorMessage: 'format not supported',
+        errorMessage: 'Upload failed',
         buttonTitle: 'Upload'
       }]
     }}>
