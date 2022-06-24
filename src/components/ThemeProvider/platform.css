@@ -37791,29 +37791,29 @@
   line-height: 1rem;
   color: rgb(103, 110, 122);
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-process-block {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-status-block {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.75rem;
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--status {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-status {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-error-message, .onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-success-message {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-status-message {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-error-icon, .onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-error-message {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-status-icon {
+  font-size: 1rem;
+}
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-status--error {
   color: rgb(217, 21, 34);
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-success-icon, .onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-success-message {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-status--success {
   color: rgb(0, 126, 76);
-}
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-error-icon, .onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-success-icon {
-  font-size: 1rem;
 }
 .onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-action {
   margin-left: 0.75rem;
@@ -37822,14 +37822,14 @@
   justify-content: space-between;
   gap: 0.25rem;
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--progress {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-progress-block {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
   width: 100%;
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--progress-info {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-progress-info {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -37838,11 +37838,8 @@
   line-height: 1rem;
   color: rgb(0, 112, 192);
 }
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--progress-bar {
+.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file-progress-bar {
   width: 100%;
-}
-.onex-themeprovider .onex-dropzone__files-area .onex-dropzone__file--progress-bar .progress-bar {
-  height: 100%;
 }
 .onex-themeprovider .accordion-button {
   position: relative;

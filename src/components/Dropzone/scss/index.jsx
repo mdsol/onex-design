@@ -145,7 +145,7 @@ Dropzone.defaultProps = {
   maxSize: Infinity,
   minSize: 0,
   multiple: true,
-  noClick: true,
+  noClick: false,
   noDrag: false,
   noDragEventsBubbling: false,
   noKeyboard: false,

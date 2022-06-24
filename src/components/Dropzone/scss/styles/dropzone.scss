@@ -122,38 +122,34 @@
         color: $onex-dropzone-file-subtitle-color;
       }
 
-      &__file-process-block {
+      &__file-status-block {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 0.75rem;
       }
 
-      &__file--status {
+      &__file-status {
         display: inline-flex;
         align-items: center;
         gap: 4px;
       }
 
-      &__file-error-message,
-      &__file-success-message {
+      &__file-status-message {
         font-size: $font-size-caption;
         line-height: $line-height-caption;
       }
 
-      &__file-error-icon,
-      &__file-error-message {
+      &__file-status-icon {
+        font-size: $onex-dropzone-file-icon-size;
+      }
+
+      &__file-status--error {
         color: $onex-dropzone-file-error-color;
       }
 
-      &__file-success-icon,
-      &__file-success-message {
+      &__file-status--success {
         color: $onex-dropzone-file-success-color;
-      }
-
-      &__file-error-icon,
-      &__file-success-icon {
-        font-size: $onex-dropzone-file-icon-size;
       }
 
       &__file-action {
@@ -164,13 +160,15 @@
         gap: 0.25rem;
       }
 
-      &__file--progress {
+      &__file-progress-block {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
         gap: 0.75rem;
         width: 100%;
+      }
 
+      &__file-progress {
         &-info {
           display: inline-flex;
           align-items: center;
@@ -183,10 +181,6 @@
 
         &-bar {
           width: 100%;
-
-          .progress-bar {
-            height: 100%;
-          }
         }
       }
     }

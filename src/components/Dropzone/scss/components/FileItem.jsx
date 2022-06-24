@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Icon from '../../../Icon/scss';
 import ProgressBar from '../../../ProgressBar/scss';
 import Button from '../../../Buttons/scss';
@@ -24,26 +25,31 @@ const FileComponent = ({
     </div>
     <div className="onex-dropzone__file-body">
       {name && <span className="onex-dropzone__file-title">{name}</span>}
-      <div className="onex-dropzone__file-process-block">
+      <div className="onex-dropzone__file-status-block">
         {size && <span className="onex-dropzone__file-size">{size}</span>}
         {!isLoading && (isInvalid || isSuccess) && (
-          <span className="onex-dropzone__file--status">
-            {isInvalid && <Icon className="onex-dropzone__file-error-icon">warning</Icon>}
-            {isSuccess && <Icon className="onex-dropzone__file-success-icon">check_circle</Icon>}
-            {errorMessage && (
-              <span className="onex-dropzone__file-error-message">{errorMessage}</span>
-            )}
-            {successMessage && (
-              <span className="onex-dropzone__file-success-message">{successMessage}</span>
+          <span
+            className={classNames('onex-dropzone__file-status', {
+              'onex-dropzone__file-status--error': isInvalid,
+              'onex-dropzone__file-status--success': isSuccess,
+            })}
+          >
+            <Icon className="onex-dropzone__file-status-icon">
+              {isSuccess ? 'check_circle' : 'warning'}
+            </Icon>
+            {(errorMessage || successMessage) && (
+              <span className="onex-dropzone__file-status-message">
+                {errorMessage || successMessage}
+              </span>
             )}
           </span>
         )}
         {!!progressNumber && isLoading && (
-          <div className="onex-dropzone__file--progress">
-            <div className="onex-dropzone__file--progress-info">{`${progressNumber}%`}</div>
-            <div className="onex-dropzone__file--progress-bar">
+          <div className="onex-dropzone__file-progress-block">
+            <div className="onex-dropzone__file-progress-info">{`${progressNumber}%`}</div>
+            <div className="onex-dropzone__file-progress-bar">
               <ProgressBar
-                className="onex-dropzone__file--progress"
+                className="onex-dropzone__file-progress"
                 variant="info"
                 now={progressNumber}
                 {...progressProps}
