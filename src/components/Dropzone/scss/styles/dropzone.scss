@@ -7,44 +7,50 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 0.5rem;
     width: $onex-dropzone-width;
-    height: $onex-dropzone-height;
-    padding: 1rem;
+    min-height: $onex-dropzone-height;
+    padding: 3.25rem 1rem;
     border-radius: 0.5rem;
     border: 1px dashed $onex-dropzone-border-color;
     background-color: $onex-dropzone-bg-color;
 
-    &:hover {
+    &:hover:not(.onex-dropzone__area--error) {
+      cursor: pointer;
       border-color: $onex-dropzone-border-hover-color;
       background-color: $onex-dropzone-bg-hover-color;
+
+      .onex-dropzone__icon {
+        color: $onex-dropzone-icon-hover-color;
+      }
+
+      .onex-dropzone__title {
+        color: $onex-dropzone-title-hover-color;
+      }
     }
   }
 
   .onex-dropzone__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $onex-dropzone-icon-width;
-    height: $onex-dropzone-icon-height;
-    border-radius: 100%;
-    background-color: $onex-dropzone-icon-bg-color;
-
-    .onex-dropzone__icon-elem {
-      font-size: $onex-dropzone-icon-size;
-      color: $onex-dropzone-icon-color;
-    }
+    font-size: $onex-dropzone-icon-size;
+    color: $onex-dropzone-icon-color;
+    padding-bottom: 1rem;
   }
 
-  .onex-dropzone__title,
-  .onex-dropzone__info {
-    font-size: $font-size-h5;
-    line-height: $line-height-h5;
+  .onex-dropzone__title {
+    font-size: $font-size-label;
+    line-height: $line-height-label;
+    font-weight: $font-weight-600;
     text-align: center;
+    margin-bottom: .25rem;
   }
 
   .onex-dropzone__title {
     color: $onex-dropzone-title-color;
+  }
+
+  .onex-dropzone__info {
+    font-size: $font-size-caption;
+    line-height: $line-height-caption;
+    text-align: center;
   }
 
   .onex-dropzone__info {
@@ -55,18 +61,16 @@
     border-color: $onex-dropzone-border-error-color;
     background-color: $onex-dropzone-bg-error-color;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     .onex-dropzone__title {
       color: $onex-dropzone-title-error-color;
     }
 
     .onex-dropzone__icon {
-      background-color: transparent;
-      width: auto;
-      height: auto;
-
-      .onex-dropzone__icon-elem {
-        color: $onex-dropzone-error-icon-color;
-      }
+      color: $onex-dropzone-error-icon-color;
     }
   }
 }

@@ -37699,39 +37699,43 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.5rem;
-  width: 30rem;
-  height: 15rem;
-  padding: 1rem;
+  width: 27.5rem;
+  min-height: 12.5rem;
+  padding: 3.25rem 1rem;
   border-radius: 0.5rem;
   border: 1px dashed rgba(26, 28, 30, 0.2);
+  background-color: rgb(255, 255, 255);
+}
+.onex-themeprovider .onex-dropzone__area:hover:not(.onex-dropzone__area--error) {
+  cursor: pointer;
+  border-color: rgba(26, 28, 30, 0.5);
   background-color: rgba(103, 110, 122, 0.1);
 }
-.onex-themeprovider .onex-dropzone__area:hover {
-  border-color: rgba(26, 28, 30, 0.5);
-  background-color: rgba(103, 110, 122, 0.25);
+.onex-themeprovider .onex-dropzone__area:hover:not(.onex-dropzone__area--error) .onex-dropzone__icon {
+  color: rgb(26, 28, 30);
+}
+.onex-themeprovider .onex-dropzone__area:hover:not(.onex-dropzone__area--error) .onex-dropzone__title {
+  color: rgb(26, 28, 30);
 }
 .onex-themeprovider .onex-dropzone .onex-dropzone__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 100%;
-  background-color: rgba(103, 110, 122, 0.1);
-}
-.onex-themeprovider .onex-dropzone .onex-dropzone__icon .onex-dropzone__icon-elem {
-  font-size: 2rem;
-  color: rgb(133, 140, 150);
-}
-.onex-themeprovider .onex-dropzone .onex-dropzone__title,
-.onex-themeprovider .onex-dropzone .onex-dropzone__info {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(103, 110, 122);
+  padding-bottom: 1rem;
 }
 .onex-themeprovider .onex-dropzone .onex-dropzone__title {
-  color: rgb(26, 28, 30);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__title {
+  color: rgb(103, 110, 122);
+}
+.onex-themeprovider .onex-dropzone .onex-dropzone__info {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
 }
 .onex-themeprovider .onex-dropzone .onex-dropzone__info {
   color: rgb(103, 110, 122);
@@ -37740,15 +37744,13 @@
   border-color: rgb(217, 21, 34);
   background-color: rgb(255, 236, 238);
 }
+.onex-themeprovider .onex-dropzone__area--error:hover {
+  cursor: pointer;
+}
 .onex-themeprovider .onex-dropzone__area--error .onex-dropzone__title {
   color: rgb(217, 21, 34);
 }
 .onex-themeprovider .onex-dropzone__area--error .onex-dropzone__icon {
-  background-color: transparent;
-  width: auto;
-  height: auto;
-}
-.onex-themeprovider .onex-dropzone__area--error .onex-dropzone__icon .onex-dropzone__icon-elem {
   color: rgb(217, 21, 34);
 }
 .onex-themeprovider .onex-dropzone__files-area {
@@ -37761,7 +37763,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 30rem;
+  width: 27.5rem;
   height: 3.5rem;
   border: 1px solid rgba(26, 28, 30, 0.2);
   background-color: rgb(255, 255, 255);
