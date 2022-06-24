@@ -122,32 +122,68 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 0.25rem;
+        gap: 0.75rem;
       }
 
-      &__file--error {
+      &__file--status {
         display: inline-flex;
         align-items: center;
-        gap: 2px;
-        color: $onex-dropzone-file-error-color
+        gap: 4px;
       }
 
-      &__file-error-icon,
-      &__file--success {
-        font-size: $onex-dropzone-file-icon-size;
-      }
-
-      &__file-error-message {
+      &__file-error-message,
+      &__file-success-message {
         font-size: $font-size-caption;
         line-height: $line-height-caption;
       }
 
-      &__file--success {
+      &__file-error-icon,
+      &__file-error-message {
+        color: $onex-dropzone-file-error-color;
+      }
+
+      &__file-success-icon,
+      &__file-success-message {
         color: $onex-dropzone-file-success-color;
+      }
+
+      &__file-error-icon,
+      &__file-success-icon {
+        font-size: $onex-dropzone-file-icon-size;
       }
 
       &__file-action {
         margin-left: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.25rem;
+      }
+
+      &__file--progress {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+
+        &-info {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-weight: $font-weight-600;
+          font-size: $font-size-caption;
+          line-height: $line-height-caption;
+          color: $onex-dropzone-file-progress-info-color;
+        }
+
+        &-bar {
+          width: 100%;
+
+          .progress-bar {
+            height: 100%;
+          }
+        }
       }
     }
   }
