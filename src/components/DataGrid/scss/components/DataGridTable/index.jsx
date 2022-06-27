@@ -9,7 +9,15 @@ import Icon from '../../../../Icon/scss';
 import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
 
-const DataGridTable = ({ columns, data, className, rowsPerPageOptions, sortBy, multiSort, ...accProps }) => {
+const DataGridTable = ({
+  columns,
+  data,
+  className,
+  rowsPerPageOptions,
+  sortBy,
+  multiSort,
+  ...accProps
+}) => {
   const {
     getTableProps,
     getTableBodyProps,
