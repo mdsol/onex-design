@@ -1,4 +1,6 @@
 # Changelog
+## 0.4.2
+The Check component has been fixed, ThemeProvider also has an exported stylesheet to use in the case that webpack has not been setup correctly. Inline alert had padding updated. Dropzone was updated.
 ## 0.4.1
 Change to how the common js package was being run through Babel in order to fix a potential prop spreading issue. DataGrid sorting is now live.
 ## 0.4.0
