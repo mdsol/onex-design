@@ -72,7 +72,7 @@ const TextArea = React.forwardRef((props, ref) => {
               'onex-text-area__nums--err': symbolNum < 0,
             })}
           >
-            {symbolNum}
+            {`${symbolNum} / ${maxNumLength}`}
           </div>
         )}
       </div>
