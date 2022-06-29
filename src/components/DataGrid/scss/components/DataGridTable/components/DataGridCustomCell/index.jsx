@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import Typography from '../../../../../../Typography/scss';
 
-const DataGridCustomCell = ({ cell, cellIndex }) => {
+const DataGridCustomCell = ({ cell }) => {
   const cellProps = typeof cell.value === 'object' ? cell.value : { value: cell.value };
 
   const dataGridCellClassNames = classNames('onex-data-grid-custom-cell', {
@@ -13,7 +13,7 @@ const DataGridCustomCell = ({ cell, cellIndex }) => {
   });
 
   return (
-    <td className={dataGridCellClassNames} key={`body_cell_${cellIndex}`} {...cell.getCellProps()}>
+    <td className={dataGridCellClassNames} {...cell.getCellProps()}>
       <div className="onex-data-grid-custom-cell-content">
         {cellProps.leadingIcon && (
           <div className="onex-data-grid-custom-cell-content__leading-icon">
@@ -61,13 +61,11 @@ DataGridCustomCell.propTypes = {
       }),
     ]),
   }),
-  cellIndex: PropTypes.number,
 };
 /* eslint-enable */
 
 DataGridCustomCell.defaultProps = {
   cell: undefined,
-  cellIndex: undefined,
 };
 
 export default DataGridCustomCell;

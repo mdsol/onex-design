@@ -1,12 +1,34 @@
 .onex-data-grid-editable-cell {
   &__input.form-control {
     border: none;
-    padding: 14px 12px;
-    font-size: 14px;
-    line-height: 20px;
+    padding: $onex-data-grid-editable-cell-padding-y $onex-data-grid-editable-cell-padding-x;
+    font-size: $onex-data-grid-editable-cell-font-size;
+    line-height: $onex-data-grid-editable-cell-line-height;
     background-color: inherit;
     &:focus {
       background-color: inherit;
+    }
+  }
+
+  &.onex-data-grid-editable-cell__text-align-left {
+    .onex-data-grid-editable-cell__input.form-control {
+      text-align: left;
+    }
+  }
+  &.onex-data-grid-editable-cell__text-align-right {
+    .onex-data-grid-editable-cell__input.form-control {
+      text-align: right;
+    }
+  }
+
+  &.onex-data-grid-editable-cell__text-variant-regular {
+    .onex-data-grid-editable-cell__input.form-control {
+      font-weight: 400;
+    }
+  }
+  &.onex-data-grid-editable-cell__text-variant-semibold {
+    .onex-data-grid-editable-cell__input.form-control {
+      font-weight: 600;
     }
   }
 
@@ -17,12 +39,15 @@ td.onex-data-grid-editable-cell {
 
   &:hover {
     border: none;
-    outline: solid 1px rgba(26, 28, 30, 0.5);
+    outline: solid 1px $onex-data-grid-editable-cell-hover-border-color;
+    outline-offset: -0.063rem;
   }
 
 
   &:focus-within {
+    border: none;
     background-color: white;
-    outline: solid 2px rgb(0, 112, 192);
+    outline: solid 2px $onex-data-grid-editable-cell-focus-border-color;
+    outline-offset: -0.125rem;
   }
 }

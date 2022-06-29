@@ -79,13 +79,16 @@ DataGrid.propTypes = {
       accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
       type: PropTypes.oneOf(['action', 'custom','editable']),
       hasDivider: PropTypes.bool,
+      textAlign: PropTypes.oneOf(['left', 'right']),
+      textVariant: PropTypes.oneOf(['regular', 'semibold']),
       columns: PropTypes.arrayOf(
         PropTypes.shape({
           Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
           accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
           type: PropTypes.oneOf(['action', 'custom','editable']),
           hasDivider: PropTypes.bool,
-          isEditabble: PropTypes.bool,
+          textAlign: PropTypes.oneOf(['left', 'right']),
+          textVariant: PropTypes.oneOf(['regular', 'semibold']),
         }),
       ),
     }),

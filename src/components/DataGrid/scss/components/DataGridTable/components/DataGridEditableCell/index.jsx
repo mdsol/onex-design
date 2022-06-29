@@ -3,14 +3,23 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Form } from 'react-bootstrap';
 
-const DataGridEditableCell = ({ cell, row, cellIndex, updateData }) => {
+const DataGridEditableCell = ({ cell, row, updateData }) => {
   const cellProps = typeof cell.value === 'object' ? cell.value : { value: cell.value };
 
   const [value, setValue] = useState('');
 
-  const dataGridEditableCellClassNames = classNames('onex-data-grid-editable-cell', {
-    'onex-data-grid__cell-divider': cell?.column.hasDivider,
-  });
+  const dataGridEditableCellClassNames = classNames(
+    'onex-data-grid-editable-cell',
+    `onex-data-grid-editable-cell__text-align-${
+      cell?.column.textAlign ? cell?.column.textAlign : 'left'
+    }`,
+    `onex-data-grid-editable-cell__text-variant-${
+      cell?.column.textVariant ? cell?.column.textVariant : 'regular'
+    }`,
+    {
+      'onex-data-grid__cell-divider': cell?.column.hasDivider,
+    },
+  );
 
   const onChange = (e) => {
     setValue(e.target.value);
@@ -25,11 +34,7 @@ const DataGridEditableCell = ({ cell, row, cellIndex, updateData }) => {
   }, [cellProps.value]);
 
   return (
-    <td
-      className={dataGridEditableCellClassNames}
-      key={`body_cell_${cellIndex}`}
-      {...cell.getCellProps()}
-    >
+    <td className={dataGridEditableCellClassNames} {...cell.getCellProps()}>
       <Form.Control
         className="onex-data-grid-editable-cell__input"
         value={value}
@@ -49,25 +54,15 @@ DataGridEditableCell.propTypes = {
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
-      PropTypes.shape({
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-        leadingIcon: PropTypes.node,
-        trailingIcon: PropTypes.node,
-        caption: PropTypes.string,
-        style: PropTypes.oneOf(['subtle', 'bold']),
-        component: PropTypes.node,
-      }),
     ]),
   }),
   row: PropTypes.object,
-  cellIndex: PropTypes.number,
   updateData: PropTypes.func,
 };
 /* eslint-enable */
 
 DataGridEditableCell.defaultProps = {
   cell: undefined,
-  cellIndex: undefined,
   updateData: undefined,
 };
 

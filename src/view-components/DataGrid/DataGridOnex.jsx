@@ -1,46 +1,42 @@
 import { useMemo } from 'react';
 import { DataGrid, Icon, Avatar, Badge, Tag } from '../../components';
 
-const handleClick = (row) => {
-  console.log('ROW', row);
-};
 
 const dataGridColumns = [
   {
     Header: 'ID',
     accessor: 'id',
-    isCustom: true,
-    hasDivider: true,
+    type: 'custom',
   },
   {
     Header: 'Avatar',
     accessor: 'avatar',
-    isCustom: true,
+    type: 'custom',
   },
   {
     Header: 'Study',
     accessor: 'study',
-    isCustom: true,
+    type: 'custom',
   },
   {
     Header: 'Country',
     accessor: 'country',
-    isCustom: true,
+    type: 'custom',
   },
   {
     Header: 'Category',
     accessor: 'category',
-    isCustom: true,
+    type: 'custom',
   },
   {
     Header: 'Stage',
     accessor: 'stage',
-    isEditable: true,
+    type: 'editable',
   },
   {
     Header: 'Status',
     accessor: 'status',
-    isCustom: true,
+    type: 'custom',
   },
   {
     Header: 'Created',
@@ -61,7 +57,7 @@ const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
   id: 'M123',
-  avatar: { component: <Avatar /> },
+  avatar: { value: 'Test', component: <Avatar /> },
   study: {
     value: 'United States 15',
     leadingIcon: <Icon>check_circle</Icon>,
@@ -78,6 +74,7 @@ const newPerson = () => ({
   },
   stage: 'Test',
   status: {
+    value: 'Tag',
     component: <Tag isRemovable={false}>Tag</Tag>,
   },
   created: '26 Aug 2020',

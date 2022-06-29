@@ -16,13 +16,18 @@ import DataGridEditableCell from './components/DataGridEditableCell';
 const handleColumnType = (row, cell, cellInd, updateData) => {
   if (cell?.column.type === 'editable') {
     return (
-      <DataGridEditableCell row={row} cell={cell} cellIndex={cellInd} updateData={updateData} />
+      <DataGridEditableCell
+        key={`body_cell_${row.id}_${cellInd}`}
+        row={row}
+        cell={cell}
+        updateData={updateData}
+      />
     );
   }
   if (cell?.column.type === 'custom') {
-    return <DataGridCustomCell cell={cell} cellIndex={cellInd} />;
+    return <DataGridCustomCell key={`body_cell_${row.id}_${cellInd}`} row={row} cell={cell} />;
   }
-  return <DataGridCell cell={cell} cellIndex={cellInd} />;
+  return <DataGridCell key={`body_cell_${row.id}_${cellInd}`} row={row} cell={cell} />;
 };
 
 const DataGridTable = ({
@@ -233,9 +238,10 @@ DataGridTable.propTypes = {
         PropTypes.shape({
           Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
           accessor: PropTypes.string,
-          type: PropTypes.oneOf(['action', 'custom',]),
+          type: PropTypes.oneOf(['action', 'custom','editable']),
           hasDivider: PropTypes.bool,
-          isEditable: PropTypes.bool,
+          textAlign: PropTypes.oneOf(['left', 'right']),
+          textVariant: PropTypes.oneOf(['regular', 'semibold']),
         }),
       ),
     }),
