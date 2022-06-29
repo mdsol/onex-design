@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { useEffect, useState } from 'react';
-import { useTable, usePagination, useSortBy, useBlockLayout } from 'react-table';
+import { useTable, usePagination, useSortBy } from 'react-table';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Table as ReactTable } from 'react-bootstrap';
@@ -69,7 +69,6 @@ const DataGridTable = ({
         pageSize: rowsPerPageOptions.length ? rowsPerPageOptions[0] : data.length,
         sortBy,
       },
-      useBlockLayout,
       ...accProps,
     },
     useSortBy,
