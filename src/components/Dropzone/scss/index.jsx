@@ -12,7 +12,6 @@ const Dropzone = React.forwardRef(
       isInvalid,
       title,
       info,
-      titleBtn,
       errorText,
       files,
       autoFocus,
@@ -86,7 +85,6 @@ const Dropzone = React.forwardRef(
             isInvalid={isInvalid}
             title={title}
             info={info}
-            titleBtn={titleBtn}
             errorText={errorText}
             files={files}
             {...dropzoneProps}
@@ -101,7 +99,6 @@ Dropzone.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   info: PropTypes.string,
-  titleBtn: PropTypes.string,
   errorText: PropTypes.string,
   isInvalid: PropTypes.bool,
   files: PropTypes.arrayOf(FileComponentTypes),
@@ -132,10 +129,9 @@ Dropzone.propTypes = {
 
 Dropzone.defaultProps = {
   className: undefined,
-  title: 'Select files or drop them here',
-  info: 'CSV, JSON, XLS up to 1 mb',
-  titleBtn: 'Upload files',
-  errorText: 'File type is not valid',
+  title: 'Click or drag file to this area to upload',
+  info: 'CSV, JSON, XLS up to 1 MB only',
+  errorText: 'Click or drag file to this area to upload',
   isInvalid: false,
   files: [],
   autoFocus: false,

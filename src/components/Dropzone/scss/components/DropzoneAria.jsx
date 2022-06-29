@@ -9,11 +9,9 @@ const DropzoneAria = ({
   isInvalid,
   title,
   info,
-  titleBtn,
   errorText,
   getRootProps,
   getInputProps,
-  open,
   files,
 }) => {
   const classes = classNames('onex-dropzone', {
@@ -45,26 +43,22 @@ DropzoneAria.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   info: PropTypes.string,
-  titleBtn: PropTypes.string,
   errorText: PropTypes.string,
   isInvalid: PropTypes.bool,
   files: PropTypes.arrayOf(FileComponentTypes),
   getRootProps: PropTypes.func,
   getInputProps: PropTypes.func,
-  open: PropTypes.func,
 };
 
 DropzoneAria.defaultProps = {
   className: undefined,
   title: undefined,
   info: undefined,
-  titleBtn: undefined,
   errorText: undefined,
   isInvalid: false,
   files: PropTypes.arrayOf(FileComponentTypes),
   getRootProps: undefined,
   getInputProps: undefined,
-  open: undefined,
 };
 
 export default DropzoneAria;

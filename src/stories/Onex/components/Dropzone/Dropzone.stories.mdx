@@ -18,7 +18,7 @@ import { Dropzone } from '../../../../components';
       control: 'text',
       table: {
         defaultValue: {
-          summary: 'Select files or drop them here',
+          summary: 'Click or drag file to this area to upload',
         },
       },
     },
@@ -27,16 +27,7 @@ import { Dropzone } from '../../../../components';
       control: 'text',
       table: {
         defaultValue: {
-          summary: 'CSV, JSON, XLS up to 1 mb',
-        },
-      },
-    },
-    titleBtn: {
-      description: 'Button title in dropzone aria',
-      control: 'text',
-      table: {
-        defaultValue: {
-          summary: 'Upload files',
+          summary: 'CSV, JSON, XLS up to 1 MB only',
         },
       },
     },
@@ -45,7 +36,7 @@ import { Dropzone } from '../../../../components';
       control: 'text',
       table: {
         defaultValue: {
-          summary: 'File type is not valid',
+          summary: 'Click or drag file to this area to upload',
         },
       },
     },
@@ -328,26 +319,25 @@ A file is a separate component that has its own properties. Therefore, if you ne
   <Story
     name="Demo"
        args={{
-         title: 'Select files or drop them here',
-         info: 'CSV, JSON, XLS up to 1 mb',
-         titleBtn: 'Upload files',
-         errorText: 'File type is not valid',
+         title: 'Click or drag file to this area to upload',
+         info: 'CSV, JSON, XLS up to 1 MB only',
+         errorText: 'Click or drag file to this area to upload',
          files: [{
-           name: 'loading.json',
-           size: '100MB',
+           name: 'patients_site_135678.csv',
+           size: '829 KB',
            isLoading: true,
            progressNumber: 10,
          }, {
-           name: 'success.csv',
-           size: '100MB',
+           name: 'patients_site_135678.csv',
+           size: '829 KB',
            isLoading: false,
            isSuccess: true,
          }, {
-           name: 'error.js',
-           size: '100MB',
+           name: 'patients_site_135678.csv',
+           size: '829 KB',
            isLoading: false,
            isInvalid: true,
-           errorMessage: 'format not supported',
+           errorMessage: 'Upload failed',
            buttonTitle: 'Upload'
          }]
        }}>
@@ -364,19 +354,18 @@ A file is a separate component that has its own properties. Therefore, if you ne
     name="Upload file"
     args={{
       files: [{
-        name: 'loading.json',
-        size: '100MB',
+        name: 'patients_site_135678.csv',
+        size: '829 KB',
         isLoading: true,
         progressNumber: 10,
       }, {
-        name: 'success.csv',
-        size: '100MB',
-        successMessage: 'Upload successful',
+        name: 'patients_site_135678.csv',
+        size: '829 KB',
         isLoading: false,
         isSuccess: true,
       }, {
-        name: 'error.js',
-        size: '100MB',
+        name: 'patients_site_135678.csv',
+        size: '829 KB',
         isLoading: false,
         isInvalid: true,
         errorMessage: 'Upload failed',
