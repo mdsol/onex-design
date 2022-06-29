@@ -111,12 +111,13 @@
   &__nums {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding-right: 0.25rem;
     font-size: $form-text-font-size;
     line-height: $text-area-label-line-height;
     font-weight: 600;
     color: $text-area-num-text-color;
-    flex-basis: 10%;
+    flex-basis: 30%;
 
     &--err {
       color: $text-area-err-text-color;
