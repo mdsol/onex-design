@@ -39,7 +39,7 @@ const FileComponent = ({
             </Icon>
             {(errorMessage || successMessage) && (
               <span className="onex-dropzone__file-status-message">
-                {errorMessage || successMessage}
+                {isSuccess ? successMessage : errorMessage}
               </span>
             )}
           </span>
