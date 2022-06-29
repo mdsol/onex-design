@@ -1,0 +1,46 @@
+.onex-data-grid-custom-cell{
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__leading-icon {
+      display: inline-flex;
+      max-width: $onex-data-grid-cell-leading-element-max-width;
+      max-height: $onex-data-grid-cell-leading-element-max-size;
+      margin-right: $onex-data-grid-cell-leading-element-margin-x;
+      overflow: hidden;
+    }
+
+    &__trailing-icon {
+      display: inline-flex;
+      color: $onex-data-grid-cell-trailing-element-color;
+      margin-left: $onex-data-grid-cell-trailing-element-margin-x;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      //padding: 0 0.25rem 0 0.5rem;
+
+      .onex-data-grid-custom-cell-content__caption {
+        color: $onex-data-grid-cell-caption-color;
+      }
+    }
+  }
+
+  &--caption {
+    .onex-data-grid-custom-cell-content {
+      align-items: flex-start;
+    }
+  }
+}
+
+td.onex-data-grid-custom-cell {
+  padding: $onex-data-grid-table-body-td-padding-x $onex-data-grid-table-body-td-padding-y;
+}

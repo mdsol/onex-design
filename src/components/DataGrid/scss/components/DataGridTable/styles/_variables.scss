@@ -23,10 +23,12 @@ $onex-data-grid-table-body-border-radius: 0.5rem;
 $onex-data-grid-table-body-tr-border-color: $secondary-900-opacity-10;
 $onex-data-grid-table-body-tr-background-color: $white;
 $onex-data-grid-table-body-tr-hover-background-color: $secondary-500-opacity-01;
-$onex-data-grid-table-body-td-padding-x: 0.875rem;
-$onex-data-grid-table-body-td-padding-y: 0.75rem;
+$onex-data-grid-table-body-tr-selected-background-color: $primary-100;
+$onex-data-grid-table-body-tr-selected-hover-background-color: $primary-200;
 $onex-data-grid-table-body-td-font-size: $font-size-label;
 $onex-data-grid-table-body-td-line-height: $line-height-label;
+$onex-data-grid-table-body-td-padding-x: 0.875rem;
+$onex-data-grid-table-body-td-padding-y: 0.75rem;
 
 $onex-data-grid-pagination-padding-x: 0.5rem;
 $onex-data-grid-pagination-padding-y: 0.75rem;

@@ -1,64 +1,29 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Typography from '../../../../../../Typography/scss';
-
 const DataGridCell = ({ cell, cellIndex }) => {
-  console.log('TEST', cell);
-  const cellProps = typeof cell.value === 'object' ? cell.value : { value: cell.value };
-
   const dataGridCellClassNames = classNames('onex-data-grid-cell', {
-    'onex-data-grid-cell--caption': cellProps.caption,
-    'onex-data-grid-cell--bold': cellProps.style === 'bold',
+    'onex-data-grid__cell-divider': cell?.column.hasDivider,
   });
 
   return (
-    <td className={dataGridCellClassNames} key={`${cell}_${cellIndex}`} {...cell.getCellProps()}>
-      <div className="onex-data-grid-cell-content">
-        {cellProps.leadingIcon && (
-          <div className="onex-data-grid-cell-content__leading-icon">{cellProps.leadingIcon}</div>
-        )}
-        {cellProps.component && cellProps.component}
-        {cellProps?.value && !cellProps.component && (
-          <div className="onex-data-grid-cell-content__text">
-            <Typography variant="label">{cellProps?.value}</Typography>
-            {cellProps.caption && (
-              <Typography className="onex-data-grid-cell-content__caption" variant="caption">
-                {cellProps.caption}
-              </Typography>
-            )}
-          </div>
-        )}
-        {cellProps.trailingIcon && (
-          <div className="onex-data-grid-cell-content__trailing-icon">
-            {' '}
-            {cellProps.trailingIcon}{' '}
-          </div>
-        )}
-      </div>
+    <td className={dataGridCellClassNames} key={`body_cell_${cellIndex}`} {...cell.getCellProps()}>
+      {cell.render('Cell')}
     </td>
   );
 };
 
+/* eslint-disable */
 DataGridCell.propTypes = {
   cell: PropTypes.shape({
     getCellProps: PropTypes.func,
     render: PropTypes.func,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.shape({
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-        leadingIcon: PropTypes.node,
-        trailingIcon: PropTypes.node,
-        caption: PropTypes.string,
-        style: PropTypes.oneOf(['subtle', 'bold']),
-        component: PropTypes.node,
-      }),
-    ]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.func]),
+    column: PropTypes.object,
   }),
   cellIndex: PropTypes.number,
 };
+/* eslint-enable */
 
 DataGridCell.defaultProps = {
   cell: undefined,

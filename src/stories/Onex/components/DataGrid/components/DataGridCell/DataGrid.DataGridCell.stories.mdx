@@ -1,0 +1,291 @@
+import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
+
+import {gridColumns, gridData, dropdownItems} from '../../gridData';
+import {DataGrid, Avatar, Icon, Badge, Tag, Dropdown, Button, Switch} from '../../../../../../components';
+import DataGridCustomCell
+  from '../../../../../../components/DataGrid/scss/components/DataGridTable/components/DataGridCustomCell';
+
+<Meta
+  title="Onex/Components/DataGrid/DataGridCell"
+  component={DataGrid}
+/>
+
+export const Template = (args) => <DataGrid {...args} />;
+
+## DataGrid Cell
+Table cells are the smallest indivisible parts of a data table that contain a single data unit (with optional additions).
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      dataTestId: 'data-grid-cell-demo-test-id',
+      className: 'data-grid-cell-demo-custom',
+      columns: gridColumns,
+      data: gridData,
+      getRowId: (row, relativeIndex, parent) => parent ? [`c-demo.${parent.id}`, relativeIndex].join('.') : `c-demo.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Data cell
+A primary content unit of the table. Basic data cells are not interactive and are meant only for displaying data.
+
+```
+  const columns = [
+    {
+      Header: 'Study name',
+      accessor: 'studyName',
+    };
+
+  const data = [
+    {
+      studyName: 'Table data - Text'
+    }]
+```
+#### Data Cell Text Example
+<Canvas>
+  <Story
+    name="DataCell"
+    args={{
+      dataTestId: 'data-grid-cell-usual-test-id',
+      className: 'data-grid-cell-usual-custom',
+      columns: gridColumns,
+      data: gridData,
+      getRowId: (row, relativeIndex, parent) => parent ? [`c-usual.${parent.id}`, relativeIndex].join('.') : `c-usual.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+### Custom Data cell
+In case you need to add some custom properties (leading icon, trailing icon) you have to pass to ```columns``` prop - ```type: custom```.
+
+```
+  const columns = [
+    {
+      Header: 'Study name',
+      accessor: 'studyName',
+      type: 'custom',
+    };
+
+  const data = [
+    {
+      studyName: {
+        value: 'Table data - Text',
+        leadingIcon: <Avatar />,
+        trailingIcon: <Icon>check_circle</Icon>
+      }
+    }]
+```
+#### Custom Data cell data options
+| Name         | Type                                  | Description                               | Required |
+|--------------|---------------------------------------|-------------------------------------------|----------|
+| value        | String, Number                        | Value of table cell. Required for sorting | [x]      |
+| leadingIcon  | Element                               | Leading icon in table cell                |          |
+| trailingIcon | Element                               | Trailing icon in table cell               |          |
+| caption      | String                                | Caption in table cell                     |          |
+| style        | One of values: ```'subtle', 'bold'``` | Text style in table cell                  |          |
+| component    | Element                               | Indicator in table cell                   |          |
+
+
+
+#### Leading element
+There are three types of leading elements available: ```Icon```, ```Badge```, and ```Avatar```
+
+export const DataCellWithLeadingAvatar = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', leadingIcon: <Avatar /> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+export const DataCellWithLeadingIcon = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', leadingIcon: <Icon>check_circle</Icon> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+export const DataCellWithLeadingBadge = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', leadingIcon: <Badge variant="status-icon" type="default"><Icon>flag</Icon></Badge> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+<Canvas>
+  <Story name="Custom data cell with leading icon">{DataCellWithLeadingIcon.bind({})}</Story>
+  <Story name="Custom data cell with badge">{DataCellWithLeadingBadge.bind({})}</Story>
+  <Story name="Custom data cell with avatar">{DataCellWithLeadingAvatar.bind({})}</Story>
+</Canvas>
+
+#### Trailing element
+There are three types of leading elements available: ```Icon``` and ```Badge```
+
+export const DataCellWithTrailingIcon = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', trailingIcon: <Icon>info</Icon> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+export const DataCellWithTrailingBadge = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', leadingIcon: <Badge  type="default">100</Badge> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+<Canvas>
+  <Story name="Custom data cell with trailing icon">{DataCellWithTrailingIcon.bind({})}</Story>
+  <Story name="Custom data cell with trailing badge">{DataCellWithTrailingBadge.bind({})}</Story>
+</Canvas>
+
+#### Indicators
+If you need indicator please use - ```component``` prop
+```
+  const columns = [
+    {
+      Header: 'Study name',
+      accessor: 'studyName',
+      type: 'custom',
+    }];
+
+  const data = [
+    {
+      studyName: {
+        value: 'Table data - Text',
+        component: <Avatar />,
+      }
+    }]
+```
+
+export const DataCellWithIndicatorAvatar = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', component: <Avatar />  },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+export const DataCellWithIndicatorBadge = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', component: <Badge  type="default">100</Badge> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+export const DataCellWithIndicatorIcon = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', component: <Icon>check_circle</Icon> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+export const DataCellWithIndicatorTag = () => (
+  <DataGridCustomCell
+    cell={{
+      value: { value: 'Label', component: <Tag>Tag 1</Tag> },
+      getCellProps: () => {},
+      column: {} }}
+  />
+);
+
+<Canvas>
+  <Story name="Custom data cell with indicator avatar">{DataCellWithIndicatorAvatar.bind({})}</Story>
+  <Story name="Custom data cell with indicator badge">{DataCellWithIndicatorBadge.bind({})}</Story>
+  <Story name="Custom data cell with indicator icon">{DataCellWithIndicatorIcon.bind({})}</Story>
+  <Story name="Custom data cell with indicator tag">{DataCellWithIndicatorTag.bind({})}</Story>
+</Canvas>
+
+
+### Action cell
+In case if you need to add ```Button```, ```Dropdown```, ```Switch``` etc., please use the example below
+
+```
+  const columns = [
+    {
+      accessor: 'leadingAction',
+      Header: '',
+      Cell: ({row}) => <Switch />,
+      type: "action",
+    },
+    {
+      accessor: 'trailingAction',
+      Header:  <Button variant="tertiary" type="icon"><Icon>settings</Icon></Button>,
+      Cell: ({row}) => (<Dropdown
+        variant="tertiary"
+        buttonStyle="icon"
+        items={dropdownItems}/>),
+        type: "action",
+    }];
+```
+
+<Canvas>
+  <Story
+    name="ActionCell"
+    args={{
+      dataTestId: 'data-grid-cell-actions-test-id',
+      className: 'data-grid-cell-actions-custom',
+      columns: [
+        {
+          accessor: 'leadingAction',
+          Header: '',
+          Cell: ({row}) => <Switch />,
+          type: "action",
+        },
+        {
+          Header: 'Study Name',
+          accessor: 'studyName',
+        },
+        {
+          Header: 'Stage',
+          accessor: 'stage',
+        },
+        {
+          accessor: 'trailingAction',
+          Header:  <Button variant="tertiary" type="icon"><Icon>settings</Icon></Button>,
+          Cell: ({row}) => (<Dropdown
+            variant="tertiary"
+            buttonStyle="icon"
+            items={dropdownItems}/>),
+          type: "action",
+        }],
+      data: gridData,
+      getRowId: (row, relativeIndex, parent) => parent ? [`c-action.${parent.id}`, relativeIndex].join('.') : `c-action.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+
+
+
+
+
+
+
+

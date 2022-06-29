@@ -48,7 +48,7 @@ const Typography = ({
       {...accProps}
       data-test-id={dataTestId}
       className={typographyClassNames}
-      href
+      href={href}
     >
       {children}
     </TypographyComponent>

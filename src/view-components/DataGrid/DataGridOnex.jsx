@@ -1,34 +1,46 @@
 import { useMemo } from 'react';
 import { DataGrid, Icon, Avatar, Badge, Tag } from '../../components';
 
+const handleClick = (row) => {
+  console.log('ROW', row);
+};
+
 const dataGridColumns = [
   {
     Header: 'ID',
     accessor: 'id',
+    isCustom: true,
+    hasDivider: true,
   },
   {
     Header: 'Avatar',
     accessor: 'avatar',
+    isCustom: true,
   },
   {
     Header: 'Study',
     accessor: 'study',
+    isCustom: true,
   },
   {
     Header: 'Country',
     accessor: 'country',
+    isCustom: true,
   },
   {
     Header: 'Category',
     accessor: 'category',
+    isCustom: true,
   },
   {
     Header: 'Stage',
     accessor: 'stage',
+    isEditable: true,
   },
   {
     Header: 'Status',
     accessor: 'status',
+    isCustom: true,
   },
   {
     Header: 'Created',
@@ -64,17 +76,11 @@ const newPerson = () => ({
       </Badge>
     ),
   },
-  stage: {
-    component: (
-      <Badge variant="status" type="default">
-        default
-      </Badge>
-    ),
-  },
+  stage: 'Test',
   status: {
     component: <Tag isRemovable={false}>Tag</Tag>,
   },
-  created: { value: '26 Aug 2020', trailingIcon: <Badge type="default">100</Badge> },
+  created: '26 Aug 2020',
 });
 
 const makeData = (...lens) => {
@@ -94,6 +100,14 @@ const DataGridOnex = () => {
   const dataGridColumnsProc = useMemo(() => dataGridColumns, []);
   const dataGridSortByProc = useMemo(() => dataGridSortBy, []);
 
+  const handleUpdateData = (data) => {
+    console.log('DATA---', data);
+  };
+
+  const handleSelectData = (data) => {
+    console.log('SELECTION---', data);
+  };
+
   return (
     <DataGrid
       columns={dataGridColumnsProc}
@@ -101,8 +115,16 @@ const DataGridOnex = () => {
       sortBy={dataGridSortByProc}
       rowsPerPageOptions={[5, 10]}
       dataGridControlProps={GridControl}
+      handleUpdateData={handleUpdateData}
+      useRowSelection
+      rowSelectionType="multi"
+      handleSelection={handleSelectData}
     />
   );
 };
 
 export default DataGridOnex;
+
+export const DataCellWithAvatar = () => (
+  <DataGrid cell={{ value: { leadingIcon: <Icon>check_circle</Icon> } }} />
+);

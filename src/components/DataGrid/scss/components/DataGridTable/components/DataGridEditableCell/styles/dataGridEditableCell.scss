@@ -1,0 +1,28 @@
+.onex-data-grid-editable-cell {
+  &__input.form-control {
+    border: none;
+    padding: 14px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: inherit;
+    &:focus {
+      background-color: inherit;
+    }
+  }
+
+}
+
+td.onex-data-grid-editable-cell {
+  padding: 0;
+
+  &:hover {
+    border: none;
+    outline: solid 1px rgba(26, 28, 30, 0.5);
+  }
+
+
+  &:focus-within {
+    background-color: white;
+    outline: solid 2px rgb(0, 112, 192);
+  }
+}

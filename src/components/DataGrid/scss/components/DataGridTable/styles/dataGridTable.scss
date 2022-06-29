@@ -4,6 +4,7 @@
 
   &-headers {
     background: $onex-data-grid-table-header-background-color;
+
     &-sort-by-icons {
       display: inline-block;
       font-size: $onex-data-grid-table-header-sort-by-icon-font-size;
@@ -12,6 +13,7 @@
       padding-left: $onex-data-grid-table-header-sort-by-icon-padding-x;
       vertical-align: bottom;
       width: $onex-data-grid-table-header-sort-by-icon-width;
+
       .sort-by-icon {
         font-size: $onex-data-grid-table-header-sort-by-icon-font-size;
       }
@@ -20,7 +22,6 @@
     tr {
       position: relative;
       padding: 0;
-      border-bottom: 1px solid $onex-data-grid-table-header-border-bottom-color;
       border-radius: $onex-data-grid-table-header-border-radius;
       font-size: $onex-data-grid-table-header-font-size;
       line-height: $onex-data-grid-table-header-line-height;
@@ -29,6 +30,7 @@
     th {
       margin: 0;
       padding: $onex-data-grid-table-header-th-padding-x $onex-data-grid-table-header-th-padding-y;
+      border-bottom: 1px solid $onex-data-grid-table-header-border-bottom-color;
 
       &:hover {
         background-color: $onex-data-grid-table-header-background-color-hover;
@@ -47,7 +49,7 @@
         }
       }
 
-      &:hover span{
+      &:hover span {
         color: $onex-data-grid-table-header-color-hover;
       }
 
@@ -56,6 +58,27 @@
           color: $onex-data-grid-table-header-th-hover-color;
         }
       }
+
+      &.onex-data-grid__table-headers-action-cell {
+        width: 1%;
+        & .onex-data-grid__cell-action-content {
+          display: flex;
+          justify-content: center;
+          width: fit-content;
+        }
+      }
+
+      &:not(:last-child).onex-data-grid__cell-divider {
+        border-right: 1px solid rgba(26, 28, 30, 0.2);
+      }
+      &:last-child.onex-data-grid__cell-divider {
+        border-left: 1px solid rgba(26, 28, 30, 0.2);
+      }
+    }
+
+    &-check {
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -63,20 +86,39 @@
     tr {
       background-color: $onex-data-grid-table-body-tr-background-color;
       border-radius: $onex-data-grid-table-body-border-radius;
-      border-top: 1px solid $onex-data-grid-table-body-tr-border-color;
-      border-bottom: 1px solid $onex-data-grid-table-body-tr-border-color;
       margin: 0;
       padding: 0;
       font-size: $onex-data-grid-table-body-td-font-size;
       line-height: $line-height-label;
+
       &:hover {
         background-color: $onex-data-grid-table-body-tr-hover-background-color;
+      }
+      &.onex-data-grid__table-body-row.isSelected {
+        background-color: $onex-data-grid-table-body-tr-selected-background-color;
+        &:hover {
+          background-color: $onex-data-grid-table-body-tr-selected-hover-background-color;
+        }
       }
     }
 
     td {
-      padding: $onex-data-grid-table-body-td-padding-x $onex-data-grid-table-body-td-padding-y;
       margin: 0;
+      border-top: 1px solid $onex-data-grid-table-body-tr-border-color;
+      border-bottom: 1px solid $onex-data-grid-table-body-tr-border-color;
+
+      &:not(:last-child).onex-data-grid__cell-divider {
+        border-right: 1px solid rgba(26, 28, 30, 0.2);
+      }
+
+      &:last-child.onex-data-grid__cell-divider {
+        border-left: 1px solid rgba(26, 28, 30, 0.2);
+      }
+    }
+
+    &-row-check {
+      display: flex;
+      justify-content: center;
     }
   }
 }

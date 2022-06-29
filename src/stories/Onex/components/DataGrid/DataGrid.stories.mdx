@@ -1,6 +1,7 @@
 import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
 
-import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
+import {gridColumns, gridData, gridCustomHeaderColumns, demoGridColumns, demoGridData} from './gridData';
+import { DataGrid, Button, Icon } from '../../../../components';
 
 <Meta
   title="Onex/Components/DataGrid"
@@ -18,7 +19,7 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
     },
     columns: {
       description: 'The array of table columns. Must be memoized.Supports nested columns arrays',
-      type: { required: true },
+      type: {required: true},
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -27,7 +28,7 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
     },
     data: {
       description: 'The data array that you want to display on the table. Must be memoized',
-      type: { required: true },
+      type: {required: true},
       table: {
         defaultValue: {
           summary: 'undefined',
@@ -45,12 +46,24 @@ import {DataGrid, DataGridName, DataGridControl} from '../../../../components';
       description: 'The array of quantities of rows per page',
     },
     dataGridControlProps: {
-      description: 'Object with dataGridControl props, if you not use this prop - hrid Control not will be visiable, for more detail props go to the DataGrodControl component',
+      description: 'Object with dataGridControl props, if you not use this prop - Grid Control not will be visible, for more detail props go to the DataGridControl component',
     },
     customGridControl: {
-      description: 'Element which replace standart dataGridControl component with your custom component',
+      description: 'Element which replace standard dataGridControl component with your custom component',
       control: 'string'
     },
+    useRowSelection: {
+      description: 'Enable row selection mode',
+    },
+    rowSelectionType: {
+      description: 'Give possibility to change row selection type, select multiple rows or single row. By default - ```multi```'
+    },
+    selectedRowIds: {
+      description: `Object with row ids. If a row's ID is set to true in this object, it will have a selected state`,
+    },
+    handleSelection: {
+      description: 'Callback fired when row selected. Return ```selectedRowIds``` object',
+    }
   }}
   component={DataGrid}
 />
@@ -73,112 +86,21 @@ Using this component requires installation packages : [react-table v7](https://w
     args={{
       dataTestId: 'data-grid-test-id',
       className: 'data-grid-custom',
-      rowsPerPageOptions: [5, 10],
       dataGridControlProps: {
         title: 'Title',
-        badge: '23',
+        badge: 23,
       },
-      className: {control: 'text'},
-      columns: [
-        {
-          Header: 'ID',
-          accessor: 'id',
-        },
-        {
-          Header: 'Study',
-          accessor: 'study',
-        },
-        {
-          Header: 'Country',
-          accessor: 'country',
-        },
-        {
-          Header: 'Category',
-          accessor: 'category',
-        },
-        {
-          Header: 'Created',
-          accessor: 'created',
-        },
-      ],
-      data: [
-        {
-          id: 'M121',
-          study: 'United States 10',
-          country: 'United States 10',
-          category: 'Management 10',
-          created: '26 Aug 2010',
-        },
-        {
-          id: 'M122',
-          study: 'United States 20',
-          country: 'United States 20',
-          category: 'Management 20',
-          created: '25 Aug 2010',
-        },
-        {
-          id: 'M123',
-          study: 'United States 30',
-          country: 'United States 30',
-          category: 'Management 30',
-          created: '24 Aug 2010',
-        },
-        {
-          id: 'M124',
-          study: 'United States 40',
-          country: 'United States 40',
-          category: 'Management 40',
-          created: '23 Aug 2010',
-        },
-        {
-          id: 'M125',
-          study: 'United States 50',
-          country: 'United States 50',
-          category: 'Management 50',
-          created: '22 Aug 2010',
-        },
-        {
-          id: 'M126',
-          study: 'United States 60',
-          country: 'United States 60',
-          category: 'Management 60',
-          created: '21 Aug 2010',
-        },
-        {
-          id: 'M127',
-          study: 'United States 70',
-          country: 'United States 70',
-          category: 'Management 70',
-          created: '19 Aug 2010',
-        },
-        {
-          id: 'M128',
-          study: 'United States 80',
-          country: 'United States 80',
-          category: 'Management 80',
-          created: '18 Aug 2010',
-        },
-        {
-          id: 'M129',
-          study: 'United States 90',
-          country: 'United States 90',
-          category: 'Management 90',
-          created: '17 Aug 2010',
-        },
-        {
-          id: 'M130',
-          study: 'United States 100',
-          country: 'United States 100',
-          category: 'Management 100',
-          created: '27 Aug 2010',
-        }
-      ],
+      columns: demoGridColumns,
+      data: demoGridData,
       sortBy: [
         {
           id: 'id',
         }
       ],
       rowsPerPageOptions: [5, 10],
+      useRowSelection: true,
+      handleSelection: () => {},
+      getRowId: (row, relativeIndex, parent) => parent ? [`demo.${parent.id}`, relativeIndex].join('.') : `demo.${relativeIndex}`
     }}>
     {Template.bind({})}
   </Story>
@@ -186,34 +108,200 @@ Using this component requires installation packages : [react-table v7](https://w
 
 <ArgsTable story="Demo"/>
 
-### Column Options
+### DataGrid title bar
+To add a header you must use prop ```dataGridControlProps``` for standard table control element.
+If a custom element is required, you have to use ```customGridControl``` prop.
+For more information please check: [DataGridControl Props](/docs/onex-components-datagrid-datagridcontrol--demo).
+
+### DataGrid Body
+
+Required prop ```columns``` represented an array of table columns. Must be memoized.Supports nested columns arrays.
+```
+  const columns = [
+  {
+    Header: 'id',
+    accessor: 'id',
+  },
+  {
+    Header: 'Name',
+    accessor: 'name',
+  }];
+```
+
+#### DataGrid header row
+```Header: String | Function | React.Component => JSX```<br/>
+Must either be a string or return valid JSX<br/>
+If a function/component is passed, it will be used for formatting the header value, eg..<br/>
+In case if you use ```Button``` or ```Dropdown``` etc., please use ```type: "action"```.<br/>
+You can use a ```Header``` function to dynamically format the header using any table or column state.<br/>
+```
+const columns = [
+  ...columns,
+  {
+    Header: <Button variant="tertiary" type="icon"><Icon>settings</Icon></Button>,
+    accessor: 'action',
+    type: 'action',
+  }];
+```
+##### DataGrid header row example
+<Canvas>
+  <Story
+    name="CustomHeaderCell"
+    args={{
+      dataTestId: 'data-grid-custom-header-cell-test-id',
+      className: 'data-grid-custom-header-cell-custom',
+      columns: gridCustomHeaderColumns,
+      data: [],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+#### Column Options
+Information about data grid: [DataGridCell Props](/docs/onex-components-datagrid-datagridcell--demo).
 For more information [Columns option](https://react-table-v7.tanstack.com/docs/api/useTable#column-options)
 
-| Name     | Type                                           | Description                                                                                                                                        | Required |
-|----------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| accessor | String, Function(originalRow, rowIndex) => any | This string/function is used to build the data model for your column.                                                                              | [x]      |
-| id       | String                                         | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function | [x]      |
-| columns  | Array[Column]                                  | A nested array of columns.                                                                                                                         |          |
-| Header   | String, Function, React.Component => JSX       | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                |          |
+| Name       | Type                                                                       | Description                                                                                                                                                                                                                           | Required |
+|------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| accessor   | String, Function(originalRow, rowIndex) => any                             | This string/function is used to build the data model for your column.                                                                                                                                                                 | [x]      |
+| id         | String                                                                     | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function                                                                                    | [x]      |
+| columns    | Array[Column]                                                              | A nested array of columns.                                                                                                                                                                                                            |          |
+| Header     | String, Function, React.Component => JSX                                   | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                                                                                                   |          |
+| type       | One of values: ```'action', 'custom', 'editable'```                        | ```'action'``` can used for header and body cells, in case if you used ```Button```, ```Dropdown``` etc.. ```custom``` can used for body cell, in case if you used custom table cell. ```editable``` can used for editable body cell. |          |
+| hasDivider | Added right border for current column, for last column - added left border |                                                                                                                                                                                                                                       |          |
 
 
-Also, for configure sorting supports - column sorting option. For more information, please check - [Sort column options](https://react-table-v7.tanstack.com/docs/api/useSortBy#column-options)
+### Sorting
+By default,f multi-sorting disabled.<br/>
+To configure sorting you can use ```sortBy``` property.<br/>
+If you want to enable multi sorting, please use prop - ```multiSort```.<br/>
+There are an array of sorting objects.<br/>
+Each sorting object should contain an ```id``` key with the corresponding column ID to sort by. An optional ```desc``` key
+(which defaults to ```false```) may be set to ```true``` to indicate a descending sorting direction for that column, otherwise,
+it will be assumed to be ascending. This information is stored in state since the table is allowed to manipulate the filter through user interaction.
+Must be memoized.
+
+Other parameters are also supported, for more information please check - [Sort table options](https://react-table-v7.tanstack.com/docs/api/useSortBy#table-options)  and [Sort column options](https://react-table-v7.tanstack.com/docs/api/useSortBy#column-options)
+
+<Canvas>
+  <Story
+    name="SingleSorting"
+    height="28rem"
+    args={{
+      dataTestId: 'data-grid-single-sorting-test-id',
+      className: 'data-grid-single-sorting-custom',
+      dataGridControlProps: {
+        title: 'Sorting table',
+      },
+      columns: gridColumns,
+      data: gridData,
+      sortBy: [
+        {
+          id: 'studyId',
+        }],
+      multiSort: false,
+      getRowId: (row, relativeIndex, parent) => parent ? [`s-sort.${parent.id}`, relativeIndex].join('.') : `s-sort.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="MultiSorting"
+    height="28rem"
+    args={{
+      dataTestId: 'data-grid-multi-sorting-test-id',
+      className: 'data-grid-multi-sorting-custom',
+      dataGridControlProps: {
+        title: 'Multi Sorting table',
+      },
+      columns: gridColumns,
+      data: gridData,
+      sortBy: [
+        {
+          id: 'studyId',
+        },
+        {
+          id: 'stage',
+          desc: true,
+        }
+      ],
+      multiSort: true,
+      getRowId: (row, relativeIndex, parent) => parent ? [`m-sort.${parent.id}`, relativeIndex].join('.') : `m-sort.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Row selection
+For using row selection you have to pass prop - ```useRowSelection```. By default, row selection disabled.<br/>
+Supports 2 row selection types: ```multi``` and ```single```. By default, used ```multi```.<br/>
+Prop ```selectedRowIds: Object<rowId: Boolean>```, if a row's ID is set to true in this object, it will have a selected state.<br/>
+```
+  {
+    "0": true,
+    "2": true,
+    "3" : false
+  }
+```
+Callback ```handleSelection``` fired when row(s) selected.
+
+<Canvas>
+  <Story
+    name="MultiSelection"
+    height="28rem"
+    args={{
+      dataTestId: 'data-grid-multi-selection-test-id',
+      className: 'data-grid-multi-selection-custom',
+      dataGridControlProps: {
+        title: 'Multi Selection table',
+      },
+      columns: gridColumns,
+      data: gridData,
+      useRowSelection: true,
+      rowSelectionType: 'multi',
+      handleSelection: () => {},
+      getRowId: (row, relativeIndex, parent) => parent ? [`w.${parent.id}`, relativeIndex].join('.') : `w.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="SingleSelection"
+    height="28rem"
+    args={{
+      dataTestId: 'data-grid-single-selection-test-id',
+      className: 'data-grid-single-selection-custom',
+      dataGridControlProps: {
+        title: 'Single Selection table',
+      },
+      columns: gridColumns,
+      data: gridData,
+      useRowSelection: true,
+      rowSelectionType: 'single',
+      handleSelection: () => {},
+      getRowId: (row, relativeIndex, parent) => parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+### Cell Options
+#### Header
 
 ### Pagination
 For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.
 First value in array this is a default rows per page.
 
-### Sorting
-Multi-sort is enabled by default.
-To configure sorting you can use ```sortBy``` property.
-There are an array of sorting objects. If there is more than one object in the array, multi-sorting will be enabled.
-Each sorting object should contain an ```id``` key with the corresponding column ID to sort by. An optional ```desc``` key
-(which defaults to ```false```) may be set to ```true``` to indicate a descending sorting directionfor that column, otherwise,
-it will be assumed to be ascending. This information is stored in state since the table is allowed to manipulate the filter through user interaction.
-Must be memoized.
 
-Other parameters are also supported, for more information please check - [Sort table options](https://react-table-v7.tanstack.com/docs/api/useSortBy#table-options)
-
-### Table Header
-For add header you must use prop ```dataGridControlProps``` for standart table controll element or ```customGridControl``` prop for your custom table controll, if you not use all of them header not will be add by default.
 
