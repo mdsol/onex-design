@@ -40,6 +40,27 @@ export const SwitchTemplate = (args) => <Switch {...args} />;
 # Switch
 Switches toggle the state of a single setting on or off.
 
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      checked: true,
+      className: 'custom-switch',
+      dataTestId: 'test-switch-id',
+      disabled: false,
+      id: 'custom-demo-switch',
+      label: 'Demo',
+      onChange: () => {},
+    }}>>
+    >
+    {SwitchTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Basic switches
 <Canvas>
   <Story name="Default" story={stories.Default} />
@@ -70,25 +91,3 @@ You can control the switch with the ```checked``` and ```onChange``` props.
     }}
   </Story>
 </Canvas>
-
-
-## Demo
-
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      checked: true,
-      className: 'custom-switch',
-      dataTestId: 'test-switch-id',
-      disabled: false,
-      id: 'custom-demo-switch',
-      label: 'Demo',
-      onChange: () => {},
-    }}>>
-    >
-    {SwitchTemplate.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

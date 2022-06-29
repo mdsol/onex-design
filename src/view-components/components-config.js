@@ -1856,6 +1856,42 @@ export const config = {
         ],
       },
       {
+        name: 'Dropzone',
+        componentName: 'Dropzone',
+        styledComponentName: 'Dropzone',
+        additionalComponents: [],
+        variants: [
+          {
+            files: [
+              {
+                name: 'loading.json',
+                size: '100MB',
+                isLoading: true,
+                progressNumber: 10,
+              },
+              {
+                name: 'success.csv',
+                size: '100MB',
+                isLoading: false,
+                isSuccess: true,
+              },
+              {
+                name: 'error.js',
+                size: '100MB',
+                isLoading: false,
+                isInvalid: true,
+                errorMessage: 'format not supported',
+                buttonTitle: 'Upload',
+              },
+            ],
+          },
+          {
+            isInvalid: true,
+            errorText: 'Something went wrong',
+          },
+        ],
+      },
+      {
         name: 'Banner',
         componentName: 'Banner',
         styledComponentName: 'Banner',

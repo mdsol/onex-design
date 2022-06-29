@@ -80,6 +80,45 @@ export const ButtonTemplate = (args) => <Button {...args} />;
 
 Buttons are clickable items used for actions. They can have different styles depending on the needs.
 
+## Demo
+
+<Canvas>
+  <Story name="Demo">
+    {(args) => {
+      const [value, setValue] = React.useState(args?.children || 'Basic button');
+      const [icon, setIcon] = React.useState(false);
+      React.useEffect(() => {
+        if (args?.type === 'icon') {
+          setIcon(true);
+          setValue(null);
+        }
+        if (args?.type === 'default') {
+          setIcon(false);
+          setValue(args?.children || 'Basic button');
+        }
+      }, [args?.type, args?.children]);
+      return (
+        <Button
+          type="default"
+          className="custom-button"
+          size="md"
+          dataTestId="test-button-id"
+          variant="primary"
+          onClick={() => {}}
+          {...args}
+          trailingIcon={args?.type === 'default' && args?.trailingIcon}
+          leadingIcon={args?.type === 'default' && args?.leadingIcon}
+        >
+          {icon && <Icon>star</Icon>}
+          {value}
+        </Button>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Style
 
 ### Sizes
@@ -134,42 +173,3 @@ Supports two button sizes: `small` and `middle`.
   <Story name="TertiaryIconMiddleDisabled" story={stories.TertiaryIconMiddleDisabled} />
   <Story name="TertiaryDisabled" story={stories.TertiaryDisabled} />
 </Canvas>
-
-### Demo
-
-<Canvas>
-  <Story name="Demo">
-    {(args) => {
-      const [value, setValue] = React.useState(args?.children || 'Basic button');
-      const [icon, setIcon] = React.useState(false);
-      React.useEffect(() => {
-        if (args?.type === 'icon') {
-          setIcon(true);
-          setValue(null);
-        }
-        if (args?.type === 'default') {
-          setIcon(false);
-          setValue(args?.children || 'Basic button');
-        }
-      }, [args?.type, args?.children]);
-      return (
-        <Button
-          type="default"
-          className="custom-button"
-          size="md"
-          dataTestId="test-button-id"
-          variant="primary"
-          onClick={() => {}}
-          {...args}
-          trailingIcon={args?.type === 'default' && args?.trailingIcon}
-          leadingIcon={args?.type === 'default' && args?.leadingIcon}
-        >
-          {icon && <Icon>star</Icon>}
-          {value}
-        </Button>
-      );
-    }}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

@@ -1,0 +1,420 @@
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import { Dropzone } from '../../../../components';
+
+<Meta
+  title="Onex/Components/Dropzone"
+  argTypes={{
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    title: {
+      description: 'Title of dropzone aria',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'Click or drag file to this area to upload',
+        },
+      },
+    },
+    info: {
+      description: 'Information about types files and size',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'CSV, JSON, XLS up to 1 MB only',
+        },
+      },
+    },
+    errorText: {
+      description: 'Error message for dropzone',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'Click or drag file to this area to upload',
+        },
+      },
+    },
+    isInvalid: {
+      description: 'Set to true to show error message in dropzone aria',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    autoFocus: {
+      description: 'Set to true to focus the root element on render',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    disabled: {
+      description: 'Enable/disable the dropzone',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    getFilesFromEvent: {
+      description: 'Use this to provide a custom file aggregator. Arguments event: (DragEvent | Event) — A drag event or input change event (if files were selected via the file dialog)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    maxFiles: {
+      description: 'Maximum accepted number of files The default value is 0 which means there is no limitation to how many files are accepted.',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '0',
+        },
+      },
+    },
+    maxSize: {
+      description: 'Maximum file size (in bytes)',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: 'Infinity',
+        },
+      },
+    },
+    minSize: {
+      description: 'Minimum file size (in bytes)',
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '0',
+        },
+      },
+    },
+    multiple: {
+      description: 'Allow drag \'n\' drop (or selection from the file dialog) of multiple files',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    files: {
+      description: 'List of files uploaded to dropzone',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary: 'Array({ name: string, size: string, progressNumber: number, isSuccess: boolean, isInvalid: boolean, errorMessage: string, isLoading: boolean, buttonTitle: string, buttonProps: object, progressProps: object, onCancel: func, onDelete: func, onHandleClick: func })'
+        }
+      }
+    },
+    noClick: {
+      description: 'If true, disables click to open the native file selection dialog',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    noDrag: {
+      description: 'If true, disables drag \'n\' drop',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    noDragEventsBubbling: {
+      description: 'If true, stops drag event propagation to parents',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    noKeyboard: {
+      description: 'If true, disables SPACE/ENTER to open the native file selection dialog. Note that it also stops tracking the focus state.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    onDragEnter: {
+      description: 'Cb for when the dragenter event occurs. Arguments event: DragEvent',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDragLeave: {
+      description: 'Cb for when the dragleave event occurs. Arguments event: DragEvent',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDragOver: {
+      description: 'Cb for when the dragover event occurs. Arguments event: DragEvent',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDropRejected: {
+      description: 'Cb for when the drop event occurs. Note that if no files are rejected, this callback is not invoked. Arguments fileRejections: Array.&lt;FileRejection&gt;event: (DragEvent | Event)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDropAccepted: {
+      description: 'Cb for when the drop event occurs. Note that if no files are accepted, this callback is not invoked. Arguments files: Array.&lt;File&gt;event: (DragEvent | Event)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onError: {
+      description: 'Cb for when there\'s some error from any of the promises. Arguments error: Error',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onDrop: {
+      description: 'Cb for when the drop event occurs. Note that this callback is invoked after the getFilesFromEvent callback is done. Arguments acceptedFiles: Array.&lt;File&gt;fileRejections: Array.&lt;FileRejection&gt;event: (DragEvent | Event) — A drag event or input change event (if files were selected via the file dialog)',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onFileDialogCancel: {
+      description: 'Cb for when closing the file dialog with no selection',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onFileDialogOpen: {
+      description: 'Cb for when opening the file dialog',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    preventDropOnDocument: {
+      description: 'If false, allow dropped items to take over the current browser window',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    useFsAccessApi: {
+      description: 'Set to true to use the https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API to open the file picker instead of using an &lt;input type="file"&gt; click event.',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
+    validator: {
+      description: 'Custom validation function. It must return null if there\'s no errors. Arguments file: File Returns (FileError | Array.&lt;FileError&gt; | null)',
+      table: {
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+    }
+  }}
+  component={Dropzone}
+/>
+
+export const Template = (args) => <Dropzone {...args} />;
+
+# Dropzone
+
+Dropzone base on <code>react-dropzone</code> component. Full documentation of react-dropzone you can read on official resources.
+
+Simple React hook to create a HTML5-compliant drag'n'drop zone for files.
+Documentation and examples at https://react-dropzone.js.org. Source code at https://github.com/react-dropzone/react-dropzone/.
+
+## Installation react-dropzone
+Install it from npm and include it in your React build process (using Webpack, Browserify, etc).
+
+<code>npm install --save react-dropzone</code><br/>
+or:<br/>
+<code>yarn add react-dropzone</code>
+
+## Usage
+
+Dropzone component has all react-dropzone's property. You can use every property which you need.
+To obtain the states of the component, you can use <code>ref</code> of Dropzone component. <code>ref.current</code> is object which has all this states.
+
+<b>react-dropzone states</b>
+<ul>
+  <li><b>acceptedFiles</b> - <code>Array&lt;File&gt;</code> success uploaded files</li>
+  <li><b>fileRejections</b> - <code>Array&lt;File&gt;</code> files uploaded with error</li>
+  <li><b>inputRef</b> - <code>ref</code> ref of react-dropzone input</li>
+  <li><b>isDragAccept</b> - <code>boolean</code> state when drag is accept</li>
+  <li><b>isDragActive</b> - <code>boolean</code> state when drag is active</li>
+  <li><b>isDragReject</b> - <code>boolean</code> state when drag is reject</li>
+  <li><b>isFileDialogActive</b> - <code>boolean</code> state when file dialog is active</li>
+  <li><b>isFocused</b> - <code>boolean</code> state when dropzone is focused</li>
+</ul>
+
+A file is a separate component that has its own properties. Therefore, if you need to transfer properties to a file component - pass them as object fields for each item in the array's files.
+
+<b>File's properties</b>
+<ul>
+  <li><b>name</b> - <code>type: string, default: undefined</code> file name</li>
+  <li><b>size</b> - <code>type: string, default: undefined</code> file size</li>
+  <li><b>progressNumber</b> - <code>type: number, default: 0</code> current percent of progress bar</li>
+  <li><b>isSuccess</b> - <code>type: boolean, default: false</code> if the file was successfully upload</li>
+  <li><b>isInvalid</b> - <code>type: boolean, default: false</code> if the file was rejected during uploading</li>
+  <li><b>errorMessage</b> - <code>type: string, default: undefined</code> text of error message (if you need for validation)</li>
+  <li><b>successMessage</b> - <code>type: string, default: undefined</code> text of success message (if you need for validation)</li>
+  <li><b>isLoading</b> - <code>type: boolean, default: false</code> state of uploading process file</li>
+  <li><b>buttonTitle</b> - <code>type: string, default: undefined</code> this button is displayed if the file was uploading with an error. If you do not need a button, do not pass the value in the property</li>
+  <li><b>buttonProps</b> - <code>type: object, default: {}</code> button property object. List of properties you can see in Button component docs</li>
+  <li><b>progressProps</b> - <code>type: object, default: {}</code> progressProps property object. List of properties you can see in ProgressBar component docs</li>
+  <li><b>onCancel</b> - <code>type: () => void, default: () => {}</code> function call back to cancel upload process (function doesn't have code for it you should write your own)</li>
+  <li><b>onDelete</b> - <code>type: () => void, default: () => {}</code> function call back to delete file from list (function doesn't have code for it you should write your own)</li>
+  <li><b>onReload</b> - <code>type: () => void, default: () => {}</code> function call back to reload file (function doesn't have code for it you should write your own)</li>
+</ul>
+
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+       args={{
+         title: 'Click or drag file to this area to upload',
+         info: 'CSV, JSON, XLS up to 1 MB only',
+         errorText: 'Click or drag file to this area to upload',
+         files: [{
+           name: 'patients_site_135678.csv',
+           size: '829 KB',
+           isLoading: true,
+           progressNumber: 27,
+         }, {
+           name: 'patients_site_135678.csv',
+           size: '829 KB',
+           isLoading: false,
+           isSuccess: true,
+         }, {
+           name: 'patients_site_135678.csv',
+           size: '829 KB',
+           isLoading: false,
+           isInvalid: true,
+           errorMessage: 'Upload failed',
+           buttonTitle: 'Upload'
+         }]
+       }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+## With upload files
+
+<Canvas>
+  <Story
+    name="Upload file"
+    args={{
+      files: [{
+        name: 'patients_site_135678.csv',
+        size: '829 KB',
+        isLoading: true,
+        progressNumber: 27,
+      }, {
+        name: 'patients_site_135678.csv',
+        size: '829 KB',
+        isLoading: false,
+        isSuccess: true,
+      }, {
+        name: 'patients_site_135678.csv',
+        size: '829 KB',
+        isLoading: false,
+        isInvalid: true,
+        errorMessage: 'Upload failed',
+        buttonTitle: 'Upload'
+      }]
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Dropzone error
+
+<Canvas>
+  <Story
+    name="Error uploading files"
+    args={{
+      isInvalid: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## interactive example
+
+<Canvas>
+  <Story name="Dropzone example with files">
+    {() => {
+      const dropZoneRef = React.useRef(null);
+      const [attachedFiles, setAttachedFiles] = React.useState([]);
+      const onDeleteFile = (fileInfo, files) => {
+        const filteredFiles = files.filter(file => file.name !== fileInfo.name && file.size !== fileInfo.size)
+        setAttachedFiles(getFileList(filteredFiles));
+      };
+      const getFileList = (files) => files.map((file) => ({
+        name: file.name,
+        size: file.size,
+        isSuccess: true,
+        onDelete: () => onDeleteFile(file, files),
+      }));
+      const handleOnDrop = (files) => {
+        setAttachedFiles(getFileList(files));
+      };
+      return (
+        <>
+          <div>
+            <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>

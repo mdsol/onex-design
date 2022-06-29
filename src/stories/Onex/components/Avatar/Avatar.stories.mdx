@@ -47,6 +47,25 @@ export const AvatarTemplate = (args) => <Avatar {...args} />;
 An avatar is a graphical representation of a user and typically appears in list and card views,
 along side a user's information and/or content that they have created.
 
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      className: 'custom-avatar',
+      size: 'lg',
+      children: <Icon>face</Icon>,
+      hoverDisabled: false,
+      dataTestId: 'test-avatar-id',
+    }}
+  >
+    {AvatarTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Usage
 
 ### Default avatar
@@ -81,22 +100,3 @@ An avatar component can vary in size.
   <Story name="Medium" story={stories.Medium} />
   <Story name="Large" story={stories.Large} />
 </Canvas>
-
-## Demo
-
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      className: 'custom-avatar',
-      size: 'lg',
-      children: <Icon>face</Icon>,
-      hoverDisabled: false,
-      dataTestId: 'test-avatar-id',
-    }}
-  >
-    {AvatarTemplate.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import ViewComponents from './view-components';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Link, Icon } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone } from './components';
 import ThemeProvider from './components/ThemeProvider';
 
 // import './scss/platform.scss';
@@ -114,6 +114,8 @@ const groupedOptionsMultiSelect = [
 const DevExamples = () => {
   const [show, setShow] = useState(false);
   const dataGridData = useMemo(() => makeData(30), []);
+  const dropZoneRef = useRef(null);
+  const [attachedFiles, setAttachedFiles] = useState([]);
   const dataGridSortByUpd = useMemo(() => dataGridSortBy, []);
 
   const handleModalPrimaryAction = () => setShow(false);
@@ -128,19 +130,22 @@ const DevExamples = () => {
     setSelectedValues(values);
   };
 
+  const handleOnDrop = (files) => {
+    setAttachedFiles(
+      files.map((file) => ({
+        name: file.name,
+        size: file.size,
+        isSuccess: true,
+      })),
+    );
+  };
+
   const GridControl = { title: 'Title' };
 
   return (
     <div className="p-5">
-      <div>
-        <Link
-          href="Link"
-          leadingIcon={<Icon>star</Icon>}
-          trailingIcon={<Icon>star</Icon>}
-          variant="secondary"
-        >
-          Link
-        </Link>
+      <div style={{ padding: '20px', minHeight: '300px' }}>
+        <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
       </div>
       <div>
         <Select

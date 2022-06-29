@@ -62,6 +62,24 @@ export const Template = (args) => <Tag {...args} />;
 Use tags to visually label UI objects for quick recognition and navigation.
 Tags can be used for various types of objects; including free form text, predefined text, rules, or contacts.
 
+## Demo
+<Canvas>
+    <Story
+        name="Demo"
+        args={{
+            children: 'Tag label',
+            className: 'selection-tag-demo-class',
+            dataTestId: 'selection-tag-demo-id',
+            disabled: false,
+            isRemovable: true,
+            variant: 'selection',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ### Selection tag
 This tag can be selected in order to provide or to change context.
 
@@ -106,22 +124,3 @@ Leading icon can be represented as svg, Avatar or just string with URL, in this 
       {Template.bind({})}
     </Story>
   </Canvas>
-
-
-### Demo
-<Canvas>
-    <Story
-        name="Demo"
-        args={{
-            children: 'Tag label',
-            className: 'selection-tag-demo-class',
-            dataTestId: 'selection-tag-demo-id',
-            disabled: false,
-            isRemovable: true,
-            variant: 'selection',
-        }}>
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

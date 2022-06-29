@@ -58,6 +58,30 @@ export const TypographyTemplate = (args) => <Typography {...args} />;
 # Typography
 Use typography to present your design and content as clearly and efficiently as possible.
 
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      align: 'center',
+      children:'Body',
+      className: 'custom-typography',
+      dataTestId: 'test-typography-id',
+      href: '#',
+      marginBottom: false,
+      noWrap: true,
+      semiBold: true,
+      paragraph: false,
+      variant: 'body',
+      uppercase: false,
+    }}>
+    >
+    {TypographyTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Style
 
 ### Alignment
@@ -118,28 +142,3 @@ Providing a ```uppercase```  argument will render an ```<span>``` element with t
   <Story name="CaptionLink" story={stories.CaptionLink} />
   <Story name="CaptionUppercase" story={stories.CaptionUppercase} />
 </Canvas>
-
-
-## Demo
-<Canvas>
-  <Story
-    name="Demo"
-    args={{
-      align: 'center',
-      children:'Body',
-      className: 'custom-typography',
-      dataTestId: 'test-typography-id',
-      href: '#',
-      marginBottom: false,
-      noWrap: true,
-      semiBold: true,
-      paragraph: false,
-      variant: 'body',
-      uppercase: false,
-    }}>
-    >
-    {TypographyTemplate.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

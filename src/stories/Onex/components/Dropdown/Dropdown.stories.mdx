@@ -57,6 +57,37 @@ export const DropdownTemplate = (args) => <Dropdown {...args} />;
 # Dropdown
 A dropdown menu displays a list of actions to take.
 
+## Demo
+<Canvas>
+  <Story
+    height="16rem"
+    name="Demo"
+    args={{
+      align: 'start',
+      buttonStyle: 'text',
+      className: 'custom-dropdown',
+      dataTestId: 'test-dropdown-id',
+      disabled: false,
+      id: 'dropdown-demo',
+      items: [
+        { eventKey: 'one', title: 'item one' },
+        { eventKey: 'two', title: 'item two', disabled: true },
+        { eventKey: 'three', title: 'item three', href: '#' },
+        { eventKey: 'four', title: 'item four' },
+        { eventKey: 'five', title: 'item five' },
+      ],
+      size: 'sm',
+      title: 'Dropdown demo',
+      variant: 'primary',
+      onSelect: () => {},
+    }}>
+    >
+    {DropdownTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
 ## Style
 
 ### Sizes
@@ -136,35 +167,3 @@ Separate groups of related menu items with a divider.
 <Canvas>
   <Story height="18.5rem" name="WithDivider" story={stories.WithDivider} />
 </Canvas>
-
-
-### Demo
-<Canvas>
-  <Story
-    height="16rem"
-    name="Demo"
-    args={{
-      align: 'start',
-      buttonStyle: 'text',
-      className: 'custom-dropdown',
-      dataTestId: 'test-dropdown-id',
-      disabled: false,
-      id: 'dropdown-demo',
-      items: [
-        { eventKey: 'one', title: 'item one' },
-        { eventKey: 'two', title: 'item two', disabled: true },
-        { eventKey: 'three', title: 'item three', href: '#' },
-        { eventKey: 'four', title: 'item four' },
-        { eventKey: 'five', title: 'item five' },
-      ],
-      size: 'sm',
-      title: 'Dropdown demo',
-      variant: 'primary',
-      onSelect: () => {},
-    }}>
-    >
-    {DropdownTemplate.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Demo" />

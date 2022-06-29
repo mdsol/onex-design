@@ -8,11 +8,11 @@
         border-radius: 0.5rem;
 
         .alert-heading {
-            font-weight: 400;
-            font-size: 14px;
+            font-weight: $onex-inline-alert-head-font-weight;
+            font-size: $onex-inline-alert-head-font-size;
         }
     }
     &__size-sm.alert.onex-alert {
-        padding: 0.75rem 1rem 0.75rem 2.75rem;
+        padding: $onex-inline-alert-padding-sm-y $onex-inline-alert-padding-sm-x-right $onex-inline-alert-padding-sm-y $onex-inline-alert-padding-sm-x-left;
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@mdsol/onex-design",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "author": "JT <jathompson@mdsol.com>",
   "files": [
     "dist"
@@ -24,7 +24,7 @@
     "storybook": "start-storybook -p 6006",
     "build": "webpack --config webpack.config.pkg.js --mode production --json > stats.json && babel dist/*.umd.js -d dist --out-file-extension .compat.js",
     "build:size": "webpack-bundle-analyzer stats.json",
-    "build:css": "sass --style=compressed ./src/scss/platform.scss dist/platform.css",
+    "build:css": "sass --style=compressed ./src/scss/platform.scss dist/platform.css && node src/utils/themeprovider-css.js --BUNDLE=true",
     "build:css:tp": "node src/utils/themeprovider-css.js",
     "build:sb": "build-storybook",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
@@ -45,6 +45,7 @@
     "prop-types": "^15.8.1",
     "react-bootstrap": "^2.4.0",
     "react-date-range": "^1.4.0",
+    "react-dropzone": "^14.2.1",
     "react-select": "^5.3.2",
     "react-table": "^7.8.0",
     "styled-components": "^5.3.5"
