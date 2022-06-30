@@ -20,7 +20,6 @@ const DataGrid = ({
   handleSelection,
   ...accProps
 }) => {
-  // const [_data, _setData] = useState(data);
   const dataRef = useRef(data);
   const [skipPageReset, setSkipPageReset] = useState(false);
   const dataGridClasses = classNames('onex-data-grid', {
