@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Table as ReactTable } from 'react-bootstrap';
 
-import Icon from '../../../../Icon/scss';
-import Typography from '../../../../Typography/scss';
+// import Icon from '../../../../Icon/scss';
+// import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
 import Check from '../../../../Check/scss';
 import DataGridCell from './components/DataGridCell';
 import DataGridCustomCell from './components/DataGridCustomCell';
 import DataGridEditableCell from './components/DataGridEditableCell';
+import DataGridHeader from './components/DataGridHeader';
 
 const handleColumnType = (row, cell, cellInd, updateData) => {
   if (cell?.column.type === 'editable') {
@@ -142,39 +143,13 @@ const DataGridTable = ({
                   <span />
                 </th>
               )}
-              {headerGroup.headers.map((column, headerCellInd) =>
-                column.type === 'action' ? (
-                  <th
-                    className={`onex-data-grid__table-headers-action-cell ${
-                      column.hasDivider ? 'onex-data-grid__cell-divider' : ''
-                    }`}
-                    key={`header_cell_row_${headerCellInd}`}
-                    {...column.getHeaderProps(column.getSortByToggleProps())}
-                  >
-                    <div className="onex-data-grid__cell-action-content">
-                      {column.render('Header')}
-                    </div>
-                  </th>
-                ) : (
-                  <th
-                    key={`header_cell_row_${headerCellInd}`}
-                    className={column.hasDivider ? 'onex-data-grid__cell-divider' : ''}
-                    {...column.getHeaderProps(column.getSortByToggleProps())}
-                    onClick={() => column.toggleSortBy(undefined, multiSort)}
-                  >
-                    <Typography variant="caption" uppercase>
-                      {column.render('Header')}
-                    </Typography>
-                    <span className="onex-data-grid__table-headers-sort-by-icons">
-                      {column.isSorted && (
-                        <Icon className="sort-by-icon">
-                          {column.isSortedDesc ? 'arrow_downward' : 'arrow_upward'}
-                        </Icon>
-                      )}
-                    </span>
-                  </th>
-                ),
-              )}
+              {headerGroup.headers.map((column, headerCellInd) => (
+                <DataGridHeader
+                  key={`header_cell_row_${headerCellInd}`}
+                  column={column}
+                  multiSort={multiSort}
+                />
+              ))}
             </tr>
           ))}
         </thead>

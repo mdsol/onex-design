@@ -63,7 +63,10 @@ import { DataGrid, Button, Icon } from '../../../../components';
     },
     handleSelection: {
       description: 'Callback fired when row selected. Return ```selectedRowIds``` object',
-    }
+    },
+    updateData: {
+      description: 'Callback fired when data editable, used input table cell. Return ```updatedData```',
+    },
   }}
   component={DataGrid}
 />
@@ -99,6 +102,7 @@ Using this component requires installation packages : [react-table v7](https://w
       ],
       rowsPerPageOptions: [5, 10],
       useRowSelection: true,
+      rowSelectionType: 'multi',
       handleSelection: () => {},
       getRowId: (row, relativeIndex, parent) => parent ? [`demo.${parent.id}`, relativeIndex].join('.') : `demo.${relativeIndex}`
     }}>
@@ -158,19 +162,23 @@ const columns = [
   </Story>
 </Canvas>
 
+#### Data Grid Cells
+Information about data grid cells: [DataGridCell Props](/docs/onex-components-datagrid-datagridcell--demo).
+
 
 #### Column Options
-Information about data grid: [DataGridCell Props](/docs/onex-components-datagrid-datagridcell--demo).
 For more information [Columns option](https://react-table-v7.tanstack.com/docs/api/useTable#column-options)
 
-| Name       | Type                                                                       | Description                                                                                                                                                                                                                           | Required |
-|------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| accessor   | String, Function(originalRow, rowIndex) => any                             | This string/function is used to build the data model for your column.                                                                                                                                                                 | [x]      |
-| id         | String                                                                     | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function                                                                                    | [x]      |
-| columns    | Array[Column]                                                              | A nested array of columns.                                                                                                                                                                                                            |          |
-| Header     | String, Function, React.Component => JSX                                   | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                                                                                                   |          |
-| type       | One of values: ```'action', 'custom', 'editable'```                        | ```'action'``` can used for header and body cells, in case if you used ```Button```, ```Dropdown``` etc.. ```custom``` can used for body cell, in case if you used custom table cell. ```editable``` can used for editable body cell. |          |
-| hasDivider | Added right border for current column, for last column - added left border |                                                                                                                                                                                                                                       |          |
+| Name        | Type                                                                       | Description                                                                                                                                                                                                                           | Required |
+|-------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| accessor    | String, Function(originalRow, rowIndex) => any                             | This string/function is used to build the data model for your column.                                                                                                                                                                 | [x]      |
+| id          | String                                                                     | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function                                                                                    | [x]      |
+| columns     | Array[Column]                                                              | A nested array of columns.                                                                                                                                                                                                            |          |
+| Header      | String, Function, React.Component => JSX                                   | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                                                                                                   |          |
+| type        | One of values: ```'action', 'custom', 'editable'```                        | ```'action'``` can used for header and body cells, in case if you used ```Button```, ```Dropdown``` etc.. ```custom``` can used for body cell, in case if you used custom table cell. ```editable``` can used for editable body cell. |          |
+| hasDivider  | Added right border for current column, for last column - added left border |                                                                                                                                                                                                                                       |          |
+| textAlign   | One of values: ```'left', 'right'```                                       | Text align in table cell                                                                                                                                                                                                              |          |
+| textVariant | One of values: ```'regular', 'semibold'```                                 | Text weight in table cell                                                                                                                                                                                                             |          |
 
 
 ### Sorting
@@ -294,10 +302,6 @@ Callback ```handleSelection``` fired when row(s) selected.
     {Template.bind({})}
   </Story>
 </Canvas>
-
-
-### Cell Options
-#### Header
 
 ### Pagination
 For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.

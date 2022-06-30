@@ -29,6 +29,7 @@
 
     th {
       margin: 0;
+      vertical-align: middle;
       padding: $onex-data-grid-table-header-th-padding-x $onex-data-grid-table-header-th-padding-y;
       border-bottom: 1px solid $onex-data-grid-table-header-border-bottom-color;
 
@@ -71,8 +72,25 @@
       &:not(:last-child).onex-data-grid__cell-divider {
         border-right: 1px solid rgba(26, 28, 30, 0.2);
       }
+
       &:last-child.onex-data-grid__cell-divider {
         border-left: 1px solid rgba(26, 28, 30, 0.2);
+      }
+
+      &.onex-data-grid-cell__text-align-left {
+        text-align: left;
+      }
+
+      &.onex-data-grid-cell__text-align-right {
+        text-align: right;
+      }
+
+      &.onex-data-grid-cell__text-variant-regular {
+        font-weight: 400;
+      }
+
+      &.onex-data-grid-cell__text-variant-semibold {
+        font-weight: 600;
       }
     }
 
@@ -106,6 +124,21 @@
       margin: 0;
       border-top: 1px solid $onex-data-grid-table-body-tr-border-color;
       border-bottom: 1px solid $onex-data-grid-table-body-tr-border-color;
+      &.onex-data-grid-cell__text-align-left {
+        text-align: left;
+      }
+
+      &.onex-data-grid-cell__text-align-right {
+        text-align: right;
+      }
+
+      &.onex-data-grid-cell__text-variant-regular {
+        font-weight: 400;
+      }
+
+      &.onex-data-grid-cell__text-variant-semibold {
+        font-weight: 600;
+      }
 
       &:not(:last-child).onex-data-grid__cell-divider {
         border-right: 1px solid rgba(26, 28, 30, 0.2);

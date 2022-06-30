@@ -37,7 +37,9 @@ export const demoGridColumns = [
         <Icon>settings</Icon>
       </Button>
     ),
-    Cell: ({ row }) => <Dropdown variant="tertiary" buttonStyle="icon" items={dropdownItems} />,
+    Cell: ({ row }) => (
+      <Dropdown variant="tertiary" buttonStyle="icon" align="end" items={dropdownItems} />
+    ),
     type: 'action',
   },
 ];
@@ -266,7 +268,9 @@ export const demoCellGridColumns = [
         <Icon>settings</Icon>
       </Button>
     ),
-    Cell: ({ row }) => <Dropdown variant="tertiary" buttonStyle="icon" items={dropdownItems} />,
+    Cell: ({ row }) => (
+      <Dropdown variant="tertiary" buttonStyle="icon" align="end" items={dropdownItems} />
+    ),
     type: 'action',
   },
 ];
