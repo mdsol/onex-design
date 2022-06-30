@@ -16,10 +16,7 @@ const DataGridHeader = ({ column, multiSort }) => {
 
   if (column.type === 'action') {
     return (
-      <th
-        className={dataGridHeaderClassNames}
-        {...column.getHeaderProps(column.getSortByToggleProps())}
-      >
+      <th className={dataGridHeaderClassNames} {...column.getHeaderProps()}>
         <div className="onex-data-grid__cell-action-content">{column.render('Header')}</div>
       </th>
     );
