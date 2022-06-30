@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DataGridTable from '../DataGridTable';
@@ -20,7 +20,7 @@ const DataGrid = ({
   handleSelection,
   ...accProps
 }) => {
-  const [_data, _setData] = useState(data);
+  const dataRef = useRef(data);
   const [skipPageReset, setSkipPageReset] = useState(false);
   const dataGridClasses = classNames('onex-data-grid', {
     [className]: className,
@@ -28,33 +28,31 @@ const DataGrid = ({
 
   const updateData = (rowIndex, columnId, value) => {
     setSkipPageReset(true);
-    _setData((old) =>
-      old.map((row, index) => {
-        if (index === rowIndex) {
-          return {
-            ...old[rowIndex],
-            [columnId]:
-              typeof old[rowIndex][columnId] === 'object' && old[rowIndex][columnId] !== null
-                ? { ...old[rowIndex][columnId], value }
-                : value,
-          };
-        }
-        return row;
-      }),
-    );
+    dataRef.current = dataRef.current.map((row, index) => {
+      if (index === rowIndex) {
+        return {
+          ...dataRef.current[rowIndex],
+          [columnId]:
+            typeof dataRef.current[rowIndex][columnId] === 'object' && dataRef.current[rowIndex][columnId] !== null
+              ? { ...dataRef.current[rowIndex][columnId], value }
+              : value,
+        };
+      }
+      return row;
+    });
   };
 
   useEffect(() => {
     setSkipPageReset(false);
-    handleUpdateData?.(_data);
-  }, [_data]);
+    handleUpdateData?.(dataRef.current);
+  }, [dataRef.current]);
 
   return (
     <div className={dataGridClasses}>
       {customGridControl || (dataGridControlProps && <DataGridControl {...dataGridControlProps} />)}
       <DataGridTable
         columns={columns}
-        data={_data}
+        data={dataRef.current}
         rowsPerPageOptions={rowsPerPageOptions}
         sortBy={sortBy}
         updateData={updateData}

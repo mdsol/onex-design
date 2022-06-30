@@ -6,11 +6,17 @@ import Typography from '../../../../../../Typography/scss';
 const DataGridCustomCell = ({ cell }) => {
   const cellProps = typeof cell.value === 'object' ? cell.value : { value: cell.value };
 
-  const dataGridCellClassNames = classNames('onex-data-grid-custom-cell', {
-    'onex-data-grid-custom-cell--caption': cellProps.caption,
-    'onex-data-grid-custom-cell--bold': cellProps.style === 'bold',
-    'onex-data-grid__cell-divider': cell.column.hasDivider,
-  });
+  const dataGridCellClassNames = classNames(
+    'onex-data-grid-custom-cell',
+    `onex-data-grid-cell__text-align-${cell?.column.textAlign ? cell?.column.textAlign : 'left'}`,
+    `onex-data-grid-cell__text-variant-${
+      cell?.column.textVariant ? cell?.column.textVariant : 'regular'
+    }`,
+    {
+      'onex-data-grid-custom-cell--caption': cellProps.caption,
+      'onex-data-grid__cell-divider': cell.column.hasDivider,
+    },
+  );
 
   return (
     <td className={dataGridCellClassNames} {...cell.getCellProps()}>
@@ -33,8 +39,7 @@ const DataGridCustomCell = ({ cell }) => {
         )}
         {cellProps.trailingIcon && (
           <div className="onex-data-grid-custom-cell-content__trailing-icon">
-            {' '}
-            {cellProps.trailingIcon}{' '}
+            {cellProps.trailingIcon}
           </div>
         )}
       </div>
@@ -52,11 +57,10 @@ DataGridCustomCell.propTypes = {
       PropTypes.string,
       PropTypes.number,
       PropTypes.shape({
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         leadingIcon: PropTypes.node,
         trailingIcon: PropTypes.node,
         caption: PropTypes.string,
-        style: PropTypes.oneOf(['subtle', 'bold']),
         component: PropTypes.node,
       }),
     ]),
