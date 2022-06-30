@@ -19,6 +19,7 @@ React > 17.02 and it is listed as a peer dependency to avoid unecessary page wei
 1. Ensure that [Sandman](https://github.com/mdsol/sandman) has been updated to version: 2.0.0-rc1
 2. You will need to isolate the CSS scoping than Sandman uses so that there will be no conflicts with the 1x css by adding the 'mcc-sandman' class(Name) to the areas that will not have any 1x components.
 3. Wrap the areas that will be using 1x components with the &lt;ThemeProvider /&gt; component, this will keeps 1x styling from leaking out.
+4. Make sure to include the external stylesheet for themeProvider - you need to do this in only one spot in your application.
 
 Here is an example of a simple application that uses both Sandman and 1x; you will more than likely need to fine tune and possibly duplicate some styles externally in order to get things perfect. Please reach out the the [#1x-design-system](https://mdsol.slack.com/messages/1x-design-system/) Slack channel for help.
 
@@ -27,6 +28,7 @@ Here is an example of a simple application that uses both Sandman and 1x; you wi
   format
   code={`import { Button } from '@mdsol/onex-design';
 import ThemeProvider from '@mdsol/onex-design/themeProvider';
+import '@mdsol/onex-design/themeProvider.css';
 export default () => {
   return (
     <>
