@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import './platform.css';
 
 const ThemeProvider = React.forwardRef((props, ref) => {
   const { children, className, dataTestId, id, ...accProps } = props;

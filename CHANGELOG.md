@@ -1,4 +1,6 @@
 # Changelog
+## 0.4.3
+DataGrid custom cells have been added. ThemeProvider css updated to try and fix sandman conflicts. 
 ## 0.4.2
 The Check component has been fixed, ThemeProvider also has an exported stylesheet to use in the case that webpack has not been setup correctly. Inline alert had padding updated. Dropzone was updated.
 ## 0.4.1
