@@ -1,6 +1,6 @@
 import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
 
-import {gridColumns, gridData, dropdownItems} from '../../gridData';
+import {gridColumns, gridData, dropdownItems, demoCellGridColumns, demoCellGridData} from '../../gridData';
 import {DataGrid, Avatar, Icon, Badge, Tag, Dropdown, Button, Switch} from '../../../../../../components';
 import DataGridCustomCell
   from '../../../../../../components/DataGrid/scss/components/DataGridTable/components/DataGridCustomCell';
@@ -21,8 +21,8 @@ Table cells are the smallest indivisible parts of a data table that contain a si
     args={{
       dataTestId: 'data-grid-cell-demo-test-id',
       className: 'data-grid-cell-demo-custom',
-      columns: gridColumns,
-      data: gridData,
+      columns: demoCellGridColumns,
+      data: demoCellGridData,
       getRowId: (row, relativeIndex, parent) => parent ? [`c-demo.${parent.id}`, relativeIndex].join('.') : `c-demo.${relativeIndex}`
     }}
   >
@@ -278,6 +278,64 @@ In case if you need to add ```Button```, ```Dropdown```, ```Switch``` etc., plea
     {Template.bind({})}
   </Story>
 </Canvas>
+
+### Editable cell
+Allows entering or changing the table cell content.
+For using editable table cell in ```columns``` prop use - ```type: 'editable'```.
+Also, for ```type: 'editable'``` have an opportunity to customize text align, supports - ```left``` and ```right``` and
+font weight, supports - ```regular``` and ```semibold```.
+
+<Canvas>
+  <Story
+    name="Editable"
+    args={{
+      dataTestId: 'data-grid-cell-actions-test-id',
+      className: 'data-grid-cell-actions-custom',
+      columns: [
+        {
+          Header: 'Study Name',
+          accessor: 'studyName',
+          type: 'editable',
+        },
+        {
+          Header: 'Stage',
+          accessor: 'stage',
+          type: 'editable',
+          textAlign: 'right',
+        },
+        {
+          Header: 'Status',
+          accessor: 'status',
+          type: 'editable',
+          textVariant: 'semibold',
+        }],
+      data: [
+        {
+          studyName: 'Study name 1',
+          stage: 'Stage 1',
+          status: 'Status 1',
+        },
+        {
+          studyName: 'Study name 2',
+          stage: 'Stage 2',
+          status: 'Status 2',
+        },
+        {
+          studyName: 'Study name 3',
+          stage: 'Stage 3',
+          status: 'Status 3',
+        }
+      ],
+      getRowId: (row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+
 
 
 
