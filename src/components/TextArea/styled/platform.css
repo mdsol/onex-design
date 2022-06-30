@@ -8712,12 +8712,13 @@ progress {
 .onex-text-area__nums {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-right: 0.25rem;
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
   color: rgb(103, 110, 122);
-  flex-basis: 10%;
+  flex-basis: 30%;
 }
 .onex-text-area__nums--err {
   color: rgb(217, 21, 34);

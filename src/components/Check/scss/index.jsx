@@ -35,7 +35,7 @@ const Check = React.forwardRef((props, ref) => {
       ref={ref}
       data-test-id={dataTestId}
     >
-      <ReactForm.Check.Label onChange={onChange} className="onex-check__wrapper">
+      <ReactForm.Check.Label className="onex-check__wrapper">
         <ReactForm.Check.Input
           ref={checkboxRef}
           type={type}
@@ -44,6 +44,7 @@ const Check = React.forwardRef((props, ref) => {
           defaultChecked={checked}
           value={value}
           data-indeterminate={indeterminate}
+          onChange={onChange}
           className={classNames({ indeterminate })}
         />
         <span className="onex-check__custom" />

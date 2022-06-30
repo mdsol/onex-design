@@ -1,14 +1,17 @@
 @import './styles/variables';
 @import '../../Badge/scss/styles/variables';
+@import '../../Check/scss/styles/variables';
 @import '../../Typography/scss/styles/variables';
 @import '../../Buttons/scss/styles/variables';
 @import '../../TablePagination/scss/styles/variables';
 
 @import '../../Badge/scss/styles/badge';
+@import '../../Check/scss/styles/check';
 @import '../../Buttons/scss/styles/buttons';
 @import '../../Typography/scss/styles/typography';
 @import '../../TablePagination/scss/styles/tablePagination';
 @import '../../../../node_modules/bootstrap/scss/badge';
+@import '../../../../node_modules/bootstrap/scss/forms';
 @import '../../../../node_modules/bootstrap/scss/buttons';
 
 @import 'styles/dataGrid.scss';
