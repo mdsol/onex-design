@@ -75,6 +75,7 @@ const Navigation = (props) => {
         defaultActiveKey={defaultActiveKey}
         onSelect={handleSelect}
         data-test-id={dataTestId}
+        tabIndex="0"
       >
         {!!visibleItems?.length &&
           visibleItems.map((item) => {
@@ -93,6 +94,8 @@ const Navigation = (props) => {
                 disabled={itemDisabled}
                 href={href}
                 dataTestId={itemDataTestId}
+                tabIndex="-1"
+                key={itemEventKey}
               >
                 {itemTitle}
               </NavItem>
