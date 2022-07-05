@@ -46,7 +46,20 @@ const Dropdown = React.forwardRef((props, ref) => {
           <Icon>more_vert</Icon>
         )}
       </ReactDropdown.Toggle>
-      <ReactDropdown.Menu as={DropdownMenu} align={align}>
+      <ReactDropdown.Menu
+        as={DropdownMenu}
+        align={align}
+        popperConfig={{
+          modifiers: [
+            {
+              name: 'offset',
+              options: {
+                offset: [0, 4],
+              },
+            },
+          ],
+        }}
+      >
         {!!items?.length &&
           items.map((item) => {
             const {
