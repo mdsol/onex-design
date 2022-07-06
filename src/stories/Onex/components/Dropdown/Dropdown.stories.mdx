@@ -64,7 +64,6 @@ export const dropdownItemsWithDivider = [
     },
   }}
   component={Dropdown}
-  decorators={[(Story) => <div style={{ width: '15rem', display: 'flex', justifyContent: 'center' }}><span>{Story()}</span></div>]}
 />
 
 export const DropdownTemplate = (args) => <Dropdown {...args} />;
@@ -77,6 +76,13 @@ A dropdown menu displays a list of actions to take.
   <Story
     height="16rem"
     name="Demo"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       align: 'start',
       buttonStyle: 'text',
@@ -113,6 +119,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="Small"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       title: 'Small dropdown',
       id: 'small-dropdown',
@@ -124,6 +137,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="Medium"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       title: 'Medium dropdown',
       id: 'medium-dropdown',
@@ -142,6 +162,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="PrimarySmall"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       title: 'Label',
       id: 'primary-small-dropdown',
@@ -153,6 +180,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="PrimarySmallDisabled"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       title: 'Label',
       id: 'primary-small-disabled-dropdown',
@@ -169,6 +203,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="PrimaryMedium"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       title: 'Label',
       id: 'primary-medium-dropdown',
@@ -180,6 +221,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="PrimaryMediumDisabled"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       title: 'Label',
       id: 'primary-medium-disabled-dropdown',
@@ -197,6 +245,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="SecondarySmall"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'secondary',
       title: 'Label',
@@ -209,6 +264,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="SecondarySmallDisabled"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'secondary',
       title: 'Label',
@@ -226,6 +288,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="SecondaryMedium"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'secondary',
       title: 'Label',
@@ -238,6 +307,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="SecondaryMediumDisabled"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'secondary',
       title: 'Label',
@@ -256,6 +332,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="TertiarySmall"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'tertiary',
       title: 'Label',
@@ -268,6 +351,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="TertiarySmallDisabled"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'tertiary',
       title: 'Label',
@@ -285,6 +375,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="TertiaryMedium"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'tertiary',
       title: 'Label',
@@ -297,6 +394,13 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
   <Story
     height="15rem"
     name="TertiaryMediumDisabled"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'tertiary',
       title: 'Label',
@@ -317,6 +421,13 @@ If ```buttonStyle``` is ```icon``` , the 'more_vert' icon use for that.
   <Story
     height="15rem"
     name="SecondaryDefaultIcon"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'secondary',
       id: 'secondary-default-icon-dropdown-sm',
@@ -329,6 +440,13 @@ If ```buttonStyle``` is ```icon``` , the 'more_vert' icon use for that.
   <Story
     height="15rem"
     name="TertiaryDefaultIcon"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'tertiary',
       id: 'tertiary-default-icon-dropdown-sm',
@@ -345,6 +463,13 @@ Disabled
   <Story
     height="15rem"
     name="SecondaryDefaultDisabledIcon"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'secondary',
       id: 'secondary-default-icon-dropdown-sm',
@@ -358,6 +483,13 @@ Disabled
   <Story
     height="15rem"
     name="TertiaryDefaultDisabledIcon"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'tertiary',
       id: 'tertiary-default-icon-dropdown-sm',
@@ -370,37 +502,24 @@ Disabled
   </Story>
 </Canvas>
 
+export const MenuPosition = () => (
+  <div style={{display: 'flex', justifyContent: 'space-between'}}>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '16rem'}}>
+      <Dropdown title="Label" items={dropdownItems}/>
+      <Dropdown title="Label" items={dropdownItems}/>
+    </div>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '16rem'}}>
+      <Dropdown title="Label" items={dropdownItems}/>
+      <Dropdown title="Label" items={dropdownItems}/>
+    </div>
+  </div>
+)
+
+
 ### Menu position
-
 <Canvas>
-  <Story
-    height="18.5rem"
-    name="MenuTopPosition"
-    decorators={[(Story) => <div style={{ width: '15rem', paddingTop: '16rem' }}><span>{Story()}</span></div>]}
-    args={{
-      variant: 'primary',
-      title: 'Label',
-      id: 'with-divider-dropdown',
-      items: dropdownItemsWithDivider,
-      size: 'md',
-    }}>
-    {DropdownTemplate.bind({})}
-  </Story>
-  <Story
-    height="18.5rem"
-    name="MenuBottomPosition"
-    args={{
-      variant: 'primary',
-      title: 'Label',
-      id: 'with-divider-dropdown',
-      items: dropdownItemsWithDivider,
-      size: 'md',
-    }}>
-    {DropdownTemplate.bind({})}
-  </Story>
+  <Story name="MenuPosition">{MenuPosition.bind({})}</Story>
 </Canvas>
-
-
 
 ### Menu dividers
 Separate groups of related menu items with a divider.
@@ -408,6 +527,13 @@ Separate groups of related menu items with a divider.
   <Story
     height="18.5rem"
     name="WithDivider"
+    decorators={[
+      (Story) => (
+        <div style={{ width: '15rem', display: 'flex' }}>
+          <Story />
+        </div>
+      ),
+    ]}
     args={{
       variant: 'primary',
       title: 'Label',
