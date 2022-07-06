@@ -18,14 +18,6 @@ const ImgVariants = {
   study: <Study />,
 };
 
-const getImg = (img, variant) => {
-  if (img) {
-    return img;
-  }
-
-  return ImgVariants[variant];
-};
-
 const EmptyState = ({
   className,
   variant,
@@ -47,7 +39,7 @@ const EmptyState = ({
 
   return (
     <div className={classes} data-test-id={dataTestId}>
-      <div className="onex-empty-state__img">{getImg(img, defaultImgVariant)}</div>
+      <div className="onex-empty-state__img">{img || ImgVariants[defaultImgVariant]}</div>
       {title && <span className="onex-empty-state__title">{title}</span>}
       {subtitle && <span className="onex-empty-state__subtitle">{subtitle}</span>}
       {hasActionBtn && (
