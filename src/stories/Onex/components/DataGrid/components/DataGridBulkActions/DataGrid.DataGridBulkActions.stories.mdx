@@ -1,0 +1,57 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+
+import { DataGridBulkActions } from '../../../../../../components';
+
+<Meta
+  title="Onex/Components/DataGrid/DataGridBulkActions"
+  argTypes={{
+    selectedRowsCount: {
+      description: 'Number for selected badge',
+      control: 'number',
+    },
+    isAllRowsSelected: {
+      description: "When true - checkbox have checkmark, when false - dash",
+    },
+    actions: {
+      description: "Main actions for rows",
+      control: 'text',
+    },
+    dropdownActions: {
+      description: "Dropdown actions for rows",
+      control: 'text',
+    },
+    handleHide: {
+      description: "Callbeck when you click on checkbox",
+    },
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+    },
+  }}
+  component={DataGridBulkActions}
+/>
+
+export const DataGridBulkActionsTemplate = (args) => <DataGridBulkActions {...args} />;
+
+# DataGridBulkActions
+
+## Demo
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      title: 'Title',
+      selectedRowsCount: '3',
+    }}
+  >
+    {DataGridBulkActionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+

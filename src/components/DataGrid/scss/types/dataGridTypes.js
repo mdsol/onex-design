@@ -15,7 +15,7 @@ const DataGridDropdownTypes = PropTypes.arrayOf(
   }),
 );
 
-const DataGridControllTypes = PropTypes.shape({
+const DataGridControlTypes = PropTypes.shape({
   title: PropTypes.string,
   badge: PropTypes.number,
   hasCustomControlls: PropTypes.bool,
@@ -36,4 +36,25 @@ const DataGridControllTypes = PropTypes.shape({
   dataTestId: PropTypes.string,
 });
 
-export default DataGridControllTypes;
+const actionsType = PropTypes.arrayOf(
+  PropTypes.shape({
+    title: PropTypes.string,
+    action: Function,
+    active: PropTypes.bool,
+    disabled: PropTypes.bool,
+    eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    href: PropTypes.string,
+  }),
+);
+
+const DataGridBulkActionsType = PropTypes.shape({
+  selectedRowsCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  isAllRowsSelected: PropTypes.bool,
+  actions: actionsType,
+  dropdownActions: actionsType,
+  handleHide: Function,
+  className: PropTypes.string,
+  dataTestId: PropTypes.string,
+});
+
+export { DataGridBulkActionsType, DataGridControlTypes };

@@ -76,6 +76,7 @@ export { default as Tooltip } from './Tooltip/scss';
 export { default as Typography } from './Typography/scss';
 export { default as DataGrid } from './DataGrid/scss/components/DataGrid';
 export { default as DataGridControl } from './DataGrid/scss/components/DataGridControl';
+export { default as DataGridBulkActions } from './DataGrid/scss/components/DataGridBulkActions';
 export { default as DataGridName } from './DataGrid/scss/components/DataGridName';
 export { default as Modal } from './Modal/scss';
 export { default as ProgressBar } from './ProgressBar/scss';
