@@ -5,7 +5,7 @@ import Button from '../../../../Buttons/scss';
 import Icon from '../../../../Icon/scss';
 import Dropdown from '../../../../Dropdown/scss';
 import Badge from '../../../../Badge/scss';
-import DataGridControlTypes from '../../types/dataGridTypes';
+import { DataGridControlTypes } from '../../types/dataGridTypes';
 
 const ViewTableIcons = [
   {

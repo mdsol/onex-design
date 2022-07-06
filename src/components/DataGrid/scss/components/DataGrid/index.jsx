@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DataGridTable from '../DataGridTable';
 import DataGridControl from '../DataGridControl';
-import DataGridControlTypes from '../../types/dataGridTypes';
+// import DataGridBulkActions from '../DataGridBulkActions';
+import { DataGridControlTypes, DataGridBulkActionsType } from '../../types/dataGridTypes';
 
 const DataGrid = ({
   className,
@@ -13,6 +14,7 @@ const DataGrid = ({
   sortBy,
   dataGridControlProps,
   customGridControl,
+  DataGridBulkActionsProps,
   handleUpdateData,
   selectedRowIds,
   useRowSelection,
@@ -33,7 +35,8 @@ const DataGrid = ({
         return {
           ...dataRef.current[rowIndex],
           [columnId]:
-            typeof dataRef.current[rowIndex][columnId] === 'object' && dataRef.current[rowIndex][columnId] !== null
+            typeof dataRef.current[rowIndex][columnId] === 'object' &&
+            dataRef.current[rowIndex][columnId] !== null
               ? { ...dataRef.current[rowIndex][columnId], value }
               : value,
         };
@@ -50,6 +53,8 @@ const DataGrid = ({
   return (
     <div className={dataGridClasses}>
       {customGridControl || (dataGridControlProps && <DataGridControl {...dataGridControlProps} />)}
+      {/* TODO: implement how it must be when design for it will be ready */}
+      {/* <DataGridBulkActions {...DataGridBulkActionsProps} /> */}
       <DataGridTable
         columns={columns}
         data={dataRef.current}
@@ -102,6 +107,7 @@ DataGrid.propTypes = {
   multiSort: PropTypes.bool,
   dataGridControlProps: DataGridControlTypes,
   customGridControl: PropTypes.element,
+  DataGridBulkActionsProps: DataGridBulkActionsType,
   handleUpdateData: PropTypes.func,
   selectedRowIds: PropTypes.object,
   useRowSelection: PropTypes.bool,
@@ -119,6 +125,7 @@ DataGrid.defaultProps = {
   multiSort: false,
   dataGridControlProps: null,
   customGridControl: null,
+  DataGridBulkActionsProps: null,
   handleUpdateData: undefined,
   selectedRowIds: {},
   useRowSelection: false,
