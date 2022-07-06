@@ -1,0 +1,195 @@
+<!-- EmptyState.mdx -->
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { EmptyState, Icon } from '../../../../components';
+
+export const icons = { Add: <Icon>add</Icon>, PersonAdd: <Icon>person_add</Icon>, remove: undefined };
+
+<Meta
+  title="Onex/Components/EmptyState"
+  argTypes={{
+    className: {
+      description: 'Name of the CSS class',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    title: {
+      description: 'Title of empty state',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    subtitle: {
+      description: 'Subtitle of empty state',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    img: {
+      description: 'Image of empty state. The image has a higher priority, so if you pass a value to the property, the default image will not be displayed',
+      control: 'object',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    variant: {
+      description: 'Variant of empty state',
+      control: 'radio',
+      options: ['section', 'card'],
+      table: {
+        type: {
+          summary: ['section', 'card'],
+        },
+        defaultValue: {
+          summary: 'card',
+        },
+      },
+    },
+    defaultImgVariant: {
+      description: 'List of default images.',
+      options: ['patient', 'patients', 'qtl', 'study'],
+      control: 'radio',
+      table: {
+        type: {
+          summary: ['patient', 'patients', 'qtl', 'study'],
+        },
+        defaultValue: {
+          summary: 'patient',
+        },
+      },
+    },
+    hasActionBtn: {
+      description: 'If it true the button is showed',
+      control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    btnTitle: {
+      description: 'Title of button component',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    onClick: {
+      description: 'Button\'s callback fired when click on component',
+      action: 'clicked',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    btnLeadingIcon: {
+      description: 'Leading icon of button',
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          Add: 'Add',
+          PersonAdd: 'Add person',
+          remove: 'Remove icon'
+        },
+      },
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    dataTestId: {
+      description: 'Id of the component for testing',
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: undefined,
+        },
+      },
+    },
+  }}
+  component={EmptyState}
+/>
+
+export const EmptyStateTemplate = (args) => <EmptyState {...args} />;
+
+# Empty state
+
+Empty states are used when a list, table, or chart has no items or data to show.
+
+## Demo
+
+<Canvas>
+  <Story
+    name="Demo"
+    args={{
+      className: 'test-class-name',
+      variant: 'section',
+      title: 'No patients added yet',
+      subtitle: 'Empty state description',
+      hasActionBtn: true,
+      btnTitle: 'Add patients',
+      onClick: () => {},
+      dataTestId: 'data-test-empty-state',
+    }}>
+    {EmptyStateTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />
+
+## Variant Section
+
+<Canvas>
+  <Story
+    name="Section variant"
+    args={{
+      className: 'test-class-name',
+      variant: 'section',
+      title: 'No patients added yet',
+      subtitle: 'Empty state description',
+      hasActionBtn: true,
+      btnTitle: 'Add patients',
+      onClick: () => {},
+      dataTestId: 'data-test-empty-state',
+    }}>
+    {EmptyStateTemplate.bind({})}
+  </Story>
+</Canvas>
+
+
+## Variant Card
+
+<Canvas>
+  <Story
+    name="Card variant"
+    args={{
+      className: 'test-class-name',
+      variant: 'card',
+      title: 'No QTLs added yet',
+      subtitle: 'Empty state description',
+      hasActionBtn: true,
+      btnTitle: 'Add QTL',
+      onClick: () => {},
+      btnLeadingIcon: <Icon>add</Icon>,
+      dataTestId: 'data-test-empty-state',
+    }}>
+    {EmptyStateTemplate.bind({})}
+  </Story>
+</Canvas>
