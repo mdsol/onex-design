@@ -1,0 +1,26 @@
+@mixin card-sizes($img-size, $img-mb, $title-fs, $title-lh, $title-mb, $subtitle-fs, $subtitle-lh, $subtitle-mb) {
+  .onex-empty-state {
+    &__img {
+      width: $img-size;
+      height: $img-size;
+      margin-bottom: $img-mb;
+
+      svg {
+        width: $img-size;
+        height: $img-size;
+      }
+    }
+
+    &__title {
+      font-size: $title-fs;
+      line-height: $title-lh;
+      margin-bottom: $title-mb;
+    }
+
+    &__subtitle {
+      font-size: $subtitle-fs;
+      line-height: $subtitle-lh;
+      margin-bottom: $subtitle-mb;
+    }
+  }
+}
