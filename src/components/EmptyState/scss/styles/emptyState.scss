@@ -1,0 +1,29 @@
+@import 'mixins';
+
+.onex-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: $onex-empty-state-min-width;
+
+  &__img {
+    object-fit: contain;
+  }
+
+  &__title {
+    color: $onex-empty-state-title-color;
+  }
+
+  &__subtitle {
+    color: $onex-empty-state-subtitle-color;
+  }
+
+  &.onex-empty-state--section {
+    @include card-sizes($onex-empty-state-img-size-section, $onex-empty-state-img-mb-section, $onex-empty-state-title-fs-section, $onex-empty-state-title-lh-section, $onex-empty-state-title-mb-section, $onex-empty-state-subtitle-fs-section, $onex-empty-state-subtitle-lh-section, $onex-empty-state-subtitle-mb-section);
+  }
+
+  &.onex-empty-state--card {
+    @include card-sizes($onex-empty-state-img-size-card, $onex-empty-state-img-mb-card, $onex-empty-state-title-fs-card, $onex-empty-state-title-lh-card, $onex-empty-state-title-mb-card, $onex-empty-state-subtitle-fs-card, $onex-empty-state-subtitle-lh-card, $onex-empty-state-subtitle-mb-card);
+  }
+}
