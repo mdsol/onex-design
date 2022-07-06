@@ -1,7 +1,22 @@
 <!-- Dropdown.mdx -->
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 import { Dropdown } from '../../../../components';
-import * as stories from './Dropdown.stories.jsx';
+
+export const dropdownItems = [
+{ eventKey: 'one', title: 'item one' },
+{ eventKey: 'two', title: 'item two' },
+{ eventKey: 'three', title: 'item three' },
+{ eventKey: 'four', title: 'item four' },
+];
+
+export const dropdownItemsWithDivider = [
+{ eventKey: 'one', title: 'item one' },
+{ eventKey: 'two', title: 'item two' },
+{ eventKey: 'three', title: 'item three' },
+{ eventKey: 'four', title: 'item four', hasDividerAfter: true },
+{ eventKey: 'five', title: 'item five' },
+{ eventKey: 'six', title: 'item six' },
+];
 
 <Meta
   title="Onex/Components/Dropdown"
@@ -95,8 +110,28 @@ A dropdown menu displays a list of actions to take.
 Supports two dropdown sizes: ```small``` and  ```medium```.
 
 <Canvas>
-  <Story height="15rem" name="Small" story={stories.Small} />
-  <Story height="15rem" name="Medium" story={stories.Medium} />
+  <Story
+    height="15rem"
+    name="Small"
+    args={{
+      title: 'Small dropdown',
+      id: 'small-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="Medium"
+    args={{
+      title: 'Medium dropdown',
+      id: 'medium-dropdown',
+      items: dropdownItems,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 ### Variations
@@ -104,46 +139,174 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
 #### Primary
 ##### Small size
 <Canvas>
-  <Story height="15rem" name="PrimarySmall" story={stories.PrimarySmall} />
-  <Story height="15rem" name="PrimarySmallLeadingIcon" story={stories.PrimarySmallLeadingIcon} />
-  <Story height="15rem" name="PrimarySmallDisabled" story={stories.PrimarySmallDisabled} />
+  <Story
+    height="15rem"
+    name="PrimarySmall"
+    args={{
+      title: 'Label',
+      id: 'primary-small-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="PrimarySmallDisabled"
+    args={{
+      title: 'Label',
+      id: 'primary-small-disabled-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 ##### Medium size
 <Canvas>
-  <Story height="15rem" name="PrimaryMedium" story={stories.PrimaryMedium} />
-  <Story height="15rem" name="PrimaryMediumLeadingIcon" story={stories.PrimaryMediumLeadingIcon} />
-  <Story height="15rem" name="PrimaryMediumDisabled" story={stories.PrimaryMediumDisabled} />
+  <Story
+    height="15rem"
+    name="PrimaryMedium"
+    args={{
+      title: 'Label',
+      id: 'primary-medium-dropdown',
+      items: dropdownItems,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="PrimaryMediumDisabled"
+    args={{
+      title: 'Label',
+      id: 'primary-medium-disabled-dropdown',
+      items: dropdownItems,
+      size: 'md',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 #### Secondary
 ##### Small size
 <Canvas>
-  <Story height="15rem" name="SecondarySmall" story={stories.SecondarySmall} />
-  <Story height="15rem" name="SecondarySmallLeadingIcon" story={stories.SecondarySmallLeadingIcon} />
-  <Story height="15rem" name="SecondarySmallDisabled" story={stories.SecondarySmallDisabled} />
+  <Story
+    height="15rem"
+    name="SecondarySmall"
+    args={{
+      variant: 'secondary',
+      title: 'Label',
+      id: 'secondary-small-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="SecondarySmallDisabled"
+    args={{
+      variant: 'secondary',
+      title: 'Label',
+      id: 'secondary-small-disabled-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 ##### Medium size
 <Canvas>
-  <Story height="15rem" name="SecondaryMedium" story={stories.SecondaryMedium} />
-  <Story height="15rem" name="SecondaryMediumLeadingIcon" story={stories.SecondaryMediumLeadingIcon} />
-  <Story height="15rem" name="SecondaryMediumDisabled" story={stories.SecondaryMediumDisabled} />
+  <Story
+    height="15rem"
+    name="SecondaryMedium"
+    args={{
+      variant: 'secondary',
+      title: 'Label',
+      id: 'secondary-medium-dropdown',
+      items: dropdownItems,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="SecondaryMediumDisabled"
+    args={{
+      variant: 'secondary',
+      title: 'Label',
+      id: 'secondary-medium-disabled-dropdown',
+      items: dropdownItems,
+      size: 'md',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 #### Tertiary
 ##### Small size
 <Canvas>
-  <Story height="15rem" name="TertiarySmall" story={stories.TertiarySmall} />
-  <Story height="15rem" name="TertiarySmallLeadingIcon" story={stories.TertiarySmallLeadingIcon} />
-  <Story height="15rem" name="TertiarySmallDisabled" story={stories.TertiarySmallDisabled} />
+  <Story
+    height="15rem"
+    name="TertiarySmall"
+    args={{
+      variant: 'tertiary',
+      title: 'Label',
+      id: 'tertiary-small-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="TertiarySmallDisabled"
+    args={{
+      variant: 'tertiary',
+      title: 'Label',
+      id: 'tertiary-small-disabled-dropdown',
+      items: dropdownItems,
+      size: 'sm',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 ##### Medium size
 <Canvas>
-  <Story height="15rem" name="TertiaryMedium" story={stories.TertiaryMedium} />
-  <Story height="15rem" name="TertiaryMediumLeadingIcon" story={stories.TertiaryMediumLeadingIcon} />
-  <Story height="15rem" name="TertiaryMediumDisabled" story={stories.TertiaryMediumDisabled} />
+  <Story
+    height="15rem"
+    name="TertiaryMedium"
+    args={{
+      variant: 'tertiary',
+      title: 'Label',
+      id: 'tertiary-medium-dropdown',
+      items: dropdownItems,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="TertiaryMediumDisabled"
+    args={{
+      variant: 'tertiary',
+      title: 'Label',
+      id: 'tertiary-medium-disabled-dropdown',
+      items: dropdownItems,
+      size: 'md',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 
@@ -151,19 +314,107 @@ Supports two dropdown sizes: ```small``` and  ```medium```.
 ##### Default icon
 If ```buttonStyle``` is ```icon``` , the 'more_vert' icon use for that.
 <Canvas>
-  <Story height="15rem" name="SecondaryDefaultIcon" story={stories.SecondaryDefaultIcon} />
-  <Story height="15rem" name="TertiaryDefaultIcon" story={stories.TertiaryDefaultIcon} />
+  <Story
+    height="15rem"
+    name="SecondaryDefaultIcon"
+    args={{
+      variant: 'secondary',
+      id: 'secondary-default-icon-dropdown-sm',
+      items: dropdownItems,
+      size: 'sm',
+      buttonStyle: 'icon',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="TertiaryDefaultIcon"
+    args={{
+      variant: 'tertiary',
+      id: 'tertiary-default-icon-dropdown-sm',
+      items: dropdownItems,
+      size: 'sm',
+      buttonStyle: 'icon',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
 
 Disabled
 <Canvas>
-  <Story height="15rem" name="SecondaryDefaultDisabledIcon" story={stories.SecondaryDefaultDisabledIcon} />
-  <Story height="15rem" name="TertiaryDefaultDisabledIcon" story={stories.TertiaryDefaultDisabledIcon} />
+  <Story
+    height="15rem"
+    name="SecondaryDefaultDisabledIcon"
+    args={{
+      variant: 'secondary',
+      id: 'secondary-default-icon-dropdown-sm',
+      items: dropdownItems,
+      size: 'sm',
+      buttonStyle: 'icon',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="15rem"
+    name="TertiaryDefaultDisabledIcon"
+    args={{
+      variant: 'tertiary',
+      id: 'tertiary-default-icon-dropdown-sm',
+      items: dropdownItems,
+      size: 'sm',
+      buttonStyle: 'icon',
+      disabled: true,
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>
+
+### Menu position
+
+<Canvas>
+  <Story
+    height="18.5rem"
+    name="MenuTopPosition"
+    decorators={[(Story) => <div style={{ width: '15rem', paddingTop: '16rem' }}><span>{Story()}</span></div>]}
+    args={{
+      variant: 'primary',
+      title: 'Label',
+      id: 'with-divider-dropdown',
+      items: dropdownItemsWithDivider,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+  <Story
+    height="18.5rem"
+    name="MenuBottomPosition"
+    args={{
+      variant: 'primary',
+      title: 'Label',
+      id: 'with-divider-dropdown',
+      items: dropdownItemsWithDivider,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
+</Canvas>
+
 
 
 ### Menu dividers
 Separate groups of related menu items with a divider.
 <Canvas>
-  <Story height="18.5rem" name="WithDivider" story={stories.WithDivider} />
+  <Story
+    height="18.5rem"
+    name="WithDivider"
+    args={{
+      variant: 'primary',
+      title: 'Label',
+      id: 'with-divider-dropdown',
+      items: dropdownItemsWithDivider,
+      size: 'md',
+    }}>
+    {DropdownTemplate.bind({})}
+  </Story>
 </Canvas>

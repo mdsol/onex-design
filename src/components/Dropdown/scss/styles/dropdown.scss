@@ -234,10 +234,6 @@
     }
   }
 
-  & > .btn-sm + .dropdown-menu {
-    top: 36px !important;
-  }
-
   .dropdown-menu {
     font-family: $font-family;
     border-radius: $menu-border-radius;
@@ -246,10 +242,6 @@
     padding: $menu-padding-y $menu-padding-x;
     border-color: $menu-border-color;
     box-shadow: 0 0.25rem 1.5rem $menu-box-shadow-color;
-    transform: translate3d(0px, 0px, 0px) !important;
-    inset: unset !important;
-    position: absolute !important;
-    top: 44px !important;
     min-width: 8rem;
     width: fit-content;
 
