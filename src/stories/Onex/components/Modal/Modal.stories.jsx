@@ -49,6 +49,12 @@ export default {
         type: 'boolean',
       },
     },
+    centered: {
+      description: 'vertically center the Dialog in the window',
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 };
 
