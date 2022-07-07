@@ -23,6 +23,7 @@ const Modal = ({
   actionLinkName,
   link,
   title,
+  centered,
   ...accProps
 }) => {
   const classes = classNames('onex-modal', { [className]: className });
@@ -46,6 +47,7 @@ const Modal = ({
       size={size}
       dialogClassName={widthClassName}
       className={classes}
+      centered={centered}
     >
       <ReactModal.Header>
         <Typography variant="h4">{title}</Typography>
@@ -93,6 +95,7 @@ Modal.propTypes = {
   actionLinkName: PropTypes.string,
   link: PropTypes.string,
   title: PropTypes.string,
+  centered: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -110,6 +113,7 @@ Modal.defaultProps = {
   actionLinkName: '',
   link: '',
   title: '',
+  centered: true,
 };
 
 export default Object.assign(Modal, {
