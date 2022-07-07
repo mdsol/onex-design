@@ -24,13 +24,8 @@ const DataGridBulkActions = ({
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    if (isAllRowsSelected) {
-      setIsIndeterminate(false);
-      setIsChecked(true);
-    } else {
-      setIsChecked(false);
-      setIsIndeterminate(true);
-    }
+    setIsIndeterminate(!isAllRowsSelected);
+    setIsChecked(isAllRowsSelected);
   }, [isAllRowsSelected]);
 
   return (
