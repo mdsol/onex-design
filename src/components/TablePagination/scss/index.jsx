@@ -17,6 +17,8 @@ const TablePagination = ({
   canPreviousPage,
   canNextPage,
   lastRow,
+  currentPage,
+  pageCount,
   ...accProps
 }) => {
   const [rowsPerPage, setRowsPerPage] = useState([
@@ -66,7 +68,7 @@ const TablePagination = ({
         />
       </div>
       <span className="onex-table-pagination__rows-text-info">
-        {lastRow} of {rows}
+        {currentPage} of {pageCount}
       </span>
       <div className="page-arrows">
         <Button
@@ -104,6 +106,8 @@ TablePagination.propTypes = {
   canPreviousPage: PropTypes.bool,
   canNextPage: PropTypes.bool,
   lastRow: PropTypes.number,
+  currentPage: PropTypes.number,
+  pageCount: PropTypes.number,
 };
 
 TablePagination.defaultProps = {
@@ -118,6 +122,8 @@ TablePagination.defaultProps = {
   canPreviousPage: false,
   canNextPage: false,
   lastRow: 0,
+  currentPage: 1,
+  pageCount: 1,
 };
 
 export default TablePagination;
