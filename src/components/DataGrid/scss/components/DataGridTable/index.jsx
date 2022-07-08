@@ -194,8 +194,6 @@ const DataGridTable = ({
             canNextPage={canNextPage}
             canPreviousPage={canPreviousPage}
             lastRow={(pageIndex + 1) * pageSize}
-            currentPage={pageIndex + 1}
-            pageCount={pageCount}
           />
         </div>
       )}
