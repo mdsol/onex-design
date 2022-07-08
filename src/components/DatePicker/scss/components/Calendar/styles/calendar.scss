@@ -245,6 +245,11 @@
             pointer-events: none;
           }
 
+          .rdrDayPassive.rdrDayDisabled {
+            opacity: 0;
+            pointer-events: none;
+          }
+
           .rdrDayToday {
             .rdrDayNumber {
               span {

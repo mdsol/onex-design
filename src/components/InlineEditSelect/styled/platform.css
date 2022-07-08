@@ -10264,7 +10264,7 @@ textarea.form-control-lg {
 .onex-select .onex-select__option.onex-select__option--is-focused,
 .onex-select .onex-select__option--is-selected,
 .onex-select .onex-select__option--is-selected.onex-select__option--is-focused {
-  background-color: transparent;
+  background-color: rgba(103, 110, 122, 0.1);
 }
 .onex-select .onex-select__option.onex-select__option--is-focused:hover,
 .onex-select .onex-select__option--is-selected:hover,
