@@ -24,10 +24,13 @@ const DataGrid = ({
   ...accProps
 }) => {
   const dataRef = useRef(data);
+  const [renderedData, setRenderedData] = useState(data);
   const [skipPageReset, setSkipPageReset] = useState(false);
   const dataGridClasses = classNames('onex-data-grid', {
     [className]: className,
   });
+
+  useEffect(() => setRenderedData(data), [data]);
 
   const updateData = (rowIndex, columnId, value) => {
     setSkipPageReset(true);
@@ -51,7 +54,7 @@ const DataGrid = ({
     handleUpdateData?.(dataRef.current);
   }, [dataRef.current]);
 
-  const [tableData, setData] = useState(dataRef.current);
+  // const [tableData, setData] = useState(dataRef.current);
 
   return (
     <div className={dataGridClasses}>
@@ -60,7 +63,7 @@ const DataGrid = ({
       {/* <DataGridBulkActions {...DataGridBulkActionsProps} /> */}
       <DataGridTable
         columns={columns}
-        data={tableData}
+        data={renderedData}
         rowsPerPageOptions={rowsPerPageOptions}
         sortBy={sortBy}
         updateData={updateData}
@@ -71,7 +74,7 @@ const DataGrid = ({
         rowSelectionType={rowSelectionType}
         handleSelection={handleSelection}
         draggable
-        setData={setData}
+        setData={setRenderedData}
         {...accProps}
       />
     </div>
