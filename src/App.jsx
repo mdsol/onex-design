@@ -113,7 +113,7 @@ const groupedOptionsMultiSelect = [
 
 const DevExamples = () => {
   const [show, setShow] = useState(false);
-  const dataGridData = useMemo(() => makeData(30), []);
+  const dataGridData = useMemo(() => makeData(32), []);
   const dropZoneRef = useRef(null);
   const [attachedFiles, setAttachedFiles] = useState([]);
   const dataGridSortByUpd = useMemo(() => dataGridSortBy, []);

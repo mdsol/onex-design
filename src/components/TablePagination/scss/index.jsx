@@ -51,6 +51,13 @@ const TablePagination = ({
     previousPage();
   };
 
+  const rowsInfo = useMemo(() => {
+    const lastRowInfo = rows < lastRow ? rows : lastRow;
+    const firstRowPerPage = lastRow - defaultRowsPerPage + 1;
+
+    return `${firstRowPerPage}-${lastRowInfo} of ${rows}`;
+  }, [lastRow, rows, defaultRowsPerPage]);
+
   return (
     <div {...accProps} className={tablePaginationClassNames} data-test-id={dataTestId}>
       <div className="onex-table-pagination__rows-per-page">
@@ -65,9 +72,7 @@ const TablePagination = ({
           isSearchable
         />
       </div>
-      <span className="onex-table-pagination__rows-text-info">
-        {lastRow} of {rows}
-      </span>
+      <span className="onex-table-pagination__rows-text-info">{rowsInfo}</span>
       <div className="page-arrows">
         <Button
           variant="tertiary"

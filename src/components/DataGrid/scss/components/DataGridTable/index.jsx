@@ -63,6 +63,7 @@ const DataGridTable = ({
     setPageSize,
     canNextPage,
     canPreviousPage,
+    pageCount,
     state: { pageSize, pageIndex },
   } = useTable(
     {
