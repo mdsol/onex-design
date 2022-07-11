@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import ViewComponents from './view-components';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone } from './components';
+import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone, FilterSelect, DatePicker } from './components';
 import ThemeProvider from './components/ThemeProvider';
 
 // import './scss/platform.scss';
@@ -144,39 +144,53 @@ const DevExamples = () => {
 
   return (
     <div className="p-5">
-      <div style={{ padding: '20px', minHeight: '300px' }}>
-        <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
-      </div>
+      {/*<div style={{ padding: '20px', minHeight: '300px' }}>*/}
+      {/*  <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />*/}
+      {/*</div>*/}
       <div>
-        <Select
+        <FilterSelect
           size="md"
           className="select"
           dataTestId="select"
+          // groupedOptions={groupedOptionsMultiSelect}
+          // selectedValues={selectedValues}
+          onSelect={handleSelect}
           options={optionsMultiSelect}
-          selectedValues={selectedValues}
-          onSelect={handleSelect}
         />
       </div>
-      <div>
-        <Select
-          size="md"
-          className="select"
-          dataTestId="select"
-          options={optionsMultiSelectSub}
-          selectedValues={selectedValues}
-          onSelect={handleSelect}
-        />
-      </div>
-      <div>
-        <Select
-          size="md"
-          className="select"
-          dataTestId="select"
-          groupedOptions={groupedOptionsMultiSelect}
-          selectedValues={selectedValues}
-          onSelect={handleSelect}
-        />
-      </div>
+      {/*<div>*/}
+      {/*  <Select*/}
+      {/*    size="md"*/}
+      {/*    className="select"*/}
+      {/*    dataTestId="select"*/}
+      {/*    options={optionsMultiSelect}*/}
+      {/*    selectedValues={selectedValues}*/}
+      {/*    onSelect={handleSelect}*/}
+      {/*  />*/}
+      {/*</div>*/}
+      {/*<div>*/}
+      {/*  <Select*/}
+      {/*    size="md"*/}
+      {/*    className="select"*/}
+      {/*    dataTestId="select"*/}
+      {/*    options={optionsMultiSelectSub}*/}
+      {/*    selectedValues={selectedValues}*/}
+      {/*    onSelect={handleSelect}*/}
+      {/*  />*/}
+      {/*</div>*/}
+      {/*<div>*/}
+      {/*  <Select*/}
+      {/*    size="md"*/}
+      {/*    className="select"*/}
+      {/*    dataTestId="select"*/}
+      {/*    groupedOptions={groupedOptionsMultiSelect}*/}
+      {/*    selectedValues={selectedValues}*/}
+      {/*    onSelect={handleSelect}*/}
+      {/*  />*/}
+      {/*</div>*/}
+      {/*<div>*/}
+      {/*  <DatePicker size="sm"/>*/}
+      {/*</div>*/}
       <div>
         <Check id="check-id" type="radio" checked disabled>
           Test label text
@@ -243,7 +257,7 @@ const TabItems = [
 ];
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState('testMode');
+  const [currentTab, setCurrentTab] = useState('devMode');
 
   useEffect(() => {
     if (currentTab === 'testMode') {
@@ -252,11 +266,11 @@ const App = () => {
   }, [currentTab]);
 
   return (
-    <ThemeProvider style={{ padding: '50px' }}>
+    <div style={{ padding: '50px' }}>
       <Tabs size="lg" visibleItems={TabItems} onSelect={setCurrentTab} activeKey={currentTab} />
       {currentTab === 'devMode' && <DevExamples />}
       {currentTab === 'testMode' && <ViewComponents />}
-    </ThemeProvider>
+    </div>
   );
 };
 

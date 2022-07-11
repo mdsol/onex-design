@@ -936,13 +936,14 @@ export const config = {
         additionalComponents: [],
         variants: [
           {
+            menuIsOpen: true,
             size: 'sm',
             className: 'select',
             dataTestId: 'select',
             label: 'Select label',
             helpText: 'Some help text',
             options: [
-              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'chocolate', label: 'Chocolate', subLabel: 'Warsaw' },
               { value: 'strawberry', label: 'Strawberry' },
               { value: 'vanilla', label: 'Vanilla' },
             ],

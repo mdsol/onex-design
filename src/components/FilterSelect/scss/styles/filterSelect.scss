@@ -1,0 +1,176 @@
+.onex-filter-select {
+  position: relative;
+  font-family: $font-family;
+
+  &__dropdown-button {
+    min-width: 5rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: rgba(103, 110, 122, 0.1);
+    border-radius: 1.5rem;
+    padding: 10px 12px;
+    color: rgba(26, 28, 30, 1);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(103, 110, 122, 0.25);
+      color: rgba(26, 28, 30, 1);
+    }
+
+    &:disabled,
+    &.disabled {
+      opacity: 0.4;
+      background-color: rgba(103, 110, 122, 0.1);
+      color: rgba(26, 28, 30, 1);
+    }
+
+    &.menu-open {
+      background-color: rgba(103, 110, 122, 0.25);
+
+      & > .dropdown-button-content__icon {
+        transform: rotateX(-180deg);
+        transition: transform ease-in-out 0.15s;
+      }
+    }
+
+    .dropdown-button-content {
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        font-size: 1rem;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &-menu-wrapper {
+    position: absolute;
+    background-color: $white;
+    border-radius: 8px;
+    border: 1px solid rgba(26, 28, 30, 0.1);
+    box-shadow: 0px 2px 12px rgba(0, 28, 59, 0.12);
+    z-index: 50;
+    max-width: 31.25rem;
+    min-width: 16.625rem;
+  }
+
+  &__control {
+    max-height: 100%;
+    padding: 6px 8px;
+    height: $component-height-sm;
+    min-height: 2rem !important;
+    line-height: 1.25rem;
+    border: 1px solid rgba(26, 28, 30, 0.2);
+    border-radius: 8px !important;
+    margin-bottom: 4px !important;
+
+    &:hover {
+      border-color: rgba(26, 28, 30, 0.5);
+    }
+
+    &.onex-filter-select__control--is-focused,
+    &.onex-filter-select__control--is-focused.onex-filter-select__control--menu-is-open {
+      border: $onex-select-control-border solid $primary-500 !important;
+      box-shadow: $primary-500 0px 0px 1px, $primary-500 0px 0px 0px 1px;
+
+      &:hover {
+        border-color: $primary-500 !important;
+      }
+    }
+
+    .onex-filter-select__value-container {
+      padding: 0;
+      padding-left: 1.75rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: rgb(26, 28, 30);
+
+      .onex-filter-select__placeholder {
+        text-align: start;
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(103, 110, 122, 1);
+      }
+
+      .onex-filter-select__input-container {
+        margin: 0;
+        padding: 0;
+        color: rgb(26, 28, 30);
+      }
+    }
+  }
+
+  &__search-icon {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $secondary-500;
+    font-size: 20px;
+  }
+
+  &-menu-wrapper .onex-filter-select__menu {
+    position: relative;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    padding: 0;
+  }
+
+  &__menu-list {
+    max-height: 32rem;
+    scrollbar-color: $onex-select-scrollbar-color transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: $onex-select-scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 0.25rem solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      -webkit-border-radius: $onex-select-scrollbar-border-radius;
+      background-color: $onex-select-scrollbar-color;
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0), inset 1px 1px 0px rgba(0, 0, 0, 0);
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+  }
+
+  &__menu-list .onex-filter-select__option {
+    display: inline-flex;
+    align-items: center;
+    padding: $onex-btn-padding-y $onex-btn-padding-x;
+    font-weight: 400;
+    font-size: $onex-select-font-size-lg;
+    line-height: $onex-select-line-height-lg;
+    color: $onex-select-option-text-color;
+
+    &:hover {
+      background-color: $onex-select-option-hover-bg-color;
+      cursor: pointer;
+    }
+
+    .onex-check__wrapper {
+      gap: 0.625rem;
+    }
+
+    label.onex-check__wrapper {
+      display: inline-flex;
+    }
+  }
+}
