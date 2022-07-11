@@ -129,6 +129,7 @@ const Select = ({
           hideSelectedOptions={hideSelectedOptions}
           isSearchable={isSearchable}
           closeMenuOnSelect={closeMenuOnSelect}
+          tabSelectsValue={false}
           {...props}
         />
       ) : (
@@ -154,6 +155,7 @@ const Select = ({
           hideSelectedOptions={hideSelectedOptions}
           isSearchable={isSearchable}
           closeMenuOnSelect={closeMenuOnSelect}
+          tabSelectsValue={false}
           {...props}
         />
       )}
