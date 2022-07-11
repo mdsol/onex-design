@@ -235,6 +235,196 @@ export const demoGridData = [
     },
     phase: 10,
   },
+  {
+    studyId: 'A195800',
+    studyName: { value: 'Study name 1', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 1
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 1
+        </Badge>
+      ),
+    },
+    phase: 1,
+  },
+  {
+    studyId: 'A195801',
+    studyName: { value: 'Study name 2', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 2
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 2
+        </Badge>
+      ),
+    },
+    phase: 2,
+  },
+  {
+    studyId: 'A195802',
+    studyName: { value: 'Study name 3', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 3
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 3
+        </Badge>
+      ),
+    },
+    phase: 3,
+  },
+  {
+    studyId: 'A195803',
+    studyName: { value: 'Study name 4', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 4
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 4
+        </Badge>
+      ),
+    },
+    phase: 4,
+  },
+  {
+    studyId: 'A195804',
+    studyName: { value: 'Study name 5', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 5
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 5
+        </Badge>
+      ),
+    },
+    phase: 5,
+  },
+  {
+    studyId: 'A195805',
+    studyName: { value: 'Study name 6', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 6
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 6
+        </Badge>
+      ),
+    },
+    phase: 6,
+  },
+  {
+    studyId: 'A195806',
+    studyName: { value: 'Study name 7', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 7
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 7
+        </Badge>
+      ),
+    },
+    phase: 7,
+  },
+  {
+    studyId: 'A195807',
+    studyName: { value: 'Study name 8', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 8
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 8
+        </Badge>
+      ),
+    },
+    phase: 8,
+  },
+  {
+    studyId: 'A195808',
+    studyName: { value: 'Study name 9', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 8
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 9
+        </Badge>
+      ),
+    },
+    phase: 9,
+  },
+  {
+    studyId: 'A195809',
+    studyName: { value: 'Study name 10', leadingIcon: <Icon>check_circle</Icon> },
+    stage: {
+      component: (
+        <Badge type="default" variant="status">
+          Stage 10
+        </Badge>
+      ),
+    },
+    status: {
+      component: (
+        <Badge type="default" variant="status">
+          Status 10
+        </Badge>
+      ),
+    },
+    phase: 10,
+  },
 ];
 
 export const demoCellGridColumns = [
