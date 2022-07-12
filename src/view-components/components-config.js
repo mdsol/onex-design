@@ -2017,6 +2017,7 @@ export const config = {
                 id: '3',
                 name: 'textLabels',
                 label: 'Item3',
+                disabled: true,
               },
             ],
           },
