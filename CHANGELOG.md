@@ -1,4 +1,6 @@
 # Changelog
+## 0.4.4
+Fixes for: SegmentedToggle, DataGrid, DatePicker, Select, DropDowns. Style changes for themeprovider.css
 ## 0.4.3
 DataGrid custom cells have been added. ThemeProvider css updated to try and fix sandman conflicts. 
 ## 0.4.2
