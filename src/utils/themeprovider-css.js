@@ -20,7 +20,7 @@ try {
       }
       ${themeproviderCSS.css
         .toString()
-        .replaceAll(/\/\*[^*]*\*+([^\/][^*]*\*+)*\//g, '')
+        .replaceAll(/\/\*[^*]*\*+([^/][^*]*\*+)*\//g, '')
         .replaceAll(/ body {/g, ' {')
         .replaceAll(/html .onex-themeprovider :root {/g, ':root {')}`,
       (err) => {
