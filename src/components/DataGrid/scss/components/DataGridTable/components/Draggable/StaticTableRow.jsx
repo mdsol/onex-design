@@ -1,5 +1,5 @@
-import DragHandle from './DragHandle';
 import styled from 'styled-components';
+import DragHandle from './DragHandle';
 
 const StyledStaticData = styled.td`
   background: white;

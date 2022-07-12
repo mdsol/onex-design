@@ -92,9 +92,9 @@ const DataGridTable = ({
       initialState: {
         pageIndex: 0,
         pageSize: rowsPerPageOptions.length ? rowsPerPageOptions[0] : data.length,
-        // sortBy,
+        sortBy: draggable ? [] : sortBy,
       },
-      disableSortBy: true,
+      disableSortBy: draggable,
       ...accProps,
     },
     useSortBy,
@@ -243,7 +243,7 @@ const DataGridTable = ({
         <tbody className="onex-data-grid__table-body" {...getTableBodyProps()}>
           {draggable ? (
             <SortableContext items={items} strategy={verticalListSortingStrategy}>
-              {rows.map((row) => {
+              {page.map((row) => {
                 prepareRow(row);
                 return <DraggableTableRow key={row.original.id} row={row} />;
               })}
