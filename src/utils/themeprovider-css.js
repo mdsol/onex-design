@@ -7,7 +7,7 @@ try {
     data: `@import 'src/scss/platform.scss';`,
   });
   const themeproviderCSS = sass.renderSync({
-    data: `@import 'src/scss/fonts.scss'; html .onex-themeprovider { ${platformCSS.css} }`,
+    data: ` html .onex-themeprovider { ${platformCSS.css} }`,
   });
   if (themeproviderCSS.css) {
     fs.writeFile(
@@ -20,6 +20,7 @@ try {
       }
       ${themeproviderCSS.css
         .toString()
+        .replaceAll(/\/\*[^*]*\*+([^\/][^*]*\*+)*\//g, '')
         .replaceAll(/ body {/g, ' {')
         .replaceAll(/html .onex-themeprovider :root {/g, ':root {')}`,
       (err) => {
