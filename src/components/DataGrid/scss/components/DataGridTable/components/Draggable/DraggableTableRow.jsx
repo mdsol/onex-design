@@ -3,6 +3,7 @@ import { CSS } from '@dnd-kit/utilities';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import DragHandle from './DragHandle';
+import Check from '../../../../../../Check/scss';
 
 const DraggingRow = styled.td`
   background: rgba(127, 207, 250, 0.3);
@@ -15,7 +16,15 @@ const TableData = styled.td`
   }
 `;
 
-const DraggableTableRow = ({ row }) => {
+const DraggableTableRow = ({
+  row,
+  _selectedRowIds,
+  useRowSelection,
+  rowSelectionType,
+  handleRowCheck,
+  handleColumnType,
+  updateData,
+}) => {
   const { attributes, listeners, transform, transition, setNodeRef, isDragging } = useSortable({
     id: row.original.id,
   });
@@ -25,20 +34,36 @@ const DraggableTableRow = ({ row }) => {
   };
 
   return (
-    <tr ref={setNodeRef} style={style} {...row.getRowProps()}>
+    <tr
+      ref={setNodeRef}
+      style={style}
+      {...row.getRowProps()}
+      className={`onex-data-grid__table-body-row ${_selectedRowIds[row.id] ? 'isSelected' : ''}`}
+    >
+      {useRowSelection && (
+        <td key={`body_cell_check_${row.id}`}>
+          <Check
+            id={`onex-data-grid-row-check_${row.id}`}
+            className="onex-data-grid__table-body-row-check"
+            checked={_selectedRowIds[row.id]}
+            type={rowSelectionType === 'multi' ? 'checkbox' : 'radio'}
+            onChange={(e) => handleRowCheck(e, row)}
+          />
+        </td>
+      )}
       {isDragging ? (
         <DraggingRow colSpan={row.cells.length}>&nbsp;</DraggingRow>
       ) : (
-        row.cells.map((cell, i) => {
-          if (i === 0) {
+        row.cells.map((cell, cellInd) => {
+          if (cellInd === 0) {
             return (
-              <TableData {...cell.getCellProps()}>
+              <TableData>
                 <DragHandle {...attributes} {...listeners} />
                 <span>{cell.render('Cell')}</span>
               </TableData>
             );
           }
-          return <TableData {...cell.getCellProps()}>{cell.render('Cell')}</TableData>;
+          return handleColumnType(row, cell, cellInd, updateData);
         })
       )}
     </tr>

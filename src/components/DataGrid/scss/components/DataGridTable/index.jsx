@@ -148,13 +148,14 @@ const DataGridTable = ({
   );
 
   function handleDragStart(event) {
+    console.log('dragging start');
     setActiveId(event.active.id);
   }
 
   // eslint-disable-next-line consistent-return
   function handleDragEnd(event) {
     const { active, over } = event;
-    console.log('dragging', active.id, over.id);
+    console.log('dragging end', active.id, over.id);
     if (active.id !== over.id) {
       setData((currentData) => {
         console.log('drag end', active.id, over.id);
@@ -182,7 +183,6 @@ const DataGridTable = ({
     return row;
   }, [activeId, rows, prepareRow]);
 
-  console.log(data, 'data original', rows, page);
   const renderRow = (row) => (
     <tr
       key={`body_row_${row.id}`}
@@ -245,7 +245,18 @@ const DataGridTable = ({
             <SortableContext items={items} strategy={verticalListSortingStrategy}>
               {page.map((row) => {
                 prepareRow(row);
-                return <DraggableTableRow key={row.original.id} row={row} />;
+                return (
+                  <DraggableTableRow
+                    key={row.original.id}
+                    row={row}
+                    _selectedRowIds={selectedRowIds}
+                    useRowSelection={useRowSelection}
+                    rowSelectionType={rowSelectionType}
+                    handleRowCheck={handleRowCheck}
+                    handleColumnType={handleColumnType}
+                    updateData={updateData}
+                  />
+                );
               })}
             </SortableContext>
           ) : (

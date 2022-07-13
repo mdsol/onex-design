@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const HandleWrapper = styled.div`
   height: 1rem;
-  vertical-align: bottom;
+  vertical-align: baseline;
   display: inline-block;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   svg {
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
   }
   cursor: ${({ isDragging }) => (isDragging ? 'grabbing' : 'grab')};
 `;
