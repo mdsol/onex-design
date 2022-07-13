@@ -3,32 +3,31 @@
   font-family: $font-family;
 
   &__dropdown-button {
-    min-width: 5rem;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    background-color: rgba(103, 110, 122, 0.1);
-    border-radius: 1.5rem;
-    padding: 10px 12px;
-    color: rgba(26, 28, 30, 1);
+    min-width: $onex-filter-select-dropdown-button-min-width;
+    font-style: $onex-filter-select-dropdown-button-font-style;
+    font-weight: $onex-filter-select-font-weight-600;
+    font-size: $onex-filter-select-dropdown-button-font-size;
+    line-height: $onex-filter-select-line-height;
+    background-color: $onex-filter-select-dropdown-button-background-color;
+    border-radius: $onex-filter-select-dropdown-button-border-radius;
+    color: $onex-filter-select-dropdown-button-color;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: rgba(103, 110, 122, 0.25);
-      color: rgba(26, 28, 30, 1);
+      background-color: $onex-filter-select-dropdown-button-hover-background-color;
+      color: $onex-filter-select-dropdown-button-hover-color;
     }
 
     &:disabled,
     &.disabled {
-      opacity: 0.4;
-      background-color: rgba(103, 110, 122, 0.1);
-      color: rgba(26, 28, 30, 1);
+      opacity: $onex-filter-select-opacity;
+      background-color: $onex-filter-select-dropdown-button-background-color;
+      color: $onex-filter-select-dropdown-button-color;
     }
 
-    &.menu-open {
-      background-color: rgba(103, 110, 122, 0.25);
+    &__menu-open {
+      background-color: $onex-filter-select-dropdown-button-menu-open-background-color;
 
       & > .dropdown-button-content__icon {
         transform: rotateX(-180deg);
@@ -36,72 +35,138 @@
       }
     }
 
+    &__value-selected {
+      background-color: $onex-filter-select-dropdown-button-value-selected-background-color;
+
+      &:disabled,
+      &.disabled {
+        opacity: $onex-filter-select-opacity;
+        background-color: $onex-filter-select-dropdown-button-value-selected-background-color;
+        color: $onex-filter-select-dropdown-button-value-selected-color;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $onex-filter-select-dropdown-button-value-selected-hover-background-color;
+
+        .dropdown-button-content__value {
+          color: $onex-filter-select-dropdown-button-value-selected-color;
+        }
+
+        .dropdown-button-content__remove-value-icon {
+          color: $onex-filter-select-dropdown-button-value-selected-color;
+        }
+      }
+
+      &.onex-filter-select__dropdown-button__menu-open {
+        background-color: $onex-filter-select-dropdown-button-value-selected-hover-background-color;
+
+        .dropdown-button-content__value {
+          color: $onex-filter-select-dropdown-button-value-selected-color;
+        }
+
+        .dropdown-button-content__remove-value-icon {
+          color: $onex-filter-select-dropdown-button-value-selected-color;
+        }
+      }
+    }
+
     .dropdown-button-content {
       display: flex;
       align-items: center;
 
-      &__icon {
-        font-size: 1rem;
-        margin-left: 4px;
+      &__value {
+        padding: 0 $onex-filter-select-dropdown-button-content-padding-y;
+        color: $onex-filter-select-dropdown-button-content-color;
       }
+
+      &__remove-value {
+        display: flex;
+        align-items: center;
+
+        &-icon {
+          font-size: $onex-filter-select-dropdown-button-content-icon-font-size;
+          color: $onex-filter-select-dropdown-button-content-color;
+        }
+      }
+
+      &__icon {
+        font-size: $onex-filter-select-dropdown-button-content-icon-font-size;
+        margin-left: $onex-filter-select-dropdown-button-content-icon-margin-y;
+      }
+    }
+  }
+
+  &--md {
+    .onex-filter-select__dropdown-button {
+      padding: $onex-filter-select-dropdown-button-md-padding-y $onex-filter-select-dropdown-button-md-padding-x;
+      height: $onex-filter-select-dropdown-button-md-height;
+    }
+  }
+
+  &--sm {
+    .onex-filter-select__dropdown-button {
+      padding: $onex-filter-select-dropdown-button-sm-padding-y $onex-filter-select-dropdown-button-sm-padding-x;
+      height: $onex-filter-select-dropdown-button-sm-height;
     }
   }
 
   &-menu-wrapper {
     position: absolute;
-    background-color: $white;
-    border-radius: 8px;
-    border: 1px solid rgba(26, 28, 30, 0.1);
-    box-shadow: 0px 2px 12px rgba(0, 28, 59, 0.12);
+    background-color: $onex-filter-select-menu-wrapper-background-color;
+    border-radius: $onex-filter-select-menu-wrapper-border-radius;
+    border: 1px solid $onex-filter-select-menu-wrapper-border-color;
+    box-shadow: 0 0.125rem 0.75rem $onex-filter-select-menu-wrapper-box-shadow-color;
     z-index: 50;
-    max-width: 31.25rem;
-    min-width: 16.625rem;
+    max-width: $onex-filter-select-max-width;
+    min-width: $onex-filter-select-min-width;
   }
 
   &__control {
     max-height: 100%;
-    padding: 6px 8px;
-    height: $component-height-sm;
-    min-height: 2rem !important;
-    line-height: 1.25rem;
-    border: 1px solid rgba(26, 28, 30, 0.2);
-    border-radius: 8px !important;
-    margin-bottom: 4px !important;
+    padding: $onex-filter-select-control-padding-y $onex-filter-select-control-padding-x;
+    height: $onex-filter-select-control-height;
+    min-height: $onex-filter-select-control-min-height !important;
+    line-height: $onex-filter-select-line-height;
+    border: 1px solid $onex-filter-select-control-border-color;
+    border-radius: $onex-filter-select-menu-wrapper-border-radius !important;
+    margin: $onex-filter-select-control-margin $onex-filter-select-control-margin $onex-filter-select-control-margin-bottom;
+    min-width: $onex-filter-select-control-min-width !important;
 
     &:hover {
-      border-color: rgba(26, 28, 30, 0.5);
+      border-color: $onex-filter-select-control-hover-border-color;
     }
 
     &.onex-filter-select__control--is-focused,
     &.onex-filter-select__control--is-focused.onex-filter-select__control--menu-is-open {
-      border: $onex-select-control-border solid $primary-500 !important;
-      box-shadow: $primary-500 0px 0px 1px, $primary-500 0px 0px 0px 1px;
+      border: 1px solid $onex-filter-select-control-focused-border-color !important;
+      box-shadow: $onex-filter-select-control-focused-border-color 0 0 1px, $onex-filter-select-control-focused-border-color 0 0 0 1;
 
       &:hover {
-        border-color: $primary-500 !important;
+        border-color: $onex-filter-select-control-focused-border-color !important;
       }
     }
 
     .onex-filter-select__value-container {
-      padding: 0;
-      padding-left: 1.75rem;
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: rgb(26, 28, 30);
+      padding: 0 0 0 $onex-filter-select-value-padding-x;
+      font-size: $onex-filter-select-value-font-size;
+      font-weight: $onex-filter-select-font-weight-400;
+      color: $onex-filter-select-value-color;
 
       .onex-filter-select__placeholder {
         text-align: start;
         margin: 0;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: rgba(103, 110, 122, 1);
+        font-weight: $onex-filter-select-font-weight-400;
+        font-size: $onex-filter-select-placeholder-font-size;
+        line-height: $onex-filter-select-line-height;
+        color: $onex-filter-select-placeholder-color;
       }
 
       .onex-filter-select__input-container {
         margin: 0;
         padding: 0;
-        color: rgb(26, 28, 30);
+        color: $onex-filter-select-value-color;
       }
     }
   }
@@ -112,32 +177,39 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: $secondary-500;
-    font-size: 20px;
+    color: $onex-filter-select-search-icon-color;
+    font-size: $onex-filter-select-search-icon-font-size;
   }
 
   &-menu-wrapper .onex-filter-select__menu {
     position: relative;
-    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 0;
+    box-shadow: inset 0 0 0 $onex-filter-select-menu-box-shadow-color;
+    border-radius: $onex-filter-select-menu-wrapper-border-radius;
     padding: 0;
+    margin: 0;
   }
 
-  &__menu-list {
-    max-height: 32rem;
-    scrollbar-color: $onex-select-scrollbar-color transparent;
+  &__menu-action {
+    display: flex;
+    padding: $onex-filter-select-menu-action-padding;
+  }
+
+  &-menu-wrapper .onex-filter-select__menu .onex-filter-select__menu-list {
+    max-height: $onex-filter-select-menu-list-max-height;
+    border-radius: $onex-filter-select-menu-wrapper-border-radius;
+    scrollbar-color: $onex-filter-select-scrollbar-color transparent;
     scrollbar-width: thin;
 
     &::-webkit-scrollbar {
-      width: $onex-select-scrollbar-width;
+      width: $onex-filter-select-scrollbar-width;
     }
 
     &::-webkit-scrollbar-thumb {
-      border: 0.25rem solid rgba(0, 0, 0, 0);
+      border: 0.25rem solid $onex-filter-select-scrollbar-border-color;
       background-clip: padding-box;
-      -webkit-border-radius: $onex-select-scrollbar-border-radius;
+      -webkit-border-radius: $onex-filter-select-scrollbar-border-radius;
       background-color: $onex-select-scrollbar-color;
-      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0), inset 1px 1px 0px rgba(0, 0, 0, 0);
+      -webkit-box-shadow: inset -1px -1px 0 $onex-filter-select-scrollbar-border-color, inset 1px 1px 0 $onex-filter-select-scrollbar-border-color;
     }
 
     &::-webkit-scrollbar-button {
@@ -154,14 +226,18 @@
   &__menu-list .onex-filter-select__option {
     display: inline-flex;
     align-items: center;
-    padding: $onex-btn-padding-y $onex-btn-padding-x;
-    font-weight: 400;
-    font-size: $onex-select-font-size-lg;
-    line-height: $onex-select-line-height-lg;
-    color: $onex-select-option-text-color;
+    padding: $onex-filter-select-option-padding-y $onex-filter-select-option-padding-x;
+    font-weight: $onex-filter-select-font-weight-400;
+    font-size: $onex-filter-select-option-font-size;
+    line-height: $onex-filter-select-line-height;
+    color: $onex-filter-select-option-color;
+
+    &.onex-filter-select__option--is-focused {
+      background-color: $onex-filter-select-option-focused-background-color;
+    }
 
     &:hover {
-      background-color: $onex-select-option-hover-bg-color;
+      background-color: $onex-filter-select-option-focused-background-color;
       cursor: pointer;
     }
 
@@ -171,6 +247,37 @@
 
     label.onex-check__wrapper {
       display: inline-flex;
+    }
+  }
+
+  .onex-filter-select__option--is-selected,
+  .onex-filter-select__option--is-selected.onex-filter-select__option--is-focused {
+    background-color: $onex-filter-select-option-selected-background-color;
+
+    &:hover {
+      background-color: $onex-filter-select-option-selected-background-color;
+    }
+  }
+
+  &__menu-list .onex-filter-select__group {
+    padding: $onex-filter-select-group-padding-y 0 0;
+
+    &:last-child {
+      border: none;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    .onex-filter-select__group-heading {
+      text-align: start;
+      padding: $onex-filter-select-group-heading-padding $onex-filter-select-group-heading-padding $onex-filter-select-group-heading-padding-bottom $onex-filter-select-group-heading-padding;
+      margin: 0;
+      font-size: $onex-filter-select-group-heading-font-size;
+      line-height: $onex-filter-select-group-heading-line-height;
+      color: $onex-filter-select-group-heading-color;
+      font-weight: $onex-filter-select-font-weight-600;
     }
   }
 }

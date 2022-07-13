@@ -5,66 +5,31 @@ import PropTypes from 'prop-types';
 import { Overlay as ReactOverlay, Button as ReactButton } from 'react-bootstrap';
 import Icon from '../../Icon/scss';
 import Check from '../../Check/scss';
+import Button from '../../Buttons/scss';
 
-// const MenuList = ({ selectProps, ...props }) => {
-//   const { onInputChange, inputValue, onMenuInputFocus } = selectProps;
-//
-//   // Copied from source
-//   const ariaAttributes = {
-//     'aria-autocomplete': 'list',
-//     'aria-label': selectProps['aria-label'],
-//     'aria-labelledby': selectProps['aria-labelledby'],
-//   };
-//
-//   return (
-//     <div>
-//       <input
-//         style={{
-//           width: '100%',
-//           boxSizing: 'border-box',
-//           padding: 10,
-//           border: 'none',
-//           borderBottom: '1px solid lightgrey',
-//         }}
-//         autoCorrect="off"
-//         autoComplete="off"
-//         spellCheck="false"
-//         type="text"
-//         value={inputValue}
-//         onChange={(e) =>
-//           onInputChange(e.currentTarget.value, {
-//             action: 'input-change',
-//           })
-//         }
-//         onMouseDown={(e) => {
-//           e.stopPropagation();
-//           e.target.focus();
-//         }}
-//         onTouchEnd={(e) => {
-//           e.stopPropagation();
-//           e.target.focus();
-//         }}
-//         onFocus={onMenuInputFocus}
-//         placeholder="Search..."
-//         {...ariaAttributes}
-//       />
-//       <components.MenuList {...props} selectProps={selectProps} />
-//     </div>
-//   );
-// };
+const Menu = ({ handleApplyFilter, children, ...props }) => (
+  <components.Menu {...props}>
+    {children}
+    <div className="onex-filter-select__menu-action">
+      <Button variant="primary" size="sm" onClick={handleApplyFilter}>
+        Apply
+      </Button>
+    </div>
+  </components.Menu>
+);
 
 const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
   const checkedValue = selectedOptions?.some((elem) => elem.value === props.value);
 
   return (
-    <components.Option
-      {...props}
-      className={classNames({
-        'onex-filter-select__option--text': !showCheckInOption,
-      })}
-    >
+    <components.Option {...props}>
       {showCheckInOption ? (
-        <Check id={props.children} checked={checkedValue} className="multi-filter-select-check">
+        <Check
+          id={props.children}
+          checked={checkedValue}
+          onChange={() => {}}
+          className="multi-filter-select-check"
+        >
           {props.children}
         </Check>
       ) : (
@@ -87,6 +52,7 @@ const ValueContainer = ({ children, ...props }) => (
 const FilterSelect = ({
   className,
   disabled,
+  label,
   selectedValues,
   options,
   groupedOptions,
@@ -96,10 +62,6 @@ const FilterSelect = ({
   dataTestId,
   ...props
 }) => {
-  const selectStyles = {
-    control: (provided) => ({ ...provided, minWidth: 240, margin: 8 }),
-    // menu: () => ({ boxShadow: 'inset 0 1px 0 rgba(0, 0, 0, 0.1)' }),
-  };
   const target = useRef(null);
   const locSelectedValues = useMemo(
     () => (Array.isArray(selectedValues) ? selectedValues : [selectedValues]),
@@ -107,12 +69,18 @@ const FilterSelect = ({
   );
 
   const [selectedOptions, setSelectedOptions] = useState(locSelectedValues);
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [filteredOptions, setFilteredOptions] = useState(locSelectedValues);
+  const [showMenu, setShowMenu] = useState(false);
   const [value, setValue] = useState(locSelectedValues.length ? locSelectedValues[0] : null);
 
   useEffect(() => {
     setSelectedOptions(locSelectedValues);
+    setFilteredOptions(locSelectedValues);
   }, [locSelectedValues]);
+
+  useEffect(() => {
+    setValue(filteredOptions.length ? filteredOptions[0] : null);
+  }, [filteredOptions]);
 
   const selectClassNames = classNames('onex-filter-select', `onex-filter-select--${size}`, {
     [className]: className,
@@ -125,35 +93,67 @@ const FilterSelect = ({
     }
 
     setSelectedOptions([...option]);
-    return onSelect?.([...option]);
+  };
+
+  const handleRemoveValue = (e) => {
+    e.stopPropagation();
+    const data = selectedOptions.slice(1);
+    setSelectedOptions(data);
+    setFilteredOptions(data);
+  };
+
+  const handleApplyFilter = () => {
+    console.log('Apply filter');
+    setFilteredOptions(selectedOptions);
+    setShowMenu(false);
+    return onSelect?.(selectedOptions);
   };
 
   return (
     <div className={selectClassNames}>
       <ReactButton
-        className={`onex-filter-select__dropdown-button ${menuIsOpen ? 'menu-open' : ''}`}
+        className={classNames('onex-filter-select__dropdown-button', {
+          'onex-filter-select__dropdown-button__menu-open': showMenu,
+          'onex-filter-select__dropdown-button__value-selected': value,
+        })}
         variant="secondary"
         disabled={disabled}
         ref={target}
-        onClick={() => setMenuIsOpen(!menuIsOpen)}
+        onClick={() => setShowMenu(!showMenu)}
+        onKeyDown={() => setShowMenu(!showMenu)}
       >
         <div className="dropdown-button-content">
-          {value ? `State: ${value[0].label}` : 'Select a State'}
+          {value ? (
+            <>
+              {label}: <span className="dropdown-button-content__value"> {value?.label} </span>
+              {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus,jsx-a11y/click-events-have-key-events */}
+              <div
+                role="button"
+                className="dropdown-button-content__remove-value"
+                onClick={handleRemoveValue}
+              >
+                <Icon className="dropdown-button-content__remove-value-icon">cancel</Icon>
+              </div>
+            </>
+          ) : (
+            label
+          )}
           <Icon className="dropdown-button-content__icon">expand_more</Icon>
         </div>
       </ReactButton>
       <ReactOverlay
         rootClose
-        onHide={() => setMenuIsOpen(false)}
+        onHide={() => setShowMenu(false)}
         container={target.current}
         target={target.current}
-        show={menuIsOpen}
+        show={showMenu}
         offset={[0, 4]}
         placement="bottom-start"
       >
         {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
           <div className="onex-filter-select-menu-wrapper" {...overlayProps}>
             <ReactSelect
+              autoFocus
               data-test-id={dataTestId}
               classNamePrefix="onex-filter-select"
               value={selectedOptions}
@@ -163,6 +163,12 @@ const FilterSelect = ({
                 IndicatorSeparator: null,
                 ValueContainer,
                 // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+                Menu: memo(({ children, ...args }) => (
+                  <Menu {...args} handleApplyFilter={handleApplyFilter}>
+                    {children}
+                  </Menu>
+                )),
+                // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
                 Option: memo(({ children, ...args }) => (
                   <Option {...args} showCheckInOption={isMulti} selectedOptions={selectedOptions}>
                     {children}
@@ -170,13 +176,14 @@ const FilterSelect = ({
                 )),
               }}
               onChange={handleChange}
+              handleApplyFilter={handleApplyFilter}
               backspaceRemovesValue={false}
               controlShouldRenderValue={false}
               hideSelectedOptions={false}
               placeholder="Search"
               isClearable={false}
-              styles={selectStyles}
               menuIsOpen
+              isMulti={isMulti}
               {...props}
             />
           </div>
@@ -208,6 +215,20 @@ ValueContainer.defaultProps = {
   props: undefined,
 };
 
+/* eslint-disable */
+Menu.propTypes = {
+  handleApplyFilter: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  props: PropTypes.object,
+};
+/* eslint-enable */
+
+Menu.defaultProps = {
+  handleApplyFilter: undefined,
+  children: undefined,
+  props: undefined,
+};
+
 Option.propTypes = {
   selectedOptions: PropTypes.arrayOf(optionType),
   showCheckInOption: PropTypes.bool,
@@ -227,6 +248,7 @@ Option.defaultProps = {
 FilterSelect.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  label: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   selectedValues: PropTypes.arrayOf(optionType),
   options: PropTypes.arrayOf(optionType),
   groupedOptions: PropTypes.arrayOf(groupedOptions),
@@ -239,6 +261,7 @@ FilterSelect.propTypes = {
 FilterSelect.defaultProps = {
   className: undefined,
   disabled: false,
+  label: undefined,
   selectedValues: [],
   options: [],
   groupedOptions: [],
