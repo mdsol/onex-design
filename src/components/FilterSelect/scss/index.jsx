@@ -110,7 +110,7 @@ const FilterSelect = ({
   };
 
   return (
-    <div className={selectClassNames}>
+    <div className={selectClassNames} data-test-id={dataTestId}>
       <ReactButton
         className={classNames('onex-filter-select__dropdown-button', {
           'onex-filter-select__dropdown-button__menu-open': showMenu,
@@ -154,7 +154,6 @@ const FilterSelect = ({
           <div className="onex-filter-select-menu-wrapper" {...overlayProps}>
             <ReactSelect
               autoFocus
-              data-test-id={dataTestId}
               classNamePrefix="onex-filter-select"
               value={selectedOptions}
               options={groupedOptions.length ? groupedOptions : options}

@@ -930,6 +930,151 @@ export const config = {
         ],
       },
       {
+        name: 'FilterSelect',
+        componentName: 'FilterSelect',
+        styledComponentName: 'FilterSelect',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            disabled: true,
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            isMulti: true,
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            selectedValues: [{ value: 'strawberry', label: 'Strawberry' }],
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            isMulti: true,
+            selectedValues: [
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla1', label: 'Vanilla' },
+            ],
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
         name: 'Select',
         componentName: 'Select',
         styledComponentName: 'Select',
