@@ -68,9 +68,11 @@
 
         &:last-child {
             border-right: none;
+            padding-right: 0;
         }
         &:first-child {
             border-left: none;
+            padding-left: 0;
         }
     }
 
