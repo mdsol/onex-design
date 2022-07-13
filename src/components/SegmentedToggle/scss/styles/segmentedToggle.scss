@@ -1,13 +1,21 @@
 .onex-segmentedToggle {
     width: 100%;
-    border: 1px $onex-segmented-toggle-border-color solid;
     border-radius: $onex-segmented-toggle-wrapper-border-radius;
     padding: $onex-segmented-toggle-padding;
     font-family: $font-family;
+    background-color: $onex-segmented-toggle-bg-wrapper-color;
+    gap: $onex-segmented-toggle-padding;
 
     .onex-toggle-btn-wrapper {
         .btn-toggle {
             border-radius: $onex-segmented-toggle-segments-border-radius;
+            padding-top: $onex-segmented-toggle-padding;
+            padding-bottom: $onex-segmented-toggle-padding;
+        }
+
+        .btn-check[disabled] + .onex-toggle__btn.btn-toggle,
+        .btn-check:disabled + .onex-toggle__btn.btn-toggle {
+            opacity: 0.4;
         }
     }
 
@@ -77,7 +85,7 @@
 
             .onex-material-icon,
             .material-icons-round {
-                font-size: $icon-size-xlg-sm;
+               font-size: $icon-size-xlg;
             }
         }
     }

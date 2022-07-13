@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   min-width: $onex-empty-state-min-width;
+  max-height: 100%;
 
   &__img {
     object-fit: contain;
@@ -13,17 +14,25 @@
 
   &__title {
     color: $onex-empty-state-title-color;
+    text-align: center;
   }
 
   &__subtitle {
     color: $onex-empty-state-subtitle-color;
+    text-align: center;
+    max-height: 80%;
+    overflow: hidden;
+    flex-shrink: 1;
+    flex-grow: 1;
   }
 
   &.onex-empty-state--section {
     @include card-sizes($onex-empty-state-img-size-section, $onex-empty-state-img-mb-section, $onex-empty-state-title-fs-section, $onex-empty-state-title-lh-section, $onex-empty-state-title-mb-section, $onex-empty-state-subtitle-fs-section, $onex-empty-state-subtitle-lh-section, $onex-empty-state-subtitle-mb-section);
+    max-width: $onex-empty-state-max-width-section;
   }
 
   &.onex-empty-state--card {
     @include card-sizes($onex-empty-state-img-size-card, $onex-empty-state-img-mb-card, $onex-empty-state-title-fs-card, $onex-empty-state-title-lh-card, $onex-empty-state-title-mb-card, $onex-empty-state-subtitle-fs-card, $onex-empty-state-subtitle-lh-card, $onex-empty-state-subtitle-mb-card);
+    max-width: $onex-empty-state-max-width-card;
   }
 }
