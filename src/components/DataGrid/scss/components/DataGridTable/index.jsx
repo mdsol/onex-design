@@ -64,7 +64,6 @@ const DataGridTable = ({
 }) => {
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
   const [activeId, setActiveId] = useState();
-  // const [isDragging, setIsDragging] = useState(false);
 
   const indeterminate =
     Object.values(_selectedRowIds).some((item) => item) &&
@@ -160,7 +159,6 @@ const DataGridTable = ({
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
         const newData = currentData.map((row) => ({ ...row }));
-        // const newData = [...currentData];
         return arrayMove(newData, oldIndex, newIndex);
       });
     }
@@ -223,7 +221,6 @@ const DataGridTable = ({
             <SortableContext items={items} strategy={verticalListSortingStrategy}>
               {page.map((row) => {
                 prepareRow(row);
-                console.log('row here', row);
                 return (
                   <DraggableTableRow
                     key={row.original.id}
