@@ -77,11 +77,6 @@ import { FilterSelect } from '../../../../components';
     },
     label: {
       description: 'The filter label(name).',
-      table: {
-        defaultValue: {
-          summary: 'undefined',
-        },
-      },
     },
     isAsync: {
       description: 'If the value is true the async search select is shown',
@@ -102,17 +97,27 @@ import { FilterSelect } from '../../../../components';
       description: 'Function returns the label of selected option in async Select',
     },
   }}
+  component={FilterSelect}
   decorators={[
     (Story) => (
-      <div className="left-wrap" style={{ padding: '20px', height: '25rem' }}>
+      <div style={{ width: '15rem', paddingLeft:'1rem' }}>
         <Story />
       </div>
     ),
   ]}
-  component={FilterSelect}
 />
 
 export const Template = (args) => <FilterSelect {...args} />;
+
+## FilterSelect
+
+Start by installing <code>react-select</code>
+
+<code>yarn add react-select</code>
+
+Full information you can read on official documentation: <a href="https://react-select.com/home" target="_blank" rel="noreferrer">react select docs</a>
+
+The filter select component allows users to choose single or multiple options from a list.
 
 ### FilterSelect details
 
@@ -120,8 +125,9 @@ export const Template = (args) => <FilterSelect {...args} />;
   <Story
     name="Demo"
     padding="10px"
+    height="40rem"
     args={{
-      label: 'Filter',
+      label: 'Study',
       size: 'md',
       className: 'filter-select-demo',
       dataTestId: 'filter-select-demo',
@@ -129,25 +135,43 @@ export const Template = (args) => <FilterSelect {...args} />;
         {
           label: 'AstraZeneca',
           options: [
-            { value: 'ClinicalEval', label: 'Clinical and Radiological Evaluation of Patients With fnjknkjnjknkj' },
-            { value: 'CulinaryMedicine', label: 'Culinary Medicine vs. Nutrition Education in Diabets' },
+            {
+              value: 'ClinicalEvaluation',
+              label: 'Clinical and Radiological Evaluation of Patients With test test',
+            },
+            {
+              value: 'CulinaryMedicine',
+              label: 'Culinary Medicine vs. Nutrition Education in Diabetes test test',
+            },
           ],
         },
         {
-          label: 'Sweet',
+          label: 'Moderna',
           options: [
-            { value: 'chocolate1', label: 'Chocolate' },
-            { value: 'strawberry1', label: 'Strawberry' },
-            { value: 'vanilla1', label: 'Vanilla' },
+            {
+              value: 'EffectAstaxanthin',
+              label: 'Effect of Astaxanthin on the Patients With Alzheimer Test test test',
+            },
+            {
+              value: 'EffectivenessKinesio',
+              label: 'Effectiveness of Kinesio Tapping for the Treatment of',
+            },
+            { value: 'ExerciseViral', label: 'Exercise and Total Viral Immunity' },
           ],
         },
-      ],
-      options: [
-        { value: 'brazil', label: 'Brazil' },
-        { value: 'colombia', label: 'Colombia' },
-        { value: 'poland', label: 'Poland' },
-        { value: 'portugal', label: 'Portugal' },
-        { value: 'spain', label: 'Spain' },
+        {
+          label: 'Pfizer',
+          options: [
+            {
+              value: 'MinimallyInvasive',
+              label: 'Minimally Invasive Surgical Epilepsy Trial for Temporal Test test',
+            },
+            {
+              value: 'ProbioticStreptococcus',
+              label: 'Probiotic Streptococcus Salivarius K12',
+            },
+          ],
+        },
       ],
       isMulti: true,
       selectedValues: [],
@@ -158,3 +182,152 @@ export const Template = (args) => <FilterSelect {...args} />;
 </Canvas>
 
 <ArgsTable story="Demo" />
+
+### FilterSelect sizes
+
+<Canvas>
+  <Story
+    name="Small"
+    height="28rem"
+    args={{
+      label:'Country',
+      size: 'sm',
+      className: 'filter-select-small',
+      dataTestId: 'filter-select-test-id',
+      options: [
+        { value: 'albania', label: 'Albania' },
+        { value: 'belgium', label: 'Belgium' },
+        { value: 'canada', label: 'Canada' },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    height="28rem"
+    args={{
+      label:'Country',
+      size: 'md',
+      className: 'filter-select-medium',
+      dataTestId: 'filter-select-test-id',
+      options: [
+        { value: 'albania', label: 'Albania' },
+        { value: 'belgium', label: 'Belgium' },
+        { value: 'canada', label: 'Canada' },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+### Multi FilterSelect
+
+<Canvas>
+  <Story
+    name="Multi"
+    height="28rem"
+    args={{
+      label:'Country',
+      isMulti: true,
+      size: 'md',
+      className: 'filter-select-small',
+      dataTestId: 'filter-select-test-id',
+      options: [
+        { value: 'albania', label: 'Albania' },
+        { value: 'belgium', label: 'Belgium' },
+        { value: 'canada', label: 'Canada' },
+        {value: 'brazil', label:'Brazil' },
+        {value: 'bulgaria', label:'Bulgaria' }
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### FilterSelect with grouped options. If you need options divided into groups, you should use "gropedOptions" property.
+
+<Canvas>
+  <Story
+    name="Grouped"
+    height="35rem"
+    args={{
+      label:'Country',
+      isMulti: true,
+      size: 'md',
+      className: 'filter-select-small',
+      dataTestId: 'filter-select-test-id',
+      groupedOptions: [
+        {
+          label: 'Europe',
+          options: [
+            { value: 'belgium', label: 'Belgium' },
+            { value: 'germany', label: 'Germany' },
+            { value: 'france', label: 'France' },
+            { value: 'poland', label: 'Poland' },
+          ]
+        },
+        {
+          label: 'Asia',
+          options: [
+            { value: 'japan', label: 'Japan' },
+            { value: 'china', label: 'China' },
+            { value: 'india', label: 'India' },
+            { value: 'singapore', label: 'Singapore' },
+          ]
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled FilterSelect
+
+<Canvas>
+  <Story
+    name="Disabled"
+    height="28rem"
+    args={{
+      label:'Country',
+      size: 'sm',
+      disabled: true,
+      className: 'filter-select-small',
+      dataTestId: 'filter-select-test-id',
+      options: [
+        { value: 'albania', label: 'Albania' },
+        { value: 'belgium', label: 'Belgium' },
+        { value: 'canada', label: 'Canada' },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="DisabledSelected"
+    height="28rem"
+    args={{
+      label:'Country',
+      size: 'md',
+      disabled: true,
+      className: 'filter-select-medium',
+      dataTestId: 'filter-select-test-id',
+      selectedValues: [
+        { value: 'albania', label: 'Albania' },
+      ],
+      options: [
+        { value: 'albania', label: 'Albania' },
+        { value: 'belgium', label: 'Belgium' },
+        { value: 'canada', label: 'Canada' },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+

@@ -63,7 +63,6 @@ const FilterSelect = ({
     () => (Array.isArray(selectedValues) ? selectedValues : [selectedValues]),
     [selectedValues],
   );
-
   const [selectedOptions, setSelectedOptions] = useState(locSelectedValues);
   const [filteredOptions, setFilteredOptions] = useState(locSelectedValues);
   const [showMenu, setShowMenu] = useState(false);
@@ -158,7 +157,8 @@ const FilterSelect = ({
         <div className="dropdown-button-content">
           {value ? (
             <>
-              {label}: <span className="dropdown-button-content__value"> {value?.label} </span>
+              <span className="dropdown-button-content__label"> {label}:</span>
+              <span className="dropdown-button-content__value"> {value?.label} </span>
               {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus,jsx-a11y/click-events-have-key-events */}
               <div
                 role="button"
@@ -306,7 +306,7 @@ Option.defaultProps = {
 FilterSelect.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  label: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  label: PropTypes.string,
   selectedValues: PropTypes.arrayOf(optionType),
   options: PropTypes.arrayOf(optionType),
   groupedOptions: PropTypes.arrayOf(groupedOptions),
