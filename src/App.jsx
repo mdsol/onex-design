@@ -189,6 +189,7 @@ const DevExamples = () => {
           sortBy={dataGridSortByUpd}
           rowsPerPageOptions={[10, 20, 30]}
           dataGridControlProps={GridControl}
+          draggable
         />
         <br />
         <Button variant="primary" onClick={() => setShow(true)}>

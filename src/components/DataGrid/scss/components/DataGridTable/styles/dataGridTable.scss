@@ -119,6 +119,9 @@
         }
       }
     }
+    .onex-data-grid__table-body-row-drag {
+      background-color: $onex-data-grid-table-body-tr-drag-background-color;
+    }
 
     td {
       margin: 0;
@@ -159,5 +162,6 @@
 .onex-data-grid__pagination {
   display: flex;
   justify-content: flex-end;
-  padding: $onex-data-grid-pagination-padding-x $onex-data-grid-pagination-padding-y $onex-data-grid-pagination-padding-x $onex-data-grid-pagination-padding-y;
+  padding: $onex-data-grid-pagination-padding-x $onex-data-grid-pagination-padding-y
+    $onex-data-grid-pagination-padding-x $onex-data-grid-pagination-padding-y;
 }

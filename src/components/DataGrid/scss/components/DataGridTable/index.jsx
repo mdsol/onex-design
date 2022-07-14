@@ -147,18 +147,15 @@ const DataGridTable = ({
     useSensor(KeyboardSensor, {}),
   );
 
-  function handleDragStart(event) {
-    console.log('dragging start');
+  const handleDragStart = (event) => {
     setActiveId(event.active.id);
-  }
+  };
 
   // eslint-disable-next-line consistent-return
-  function handleDragEnd(event) {
+  const handleDragEnd = (event) => {
     const { active, over } = event;
-    console.log('dragging end', active.id, over.id);
     if (active.id !== over.id) {
       setData((currentData) => {
-        console.log('drag end', active.id, over.id);
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
         const newData = currentData.map((row) => ({ ...row }));
@@ -168,11 +165,11 @@ const DataGridTable = ({
     }
 
     setActiveId(null);
-  }
+  };
 
-  function handleDragCancel() {
+  const handleDragCancel = () => {
     setActiveId(null);
-  }
+  };
 
   const selectedRow = useMemo(() => {
     if (!activeId) {
@@ -183,33 +180,17 @@ const DataGridTable = ({
     return row;
   }, [activeId, rows, prepareRow]);
 
-  const renderRow = (row) => (
-    <tr
-      key={`body_row_${row.id}`}
-      {...row.getRowProps()}
-      className={`onex-data-grid__table-body-row ${_selectedRowIds[row.id] ? 'isSelected' : ''}`}
-    >
-      {useRowSelection && (
-        <td key={`body_cell_check_${row.id}`}>
-          <Check
-            id={`onex-data-grid-row-check_${row.id}`}
-            className="onex-data-grid__table-body-row-check"
-            checked={_selectedRowIds[row.id]}
-            type={rowSelectionType === 'multi' ? 'checkbox' : 'radio'}
-            onChange={(e) => handleRowCheck(e, row)}
-          />
-        </td>
-      )}
-      {row.cells.map((cell, cellInd) => handleColumnType(row, cell, cellInd, updateData))}
-    </tr>
-  );
-
   const renderTable = () => (
     <>
       <ReactTable className={tableClasses} {...getTableProps()}>
         <thead className="onex-data-grid__table-headers">
           {headerGroups.map((headerGroup, headerRowInd) => (
             <tr key={`header_row_${headerRowInd}`} {...headerGroup.getHeaderGroupProps()}>
+              {draggable && (
+                <th>
+                  <span />
+                </th>
+              )}
               {/* eslint-disable-next-line no-nested-ternary */}
               {!useRowSelection ? null : rowSelectionType === 'multi' ? (
                 <th>
@@ -225,11 +206,7 @@ const DataGridTable = ({
                     onChange={handleHeaderCheck}
                   />
                 </th>
-              ) : (
-                <th key={`header_cell_check_${headerRowInd}`}>
-                  <span />
-                </th>
-              )}
+              ) : null}
               {headerGroup.headers.map((column, headerCellInd) => (
                 <DataGridHeader
                   key={`header_cell_row_${headerCellInd}`}
@@ -245,16 +222,18 @@ const DataGridTable = ({
             <SortableContext items={items} strategy={verticalListSortingStrategy}>
               {page.map((row) => {
                 prepareRow(row);
+                console.log('row here', row);
                 return (
                   <DraggableTableRow
                     key={row.original.id}
                     row={row}
-                    _selectedRowIds={selectedRowIds}
+                    _selectedRowIds={_selectedRowIds}
                     useRowSelection={useRowSelection}
                     rowSelectionType={rowSelectionType}
                     handleRowCheck={handleRowCheck}
                     handleColumnType={handleColumnType}
                     updateData={updateData}
+                    draggable={draggable}
                   />
                 );
               })}
@@ -262,24 +241,42 @@ const DataGridTable = ({
           ) : (
             page.map((row) => {
               prepareRow(row);
-              return renderRow(row);
+              return (
+                <DraggableTableRow
+                  key={row.original.id}
+                  row={row}
+                  _selectedRowIds={_selectedRowIds}
+                  useRowSelection={useRowSelection}
+                  rowSelectionType={rowSelectionType}
+                  handleRowCheck={handleRowCheck}
+                  handleColumnType={handleColumnType}
+                  updateData={updateData}
+                  draggable={draggable}
+                />
+              );
             })
           )}
         </tbody>
       </ReactTable>
-      <DragOverlay>
-        {activeId && (
-          <table style={{ width: '100%' }}>
-            <tbody>
-              <StaticTableRow row={selectedRow} />
-            </tbody>
-          </table>
-        )}
-      </DragOverlay>
+      {draggable && (
+        <DragOverlay>
+          {activeId && (
+            <table className={tableClasses} {...getTableProps()}>
+              <tbody className="onex-data-grid__table-body" {...getTableBodyProps()}>
+                <StaticTableRow
+                  row={selectedRow}
+                  handleColumnType={handleColumnType}
+                  updateData={updateData}
+                  useRowSelection={useRowSelection}
+                />
+              </tbody>
+            </table>
+          )}
+        </DragOverlay>
+      )}
     </>
   );
 
-  console.log('draggable', draggable, rows);
   return (
     <>
       {draggable ? (

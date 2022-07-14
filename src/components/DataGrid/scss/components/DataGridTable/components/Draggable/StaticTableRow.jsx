@@ -1,32 +1,38 @@
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import DragHandle from './DragHandle';
+import Check from '../../../../../../Check/scss';
 
-const StyledStaticData = styled.td`
-  background: white;
-  &:first-of-type {
-    min-width: 20ch;
-  }
-`;
-
-const StyledStaticTableRow = styled.tr`
-  box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 30%) 0px 10px 10px -5px;
-  outline: #3e1eb3 solid 1px;
-`;
-
-const StaticTableRow = ({ row }) => (
-  <StyledStaticTableRow {...row.getRowProps()}>
-    {row.cells.map((cell, i) => {
-      if (i === 0) {
-        return (
-          <StyledStaticData {...cell.getCellProps()}>
-            <DragHandle isDragging />
-            <span>{cell.render('Cell')}</span>
-          </StyledStaticData>
-        );
-      }
-      return <StyledStaticData {...cell.getCellProps()}>{cell.render('Cell')}</StyledStaticData>;
-    })}
-  </StyledStaticTableRow>
+const StaticTableRow = ({ row, handleColumnType, updateData, useRowSelection }) => (
+  <tr {...row.getRowProps()} className="onex-data-grid__table-body-row">
+    <td key={`body_cell_drag_${row.original.id}`}>
+      <DragHandle />
+    </td>
+    {useRowSelection && (
+      <td key={`body_cell_check_${row.id}`}>
+        <Check
+          id={`onex-data-grid-row-check_${row.id}`}
+          className="onex-data-grid__table-body-row-check"
+        />
+      </td>
+    )}
+    {row.cells.map((cell, cellInd) => handleColumnType(row, cell, cellInd, updateData))}
+  </tr>
 );
+
+/* eslint-disable */
+StaticTableRow.propTypes = {
+  row: PropTypes.arrayOf(PropTypes.object),
+  handleColumnType: PropTypes.func,
+  updateData: PropTypes.func,
+  useRowSelection: PropTypes.bool,
+};
+/* eslint-enable */
+
+StaticTableRow.defaultProps = {
+  row: [],
+  handleColumnType: undefined,
+  updateData: undefined,
+  useRowSelection: false,
+};
 
 export default StaticTableRow;

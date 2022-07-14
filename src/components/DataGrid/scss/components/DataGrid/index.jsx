@@ -73,7 +73,7 @@ const DataGrid = ({
         useRowSelection={useRowSelection}
         rowSelectionType={rowSelectionType}
         handleSelection={handleSelection}
-        draggable
+        draggable={draggable}
         setData={setRenderedData}
         {...accProps}
       />
