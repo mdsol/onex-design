@@ -201,7 +201,7 @@
   &__menu-action {
     display: flex;
     padding: $onex-filter-select-menu-action-padding;
-    .action-hide {
+    &.action-hide {
       display: none;
     }
   }
