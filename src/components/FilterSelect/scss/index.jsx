@@ -1,22 +1,12 @@
 import { useEffect, useRef, useMemo, useState, memo } from 'react';
 import classNames from 'classnames';
 import ReactSelect, { components } from 'react-select';
+import AsyncSelect from 'react-select/async';
 import PropTypes from 'prop-types';
 import { Overlay as ReactOverlay, Button as ReactButton } from 'react-bootstrap';
 import Icon from '../../Icon/scss';
 import Check from '../../Check/scss';
 import Button from '../../Buttons/scss';
-
-const Menu = ({ handleApplyFilter, children, ...props }) => (
-  <components.Menu {...props}>
-    {children}
-    <div className="onex-filter-select__menu-action">
-      <Button variant="primary" size="sm" onClick={handleApplyFilter}>
-        Apply
-      </Button>
-    </div>
-  </components.Menu>
-);
 
 const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
   const checkedValue = selectedOptions?.some((elem) => elem.value === props.value);
@@ -25,6 +15,7 @@ const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
     <components.Option {...props}>
       {showCheckInOption ? (
         <Check
+          tabIndex={-1}
           id={props.children}
           checked={checkedValue}
           onChange={() => {}}
@@ -60,8 +51,13 @@ const FilterSelect = ({
   onSelect,
   isMulti,
   dataTestId,
+  isAsync,
+  onLoadOptions,
+  getOptionValue,
+  getOptionLabel,
   ...props
 }) => {
+  const applyButtonRef = useRef(null);
   const target = useRef(null);
   const locSelectedValues = useMemo(
     () => (Array.isArray(selectedValues) ? selectedValues : [selectedValues]),
@@ -72,6 +68,7 @@ const FilterSelect = ({
   const [filteredOptions, setFilteredOptions] = useState(locSelectedValues);
   const [showMenu, setShowMenu] = useState(false);
   const [value, setValue] = useState(locSelectedValues.length ? locSelectedValues[0] : null);
+  const [applyButtonIsFocused, setApplyButtonIsFocused] = useState(false);
 
   useEffect(() => {
     setSelectedOptions(locSelectedValues);
@@ -79,38 +76,74 @@ const FilterSelect = ({
   }, [locSelectedValues]);
 
   useEffect(() => {
-    setValue(filteredOptions.length ? filteredOptions[0] : null);
+    setValue(
+      filteredOptions.length > 1
+        ? { label: filteredOptions.length, value: filteredOptions.length }
+        : filteredOptions.length && filteredOptions[0],
+    );
   }, [filteredOptions]);
 
   const selectClassNames = classNames('onex-filter-select', `onex-filter-select--${size}`, {
     [className]: className,
   });
 
+  const handleHide = () => {
+    setSelectedOptions(filteredOptions);
+    setFilteredOptions(filteredOptions);
+    setShowMenu(false);
+    setApplyButtonIsFocused(false);
+  };
+
   const handleChange = (option) => {
     if (!isMulti) {
       setSelectedOptions([option]);
+      setFilteredOptions([option]);
+      setShowMenu(false);
       onSelect?.([option]);
     }
-
     setSelectedOptions([...option]);
   };
 
-  const handleRemoveValue = (e) => {
+  const handleClearFilter = (e) => {
     e.stopPropagation();
-    const data = selectedOptions.slice(1);
-    setSelectedOptions(data);
-    setFilteredOptions(data);
+    setSelectedOptions([]);
+    setFilteredOptions([]);
   };
 
   const handleApplyFilter = () => {
-    console.log('Apply filter');
     setFilteredOptions(selectedOptions);
     setShowMenu(false);
     return onSelect?.(selectedOptions);
   };
 
+  const handleDropdownKeyboard = (e) => {
+    if (e.code === 'ArrowDown') {
+      setShowMenu(true);
+    }
+    if (e.code === 'Backspace') {
+      handleClearFilter(e);
+    }
+  };
+
+  const handleMenuKeyboard = (e) => {
+    if (e.code === 'Tab') {
+      if (!isMulti && showMenu) {
+        setShowMenu(false);
+      }
+      if (isMulti && showMenu && !applyButtonIsFocused) {
+        e.preventDefault();
+        e.stopPropagation();
+        setApplyButtonIsFocused(true);
+        applyButtonRef.current.focus();
+      }
+      if (isMulti && showMenu && applyButtonIsFocused) {
+        handleHide();
+      }
+    }
+  };
+
   return (
-    <div className={selectClassNames} data-test-id={dataTestId}>
+    <div className={selectClassNames} data-test-id={dataTestId} onKeyDown={handleMenuKeyboard}>
       <ReactButton
         className={classNames('onex-filter-select__dropdown-button', {
           'onex-filter-select__dropdown-button__menu-open': showMenu,
@@ -120,7 +153,7 @@ const FilterSelect = ({
         disabled={disabled}
         ref={target}
         onClick={() => setShowMenu(!showMenu)}
-        onKeyDown={() => setShowMenu(!showMenu)}
+        onKeyDown={handleDropdownKeyboard}
       >
         <div className="dropdown-button-content">
           {value ? (
@@ -130,7 +163,7 @@ const FilterSelect = ({
               <div
                 role="button"
                 className="dropdown-button-content__remove-value"
-                onClick={handleRemoveValue}
+                onClick={handleClearFilter}
               >
                 <Icon className="dropdown-button-content__remove-value-icon">cancel</Icon>
               </div>
@@ -143,7 +176,7 @@ const FilterSelect = ({
       </ReactButton>
       <ReactOverlay
         rootClose
-        onHide={() => setShowMenu(false)}
+        onHide={handleHide}
         container={target.current}
         target={target.current}
         show={showMenu}
@@ -152,39 +185,79 @@ const FilterSelect = ({
       >
         {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
           <div className="onex-filter-select-menu-wrapper" {...overlayProps}>
-            <ReactSelect
-              autoFocus
-              classNamePrefix="onex-filter-select"
-              value={selectedOptions}
-              options={groupedOptions.length ? groupedOptions : options}
-              components={{
-                DropdownIndicator: null,
-                IndicatorSeparator: null,
-                ValueContainer,
-                // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-                Menu: memo(({ children, ...args }) => (
-                  <Menu {...args} handleApplyFilter={handleApplyFilter}>
-                    {children}
-                  </Menu>
-                )),
-                // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
-                Option: memo(({ children, ...args }) => (
-                  <Option {...args} showCheckInOption={isMulti} selectedOptions={selectedOptions}>
-                    {children}
-                  </Option>
-                )),
-              }}
-              onChange={handleChange}
-              handleApplyFilter={handleApplyFilter}
-              backspaceRemovesValue={false}
-              controlShouldRenderValue={false}
-              hideSelectedOptions={false}
-              placeholder="Search"
-              isClearable={false}
-              menuIsOpen
-              isMulti={isMulti}
-              {...props}
-            />
+            {isAsync ? (
+              <AsyncSelect
+                cacheOptions
+                autoFocus
+                classNamePrefix="onex-filter-select"
+                value={selectedOptions}
+                options={groupedOptions.length ? groupedOptions : options}
+                components={{
+                  DropdownIndicator: null,
+                  IndicatorSeparator: null,
+                  ValueContainer,
+                  // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+                  Option: memo(({ children, ...args }) => (
+                    <Option {...args} showCheckInOption={isMulti} selectedOptions={selectedOptions}>
+                      {children}
+                    </Option>
+                  )),
+                }}
+                onChange={handleChange}
+                backspaceRemovesValue={false}
+                controlShouldRenderValue={false}
+                hideSelectedOptions={false}
+                placeholder="Search"
+                isClearable={false}
+                menuIsOpen
+                isMulti={isMulti}
+                tabSelectsValue={false}
+                loadOptions={onLoadOptions}
+                getOptionLabel={getOptionLabel}
+                getOptionValue={getOptionValue}
+                {...props}
+              />
+            ) : (
+              <ReactSelect
+                autoFocus
+                classNamePrefix="onex-filter-select"
+                value={selectedOptions}
+                options={groupedOptions.length ? groupedOptions : options}
+                components={{
+                  DropdownIndicator: null,
+                  IndicatorSeparator: null,
+                  ValueContainer,
+                  // eslint-disable-next-line react/prop-types,react/no-unstable-nested-components
+                  Option: memo(({ children, ...args }) => (
+                    <Option {...args} showCheckInOption={isMulti} selectedOptions={selectedOptions}>
+                      {children}
+                    </Option>
+                  )),
+                }}
+                onChange={handleChange}
+                backspaceRemovesValue={false}
+                controlShouldRenderValue={false}
+                hideSelectedOptions={false}
+                placeholder="Search"
+                isClearable={false}
+                menuIsOpen
+                isMulti={isMulti}
+                tabSelectsValue={false}
+                {...props}
+              />
+            )}
+            {isMulti && (
+              <div className="onex-filter-select__menu-action">
+                <Button
+                  ref={applyButtonRef}
+                  variant="primary"
+                  size="sm"
+                  onClick={handleApplyFilter}
+                >
+                  Apply
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </ReactOverlay>
@@ -210,20 +283,6 @@ ValueContainer.propTypes = {
 /* eslint-enable */
 
 ValueContainer.defaultProps = {
-  children: undefined,
-  props: undefined,
-};
-
-/* eslint-disable */
-Menu.propTypes = {
-  handleApplyFilter: PropTypes.func,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  props: PropTypes.object,
-};
-/* eslint-enable */
-
-Menu.defaultProps = {
-  handleApplyFilter: undefined,
   children: undefined,
   props: undefined,
 };
@@ -255,6 +314,10 @@ FilterSelect.propTypes = {
   onSelect: PropTypes.func,
   isMulti: PropTypes.bool,
   dataTestId: PropTypes.string,
+  isAsync: PropTypes.bool,
+  onLoadOptions: PropTypes.func,
+  getOptionValue: PropTypes.func,
+  getOptionLabel: PropTypes.func,
 };
 
 FilterSelect.defaultProps = {
@@ -268,6 +331,10 @@ FilterSelect.defaultProps = {
   onSelect: undefined,
   isMulti: false,
   dataTestId: '',
+  isAsync: false,
+  onLoadOptions: undefined,
+  getOptionValue: undefined,
+  getOptionLabel: undefined,
 };
 
 export default FilterSelect;

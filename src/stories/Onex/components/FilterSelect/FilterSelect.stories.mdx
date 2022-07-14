@@ -1,0 +1,160 @@
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
+
+import { FilterSelect } from '../../../../components';
+
+<Meta
+  title="Onex/Components/FilterSelect"
+  argTypes={{
+    className: {
+      description: 'Override or extend the styles applied to the component.',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    size: {
+      description: 'The size of the component',
+    },
+    dataTestId: {
+      description: 'The id of the component for test',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    options: {
+      description: "The array of select's options.",
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary:
+            'Array({ value: string | number, label: string | number, subLabel: string | number })',
+        },
+      },
+    },
+    groupedOptions: {
+      description: "The array of select's options with group.",
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary:
+            'Array({ label: string, options: Array({ value: string | number, label: string | number, subLabel: string | number })})',
+        },
+      },
+    },
+    isMulti: {
+      description: 'The option to select several values',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    disabled: {
+      description: 'The component is disabled if the value is true',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    selectedValues: {
+      description: 'The array of selected values',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary: 'Array({ value: string | number, label: string | number })',
+        },
+      },
+    },
+    label: {
+      description: 'The filter label(name).',
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    isAsync: {
+      description: 'If the value is true the async search select is shown',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    onSelect: {
+      description: 'Callback fired when the option is select.',
+    },
+    onLoadOptions: { description: 'Async function which returns array of options' },
+    getOptionValue: {
+      description: 'Function returns the value of selected option in async Select',
+    },
+    getOptionLabel: {
+      description: 'Function returns the label of selected option in async Select',
+    },
+  }}
+  decorators={[
+    (Story) => (
+      <div className="left-wrap" style={{ padding: '20px', height: '25rem' }}>
+        <Story />
+      </div>
+    ),
+  ]}
+  component={FilterSelect}
+/>
+
+export const Template = (args) => <FilterSelect {...args} />;
+
+### FilterSelect details
+
+<Canvas>
+  <Story
+    name="Demo"
+    padding="10px"
+    args={{
+      label: 'Filter',
+      size: 'md',
+      className: 'filter-select-demo',
+      dataTestId: 'filter-select-demo',
+      groupedOptions: [
+        {
+          label: 'AstraZeneca',
+          options: [
+            { value: 'ClinicalEval', label: 'Clinical and Radiological Evaluation of Patients With fnjknkjnjknkj' },
+            { value: 'CulinaryMedicine', label: 'Culinary Medicine vs. Nutrition Education in Diabets' },
+          ],
+        },
+        {
+          label: 'Sweet',
+          options: [
+            { value: 'chocolate1', label: 'Chocolate' },
+            { value: 'strawberry1', label: 'Strawberry' },
+            { value: 'vanilla1', label: 'Vanilla' },
+          ],
+        },
+      ],
+      options: [
+        { value: 'brazil', label: 'Brazil' },
+        { value: 'colombia', label: 'Colombia' },
+        { value: 'poland', label: 'Poland' },
+        { value: 'portugal', label: 'Portugal' },
+        { value: 'spain', label: 'Spain' },
+      ],
+      isMulti: true,
+      selectedValues: [],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Demo" />

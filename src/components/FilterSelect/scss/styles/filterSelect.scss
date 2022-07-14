@@ -3,6 +3,7 @@
   font-family: $font-family;
 
   &__dropdown-button {
+    max-width: $onex-filter-select-dropdown-button-max-width;
     min-width: $onex-filter-select-dropdown-button-min-width;
     font-style: $onex-filter-select-dropdown-button-font-style;
     font-weight: $onex-filter-select-font-weight-600;
@@ -77,8 +78,12 @@
       align-items: center;
 
       &__value {
+        line-height: $onex-filter-select-line-height;
         padding: 0 $onex-filter-select-dropdown-button-content-padding-y;
         color: $onex-filter-select-dropdown-button-content-color;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       &__remove-value {
@@ -116,7 +121,7 @@
     position: absolute;
     background-color: $onex-filter-select-menu-wrapper-background-color;
     border-radius: $onex-filter-select-menu-wrapper-border-radius;
-    border: 1px solid $onex-filter-select-menu-wrapper-border-color;
+    border: 1overflow solid $onex-filter-select-menu-wrapper-border-color;
     box-shadow: 0 0.125rem 0.75rem $onex-filter-select-menu-wrapper-box-shadow-color;
     z-index: 50;
     max-width: $onex-filter-select-max-width;
@@ -130,7 +135,6 @@
     min-height: $onex-filter-select-control-min-height !important;
     line-height: $onex-filter-select-line-height;
     border: 1px solid $onex-filter-select-control-border-color;
-    border-radius: $onex-filter-select-menu-wrapper-border-radius !important;
     margin: $onex-filter-select-control-margin $onex-filter-select-control-margin $onex-filter-select-control-margin-bottom;
     min-width: $onex-filter-select-control-min-width !important;
 
@@ -141,7 +145,7 @@
     &.onex-filter-select__control--is-focused,
     &.onex-filter-select__control--is-focused.onex-filter-select__control--menu-is-open {
       border: 1px solid $onex-filter-select-control-focused-border-color !important;
-      box-shadow: $onex-filter-select-control-focused-border-color 0 0 1px, $onex-filter-select-control-focused-border-color 0 0 0 1;
+      box-shadow: $onex-filter-select-control-focused-border-color 0 0 1px, $onex-filter-select-control-focused-border-color 0 0 0 1px;
 
       &:hover {
         border-color: $onex-filter-select-control-focused-border-color !important;
@@ -196,9 +200,9 @@
 
   &-menu-wrapper .onex-filter-select__menu .onex-filter-select__menu-list {
     max-height: $onex-filter-select-menu-list-max-height;
-    border-radius: $onex-filter-select-menu-wrapper-border-radius;
     scrollbar-color: $onex-filter-select-scrollbar-color transparent;
     scrollbar-width: thin;
+    padding-bottom: 0;
 
     &::-webkit-scrollbar {
       width: $onex-filter-select-scrollbar-width;
@@ -224,13 +228,16 @@
   }
 
   &__menu-list .onex-filter-select__option {
-    display: inline-flex;
-    align-items: center;
     padding: $onex-filter-select-option-padding-y $onex-filter-select-option-padding-x;
     font-weight: $onex-filter-select-font-weight-400;
     font-size: $onex-filter-select-option-font-size;
     line-height: $onex-filter-select-line-height;
     color: $onex-filter-select-option-color;
+    max-width: $onex-filter-select-max-width;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &.onex-filter-select__option--is-focused {
       background-color: $onex-filter-select-option-focused-background-color;
@@ -243,6 +250,13 @@
 
     .onex-check__wrapper {
       gap: 0.625rem;
+
+      .form-check-label {
+        max-width: $onex-filter-select-option-max-width;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
 
     label.onex-check__wrapper {

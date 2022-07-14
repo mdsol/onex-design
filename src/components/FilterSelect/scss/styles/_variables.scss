@@ -1,4 +1,4 @@
-$onex-filter-select-max-width: 31.25rem;
+$onex-filter-select-max-width: 20.375rem;
 $onex-filter-select-min-width: 12.5rem;
 
 $onex-filter-select-font-weight-600: 600;
@@ -25,6 +25,7 @@ $onex-filter-select-dropdown-button-content-padding-y: 0.25rem;
 $onex-filter-select-dropdown-button-content-color: $primary-600;
 $onex-filter-select-dropdown-button-content-icon-font-size: $font-size-body;
 $onex-filter-select-dropdown-button-content-icon-margin-y: 0.25rem;
+$onex-filter-select-dropdown-button-max-width: 12.5rem;
 
 
 $onex-filter-select-dropdown-button-hover-background-color: $secondary-500-opacity-25;
@@ -82,9 +83,11 @@ $onex-filter-select-option-color: $secondary-900;
 $onex-filter-select-option-focused-background-color: $secondary-500-opacity-01;
 $onex-filter-select-option-selected-background-color: $secondary-100;
 
+$onex-filter-select-option-max-width: 17rem;
+
 $onex-filter-select-group-padding-y: 0.25rem;
 $onex-filter-select-group-heading-padding: 0.75rem;
 $onex-filter-select-group-heading-padding-bottom: 0.25rem;
 $onex-filter-select-group-heading-font-size: $font-size-caption;
 $onex-filter-select-group-heading-line-height: $line-height-caption;
-$onex-filter-select-group-heading-color: $primary-500;
+$onex-filter-select-group-heading-color: $secondary-500;

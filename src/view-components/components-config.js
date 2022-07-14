@@ -1023,22 +1023,52 @@ export const config = {
             className: 'filter-select',
             dataTestId: 'filter-select',
             label: 'Filter',
-            selectedValues: [{ value: 'strawberry', label: 'Strawberry' }],
+            isMulti: true,
+            selectedValues: [
+              {
+                value: 'EffectAstaxanthin',
+                label: 'Effect of Astaxanthin on the Patients With Alzheimer',
+              },
+            ],
             groupedOptions: [
               {
-                label: 'Food',
+                label: 'AstraZeneca',
                 options: [
-                  { value: 'chocolate', label: 'Chocolate' },
-                  { value: 'strawberry', label: 'Strawberry' },
-                  { value: 'vanilla', label: 'Vanilla' },
+                  {
+                    value: 'ClinicalEvaluation',
+                    label: 'Clinical and Radiological Evaluation of Patients With test test',
+                  },
+                  {
+                    value: 'CulinaryMedicine',
+                    label: 'Culinary Medicine vs. Nutrition Education in Diabetes test test',
+                  },
                 ],
               },
               {
-                label: 'Sweet',
+                label: 'Moderna',
                 options: [
-                  { value: 'chocolate1', label: 'Chocolate' },
-                  { value: 'strawberry1', label: 'Strawberry' },
-                  { value: 'vanilla1', label: 'Vanilla' },
+                  {
+                    value: 'EffectAstaxanthin',
+                    label: 'Effect of Astaxanthin on the Patients With Alzheimer Test test test',
+                  },
+                  {
+                    value: 'EffectivenessKinesio',
+                    label: 'Effectiveness of Kinesio Tapping for the Treatment of',
+                  },
+                  { value: 'ExerciseViral', label: 'Exercise and Total Viral Immunity' },
+                ],
+              },
+              {
+                label: 'Pfizer',
+                options: [
+                  {
+                    value: 'MinimallyInvasive',
+                    label: 'Minimally Invasive Surgical Epilepsy Trial for Temporal Test test',
+                  },
+                  {
+                    value: 'ProbioticStreptococcus',
+                    label: 'Probiotic Streptococcus Salivarius K12',
+                  },
                 ],
               },
             ],
