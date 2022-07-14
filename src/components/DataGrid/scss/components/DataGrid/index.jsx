@@ -54,8 +54,6 @@ const DataGrid = ({
     handleUpdateData?.(dataRef.current);
   }, [dataRef.current]);
 
-  // const [tableData, setData] = useState(dataRef.current);
-
   return (
     <div className={dataGridClasses}>
       {customGridControl || (dataGridControlProps && <DataGridControl {...dataGridControlProps} />)}
