@@ -68,6 +68,8 @@ const FilterSelect = ({
   const [showMenu, setShowMenu] = useState(false);
   const [value, setValue] = useState(locSelectedValues.length ? locSelectedValues[0] : null);
   const [applyButtonIsFocused, setApplyButtonIsFocused] = useState(false);
+  const [noOptions, setNoOptions] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     setSelectedOptions(locSelectedValues);
@@ -81,6 +83,23 @@ const FilterSelect = ({
         : filteredOptions.length && filteredOptions[0],
     );
   }, [filteredOptions]);
+
+  const onInputChange = (rawInput) => {
+    setInputValue(rawInput);
+    let filterOptions = [];
+    if (groupedOptions.length) {
+      filterOptions = groupedOptions.filter((groupItem) =>
+        groupItem?.options.some((item) => item.label.toLowerCase().match(rawInput)),
+      );
+    } else {
+      filterOptions = options.filter((item) => item.label.toLowerCase().match(rawInput));
+    }
+    if (filterOptions.length === 0) {
+      setNoOptions(true);
+    } else {
+      setNoOptions(false);
+    }
+  };
 
   const selectClassNames = classNames('onex-filter-select', `onex-filter-select--${size}`, {
     [className]: className,
@@ -119,19 +138,19 @@ const FilterSelect = ({
     if (e.code === 'ArrowDown') {
       setShowMenu(true);
     }
-    if (e.code === 'Backspace') {
+    if (e.code === 'Escape') {
       handleClearFilter(e);
     }
   };
 
   const handleMenuKeyboard = (e) => {
+    e.stopPropagation();
     if (e.code === 'Tab') {
       if (!isMulti && showMenu) {
         setShowMenu(false);
       }
       if (isMulti && showMenu && !applyButtonIsFocused) {
         e.preventDefault();
-        e.stopPropagation();
         setApplyButtonIsFocused(true);
         applyButtonRef.current.focus();
       }
@@ -187,6 +206,7 @@ const FilterSelect = ({
           <div className="onex-filter-select-menu-wrapper" {...overlayProps}>
             {isAsync ? (
               <AsyncSelect
+                inputValue={inputValue}
                 cacheOptions
                 autoFocus
                 classNamePrefix="onex-filter-select"
@@ -215,10 +235,20 @@ const FilterSelect = ({
                 loadOptions={onLoadOptions}
                 getOptionLabel={getOptionLabel}
                 getOptionValue={getOptionValue}
+                onInputChange={(e) => onInputChange(e)}
+                onKeyDown={(e) => {
+                  if (e.code === 'Space') {
+                    e.preventDefault();
+                    if (inputValue) {
+                      setInputValue(`${inputValue} `);
+                    }
+                  }
+                }}
                 {...props}
               />
             ) : (
               <ReactSelect
+                inputValue={inputValue}
                 autoFocus
                 classNamePrefix="onex-filter-select"
                 value={selectedOptions}
@@ -243,11 +273,20 @@ const FilterSelect = ({
                 menuIsOpen
                 isMulti={isMulti}
                 tabSelectsValue={false}
+                onInputChange={(e) => onInputChange(e)}
+                onKeyDown={(e) => {
+                  if (e.code === 'Space') {
+                    e.preventDefault();
+                    if (inputValue) {
+                      setInputValue(`${inputValue} `);
+                    }
+                  }
+                }}
                 {...props}
               />
             )}
             {isMulti && (
-              <div className="onex-filter-select__menu-action">
+              <div className={`onex-filter-select__menu-action ${noOptions ? 'action-hide' : ''}`}>
                 <Button
                   ref={applyButtonRef}
                   variant="primary"
