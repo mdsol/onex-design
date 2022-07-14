@@ -3,6 +3,9 @@ const sass = require('sass');
 const fs = require('fs');
 
 try {
+  const fontsCSS = sass.renderSync({
+    data: `@import 'src/scss/fonts.scss';`,
+  });
   const platformCSS = sass.renderSync({
     data: `@import 'src/scss/platform.scss';`,
   });
@@ -13,13 +16,17 @@ try {
     fs.writeFile(
       `dist/themeProvider.css`,
       `
-      html .onex-themeprovider * {
-        all: revert;
-        padding: unset;
-        margin: unset;
-      }
+      ${fontsCSS.css}
       ${themeproviderCSS.css
         .toString()
+        .replaceAll(
+          /@import url\("https:\/\/fonts.googleapis.com\/css2\?family=Noto\+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap"\);/g,
+          '',
+        )
+        .replaceAll(
+          /@import url\("https:\/\/fonts.googleapis.com\/css2\?family=Material\+Icons\+Round"\);/g,
+          '',
+        )
         .replaceAll(/\/\*[^*]*\*+([^/][^*]*\*+)*\//g, '')
         .replaceAll(/ body {/g, ' {')
         .replaceAll(/html .onex-themeprovider :root {/g, ':root {')}`,

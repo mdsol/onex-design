@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.6
+
+Themeprovider: removed css changes that were causing Selects to be extra tall - this may lead to other issues that will need to be handled individually as discovered. Modals will now look for the themeprovider container and attach to that if present AND if another container has not been passed in - this solves styling issues. Filter select story has been updated. Button small border radius has been fixed to match design. Segmented toggle has been updated to match the design file.
 ## 0.4.5
 
 Fixes for: SegmentedToggle, DataGrid, DatePicker, Select, DropDowns. Style changes for themeprovider.css

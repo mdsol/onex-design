@@ -4,7 +4,8 @@ import ErrorBoundary from '../ErrorBoundary';
 import { Select, Check } from '../components';
 import { config } from './components-config';
 
-import '../scss/platform.scss';
+// import '../scss/platform.scss';
+import '../../dist/themeProvider.css';
 import './styles.scss';
 
 const selectOptions = config.data.components.map((item) => ({
