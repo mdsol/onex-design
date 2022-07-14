@@ -930,6 +930,181 @@ export const config = {
         ],
       },
       {
+        name: 'FilterSelect',
+        componentName: 'FilterSelect',
+        styledComponentName: 'FilterSelect',
+        additionalComponents: [],
+        variants: [
+          {
+            size: 'sm',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            disabled: true,
+            options: [
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            isMulti: true,
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            isMulti: true,
+            selectedValues: [
+              {
+                value: 'EffectAstaxanthin',
+                label: 'Effect of Astaxanthin on the Patients With Alzheimer',
+              },
+            ],
+            groupedOptions: [
+              {
+                label: 'AstraZeneca',
+                options: [
+                  {
+                    value: 'ClinicalEvaluation',
+                    label: 'Clinical and Radiological Evaluation of Patients With test test',
+                  },
+                  {
+                    value: 'CulinaryMedicine',
+                    label: 'Culinary Medicine vs. Nutrition Education in Diabetes test test',
+                  },
+                ],
+              },
+              {
+                label: 'Moderna',
+                options: [
+                  {
+                    value: 'EffectAstaxanthin',
+                    label: 'Effect of Astaxanthin on the Patients With Alzheimer Test test test',
+                  },
+                  {
+                    value: 'EffectivenessKinesio',
+                    label: 'Effectiveness of Kinesio Tapping for the Treatment of',
+                  },
+                  { value: 'ExerciseViral', label: 'Exercise and Total Viral Immunity' },
+                ],
+              },
+              {
+                label: 'Pfizer',
+                options: [
+                  {
+                    value: 'MinimallyInvasive',
+                    label: 'Minimally Invasive Surgical Epilepsy Trial for Temporal Test test',
+                  },
+                  {
+                    value: 'ProbioticStreptococcus',
+                    label: 'Probiotic Streptococcus Salivarius K12',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            size: 'md',
+            className: 'filter-select',
+            dataTestId: 'filter-select',
+            label: 'Filter',
+            isMulti: true,
+            selectedValues: [
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla1', label: 'Vanilla' },
+            ],
+            groupedOptions: [
+              {
+                label: 'Food',
+                options: [
+                  { value: 'chocolate', label: 'Chocolate' },
+                  { value: 'strawberry', label: 'Strawberry' },
+                  { value: 'vanilla', label: 'Vanilla' },
+                ],
+              },
+              {
+                label: 'Sweet',
+                options: [
+                  { value: 'chocolate1', label: 'Chocolate' },
+                  { value: 'strawberry1', label: 'Strawberry' },
+                  { value: 'vanilla1', label: 'Vanilla' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
         name: 'Select',
         componentName: 'Select',
         styledComponentName: 'Select',
@@ -2017,6 +2192,7 @@ export const config = {
                 id: '3',
                 name: 'textLabels',
                 label: 'Item3',
+                disabled: true,
               },
             ],
           },

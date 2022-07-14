@@ -29,9 +29,9 @@ const SegmentedToggle = ({
       className={classes}
       data-test-id={dataTestId}
     >
-      {items.map((item) => (
-        <ToggleButton value={item.value} id={item.id} name={item.name} key={item.id}>
-          {variant === 'icons' ? <Icon>{item.label}</Icon> : item.label}
+      {items.map(({ id, value, name, disabled = false, label }) => (
+        <ToggleButton key={id} value={value} id={id} name={name} disabled={disabled}>
+          {variant === 'icons' ? <Icon>{label}</Icon> : label}
         </ToggleButton>
       ))}
     </ReactToggleButtonGroup>
@@ -47,6 +47,7 @@ SegmentedToggle.propTypes = {
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       name: PropTypes.string,
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+      disabled: PropTypes.bool,
     }),
   ),
   defaultValue: PropTypes.string,

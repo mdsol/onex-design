@@ -23,10 +23,17 @@ const Modal = ({
   actionLinkName,
   link,
   title,
+  centered,
+  container,
   ...accProps
 }) => {
   const classes = classNames('onex-modal', { [className]: className });
   const [_show, setShow] = useState(show);
+
+  let themeContainer;
+  if (document.getElementsByClassName('onex-themeprovider').length) {
+    [themeContainer] = document.getElementsByClassName('onex-themeprovider');
+  }
 
   useEffect(() => {
     setShow(show);
@@ -46,6 +53,8 @@ const Modal = ({
       size={size}
       dialogClassName={widthClassName}
       className={classes}
+      centered={centered}
+      container={container || themeContainer}
     >
       <ReactModal.Header>
         <Typography variant="h4">{title}</Typography>
@@ -83,6 +92,7 @@ Modal.propTypes = {
   handleClose: PropTypes.func,
   show: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  container: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   onPrimaryClick: PropTypes.func,
   onSecondaryClick: PropTypes.func,
   secondaryActionName: PropTypes.string,
@@ -93,6 +103,7 @@ Modal.propTypes = {
   actionLinkName: PropTypes.string,
   link: PropTypes.string,
   title: PropTypes.string,
+  centered: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -100,6 +111,7 @@ Modal.defaultProps = {
   handleClose: undefined,
   show: false,
   children: '',
+  container: undefined,
   onPrimaryClick: undefined,
   onSecondaryClick: undefined,
   secondaryActionName: '',
@@ -110,6 +122,7 @@ Modal.defaultProps = {
   actionLinkName: '',
   link: '',
   title: '',
+  centered: true,
 };
 
 export default Object.assign(Modal, {
