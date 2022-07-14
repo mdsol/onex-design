@@ -3,7 +3,7 @@ import ViewComponents from './view-components';
 import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone } from './components';
 import ThemeProvider from './components/ThemeProvider';
 
-// import './scss/platform.scss';
+import './scss/platform.scss';
 
 const dataGridColumns = [
   {

@@ -4,8 +4,8 @@ import ErrorBoundary from '../ErrorBoundary';
 import { Select, Check } from '../components';
 import { config } from './components-config';
 
-// import '../scss/platform.scss';
-import '../../dist/themeProvider.css';
+import '../scss/platform.scss';
+// import '../../dist/themeProvider.css';
 import './styles.scss';
 
 const selectOptions = config.data.components.map((item) => ({
@@ -92,7 +92,7 @@ const ViewComponents = () => {
       if (currentComponent) setData(currentComponent.variants);
       setWrap(wrapper);
       /* eslint-disable-next-line */
-            for (const additionalComponent of additionalComponents) {
+      for (const additionalComponent of additionalComponents) {
         React.lazy(() => import(`../components/${additionalComponent}/scss/index.jsx`));
       }
       if (styled) {
