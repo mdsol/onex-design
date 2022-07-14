@@ -7,7 +7,10 @@
     gap: $onex-segmented-toggle-padding;
 
     .onex-toggle-btn-wrapper {
+        padding: 0;
+
         .btn-toggle {
+            height: 100%;
             border-radius: $onex-segmented-toggle-segments-border-radius;
             padding-top: $onex-segmented-toggle-padding;
             padding-bottom: $onex-segmented-toggle-padding;
@@ -65,9 +68,11 @@
 
         &:last-child {
             border-right: none;
+            padding-right: 0;
         }
         &:first-child {
             border-left: none;
+            padding-left: 0;
         }
     }
 
