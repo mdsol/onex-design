@@ -208,7 +208,7 @@
   .onex-select__option.onex-select__option--is-focused,
   .onex-select__option--is-selected,
   .onex-select__option--is-selected.onex-select__option--is-focused {
-    background-color: $onex-select-option-focused-bg-color;
+    background-color: $onex-select-option-hover-bg-color;
 
     &:hover {
       background-color: $onex-select-option-hover-bg-color;
@@ -219,7 +219,15 @@
     background-color: $onex-select-option-focused-bg-color;
 
     &:hover {
+      background-color: $onex-select-option-hover-bg-color;
+    }
+
+    &.onex-select__option--is-focused {
       background-color: $onex-select-option-focused-hover-bg-color;
+
+      &:hover {
+        background-color: $onex-select-option-focused-hover-bg-color;
+      }
     }
   }
 
@@ -228,7 +236,7 @@
       background-color: transparent;
       
       &.onex-select__option--is-focused {
-        background-color: $onex-select-option-focused-bg-color;
+        background-color: $onex-select-option-hover-bg-color;
     
         &:hover {
           background-color: $onex-select-option-hover-bg-color;
