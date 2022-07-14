@@ -51,10 +51,7 @@ DataGridEditableCell.propTypes = {
     getCellProps: PropTypes.func,
     render: PropTypes.func,
     column: PropTypes.object,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
   row: PropTypes.object,
   updateData: PropTypes.func,

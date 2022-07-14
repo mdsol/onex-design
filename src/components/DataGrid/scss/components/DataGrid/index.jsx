@@ -20,13 +20,17 @@ const DataGrid = ({
   useRowSelection,
   rowSelectionType,
   handleSelection,
+  draggable,
   ...accProps
 }) => {
   const dataRef = useRef(data);
+  const [renderedData, setRenderedData] = useState(data);
   const [skipPageReset, setSkipPageReset] = useState(false);
   const dataGridClasses = classNames('onex-data-grid', {
     [className]: className,
   });
+
+  useEffect(() => setRenderedData(data), [data]);
 
   const updateData = (rowIndex, columnId, value) => {
     setSkipPageReset(true);
@@ -57,7 +61,7 @@ const DataGrid = ({
       {/* <DataGridBulkActions {...DataGridBulkActionsProps} /> */}
       <DataGridTable
         columns={columns}
-        data={dataRef.current}
+        data={renderedData}
         rowsPerPageOptions={rowsPerPageOptions}
         sortBy={sortBy}
         updateData={updateData}
@@ -67,6 +71,8 @@ const DataGrid = ({
         useRowSelection={useRowSelection}
         rowSelectionType={rowSelectionType}
         handleSelection={handleSelection}
+        draggable={draggable}
+        setData={setRenderedData}
         {...accProps}
       />
     </div>
@@ -80,7 +86,7 @@ DataGrid.propTypes = {
     PropTypes.shape({
       Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
       accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-      type: PropTypes.oneOf(['action', 'custom','editable']),
+      type: PropTypes.oneOf(['action', 'custom', 'editable']),
       hasDivider: PropTypes.bool,
       textAlign: PropTypes.oneOf(['left', 'right']),
       textVariant: PropTypes.oneOf(['regular', 'semibold']),
@@ -88,7 +94,7 @@ DataGrid.propTypes = {
         PropTypes.shape({
           Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
           accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-          type: PropTypes.oneOf(['action', 'custom','editable']),
+          type: PropTypes.oneOf(['action', 'custom', 'editable']),
           hasDivider: PropTypes.bool,
           textAlign: PropTypes.oneOf(['left', 'right']),
           textVariant: PropTypes.oneOf(['regular', 'semibold']),
@@ -113,6 +119,7 @@ DataGrid.propTypes = {
   useRowSelection: PropTypes.bool,
   rowSelectionType: PropTypes.oneOf(['single', 'multi']),
   handleSelection: PropTypes.func,
+  draggable: PropTypes.bool,
 };
 /* eslint-enable */
 
@@ -131,6 +138,7 @@ DataGrid.defaultProps = {
   useRowSelection: false,
   rowSelectionType: 'multi',
   handleSelection: undefined,
+  draggable: false,
 };
 
 export default DataGrid;

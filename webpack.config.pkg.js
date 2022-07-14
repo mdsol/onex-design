@@ -6,7 +6,7 @@ module.exports = {
   mode: 'production',
   entry: {
     index: './src/components/index.js',
-    themeProvider: './src/components/ThemeProvider/index.jsx'
+    themeProvider: './src/components/ThemeProvider/index.jsx',
   },
   output: {
     path: path.join(__dirname, './dist'),
@@ -55,6 +55,8 @@ module.exports = {
     alias: {
       react: path.resolve(__dirname, './node_modules/react'),
       'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+      // without this webpack dupes the dependencies when other dnd-kit libs use it which breaks context
+      '@dnd-kit/core': path.resolve(__dirname, 'node_modules/@dnd-kit/core'),
     },
   },
   externals: {
