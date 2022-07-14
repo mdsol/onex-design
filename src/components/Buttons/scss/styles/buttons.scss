@@ -29,7 +29,8 @@
       color: $onex-btn-primary-text-color;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       @include bg-color($onex-btn-primary-hover-bg-color);
     }
 
