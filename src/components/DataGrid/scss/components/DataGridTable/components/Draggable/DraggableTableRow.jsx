@@ -15,7 +15,7 @@ const DraggableTableRow = ({
   draggable,
 }) => {
   const { attributes, listeners, transform, transition, setNodeRef, isDragging } = useSortable({
-    id: row.original.id,
+    id: row.original.id || row.id,
   });
   const style = {
     transform: CSS.Transform.toString(transform),

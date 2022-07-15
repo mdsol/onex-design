@@ -223,7 +223,7 @@ const DataGridTable = ({
                 prepareRow(row);
                 return (
                   <DraggableTableRow
-                    key={row.original.id}
+                    key={row.original.id || row.id}
                     row={row}
                     _selectedRowIds={_selectedRowIds}
                     useRowSelection={useRowSelection}
@@ -241,7 +241,7 @@ const DataGridTable = ({
               prepareRow(row);
               return (
                 <DraggableTableRow
-                  key={row.original.id}
+                  key={row.original.id || row.id}
                   row={row}
                   _selectedRowIds={_selectedRowIds}
                   useRowSelection={useRowSelection}
@@ -259,8 +259,12 @@ const DataGridTable = ({
       {draggable && (
         <DragOverlay>
           {activeId && (
-            <table className={tableClasses} {...getTableProps()}>
-              <tbody className="onex-data-grid__table-body" {...getTableBodyProps()}>
+            <ReactTable className={tableClasses} {...getTableProps()}>
+              <tbody
+                className="onex-data-grid__table-body"
+                style={{ backgroundColor: 'white', opacity: '1' }}
+                {...getTableBodyProps()}
+              >
                 <StaticTableRow
                   row={selectedRow}
                   handleColumnType={handleColumnType}
@@ -268,7 +272,7 @@ const DataGridTable = ({
                   useRowSelection={useRowSelection}
                 />
               </tbody>
-            </table>
+            </ReactTable>
           )}
         </DragOverlay>
       )}
