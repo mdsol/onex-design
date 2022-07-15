@@ -1,6 +1,12 @@
-import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
+import { Story, Canvas, ArgsTable, Meta } from '@storybook/addon-docs';
 
-import {gridColumns, gridData, gridCustomHeaderColumns, demoGridColumns, demoGridData} from './gridData';
+import {
+  gridColumns,
+  gridData,
+  gridCustomHeaderColumns,
+  demoGridColumns,
+  demoGridData,
+} from './gridData';
 import { DataGrid, Button, Icon } from '../../../../components';
 
 <Meta
@@ -15,28 +21,29 @@ import { DataGrid, Button, Icon } from '../../../../components';
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     columns: {
       description: 'The array of table columns. Must be memoized.Supports nested columns arrays',
-      type: {required: true},
+      type: { required: true },
       table: {
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     data: {
       description: 'The data array that you want to display on the table. Must be memoized',
-      type: {required: true},
+      type: { required: true },
       table: {
         defaultValue: {
           summary: 'undefined',
         },
-      }
+      },
     },
     sortBy: {
-      description: 'An array of sorting objects. Must be memoized. If there is more than one object in the array, multi-sorting by default disabled. Each sorting object should contain an id key with the corresponding column ID to sort by.',
+      description:
+        'An array of sorting objects. Must be memoized. If there is more than one object in the array, multi-sorting by default disabled. Each sorting object should contain an id key with the corresponding column ID to sort by.',
     },
     multiSort: {
       description: 'By default multi-sorting ```disabled```',
@@ -46,20 +53,24 @@ import { DataGrid, Button, Icon } from '../../../../components';
       description: 'The array of quantities of rows per page',
     },
     dataGridControlProps: {
-      description: 'Object with dataGridControl props, if you not use this prop - Grid Control not will be visible, for more detail props go to the DataGridControl component',
+      description:
+        'Object with dataGridControl props, if you not use this prop - Grid Control not will be visible, for more detail props go to the DataGridControl component',
     },
     customGridControl: {
-      description: 'Element which replace standard dataGridControl component with your custom component',
-      control: 'string'
+      description:
+        'Element which replace standard dataGridControl component with your custom component',
+      control: 'string',
     },
     DataGridBulkActionsProps: {
-      description: 'Object with Bulk Actions prop, for more detail go to the DataGridBulkActions component',
+      description:
+        'Object with Bulk Actions prop, for more detail go to the DataGridBulkActions component',
     },
     useRowSelection: {
       description: 'Enable row selection mode',
     },
     rowSelectionType: {
-      description: 'Give possibility to change row selection type, select multiple rows or single row. By default - ```multi```'
+      description:
+        'Give possibility to change row selection type, select multiple rows or single row. By default - ```multi```',
     },
     selectedRowIds: {
       description: `Object with row ids. If a row's ID is set to true in this object, it will have a selected state`,
@@ -68,12 +79,16 @@ import { DataGrid, Button, Icon } from '../../../../components';
       description: 'Callback fired when row selected. Return ```selectedRowIds``` object',
     },
     updateData: {
-      description: 'Callback fired when data editable, used input table cell. Return ```updatedData```',
+      description:
+        'Callback fired when data editable, used input table cell. Return ```updatedData```',
+    },
+    draggable: {
+      description: 'Enable drag and drop table rows. Disabled by default.',
+      control: 'boolean',
     },
   }}
   component={DataGrid}
 />
-
 
 export const Template = (args) => <DataGrid {...args} />;
 
@@ -82,9 +97,11 @@ export const Template = (args) => <DataGrid {...args} />;
 A DataGrid is a table-presented data.
 
 ### Installation
+
 Using this component requires installation packages : [react-table v7](https://www.npmjs.com/package/react-table/v/7.8.0)
 
 ### Demo
+
 <Canvas>
   <Story
     height="75rem"
@@ -101,28 +118,32 @@ Using this component requires installation packages : [react-table v7](https://w
       sortBy: [
         {
           id: 'id',
-        }
+        },
       ],
       rowsPerPageOptions: [10, 15],
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) => parent ? [`demo.${parent.id}`, relativeIndex].join('.') : `demo.${relativeIndex}`
-    }}>
+      getRowId: (row, relativeIndex, parent) =>
+        parent ? [`demo.${parent.id}`, relativeIndex].join('.') : `demo.${relativeIndex}`,
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Demo"/>
+<ArgsTable story="Demo" />
 
 ### DataGrid title bar
-To add a header you must use prop ```dataGridControlProps``` for standard table control element.
-If a custom element is required, you have to use ```customGridControl``` prop.
+
+To add a header you must use prop `dataGridControlProps` for standard table control element.
+If a custom element is required, you have to use `customGridControl` prop.
 For more information please check: [DataGridControl Props](/docs/onex-components-datagrid-datagridcontrol--demo).
 
 ### DataGrid Body
 
-Required prop ```columns``` represented an array of table columns. Must be memoized.Supports nested columns arrays.
+Required prop `columns` represented an array of table columns. Must be memoized.Supports nested columns arrays.
+
 ```
   const columns = [
   {
@@ -136,11 +157,13 @@ Required prop ```columns``` represented an array of table columns. Must be memoi
 ```
 
 #### DataGrid header row
-```Header: String | Function | React.Component => JSX```<br/>
+
+`Header: String | Function | React.Component => JSX`<br/>
 Must either be a string or return valid JSX<br/>
 If a function/component is passed, it will be used for formatting the header value, eg..<br/>
-In case if you use ```Button``` or ```Dropdown``` etc., please use ```type: "action"```.<br/>
-You can use a ```Header``` function to dynamically format the header using any table or column state.<br/>
+In case if you use `Button` or `Dropdown` etc., please use `type: "action"`.<br/>
+You can use a `Header` function to dynamically format the header using any table or column state.<br/>
+
 ```
 const columns = [
   ...columns,
@@ -150,7 +173,9 @@ const columns = [
     type: 'action',
   }];
 ```
+
 ##### DataGrid header row example
+
 <Canvas>
   <Story
     name="CustomHeaderCell"
@@ -166,35 +191,36 @@ const columns = [
 </Canvas>
 
 #### Data Grid Cells
+
 Information about data grid cells: [DataGridCell Props](/docs/onex-components-datagrid-datagridcell--demo).
 
-
 #### Column Options
+
 For more information [Columns option](https://react-table-v7.tanstack.com/docs/api/useTable#column-options)
 
-| Name        | Type                                                                       | Description                                                                                                                                                                                                                           | Required |
-|-------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| accessor    | String, Function(originalRow, rowIndex) => any                             | This string/function is used to build the data model for your column.                                                                                                                                                                 | [x]      |
-| id          | String                                                                     | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function                                                                                    | [x]      |
-| columns     | Array[Column]                                                              | A nested array of columns.                                                                                                                                                                                                            |          |
-| Header      | String, Function, React.Component => JSX                                   | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                                                                                                   |          |
-| type        | One of values: ```'action', 'custom', 'editable'```                        | ```'action'``` can used for header and body cells, in case if you used ```Button```, ```Dropdown``` etc.. ```custom``` can used for body cell, in case if you used custom table cell. ```editable``` can used for editable body cell. |          |
-| hasDivider  | Added right border for current column, for last column - added left border |                                                                                                                                                                                                                                       |          |
-| textAlign   | One of values: ```'left', 'right'```                                       | Text align in table cell                                                                                                                                                                                                              |          |
-| textVariant | One of values: ```'regular', 'semibold'```                                 | Text weight in table cell                                                                                                                                                                                                             |          |
-
+| Name        | Type                                                                       | Description                                                                                                                                                                                                       | Required |
+| ----------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| accessor    | String, Function(originalRow, rowIndex) => any                             | This string/function is used to build the data model for your column.                                                                                                                                             | [x]      |
+| id          | String                                                                     | This is the unique ID for the column. It is used by reference in things like sorting, grouping, filtering etc.. Required if accessor is a function                                                                | [x]      |
+| columns     | Array[Column]                                                              | A nested array of columns.                                                                                                                                                                                        |          |
+| Header      | String, Function, React.Component => JSX                                   | Receives the table instance and column model as props. Must either be a string or return valid JSX.                                                                                                               |          |
+| type        | One of values: `'action', 'custom', 'editable'`                            | `'action'` can used for header and body cells, in case if you used `Button`, `Dropdown` etc.. `custom` can used for body cell, in case if you used custom table cell. `editable` can used for editable body cell. |          |
+| hasDivider  | Added right border for current column, for last column - added left border |                                                                                                                                                                                                                   |          |
+| textAlign   | One of values: `'left', 'right'`                                           | Text align in table cell                                                                                                                                                                                          |          |
+| textVariant | One of values: `'regular', 'semibold'`                                     | Text weight in table cell                                                                                                                                                                                         |          |
 
 ### Sorting
+
 By default,f multi-sorting disabled.<br/>
-To configure sorting you can use ```sortBy``` property.<br/>
-If you want to enable multi sorting, please use prop - ```multiSort```.<br/>
+To configure sorting you can use `sortBy` property.<br/>
+If you want to enable multi sorting, please use prop - `multiSort`.<br/>
 There are an array of sorting objects.<br/>
-Each sorting object should contain an ```id``` key with the corresponding column ID to sort by. An optional ```desc``` key
-(which defaults to ```false```) may be set to ```true``` to indicate a descending sorting direction for that column, otherwise,
+Each sorting object should contain an `id` key with the corresponding column ID to sort by. An optional `desc` key
+(which defaults to `false`) may be set to `true` to indicate a descending sorting direction for that column, otherwise,
 it will be assumed to be ascending. This information is stored in state since the table is allowed to manipulate the filter through user interaction.
 Must be memoized.
 
-Other parameters are also supported, for more information please check - [Sort table options](https://react-table-v7.tanstack.com/docs/api/useSortBy#table-options)  and [Sort column options](https://react-table-v7.tanstack.com/docs/api/useSortBy#column-options)
+Other parameters are also supported, for more information please check - [Sort table options](https://react-table-v7.tanstack.com/docs/api/useSortBy#table-options) and [Sort column options](https://react-table-v7.tanstack.com/docs/api/useSortBy#column-options)
 
 <Canvas>
   <Story
@@ -211,9 +237,11 @@ Other parameters are also supported, for more information please check - [Sort t
       sortBy: [
         {
           id: 'studyId',
-        }],
+        },
+      ],
       multiSort: false,
-      getRowId: (row, relativeIndex, parent) => parent ? [`s-sort.${parent.id}`, relativeIndex].join('.') : `s-sort.${relativeIndex}`
+      getRowId: (row, relativeIndex, parent) =>
+        parent ? [`s-sort.${parent.id}`, relativeIndex].join('.') : `s-sort.${relativeIndex}`,
     }}
   >
     {Template.bind({})}
@@ -239,10 +267,11 @@ Other parameters are also supported, for more information please check - [Sort t
         {
           id: 'stage',
           desc: true,
-        }
+        },
       ],
       multiSort: true,
-      getRowId: (row, relativeIndex, parent) => parent ? [`m-sort.${parent.id}`, relativeIndex].join('.') : `m-sort.${relativeIndex}`
+      getRowId: (row, relativeIndex, parent) =>
+        parent ? [`m-sort.${parent.id}`, relativeIndex].join('.') : `m-sort.${relativeIndex}`,
     }}
   >
     {Template.bind({})}
@@ -250,9 +279,11 @@ Other parameters are also supported, for more information please check - [Sort t
 </Canvas>
 
 ### Row selection
-For using row selection you have to pass prop - ```useRowSelection```. By default, row selection disabled.<br/>
-Supports 2 row selection types: ```multi``` and ```single```. By default, used ```multi```.<br/>
-Prop ```selectedRowIds: Object<rowId: Boolean>```, if a row's ID is set to true in this object, it will have a selected state.<br/>
+
+For using row selection you have to pass prop - `useRowSelection`. By default, row selection disabled.<br/>
+Supports 2 row selection types: `multi` and `single`. By default, used `multi`.<br/>
+Prop `selectedRowIds: Object<rowId: Boolean>`, if a row's ID is set to true in this object, it will have a selected state.<br/>
+
 ```
   {
     "0": true,
@@ -260,7 +291,8 @@ Prop ```selectedRowIds: Object<rowId: Boolean>```, if a row's ID is set to true 
     "3" : false
   }
 ```
-Callback ```handleSelection``` fired when row(s) selected.
+
+Callback `handleSelection` fired when row(s) selected.
 
 <Canvas>
   <Story
@@ -277,7 +309,8 @@ Callback ```handleSelection``` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) => parent ? [`w.${parent.id}`, relativeIndex].join('.') : `w.${relativeIndex}`
+      getRowId: (row, relativeIndex, parent) =>
+        parent ? [`w.${parent.id}`, relativeIndex].join('.') : `w.${relativeIndex}`,
     }}
   >
     {Template.bind({})}
@@ -299,7 +332,8 @@ Callback ```handleSelection``` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'single',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) => parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`
+      getRowId: (row, relativeIndex, parent) =>
+        parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
     }}
   >
     {Template.bind({})}
@@ -307,8 +341,6 @@ Callback ```handleSelection``` fired when row(s) selected.
 </Canvas>
 
 ### Pagination
-For pagination is used ```TablePagination``` component. If you want to enable pagination use ```rowsPerPageOptions``` - number of rows per page.
+
+For pagination is used `TablePagination` component. If you want to enable pagination use `rowsPerPageOptions` - number of rows per page.
 First value in array this is a default rows per page.
-
-
-
