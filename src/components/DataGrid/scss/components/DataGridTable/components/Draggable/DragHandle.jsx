@@ -4,7 +4,6 @@ const HandleWrapper = styled.div`
   height: 1rem;
   vertical-align: baseline;
   display: inline-block;
-  margin-right: 1rem;
   svg {
     width: 85%;
     height: 85%;
