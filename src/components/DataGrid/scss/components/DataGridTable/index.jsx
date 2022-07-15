@@ -223,7 +223,7 @@ const DataGridTable = ({
                 prepareRow(row);
                 return (
                   <DraggableTableRow
-                    key={row.original.id}
+                    key={row.original.id || row.id}
                     row={row}
                     _selectedRowIds={_selectedRowIds}
                     useRowSelection={useRowSelection}
@@ -241,7 +241,7 @@ const DataGridTable = ({
               prepareRow(row);
               return (
                 <DraggableTableRow
-                  key={row.original.id}
+                  key={row.original.id || row.id}
                   row={row}
                   _selectedRowIds={_selectedRowIds}
                   useRowSelection={useRowSelection}
