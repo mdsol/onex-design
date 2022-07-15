@@ -75,13 +75,15 @@ $onex-filter-select-scrollbar-width: 0.75rem;
 $onex-filter-select-scrollbar-border-radius: 0.438rem;
 $onex-filter-select-scrollbar-border-color: rgba(0, 0, 0, 0);
 
+
 $onex-filter-select-option-padding-y: 0.625rem;
 $onex-filter-select-option-padding-x: 0.75rem;
 $onex-filter-select-option-font-size: $font-size-label;
 $onex-filter-select-option-color: $secondary-900;
 
-$onex-filter-select-option-focused-background-color: $secondary-500-opacity-01;
-$onex-filter-select-option-selected-background-color: $secondary-100;
+$onex-filter-select-option-hover-bg-color: $secondary-500-opacity-01;
+$onex-filter-select-option-focused-bg-color: $primary-100;
+$onex-filter-select-option-focused-hover-bg-color: $primary-200;
 
 $onex-filter-select-option-max-width: 17rem;
 
