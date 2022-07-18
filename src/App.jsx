@@ -140,7 +140,19 @@ const DevExamples = () => {
     );
   };
 
-  const GridControl = { title: 'Title' };
+  const GridControl = {
+    secondaryActions: [
+      {
+        title: 'action1',
+      },
+      {
+        title: 'action2',
+      },
+      {
+        title: 'action3',
+      },
+    ],
+  };
 
   return (
     <div className="p-5">
@@ -184,12 +196,14 @@ const DevExamples = () => {
         <br />
         <br />
         <DataGrid
+          useRowSelection
           columns={dataGridColumns}
           data={dataGridData}
           sortBy={dataGridSortByUpd}
           rowsPerPageOptions={[10, 20, 30]}
           dataGridControlProps={GridControl}
           draggable
+          dataGridBulkActionsProps={{ actions: [{ title: 'action1' }] }}
         />
         <br />
         <Button variant="primary" onClick={() => setShow(true)}>

@@ -20,7 +20,6 @@ import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-ki
 // import Icon from '../../../../Icon/scss';
 // import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
-import Check from '../../../../Check/scss';
 import DataGridCell from './components/DataGridCell';
 import DataGridCustomCell from './components/DataGridCustomCell';
 import DataGridEditableCell from './components/DataGridEditableCell';
@@ -60,14 +59,11 @@ const DataGridTable = ({
   handleSelection,
   draggable,
   setData,
+  setBulkActionsProps,
   ...accProps
 }) => {
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
   const [activeId, setActiveId] = useState();
-
-  const indeterminate =
-    Object.values(_selectedRowIds).some((item) => item) &&
-    Object.values(_selectedRowIds).filter((i) => i).length !== data.length;
 
   const {
     getTableProps,
@@ -101,27 +97,19 @@ const DataGridTable = ({
     usePagination,
   );
 
-  useEffect(() => {
-    _setSelectedRowIds(selectedRowIds);
-  }, [selectedRowIds]);
-
-  useEffect(() => {
-    handleSelection?.(_selectedRowIds);
-  }, [_selectedRowIds]);
-
-  const tableClasses = classNames('onex-data-grid__table', {
-    [className]: className,
-  });
-
-  const handleHeaderCheck = (e) => {
-    const checkboxes = rows.reduce(
+  const changeCheckboxes = (value) =>
+    rows.reduce(
       (prevVal, curVal) => ({
         ...prevVal,
-        [curVal.id]: e.target.checked,
+        [curVal.id]: value,
       }),
       {},
     );
-    _setSelectedRowIds(checkboxes);
+
+  const handleHeaderCheck = () => {
+    if (Object.values(_selectedRowIds).every((item) => item === true)) {
+      _setSelectedRowIds(changeCheckboxes(false));
+    } else _setSelectedRowIds(changeCheckboxes(true));
   };
 
   const handleRowCheck = (e, row) => {
@@ -179,33 +167,32 @@ const DataGridTable = ({
     return row;
   }, [activeId, rows, prepareRow]);
 
+  useEffect(() => {
+    _setSelectedRowIds(selectedRowIds);
+  }, [selectedRowIds]);
+
+  useEffect(() => {
+    setBulkActionsProps(() => ({
+      hasSelectedRows: Object.values(_selectedRowIds).some((item) => item),
+      isAllRowsSelected: Object.values(_selectedRowIds).filter((i) => i).length === data.length,
+      selectedRowIds: _selectedRowIds,
+      handleHeaderCheck,
+    }));
+  }, [_selectedRowIds]);
+
+  const tableClasses = classNames('onex-data-grid__table', {
+    [className]: className,
+  });
+
   const renderTable = () => (
     <>
       <ReactTable className={tableClasses} {...getTableProps()}>
         <thead className="onex-data-grid__table-headers">
           {headerGroups.map((headerGroup, headerRowInd) => (
             <tr key={`header_row_${headerRowInd}`} {...headerGroup.getHeaderGroupProps()}>
-              {draggable && (
-                <th>
-                  <span />
-                </th>
-              )}
-              {/* eslint-disable-next-line no-nested-ternary */}
-              {!useRowSelection ? null : rowSelectionType === 'multi' ? (
-                <th>
-                  <Check
-                    id={`onex-data-grid-header-check_${headerRowInd}`}
-                    checked={
-                      !indeterminate &&
-                      Object.values(_selectedRowIds).length === data.length &&
-                      Object.values(_selectedRowIds).every((item) => item)
-                    }
-                    indeterminate={indeterminate}
-                    className="onex-data-grid__table-headers-check"
-                    onChange={handleHeaderCheck}
-                  />
-                </th>
-              ) : null}
+              <th key={`header_cell_check_${headerRowInd}`}>
+                <span />
+              </th>
               {headerGroup.headers.map((column, headerCellInd) => (
                 <DataGridHeader
                   key={`header_cell_row_${headerCellInd}`}
@@ -352,6 +339,7 @@ DataGridTable.propTypes = {
   handleSelection: PropTypes.func,
   draggable: PropTypes.bool,
   setData: PropTypes.func,
+  setBulkActionsProps: PropTypes.func,
 };
 /* eslint-enable */
 
@@ -370,6 +358,7 @@ DataGridTable.defaultProps = {
   handleSelection: undefined,
   draggable: false,
   setData: undefined,
+  setBulkActionsProps: undefined,
 };
 
 export default DataGridTable;
