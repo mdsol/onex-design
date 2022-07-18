@@ -6,6 +6,7 @@ const Tooltip = (props) => {
   const {
     children,
     className,
+    container,
     id,
     delay,
     show,
@@ -22,9 +23,15 @@ const Tooltip = (props) => {
     [className]: className,
   });
 
+  let themeContainer;
+  if (document.getElementsByClassName('onex-themeprovider').length) {
+    [themeContainer] = document.getElementsByClassName('onex-themeprovider');
+  }
+
   return (
     <OverlayTrigger
       {...accProps}
+      container={container || themeContainer}
       placement={placement}
       delay={delay}
       show={show}
@@ -47,6 +54,7 @@ Tooltip.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  container: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   delay: PropTypes.shape({
     show: PropTypes.number,
     hide: PropTypes.number,
@@ -82,6 +90,7 @@ Tooltip.propTypes = {
 Tooltip.defaultProps = {
   className: undefined,
   children: undefined,
+  container: undefined,
   delay: { show: 250, hide: 300 },
   show: undefined,
   onToggle: undefined,

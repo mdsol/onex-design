@@ -21,6 +21,7 @@ const Offcanvas = ({
   title,
   badge,
   children,
+  container,
   show,
   className,
   onHide,
@@ -51,8 +52,19 @@ const Offcanvas = ({
 
   const scrollHendle = (event) => setIsScrolling(event.target.scrollTop > 0);
 
+  let themeContainer;
+  if (document.getElementsByClassName('onex-themeprovider').length) {
+    [themeContainer] = document.getElementsByClassName('onex-themeprovider');
+  }
+
   return (
-    <ReactOffcanvas {...props} className={classes} show={_show} placement="end">
+    <ReactOffcanvas
+      {...props}
+      className={classes}
+      show={_show}
+      placement="end"
+      container={container || themeContainer}
+    >
       <OffcanvasHeader className={headerClasses}>
         <OffcanvasTitle>
           <h5>
@@ -112,6 +124,7 @@ Offcanvas.propTypes = {
   title: PropTypes.string,
   badge: PropTypes.number,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  container: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   show: PropTypes.bool,
   className: PropTypes.string,
   autoFocus: PropTypes.bool,
@@ -145,6 +158,7 @@ Offcanvas.defaultProps = {
   title: '',
   badge: null,
   children: undefined,
+  container: undefined,
   show: false,
   className: '',
   autoFocus: false,
