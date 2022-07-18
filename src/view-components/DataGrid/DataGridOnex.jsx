@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { DataGrid, Icon, Avatar, Badge, Tag } from '../../components';
 
-
 const dataGridColumns = [
   {
     Header: 'ID',
@@ -107,6 +106,7 @@ const DataGridOnex = () => {
 
   return (
     <DataGrid
+      draggable
       columns={dataGridColumnsProc}
       data={dataGridData}
       sortBy={dataGridSortByProc}

@@ -162,7 +162,7 @@ const DataGridTable = ({
     if (!activeId) {
       return null;
     }
-    const row = rows.find(({ original }) => original.id === activeId);
+    const row = rows.find(({ id }) => id === activeId);
     prepareRow(row);
     return row;
   }, [activeId, rows, prepareRow]);
@@ -190,9 +190,16 @@ const DataGridTable = ({
         <thead className="onex-data-grid__table-headers">
           {headerGroups.map((headerGroup, headerRowInd) => (
             <tr key={`header_row_${headerRowInd}`} {...headerGroup.getHeaderGroupProps()}>
-              <th key={`header_cell_check_${headerRowInd}`}>
-                <span />
-              </th>
+              {draggable ? (
+                <th key={`header_draggable_${headerRowInd}`}>
+                  <span />
+                </th>
+              ) : null}
+              {useRowSelection ? (
+                <th key={`header_cell_check_${headerRowInd}`}>
+                  <span />
+                </th>
+              ) : null}
               {headerGroup.headers.map((column, headerCellInd) => (
                 <DataGridHeader
                   key={`header_cell_row_${headerCellInd}`}
@@ -210,7 +217,7 @@ const DataGridTable = ({
                 prepareRow(row);
                 return (
                   <DraggableTableRow
-                    key={row.original.id || row.id}
+                    key={row.id}
                     row={row}
                     _selectedRowIds={_selectedRowIds}
                     useRowSelection={useRowSelection}
@@ -228,7 +235,7 @@ const DataGridTable = ({
               prepareRow(row);
               return (
                 <DraggableTableRow
-                  key={row.original.id || row.id}
+                  key={row.id}
                   row={row}
                   _selectedRowIds={_selectedRowIds}
                   useRowSelection={useRowSelection}

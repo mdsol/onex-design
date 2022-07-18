@@ -15,7 +15,7 @@ const DraggableTableRow = ({
   draggable,
 }) => {
   const { attributes, listeners, transform, transition, setNodeRef, isDragging } = useSortable({
-    id: row.original.id || row.id,
+    id: row.id,
   });
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -31,7 +31,10 @@ const DraggableTableRow = ({
       className={`onex-data-grid__table-body-row ${_selectedRowIds[row.id] ? 'isSelected' : ''}`}
     >
       {isDragging ? (
-        <td colSpan={row.cells.length + 1} className="onex-data-grid__table-body-row-drag">
+        <td
+          colSpan={row.cells.length + (useRowSelection ? 2 : 1)}
+          className="onex-data-grid__table-body-row-drag"
+        >
           &nbsp;
         </td>
       ) : (
