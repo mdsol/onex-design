@@ -12,7 +12,12 @@ const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
   const checkedValue = selectedOptions?.some((elem) => elem.value === props.value);
 
   return (
-    <components.Option {...props}>
+    <components.Option
+      className={classNames({
+        'onex-filter-select__option--text': !showCheckInOption,
+      })}
+      {...props}
+    >
       {showCheckInOption ? (
         <Check
           tabIndex={-1}
