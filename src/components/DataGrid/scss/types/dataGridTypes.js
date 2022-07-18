@@ -5,7 +5,7 @@ const DataGridFiltersTypes = PropTypes.arrayOf(PropTypes.string);
 
 const DataGridDropdownTypes = PropTypes.arrayOf(
   PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     badge: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     hasDividerAfter: PropTypes.bool,
     active: PropTypes.bool,

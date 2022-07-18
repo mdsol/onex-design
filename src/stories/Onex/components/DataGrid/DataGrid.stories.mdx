@@ -110,12 +110,42 @@ Using this component requires installation packages : [react-table v7](https://w
     args={{
       dataTestId: 'data-grid-test-id',
       className: 'data-grid-custom',
-      dataGridControlProps: {
-        title: 'Title',
-        badge: 10,
-      },
       columns: demoGridColumns,
       data: demoGridData,
+      dataGridControlProps: {
+        secondaryActions: [
+          {
+            title: 'action1',
+          },
+          {
+            title: 'action2',
+          },
+          {
+            title: 'action3',
+          },
+        ],
+      },
+      dataGridBulkActionsProps: {
+        actions: [
+          {
+            title: 'action1',
+          },
+          {
+            title: 'action2',
+          },
+        ],
+        dropdownActions: [
+          {
+            title: 'action1',
+          },
+          {
+            title: 'action2',
+          },
+          {
+            title: 'action3',
+          },
+        ],
+      },
       sortBy: [
         {
           id: 'id',
