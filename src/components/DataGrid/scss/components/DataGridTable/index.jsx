@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useTable, usePagination, useSortBy } from 'react-table';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';

@@ -308,9 +308,7 @@ Other parameters are also supported, for more information please check - [Sort t
         },
       ],
       multiSort: true,
-      getRowId: (row, relativeIndex, parent) => {
-        return row.studyId;
-      },
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -348,9 +346,7 @@ Callback `handleSelection` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) => {
-        return row.studyId;
-      },
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}

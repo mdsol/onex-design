@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -134,7 +135,6 @@ DataGrid.propTypes = {
   getRowId: PropTypes.func,
   draggable: PropTypes.bool,
 };
-/* eslint-enable */
 
 DataGrid.defaultProps = {
   className: undefined,
@@ -153,7 +153,6 @@ DataGrid.defaultProps = {
   handleSelection: undefined,
   handleDragged: undefined,
   getRowId: (row, relativeIndex, parent) =>
-    // eslint-disable-next-line no-nested-ternary
     row?.id ? row.id : parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
   draggable: false,
 };
