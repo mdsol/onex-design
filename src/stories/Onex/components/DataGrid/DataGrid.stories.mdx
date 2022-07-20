@@ -84,16 +84,11 @@ import { DataGrid, Button, Icon } from '../../../../components';
     },
     draggable: {
       description:
-        'Enable drag and drop table rows. Disabled by default. ```data``` must have an unique ```id``` key to function properly. If not present, must pass in ```rowUniqueId``` prop',
+        'Enable drag and drop table rows. Disabled by default. If not present, must use getRowId function and pass a unique key identifier from ```data```',
       control: 'boolean',
     },
-    rowUniqueId: {
-      description:
-        'Key of the unique identifier from ```data``` object to be used for ```draggable```',
-    },
     handleDragged: {
-      description:
-        'Callback fired when rows dragged. Returns array of objects with ```id``` and ```row```',
+      description: 'Callback fired when rows dragged. Returns array of row objects',
     },
   }}
   component={DataGrid}
