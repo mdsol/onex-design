@@ -12,10 +12,13 @@
   @include icon-color($color);
   color: $color;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus-visible {
     @include icon-color($hover-color);
     color: $hover-color;
     cursor: pointer;
+    outline: none;
 
     .onex-link__text {
       text-decoration: underline;

@@ -67,8 +67,10 @@
     border: none;
     padding: 0;
 
+    &:hover,
     &:focus {
       outline: none;
+      color: rgb(26,28,30);
     }
   }
 

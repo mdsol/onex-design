@@ -1,6 +1,5 @@
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import { Tabs } from '../../../../components';
-import * as stories from './Tabs.stories.jsx';
 
 <Meta
   title="Onex/Components/Tabs"
@@ -89,14 +88,14 @@ Tabs organize and allow navigation between groups of content that are related an
 
 <Canvas>
   <Story
+    height="16rem"
     name="Demo"
-    height="10rem"
     args={{
       className: 'custom-tabs',
       dataTestId: 'test-tabs-id',
       dataTestIdDropdown: 'test-tabs-dropdown-id',
       defaultActiveKey: 'opt1',
-      dropdownTitle: 'Toggle',
+      dropdownTitle: 'More',
       isAdaptiveWidth: true,
       hiddenItems: [
         { eventKey: 'opt5', title: 'Option 5' },

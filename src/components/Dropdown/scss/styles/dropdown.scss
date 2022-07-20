@@ -51,7 +51,8 @@
 
     &.btn-primary.focus:hover,
     &.btn-primary.onex-btn-selected:hover,
-    &.btn-primary:hover {
+    &.btn-primary:hover,
+    &.btn-primary:focus {
       @include bg-color($btn-primary-hover-bg-color);
     }
 
@@ -80,12 +81,15 @@
       }
     }
 
-    &.btn-secondary:hover {
+    &.btn-secondary:hover,
+    &.btn-secondary:focus {
       border-color: $btn-secondary-hover-border-color;
     }
 
     &.btn-secondary:hover,
-    &.btn-tertiary:hover {
+    &.btn-tertiary:hover,
+    &.btn-secondary:focus,
+    &.btn-tertiary:focus {
       background-color: $btn-secondary-hover-bg-color;
     }
 
@@ -267,15 +271,21 @@
         padding-right: 0.5rem;
       }
 
-      &:hover {
+      &:hover,
+      &:focus,
+      &:focus-visible {
         background-color: $menu-item-hover-background-color;
+        outline: none;
       }
 
       &.active, &:active {
         background-color: $menu-item-active-background-color;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:focus-visible {
           background-color: $menu-item-active-hover-background-color;
+          outline: none;
         }
 
         &.disabled, &:disabled {

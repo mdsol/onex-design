@@ -19,7 +19,7 @@ const DateInput = React.forwardRef((props, ref) => {
     helpText,
     handleChange,
     handleToggleCalendar,
-    onKeyDown,
+    // onKeyDown,
     onBlur,
     target,
     showCalendar,
@@ -47,7 +47,7 @@ const DateInput = React.forwardRef((props, ref) => {
           readOnly={readOnly}
           required={required}
           value={value}
-          onKeyDown={onKeyDown}
+          // onKeyDown={onKeyDown}
           onChange={handleChange}
           onBlur={onBlur}
         />

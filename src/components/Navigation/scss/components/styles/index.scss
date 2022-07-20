@@ -20,7 +20,11 @@
         }
 
         &:hover,
-        &.active:hover {
+        &:focus,
+        &:focus-visible,
+        &.active:hover,
+        &.active:focus,
+        &.active:focus-visible {
             color: $onex-nav-item-hover-text-color;
 
             &::before {

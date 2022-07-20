@@ -15,32 +15,24 @@
     -webkit-appearance: none;
     float: left;
 
-    &:hover {
+    &:hover,
+    &:focus {
       @include switch-background-image($onex-form-switch-hover-color);
       border-color: $onex-form-switch-hover-border;
       cursor: pointer;
-    }
-
-    &:focus {
-      @include switch-background-image($onex-form-switch-focus-color);
-      border-color: $onex-form-switch-focus-border;
-      box-shadow: $form-switch-focus-box-shadow;
+      box-shadow: none;
     }
 
     &:checked {
       background-color: $form-switch-checked-input-bg;
       border-color: $form-switch-checked-input-bg;
 
-      &:hover {
+      &:hover,
+      &:focus {
         @include switch-background-image($onex-form-switch-checked-hover-color);
         background-color: $onex-form-switch-hover-checked-input-bg;
         border-color: $onex-form-switch-hover-checked-input-bg;
-      }
-
-      &:focus {
-        box-shadow: $form-switch-focus-box-shadow;
-        background-color: $form-switch-checked-input-bg;
-        border-color: $form-switch-checked-input-bg;
+        box-shadow: none;
       }
 
       &:disabled {

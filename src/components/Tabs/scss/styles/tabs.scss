@@ -1,6 +1,11 @@
 .onex-tab.onex-nav {
   font-family: $font-family;
 
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
+
   .nav-link {
     height: $onex-tab-height;
     font-size: $onex-tab-font-size;
@@ -25,12 +30,24 @@
       padding: 0 $onex-tab-padding-x;
       margin: $onex-tab-margin;
 
-      & > .btn.btn-tertiary:hover,
+      & > .btn.btn-tertiary:hover {
+        background-color: transparent;
+        color: $onex-tab-hover-text-color;
+
+        .onex-dropdown__chevron-icon {
+          color: $onex-tab-hover-text-color;
+        }
+      }
+
       &.haveSelectedItem > .btn.btn-tertiary,
       &.haveSelectedItem > .btn.btn-tertiary:hover,
       &.show > .dropdown-toggle.btn-tertiary {
         background-color: transparent;
         color: $onex-tab-active-text-color;
+
+        .onex-dropdown__chevron-icon {
+          color: $onex-tab-active-text-color;
+        }
       }
 
       &::before {
@@ -45,16 +62,18 @@
       }
 
       &:hover::before,
-      &.haveSelectedItem:hover::before {
+      &:focus::before {
         display: block;
         background-color: $onex-tab-desactive-text-color;
         height: $onex-tab-underline-height;
       }
 
-      &.haveSelectedItem::before {
+      &.haveSelectedItem::before,
+      &.haveSelectedItem:hover::before,
+      &.show::before {
         display: block;
         height: $onex-tab-underline-height;
-        background-color: $primary;
+        background-color: $onex-tab-active-text-color;
       }
 
       & > .dropdown-menu {
@@ -65,6 +84,12 @@
   }
 
   .nav-tabs {
+
+    &:focus-visible,
+    &:focus {
+      outline: none;
+    }
+
     .nav-link {
       display: flex;
       align-items: center;
@@ -72,9 +97,18 @@
       color: $onex-tab-main-text-color;
 
       &:hover,
+      &:focus,
+      &:focus-visible {
+        color: $onex-tab-hover-text-color;
+        outline: none;
+      }
+
       &.active:hover,
+      &.active:focus,
+      &.active:focus-visible,
       &.active {
         color: $onex-tab-active-text-color;
+        outline: none;
       }
 
       &.active::before {
@@ -83,7 +117,14 @@
       }
 
       &.active:hover::before,
-      &:hover::before {
+      &.active:focus::before,
+      &.active:focus-visible::before {
+        background-color: $onex-tab-active-border-color;
+      }
+
+      &:focus::before,
+      &:hover::before,
+      &:focus-visible::before {
         background-color: $onex-tab-desactive-text-color;
         height: $onex-tab-underline-height;
       }
