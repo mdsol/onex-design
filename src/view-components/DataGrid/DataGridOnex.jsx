@@ -55,7 +55,7 @@ const GridControl = { title: 'Title' };
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
-  id: 'M123',
+  id: `M123${Date.now().toString(36) + Math.random().toString(36).substr(2)}`,
   avatar: { value: 'Test', component: <Avatar /> },
   study: {
     value: 'United States 15',
@@ -116,6 +116,9 @@ const DataGridOnex = () => {
       useRowSelection
       rowSelectionType="multi"
       handleSelection={handleSelectData}
+      handleDragged={(newOrder) => {
+        console.log(newOrder);
+      }}
     />
   );
 };

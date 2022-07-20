@@ -6,6 +6,7 @@ const HandleWrapper = styled.div`
   display: inline-block;
   svg {
     height: 1rem;
+    margin-top: -0.25rem;
   }
   cursor: ${({ isDragging }) => (isDragging ? 'grabbing' : 'grab')};
 `;

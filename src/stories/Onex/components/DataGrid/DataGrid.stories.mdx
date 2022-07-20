@@ -155,8 +155,7 @@ Using this component requires installation packages : [react-table v7](https://w
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`demo.${parent.id}`, relativeIndex].join('.') : `demo.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -271,8 +270,7 @@ Other parameters are also supported, for more information please check - [Sort t
         },
       ],
       multiSort: false,
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`s-sort.${parent.id}`, relativeIndex].join('.') : `s-sort.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -301,8 +299,9 @@ Other parameters are also supported, for more information please check - [Sort t
         },
       ],
       multiSort: true,
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`m-sort.${parent.id}`, relativeIndex].join('.') : `m-sort.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => {
+        return row.studyId;
+      },
     }}
   >
     {Template.bind({})}
@@ -340,8 +339,9 @@ Callback `handleSelection` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`w.${parent.id}`, relativeIndex].join('.') : `w.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => {
+        return row.studyId;
+      },
     }}
   >
     {Template.bind({})}
@@ -363,8 +363,7 @@ Callback `handleSelection` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'single',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}

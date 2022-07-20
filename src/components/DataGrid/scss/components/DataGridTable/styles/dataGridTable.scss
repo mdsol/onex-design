@@ -101,6 +101,7 @@
   }
 
   &-body {
+    background-color: var(--basic-white);
     tr {
       background-color: $onex-data-grid-table-body-tr-background-color;
       border-radius: $onex-data-grid-table-body-border-radius;
@@ -118,9 +119,14 @@
           background-color: $onex-data-grid-table-body-tr-selected-hover-background-color;
         }
       }
-    }
-    .onex-data-grid__table-body-row-drag {
-      background-color: $onex-data-grid-table-body-tr-drag-background-color;
+      &.onex-data-grid__table-body-row.isDragging {
+        td {
+          background-color: $onex-data-grid-table-body-tr-drag-background-color;
+          * {
+            visibility: hidden;
+          }
+        }
+      }
     }
 
     td {
