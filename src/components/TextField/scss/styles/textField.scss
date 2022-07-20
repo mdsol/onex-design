@@ -40,8 +40,10 @@
     border: none;
     padding: 0;
 
+    &:hover,
     &:focus {
       outline: none;
+      color: $tf-icon-hover-color;
     }
   }
 

@@ -55,7 +55,7 @@
 
     &:focus {
       & ~ .onex-check__custom {
-        box-shadow: 0px 0px 0px 2px $primary-200;
+        border-color: $onex-check-input-hover-border-color;
       }
     }
   }

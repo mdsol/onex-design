@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ToggleButtonGroup as ReactToggleButtonGroup } from 'react-bootstrap';
+import { ButtonGroup as ReactToggleButtonGroup } from 'react-bootstrap';
 import ToggleButton from '../../ToggleButton/scss';
 import Icon from '../../Icon/scss';
 

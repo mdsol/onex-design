@@ -59,7 +59,8 @@
       color: $onex-btn-secondary-text-color;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       @include bg-color($onex-btn-secondary-hover-bg-color);
       color: $onex-btn-secondary-hover-text-color;
 
@@ -106,7 +107,8 @@
     }
 
     &:hover,
-    &.hover {
+    &.hover,
+    &:focus {
       @include bg-color($onex-btn-tertiary-hover-bg-color);
       color: $onex-btn-tertiary-hover-color;
 
