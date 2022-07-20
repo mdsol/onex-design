@@ -40,7 +40,7 @@ const dataGridSortBy = [
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
 const newPerson = () => ({
-  id: 'M123',
+  id: `M123${Date.now().toString(36) + Math.random().toString(36).substr(2)}`,
   study: 'United States 15',
   country: 'United States 15',
   category: 'Management',

@@ -15,7 +15,7 @@ const DraggableTableRow = ({
   draggable,
 }) => {
   const { attributes, listeners, transform, transition, setNodeRef, isDragging } = useSortable({
-    id: row.original.id || row.id,
+    id: row.id,
   });
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -28,33 +28,28 @@ const DraggableTableRow = ({
       ref={setNodeRef}
       style={style}
       {...row.getRowProps()}
-      className={`onex-data-grid__table-body-row ${_selectedRowIds[row.id] ? 'isSelected' : ''}`}
+      className={`onex-data-grid__table-body-row ${_selectedRowIds[row.id] ? 'isSelected' : ''}${
+        isDragging ? ' isDragging' : ''
+      }`}
     >
-      {isDragging ? (
-        <td colSpan={row.cells.length + 1} className="onex-data-grid__table-body-row-drag">
-          &nbsp;
+      {' '}
+      {draggable && (
+        <td key={`body_cell_drag_${row.id}`}>
+          <DragHandle {...attributes} {...listeners} />
         </td>
-      ) : (
-        <>
-          {draggable && (
-            <td key={`body_cell_drag_${row.id}`}>
-              <DragHandle {...attributes} {...listeners} />
-            </td>
-          )}
-          {useRowSelection && (
-            <td key={`body_cell_check_${row.id}`}>
-              <Check
-                id={`onex-data-grid-row-check_${row.id}`}
-                className="onex-data-grid__table-body-row-check"
-                checked={_selectedRowIds[row.id]}
-                type={rowSelectionType === 'multi' ? 'checkbox' : 'radio'}
-                onChange={(e) => handleRowCheck(e, row)}
-              />
-            </td>
-          )}
-          {row.cells.map((cell, cellInd) => handleColumnType(row, cell, cellInd, updateData))}
-        </>
       )}
+      {useRowSelection && (
+        <td key={`body_cell_check_${row.id}`}>
+          <Check
+            id={`onex-data-grid-row-check_${row.id}`}
+            className="onex-data-grid__table-body-row-check"
+            checked={_selectedRowIds[row.id]}
+            type={rowSelectionType === 'multi' ? 'checkbox' : 'radio'}
+            onChange={(e) => handleRowCheck(e, row)}
+          />
+        </td>
+      )}
+      {row.cells.map((cell, cellInd) => handleColumnType(row, cell, cellInd, updateData))}
     </tr>
   );
 };

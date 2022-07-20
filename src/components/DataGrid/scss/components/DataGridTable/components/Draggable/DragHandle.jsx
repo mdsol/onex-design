@@ -5,8 +5,8 @@ const HandleWrapper = styled.div`
   vertical-align: baseline;
   display: inline-block;
   svg {
-    width: 85%;
-    height: 85%;
+    height: 1rem;
+    margin-top: -0.25rem;
   }
   cursor: ${({ isDragging }) => (isDragging ? 'grabbing' : 'grab')};
 `;

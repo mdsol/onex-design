@@ -26,6 +26,8 @@ import DataGridEditableCell from './components/DataGridEditableCell';
 import DataGridHeader from './components/DataGridHeader';
 import DraggableTableRow from './components/Draggable/DraggableTableRow';
 import StaticTableRow from './components/Draggable/StaticTableRow';
+import DragHandle from './components/Draggable/DragHandle';
+import Check from '../../../../Check/scss';
 
 const handleColumnType = (row, cell, cellInd, updateData) => {
   if (cell?.column.type === 'editable') {
@@ -57,9 +59,11 @@ const DataGridTable = ({
   useRowSelection,
   rowSelectionType,
   handleSelection,
+  handleDragged,
   draggable,
   setData,
   setBulkActionsProps,
+  getRowId,
   ...accProps
 }) => {
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
@@ -85,6 +89,7 @@ const DataGridTable = ({
       data,
       autoResetPage: !skipPageReset,
       updateData,
+      getRowId,
       initialState: {
         pageIndex: 0,
         pageSize: rowsPerPageOptions.length ? rowsPerPageOptions[0] : data.length,
@@ -126,8 +131,7 @@ const DataGridTable = ({
   };
 
   // react drag and drop functions
-
-  const items = useMemo(() => data?.map(({ id }) => id), [data]);
+  const items = useMemo(() => rows?.map(({ id }) => id), [rows]);
 
   const sensors = useSensors(
     useSensor(MouseSensor, {}),
@@ -147,7 +151,9 @@ const DataGridTable = ({
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
         const newData = currentData.map((row) => ({ ...row }));
-        return arrayMove(newData, oldIndex, newIndex);
+        const reArranged = arrayMove(newData, oldIndex, newIndex);
+        handleDragged(reArranged);
+        return reArranged;
       });
     }
 
@@ -162,7 +168,7 @@ const DataGridTable = ({
     if (!activeId) {
       return null;
     }
-    const row = rows.find(({ original }) => original.id === activeId);
+    const row = rows.find(({ id }) => id === activeId);
     prepareRow(row);
     return row;
   }, [activeId, rows, prepareRow]);
@@ -184,25 +190,33 @@ const DataGridTable = ({
     [className]: className,
   });
 
+  const headerRows = () =>
+    headerGroups.map((headerGroup, headerRowInd) => (
+      <tr key={`header_row_${headerRowInd}`} {...headerGroup.getHeaderGroupProps()}>
+        {draggable ? (
+          <th key={`header_draggable_${headerRowInd}`} style={{ visibility: 'hidden' }}>
+            <DragHandle />
+          </th>
+        ) : null}
+        {useRowSelection ? (
+          <th key={`header_cell_check_${headerRowInd}`} style={{ visibility: 'hidden' }}>
+            <Check />
+          </th>
+        ) : null}
+        {headerGroup.headers.map((column, headerCellInd) => (
+          <DataGridHeader
+            key={`header_cell_row_${headerCellInd}`}
+            column={column}
+            multiSort={multiSort}
+          />
+        ))}
+      </tr>
+    ));
+
   const renderTable = () => (
     <>
       <ReactTable className={tableClasses} {...getTableProps()}>
-        <thead className="onex-data-grid__table-headers">
-          {headerGroups.map((headerGroup, headerRowInd) => (
-            <tr key={`header_row_${headerRowInd}`} {...headerGroup.getHeaderGroupProps()}>
-              <th key={`header_cell_check_${headerRowInd}`}>
-                <span />
-              </th>
-              {headerGroup.headers.map((column, headerCellInd) => (
-                <DataGridHeader
-                  key={`header_cell_row_${headerCellInd}`}
-                  column={column}
-                  multiSort={multiSort}
-                />
-              ))}
-            </tr>
-          ))}
-        </thead>
+        <thead className="onex-data-grid__table-headers">{headerRows()}</thead>
         <tbody className="onex-data-grid__table-body" {...getTableBodyProps()}>
           {draggable ? (
             <SortableContext items={items} strategy={verticalListSortingStrategy}>
@@ -210,7 +224,7 @@ const DataGridTable = ({
                 prepareRow(row);
                 return (
                   <DraggableTableRow
-                    key={row.original.id || row.id}
+                    key={row.original.id}
                     row={row}
                     _selectedRowIds={_selectedRowIds}
                     useRowSelection={useRowSelection}
@@ -228,7 +242,7 @@ const DataGridTable = ({
               prepareRow(row);
               return (
                 <DraggableTableRow
-                  key={row.original.id || row.id}
+                  key={row.id}
                   row={row}
                   _selectedRowIds={_selectedRowIds}
                   useRowSelection={useRowSelection}
@@ -247,11 +261,7 @@ const DataGridTable = ({
         <DragOverlay>
           {activeId && (
             <ReactTable className={tableClasses} {...getTableProps()}>
-              <tbody
-                className="onex-data-grid__table-body"
-                style={{ backgroundColor: 'white', opacity: '1' }}
-                {...getTableBodyProps()}
-              >
+              <tbody className="onex-data-grid__table-body" {...getTableBodyProps()}>
                 <StaticTableRow
                   row={selectedRow}
                   handleColumnType={handleColumnType}
@@ -337,9 +347,11 @@ DataGridTable.propTypes = {
   useRowSelection: PropTypes.bool,
   rowSelectionType: PropTypes.oneOf(['single', 'multi']),
   handleSelection: PropTypes.func,
+  handleDragged: PropTypes.func,
   draggable: PropTypes.bool,
   setData: PropTypes.func,
   setBulkActionsProps: PropTypes.func,
+  getRowId: PropTypes.func,
 };
 /* eslint-enable */
 
@@ -356,9 +368,11 @@ DataGridTable.defaultProps = {
   useRowSelection: false,
   rowSelectionType: undefined,
   handleSelection: undefined,
+  handleDragged: () => {},
   draggable: false,
   setData: undefined,
   setBulkActionsProps: undefined,
+  getRowId: undefined,
 };
 
 export default DataGridTable;

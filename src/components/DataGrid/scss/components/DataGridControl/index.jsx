@@ -66,6 +66,8 @@ const DataGridControl = (props) => {
     }
   }, [dataTableBindingProps]);
 
+  // useEffect(() => console.log('ctrl', props));
+
   return (
     <div {...accProps} className={dataGridControlsClasses} data-test-id={dataTestId}>
       {Object.values(dataTableBindingProps).length > 0 &&

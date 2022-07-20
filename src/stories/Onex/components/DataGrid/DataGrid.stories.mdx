@@ -84,8 +84,11 @@ import { DataGrid, Button, Icon } from '../../../../components';
     },
     draggable: {
       description:
-        'Enable drag and drop table rows. Disabled by default. Note:```data``` must have an unique ```id``` key to function properly.',
+        'Enable drag and drop table rows. Disabled by default. If not present, must use getRowId function and pass a unique key identifier from ```data```',
       control: 'boolean',
+    },
+    handleDragged: {
+      description: 'Callback fired when rows dragged. Returns array of row objects',
     },
   }}
   component={DataGrid}
@@ -100,6 +103,7 @@ A DataGrid is a table-presented data.
 ### Installation
 
 Using this component requires installation packages : [react-table v7](https://www.npmjs.com/package/react-table/v/7.8.0)
+Important: react-table (now tanstack-table) is currently v8; it is important to use the [documentation for v7](https://react-table-v7.tanstack.com/docs/overview).
 
 ### Demo
 
@@ -155,8 +159,7 @@ Using this component requires installation packages : [react-table v7](https://w
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`demo.${parent.id}`, relativeIndex].join('.') : `demo.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -271,8 +274,7 @@ Other parameters are also supported, for more information please check - [Sort t
         },
       ],
       multiSort: false,
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`s-sort.${parent.id}`, relativeIndex].join('.') : `s-sort.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -301,8 +303,7 @@ Other parameters are also supported, for more information please check - [Sort t
         },
       ],
       multiSort: true,
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`m-sort.${parent.id}`, relativeIndex].join('.') : `m-sort.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -340,8 +341,7 @@ Callback `handleSelection` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`w.${parent.id}`, relativeIndex].join('.') : `w.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}
@@ -363,8 +363,7 @@ Callback `handleSelection` fired when row(s) selected.
       useRowSelection: true,
       rowSelectionType: 'single',
       handleSelection: () => {},
-      getRowId: (row, relativeIndex, parent) =>
-        parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
     }}
   >
     {Template.bind({})}

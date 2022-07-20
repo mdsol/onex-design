@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -19,7 +20,9 @@ const DataGrid = ({
   useRowSelection,
   rowSelectionType,
   handleSelection,
+  handleDragged,
   draggable,
+  getRowId,
   ...accProps
 }) => {
   const dataRef = useRef(data);
@@ -77,9 +80,11 @@ const DataGrid = ({
         useRowSelection={useRowSelection}
         rowSelectionType={rowSelectionType}
         handleSelection={handleSelection}
+        handleDragged={handleDragged}
         draggable={draggable}
         setData={setRenderedData}
         setBulkActionsProps={setBulkActionsProps}
+        getRowId={getRowId}
         {...accProps}
       />
     </div>
@@ -126,9 +131,10 @@ DataGrid.propTypes = {
   useRowSelection: PropTypes.bool,
   rowSelectionType: PropTypes.oneOf(['single', 'multi']),
   handleSelection: PropTypes.func,
+  handleDragged: PropTypes.func,
+  getRowId: PropTypes.func,
   draggable: PropTypes.bool,
 };
-/* eslint-enable */
 
 DataGrid.defaultProps = {
   className: undefined,
@@ -145,6 +151,9 @@ DataGrid.defaultProps = {
   useRowSelection: false,
   rowSelectionType: 'multi',
   handleSelection: undefined,
+  handleDragged: undefined,
+  getRowId: (row, relativeIndex, parent) =>
+    row?.id ? row.id : parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
   draggable: false,
 };
 

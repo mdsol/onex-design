@@ -4,7 +4,7 @@ import Check from '../../../../../../Check/scss';
 
 const StaticTableRow = ({ row, handleColumnType, updateData, useRowSelection }) => (
   <tr {...row.getRowProps()} className="onex-data-grid__table-body-row">
-    <td key={`body_cell_drag_${row.original.id}`}>
+    <td key={`body_cell_drag_${row.id}`}>
       <DragHandle />
     </td>
     {useRowSelection && (
@@ -21,7 +21,7 @@ const StaticTableRow = ({ row, handleColumnType, updateData, useRowSelection }) 
 
 /* eslint-disable */
 StaticTableRow.propTypes = {
-  row: PropTypes.arrayOf(PropTypes.object),
+  row: PropTypes.object.isRequired,
   handleColumnType: PropTypes.func,
   updateData: PropTypes.func,
   useRowSelection: PropTypes.bool,
@@ -29,7 +29,6 @@ StaticTableRow.propTypes = {
 /* eslint-enable */
 
 StaticTableRow.defaultProps = {
-  row: [],
   handleColumnType: undefined,
   updateData: undefined,
   useRowSelection: false,

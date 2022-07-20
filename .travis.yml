@@ -23,6 +23,7 @@ jobs:
         - yarn run build
         - yarn run build:css
         - npm publish
+        - yarn run deploy:sb
     - stage: test
       name:
       script:
