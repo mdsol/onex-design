@@ -7,7 +7,12 @@
   max-height: 3rem;
 
   &.draggable {
-    margin-left: -2%;
+    .onex-data-grid-control__check {
+      margin-left: 2.55rem;
+    }
+    .onex-data-grid-bulk-actions {
+      padding-left: 2.55rem;
+    }
   }
 
   &__title {

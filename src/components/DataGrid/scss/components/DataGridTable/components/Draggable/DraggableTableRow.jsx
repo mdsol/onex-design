@@ -14,7 +14,6 @@ const DraggableTableRow = ({
   updateData,
   draggable,
 }) => {
-  console.log(row);
   const { attributes, listeners, transform, transition, setNodeRef, isDragging } = useSortable({
     id: row.id,
   });
