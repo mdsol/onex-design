@@ -4,6 +4,11 @@
   padding: $onex-data-grid-control-padding-x $onex-data-grid-control-padding-y;
   border-bottom: 1px solid $onex-data-grid-control-border-color;
   font-family: $font-family;
+  max-height: 3rem;
+
+  &.draggable {
+    margin-left: -2%;
+  }
 
   &__title {
     display: grid;
