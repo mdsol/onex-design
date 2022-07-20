@@ -1,12 +1,35 @@
 .onex-step-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  width: $onex-stepper-item-width;
   gap: 0.5rem;
   padding: 0.625rem 0.75rem;
   border-radius: 0px 0.5rem 0.5rem 0px;
   cursor: pointer;
   color: $onex-stepper-text-color;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &__icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon .onex-material-icon {
+    font-size: $onex-stepper-icon-size;
+    color: $onex-stepper-icon-default-color;
+  }
+
+  &--active &__icon .onex-material-icon {
+    color: $onex-stepper-icon-active-color;
+  }
+
+  &--done &__icon .onex-material-icon {
+    color: $onex-stepper-icon-done-color;
+  }
 
   &:hover {
     background-color: $onex-stepper-bg-hover-color;
@@ -17,9 +40,17 @@
     background-color: $onex-stepper-bg-browser-active-color;
     color: $onex-stepper-text-browser-active-color;
 
-    .onex-step-item--done .onex-step-item__icon .onex-material-icon {
-      color: $onex-stepper-icon-done-browser-active-color;
+    .onex-step-item__icon .onex-material-icon {
+      color: $onex-stepper-icon-browser-active-color;
     }
+  }
+
+  &--active:active &__icon .onex-material-icon {
+    color: $onex-stepper-icon-active-color;
+  }
+
+  &--done:active .onex-step-item__icon .onex-material-icon {
+    color: $onex-stepper-icon-done-browser-active-color;
   }
 
   &--disabled {
@@ -29,21 +60,6 @@
 
     .onex-step-item--done .onex-step-item__icon .onex-material-icon {
       color: $onex-stepper-icon-done-disabled-color;
-    }
-  }
-
-  .onex-step-item {
-    &__icon .onex-material-icon {
-      font-size: $onex-stepper-icon-size;
-      color: $onex-stepper-icon-default-color;
-    }
-
-    &--active &__icon .onex-material-icon {
-      color: $onex-stepper-icon-active-color;
-    }
-
-    &--done &__icon .onex-material-icon {
-      color: $onex-stepper-icon-done-color;
     }
   }
 }

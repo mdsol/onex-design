@@ -1,13 +1,34 @@
-.onex-sub-step {
-  .onex-step-item {
-    .onex-step-item--done .onex-step-item__icon .onex-material-icon {
-      color: $onex-stepper-icon-default-color;
-    }
+.onex-sub-step.onex-step-item {
+  padding-left: 2.5rem;
 
-    &:active {
-      .onex-step-item--done .onex-step-item__icon .onex-material-icon {
-        color: $onex-stepper-icon-browser-active-color;
-      }
+  &.onex-step-item--active .onex-step-item__icon .onex-material-icon {
+    color: $onex-stepper-icon-default-color;
+  }
+
+  &:active {
+    &.onex-step-item--active .onex-step-item__icon .onex-material-icon {
+      color: $onex-stepper-icon-browser-active-color;
     }
   }
 }
+
+.onex-stepper,
+.onex-step-wrap,
+.onex-step__sub-step-block {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.onex-step__sub-step-block {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out all;
+}
+
+.onex-step.onex-step-item.onex-step-item--active {
+  & + .onex-step__sub-step-block {
+    max-height: 500px;
+    transition: 0.3s ease-in-out all;
+  }
+}
+

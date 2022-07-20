@@ -32,12 +32,20 @@ const StepItem = ({
   }, [active, done]);
 
   return (
-    <button className={classes} type="button" disabled={disabled} onClick={onClick} {...accProps}>
+    <div
+      {...accProps}
+      className={classes}
+      tabIndex={0}
+      aria-hidden="true"
+      role="button"
+      disabled={disabled}
+      onClick={onClick}
+    >
       <span className="onex-step-item__icon">
         <Icon>{icon}</Icon>
       </span>
       {title && <span className="onex-step-item__title">{title}</span>}
-    </button>
+    </div>
   );
 };
 

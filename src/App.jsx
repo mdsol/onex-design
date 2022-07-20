@@ -172,7 +172,28 @@ const DevExamples = () => {
             {
               key: 'step1',
               title: 'Label',
-              subSteps: [{ key: 'subStep1', title: 'Sub Label' }],
+              active: true,
+              subSteps: [
+                { key: 'subStep1', title: 'Sub Label' },
+                { key: 'subStep2', title: 'Sub Label', active: true },
+                { key: 'subStep3', title: 'Sub Label', done: true },
+                { key: 'subStep4', title: 'Sub Label', disabled: true },
+              ],
+            },
+            {
+              key: 'step2',
+              title: 'Label',
+              active: true,
+            },
+            {
+              key: 'step2',
+              title: 'Label',
+              done: true,
+            },
+            {
+              key: 'step2',
+              title: 'Label',
+              disabled: true,
             },
           ]}
         />
