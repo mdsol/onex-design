@@ -86,9 +86,9 @@ const DatePicker = (props) => {
   };
 
   const onKeyDown = (e) => {
-    // if (e.key === 'Enter') {
-    //   update(_value);
-    // }
+    if (e.key === 'Enter') {
+      update(_value);
+    }
   };
 
   const handleChange = (e) => {
@@ -125,7 +125,7 @@ const DatePicker = (props) => {
         showCalendar={showCalendar}
         handleToggleCalendar={handleToggleCalendar}
         handleChange={handleChange}
-        // onKeyDown={onKeyDown}
+        onKeyDown={onKeyDown}
         onBlur={onBlur}
       />
       <Overlay
