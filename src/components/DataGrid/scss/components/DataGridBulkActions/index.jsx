@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { DataGridBulkActionsType } from '../../types/dataGridTypes';
 import Badge from '../../../../Badge/scss';
 import Button from '../../../../Buttons/scss';
@@ -22,11 +22,25 @@ const DataGridBulkActions = ({
 
   const [isIndeterminate, setIsIndeterminate] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
+  const parentRef = useRef(null);
+  const dropdownRef = useRef(null);
+  // const [_actions, setActions] = useState([]);
 
   useEffect(() => {
     setIsIndeterminate(!isAllRowsSelected);
     setIsChecked(isAllRowsSelected);
   }, [isAllRowsSelected]);
+
+  useEffect(() => {
+    const btns = document.querySelectorAll('.action');
+    let width = 8 + dropdownRef.current.clientWidth;
+    btns.forEach((item) => {
+      width += item.clientWidth + 8;
+    });
+    if (parentRef.current.clientWidth < width) {
+      // setActions(_actions);
+    }
+  });
 
   return (
     <div {...accProps} className={dataGridBulkActions}>
@@ -35,7 +49,7 @@ const DataGridBulkActions = ({
         checked={isChecked}
         indeterminate={isIndeterminate}
         className="onex-data-grid-bulk-actions__checkbox"
-        onClick={handleHide}
+        onChange={handleHide}
       />
       <div className="onex-data-grid-bulk-actions__info">
         <span className="label">Selected</span>
@@ -43,7 +57,7 @@ const DataGridBulkActions = ({
           {selectedRowsCount}
         </Badge>
       </div>
-      <div className="onex-data-grid-bulk-actions__actions">
+      <div className="onex-data-grid-bulk-actions__actions" ref={parentRef}>
         {actions.map((item) => (
           <Button onClick={item.action} size="sm" variant="secondary" className="action">
             {item.title}
@@ -56,6 +70,7 @@ const DataGridBulkActions = ({
           size="sm"
           align="end"
           title="More"
+          ref={dropdownRef}
         />
       </div>
     </div>

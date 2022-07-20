@@ -1,11 +1,13 @@
 import classNames from 'classnames';
+import { useEffect, useState } from 'react';
 import SegmentedToggle from '../../../../SegmentedToggle/scss';
 import SearchField from '../../../../SearchField/scss';
 import Button from '../../../../Buttons/scss';
 import Icon from '../../../../Icon/scss';
 import Dropdown from '../../../../Dropdown/scss';
-import Badge from '../../../../Badge/scss';
+import DataGridBulkActions from '../DataGridBulkActions/index';
 import { DataGridControlTypes } from '../../types/dataGridTypes';
+import Check from '../../../../Check/scss';
 
 const ViewTableIcons = [
   {
@@ -42,6 +44,8 @@ const DataGridControl = (props) => {
     secondaryActions,
     className,
     dataTestId,
+    dataTableBindingProps,
+    dataGridBulkActionsProps,
     ...accProps
   } = props;
 
@@ -49,12 +53,36 @@ const DataGridControl = (props) => {
     [className]: className,
   });
 
+  const { hasSelectedRows, isAllRowsSelected, selectedRowIds, handleHeaderCheck } =
+    dataTableBindingProps;
+
+  const [selectedRowsCount, setSelectedRowsCount] = useState();
+
+  useEffect(() => {
+    if (Object.values(dataTableBindingProps).length) {
+      setSelectedRowsCount(Object.values(selectedRowIds).filter((item) => item).length);
+    }
+  }, [dataTableBindingProps]);
+
+  useEffect(() => console.log('ctrl', props));
+
   return (
     <div {...accProps} className={dataGridControlsClasses} data-test-id={dataTestId}>
-      <h4 className="onex-data-grid-control__title">
-        {title}
-        {badge && <Badge type="default">{badge}</Badge>}
-      </h4>
+      {Object.values(dataTableBindingProps).length > 0 &&
+        (!hasSelectedRows ? (
+          <Check
+            id="onex-data-grid-control-check"
+            className="onex-data-grid-control__check"
+            onClick={handleHeaderCheck}
+          />
+        ) : (
+          <DataGridBulkActions
+            {...dataGridBulkActionsProps}
+            isAllRowsSelected={isAllRowsSelected}
+            selectedRowsCount={selectedRowsCount}
+            handleHide={() => handleHeaderCheck()}
+          />
+        ))}
       <div className="onex-data-grid-control__actions">
         {hasCustomControls && customControls}
         {hasViewOptions && (
