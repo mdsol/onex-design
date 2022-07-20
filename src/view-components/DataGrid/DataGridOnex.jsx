@@ -116,7 +116,6 @@ const DataGridOnex = () => {
       useRowSelection
       rowSelectionType="multi"
       handleSelection={handleSelectData}
-      draggable
     />
   );
 };
