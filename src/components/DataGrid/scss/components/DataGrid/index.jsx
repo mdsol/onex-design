@@ -62,6 +62,7 @@ const DataGrid = ({
         (dataGridControlProps && (
           <DataGridControl
             {...dataGridControlProps}
+            isDraggeble={draggable}
             dataTableBindingProps={bulkActionsProps}
             dataGridBulkActionsProps={dataGridBulkActionsProps}
           />

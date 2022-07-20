@@ -13,6 +13,7 @@ Primary.args = {
   variant: 'primary',
   children: 'Link',
   dataTestId: 'link-primary',
+  href: '#',
 };
 
 export const PrimaryWithLeadingIcon = Template.bind({});
@@ -21,6 +22,7 @@ PrimaryWithLeadingIcon.args = {
   leadingIcon: <Icon>star</Icon>,
   children: 'Link',
   dataTestId: 'link-primary',
+  href: '#',
 };
 
 export const PrimaryWithTrailingIcon = Template.bind({});
@@ -29,6 +31,7 @@ PrimaryWithTrailingIcon.args = {
   trailingIcon: <Icon>star</Icon>,
   children: 'Link',
   dataTestId: 'link-primary',
+  href: '#',
 };
 
 export const PrimaryWithTwoIcons = Template.bind({});
@@ -38,6 +41,7 @@ PrimaryWithTwoIcons.args = {
   trailingIcon: <Icon>star</Icon>,
   children: 'Link',
   dataTestId: 'link-primary',
+  href: '#',
 };
 
 export const PrimaryDisabled = Template.bind({});
@@ -46,6 +50,7 @@ PrimaryDisabled.args = {
   disabled: true,
   children: 'Link',
   dataTestId: 'link-primary',
+  href: '#',
 };
 
 export const Secondary = Template.bind({});
@@ -53,6 +58,7 @@ Secondary.args = {
   variant: 'secondary',
   children: 'Link',
   dataTestId: 'link-secondary',
+  href: '#',
 };
 
 export const SecondaryWithLeadingIcon = Template.bind({});
@@ -61,6 +67,7 @@ SecondaryWithLeadingIcon.args = {
   leadingIcon: <Icon>star</Icon>,
   children: 'Link',
   dataTestId: 'link-secondary',
+  href: '#',
 };
 
 export const SecondaryWithTrailingIcon = Template.bind({});
@@ -69,6 +76,7 @@ SecondaryWithTrailingIcon.args = {
   trailingIcon: <Icon>star</Icon>,
   children: 'Link',
   dataTestId: 'link-secondary',
+  href: '#',
 };
 
 export const SecondaryWithTwoIcons = Template.bind({});
@@ -78,6 +86,7 @@ SecondaryWithTwoIcons.args = {
   trailingIcon: <Icon>star</Icon>,
   children: 'Link',
   dataTestId: 'link-secondary',
+  href: '#',
 };
 
 export const SecondaryDisabled = Template.bind({});
@@ -86,4 +95,5 @@ SecondaryDisabled.args = {
   disabled: true,
   children: 'Link',
   dataTestId: 'link-secondary',
+  href: '#',
 };

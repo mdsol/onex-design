@@ -14,10 +14,12 @@
     border: 1px dashed $onex-dropzone-border-color;
     background-color: $onex-dropzone-bg-color;
 
-    &:hover:not(.onex-dropzone__area--error) {
+    &:hover:not(.onex-dropzone__area--error),
+    &:focus:not(.onex-dropzone__area--error) {
       cursor: pointer;
       border-color: $onex-dropzone-border-hover-color;
       background-color: $onex-dropzone-bg-hover-color;
+      outline: none;
 
       .onex-dropzone__icon {
         color: $onex-dropzone-icon-hover-color;

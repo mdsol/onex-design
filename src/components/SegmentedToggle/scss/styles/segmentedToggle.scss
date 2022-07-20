@@ -18,7 +18,10 @@
 
         .btn-check[disabled] + .onex-toggle__btn.btn-toggle,
         .btn-check:disabled + .onex-toggle__btn.btn-toggle {
-            opacity: 0.4;
+          pointer-events: none;
+          opacity: 0.4;
+          background-color: transparent;
+          color: $onex-segmented-toggle-disabled-color;
         }
     }
 
@@ -51,7 +54,10 @@
             justify-content: center;
             color: $onex-segmented-toggle-color;
 
-            &:hover {
+            &:hover:not(:disabled),
+            &:hover:not([disabled]),
+            &:focus:not(:disabled),
+            &:focus:not([disabled]) {
                 color: $onex-segmented-toggle-hover-color;
                 background-color: $onex-segmented-toggle-hover-bg-color;
             }
@@ -60,7 +66,10 @@
         .btn-check:checked + .onex-toggle__btn.btn {
             color: $onex-segmented-toggle-active-color;
             background-color: $onex-segmented-toggle-active-bg-color;
-            &:hover {
+            &:hover:not(:disabled),
+            &:hover:not([disabled]),
+            &:focus:not(:disabled),
+            &:focus:not([disabled]) {
                 color: $onex-segmented-toggle-active-hover-color;
                 background-color: $onex-segmented-toggle-active-hover-bg-color;
             }

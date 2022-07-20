@@ -10,7 +10,7 @@ const DataGridBulkActions = ({
   selectedRowsCount,
   isAllRowsSelected,
   actions,
-  dropdownActions,
+  defaultDropdownActions,
   handleHide,
   className,
   dataTestId,
@@ -22,9 +22,78 @@ const DataGridBulkActions = ({
 
   const [isIndeterminate, setIsIndeterminate] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
+  const [visibleActions, setVisibleActions] = useState([...actions]);
+  const [hideActions, setHideActions] = useState([...defaultDropdownActions]);
   const parentRef = useRef(null);
   const dropdownRef = useRef(null);
-  // const [_actions, setActions] = useState([]);
+  const biggerElementRef = useRef(null);
+
+  const calcVisibleActionsWidth = (biggerWidth) => {
+    const btns = document.querySelectorAll('.action');
+    let width = 8 + dropdownRef.current.clientWidth;
+    if (biggerWidth) {
+      btns?.forEach((item) => {
+        if (item.clientWidth > width) width = item.clientWidth;
+      });
+    } else {
+      btns?.forEach((item) => {
+        width += item.clientWidth + 8;
+      });
+    }
+    return width;
+  };
+
+  const toggleItems = (calcParentWidth, calcElementsWidth) => {
+    if (
+      calcParentWidth - calcElementsWidth() >= biggerElementRef.current ||
+      calcParentWidth - calcElementsWidth() <= -5
+    ) {
+      if (calcParentWidth < calcElementsWidth() && visibleActions.length > 0) {
+        setHideActions(() => [...hideActions, visibleActions[visibleActions.length - 1]]);
+        setVisibleActions(() => [...visibleActions.slice(0, visibleActions.length - 1)]);
+      } else if (
+        calcParentWidth > calcElementsWidth() &&
+        defaultDropdownActions.length < hideActions.length
+      ) {
+        setHideActions(() => [...hideActions.slice(0, hideActions.length - 1)]);
+        setVisibleActions(() => [...visibleActions, hideActions[hideActions.length - 1]]);
+      }
+    }
+  };
+
+  const updateSize = () => toggleItems(parentRef.current.clientWidth, calcVisibleActionsWidth);
+
+  useEffect(() => {
+    if (!biggerElementRef.current) biggerElementRef.current = calcVisibleActionsWidth(true);
+    const controllBar = document.querySelector('.onex-data-grid-control');
+    console.log(window.innerWidth, controllBar.scrollWidth);
+    if (window.innerWidth < controllBar.scrollWidth) {
+      const diffWidth = controllBar.scrollWidth - window.innerWidth + biggerElementRef.current;
+      let width = 0;
+      let num = -1;
+      const btns = document.querySelectorAll('.action');
+      for (let i = btns.length - 1; i >= 0; i - 1) {
+        console.log(width, diffWidth);
+        if (width <= diffWidth) {
+          width += btns[i].clientWidth;
+        } else {
+          num = btns.length - i;
+          break;
+        }
+      }
+      console.log(num, visibleActions.length, visibleActions.length - 1 - num);
+      if (visibleActions.length - num > 1) {
+        setHideActions(() => [
+          ...hideActions,
+          ...visibleActions.slice([visibleActions.length - 1 - num]).reverse(),
+        ]);
+        setVisibleActions(() => [...visibleActions.slice(0, visibleActions.length - 1 - num)]);
+      } else {
+        setHideActions(() => [...hideActions, ...visibleActions.reverse()]);
+        setVisibleActions(() => []);
+      }
+    }
+  }, [selectedRowsCount]);
 
   useEffect(() => {
     setIsIndeterminate(!isAllRowsSelected);
@@ -32,14 +101,8 @@ const DataGridBulkActions = ({
   }, [isAllRowsSelected]);
 
   useEffect(() => {
-    const btns = document.querySelectorAll('.action');
-    let width = 8 + dropdownRef.current.clientWidth;
-    btns.forEach((item) => {
-      width += item.clientWidth + 8;
-    });
-    if (parentRef.current.clientWidth < width) {
-      // setActions(_actions);
-    }
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
   });
 
   return (
@@ -58,20 +121,30 @@ const DataGridBulkActions = ({
         </Badge>
       </div>
       <div className="onex-data-grid-bulk-actions__actions" ref={parentRef}>
-        {actions.map((item) => (
-          <Button onClick={item.action} size="sm" variant="secondary" className="action">
-            {item.title}
-          </Button>
-        ))}
-        <Dropdown
-          variant="secondary"
-          id="secondary-actions"
-          items={dropdownActions}
-          size="sm"
-          align="end"
-          title="More"
-          ref={dropdownRef}
-        />
+        {visibleActions.length > 0
+          ? visibleActions.map((item) => (
+              <Button
+                onClick={item.action}
+                key={item.title}
+                size="sm"
+                variant="secondary"
+                className="action"
+              >
+                {item.title}
+              </Button>
+            ))
+          : null}
+        {hideActions && (
+          <Dropdown
+            variant="secondary"
+            id="secondary-actions"
+            items={hideActions}
+            size="sm"
+            align="end"
+            title={!visibleActions.length ? 'Actions' : 'More'}
+            ref={dropdownRef}
+          />
+        )}
       </div>
     </div>
   );
@@ -83,7 +156,7 @@ DataGridBulkActions.defaultProps = {
   selectedRowsCount: 0,
   isAllRowsSelected: false,
   actions: [],
-  dropdownActions: [],
+  defaultDropdownActions: [],
   handleHide: undefined,
   className: '',
   dataTestId: '',

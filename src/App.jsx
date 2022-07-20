@@ -203,7 +203,22 @@ const DevExamples = () => {
           rowsPerPageOptions={[10, 20, 30]}
           dataGridControlProps={GridControl}
           draggable
-          dataGridBulkActionsProps={{ actions: [{ title: 'action1' }] }}
+          dataGridBulkActionsProps={{
+            actions: [
+              { title: 'action1' },
+              { title: 'action2' },
+              { title: 'action3' },
+              { title: 'action4' },
+              { title: 'action5action5action5' },
+              { title: 'action5action5action6' },
+              { title: 'action5action5action7' },
+            ],
+            defaultDropdownActions: [
+              { title: 'action8' },
+              { title: 'action9' },
+              { title: 'action10' },
+            ],
+          }}
         />
         <br />
         <Button variant="primary" onClick={() => setShow(true)}>

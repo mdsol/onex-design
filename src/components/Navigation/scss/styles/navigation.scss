@@ -2,33 +2,33 @@
 @import '../components/NavItem/styles/navItem';
 
 .onex-nav {
-    border-bottom: none;
-    font-family: $font-family;
+  border-bottom: none;
+  font-family: $font-family;
 
-    &__item,
-    &__item-dropdown {
-        padding-left: $onex-nav-item-padding-left;
+  &__item,
+  &__item-dropdown {
+    padding-left: $onex-nav-item-padding-left;
 
-        &:first-child {
-            padding-left: 0;
-        }
+    &:first-child {
+      padding-left: 0;
     }
+  }
 
-    &__item + &__item-dropdown {
-        padding-left: calc(2 * #{$onex-nav-item-padding-left});
+  &__item + &__item-dropdown {
+    padding-left: calc(2 * #{$onex-nav-item-padding-left});
+  }
+
+  &__item-dropdown {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: $onex-nav-item-padding-left;
+      top: $onex-nav-item-padding-y;
+      height: calc(100% - 2 * #{$onex-nav-item-padding-y});
+      width: 1px;
+      background-color: $onex-nav-item-divider-bg-color;
     }
-
-    &__item-dropdown {
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: $onex-nav-item-padding-left;
-            top: $onex-nav-item-padding-y;
-            height: calc(100% - 2 * #{$onex-nav-item-padding-y});
-            width: 1px;
-            background-color: $onex-nav-item-divider-bg-color;
-        }
-    }
+  }
 }

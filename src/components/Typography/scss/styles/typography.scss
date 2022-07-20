@@ -11,7 +11,10 @@
   &--link {
     cursor: pointer;
     @include text-link();
-    &:hover {
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      outline: none;
       color: $primary-700;
     }
     &:active {

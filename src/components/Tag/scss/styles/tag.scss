@@ -3,7 +3,7 @@
   padding: 0.375rem 0.5rem;
   display: flex;
   align-items: center;
-  background-color: $secondary-500-opacity-01;
+  background-color: $onex-tag-background-color;
   border: none;
   height: $onex-tag-height-md;
   border-radius: $onex-tag-border-radius;
@@ -11,14 +11,17 @@
   font-style: normal;
   font-size: $onex-tag-font-size;
   line-height: $onex-tag-line-height;
-  color: $secondary-900;
+  color: $onex-tag-color;
   cursor: pointer;
   font-family: $font-family;
 
   &--variant-selection {
     cursor: pointer;
-    &:hover {
-      background-color: $secondary-100;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      background-color: $onex-tag-selection-background-color;
+      outline: none;
     }
   }
 
@@ -29,7 +32,7 @@
 
   &--size-sm {
     height: $onex-tag-height-sm;
-    padding: 0.125rem 0.25rem 0.125rem 0.5rem;
+    padding: $onex-tag-padding-y $onex-tag-padding-x $onex-tag-padding-y 0.5rem;
 
     .onex-tag__img {
       display: none;
@@ -37,7 +40,7 @@
   }
 
   &:disabled {
-    opacity: 0.3;
+    opacity: $onex-tag-disabled-opacity;
     pointer-events: none;
     cursor: not-allowed;
   }
@@ -47,16 +50,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 0.25rem;
-    padding: 0; //0.281rem;
+    margin-left: $onex-tag-close-margin-x;
+    padding: 0;
     border: 0;
     background-color: initial;
-    color: $secondary-500;
+    color: $onex-tag-close-color;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: $onex-tag-close-hover-color;
+      outline: none;
+    }
 
     & > svg,
     & > .onex-material-icon,
     & > .material-icons-round {
-      font-size: 1.25rem;
+      font-size: $onex-tag-close-font-size;
     }
   }
 
@@ -66,7 +76,7 @@
     justify-content: center;
     width: $onex-tag-img-size;
     height: $onex-tag-img-size;
-    margin-right: 0.5rem;
+    margin-right: $onex-tag-img-margin-x;
     border-radius: 100%;
     overflow: hidden;
 
@@ -78,13 +88,22 @@
 }
 
 .onex-tag--selected {
-  background-color: $primary-100;
+  background-color: $onex-tag-selected-background-color;
 
   .onex-tag__close {
-    color: $primary-600;
+    color: $onex-tag-selected-close-color;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: $onex-tag-selected-close-hover-color;
+      outline: none;
+    }
   }
 
-  &:hover {
-    background-color: $primary-200;
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $onex-tag-selected-hover-background-color;
+    outline: none;
   }
 }

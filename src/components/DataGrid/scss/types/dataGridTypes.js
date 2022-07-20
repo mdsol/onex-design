@@ -32,6 +32,7 @@ const DataGridControlTypes = PropTypes.shape({
   prymaryAction: PropTypes.func,
   prymaryActionText: PropTypes.string,
   secondaryActions: DataGridDropdownTypes,
+  isDraggeble: PropTypes.bool,
   className: PropTypes.string,
   dataTestId: PropTypes.string,
 });

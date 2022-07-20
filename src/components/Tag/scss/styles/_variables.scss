@@ -1,11 +1,27 @@
 $onex-tag-height-sm: 1.5rem;
 $onex-tag-height-md: 2rem;
 $onex-tag-border-radius: 0.25rem;
+$onex-tag-background-color: $secondary-500-opacity-01;
+$onex-tag-color: $secondary-900;
+$onex-tag-padding-y: 0.125rem;
+$onex-tag-padding-x: 0.25rem;
+$onex-tag-disabled-opacity: 0.3;
 
+$onex-tag-selection-background-color: $secondary-100;
+$onex-tag-selected-background-color: $primary-100;
+$onex-tag-selected-hover-background-color: $primary-200;
+$onex-tag-selected-close-color: $primary-600;
+$onex-tag-selected-close-hover-color: $primary-700;
+
+$onex-tag-close-color: $secondary-500;
+$onex-tag-close-hover-color: $secondary-900;
+$onex-tag-close-margin-x: 0.25rem;
+$onex-tag-close-font-size: $font-size-h4;
 $onex-tag-close-icon-size: 0.688rem;
 $onex-tag-btn-size-sm: $icon-size-sm;
 $onex-tag-btn-size-lg: $icon-size-lg;
 
+$onex-tag-img-margin-x: 0.5rem;
 $onex-tag-img-size: 1.5rem;
 $onex-tag-hover-text-color: $white;
 

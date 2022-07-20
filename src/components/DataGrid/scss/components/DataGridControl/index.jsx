@@ -42,6 +42,7 @@ const DataGridControl = (props) => {
     prymaryAction,
     prymaryActionText,
     secondaryActions,
+    isDraggeble,
     className,
     dataTestId,
     dataTableBindingProps,
@@ -51,6 +52,7 @@ const DataGridControl = (props) => {
 
   const dataGridControlsClasses = classNames('onex-data-grid-control', {
     [className]: className,
+    draggable: isDraggeble,
   });
 
   const { hasSelectedRows, isAllRowsSelected, selectedRowIds, handleHeaderCheck } =
@@ -159,6 +161,7 @@ DataGridControl.defaultProps = {
   prymaryAction: undefined,
   prymaryActionText: 'Primary',
   secondaryActions: [],
+  isDraggeble: false,
   className: undefined,
   dataTestId: undefined,
 };

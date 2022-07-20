@@ -21,7 +21,9 @@
         color: $pagination-arrow-color;
       }
 
-      &:hover:not(.disabled) {
+      &:hover:not(.disabled),
+      &:focus:not(.disabled) {
+        outline: none;
         svg path {
           fill: $pagination-next-color-hover;
         }
@@ -50,17 +52,19 @@
       border-radius: $pagination-item-border-radius;
       transition: none;
       text-decoration: none;
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $pagination-item-hover-background;
         color: $white;
-
+        box-shadow: none;
       }
     }
   }
   .pagination_arrow .page-link {
     background-color: $white;
     color: $pagination-arrow-color;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color:$white;
       color: $black;
     }
@@ -74,7 +78,8 @@
   border-radius: $pagination-item-border-radius;
   .page-link {
     color:$white;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $pagination-active-item-hover-background;
     }
   }
