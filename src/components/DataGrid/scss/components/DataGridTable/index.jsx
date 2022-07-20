@@ -69,8 +69,6 @@ const DataGridTable = ({
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
   const [activeId, setActiveId] = useState();
 
-  console.log('getRowId', getRowId);
-
   const {
     getTableProps,
     getTableBodyProps,
@@ -133,13 +131,7 @@ const DataGridTable = ({
   };
 
   // react drag and drop functions
-
-  console.log(data);
-  console.log(rows);
-
   const items = useMemo(() => rows?.map(({ id }) => id), [rows]);
-
-  console.log('items', items);
 
   const sensors = useSensors(
     useSensor(MouseSensor, {}),
