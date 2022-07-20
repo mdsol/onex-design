@@ -1,0 +1,13 @@
+.onex-sub-step {
+  .onex-step-item {
+    .onex-step-item--done .onex-step-item__icon .onex-material-icon {
+      color: $onex-stepper-icon-default-color;
+    }
+
+    &:active {
+      .onex-step-item--done .onex-step-item__icon .onex-material-icon {
+        color: $onex-stepper-icon-browser-active-color;
+      }
+    }
+  }
+}

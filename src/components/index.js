@@ -93,6 +93,7 @@ export { default as InlineAlert } from './InlineAlert/scss';
 export { default as Dropzone } from './Dropzone/scss';
 export { default as EmptyState } from './EmptyState/scss';
 export { default as FilterSelect } from './FilterSelect/scss';
+export { default as Stepper } from './Stepper/scss';
 // 1x styled components
 // export { default as StyledAvatar } from './Avatar/styled';
 // export { default as StyledIcon } from './Icon/styled';

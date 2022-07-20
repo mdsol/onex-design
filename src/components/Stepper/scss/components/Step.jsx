@@ -1,48 +1,38 @@
-import { useMemo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Icon from '../../../Icon/scss';
-import Button from "../../../Buttons/scss";
+import StepItem from './StepItem';
+import SubStep from './SubStep';
 
 const iconVariant = {
-  step: {
-    default: 'radio_button_unchecked',
-    active: 'play_circle',
-    done: 'check_circle',
-  },
-  subStep: {
-    default: 'radio_button_unchecked',
-    active: 'play_circle_outline',
-    done: 'check_circle_outline',
-  },
+  default: 'radio_button_unchecked',
+  active: 'play_circle',
+  done: 'check_circle',
 };
 
-const Step = ({ className, active, disabled, done, type, children, ...accProps }) => {
+const Step = ({ className, active, disabled, done, title, subSteps, onClick, ...accProps }) => {
   const classes = classNames('onex-step', {
-    'onex-subStep': type === 'subStep',
-    'onex-step--active': active,
-    'onex-step--disabled': disabled,
-    'onex-step--done': done,
     [className]: className,
   });
 
-  const icon = useMemo(() => {
-    if (active) {
-      return iconVariant[type].active;
-    }
-    if (done) {
-      return iconVariant[type].done;
-    }
-
-    return iconVariant[type].default;
-  }, [active, done]);
-
   return (
-    <div className={classes} {...accProps}>
-      <span className="onex-step__icon">
-        <Icon>{icon}</Icon>
-      </span>
-      {children && <span className="onex-step__title">{children}</span>}
+    <div className="onex-step-wrap">
+      <StepItem
+        className={classes}
+        iconVariant={iconVariant}
+        active={active}
+        disabled={disabled}
+        done={done}
+        title={title}
+        onClick={onClick}
+        {...accProps}
+      />
+      {subSteps?.length && (
+        <div className="onex-step__sub-step-block">
+          {subSteps.map((subStepData) => (
+            <SubStep key={subStepData.key} {...subStepData} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -52,8 +42,10 @@ Step.propTypes = {
   active: PropTypes.bool,
   disabled: PropTypes.bool,
   done: PropTypes.bool,
-  type: PropTypes.oneOf(['step', 'subStep']),
-  children: PropTypes.string,
+  title: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  subSteps: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 Step.defaultProps = {
@@ -61,8 +53,9 @@ Step.defaultProps = {
   active: false,
   disabled: false,
   done: false,
-  type: 'step',
-  children: undefined,
+  title: undefined,
+  subSteps: undefined,
+  onClick: () => {},
 };
 
 export default Step;
