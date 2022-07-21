@@ -1,42 +1,46 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ButtonGroup as ReactToggleButtonGroup } from 'react-bootstrap';
+import { ToggleButtonGroup as ReactToggleButtonGroup } from 'react-bootstrap';
 import ToggleButton from '../../ToggleButton/scss';
 import Icon from '../../Icon/scss';
 
-const SegmentedToggle = ({
-  variant,
-  size,
-  items,
-  defaultValue,
-  onChange,
-  groupName,
-  className,
-  dataTestId,
-  ...accProps
-}) => {
-  const classes = classNames('onex-segmentedToggle', `onex-segmentedToggle-size-${size}`, {
-    [className]: className,
-    icons: variant !== 'text',
-  });
-  return (
-    <ReactToggleButtonGroup
-      {...accProps}
-      onChange={onChange}
-      type="radio"
-      name={groupName}
-      defaultValue={defaultValue}
-      className={classes}
-      data-test-id={dataTestId}
-    >
-      {items.map(({ id, value, name, disabled = false, label }) => (
-        <ToggleButton key={id} value={value} id={id} name={name} disabled={disabled}>
-          {variant === 'icons' ? <Icon>{label}</Icon> : label}
-        </ToggleButton>
-      ))}
-    </ReactToggleButtonGroup>
-  );
-};
+const SegmentedToggle = React.forwardRef(
+  (
+    { variant, size, items, value, onChange, groupName, className, dataTestId, ...accProps },
+    ref,
+  ) => {
+    const classes = classNames('onex-segmentedToggle', `onex-segmentedToggle-size-${size}`, {
+      [className]: className,
+      icons: variant !== 'text',
+    });
+    return (
+      <ReactToggleButtonGroup
+        {...accProps}
+        ref={ref}
+        onChange={onChange}
+        type="radio"
+        name={groupName}
+        value={value}
+        className={classes}
+        data-test-id={dataTestId}
+      >
+        {items.map(({ id, value: _value, name, disabled = false, label }) => (
+          <ToggleButton
+            key={id}
+            value={_value}
+            id={id}
+            name={name}
+            disabled={disabled}
+            onChange={onChange}
+          >
+            {variant === 'icons' ? <Icon>{label}</Icon> : label}
+          </ToggleButton>
+        ))}
+      </ReactToggleButtonGroup>
+    );
+  },
+);
 
 SegmentedToggle.propTypes = {
   variant: PropTypes.oneOf(['icons', 'customIcons', 'text']),
@@ -50,7 +54,7 @@ SegmentedToggle.propTypes = {
       disabled: PropTypes.bool,
     }),
   ),
-  defaultValue: PropTypes.string,
+  value: PropTypes.string,
   groupName: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   className: PropTypes.string,
@@ -60,8 +64,8 @@ SegmentedToggle.propTypes = {
 SegmentedToggle.defaultProps = {
   variant: 'text',
   size: 'md',
+  value: undefined,
   items: [],
-  defaultValue: '',
   onChange: null,
   className: '',
   dataTestId: '',
