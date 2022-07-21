@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.7
+## 0.4.8
 
 Themeprovider: overlays, tooltips and offcanvas have been updated to use themeprovider and attach to the correct location. DataGrid: drag and drop arranging of rows now supported, bulk actions redesigned. Datepicker: keyboard navigation added. Filterselect: styles updated and fixed.
 ## 0.4.6

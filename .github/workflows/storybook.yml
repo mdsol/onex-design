@@ -1,8 +1,8 @@
 name: Build & Deploy Storybook
 on:
   push:
-    branches:
-      - feature/sb_workflow_test
+    tags:
+      - 'v*'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
