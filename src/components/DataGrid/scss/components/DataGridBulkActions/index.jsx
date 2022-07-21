@@ -30,7 +30,10 @@ const DataGridBulkActions = ({
 
   const calcVisibleActionsWidth = (biggerWidth) => {
     const btns = document.querySelectorAll('.action');
-    let width = 8 + dropdownRef.current.clientWidth;
+    let width = 8;
+    if (dropdownRef.current) {
+      width += dropdownRef.current.clientWidth;
+    }
     if (biggerWidth) {
       btns?.forEach((item) => {
         if (item.clientWidth > width) width = item.clientWidth;
@@ -66,7 +69,6 @@ const DataGridBulkActions = ({
   useEffect(() => {
     if (!biggerElementRef.current) biggerElementRef.current = calcVisibleActionsWidth(true);
     const controllBar = document.querySelector('.onex-data-grid-control');
-    console.log(window.innerWidth, controllBar.scrollWidth);
     if (window.innerWidth < controllBar.scrollWidth) {
       const diffWidth = controllBar.scrollWidth - window.innerWidth + biggerElementRef.current;
       let width = 0;
@@ -81,7 +83,6 @@ const DataGridBulkActions = ({
           break;
         }
       }
-      console.log(num, visibleActions.length, visibleActions.length - 1 - num);
       if (visibleActions.length - num > 1) {
         setHideActions(() => [
           ...hideActions,
