@@ -11,8 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/setup-node@v3
-        with:
-          cmd: deploy:sb -- --ci
+      - run: yarn install --frozen-lockfile
+      - run: npm run deploy:sb -- --ci
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
