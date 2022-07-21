@@ -134,7 +134,7 @@ const DataGridBulkActions = ({
               </Button>
             ))
           : null}
-        {hideActions && (
+        {!!hideActions.length && (
           <Dropdown
             variant="secondary"
             id="secondary-actions"
