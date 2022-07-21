@@ -4,7 +4,7 @@ import React from 'react';
 import { ToggleButton as ReactToggleButton } from 'react-bootstrap';
 
 const ToggleButton = React.forwardRef((props, ref) => {
-  const { children, className, disabled, value, id, name, dataTestId, ...accProps } = props;
+  const { children, className, disabled, value, id, name, dataTestId, onChange, ...accProps } = props;
   const buttonClassNames = classNames('onex-toggle-btn-wrapper', {
     [className]: className,
   });
@@ -16,6 +16,12 @@ const ToggleButton = React.forwardRef((props, ref) => {
         id={id}
         ref={ref}
         className="onex-toggle__btn"
+        onChange={onChange}
+        onKeyPress={(e) => {
+          if ((e.charCode === 13 || e.code === 'Enter') && !disabled) {
+            onChange(value);
+          }
+        }}
         value={value}
         disabled={disabled}
         name={name}
@@ -36,6 +42,7 @@ ToggleButton.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   name: PropTypes.string.isRequired,
   dataTestId: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 ToggleButton.defaultProps = {
@@ -44,6 +51,7 @@ ToggleButton.defaultProps = {
   children: undefined,
   value: undefined,
   dataTestId: undefined,
+  onChange: () => {},
 };
 
 export default ToggleButton;
