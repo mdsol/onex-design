@@ -1,7 +1,34 @@
 import PropTypes from 'prop-types';
 
-// TO DO: add types for filters when filters component will be ready
-const DataGridFiltersTypes = PropTypes.arrayOf(PropTypes.string);
+const optionType = PropTypes.shape({
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+});
+
+const groupedOptions = PropTypes.shape({
+  label: PropTypes.string,
+  options: PropTypes.arrayOf(optionType),
+});
+
+const DataGridFiltersTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    defaultFilter: PropTypes.bool,
+    disabled: PropTypes.bool,
+    label: PropTypes.string,
+    selectedValues: PropTypes.arrayOf(optionType),
+    options: PropTypes.arrayOf(optionType),
+    groupedOptions: PropTypes.arrayOf(groupedOptions),
+    size: PropTypes.oneOf(['md', 'sm']),
+    onSelect: PropTypes.func,
+    isMulti: PropTypes.bool,
+    dataTestId: PropTypes.string,
+    isAsync: PropTypes.bool,
+    onLoadOptions: PropTypes.func,
+    getOptionValue: PropTypes.func,
+    getOptionLabel: PropTypes.func,
+  }),
+);
 
 const DataGridDropdownTypes = PropTypes.arrayOf(
   PropTypes.shape({
