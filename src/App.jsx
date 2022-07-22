@@ -167,6 +167,9 @@ const DevExamples = () => {
           options={optionsMultiSelect}
           selectedValues={selectedValues}
           onSelect={handleSelect}
+          label="Country"
+          helpText="Select one"
+          isDisabled
         />
       </div>
       <div>
