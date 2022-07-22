@@ -1,6 +1,16 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import ViewComponents from './view-components';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone } from './components';
+import {
+  Tabs,
+  Check,
+  DataGrid,
+  Modal,
+  Button,
+  Card,
+  Select,
+  Dropzone,
+  Stepper,
+} from './components';
 import ThemeProvider from './components/ThemeProvider';
 
 import './scss/platform.scss';
@@ -156,6 +166,38 @@ const DevExamples = () => {
 
   return (
     <div className="p-5">
+      <div style={{ padding: '20px', minHeight: '300px' }}>
+        <Stepper
+          stepItemsData={[
+            {
+              key: 'step1',
+              title: 'Label',
+              active: true,
+              subSteps: [
+                { key: 'subStep1', title: 'Sub Label' },
+                { key: 'subStep2', title: 'Sub Label', active: true },
+                { key: 'subStep3', title: 'Sub Label', done: true },
+                { key: 'subStep4', title: 'Sub Label', disabled: true },
+              ],
+            },
+            {
+              key: 'step2',
+              title: 'Label',
+              active: true,
+            },
+            {
+              key: 'step2',
+              title: 'Label',
+              done: true,
+            },
+            {
+              key: 'step2',
+              title: 'Label',
+              disabled: true,
+            },
+          ]}
+        />
+      </div>
       <div style={{ padding: '20px', minHeight: '300px' }}>
         <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
       </div>
