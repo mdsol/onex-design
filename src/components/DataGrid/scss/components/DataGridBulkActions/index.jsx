@@ -69,7 +69,7 @@ const DataGridBulkActions = ({
   useEffect(() => {
     if (!biggerElementRef.current) biggerElementRef.current = calcVisibleActionsWidth(true);
     const controllBar = document.querySelector('.onex-data-grid-control');
-    if (window.innerWidth < controllBar.scrollWidth) {
+    if (controllBar && window.innerWidth < controllBar.scrollWidth) {
       const diffWidth = controllBar.scrollWidth - window.innerWidth + biggerElementRef.current;
       let width = 0;
       let num = -1;
