@@ -1,18 +1,18 @@
 name: Build & Deploy Storybook
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: actions/setup-node@v3
         with:
-          cmd: install
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: deploy:sb -- --ci
+          node-version: 16
+      - run: yarn install --frozen-lockfile
+      - name: Deploy Storybook to GH Pages
+        run: npm run deploy:sb -- --ci
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
