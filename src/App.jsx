@@ -1,6 +1,16 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import ViewComponents from './view-components';
-import { Tabs, Check, DataGrid, Modal, Button, Card, Select, Dropzone } from './components';
+import {
+  Tabs,
+  Check,
+  DataGrid,
+  Modal,
+  Button,
+  Card,
+  Select,
+  Dropzone,
+  DatePicker,
+} from './components';
 import ThemeProvider from './components/ThemeProvider';
 
 import './scss/platform.scss';
@@ -156,6 +166,13 @@ const DevExamples = () => {
 
   return (
     <div className="p-5">
+      <div>
+        <DatePicker
+          onChange={(date) => {
+            console.log('CHANGED', date);
+          }}
+        />
+      </div>
       <div style={{ padding: '20px', minHeight: '300px' }}>
         <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
       </div>
