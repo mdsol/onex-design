@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.9
+
+Datepicker; popup calendar now removed from the dom after closing. Select component; label does not change opacity when disabled. DataGrid; bulk action styles and bug fixes.
 ## 0.4.8
 
 Themeprovider: overlays, tooltips and offcanvas have been updated to use themeprovider and attach to the correct location. DataGrid: drag and drop arranging of rows now supported, bulk actions redesigned. Datepicker: keyboard navigation added. Filterselect: styles updated and fixed.
