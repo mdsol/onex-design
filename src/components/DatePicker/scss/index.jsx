@@ -128,38 +128,40 @@ const DatePicker = (props) => {
         onKeyDown={onKeyDown}
         onBlur={onBlur}
       />
-      <Overlay
-        rootClose
-        onHide={() => setShowCalendar(false)}
-        container={target.current}
-        target={target.current}
-        show={showCalendar}
-        offset={[0, 4]}
-        placement="bottom-start"
-      >
-        {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
-          <Calendar
-            date={date}
-            setDate={setDate}
-            overlayProps={overlayProps}
-            disabledDates={disabledDates}
-            disabledDay={disabledDay}
-            className={calendarClassName}
-            locale={locale}
-            dateDisplayFormat={dateDisplayFormat}
-            weekdayDisplayFormat={weekdayDisplayFormat}
-            dayDisplayFormat={dayDisplayFormat}
-            dateOptions={dateOptions}
-            minDate={minDate}
-            maxDate={maxDate}
-            weekStartsOn={weekStartsOn}
-            setValue={_setValue}
-            formatDate={formatDate}
-            setShowCalendar={setShowCalendar}
-            setIsError={setIsError}
-          />
-        )}
-      </Overlay>
+      {showCalendar ? (
+        <Overlay
+          rootClose
+          onHide={() => setShowCalendar(false)}
+          container={target.current}
+          target={target.current}
+          show={showCalendar}
+          offset={[0, 4]}
+          placement="bottom-start"
+        >
+          {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
+            <Calendar
+              date={date}
+              setDate={setDate}
+              overlayProps={overlayProps}
+              disabledDates={disabledDates}
+              disabledDay={disabledDay}
+              className={calendarClassName}
+              locale={locale}
+              dateDisplayFormat={dateDisplayFormat}
+              weekdayDisplayFormat={weekdayDisplayFormat}
+              dayDisplayFormat={dayDisplayFormat}
+              dateOptions={dateOptions}
+              minDate={minDate}
+              maxDate={maxDate}
+              weekStartsOn={weekStartsOn}
+              setValue={_setValue}
+              formatDate={formatDate}
+              setShowCalendar={setShowCalendar}
+              setIsError={setIsError}
+            />
+          )}
+        </Overlay>
+      ) : null}
     </div>
   );
 };
