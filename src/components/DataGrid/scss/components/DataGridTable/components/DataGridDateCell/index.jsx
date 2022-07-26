@@ -108,9 +108,7 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
         onChange={onChange}
         onBlur={onBlur}
         CustomInputComponent={DateInput}
-        helpText="Test help text"
-        isInvalid
-        errorMessage="some error message"
+        {...cell?.column}
       />
     </td>
   );
