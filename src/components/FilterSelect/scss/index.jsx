@@ -131,6 +131,7 @@ const FilterSelect = ({
     e.stopPropagation();
     setSelectedOptions([]);
     setFilteredOptions([]);
+    return onSelect?.([]);
   };
 
   const handleApplyFilter = () => {

@@ -20,6 +20,7 @@ const Dropdown = React.forwardRef((props, ref) => {
     onSelect,
     dataTestId,
     as,
+    isSearchable,
     ...accProps
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
@@ -48,6 +49,7 @@ const Dropdown = React.forwardRef((props, ref) => {
       </ReactDropdown.Toggle>
       <ReactDropdown.Menu
         as={DropdownMenu}
+        isSearchable={isSearchable}
         align={align}
         popperConfig={{
           modifiers: [
@@ -121,6 +123,7 @@ Dropdown.propTypes = {
   onSelect: PropTypes.func,
   dataTestId: PropTypes.string,
   as: PropTypes.node,
+  isSearchable: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
@@ -135,6 +138,7 @@ Dropdown.defaultProps = {
   buttonStyle: 'text',
   dataTestId: undefined,
   as: undefined,
+  isSearchable: false,
 };
 
 export default Dropdown;

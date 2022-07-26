@@ -26,6 +26,7 @@ const DataGrid = ({
   ...accProps
 }) => {
   const dataRef = useRef(data);
+  const [filterData, setFilterData] = useState({});
   const [renderedData, setRenderedData] = useState(data);
   const [skipPageReset, setSkipPageReset] = useState(false);
   const [bulkActionsProps, setBulkActionsProps] = useState({});
@@ -52,10 +53,20 @@ const DataGrid = ({
     });
   };
 
+  const handleFilter = (option, id) => {
+    if (option.length) {
+      setFilterData({ ...filterData, [id]: option[0].value });
+    } else {
+      setFilterData({ ...filterData, [id]: '' });
+    }
+  };
+
   useEffect(() => {
     setSkipPageReset(false);
     handleUpdateData?.(dataRef.current);
   }, [dataRef.current]);
+
+  console.log('FILTER DATA', filterData);
 
   return (
     <div className={dataGridClasses}>
@@ -66,6 +77,7 @@ const DataGrid = ({
             isDraggeble={draggable}
             dataTableBindingProps={bulkActionsProps}
             dataGridBulkActionsProps={dataGridBulkActionsProps}
+            handleFilter={handleFilter}
           />
         ))}
       <DataGridTable
@@ -85,6 +97,8 @@ const DataGrid = ({
         setData={setRenderedData}
         setBulkActionsProps={setBulkActionsProps}
         getRowId={getRowId}
+        filters={dataGridControlProps?.filters}
+        filterData={filterData}
         {...accProps}
       />
     </div>

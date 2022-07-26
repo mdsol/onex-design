@@ -56,12 +56,13 @@ const DataGridControlTypes = PropTypes.shape({
   filters: DataGridFiltersTypes,
   getActiveFilters: PropTypes.func,
   getSearchQuery: PropTypes.func,
-  prymaryAction: PropTypes.func,
-  prymaryActionText: PropTypes.string,
+  primaryAction: PropTypes.func,
+  primaryActionText: PropTypes.string,
   secondaryActions: DataGridDropdownTypes,
   isDraggeble: PropTypes.bool,
   className: PropTypes.string,
   dataTestId: PropTypes.string,
+  handleFilter: PropTypes.func,
 });
 
 const actionsType = PropTypes.arrayOf(
@@ -85,4 +86,4 @@ const DataGridBulkActionsType = PropTypes.shape({
   dataTestId: PropTypes.string,
 });
 
-export { DataGridBulkActionsType, DataGridControlTypes };
+export { DataGridFiltersTypes, DataGridBulkActionsType, DataGridControlTypes };

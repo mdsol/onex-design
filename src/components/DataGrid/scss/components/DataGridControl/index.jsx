@@ -9,9 +9,9 @@ import Button from '../../../../Buttons/scss';
 import Icon from '../../../../Icon/scss';
 import Dropdown from '../../../../Dropdown/scss';
 import DataGridBulkActions from '../DataGridBulkActions/index';
+import DataGridFilters from '../DataGridFilters/index';
 import { DataGridControlTypes } from '../../types/dataGridTypes';
 import Check from '../../../../Check/scss';
-import DataGridFilters from '../DataGridFilters/index';
 
 const ViewTableIcons = [
   {
@@ -67,6 +67,7 @@ const DataGridControl = (props) => {
     dataTestId,
     dataTableBindingProps,
     dataGridBulkActionsProps,
+    handleFilter,
     ...accProps
   } = props;
 
@@ -119,7 +120,6 @@ const DataGridControl = (props) => {
               className="onex-data-grid-control__actions-elem"
             />
           )}
-          {/* TO DO: replace mock component to filters component when it will be ready */}
           {!!filters.length && <FilterToggle eventKey="0" />}
           {hasSearch && (
             <span className="onex-data-grid-control__actions-search">
@@ -148,7 +148,7 @@ const DataGridControl = (props) => {
         </div>
       </div>
       <Accordion.Collapse eventKey="0">
-        <DataGridFilters filters={filters} />
+        <DataGridFilters filters={filters} handleFilter={handleFilter} />
       </Accordion.Collapse>
     </Accordion>
   );
@@ -184,6 +184,7 @@ DataGridControl.defaultProps = {
   isDraggeble: false,
   className: undefined,
   dataTestId: undefined,
+  handleFilter: undefined,
 };
 
 export default DataGridControl;

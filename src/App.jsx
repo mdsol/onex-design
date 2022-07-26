@@ -13,6 +13,7 @@ const dataGridColumns = [
   {
     Header: 'Study',
     accessor: 'study',
+    filter: 'includes',
   },
   {
     Header: 'Country',
@@ -45,7 +46,7 @@ const newPerson = (ind) => ({
   id: `M123${Date.now().toString(36) + Math.random().toString(36).substr(2)}`,
   study: `Test${ind}`,
   country: `United States${ind}`,
-  category: 'Management',
+  category: `Management${ind}`,
   created: '26 Aug 2020',
 });
 
@@ -144,6 +145,7 @@ const DevExamples = () => {
     filters: [
       {
         id: 'study',
+        name: 'Study',
         defaultFilter: true,
         options: [
           {
@@ -174,10 +176,41 @@ const DevExamples = () => {
       },
       {
         id: 'country',
+        name: 'Country',
         defaultFilter: true,
         options: [
           {
             value: 'United States0',
+            label: 'United States0',
+          },
+          {
+            value: 'United States1',
+            label: 'United States1',
+          },
+          {
+            value: 'United States2',
+            label: 'United States2',
+          },
+          {
+            value: 'United States3',
+            label: 'United States3',
+          },
+          {
+            value: 'United States4',
+            label: 'United States4',
+          },
+          {
+            value: 'United States5',
+            label: 'United States5',
+          },
+        ],
+      },
+      {
+        id: 'category',
+        name: 'Сategory',
+        options: [
+          {
+            value: ' 0',
             label: 'United States0',
           },
           {
