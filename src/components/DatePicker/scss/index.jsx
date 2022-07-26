@@ -73,14 +73,27 @@ const DatePicker = (props) => {
 
   const update = (newValue) => {
     if (isError || !isChanged || !newValue) {
+      if (isError) {
+        onChange({
+          isValid: false,
+          value: newValue,
+        });
+      }
       return;
     }
     const parsed = parse(newValue, dateDisplayFormat, new Date(), dateOptions);
     if (isValid(parsed)) {
       setIsChanged(false);
-      onChange?.(parsed);
+      onChange({
+        isValid: true,
+        value: parsed,
+      });
       setDate(parsed);
     } else {
+      onChange({
+        isValid: false,
+        value: parsed,
+      });
       setIsError(true);
     }
   };
@@ -105,6 +118,13 @@ const DatePicker = (props) => {
     e.preventDefault();
     e.stopPropagation();
     setShowCalendar(!showCalendar);
+  };
+
+  const pickerOnChange = (pickedDate) => {
+    onChange({
+      isValid: true,
+      value: pickedDate,
+    });
   };
 
   return (
@@ -208,7 +228,7 @@ DatePicker.defaultProps = {
   isInvalid: false,
   required: false,
   helpText: undefined,
-  onChange: undefined,
+  onChange: () => {},
   disabledDates: [],
   disabledDay: () => {},
   calendarClassName: undefined,

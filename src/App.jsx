@@ -167,10 +167,11 @@ const DevExamples = () => {
   return (
     <div className="p-5">
       <div>
-        <DatePicker />
-      </div>
-      <div>
-        <DatePicker />
+        <DatePicker
+          onChange={(date) => {
+            console.log('CHANGED', date);
+          }}
+        />
       </div>
       <div style={{ padding: '20px', minHeight: '300px' }}>
         <Dropzone ref={dropZoneRef} onDrop={handleOnDrop} files={attachedFiles} />
