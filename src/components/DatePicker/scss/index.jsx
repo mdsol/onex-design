@@ -71,6 +71,12 @@ const DatePicker = (props) => {
     _setValue(formatDate(value, dateDisplayFormat, dateOptions));
   }, [value]);
 
+  useEffect(() => {
+    if (date) {
+      onChange?.(date);
+    }
+  }, [date]);
+
   const update = (newValue) => {
     if (isError || !isChanged || !newValue) {
       return;

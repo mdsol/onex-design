@@ -68,6 +68,10 @@ dvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvs
 dvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdvsdvsfvsdvsdvdsvsdv
 sdvsfvsdvsdvdsvsdv`;
 
+const dataPickerChange = (date) => {
+  console.log('Date', date);
+};
+
 // eslint-disable-next-line import/prefer-default-export
 export const config = {
   data: {
@@ -499,6 +503,7 @@ export const config = {
         variants: [
           {
             size: 'sm',
+            onChange: dataPickerChange,
           },
           {
             size: 'md',
