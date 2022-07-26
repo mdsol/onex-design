@@ -1,13 +1,77 @@
 .onex-data-grid-date-cell {
-  &__input.form-control {
-    border: none;
-    padding: $onex-data-grid-date-cell-padding-y $onex-data-grid-date-cell-padding-x;
-    font-size: $onex-data-grid-date-cell-font-size;
-    line-height: $onex-data-grid-date-cell-line-height;
-    background-color: inherit;
-    &:focus {
+  padding: 0.625rem 0.75rem 0.625rem 0.5rem;
+
+  &__input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .form-control {
+      display: inline-flex;
+      width: 5.8rem;
+      border: none;
+      padding: 0.25rem;
+      font-size: $onex-data-grid-date-cell-font-size;
+      line-height: $onex-data-grid-date-cell-line-height;
       background-color: inherit;
+
+      &:focus {
+        background-color: inherit;
+      }
+
+      &:invalid,
+      &.is-invalid,
+      &[required] {
+        border: none !important;
+        background-image: none;
+        padding-right: 0.25rem;
+        color: $onex-data-grid-date-cell-error-border-color;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
     }
+  }
+
+  &--disabled {
+    opacity: 0.4;
+  }
+
+  &__toggle-icon {
+    & > svg {
+      width: $onex-data-grid-date-icon;
+      height: $onex-data-grid-date-icon;
+    }
+
+    & > .onex-material-icon,
+    & > .material-icons-round {
+      font-size: $onex-data-grid-date-icon;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    color: $onex-data-grid-date-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &--open {
+      color: $onex-data-grid-date-icon-open-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
   }
 
   &.onex-data-grid-date-cell__text-align-left {
@@ -51,37 +115,7 @@ td.onex-data-grid-date-cell {
     outline-offset: -0.125rem;
   }
 
-  .onex-data-grid-date-cell__input {
-    position: relative;
-
-    &--disabled {
-      opacity: 0.4;
-    }
-
-    &__toggle-calendar {
-      & > svg {
-        width: $onex-data-grid-date-icon;
-        height: $onex-data-grid-date-icon;
-      }
-
-      & > .onex-material-icon,
-      & > .material-icons-round {
-        font-size: $onex-data-grid-date-icon;
-      }
-
-      position: absolute;
-      display: inline-flex;
-      align-items: center;
-      top: 50%;
-      transform: translateY(-50%);
-      color: $onex-data-grid-date-icon-color;
-      background: none;
-      border: none;
-      padding: 0;
-
-      &:focus {
-        outline: none;
-      }
-    }
+  &--error {
+    outline: solid 2px $onex-data-grid-date-cell-error-border-color;
   }
 }

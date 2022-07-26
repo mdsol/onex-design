@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Form } from 'react-bootstrap';
+import DataGridTooltip from '../DataGridTooltip';
 import DatePicker from '../../../../../../DatePicker/scss';
 import Icon from '../../../../../../Icon/scss';
 
@@ -26,31 +27,49 @@ const DateInput = React.forwardRef((props, ref) => {
     showCalendar,
     ...accProps
   } = props;
+
+  const dateInputClassNames = classNames('onex-data-grid-date-cell-date', {
+    'onex-data-grid-date-cell--disabled': disabled,
+    'onex-data-grid-date-cell--focused': showCalendar,
+  });
+
   return (
-    <div className="onex-data-grid-date-cell__input">
-      <Form.Control
-        ref={ref}
-        autoFocus={autoFocus}
-        placeholder={placeholder}
-        disabled={disabled}
-        isInvalid={isInvalid}
-        readOnly={readOnly}
-        required={required}
-        value={value}
-        onKeyDown={onKeyDown}
-        onChange={handleChange}
-        onBlur={onBlur}
-        {...accProps}
-      />
-      <button
-        className="onex-data-grid-date-cell__toggle-icon"
-        type="button"
-        onClick={handleToggleCalendar}
-        disabled={disabled}
-      >
-        <Icon>{showCalendar ? 'expand_less' : 'expand_more'}</Icon>
-      </button>
-    </div>
+    <Form.Group ref={target} {...accProps} className={dateInputClassNames}>
+      <div className="onex-data-grid-date-cell__input">
+        <Form.Control
+          ref={ref}
+          autoFocus={autoFocus}
+          placeholder={placeholder}
+          disabled={disabled}
+          isInvalid={isInvalid}
+          readOnly={readOnly}
+          required={required}
+          value={value}
+          onKeyDown={onKeyDown}
+          onChange={handleChange}
+          onBlur={onBlur}
+          {...accProps}
+        />
+        {((isInvalid && errorMessage) || helpText) && (
+          <div className="onex-data-grid-date-cell__tooltip">
+            <DataGridTooltip
+              type={isInvalid ? 'error' : 'info'}
+              message={isInvalid ? errorMessage : helpText}
+            />
+          </div>
+        )}
+        <button
+          className={classNames('onex-data-grid-date-cell__toggle-icon', {
+            'onex-data-grid-date-cell__toggle-icon--open': showCalendar,
+          })}
+          type="button"
+          onClick={handleToggleCalendar}
+          disabled={disabled}
+        >
+          <Icon>{showCalendar ? 'expand_less' : 'expand_more'}</Icon>
+        </button>
+      </div>
+    </Form.Group>
   );
 });
 
@@ -65,6 +84,7 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
     `onex-data-grid-date-cell__text-variant-${cell?.column.textVariant || 'regular'}`,
     {
       'onex-data-grid__cell-divider': cell?.column.hasDivider,
+      'onex-data-grid-date-cell--error': cell?.column.isInvalid,
     },
   );
 
@@ -83,10 +103,14 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
   return (
     <td className={dataGridEditableCellClassNames} {...cell.getCellProps()}>
       <DatePicker
-        className="onex-data-grid-editable-cell__input"
+        className="onex-data-grid-date-cell"
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        CustomInputComponent={DateInput}
+        helpText="Test help text"
+        isInvalid
+        errorMessage="some error message"
       />
     </td>
   );

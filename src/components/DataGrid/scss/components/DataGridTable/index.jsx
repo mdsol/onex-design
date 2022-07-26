@@ -23,6 +23,7 @@ import TablePagination from '../../../../TablePagination/scss';
 import DataGridCell from './components/DataGridCell';
 import DataGridCustomCell from './components/DataGridCustomCell';
 import DataGridEditableCell from './components/DataGridEditableCell';
+import DataGridDateCell from './components/DataGridDateCell';
 import DataGridHeader from './components/DataGridHeader';
 import DraggableTableRow from './components/Draggable/DraggableTableRow';
 import StaticTableRow from './components/Draggable/StaticTableRow';
@@ -30,20 +31,34 @@ import DragHandle from './components/Draggable/DragHandle';
 import Check from '../../../../Check/scss';
 
 const handleColumnType = (row, cell, cellInd, updateData) => {
-  if (cell?.column.type === 'editable') {
-    return (
-      <DataGridEditableCell
-        key={`body_cell_${row.id}_${cellInd}`}
-        row={row}
-        cell={cell}
-        updateData={updateData}
-      />
-    );
+  switch (cell?.column.type) {
+    case 'editable': {
+      return (
+        <DataGridEditableCell
+          key={`body_cell_${row.id}_${cellInd}`}
+          row={row}
+          cell={cell}
+          updateData={updateData}
+        />
+      );
+    }
+    case 'custom': {
+      return <DataGridCustomCell key={`body_cell_${row.id}_${cellInd}`} row={row} cell={cell} />;
+    }
+    case 'date-editable': {
+      return (
+        <DataGridDateCell
+          key={`body_cell_${row.id}_${cellInd}`}
+          row={row}
+          cell={cell}
+          updateData={updateData}
+        />
+      );
+    }
+    default: {
+      return <DataGridCell key={`body_cell_${row.id}_${cellInd}`} row={row} cell={cell} />;
+    }
   }
-  if (cell?.column.type === 'custom') {
-    return <DataGridCustomCell key={`body_cell_${row.id}_${cellInd}`} row={row} cell={cell} />;
-  }
-  return <DataGridCell key={`body_cell_${row.id}_${cellInd}`} row={row} cell={cell} />;
 };
 
 const DataGridTable = ({
@@ -81,7 +96,6 @@ const DataGridTable = ({
     setPageSize,
     canNextPage,
     canPreviousPage,
-    pageCount,
     state: { pageSize, pageIndex },
   } = useTable(
     {
@@ -318,13 +332,13 @@ DataGridTable.propTypes = {
     PropTypes.shape({
       Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
       accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-      type: PropTypes.oneOf(['action', 'custom', 'editable']),
+      type: PropTypes.oneOf(['action', 'custom', 'editable', 'date-editable']),
       hasDivider: PropTypes.bool,
       columns: PropTypes.arrayOf(
         PropTypes.shape({
           Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
           accessor: PropTypes.string,
-          type: PropTypes.oneOf(['action', 'custom', 'editable']),
+          type: PropTypes.oneOf(['action', 'custom', 'editable', 'date-editable']),
           hasDivider: PropTypes.bool,
           textAlign: PropTypes.oneOf(['left', 'right']),
           textVariant: PropTypes.oneOf(['regular', 'semibold']),
