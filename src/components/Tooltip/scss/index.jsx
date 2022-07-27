@@ -16,10 +16,11 @@ const Tooltip = (props) => {
     trigger,
     tooltipChildren,
     dataTestId,
+    variant,
     ...accProps
   } = props;
 
-  const toggleClassNames = classNames('onex-tooltip', `onex-tooltip--default`, {
+  const toggleClassNames = classNames('onex-tooltip', `onex-tooltip--${variant}`, {
     [className]: className,
   });
 
@@ -62,6 +63,7 @@ Tooltip.propTypes = {
   show: PropTypes.bool,
   defaultShow: PropTypes.bool,
   onToggle: PropTypes.func,
+  variant: PropTypes.oneOf(['default', 'error', 'warning']),
   tooltipChildren: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   placement: PropTypes.oneOf([
     'auto-start',
@@ -91,6 +93,7 @@ Tooltip.defaultProps = {
   className: undefined,
   children: undefined,
   container: undefined,
+  variant: 'default',
   delay: { show: 250, hide: 300 },
   show: undefined,
   onToggle: undefined,

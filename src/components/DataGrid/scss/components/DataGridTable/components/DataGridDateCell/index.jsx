@@ -75,6 +75,7 @@ const DateInput = React.forwardRef((props, ref) => {
 
 const DataGridDateCell = ({ cell, row, updateData }) => {
   const cellProps = typeof cell.value === 'object' ? cell.value : { value: cell.value };
+  const dateProps = cell?.value?.dateProps || {};
 
   const [value, setValue] = useState('');
 
@@ -84,7 +85,7 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
     `onex-data-grid-date-cell__text-variant-${cell?.column.textVariant || 'regular'}`,
     {
       'onex-data-grid__cell-divider': cell?.column.hasDivider,
-      'onex-data-grid-date-cell--error': cell?.column.isInvalid,
+      'onex-data-grid-date-cell--error': cell?.column.isInvalid || dateProps?.isInvalid,
     },
   );
 
@@ -109,6 +110,7 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
         onBlur={onBlur}
         CustomInputComponent={DateInput}
         {...cell?.column}
+        {...dateProps}
       />
     </td>
   );

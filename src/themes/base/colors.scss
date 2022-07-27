@@ -69,6 +69,7 @@ $warning-700: rgba(128, 42, 0, 1);
 $warning-800: rgba(89, 29, 0, 1);
 $warning-900: rgba(52, 17, 0, 1);
 $warning: $warning-200;
+$warning-opacity-85: rgba(252, 185, 22, 0.85);
 
 $error-50: rgba(255, 236, 238, 1);
 $error-100: rgba(253, 215, 217, 1);
@@ -82,6 +83,7 @@ $error-700: rgba(147, 0, 19, 1);
 $error-800: rgba(104, 0, 13, 1);
 $error-900: rgba(65, 0, 11, 1);
 $error: $error-500;
+$error-opacity-85: rgba(217, 21, 34, 0.85);
 
 $white: rgba(255, 255, 255, 1);
 

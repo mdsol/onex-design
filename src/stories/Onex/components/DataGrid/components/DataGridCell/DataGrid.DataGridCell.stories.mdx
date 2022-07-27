@@ -331,6 +331,118 @@ For using editable table cell in ```columns``` prop use - ```type: 'editable'```
 </Canvas>
 
 
+### Editable cell type date
+Allows entering or changing the table cell content.
+For using editable table cell in ```columns``` prop use - ```type: 'date-editable'```.
+In order to set ```DatePicker``` properties for a specific cell, you need to pass the ```dateProps``` property to the value object.
+Example:
+
+```
+  const dataTable = [
+  {
+      studyName: 'Study name 2',
+      stage: 'Stage 2',
+      status: 'Status 2',
+      date: {
+        value: '2021/07/11',
+        dateProps: {
+          isInvalid: true,
+          errorMessage: 'Incorrect data',
+          helpText: 'This is a date or birth of the patient',
+        },
+      },
+    },
+    {
+      studyName: 'Study name 3',
+      stage: 'Stage 3',
+      status: 'Status 3',
+      date: '2022/10/01',
+    }
+  ],
+````
+
+Property info
+
+| Name                 | Type            | Description                                                                                                                                                                |
+| -------------------  | ----------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| errorMessage         | String          | The text of error message.                                                                                                                                                 |
+| disabled             | Boolean         | If true, the component is disabled.                                                                                                                                        |
+| isInvalid            | Boolean         | A nested array of columns.                                                                                                                                                 |
+| helpText             | String          | The text with helpful information.                                                                                                                                         |
+| disabledDates        | Date[]          | Array of dates that are disabled in calendar.                                                                                                                              |
+| disabledDay          | fn(date: Date)  | Predicate function that disable day fn(date: Date).                                                                                                                        |
+| locale               |                 | You can view full list from https://github.com/hypeserver/react-date-range/blob/next/src/locale/index.js. Locales directly exported from date-fns/locales.                 |
+| dateDisplayFormat    |                 | Date format. Check out date-fns's format option: https://date-fns.org/docs/format                                                                                          |
+| weekdayDisplayFormat |                 | Week day name format. Check out date-fns's format option: https://date-fns.org/docs/format                                                                                 |
+| dayDisplayFormat     |                 | Day calendar format. Check out date-fns's format option: https://date-fns.org/docs/format                                                                                  |
+| maxDate              |                 | Defines maximum date. Disabled later dates.                                                                                                                                |
+| minDate              |                 | Defines minimum date. Disabled earlier dates.                                                                                                                              |
+| weekStartsOn         |                 | Whether the week start day that comes from the locale will be overriden. Default value comes from your locale, if no local is specified, note that default locale is enUS. |
+
+<Canvas>
+  <Story
+    name="Editable cell"
+    args={{
+      dataTestId: 'data-grid-cell-actions-test-id',
+      className: 'data-grid-cell-actions-custom',
+      columns: [
+        {
+          Header: 'Study Name',
+          accessor: 'studyName',
+        },
+        {
+          Header: 'Stage',
+          accessor: 'stage',
+        },
+        {
+          Header: 'Status',
+          accessor: 'status',
+        },
+        {
+          Header: 'Date',
+          accessor: 'date',
+          type: 'date-editable',
+        },
+      ],
+      data: [
+        {
+          studyName: 'Study name 1',
+          stage: 'Stage 1',
+          status: 'Status 1',
+          date: {
+            value: '2021/07/11',
+            dateProps: {
+              helpText: 'This is a date or birth of the patient',
+            },
+          },
+        },
+        {
+          studyName: 'Study name 2',
+          stage: 'Stage 2',
+          status: 'Status 2',
+          date: {
+            value: '2021/07/11',
+            dateProps: {
+              isInvalid: true,
+              errorMessage: 'Incorrect data',
+            },
+          },
+        },
+        {
+          studyName: 'Study name 3',
+          stage: 'Stage 3',
+          status: 'Status 3',
+          date: '2022/10/01',
+        }
+      ],
+      getRowId: (row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
 
 
 
