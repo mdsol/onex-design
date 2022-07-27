@@ -28,7 +28,13 @@ const ViewTableIcons = [
   },
 ];
 
-const FilterToggle = ({ eventKey, callback }) => {
+const ActiveFilterIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="6" cy="6" r="5" fill="#0070C0" stroke="white" strokeWidth="2" />
+  </svg>
+);
+
+const FilterToggle = ({ eventKey, callback, isFilterActive }) => {
   const { activeEventKey } = useContext(AccordionContext);
 
   const decoratedOnClick = useAccordionButton(eventKey, () => callback && callback(eventKey));
@@ -36,17 +42,20 @@ const FilterToggle = ({ eventKey, callback }) => {
   const isCurrentEventKey = activeEventKey === eventKey;
 
   return (
-    <Button
-      type="icon"
-      size="sm"
-      variant="secondary"
-      className={classNames('onex-data-grid-control__actions-elem', {
-        'action-active': isCurrentEventKey,
-      })}
-      onClick={decoratedOnClick}
-    >
-      <Icon>filter_alt</Icon>
-    </Button>
+    <div className="onex-data-grid-control__actions-elem-wrapper">
+      <Button
+        type="icon"
+        size="sm"
+        variant="secondary"
+        className={classNames('onex-data-grid-control__actions-elem', {
+          'action-active': isCurrentEventKey,
+        })}
+        onClick={decoratedOnClick}
+      >
+        <Icon>filter_alt</Icon>
+      </Button>
+      {isFilterActive && <ActiveFilterIcon />}
+    </div>
   );
 };
 
@@ -88,12 +97,21 @@ const DataGridControl = (props) => {
 
   const [selectedRowsCount, setSelectedRowsCount] = useState();
   const [additionalFilters, setAdditionalFilters] = useState([]);
+  const [isFilterActive, setIsFilterActive] = useState(false);
 
   useEffect(() => {
     if (Object.values(dataTableBindingProps).length) {
       setSelectedRowsCount(Object.values(selectedRowIds).filter((item) => item).length);
     }
   }, [dataTableBindingProps]);
+
+  useEffect(() => {
+    if (Object.values(filterData).length) {
+      setIsFilterActive(!!Object.values(filterData).filter((item) => item).length);
+    }
+  }, [filterData]);
+
+  useEffect(() => {}, []);
 
   const handleFilter = (option, id) => {
     const isDefaultFilter = filters.filter((item) => item.id === id && item.defaultFilter).length;
@@ -108,11 +126,7 @@ const DataGridControl = (props) => {
   };
 
   const handleClearFilters = () => {
-    const clFilterObj = {};
-    Object.entries(filterData).forEach(([key]) => {
-      clFilterObj[key] = '';
-    });
-    setFilterData(clFilterObj);
+    setFilterData(Object.keys(filterData).reduce((acc, key) => ({ ...acc, [key]: '' }), {}));
     setAdditionalFilters([]);
   };
 
@@ -147,7 +161,7 @@ const DataGridControl = (props) => {
               className="onex-data-grid-control__actions-elem"
             />
           )}
-          {!!filters.length && <FilterToggle eventKey="0" />}
+          {!!filters.length && <FilterToggle eventKey="0" isFilterActive={isFilterActive} />}
           {hasSearch && (
             <span className="onex-data-grid-control__actions-search">
               <SearchField onChange={getSearchQuery} placeholder="Search" size="sm" />
@@ -191,11 +205,13 @@ const DataGridControl = (props) => {
 FilterToggle.propTypes = {
   eventKey: PropTypes.string,
   callback: PropTypes.func,
+  isFilterActive: PropTypes.bool,
 };
 
 FilterToggle.defaultProps = {
   eventKey: undefined,
   callback: undefined,
+  isFilterActive: undefined,
 };
 
 DataGridControl.propTypes = DataGridControlTypes;

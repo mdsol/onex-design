@@ -80,6 +80,7 @@ const DataGridTable = ({
     canNextPage,
     canPreviousPage,
     setFilter,
+    pageCount,
     state: { pageSize, pageIndex },
   } = useTable(
     {
@@ -303,6 +304,7 @@ const DataGridTable = ({
             defaultRowsPerPage={pageSize}
             rowsPerPageOptions={rowsPerPageOptions}
             rows={data.length}
+            filteredRows={rows.length}
             previousPage={previousPage}
             nextPage={nextPage}
             setPageSize={setPageSize}

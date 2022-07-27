@@ -58,8 +58,6 @@ const DataGrid = ({
     handleUpdateData?.(dataRef.current);
   }, [dataRef.current]);
 
-  console.log('FILTER DATA', filterData);
-
   return (
     <div className={dataGridClasses}>
       {customGridControl ||

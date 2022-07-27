@@ -75,7 +75,6 @@ const DataGridBulkActions = ({
       let num = -1;
       const btns = document.querySelectorAll('.action');
       for (let i = btns.length - 1; i >= 0; i - 1) {
-        console.log(width, diffWidth);
         if (width <= diffWidth) {
           width += btns[i].clientWidth;
         } else {

@@ -37,7 +37,15 @@
     justify-content: end;
 
     &-elem {
-      margin: 0 0.5rem;
+      &-wrapper {
+        position: relative;
+        padding: 0 0.5rem;
+        > svg {
+          position: absolute;
+          top: 0px;
+          right: 0.25rem;
+        }
+      }
     }
 
     .onex-data-grid-control__actions-elem.action-active {
