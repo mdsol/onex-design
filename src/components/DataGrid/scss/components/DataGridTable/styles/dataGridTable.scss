@@ -122,7 +122,7 @@
       &.onex-data-grid__table-body-row.isDragging {
         td {
           background-color: $onex-data-grid-table-body-tr-drag-background-color;
-          * {
+          *, &::first-line {
             visibility: hidden;
           }
         }
