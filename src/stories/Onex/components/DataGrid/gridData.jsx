@@ -51,7 +51,7 @@ export const demoGridData = () =>
     stage: {
       component: (
         <Badge type="default" variant="status">
-          `Stage ${i}`
+          Stage {i}
         </Badge>
       ),
     },

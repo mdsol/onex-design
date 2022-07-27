@@ -14,7 +14,7 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
-import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
+import { restrictToVerticalAxis, restrictToParentElement } from '@dnd-kit/modifiers';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 
 // import Icon from '../../../../Icon/scss';
@@ -299,7 +299,7 @@ const DataGridTable = ({
           onDragStart={handleDragStart}
           onDragCancel={handleDragCancel}
           collisionDetection={closestCenter}
-          modifiers={[restrictToVerticalAxis]}
+          modifiers={[restrictToVerticalAxis, restrictToParentElement]}
         >
           {renderTable()}
         </DndContext>
