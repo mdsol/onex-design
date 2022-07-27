@@ -2,6 +2,15 @@
   font-family: $font-family;
   line-height: $onex-tooltip-line-height;
 
+  &--error .tooltip-inner {
+    background-color: $onex-tooltip-error-bg-color;
+  }
+
+  &--warning .tooltip-inner {
+    background-color: $onex-tooltip-warning-bg-color;
+    color: $onex-tooltip-warning-text-color;
+  }
+
   .tooltip-arrow {
     display: none;
   }

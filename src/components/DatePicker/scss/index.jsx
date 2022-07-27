@@ -32,6 +32,7 @@ const DatePicker = (props) => {
     minDate,
     maxDate,
     weekStartsOn,
+    CustomInputComponent,
     dataTestId,
   } = props;
 
@@ -73,14 +74,27 @@ const DatePicker = (props) => {
 
   const update = (newValue) => {
     if (isError || !isChanged || !newValue) {
+      if (isError) {
+        onChange({
+          isValid: false,
+          value: newValue,
+        });
+      }
       return;
     }
     const parsed = parse(newValue, dateDisplayFormat, new Date(), dateOptions);
     if (isValid(parsed)) {
       setIsChanged(false);
-      onChange?.(parsed);
+      onChange({
+        isValid: true,
+        value: parsed,
+      });
       setDate(parsed);
     } else {
+      onChange({
+        isValid: false,
+        value: parsed,
+      });
       setIsError(true);
     }
   };
@@ -107,59 +121,89 @@ const DatePicker = (props) => {
     setShowCalendar(!showCalendar);
   };
 
+  const pickerOnChange = (pickedDate) => {
+    onChange({
+      isValid: true,
+      value: pickedDate,
+    });
+  };
+
   return (
     <div className={datePickerClassNames} data-test-id={dataTestId}>
-      <DateInput
-        autoFocus={autoFocus}
-        label={label}
-        placeholder={placeholder || dateDisplayFormat}
-        errorMessage={errorMessage}
-        size={size === 'md' ? 'lg' : size}
-        disabled={disabled}
-        isInvalid={isError}
-        readOnly={readOnly}
-        required={required}
-        helpText={helpText}
-        value={_value}
-        target={target}
-        showCalendar={showCalendar}
-        handleToggleCalendar={handleToggleCalendar}
-        handleChange={handleChange}
-        onKeyDown={onKeyDown}
-        onBlur={onBlur}
-      />
-      <Overlay
-        rootClose
-        onHide={() => setShowCalendar(false)}
-        container={target.current}
-        target={target.current}
-        show={showCalendar}
-        offset={[0, 4]}
-        placement="bottom-start"
-      >
-        {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
-          <Calendar
-            date={date}
-            setDate={setDate}
-            overlayProps={overlayProps}
-            disabledDates={disabledDates}
-            disabledDay={disabledDay}
-            className={calendarClassName}
-            locale={locale}
-            dateDisplayFormat={dateDisplayFormat}
-            weekdayDisplayFormat={weekdayDisplayFormat}
-            dayDisplayFormat={dayDisplayFormat}
-            dateOptions={dateOptions}
-            minDate={minDate}
-            maxDate={maxDate}
-            weekStartsOn={weekStartsOn}
-            setValue={_setValue}
-            formatDate={formatDate}
-            setShowCalendar={setShowCalendar}
-            setIsError={setIsError}
-          />
-        )}
-      </Overlay>
+      {CustomInputComponent ? (
+        <CustomInputComponent
+          autoFocus={autoFocus}
+          label={label}
+          placeholder={placeholder || dateDisplayFormat}
+          errorMessage={errorMessage}
+          disabled={disabled}
+          isInvalid={isError}
+          readOnly={readOnly}
+          required={required}
+          helpText={helpText}
+          value={_value}
+          target={target}
+          showCalendar={showCalendar}
+          handleToggleCalendar={handleToggleCalendar}
+          handleChange={handleChange}
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+        />
+      ) : (
+        <DateInput
+          autoFocus={autoFocus}
+          label={label}
+          placeholder={placeholder || dateDisplayFormat}
+          errorMessage={errorMessage}
+          size={size === 'md' ? 'lg' : size}
+          disabled={disabled}
+          isInvalid={isError}
+          readOnly={readOnly}
+          required={required}
+          helpText={helpText}
+          value={_value}
+          target={target}
+          showCalendar={showCalendar}
+          handleToggleCalendar={handleToggleCalendar}
+          handleChange={handleChange}
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+        />
+      )}
+      {showCalendar ? (
+        <Overlay
+          rootClose
+          onHide={() => setShowCalendar(false)}
+          container={target.current}
+          target={target.current}
+          show={showCalendar}
+          offset={[0, 4]}
+          placement="bottom-start"
+        >
+          {({ placement, arrowProps, show: _show, popper, ...overlayProps }) => (
+            <Calendar
+              date={date}
+              setDate={setDate}
+              overlayProps={overlayProps}
+              disabledDates={disabledDates}
+              disabledDay={disabledDay}
+              className={calendarClassName}
+              locale={locale}
+              dateDisplayFormat={dateDisplayFormat}
+              weekdayDisplayFormat={weekdayDisplayFormat}
+              dayDisplayFormat={dayDisplayFormat}
+              dateOptions={dateOptions}
+              minDate={minDate}
+              maxDate={maxDate}
+              weekStartsOn={weekStartsOn}
+              setValue={_setValue}
+              formatDate={formatDate}
+              setShowCalendar={setShowCalendar}
+              setIsError={setIsError}
+            />
+          )}
+        </Overlay>
+      ) : null}
     </div>
   );
 };
@@ -190,6 +234,7 @@ DatePicker.propTypes = {
   maxDate: PropTypes.object,
   weekStartsOn: PropTypes.number,
   dataTestId: PropTypes.string,
+  CustomInputComponent: PropTypes.node,
 };
 /* eslint-enable */
 
@@ -206,7 +251,7 @@ DatePicker.defaultProps = {
   isInvalid: false,
   required: false,
   helpText: undefined,
-  onChange: undefined,
+  onChange: () => {},
   disabledDates: [],
   disabledDay: () => {},
   calendarClassName: undefined,
@@ -218,6 +263,7 @@ DatePicker.defaultProps = {
   minDate: addYears(new Date(), -100),
   weekStartsOn: undefined,
   dataTestId: undefined,
+  CustomInputComponent: undefined,
 };
 
 export default DatePicker;

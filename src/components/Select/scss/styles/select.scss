@@ -234,10 +234,10 @@
   .onex-select__menu-list.onex-select__menu-list--is-multi {
     & > .onex-select__option--is-selected {
       background-color: transparent;
-      
+
       &.onex-select__option--is-focused {
         background-color: $onex-select-option-hover-bg-color;
-    
+
         &:hover {
           background-color: $onex-select-option-hover-bg-color;
         }
@@ -404,7 +404,6 @@
 }
 
 .is-disabled {
-  .onex-select__label.form-label,
   .onex-select__help-text.form-text {
     opacity: 0.4;
   }

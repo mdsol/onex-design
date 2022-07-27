@@ -1,0 +1,29 @@
+.onex-data-grid-tooltip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  & > .onex-material-icon,
+  & > .material-icons-round {
+    font-size: $onex-data-grid-tooltip-icon-size;
+  }
+
+  &--info {
+    .onex-material-icon {
+      color: $onex-data-grid-tooltip-icon-info-color;
+    }
+  }
+
+  &--error {
+    .onex-material-icon {
+      color: $onex-data-grid-tooltip-icon-error-color;
+    }
+  }
+
+  &--warning {
+    .onex-material-icon {
+      color: $onex-data-grid-tooltip-icon-warning-color;
+    }
+  }
+}
