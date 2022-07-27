@@ -35,6 +35,7 @@ const dataGridColumns = [
   {
     Header: 'Created',
     accessor: 'created',
+    type: 'date-editable',
   },
 ];
 

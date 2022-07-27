@@ -2,6 +2,9 @@ $onex-tooltip-border-radius: 4px;
 $onex-tooltip-font-size: $font-size-sm;
 $onex-tooltip-line-height: $line-height-sm;
 $onex-tooltip-max-width: 20rem;
+$onex-tooltip-error-bg-color: $error-opacity-85;
+$onex-tooltip-warning-bg-color: $warning-opacity-85;
+$onex-tooltip-warning-text-color: $secondary-900;
 
 /* bootstrap variables */
 $tooltip-font-size: $onex-tooltip-font-size;

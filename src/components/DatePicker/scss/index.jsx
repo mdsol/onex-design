@@ -32,6 +32,7 @@ const DatePicker = (props) => {
     minDate,
     maxDate,
     weekStartsOn,
+    CustomInputComponent,
     dataTestId,
   } = props;
 
@@ -129,25 +130,46 @@ const DatePicker = (props) => {
 
   return (
     <div className={datePickerClassNames} data-test-id={dataTestId}>
-      <DateInput
-        autoFocus={autoFocus}
-        label={label}
-        placeholder={placeholder || dateDisplayFormat}
-        errorMessage={errorMessage}
-        size={size === 'md' ? 'lg' : size}
-        disabled={disabled}
-        isInvalid={isError}
-        readOnly={readOnly}
-        required={required}
-        helpText={helpText}
-        value={_value}
-        target={target}
-        showCalendar={showCalendar}
-        handleToggleCalendar={handleToggleCalendar}
-        handleChange={handleChange}
-        onKeyDown={onKeyDown}
-        onBlur={onBlur}
-      />
+      {CustomInputComponent ? (
+        <CustomInputComponent
+          autoFocus={autoFocus}
+          label={label}
+          placeholder={placeholder || dateDisplayFormat}
+          errorMessage={errorMessage}
+          disabled={disabled}
+          isInvalid={isError}
+          readOnly={readOnly}
+          required={required}
+          helpText={helpText}
+          value={_value}
+          target={target}
+          showCalendar={showCalendar}
+          handleToggleCalendar={handleToggleCalendar}
+          handleChange={handleChange}
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+        />
+      ) : (
+        <DateInput
+          autoFocus={autoFocus}
+          label={label}
+          placeholder={placeholder || dateDisplayFormat}
+          errorMessage={errorMessage}
+          size={size === 'md' ? 'lg' : size}
+          disabled={disabled}
+          isInvalid={isError}
+          readOnly={readOnly}
+          required={required}
+          helpText={helpText}
+          value={_value}
+          target={target}
+          showCalendar={showCalendar}
+          handleToggleCalendar={handleToggleCalendar}
+          handleChange={handleChange}
+          onKeyDown={onKeyDown}
+          onBlur={onBlur}
+        />
+      )}
       {showCalendar ? (
         <Overlay
           rootClose
@@ -212,6 +234,7 @@ DatePicker.propTypes = {
   maxDate: PropTypes.object,
   weekStartsOn: PropTypes.number,
   dataTestId: PropTypes.string,
+  CustomInputComponent: PropTypes.node,
 };
 /* eslint-enable */
 
@@ -240,6 +263,7 @@ DatePicker.defaultProps = {
   minDate: addYears(new Date(), -100),
   weekStartsOn: undefined,
   dataTestId: undefined,
+  CustomInputComponent: undefined,
 };
 
 export default DatePicker;

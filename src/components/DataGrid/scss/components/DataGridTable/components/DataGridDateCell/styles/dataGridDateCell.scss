@@ -1,0 +1,125 @@
+.onex-data-grid-date-cell {
+  padding: 0.625rem 0.75rem 0.625rem 0.5rem;
+
+  &__input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .form-control {
+      display: inline-flex;
+      width: 5.8rem;
+      border: none;
+      padding: 0.25rem;
+      font-size: $onex-data-grid-date-cell-font-size;
+      line-height: $onex-data-grid-date-cell-line-height;
+      background-color: inherit;
+
+      &:focus {
+        background-color: inherit;
+      }
+
+      &:invalid,
+      &.is-invalid,
+      &[required] {
+        border: none !important;
+        background-image: none;
+        padding-right: 0.25rem;
+        color: $onex-data-grid-date-cell-error-border-color;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    opacity: 0.4;
+  }
+
+  &__toggle-icon {
+    & > svg {
+      width: $onex-data-grid-date-icon;
+      height: $onex-data-grid-date-icon;
+    }
+
+    & > .onex-material-icon,
+    & > .material-icons-round {
+      font-size: $onex-data-grid-date-icon;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    color: $onex-data-grid-date-icon-color;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &--open {
+      color: $onex-data-grid-date-icon-open-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+
+  &.onex-data-grid-date-cell__text-align-left {
+    .onex-data-grid-date-cell__input.form-control {
+      text-align: left;
+    }
+  }
+  &.onex-data-grid-date-cell__text-align-right {
+    .onex-data-grid-date-cell__input.form-control {
+      text-align: right;
+    }
+  }
+
+  &.onex-data-grid-date-cell__text-variant-regular {
+    .onex-data-grid-date-cell__input.form-control {
+      font-weight: 400;
+    }
+  }
+  &.onex-data-grid-date-cell__text-variant-semibold {
+    .onex-data-grid-date-cell__input.form-control {
+      font-weight: 600;
+    }
+  }
+
+}
+
+td.onex-data-grid-date-cell {
+  padding: 0;
+
+  &:hover {
+    border: none;
+    outline: solid 1px $onex-data-grid-date-cell-hover-border-color;
+    outline-offset: -0.063rem;
+  }
+
+
+  &:focus-within {
+    border: none;
+    background-color: white;
+    outline: solid 2px $onex-data-grid-date-cell-focus-border-color;
+    outline-offset: -0.125rem;
+  }
+
+  &--error {
+    outline: solid 2px $onex-data-grid-date-cell-error-border-color!important;
+  }
+
+  .onex-date-picker-calendar {
+    margin-top: 0.65rem;
+  }
+}
