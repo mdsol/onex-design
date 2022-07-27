@@ -2,13 +2,12 @@
   display: flex;
   justify-content: space-between;
   padding: $onex-data-grid-control-padding-x $onex-data-grid-control-padding-y;
-  border-bottom: 1px solid $onex-data-grid-control-border-color;
   font-family: $font-family;
   max-height: 3rem;
 
   &.draggable {
     padding-left: 0.6rem;
-    
+
     .onex-data-grid-control__check {
       margin-left: 0;
     }
@@ -39,6 +38,14 @@
 
     &-elem {
       margin: 0 0.5rem;
+    }
+
+    .onex-data-grid-control__actions-elem.action-active {
+      background-color: $onex-data-grid-control-action-element-background-color;
+      &:hover,
+      &:focus {
+        background-color: $onex-data-grid-control-action-element-background-color;
+      }
     }
 
     &-search {

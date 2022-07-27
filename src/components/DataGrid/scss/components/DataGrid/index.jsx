@@ -53,14 +53,6 @@ const DataGrid = ({
     });
   };
 
-  const handleFilter = (option, id) => {
-    if (option.length) {
-      setFilterData({ ...filterData, [id]: option[0].value });
-    } else {
-      setFilterData({ ...filterData, [id]: '' });
-    }
-  };
-
   useEffect(() => {
     setSkipPageReset(false);
     handleUpdateData?.(dataRef.current);
@@ -77,7 +69,8 @@ const DataGrid = ({
             isDraggeble={draggable}
             dataTableBindingProps={bulkActionsProps}
             dataGridBulkActionsProps={dataGridBulkActionsProps}
-            handleFilter={handleFilter}
+            filterData={filterData}
+            setFilterData={setFilterData}
           />
         ))}
       <DataGridTable
@@ -97,7 +90,6 @@ const DataGrid = ({
         setData={setRenderedData}
         setBulkActionsProps={setBulkActionsProps}
         getRowId={getRowId}
-        filters={dataGridControlProps?.filters}
         filterData={filterData}
         {...accProps}
       />

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { useEffect, useState } from 'react';
-import { Accordion } from 'react-bootstrap';
+import { useContext, useEffect, useState } from 'react';
+import { Accordion, AccordionContext } from 'react-bootstrap';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import PropTypes from 'prop-types';
 import SegmentedToggle from '../../../../SegmentedToggle/scss';
@@ -28,15 +28,21 @@ const ViewTableIcons = [
   },
 ];
 
-const FilterToggle = ({ eventKey }) => {
-  const decoratedOnClick = useAccordionButton(eventKey, () => console.log('totally custom!'));
+const FilterToggle = ({ eventKey, callback }) => {
+  const { activeEventKey } = useContext(AccordionContext);
+
+  const decoratedOnClick = useAccordionButton(eventKey, () => callback && callback(eventKey));
+
+  const isCurrentEventKey = activeEventKey === eventKey;
 
   return (
     <Button
       type="icon"
       size="sm"
-      variant="tertiary"
-      className="onex-data-grid-control__actions-elem"
+      variant="secondary"
+      className={classNames('onex-data-grid-control__actions-elem', {
+        'action-active': isCurrentEventKey,
+      })}
       onClick={decoratedOnClick}
     >
       <Icon>filter_alt</Icon>
@@ -67,7 +73,8 @@ const DataGridControl = (props) => {
     dataTestId,
     dataTableBindingProps,
     dataGridBulkActionsProps,
-    handleFilter,
+    filterData,
+    setFilterData,
     ...accProps
   } = props;
 
@@ -80,6 +87,7 @@ const DataGridControl = (props) => {
     dataTableBindingProps;
 
   const [selectedRowsCount, setSelectedRowsCount] = useState();
+  const [additionalFilters, setAdditionalFilters] = useState([]);
 
   useEffect(() => {
     if (Object.values(dataTableBindingProps).length) {
@@ -87,7 +95,26 @@ const DataGridControl = (props) => {
     }
   }, [dataTableBindingProps]);
 
-  // useEffect(() => console.log('ctrl', props));
+  const handleFilter = (option, id) => {
+    const isDefaultFilter = filters.filter((item) => item.id === id && item.defaultFilter).length;
+    if (option.length) {
+      setFilterData({ ...filterData, [id]: option[0].value });
+    } else {
+      setFilterData({ ...filterData, [id]: '' });
+      if (!isDefaultFilter) {
+        setAdditionalFilters(additionalFilters.filter((item) => item.id !== id));
+      }
+    }
+  };
+
+  const handleClearFilters = () => {
+    const clFilterObj = {};
+    Object.entries(filterData).forEach(([key]) => {
+      clFilterObj[key] = '';
+    });
+    setFilterData(clFilterObj);
+    setAdditionalFilters([]);
+  };
 
   return (
     <Accordion>
@@ -148,7 +175,14 @@ const DataGridControl = (props) => {
         </div>
       </div>
       <Accordion.Collapse eventKey="0">
-        <DataGridFilters filters={filters} handleFilter={handleFilter} />
+        <DataGridFilters
+          filters={filters}
+          handleFilter={handleFilter}
+          handleClearFilters={handleClearFilters}
+          additionalFilters={additionalFilters}
+          setAdditionalFilters={setAdditionalFilters}
+          filterData={filterData}
+        />
       </Accordion.Collapse>
     </Accordion>
   );
@@ -156,10 +190,12 @@ const DataGridControl = (props) => {
 
 FilterToggle.propTypes = {
   eventKey: PropTypes.string,
+  callback: PropTypes.func,
 };
 
 FilterToggle.defaultProps = {
   eventKey: undefined,
+  callback: undefined,
 };
 
 DataGridControl.propTypes = DataGridControlTypes;

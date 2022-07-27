@@ -1,8 +1,13 @@
 .onex-data-grid-filters {
   display: flex;
-  padding: 12px;
+  justify-content: space-between;
+  padding: $onex-data-grid-filters-padding;
 
-  &-default {
-    margin-right: 8px;
+  &-container {
+    display: flex;
+  }
+
+  &-wrapper {
+    margin-right: $onex-data-grid-filters-wrapper-margin;
   }
 }

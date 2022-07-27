@@ -42,6 +42,7 @@ const DataGridDropdownTypes = PropTypes.arrayOf(
   }),
 );
 
+/* eslint-disable */
 const DataGridControlTypes = PropTypes.shape({
   title: PropTypes.string,
   badge: PropTypes.number,
@@ -62,8 +63,10 @@ const DataGridControlTypes = PropTypes.shape({
   isDraggeble: PropTypes.bool,
   className: PropTypes.string,
   dataTestId: PropTypes.string,
-  handleFilter: PropTypes.func,
+  filterData: PropTypes.array,
+  setFilterData: PropTypes.func,
 });
+/* eslint-enable */
 
 const actionsType = PropTypes.arrayOf(
   PropTypes.shape({

@@ -25,7 +25,6 @@ import DraggableTableRow from './components/Draggable/DraggableTableRow';
 import StaticTableRow from './components/Draggable/StaticTableRow';
 import DragHandle from './components/Draggable/DragHandle';
 import Check from '../../../../Check/scss';
-import { DataGridFiltersTypes } from '../../types/dataGridTypes';
 
 const handleColumnType = (row, cell, cellInd, updateData) => {
   if (cell?.column.type === 'editable') {
@@ -104,7 +103,6 @@ const DataGridTable = ({
 
   useEffect(() => {
     Object.entries(filterData).forEach(([key, value]) => {
-      console.log(`${key}: ${value}`);
       setFilter(key, value);
     });
   }, [filterData]);
@@ -359,7 +357,6 @@ DataGridTable.propTypes = {
   setData: PropTypes.func,
   setBulkActionsProps: PropTypes.func,
   getRowId: PropTypes.func,
-  filters: DataGridFiltersTypes,
   filterData: PropTypes.object,
 };
 /* eslint-enable */
@@ -382,7 +379,6 @@ DataGridTable.defaultProps = {
   setData: undefined,
   setBulkActionsProps: undefined,
   getRowId: undefined,
-  filters: [],
 };
 
 export default DataGridTable;

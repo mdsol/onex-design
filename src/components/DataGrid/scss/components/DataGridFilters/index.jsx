@@ -3,50 +3,135 @@ import PropTypes from 'prop-types';
 import { DataGridFiltersTypes } from '../../types/dataGridTypes';
 import FilterSelect from '../../../../FilterSelect/scss';
 import Dropdown from '../../../../Dropdown/scss';
+import Button from '../../../../Buttons/scss';
 import Icon from '../../../../Icon/scss';
 
-const DataGridFilters = ({ filters, handleFilter }) => {
+const DataGridFilters = ({
+  filters,
+  handleFilter,
+  additionalFilters,
+  setAdditionalFilters,
+  handleClearFilters,
+  filterData,
+}) => {
+  const [selectedValues, setSelectedValues] = useState([]);
   const [defaultFilters, setDefaultFilters] = useState([]);
   const [listFilters, setListFilters] = useState([]);
-  useEffect(() => {
-    setDefaultFilters(filters.filter((item) => item.defaultFilter));
+
+  const handleListFilters = () => {
     setListFilters(
       filters.reduce((acc, item) => {
-        if (!item.defaultFilter) {
+        const isAdditionalFilter = additionalFilters.filter(
+          (customFilterItem) => customFilterItem.id === item.id,
+        ).length;
+        if (!item.defaultFilter && !isAdditionalFilter) {
           acc.push({ eventKey: item.id, title: item.name });
         }
         return acc;
       }, []),
     );
+  };
+
+  useEffect(() => {}, []);
+
+  useEffect(() => {
+    setDefaultFilters(filters.filter((item) => item.defaultFilter));
+    handleListFilters();
   }, [filters]);
 
-  console.log('listFilters', listFilters);
+  useEffect(() => {
+    handleListFilters();
+  }, [additionalFilters]);
+
+  useEffect(() => {
+    const updSelectedValues = [];
+    Object.entries(filterData).forEach(([key, value]) => {
+      if (value) {
+        updSelectedValues.push({ id: key, value, label: value.toString() });
+      }
+      setSelectedValues(updSelectedValues);
+    });
+  }, [filterData]);
+
+  const handleAddNewFilter = (option) => {
+    setAdditionalFilters([...additionalFilters, ...filters.filter((item) => item.id === option)]);
+  };
 
   return (
     <div className="onex-data-grid-filters">
-      {defaultFilters.map((item) => (
-        <div className="onex-data-grid-filters-default">
-          <FilterSelect
+      <div className="onex-data-grid-filters-container">
+        {defaultFilters.map((item) => (
+          <div className="onex-data-grid-filters-wrapper">
+            <FilterSelect
+              size="sm"
+              label={item.name}
+              onSelect={(option) => handleFilter(option, item.id)}
+              selectedValues={selectedValues.filter((selectedItem) => item.id === selectedItem.id)}
+              {...item}
+            />
+          </div>
+        ))}
+        {additionalFilters.map((item) => (
+          <div className="onex-data-grid-filters-wrapper">
+            <FilterSelect
+              size="sm"
+              label={item.name}
+              onSelect={(option) => handleFilter(option, item.id)}
+              selectedValues={selectedValues.filter((selectedItem) => item.id === selectedItem.id)}
+              {...item}
+            />
+          </div>
+        ))}
+        {!!listFilters.length && (
+          <Dropdown
+            id="data-grid-filters-list"
+            title="Add filter"
             size="sm"
-            label={item.name}
-            onSelect={(option) => handleFilter(option, item.id)}
-            {...item}
+            variant="tertiary"
+            isSearchable
+            hideDefaultIcon
+            leadingIcon={<Icon>add</Icon>}
+            items={listFilters}
+            onSelect={handleAddNewFilter}
           />
-        </div>
-      ))}
-      <Dropdown title="Add filter" size="sm" variant="tertiary" leadingIcon={<Icon>add</Icon>} />
+        )}
+      </div>
+      <div>
+        <Button
+          variant="tertiary"
+          size="sm"
+          leadingIcon={<Icon>highlight_off</Icon>}
+          onClick={handleClearFilters}
+        >
+          Clear filter
+        </Button>
+      </div>
     </div>
   );
 };
 
+/* eslint-disable */
 DataGridFilters.propTypes = {
   filters: DataGridFiltersTypes,
   handleFilter: PropTypes.func,
+  additionalFilters: PropTypes.arrayOf(
+    PropTypes.shape({
+      eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      title: PropTypes.string,
+    }),
+  ),
+  setAdditionalFilters: PropTypes.func,
+  handleClearFilters: PropTypes.func,
+  filterData: PropTypes.array,
 };
+/* eslint-enable */
 
 DataGridFilters.defaultProps = {
   filters: [],
   handleFilter: undefined,
+  additionalFilters: [],
+  setAdditionalFilters: undefined,
+  handleClearFilters: undefined,
 };
 
 export default DataGridFilters;

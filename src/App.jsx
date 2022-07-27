@@ -24,6 +24,10 @@ const dataGridColumns = [
     accessor: 'category',
   },
   {
+    Header: 'Phase',
+    accessor: 'phase',
+  },
+  {
     Header: 'Created',
     accessor: 'created',
   },
@@ -47,6 +51,7 @@ const newPerson = (ind) => ({
   study: `Test${ind}`,
   country: `United States${ind}`,
   category: `Management${ind}`,
+  phase: ind,
   created: '26 Aug 2020',
 });
 
@@ -207,31 +212,53 @@ const DevExamples = () => {
       },
       {
         id: 'category',
-        name: 'Сategory',
+        name: 'Category',
         options: [
           {
-            value: ' 0',
-            label: 'United States0',
+            value: 'Management0',
+            label: 'Management0',
           },
           {
-            value: 'United States1',
-            label: 'United States1',
+            value: 'Management1',
+            label: 'Management1',
           },
           {
-            value: 'United States2',
-            label: 'United States2',
+            value: 'Management2',
+            label: 'Management2',
           },
           {
-            value: 'United States3',
-            label: 'United States3',
+            value: 'Management3',
+            label: 'Management3',
           },
           {
-            value: 'United States4',
-            label: 'United States4',
+            value: 'Management4',
+            label: 'Management4',
           },
           {
-            value: 'United States5',
-            label: 'United States5',
+            value: 'Management5',
+            label: 'Management5',
+          },
+        ],
+      },
+      {
+        id: 'phase',
+        name: 'Phase',
+        options: [
+          {
+            value: 0,
+            label: '0',
+          },
+          {
+            value: 1,
+            label: '1',
+          },
+          {
+            value: 2,
+            label: '2',
+          },
+          {
+            value: 3,
+            label: '3',
           },
         ],
       },

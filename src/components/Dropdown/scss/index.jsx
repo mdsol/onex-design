@@ -21,6 +21,8 @@ const Dropdown = React.forwardRef((props, ref) => {
     dataTestId,
     as,
     isSearchable,
+    leadingIcon,
+    hideDefaultIcon,
     ...accProps
   } = props;
   const buttonClassNames = classNames('onex-dropdown', `onex-dropdown--${buttonStyle}`, {
@@ -40,8 +42,9 @@ const Dropdown = React.forwardRef((props, ref) => {
       <ReactDropdown.Toggle as={as} id={id} disabled={disabled} variant={variant} size={size}>
         {buttonStyle !== 'icon' ? (
           <>
+            {leadingIcon}
             {title}
-            <Icon className="onex-dropdown__chevron-icon">expand_more</Icon>
+            {!hideDefaultIcon && <Icon className="onex-dropdown__chevron-icon">expand_more</Icon>}
           </>
         ) : (
           <Icon>more_vert</Icon>
@@ -124,6 +127,8 @@ Dropdown.propTypes = {
   dataTestId: PropTypes.string,
   as: PropTypes.node,
   isSearchable: PropTypes.bool,
+  leadingIcon: PropTypes.node,
+  hideDefaultIcon: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
@@ -139,6 +144,8 @@ Dropdown.defaultProps = {
   dataTestId: undefined,
   as: undefined,
   isSearchable: false,
+  leadingIcon: undefined,
+  hideDefaultIcon: false,
 };
 
 export default Dropdown;

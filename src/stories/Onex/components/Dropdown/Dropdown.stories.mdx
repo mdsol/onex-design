@@ -1,6 +1,6 @@
 <!-- Dropdown.mdx -->
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import { Dropdown } from '../../../../components';
+import { Dropdown, Icon } from '../../../../components';
 
 export const dropdownItems = [
 { eventKey: 'one', title: 'item one' },
@@ -17,6 +17,8 @@ export const dropdownItemsWithDivider = [
 { eventKey: 'five', title: 'item five' },
 { eventKey: 'six', title: 'item six' },
 ];
+
+export const icons = { StarRoundedIcon: <Icon>star</Icon>, StarsRoundedIcon: <Icon>stars</Icon>, remove: undefined };
 
 <Meta
   title="Onex/Components/Dropdown"
@@ -61,6 +63,30 @@ export const dropdownItemsWithDivider = [
     },
     variant: {
       description: 'Non-toggle button variation',
+    },
+    leadingIcon: {
+      description: 'Element placed before the children.',
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          StarRoundedIcon: 'Star',
+          StarsRoundedIcon: 'Star in round',
+          remove: 'Remove icon'
+        },
+      },
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+      },
+    },
+    isSearchable: {
+      description: 'Show Search input in menu',
+    },
+    hideDefaultIcon: {
+      description: 'Hide chevron icon',
     },
   }}
   component={Dropdown}

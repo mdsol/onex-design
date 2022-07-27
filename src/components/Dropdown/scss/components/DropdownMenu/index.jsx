@@ -20,7 +20,7 @@ const DropdownMenu = React.forwardRef(
         <ul className="dropdown-menu--list">
           {React.Children.toArray(children).filter((child) =>
             !value || child.props.children.length
-              ? child?.props?.children[0]?.props?.title?.toLowerCase().startsWith(value)
+              ? child?.props?.children[0]?.props?.title?.toLowerCase().includes(value)
               : false,
           )}
         </ul>

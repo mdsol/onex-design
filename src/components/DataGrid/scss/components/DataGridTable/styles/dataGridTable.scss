@@ -31,6 +31,7 @@
       margin: 0;
       vertical-align: middle;
       padding: $onex-data-grid-table-header-th-padding-x $onex-data-grid-table-header-th-padding-y;
+      border-top: 1px solid $onex-data-grid-table-header-border-bottom-color;
       border-bottom: 1px solid $onex-data-grid-table-header-border-bottom-color;
 
       &:hover {
