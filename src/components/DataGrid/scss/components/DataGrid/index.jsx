@@ -89,6 +89,7 @@ const DataGrid = ({
         setBulkActionsProps={setBulkActionsProps}
         getRowId={getRowId}
         filterData={filterData}
+        onFilter={dataGridControlProps?.onFilter}
         {...accProps}
       />
     </div>

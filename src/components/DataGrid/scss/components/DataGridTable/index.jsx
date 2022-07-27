@@ -62,6 +62,7 @@ const DataGridTable = ({
   setBulkActionsProps,
   getRowId,
   filterData,
+  onFilter,
   ...accProps
 }) => {
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
@@ -80,7 +81,6 @@ const DataGridTable = ({
     canNextPage,
     canPreviousPage,
     setFilter,
-    pageCount,
     state: { pageSize, pageIndex },
   } = useTable(
     {
@@ -107,6 +107,10 @@ const DataGridTable = ({
       setFilter(key, value);
     });
   }, [filterData]);
+
+  useEffect(() => {
+    onFilter?.(rows);
+  }, [rows]);
 
   const changeCheckboxes = (value) =>
     rows.reduce(
@@ -360,6 +364,7 @@ DataGridTable.propTypes = {
   setBulkActionsProps: PropTypes.func,
   getRowId: PropTypes.func,
   filterData: PropTypes.object,
+  onFilter: PropTypes.func,
 };
 /* eslint-enable */
 
@@ -381,6 +386,7 @@ DataGridTable.defaultProps = {
   setData: undefined,
   setBulkActionsProps: undefined,
   getRowId: undefined,
+  onFilter: undefined,
 };
 
 export default DataGridTable;

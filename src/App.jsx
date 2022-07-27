@@ -146,6 +146,10 @@ const DevExamples = () => {
     );
   };
 
+  const handleFilter = (data) => {
+    console.log('Data', data);
+  };
+
   const GridControl = {
     filters: [
       {
@@ -274,6 +278,7 @@ const DevExamples = () => {
         title: 'action3',
       },
     ],
+    onFilter: handleFilter,
   };
 
   return (

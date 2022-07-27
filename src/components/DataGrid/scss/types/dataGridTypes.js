@@ -65,6 +65,7 @@ const DataGridControlTypes = PropTypes.shape({
   dataTestId: PropTypes.string,
   filterData: PropTypes.array,
   setFilterData: PropTypes.func,
+  onFilter: PropTypes.func,
 });
 /* eslint-enable */
 

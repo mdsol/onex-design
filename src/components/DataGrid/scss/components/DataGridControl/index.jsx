@@ -54,7 +54,7 @@ const FilterToggle = ({ eventKey, callback, isFilterActive }) => {
       >
         <Icon>filter_alt</Icon>
       </Button>
-      {isFilterActive && <ActiveFilterIcon />}
+      {isFilterActive && !isCurrentEventKey && <ActiveFilterIcon />}
     </div>
   );
 };
@@ -84,6 +84,7 @@ const DataGridControl = (props) => {
     dataGridBulkActionsProps,
     filterData,
     setFilterData,
+    onFilter,
     ...accProps
   } = props;
 
