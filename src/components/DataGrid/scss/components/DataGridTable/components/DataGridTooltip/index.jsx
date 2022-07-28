@@ -19,10 +19,11 @@ const DataGridTooltip = ({ type, message }) => {
   return (
     <div className={classes}>
       <Tooltip
+        className="onex-data-grid-tooltip-body"
         trigger="hover"
         variant={type === 'info' ? 'default' : type}
         tooltipChildren={message}
-        placement="bottom-start"
+        placement="right-start"
       >
         <Icon>{iconType[type]}</Icon>
       </Tooltip>

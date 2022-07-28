@@ -1,8 +1,14 @@
+.onex-tooltip.bs-tooltip-end.onex-data-grid-tooltip-body {
+  top: 1rem !important;
+  left: -1.4rem !important;
+}
+
 .onex-data-grid-tooltip {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   cursor: pointer;
+  position: relative;
 
   & > .onex-material-icon,
   & > .material-icons-round {

@@ -38,7 +38,7 @@ const Tooltip = (props) => {
       show={show}
       defaultShow={defaultShow}
       onToggle={onToggle}
-      trigger={trigger}
+      trigger={Array.isArray(trigger) ? trigger : [trigger, trigger]}
       data-test-id={dataTestId}
       overlay={
         <ReactTooltip id={id} className={toggleClassNames}>

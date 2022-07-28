@@ -121,6 +121,13 @@ const DatePicker = (props) => {
     setShowCalendar(!showCalendar);
   };
 
+  useEffect(() => {
+    onChange({
+      isValid: true,
+      value: date,
+    });
+  }, [date]);
+
   const pickerOnChange = (pickedDate) => {
     onChange({
       isValid: true,

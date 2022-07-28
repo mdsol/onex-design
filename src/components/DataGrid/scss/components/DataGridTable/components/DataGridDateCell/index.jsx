@@ -78,6 +78,7 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
   const dateProps = cell?.value?.dateProps || {};
 
   const [value, setValue] = useState('');
+  const [isError, setError] = useState(false);
 
   const dataGridEditableCellClassNames = classNames(
     'onex-data-grid-date-cell',
@@ -85,17 +86,26 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
     `onex-data-grid-date-cell__text-variant-${cell?.column.textVariant || 'regular'}`,
     {
       'onex-data-grid__cell-divider': cell?.column.hasDivider,
-      'onex-data-grid-date-cell--error': cell?.column.isInvalid || dateProps?.isInvalid,
+      'onex-data-grid-date-cell--error': cell?.column.isInvalid || dateProps?.isInvalid || isError,
     },
   );
 
-  const onChange = (e) => {
-    setValue(e.target.value);
+  const onChange = ({ isValid, value: dateValue }) => {
+    if (isValid) {
+      setValue(dateValue);
+      setError(false);
+    } else {
+      setError(true);
+    }
   };
 
   const onBlur = () => {
     updateData(row.index, cell?.column.id, value);
   };
+
+  useEffect(() => {
+    setError(dateProps.isInvalid);
+  }, [dateProps.isInvalid]);
 
   useEffect(() => {
     setValue(cellProps.value);
@@ -111,6 +121,7 @@ const DataGridDateCell = ({ cell, row, updateData }) => {
         CustomInputComponent={DateInput}
         {...cell?.column}
         {...dateProps}
+        isInvalid={isError}
       />
     </td>
   );
@@ -162,7 +173,7 @@ DateInput.propTypes = {
 DateInput.defaultProps = {
   autoFocus: false,
   label: undefined,
-  errorMessage: undefined,
+  errorMessage: 'Incorrect data',
   value: '',
   placeholder: undefined,
   readOnly: false,
