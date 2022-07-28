@@ -28,12 +28,6 @@ const ViewTableIcons = [
   },
 ];
 
-const ActiveFilterIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="6" cy="6" r="5" fill="#0070C0" stroke="white" strokeWidth="2" />
-  </svg>
-);
-
 const FilterToggle = ({ eventKey, callback, isFilterActive }) => {
   const { activeEventKey } = useContext(AccordionContext);
 
@@ -42,20 +36,18 @@ const FilterToggle = ({ eventKey, callback, isFilterActive }) => {
   const isCurrentEventKey = activeEventKey === eventKey;
 
   return (
-    <div className="onex-data-grid-control__actions-elem-wrapper">
-      <Button
-        type="icon"
-        size="sm"
-        variant="secondary"
-        className={classNames('onex-data-grid-control__actions-elem-filter', {
-          'action-active': isCurrentEventKey,
-        })}
-        onClick={decoratedOnClick}
-      >
-        <Icon>filter_alt</Icon>
-      </Button>
-      {isFilterActive && !isCurrentEventKey && <ActiveFilterIcon />}
-    </div>
+    <Button
+      type="icon"
+      size="sm"
+      variant="secondary"
+      className={classNames('onex-data-grid-control__actions-elem', {
+        'action-active': isCurrentEventKey,
+        'filter-active': isFilterActive && !isCurrentEventKey,
+      })}
+      onClick={decoratedOnClick}
+    >
+      <Icon>filter_alt</Icon>
+    </Button>
   );
 };
 
@@ -107,12 +99,12 @@ const DataGridControl = (props) => {
 
   useEffect(() => {
     getActiveFilters?.(filterData);
-    if (filterData && Object.values(filterData).length) {
-      setIsFilterActive(!!Object.values(filterData).filter((item) => item).length);
-    }
+    const checkActiveFilter =
+      filterData && Object.values(filterData).length
+        ? !!Object.values(filterData).filter((item) => item).length
+        : false;
+    setIsFilterActive(checkActiveFilter);
   }, [filterData]);
-
-  useEffect(() => {}, []);
 
   const handleFilter = (option, id) => {
     const isDefaultFilter = filters.filter((item) => item.id === id && item.defaultFilter).length;
@@ -147,7 +139,7 @@ const DataGridControl = (props) => {
               {...dataGridBulkActionsProps}
               isAllRowsSelected={isAllRowsSelected}
               selectedRowsCount={selectedRowsCount}
-              handleHide={() => handleHeaderCheck()}
+              handleHide={handleHeaderCheck}
             />
           ))}
         <div className="onex-data-grid-control__actions">

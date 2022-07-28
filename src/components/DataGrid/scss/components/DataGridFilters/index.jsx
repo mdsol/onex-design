@@ -19,17 +19,16 @@ const DataGridFilters = ({
   const [listFilters, setListFilters] = useState([]);
 
   const handleListFilters = () => {
-    setListFilters(
-      filters.reduce((acc, item) => {
-        const isAdditionalFilter = additionalFilters.filter(
-          (customFilterItem) => customFilterItem.id === item.id,
-        ).length;
-        if (!item.defaultFilter && !isAdditionalFilter) {
-          acc.push({ eventKey: item.id, title: item.name });
-        }
-        return acc;
-      }, []),
-    );
+    const updFilterList = filters.reduce((acc, item) => {
+      const isAdditionalFilter = additionalFilters.filter(
+        (customFilterItem) => customFilterItem.id === item.id,
+      ).length;
+      if (!item.defaultFilter && !isAdditionalFilter) {
+        acc.push({ eventKey: item.id, title: item.name });
+      }
+      return acc;
+    }, []);
+    setListFilters(updFilterList);
   };
 
   useEffect(() => {
@@ -54,7 +53,8 @@ const DataGridFilters = ({
   }, [filterData]);
 
   const handleAddNewFilter = (option) => {
-    setAdditionalFilters([...additionalFilters, ...filters.filter((item) => item.id === option)]);
+    const updAdditionalFilters = filters.filter((item) => item.id === option);
+    setAdditionalFilters([...additionalFilters, ...updAdditionalFilters]);
   };
 
   return (
