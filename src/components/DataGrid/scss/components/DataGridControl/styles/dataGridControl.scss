@@ -2,13 +2,12 @@
   display: flex;
   justify-content: space-between;
   padding: $onex-data-grid-control-padding-x $onex-data-grid-control-padding-y;
-  border-bottom: 1px solid $onex-data-grid-control-border-color;
   font-family: $font-family;
   max-height: 3rem;
 
   &.draggable {
     padding-left: 0.6rem;
-    
+
     .onex-data-grid-control__check {
       margin-left: 0;
     }
@@ -38,7 +37,27 @@
     justify-content: end;
 
     &-elem {
+      position: relative;
       margin: 0 0.5rem;
+    }
+
+    .onex-data-grid-control__actions-elem.action-active {
+      background-color: $onex-data-grid-control-action-element-background-color;
+      &:hover,
+      &:focus {
+        background-color: $onex-data-grid-control-action-element-background-color;
+      }
+    }
+    .onex-data-grid-control__actions-elem.filter-active::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -0.25rem;
+      width: $onex-data-grid-control-filter-active-after-size;
+      height: $onex-data-grid-control-filter-active-after-size;
+      border-radius: 100%;
+      border: 0.125rem solid $onex-data-grid-control-filter-active-after-border-color;
+      background-color: $onex-data-grid-control-filter-active-after-background-color;
     }
 
     &-search {

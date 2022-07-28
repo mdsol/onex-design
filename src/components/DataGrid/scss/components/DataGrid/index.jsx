@@ -26,6 +26,7 @@ const DataGrid = ({
   ...accProps
 }) => {
   const dataRef = useRef(data);
+  const [filterData, setFilterData] = useState({});
   const [renderedData, setRenderedData] = useState(data);
   const [skipPageReset, setSkipPageReset] = useState(false);
   const [bulkActionsProps, setBulkActionsProps] = useState({});
@@ -66,6 +67,8 @@ const DataGrid = ({
             isDraggeble={draggable}
             dataTableBindingProps={bulkActionsProps}
             dataGridBulkActionsProps={dataGridBulkActionsProps}
+            filterData={filterData}
+            setFilterData={setFilterData}
           />
         ))}
       <DataGridTable
@@ -85,6 +88,8 @@ const DataGrid = ({
         setData={setRenderedData}
         setBulkActionsProps={setBulkActionsProps}
         getRowId={getRowId}
+        filterData={filterData}
+        onFilter={dataGridControlProps?.onFilter}
         {...accProps}
       />
     </div>

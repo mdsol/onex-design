@@ -23,6 +23,7 @@ const dataGridColumns = [
   {
     Header: 'Study',
     accessor: 'study',
+    filter: 'includes',
   },
   {
     Header: 'Country',
@@ -31,6 +32,10 @@ const dataGridColumns = [
   {
     Header: 'Category',
     accessor: 'category',
+  },
+  {
+    Header: 'Phase',
+    accessor: 'phase',
   },
   {
     Header: 'Created',
@@ -52,19 +57,20 @@ const dataGridSortBy = [
 
 const range = (len) => Array.from({ length: len }, (v, i) => i);
 
-const newPerson = () => ({
+const newPerson = (ind) => ({
   id: `M123${Date.now().toString(36) + Math.random().toString(36).substr(2)}`,
-  study: `United States${Math.floor(Math.random() * 30)}`,
-  country: `United States${Math.floor(Math.random() * 1000)}`,
-  category: 'Management',
+  study: `Test${ind}`,
+  country: `United States${ind}`,
+  category: `Management${ind}`,
+  phase: ind,
   created: '26 Aug 2020',
 });
 
 const makeData = (...lens) => {
   const makeDataLevel = (depth = 0) => {
     const len = lens[depth];
-    return range(len).map(() => ({
-      ...newPerson(),
+    return range(len).map((item, ind) => ({
+      ...newPerson(ind),
       subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
     }));
   };
@@ -151,7 +157,127 @@ const DevExamples = () => {
     );
   };
 
+  const handleFilter = (data) => {
+    console.log('Data', data);
+  };
+
   const GridControl = {
+    filters: [
+      {
+        id: 'study',
+        name: 'Study',
+        defaultFilter: true,
+        options: [
+          {
+            value: 'Test1',
+            label: 'Test1',
+          },
+          {
+            value: 'Test2',
+            label: 'Test2',
+          },
+          {
+            value: 'Test3',
+            label: 'Test3',
+          },
+          {
+            value: 'Test4',
+            label: 'Test4',
+          },
+          {
+            value: 'Test5',
+            label: 'Test5',
+          },
+          {
+            value: 'Test6',
+            label: 'Test6',
+          },
+        ],
+      },
+      {
+        id: 'country',
+        name: 'Country',
+        defaultFilter: true,
+        options: [
+          {
+            value: 'United States0',
+            label: 'United States0',
+          },
+          {
+            value: 'United States1',
+            label: 'United States1',
+          },
+          {
+            value: 'United States2',
+            label: 'United States2',
+          },
+          {
+            value: 'United States3',
+            label: 'United States3',
+          },
+          {
+            value: 'United States4',
+            label: 'United States4',
+          },
+          {
+            value: 'United States5',
+            label: 'United States5',
+          },
+        ],
+      },
+      {
+        id: 'category',
+        name: 'Category',
+        options: [
+          {
+            value: 'Management0',
+            label: 'Management0',
+          },
+          {
+            value: 'Management1',
+            label: 'Management1',
+          },
+          {
+            value: 'Management2',
+            label: 'Management2',
+          },
+          {
+            value: 'Management3',
+            label: 'Management3',
+          },
+          {
+            value: 'Management4',
+            label: 'Management4',
+          },
+          {
+            value: 'Management5',
+            label: 'Management5',
+          },
+        ],
+      },
+      {
+        id: 'phase',
+        name: 'Phase',
+        options: [
+          {
+            value: 0,
+            label: '0',
+          },
+          {
+            value: 1,
+            label: '1',
+          },
+          {
+            value: 2,
+            label: '2',
+          },
+          {
+            value: 3,
+            label: '3',
+          },
+        ],
+      },
+    ],
     secondaryActions: [
       {
         title: 'action1',
@@ -163,6 +289,7 @@ const DevExamples = () => {
         title: 'action3',
       },
     ],
+    onFilter: handleFilter,
   };
 
   return (

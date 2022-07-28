@@ -7,6 +7,7 @@ import Button from '../../Buttons/scss';
 
 const TablePagination = ({
   rows,
+  filteredRows,
   className,
   rowsPerPageOptions,
   defaultRowsPerPage,
@@ -52,11 +53,11 @@ const TablePagination = ({
   };
 
   const rowsInfo = useMemo(() => {
-    const lastRowInfo = rows < lastRow ? rows : lastRow;
+    const lastRowInfo = filteredRows < lastRow ? filteredRows : lastRow;
     const firstRowPerPage = lastRow - defaultRowsPerPage + 1;
 
     return `${firstRowPerPage}-${lastRowInfo} of ${rows}`;
-  }, [lastRow, rows, defaultRowsPerPage]);
+  }, [lastRow, rows, defaultRowsPerPage, filteredRows]);
 
   return (
     <div {...accProps} className={tablePaginationClassNames} data-test-id={dataTestId}>
@@ -103,6 +104,7 @@ TablePagination.propTypes = {
   dataTestId: PropTypes.string,
   rowsPerPageOptions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])),
   rows: PropTypes.number,
+  filteredRows: PropTypes.number,
   nextPage: PropTypes.func,
   defaultRowsPerPage: PropTypes.number,
   setPageSize: PropTypes.func,
@@ -117,6 +119,7 @@ TablePagination.defaultProps = {
   dataTestId: undefined,
   rowsPerPageOptions: [],
   rows: 0,
+  filteredRows: 0,
   nextPage: undefined,
   defaultRowsPerPage: 0,
   setPageSize: undefined,

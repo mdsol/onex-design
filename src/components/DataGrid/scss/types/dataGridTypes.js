@@ -1,7 +1,34 @@
 import PropTypes from 'prop-types';
 
-// TO DO: add types for filters when filters component will be ready
-const DataGridFiltersTypes = PropTypes.arrayOf(PropTypes.string);
+const optionType = PropTypes.shape({
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+});
+
+const groupedOptions = PropTypes.shape({
+  label: PropTypes.string,
+  options: PropTypes.arrayOf(optionType),
+});
+
+const DataGridFiltersTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    defaultFilter: PropTypes.bool,
+    disabled: PropTypes.bool,
+    label: PropTypes.string,
+    selectedValues: PropTypes.arrayOf(optionType),
+    options: PropTypes.arrayOf(optionType),
+    groupedOptions: PropTypes.arrayOf(groupedOptions),
+    size: PropTypes.oneOf(['md', 'sm']),
+    onSelect: PropTypes.func,
+    isMulti: PropTypes.bool,
+    dataTestId: PropTypes.string,
+    isAsync: PropTypes.bool,
+    onLoadOptions: PropTypes.func,
+    getOptionValue: PropTypes.func,
+    getOptionLabel: PropTypes.func,
+  }),
+);
 
 const DataGridDropdownTypes = PropTypes.arrayOf(
   PropTypes.shape({
@@ -15,6 +42,7 @@ const DataGridDropdownTypes = PropTypes.arrayOf(
   }),
 );
 
+/* eslint-disable */
 const DataGridControlTypes = PropTypes.shape({
   title: PropTypes.string,
   badge: PropTypes.number,
@@ -29,13 +57,17 @@ const DataGridControlTypes = PropTypes.shape({
   filters: DataGridFiltersTypes,
   getActiveFilters: PropTypes.func,
   getSearchQuery: PropTypes.func,
-  prymaryAction: PropTypes.func,
-  prymaryActionText: PropTypes.string,
+  primaryAction: PropTypes.func,
+  primaryActionText: PropTypes.string,
   secondaryActions: DataGridDropdownTypes,
   isDraggeble: PropTypes.bool,
   className: PropTypes.string,
   dataTestId: PropTypes.string,
+  filterData: PropTypes.array,
+  setFilterData: PropTypes.func,
+  onFilter: PropTypes.func,
 });
+/* eslint-enable */
 
 const actionsType = PropTypes.arrayOf(
   PropTypes.shape({
@@ -58,4 +90,4 @@ const DataGridBulkActionsType = PropTypes.shape({
   dataTestId: PropTypes.string,
 });
 
-export { DataGridBulkActionsType, DataGridControlTypes };
+export { DataGridFiltersTypes, DataGridBulkActionsType, DataGridControlTypes };

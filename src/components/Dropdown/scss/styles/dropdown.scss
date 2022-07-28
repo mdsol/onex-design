@@ -254,6 +254,11 @@
       right: 0 !important;
     }
 
+    &--search {
+      padding: $menu-search-padding-y $menu-search-padding-x 0.25rem;
+      min-width: $menu-search-min-width;
+    }
+
     &--list {
       padding-left: 0;
       list-style: none;

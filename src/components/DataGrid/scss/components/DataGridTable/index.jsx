@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { useEffect, useState, useMemo } from 'react';
-import { useTable, usePagination, useSortBy } from 'react-table';
+import { useTable, usePagination, useSortBy, useFilters } from 'react-table';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Table as ReactTable } from 'react-bootstrap';
@@ -16,9 +16,6 @@ import {
 } from '@dnd-kit/core';
 import { restrictToVerticalAxis, restrictToParentElement } from '@dnd-kit/modifiers';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
-
-// import Icon from '../../../../Icon/scss';
-// import Typography from '../../../../Typography/scss';
 import TablePagination from '../../../../TablePagination/scss';
 import DataGridCell from './components/DataGridCell';
 import DataGridCustomCell from './components/DataGridCustomCell';
@@ -79,6 +76,8 @@ const DataGridTable = ({
   setData,
   setBulkActionsProps,
   getRowId,
+  filterData,
+  onFilter,
   ...accProps
 }) => {
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
@@ -96,6 +95,7 @@ const DataGridTable = ({
     setPageSize,
     canNextPage,
     canPreviousPage,
+    setFilter,
     state: { pageSize, pageIndex },
   } = useTable(
     {
@@ -112,9 +112,20 @@ const DataGridTable = ({
       disableSortBy: draggable,
       ...accProps,
     },
+    useFilters,
     useSortBy,
     usePagination,
   );
+
+  useEffect(() => {
+    Object.entries(filterData).forEach(([key, value]) => {
+      setFilter(key, value);
+    });
+  }, [filterData]);
+
+  useEffect(() => {
+    onFilter?.(rows);
+  }, [rows]);
 
   const changeCheckboxes = (value) =>
     rows.reduce(
@@ -312,6 +323,7 @@ const DataGridTable = ({
             defaultRowsPerPage={pageSize}
             rowsPerPageOptions={rowsPerPageOptions}
             rows={data.length}
+            filteredRows={rows.length}
             previousPage={previousPage}
             nextPage={nextPage}
             setPageSize={setPageSize}
@@ -366,6 +378,8 @@ DataGridTable.propTypes = {
   setData: PropTypes.func,
   setBulkActionsProps: PropTypes.func,
   getRowId: PropTypes.func,
+  filterData: PropTypes.object,
+  onFilter: PropTypes.func,
 };
 /* eslint-enable */
 
@@ -387,6 +401,7 @@ DataGridTable.defaultProps = {
   setData: undefined,
   setBulkActionsProps: undefined,
   getRowId: undefined,
+  onFilter: undefined,
 };
 
 export default DataGridTable;
