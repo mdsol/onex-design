@@ -382,63 +382,74 @@ Property info
 <Canvas>
   <Story
     name="Editable cell"
-    args={{
-      dataTestId: 'data-grid-cell-actions-test-id',
-      className: 'data-grid-cell-actions-custom',
-      columns: [
-        {
-          Header: 'Study Name',
-          accessor: 'studyName',
-        },
-        {
-          Header: 'Stage',
-          accessor: 'stage',
-        },
-        {
-          Header: 'Status',
-          accessor: 'status',
-        },
-        {
-          Header: 'Date',
-          accessor: 'date',
-          type: 'date-editable',
-        },
-      ],
-      data: [
-        {
-          studyName: 'Study name 1',
-          stage: 'Stage 1',
-          status: 'Status 1',
-          date: {
-            value: '2021/07/11',
-            dateProps: {
-              helpText: 'This is a date or birth of the patient',
-            },
-          },
-        },
-        {
-          studyName: 'Study name 2',
-          stage: 'Stage 2',
-          status: 'Status 2',
-          date: {
-            value: '2021/07/11',
-            dateProps: {
-              isInvalid: true,
-              errorMessage: 'Incorrect data',
-            },
-          },
-        },
-        {
-          studyName: 'Study name 3',
-          stage: 'Stage 3',
-          status: 'Status 3',
-          date: '2022/10/01',
-        }
-      ],
-      getRowId: (row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`
-    }}
+    height="40rem"
   >
-    {Template.bind({})}
+    {
+      (args) => {
+        const cols = React.useMemo(() => ([
+          {
+            Header: 'Study Name',
+            accessor: 'studyName',
+          },
+          {
+            Header: 'Stage',
+            accessor: 'stage',
+          },
+          {
+            Header: 'Status',
+            accessor: 'status',
+          },
+          {
+            Header: 'Date',
+            accessor: 'date',
+            type: 'date-editable',
+          },
+        ]), []);
+        const tableData = React.useMemo(() => ([
+          {
+            studyName: 'Study name 1',
+            stage: 'Stage 1',
+            status: 'Status 1',
+            date: {
+              value: '2021/07/11',
+              dateProps: {
+                helpText: 'This is a date or birth of the patient',
+                errorMessage: 'Incorrect data',
+              },
+            },
+          },
+          {
+            studyName: 'Study name 2',
+            stage: 'Stage 2',
+            status: 'Status 2',
+            date: {
+              value: '2021/07/11',
+              dateProps: {
+                errorMessage: 'Incorrect data',
+              },
+            },
+          },
+          {
+            studyName: 'Study name 3',
+            stage: 'Stage 3',
+            status: 'Status 3',
+            date: '2022/10/01',
+          }
+        ]), []);
+        return (
+          <div style={{ position: 'relative', padding: '10px'}}>
+            <DataGrid
+              dataTestId='data-grid-cell-actions-test-id'
+              className='data-grid-cell-actions-custom'
+              columns={cols}
+              data={tableData}
+              getRowId={(row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`}
+              {...args}
+            />
+          </div>
+        )
+      }
+    }
   </Story>
 </Canvas>
 

@@ -1,4 +1,5 @@
 .onex-data-grid-date-cell {
+  position: relative;
   padding: 0.625rem 0.75rem 0.625rem 0.5rem;
 
   &__input {
@@ -117,6 +118,7 @@ td.onex-data-grid-date-cell {
 
   &--error {
     outline: solid 2px $onex-data-grid-date-cell-error-border-color!important;
+    outline-offset: -0.125rem;
   }
 
   .onex-date-picker-calendar {
