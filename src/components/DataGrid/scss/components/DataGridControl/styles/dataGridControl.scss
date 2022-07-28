@@ -37,6 +37,7 @@
     justify-content: end;
 
     &-elem {
+      margin: 0 0.5rem;
       &-wrapper {
         position: relative;
         padding: 0 0.5rem;
@@ -48,7 +49,7 @@
       }
     }
 
-    .onex-data-grid-control__actions-elem.action-active {
+    .onex-data-grid-control__actions-elem-filter.action-active {
       background-color: $onex-data-grid-control-action-element-background-color;
       &:hover,
       &:focus {

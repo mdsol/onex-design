@@ -47,7 +47,7 @@ const FilterToggle = ({ eventKey, callback, isFilterActive }) => {
         type="icon"
         size="sm"
         variant="secondary"
-        className={classNames('onex-data-grid-control__actions-elem', {
+        className={classNames('onex-data-grid-control__actions-elem-filter', {
           'action-active': isCurrentEventKey,
         })}
         onClick={decoratedOnClick}
@@ -68,7 +68,6 @@ const DataGridControl = (props) => {
     hasViewOptions,
     hasSearch,
     hasActionBtn,
-    hasFilters,
     hasSecondaryActions,
     getTableView,
     filters,
@@ -94,20 +93,21 @@ const DataGridControl = (props) => {
   });
 
   const { hasSelectedRows, isAllRowsSelected, selectedRowIds, handleHeaderCheck } =
-    dataTableBindingProps;
+    dataTableBindingProps || {};
 
   const [selectedRowsCount, setSelectedRowsCount] = useState();
   const [additionalFilters, setAdditionalFilters] = useState([]);
   const [isFilterActive, setIsFilterActive] = useState(false);
 
   useEffect(() => {
-    if (Object.values(dataTableBindingProps).length) {
+    if (dataTableBindingProps && Object.values(dataTableBindingProps).length) {
       setSelectedRowsCount(Object.values(selectedRowIds).filter((item) => item).length);
     }
   }, [dataTableBindingProps]);
 
   useEffect(() => {
-    if (Object.values(filterData).length) {
+    getActiveFilters?.(filterData);
+    if (filterData && Object.values(filterData).length) {
       setIsFilterActive(!!Object.values(filterData).filter((item) => item).length);
     }
   }, [filterData]);
@@ -134,7 +134,8 @@ const DataGridControl = (props) => {
   return (
     <Accordion>
       <div {...accProps} className={dataGridControlsClasses} data-test-id={dataTestId}>
-        {Object.values(dataTableBindingProps).length > 0 &&
+        {dataTableBindingProps &&
+          Object.values(dataTableBindingProps).length > 0 &&
           (!hasSelectedRows ? (
             <Check
               id="onex-data-grid-control-check"
@@ -225,7 +226,6 @@ DataGridControl.defaultProps = {
   hasViewOptions: true,
   hasSearch: true,
   hasActionBtn: true,
-  hasFilters: false,
   hasSecondaryActions: true,
   getTableView: undefined,
   filters: [],
@@ -237,7 +237,7 @@ DataGridControl.defaultProps = {
   isDraggeble: false,
   className: undefined,
   dataTestId: undefined,
-  handleFilter: undefined,
+  onFilter: undefined,
 };
 
 export default DataGridControl;

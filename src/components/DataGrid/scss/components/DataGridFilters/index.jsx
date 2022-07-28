@@ -32,8 +32,6 @@ const DataGridFilters = ({
     );
   };
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     setDefaultFilters(filters.filter((item) => item.defaultFilter));
     handleListFilters();
@@ -45,12 +43,14 @@ const DataGridFilters = ({
 
   useEffect(() => {
     const updSelectedValues = [];
-    Object.entries(filterData).forEach(([key, value]) => {
-      if (value) {
-        updSelectedValues.push({ id: key, value, label: value.toString() });
-      }
-      setSelectedValues(updSelectedValues);
-    });
+    if (filterData) {
+      Object.entries(filterData).forEach(([key, value]) => {
+        if (value) {
+          updSelectedValues.push({ id: key, value, label: value.toString() });
+        }
+        setSelectedValues(updSelectedValues);
+      });
+    }
   }, [filterData]);
 
   const handleAddNewFilter = (option) => {

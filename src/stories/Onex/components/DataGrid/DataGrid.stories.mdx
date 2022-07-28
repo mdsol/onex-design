@@ -128,6 +128,111 @@ Important: react-table (now tanstack-table) is currently v8; it is important to 
             title: 'action3',
           },
         ],
+        filters: [
+          {
+            id: 'studyName',
+            name: 'Study Name',
+            defaultFilter: true,
+            options: [
+              {
+                value: 'Study name 0',
+                label: 'Study name 0',
+              },
+              {
+                value: 'Study name 1',
+                label: 'Study name 1',
+              },
+              {
+                value: 'Study name 2',
+                label: 'Study name 2',
+              },
+              {
+                value: 'Study name 3',
+                label: 'Study name 3',
+              },
+              {
+                value: 'Study name 4',
+                label: 'Study name 4',
+              },
+              {
+                value: 'Study name 5',
+                label: 'Study name 5',
+              },
+              {
+                value: 'Study name 6',
+                label: 'Study name 6',
+              },
+            ],
+          },
+          {
+            id: 'stage',
+            name: 'Stage',
+            options: [
+              {
+                value: 'Stage 0',
+                label: 'Stage 0',
+              },
+              {
+                value: 'Stage 1',
+                label: 'Stage 1',
+              },
+              {
+                value: 'Stage 2',
+                label: 'Stage 2',
+              },
+              {
+                value: 'Stage 3',
+                label: 'Stage 3',
+              },
+              {
+                value: 'Stage 4',
+                label: 'Stage 4',
+              },
+              {
+                value: 'Stage 5',
+                label: 'Stage 5',
+              },
+              {
+                value: 'Stage 6',
+                label: 'Stage 6',
+              },
+            ],
+          },
+          {
+            id: 'status',
+            name: 'Status',
+            options: [
+              {
+                value: 'Status 0',
+                label: 'Status 0',
+              },
+              {
+                value: 'Status 1',
+                label: 'Status 1',
+              },
+              {
+                value: 'Status 2',
+                label: 'Status 2',
+              },
+              {
+                value: 'Status 3',
+                label: 'Status 3',
+              },
+              {
+                value: 'Status 4',
+                label: 'Status 4',
+              },
+              {
+                value: 'Status 5',
+                label: 'Status 5',
+              },
+              {
+                value: 'Status 6',
+                label: 'Status 6',
+              },
+            ],
+          },
+        ],
       },
       dataGridBulkActionsProps: {
         actions: [
@@ -173,6 +278,171 @@ Important: react-table (now tanstack-table) is currently v8; it is important to 
 To add a header you must use prop `dataGridControlProps` for standard table control element.
 If a custom element is required, you have to use `customGridControl` prop.
 For more information please check: [DataGridControl Props](/docs/onex-components-datagrid-datagridcontrol--demo).
+
+### DataGrid filtering
+
+To add filter you have to use prop `dataGridControlProps.filters`.
+This prop represented an array of table filters.
+
+| Name          | Type    | Description                                         |
+|---------------|---------|-----------------------------------------------------|
+| id            | String  | Id of column.                                       |
+| name          | String  | Name(Label) of filter                               |
+| defaultFilter | Boolean | If this parameter is passed filter shows by default |
+
+For representing filters used component Filter Select, for options Filter Select please check: [FilterSelect Props](/docs/onex-components-filterselect--demo).
+
+```
+ filters: [
+          {
+            id: 'studyName',
+            name: 'Study Name',
+            defaultFilter: true,
+            options: [
+              {
+                value: 'Study name 0',
+                label: 'Study name 0',
+              },
+              ...
+            ],
+          },
+```
+
+Also in case if you're using ```custom``` type of column you must pass custom function ```filter``` in column.
+```
+const customStageFilterFunction = (rows, id, filterValue) =>
+  rows.filter((row) => row.original.stage.value.includes(filterValue));
+
+
+const columns = [
+  {
+    Header: 'Stage',
+    accessor: 'stage',
+    type: 'custom',
+    filter: customStageFilterFunction,
+  },
+  ...
+];
+```
+
+Also, you can use callback ```dataGridControlProps.onFilter``` - which returns filteredRows and ```dataGridControlProps.getActiveFilters``` - function for get current value of selected filters.
+
+<Canvas>
+  <Story
+    name="Filtering"
+    height="28rem"
+    args={{
+      dataTestId: 'data-grid-filtering-test-id',
+      className: 'data-grid-filtering-custom',
+      dataGridControlProps: {
+        secondaryActions: [
+          {
+            title: 'action1',
+          },
+          {
+            title: 'action2',
+          },
+          {
+            title: 'action3',
+          },
+        ],
+        filters: [
+          {
+            id: 'studyName',
+            name: 'Study Name',
+            defaultFilter: true,
+            options: [
+              {
+                value: 'Study name 1',
+                label: 'Study name 1',
+              },
+              {
+                value: 'Study name 2',
+                label: 'Study name 2',
+              },
+              {
+                value: 'Study name 3',
+                label: 'Study name 3',
+              },
+              {
+                value: 'Study name 4',
+                label: 'Study name 4',
+              },
+              {
+                value: 'Study name 5',
+                label: 'Study name 5',
+              },
+            ],
+          },
+          {
+            id: 'stage',
+            name: 'Stage',
+            options: [
+              {
+                value: 'Stage 1',
+                label: 'Stage 1',
+              },
+              {
+                value: 'Stage 2',
+                label: 'Stage 2',
+              },
+              {
+                value: 'Stage 3',
+                label: 'Stage 3',
+              },
+              {
+                value: 'Stage 4',
+                label: 'Stage 4',
+              },
+              {
+                value: 'Stage 5',
+                label: 'Stage 5',
+              },
+            ],
+          },
+          {
+            id: 'status',
+            name: 'Status',
+            options: [
+              {
+                value: 'Status 1',
+                label: 'Status 1',
+              },
+              {
+                value: 'Status 2',
+                label: 'Status 2',
+              },
+              {
+                value: 'Status 3',
+                label: 'Status 3',
+              },
+              {
+                value: 'Status 4',
+                label: 'Status 4',
+              },
+              {
+                value: 'Status 5',
+                label: 'Status 5',
+              },
+            ],
+          },
+        ],
+      },
+      columns: gridColumns,
+      data: gridData,
+      sortBy: [
+        {
+          id: 'studyId',
+        },
+      ],
+      multiSort: false,
+      getRowId: (row, relativeIndex, parent) => row.studyId,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 
 ### DataGrid Body
 

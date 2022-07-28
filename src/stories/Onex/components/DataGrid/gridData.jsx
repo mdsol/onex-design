@@ -6,6 +6,15 @@ export const dropdownItems = [
   { eventKey: 'three', title: 'Option 3' },
 ];
 
+const customStudyFilterFunction = (rows, id, filterValue) =>
+  rows.filter((row) => row.original.studyName.value.includes(filterValue));
+
+const customStageFilterFunction = (rows, id, filterValue) =>
+  rows.filter((row) => row.original.stage.value.includes(filterValue));
+
+const customStatusFilterFunction = (rows, id, filterValue) =>
+  rows.filter((row) => row.original.status.value.includes(filterValue));
+
 export const demoGridColumns = [
   {
     Header: 'Study Id',
@@ -15,16 +24,19 @@ export const demoGridColumns = [
     Header: 'Study Name',
     accessor: 'studyName',
     type: 'custom',
+    filter: customStudyFilterFunction,
   },
   {
     Header: 'Stage',
     accessor: 'stage',
     type: 'custom',
+    filter: customStageFilterFunction,
   },
   {
     Header: 'Status',
     accessor: 'status',
     type: 'custom',
+    filter: customStatusFilterFunction,
   },
   {
     Header: 'Phase',
@@ -49,6 +61,7 @@ export const demoGridData = () =>
     studyId: `A19580${i}`,
     studyName: { value: `Study name ${i}`, leadingIcon: <Icon>check_circle</Icon> },
     stage: {
+      value: `Stage ${i}`,
       component: (
         <Badge type="default" variant="status">
           Stage {i}
@@ -56,6 +69,7 @@ export const demoGridData = () =>
       ),
     },
     status: {
+      value: `Status ${i}`,
       component: (
         <Badge type="default" variant="status">
           Status {i}
