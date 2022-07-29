@@ -5,9 +5,16 @@
 
   &-container {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &-wrapper {
     margin-right: $onex-data-grid-filters-wrapper-margin;
+    margin-bottom: $onex-data-grid-filters-wrapper-margin;
+  }
+
+  &-clear-wrapper {
+    display: flex;
+    flex-shrink: 0;
   }
 }

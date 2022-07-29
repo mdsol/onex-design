@@ -60,6 +60,7 @@ const FilterSelect = ({
   onLoadOptions,
   getOptionValue,
   getOptionLabel,
+  showMenuByDefault,
   ...props
 }) => {
   const applyButtonRef = useRef(null);
@@ -70,11 +71,15 @@ const FilterSelect = ({
   );
   const [selectedOptions, setSelectedOptions] = useState(locSelectedValues);
   const [filteredOptions, setFilteredOptions] = useState(locSelectedValues);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(showMenuByDefault);
   const [value, setValue] = useState(locSelectedValues.length ? locSelectedValues[0] : null);
   const [applyButtonIsFocused, setApplyButtonIsFocused] = useState(false);
   const [noOptions, setNoOptions] = useState(false);
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    setShowMenu(showMenuByDefault);
+  }, [showMenuByDefault]);
 
   useEffect(() => {
     setSelectedOptions(locSelectedValues);
@@ -363,6 +368,7 @@ FilterSelect.propTypes = {
   onLoadOptions: PropTypes.func,
   getOptionValue: PropTypes.func,
   getOptionLabel: PropTypes.func,
+  showMenuByDefault: PropTypes.bool,
 };
 
 FilterSelect.defaultProps = {
@@ -380,6 +386,7 @@ FilterSelect.defaultProps = {
   onLoadOptions: undefined,
   getOptionValue: undefined,
   getOptionLabel: undefined,
+  showMenuByDefault: false,
 };
 
 export default FilterSelect;
