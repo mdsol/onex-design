@@ -6,6 +6,7 @@ import ReactSelect, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import Check from '../../Check/scss';
 import Icon from '../../Icon/scss';
+import Tooltip from '../../Tooltip/scss';
 
 // eslint-disable-next-line react/prop-types
 const ClearIndicator = ({ innerProps: { ref, ...restInnerProps } }) => (
@@ -18,6 +19,17 @@ const MultiValueRemove = (props) => (
   <components.MultiValueRemove {...props}>
     <Icon>close</Icon>
   </components.MultiValueRemove>
+);
+
+const BadgeValue = ({ children, tooltip, ...props }) => (
+  <components.SingleValue {...props} className={classNames('onex-select__value--badge')}>
+    <div>{children}</div>
+    {!!tooltip && (
+      <Tooltip placement="bottom" tooltipChildren={tooltip.text}>
+        <Icon className={tooltip.type}>info</Icon>
+      </Tooltip>
+    )}
+  </components.SingleValue>
 );
 
 const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
@@ -47,6 +59,12 @@ const Option = ({ selectedOptions, showCheckInOption, ...props }) => {
   );
 };
 
+const BadgeOption = ({ ...props }) => (
+  <components.Option {...props} className={classNames('onex-select__option--badge')}>
+    <div>{props.children}</div>
+  </components.Option>
+);
+
 /*
  * Select component
  */
@@ -72,6 +90,8 @@ const Select = ({
   hideSelectedOptions,
   isSearchable,
   closeMenuOnSelect,
+  isBadged,
+  tooltip,
   ...props
 }) => {
   const locSelectedValues = useMemo(
@@ -91,6 +111,7 @@ const Select = ({
     'onex-select--sm': !isMulti && size === 'sm',
     'onex-select--invalid': isInvalid,
     'is-disabled': isDisabled,
+    'is-badged': isBadged,
   });
 
   const handleChange = (option) => {
@@ -102,6 +123,43 @@ const Select = ({
     setSelectedOptions([...option]);
     return onSelect?.([...option]);
   };
+
+  if (isBadged) {
+    return (
+      <div className={selectClassNames}>
+        <ReactSelect
+          classNamePrefix="onex-select"
+          options={groupedOptions.length ? groupedOptions : options}
+          isDisabled={isDisabled}
+          components={{
+            // eslint-disable-next-line react/prop-types
+            Option: memo(({ children, ...args }) => (
+              <BadgeOption {...args}>{children}</BadgeOption>
+            )),
+            SingleValue: ({ children, ...args }) => (
+              <BadgeValue {...args} tooltip={tooltip}>
+                {children}
+              </BadgeValue>
+            ),
+          }}
+          onChange={handleChange}
+          aria-invalid
+          value={selectedOptions}
+          data-test-id={dataTestId}
+          hideSelectedOptions={hideSelectedOptions}
+          closeMenuOnSelect
+          tabSelectsValue={false}
+          isSearchable={false}
+          {...props}
+        />
+        {isInvalid && (
+          <Form.Text className="onex-select__help-text onex-select__help--error">
+            {errorMessage}
+          </Form.Text>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className={selectClassNames}>
@@ -182,6 +240,19 @@ const groupedOptions = PropTypes.shape({
   options: PropTypes.arrayOf(optionType),
 });
 
+BadgeValue.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  tooltip: PropTypes.shape({
+    type: PropTypes.oneOf(['info', 'error']),
+    text: PropTypes.string,
+  }),
+};
+
+BadgeValue.defaultProps = {
+  children: undefined,
+  tooltip: undefined,
+};
+
 Option.propTypes = {
   selectedOptions: PropTypes.arrayOf(optionType),
   showCheckInOption: PropTypes.bool,
@@ -194,6 +265,18 @@ Option.defaultProps = {
   selectedOptions: [],
   showCheckInOption: false,
   value: [],
+  children: undefined,
+  data: undefined,
+};
+
+BadgeOption.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  data: PropTypes.objectOf(optionType),
+};
+
+BadgeOption.defaultProps = {
+  value: '',
   children: undefined,
   data: undefined,
 };
@@ -219,6 +302,11 @@ Select.propTypes = {
   hideSelectedOptions: PropTypes.bool,
   isSearchable: PropTypes.bool,
   closeMenuOnSelect: PropTypes.bool,
+  isBadged: PropTypes.bool,
+  tooltip: PropTypes.shape({
+    type: PropTypes.oneOf(['info', 'error']),
+    text: PropTypes.string,
+  }),
 };
 
 Select.defaultProps = {
@@ -242,6 +330,8 @@ Select.defaultProps = {
   hideSelectedOptions: false,
   isSearchable: true,
   closeMenuOnSelect: false,
+  isBadged: false,
+  tooltip: undefined,
 };
 
 export default Select;

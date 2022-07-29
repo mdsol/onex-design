@@ -1,0 +1,16 @@
+.onex-data-grid-select-badge {
+    padding: 0 !important;
+
+    .onex-tooltip__child-wrap {
+        background-color: transparent;
+        border: none;
+
+        .info {
+            color: rgba(133, 140, 150, 1);
+        }
+
+        .error {
+            color: rgba(217, 21, 34, 1);
+        }
+    }
+}
