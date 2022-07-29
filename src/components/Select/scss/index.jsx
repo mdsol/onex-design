@@ -6,7 +6,7 @@ import ReactSelect, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import Check from '../../Check/scss';
 import Icon from '../../Icon/scss';
-import { Tooltip } from '../..';
+import Tooltip from '../../Tooltip/scss';
 
 // eslint-disable-next-line react/prop-types
 const ClearIndicator = ({ innerProps: { ref, ...restInnerProps } }) => (

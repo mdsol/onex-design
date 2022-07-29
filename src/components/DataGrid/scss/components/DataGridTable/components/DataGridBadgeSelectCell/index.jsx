@@ -1,21 +1,19 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useState, useEffect } from 'react';
-import { Select } from '../../../../../..';
+import { useState } from 'react';
+import Select from '../../../../../../Select/scss';
 
 const DataGridBadgeSelectCell = ({ cell, row, updateData }) => {
+  const cellProps = typeof cell.value === 'object' ? cell.value : { value: cell.value };
+  const badgeSelectProps = cell?.value?.badgeSelectProps || {};
   const DataGridBadgeSelectCellClassNames = classNames('onex-data-grid-select-badge');
 
-  const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedValue, setSelectedValue] = useState(cellProps.value || cell.column.defaultOption);
 
   const handleSelect = (value) => {
-    setSelectedValue(value);
-    updateData(row.index, cell?.column.id, value);
+    setSelectedValue(value[0]);
+    updateData(row.index, cell?.column.id, value[0]);
   };
-
-  useEffect(() => {
-    setSelectedValue(row.values.selectBadge);
-  }, []);
 
   return (
     <td className={DataGridBadgeSelectCellClassNames} {...cell.getCellProps()}>
@@ -24,11 +22,16 @@ const DataGridBadgeSelectCell = ({ cell, row, updateData }) => {
         className="select"
         dataTestId="select"
         options={cell.column.options}
-        defaultValue={cell.column.defaultOption}
         selectedValues={selectedValue}
         onSelect={handleSelect}
         isBadged
-        tooltip={cell.column.getTooltip(row)}
+        tooltip={
+          (badgeSelectProps.tooltipType && {
+            type: badgeSelectProps.tooltipType,
+            text: badgeSelectProps.tooltipText,
+          }) ||
+          cell.column.getTooltip(cell)
+        }
       />
     </td>
   );

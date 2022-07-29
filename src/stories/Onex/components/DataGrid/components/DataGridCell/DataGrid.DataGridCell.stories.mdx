@@ -347,18 +347,90 @@ Props for this column:
    text: string
  }, if return undefined tooltip not be created for this sell.
 
- <Canvas>
-  <Story
-    name="BadgeSelectCell"
-    args={{
-      dataTestId: 'data-grid-select-badge-test-id',
-      className: 'data-grid-select-badge-test-id',
-      columns: dataGridColumnsWithBadgeSelect,
-      data: gridData,
-      getRowId: (row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`,
-    }}
-  >
-    {Template.bind({})}
+ In data for cell you can create property with column accessor name, inside you can provide this props:
+ value: {
+   value: string,
+   label: string
+ } used for default select option for this cell
+ badgeSelectProps: {
+   tooltipType: 'info' || 'error',
+   tooltipText: 'string',
+ } this used for default tooltip for any selected value in this cell
+
+<Canvas>
+  <Story name="Badge Select Cell" height="40rem">
+    {(args) => {
+      const options = [
+        { value: 'brazil', label: 'Brazil' },
+        { value: 'colombia', label: 'Colombia' },
+        { value: 'poland', label: 'Poland' },
+        { value: 'portugal', label: 'Portugal' },
+        { value: 'spain', label: 'Spain' },
+      ];
+      const cols = React.useMemo(() => ([
+        {
+          Header: 'Study Name',
+          accessor: 'studyName',
+        },
+        {
+          Header: 'Stage',
+          accessor: 'stage',
+        },
+        {
+          Header: 'Status',
+          accessor: 'status',
+        },
+        {
+          Header: 'Created',
+          accessor: 'created',
+          options,
+          defaultOption: { value: 'portugal', label: 'Portugal' },
+          getTooltip: (cell) => false,
+          type: 'selectBadge',
+        },
+      ]), []);
+      const tableData = React.useMemo(() => ([
+        {
+          studyName: 'Study name 1',
+          stage: 'Stage 1',
+          status: 'Status 1',
+          created: {
+            badgeSelectProps: {
+              tooltipType: 'error',
+              tooltipText: 'Error',
+            },
+          },
+        },
+        {
+          studyName: 'Study name 2',
+          stage: 'Stage 2',
+          status: 'Status 2',
+          created: {
+            value: { value: 'colombia', label: 'Colombia' },
+            badgeSelectProps: {
+              tooltipType: 'info',
+              tooltipText: 'Info',
+            },
+          },
+        },
+        {
+          studyName: 'Study name 3',
+          stage: 'Stage 3',
+          status: 'Status 3',
+        }
+      ]), []);
+      return (
+        <div style={{ position: 'relative', padding: '10px'}}>
+          <DataGrid
+            dataTestId='data-grid-select-badge-test-id'
+            className='data-grid-select-badge-test-id'
+            columns={cols}
+            data={tableData}
+            getRowId={(row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`}
+            {...args}
+          />
+        </div>
+      )}}
   </Story>
 </Canvas>
 
