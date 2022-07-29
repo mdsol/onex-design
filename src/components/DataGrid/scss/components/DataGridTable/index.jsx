@@ -21,6 +21,7 @@ import DataGridCell from './components/DataGridCell';
 import DataGridCustomCell from './components/DataGridCustomCell';
 import DataGridEditableCell from './components/DataGridEditableCell';
 import DataGridDateCell from './components/DataGridDateCell';
+import DataGridBadgeSelectCell from './components/DataGridBadgeSelectCell';
 import DataGridHeader from './components/DataGridHeader';
 import DraggableTableRow from './components/Draggable/DraggableTableRow';
 import StaticTableRow from './components/Draggable/StaticTableRow';
@@ -49,6 +50,16 @@ const handleColumnType = (row, cell, cellInd, updateData) => {
           row={row}
           cell={cell}
           updateData={updateData}
+        />
+      );
+    }
+    case 'selectBadge': {
+      return (
+        <DataGridBadgeSelectCell
+          key={`body_cell_${row.id}_${cellInd}`}
+          cell={cell}
+          updateData={updateData}
+          row={row}
         />
       );
     }
@@ -344,13 +355,13 @@ DataGridTable.propTypes = {
     PropTypes.shape({
       Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
       accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-      type: PropTypes.oneOf(['action', 'custom', 'editable', 'date-editable']),
+      type: PropTypes.oneOf(['action', 'custom', 'editable', 'date-editable', 'select-badge']),
       hasDivider: PropTypes.bool,
       columns: PropTypes.arrayOf(
         PropTypes.shape({
           Header: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
           accessor: PropTypes.string,
-          type: PropTypes.oneOf(['action', 'custom', 'editable', 'date-editable']),
+          type: PropTypes.oneOf(['action', 'custom', 'editable', 'date-editable', 'select-badge']),
           hasDivider: PropTypes.bool,
           textAlign: PropTypes.oneOf(['left', 'right']),
           textVariant: PropTypes.oneOf(['regular', 'semibold']),

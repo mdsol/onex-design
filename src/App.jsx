@@ -15,6 +15,14 @@ import ThemeProvider from './components/ThemeProvider';
 
 import './scss/platform.scss';
 
+const options = [
+  { value: 'brazil', label: 'Brazil' },
+  { value: 'colombia', label: 'Colombia' },
+  { value: 'poland', label: 'Poland' },
+  { value: 'portugal', label: 'Portugal' },
+  { value: 'spain', label: 'Spain' },
+];
+
 const dataGridColumns = [
   {
     Header: 'ID',
@@ -39,8 +47,11 @@ const dataGridColumns = [
   },
   {
     Header: 'Created',
-    accessor: 'created',
-    type: 'date-editable',
+    accessor: 'selectBadge',
+    options,
+    defaultOption: { value: 'portugal', label: 'Portugal' },
+    getTooltip: (row) => console.log(row),
+    type: 'selectBadge',
   },
 ];
 
@@ -325,6 +336,7 @@ const DevExamples = () => {
           options={optionsMultiSelectSub}
           selectedValues={selectedValues}
           onSelect={handleSelect}
+          isBadged
         />
       </div>
       <div>

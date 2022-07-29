@@ -1,6 +1,6 @@
 import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
 
-import {gridColumns, gridData, dropdownItems, demoCellGridColumns, demoCellGridData} from '../../gridData';
+import {gridColumns, gridData, dropdownItems, demoCellGridColumns, demoCellGridData, dataGridColumnsWithBadgeSelect} from '../../gridData';
 import {DataGrid, Avatar, Icon, Badge, Tag, Dropdown, Button, Switch} from '../../../../../../components';
 import DataGridCustomCell
   from '../../../../../../components/DataGrid/scss/components/DataGridTable/components/DataGridCustomCell';
@@ -329,6 +329,39 @@ For using editable table cell in ```columns``` prop use - ```type: 'editable'```
     {Template.bind({})}
   </Story>
 </Canvas>
+
+### Badge Select Cell
+
+Select with badge, for activate need to use type ```select-badge``` like type column.
+Props for this column: 
+ - options: [{
+   value: string,
+   label: string
+ }] used for badged select options
+ - defayltOption: {
+   value: string,
+   label: string
+ } used for default select option for all rows
+ - getTooltip: function which use row and must create advice for user in tooltip form. Must return object {
+   type: 'info' || 'error',
+   text: string
+ }, if return undefined tooltip not be created for this sell.
+
+ <Canvas>
+  <Story
+    name="BadgeSelectCell"
+    args={{
+      dataTestId: 'data-grid-select-badge-test-id',
+      className: 'data-grid-select-badge-test-id',
+      columns: dataGridColumnsWithBadgeSelect,
+      data: gridData,
+      getRowId: (row, relativeIndex, parent) => parent ? [`c-edit.${parent.id}`, relativeIndex].join('.') : `c-edit.${relativeIndex}`,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 
 
 ### Editable cell type date
