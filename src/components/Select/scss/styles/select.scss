@@ -329,6 +329,46 @@
       }
     }
   }
+  
+  &.is-badged {
+    max-width: 100%;
+    height: 3.25rem;
+
+    & > div {
+      height: 100%;
+    }
+
+    .onex-select__control {
+      border-radius: 0 !important;
+      border: none;
+      height: 100%;
+      .onex-select__indicators {
+        display: flex;
+        align-items: center;
+      }
+    } 
+  }
+
+  &__value--badge, &__option--badge {
+    & > div {
+      background-color: $onex-select-badge-background-color;
+      width: min-content;
+      border: 1px solid $secondary-900-opacity-10;
+      border-radius: 0.25rem;
+      color: $onex-select-badge-color;
+      text-transform: uppercase;
+      font-size: $onex-select-badge-font-size;
+      line-height: $onex-select-badge-line-height;
+      font-weight: $onex-select-badge-font-weight;
+      padding: 0 0.5rem;
+    }
+  }
+
+  &__value--badge {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .onex-select--md {
