@@ -78,6 +78,7 @@ const DataGridFilters = ({
               label={item.name}
               onSelect={(option) => handleFilter(option, item.id)}
               selectedValues={selectedValues.filter((selectedItem) => item.id === selectedItem.id)}
+              showMenuByDefault
               {...item}
             />
           </div>
@@ -96,7 +97,7 @@ const DataGridFilters = ({
           />
         )}
       </div>
-      <div>
+      <div className="onex-data-grid-filters-clear-wrapper">
         <Button
           variant="tertiary"
           size="sm"
