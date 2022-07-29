@@ -2,6 +2,10 @@
   position: relative;
   padding: 0.625rem 0.75rem 0.625rem 0.5rem;
 
+  .onex-date-picker-calendar {
+    margin-left: -0.5rem;
+  }
+
   &__input {
     position: relative;
     display: inline-flex;
