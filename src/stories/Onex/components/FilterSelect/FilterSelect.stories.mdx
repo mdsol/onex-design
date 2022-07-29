@@ -86,6 +86,9 @@ import { FilterSelect } from '../../../../components';
         },
       },
     },
+    showMenuByDefault: {
+      description: 'Open menu by default',
+    },
     onSelect: {
       description: 'Callback fired when the option is select.',
     },
@@ -174,6 +177,7 @@ The filter select component allows users to choose single or multiple options fr
         },
       ],
       isMulti: true,
+      showMenuByDefault: false,
       selectedValues: [],
     }}
   >
