@@ -67,6 +67,7 @@ const DataGrid = ({
           <DataGridControl
             {...dataGridControlProps}
             isDraggeble={draggable}
+            isBulkActionsActive={useRowSelection}
             dataTableBindingProps={bulkActionsProps}
             dataGridBulkActionsProps={dataGridBulkActionsProps}
             filterData={filterData}

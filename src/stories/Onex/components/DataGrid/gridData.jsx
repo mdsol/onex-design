@@ -251,38 +251,3 @@ export const gridCustomHeaderColumns = [
     hasDivider: true,
   },
 ];
-
-const options = [
-  { value: 'brazil', label: 'Brazil' },
-  { value: 'colombia', label: 'Colombia' },
-  { value: 'poland', label: 'Poland' },
-  { value: 'portugal', label: 'Portugal' },
-  { value: 'spain', label: 'Spain' },
-];
-
-export const dataGridColumnsWithBadgeSelect = [
-  {
-    Header: 'ID',
-    accessor: 'id',
-  },
-  {
-    Header: 'Study',
-    accessor: 'study',
-  },
-  {
-    Header: 'Country',
-    accessor: 'country',
-  },
-  {
-    Header: 'Category',
-    accessor: 'category',
-  },
-  {
-    Header: 'Created',
-    accessor: 'selectBadge',
-    options,
-    defaultOption: { value: 'portugal', label: 'Portugal' },
-    getTooltip: (row) => console.log(row),
-    type: 'selectBadge',
-  },
-];
