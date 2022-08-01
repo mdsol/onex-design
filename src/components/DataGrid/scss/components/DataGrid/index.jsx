@@ -167,6 +167,7 @@ DataGrid.defaultProps = {
     row?.id ? row.id : parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
   draggable: false,
   handleSort: undefined,
+  handlePagination: undefined,
 };
 
 export default DataGrid;
