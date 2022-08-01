@@ -74,7 +74,7 @@ const DataGridTable = ({
   data,
   className,
   rowsPerPageOptions,
-  sortBy,
+  sortByData,
   multiSort,
   updateData,
   skipPageReset,
@@ -88,7 +88,9 @@ const DataGridTable = ({
   setBulkActionsProps,
   getRowId,
   filterData,
-  onFilter,
+  handleFilter,
+  handleSort,
+  handlePagination,
   ...accProps
 }) => {
   const [_selectedRowIds, _setSelectedRowIds] = useState(selectedRowIds);
@@ -101,13 +103,14 @@ const DataGridTable = ({
     prepareRow,
     rows,
     page,
+    pageCount,
     previousPage,
     nextPage,
     setPageSize,
     canNextPage,
     canPreviousPage,
     setFilter,
-    state: { pageSize, pageIndex },
+    state: { pageSize, pageIndex, sortBy, filters },
   } = useTable(
     {
       columns,
@@ -118,7 +121,7 @@ const DataGridTable = ({
       initialState: {
         pageIndex: 0,
         pageSize: rowsPerPageOptions.length ? rowsPerPageOptions[0] : data.length,
-        sortBy: draggable ? [] : sortBy,
+        sortBy: draggable ? [] : sortByData,
       },
       disableSortBy: draggable,
       ...accProps,
@@ -135,8 +138,16 @@ const DataGridTable = ({
   }, [filterData]);
 
   useEffect(() => {
-    onFilter?.(rows);
-  }, [rows]);
+    handleFilter?.(rows);
+  }, [filters]);
+
+  useEffect(() => {
+    handleSort?.(rows);
+  }, [sortBy]);
+
+  useEffect(() => {
+    handlePagination?.(pageIndex, pageSize, pageCount, page);
+  }, [page]);
 
   const changeCheckboxes = (value) =>
     rows.reduce(
@@ -220,6 +231,7 @@ const DataGridTable = ({
       selectedRowIds: _selectedRowIds,
       handleHeaderCheck,
     }));
+    handleSelection?.(_selectedRowIds);
   }, [_selectedRowIds]);
 
   const tableClasses = classNames('onex-data-grid__table', {
@@ -370,7 +382,7 @@ DataGridTable.propTypes = {
     }),
   ),
   data: PropTypes.array,
-  sortBy: PropTypes.arrayOf(
+  sortByData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
       desc: PropTypes.bool,
@@ -390,7 +402,9 @@ DataGridTable.propTypes = {
   setBulkActionsProps: PropTypes.func,
   getRowId: PropTypes.func,
   filterData: PropTypes.object,
-  onFilter: PropTypes.func,
+  handleFilter: PropTypes.func,
+  handleSort: PropTypes.func,
+  handlePagination: PropTypes.func,
 };
 /* eslint-enable */
 
@@ -398,7 +412,7 @@ DataGridTable.defaultProps = {
   className: undefined,
   columns: [],
   data: [],
-  sortBy: [],
+  sortByData: [],
   multiSort: undefined,
   rowsPerPageOptions: [],
   updateData: undefined,
@@ -412,7 +426,9 @@ DataGridTable.defaultProps = {
   setData: undefined,
   setBulkActionsProps: undefined,
   getRowId: undefined,
-  onFilter: undefined,
+  handleFilter: undefined,
+  handleSort: undefined,
+  handlePagination: undefined,
 };
 
 export default DataGridTable;

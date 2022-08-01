@@ -50,7 +50,7 @@ const dataGridColumns = [
     accessor: 'selectBadge',
     options,
     defaultOption: { value: 'portugal', label: 'Portugal' },
-    getTooltip: (row) => console.log(row),
+    getTooltip: (row) => {},
     type: 'selectBadge',
   },
 ];
@@ -169,7 +169,22 @@ const DevExamples = () => {
   };
 
   const handleFilter = (data) => {
-    console.log('Data', data);
+    console.log('Filter data', data);
+  };
+
+  const handleSelection = (data) => {
+    console.log('Selection data', data);
+  };
+
+  const handleSort = (data) => {
+    console.log('Sorting', data);
+  };
+
+  const handlePagination = (pageIndex, pageSize, pageCount, pageData) => {
+    console.log('pageIndex', pageIndex);
+    console.log('pageSize', pageSize);
+    console.log('pageCount', pageCount);
+    console.log('pageData', pageData);
   };
 
   const GridControl = {
@@ -300,7 +315,7 @@ const DevExamples = () => {
         title: 'action3',
       },
     ],
-    onFilter: handleFilter,
+    handleFilter,
   };
 
   return (
@@ -360,9 +375,11 @@ const DevExamples = () => {
           columns={dataGridColumns}
           data={dataGridData}
           sortBy={dataGridSortByUpd}
+          handleSort={handleSort}
+          handlePagination={handlePagination}
+          handleSelection={handleSelection}
           rowsPerPageOptions={[10, 20, 30]}
           dataGridControlProps={GridControl}
-          draggable
           dataGridBulkActionsProps={{
             actions: [
               { title: 'action1' },
