@@ -36,28 +36,30 @@ const DateInput = React.forwardRef((props, ref) => {
   return (
     <Form.Group ref={target} {...accProps} className={dateInputClassNames}>
       <div className="onex-data-grid-date-cell__input">
-        <Form.Control
-          ref={ref}
-          autoFocus={autoFocus}
-          placeholder={placeholder}
-          disabled={disabled}
-          isInvalid={isInvalid}
-          readOnly={readOnly}
-          required={required}
-          value={value}
-          onKeyDown={onKeyDown}
-          onChange={handleChange}
-          onBlur={onBlur}
-          {...accProps}
-        />
-        {((isInvalid && errorMessage) || helpText) && (
-          <div className="onex-data-grid-date-cell__tooltip">
-            <DataGridTooltip
-              type={isInvalid ? 'error' : 'info'}
-              message={isInvalid ? errorMessage : helpText}
-            />
-          </div>
-        )}
+        <div className="onex-data-grid-date-cell__input-container">
+          <Form.Control
+            ref={ref}
+            autoFocus={autoFocus}
+            placeholder={placeholder}
+            disabled={disabled}
+            isInvalid={isInvalid}
+            readOnly={readOnly}
+            required={required}
+            value={value.slice(0, 10)}
+            onKeyDown={onKeyDown}
+            onChange={handleChange}
+            onBlur={onBlur}
+            {...accProps}
+          />
+          {((isInvalid && errorMessage) || helpText) && (
+            <div className="onex-data-grid-date-cell__tooltip">
+              <DataGridTooltip
+                type={isInvalid ? 'error' : 'info'}
+                message={isInvalid ? errorMessage : helpText}
+              />
+            </div>
+          )}
+        </div>
         <button
           className={classNames('onex-data-grid-date-cell__toggle-icon', {
             'onex-data-grid-date-cell__toggle-icon--open': showCalendar,

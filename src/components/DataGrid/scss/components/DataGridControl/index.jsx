@@ -72,6 +72,7 @@ const DataGridControl = (props) => {
     className,
     dataTestId,
     dataTableBindingProps,
+    isBulkActionsActive,
     dataGridBulkActionsProps,
     filterData,
     setFilterData,
@@ -129,11 +130,15 @@ const DataGridControl = (props) => {
         {dataTableBindingProps &&
           Object.values(dataTableBindingProps).length > 0 &&
           (!hasSelectedRows ? (
-            <Check
-              id="onex-data-grid-control-check"
-              className="onex-data-grid-control__check"
-              onClick={handleHeaderCheck}
-            />
+            <span>
+              {isBulkActionsActive && (
+                <Check
+                  id="onex-data-grid-control-check"
+                  className="onex-data-grid-control__check"
+                  onClick={handleHeaderCheck}
+                />
+              )}
+            </span>
           ) : (
             <DataGridBulkActions
               {...dataGridBulkActionsProps}

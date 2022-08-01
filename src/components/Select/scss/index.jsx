@@ -6,7 +6,7 @@ import ReactSelect, { components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import Check from '../../Check/scss';
 import Icon from '../../Icon/scss';
-import Tooltip from '../../Tooltip/scss';
+import Tooltip from '../../DataGrid/scss/components/DataGridTable/components/DataGridTooltip/index';
 
 // eslint-disable-next-line react/prop-types
 const ClearIndicator = ({ innerProps: { ref, ...restInnerProps } }) => (
@@ -24,11 +24,7 @@ const MultiValueRemove = (props) => (
 const BadgeValue = ({ children, tooltip, ...props }) => (
   <components.SingleValue {...props} className={classNames('onex-select__value--badge')}>
     <div>{children}</div>
-    {!!tooltip && (
-      <Tooltip placement="bottom" tooltipChildren={tooltip.text}>
-        <Icon className={tooltip.type}>info</Icon>
-      </Tooltip>
-    )}
+    {!!tooltip && <Tooltip type={tooltip.type} message={tooltip.text} />}
   </components.SingleValue>
 );
 

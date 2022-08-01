@@ -1,6 +1,6 @@
 import {Story, Canvas, ArgsTable, Meta} from "@storybook/addon-docs";
 
-import {gridColumns, gridData, dropdownItems, demoCellGridColumns, demoCellGridData, dataGridColumnsWithBadgeSelect} from '../../gridData';
+import {gridColumns, gridData, dropdownItems, demoCellGridColumns, demoCellGridData} from '../../gridData';
 import {DataGrid, Avatar, Icon, Badge, Tag, Dropdown, Button, Switch} from '../../../../../../components';
 import DataGridCustomCell
   from '../../../../../../components/DataGrid/scss/components/DataGridTable/components/DataGridCustomCell';
@@ -361,11 +361,10 @@ Props for this column:
   <Story name="Badge Select Cell" height="40rem">
     {(args) => {
       const options = [
-        { value: 'brazil', label: 'Brazil' },
-        { value: 'colombia', label: 'Colombia' },
-        { value: 'poland', label: 'Poland' },
-        { value: 'portugal', label: 'Portugal' },
-        { value: 'spain', label: 'Spain' },
+        { value: 'registered', label: 'Registered' },
+        { value: 'conscented', label: 'Conscented' },
+        { value: 'enrolled', label: 'Enrolled' },
+        { value: 'withdrawn', label: 'Withdrawn' },
       ];
       const cols = React.useMemo(() => ([
         {
@@ -384,7 +383,7 @@ Props for this column:
           Header: 'Created',
           accessor: 'created',
           options,
-          defaultOption: { value: 'portugal', label: 'Portugal' },
+          defaultOption: { value: 'registered', label: 'Registered' },
           getTooltip: (cell) => false,
           type: 'selectBadge',
         },
@@ -406,7 +405,7 @@ Props for this column:
           stage: 'Stage 2',
           status: 'Status 2',
           created: {
-            value: { value: 'colombia', label: 'Colombia' },
+            value: { value: 'withdrawn', label: 'Withdrawn' },
             badgeSelectProps: {
               tooltipType: 'info',
               tooltipText: 'Info',
