@@ -23,6 +23,8 @@ const DataGrid = ({
   handleDragged,
   draggable,
   getRowId,
+  handleSort,
+  handlePagination,
   ...accProps
 }) => {
   const dataRef = useRef(data);
@@ -75,7 +77,7 @@ const DataGrid = ({
         columns={columns}
         data={renderedData}
         rowsPerPageOptions={rowsPerPageOptions}
-        sortBy={sortBy}
+        sortByData={sortBy}
         updateData={updateData}
         skipPageReset={skipPageReset}
         handleUpdateData={handleUpdateData}
@@ -89,7 +91,9 @@ const DataGrid = ({
         setBulkActionsProps={setBulkActionsProps}
         getRowId={getRowId}
         filterData={filterData}
-        onFilter={dataGridControlProps?.onFilter}
+        handleFilter={dataGridControlProps?.handleFilter}
+        handleSort={handleSort}
+        handlePagination={handlePagination}
         {...accProps}
       />
     </div>
@@ -139,6 +143,8 @@ DataGrid.propTypes = {
   handleDragged: PropTypes.func,
   getRowId: PropTypes.func,
   draggable: PropTypes.bool,
+  handleSort: PropTypes.func,
+  handlePagination: PropTypes.func,
 };
 
 DataGrid.defaultProps = {
@@ -160,6 +166,8 @@ DataGrid.defaultProps = {
   getRowId: (row, relativeIndex, parent) =>
     row?.id ? row.id : parent ? [`s.${parent.id}`, relativeIndex].join('.') : `s.${relativeIndex}`,
   draggable: false,
+  handleSort: undefined,
+  handlePagination: undefined,
 };
 
 export default DataGrid;

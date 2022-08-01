@@ -75,7 +75,7 @@ const DataGridControl = (props) => {
     dataGridBulkActionsProps,
     filterData,
     setFilterData,
-    onFilter,
+    handleFilter,
     ...accProps
   } = props;
 
@@ -106,7 +106,7 @@ const DataGridControl = (props) => {
     setIsFilterActive(checkActiveFilter);
   }, [filterData]);
 
-  const handleFilter = (option, id) => {
+  const handleSetFilter = (option, id) => {
     const isDefaultFilter = filters.filter((item) => item.id === id && item.defaultFilter).length;
     if (option.length) {
       setFilterData({ ...filterData, [id]: option[0].value });
@@ -185,7 +185,7 @@ const DataGridControl = (props) => {
       <Accordion.Collapse eventKey="0">
         <DataGridFilters
           filters={filters}
-          handleFilter={handleFilter}
+          handleFilter={handleSetFilter}
           handleClearFilters={handleClearFilters}
           additionalFilters={additionalFilters}
           setAdditionalFilters={setAdditionalFilters}
@@ -229,7 +229,7 @@ DataGridControl.defaultProps = {
   isDraggeble: false,
   className: undefined,
   dataTestId: undefined,
-  onFilter: undefined,
+  handleFilter: undefined,
 };
 
 export default DataGridControl;

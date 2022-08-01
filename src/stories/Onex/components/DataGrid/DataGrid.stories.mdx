@@ -90,6 +90,12 @@ import { DataGrid, Button, Icon } from '../../../../components';
     handleDragged: {
       description: 'Callback fired when rows dragged. Returns array of row objects',
     },
+    handleSort: {
+      description: 'Callback fired when column sorted. Returns array of row objects',
+    },
+    handlePagination: {
+      description: 'Callback fired when page changed. ```handlePagination: Function(pageIndex, pageSize, pageCount, pageData)```',
+    }
   }}
   component={DataGrid}
 />
@@ -260,7 +266,7 @@ Important: react-table (now tanstack-table) is currently v8; it is important to 
           id: 'id',
         },
       ],
-      rowsPerPageOptions: [10, 15],
+      rowsPerPageOptions: [10, 20],
       useRowSelection: true,
       rowSelectionType: 'multi',
       handleSelection: () => {},
@@ -325,7 +331,7 @@ const columns = [
 ];
 ```
 
-Also, you can use callback ```dataGridControlProps.onFilter``` - which returns filteredRows and ```dataGridControlProps.getActiveFilters``` - function for get current value of selected filters.
+Also, you can use callback ```dataGridControlProps.handleFilter``` - which returns filteredRows and ```dataGridControlProps.getActiveFilters``` - function for get current value of selected filters.
 
 <Canvas>
   <Story
